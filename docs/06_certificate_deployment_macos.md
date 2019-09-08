@@ -1,14 +1,14 @@
 ---
 category: Configuration
-title: Windows 10
-order: 1
+title: MacOS
+order: 2
 ---
 
-# 05\_certificate\_deployment\_win10
+# 06\_certificate\_deployment\_macOS
 
-## Deploying Device Certificates - Windows 10
+## Deploying Device Certificates - MacOS
 
-The following section will show you how you can deploy device certificates via Intune Certificate profile on Windows 10 \(or later\) devices.
+The following section will show you how you can deploy device certificates via Intune Certificate profile on macOS X 10.12 \(or later\) devices.
 
 First, we need to trust the public root certificate from SCEPman. Therefore, you have to download the CA certificate \(from SCEPman\) and deploy it via a trusted certificate profile in Microsoft Intune:
 
@@ -18,15 +18,14 @@ Download the CA certificate:
 
 Then, create a profile in Microsoft Intune:
 
-[![TrustedCertificate](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman26.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman26.png)
+[![TrustedCertificate](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman_macos1.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman_macos1.png)
 
 1. Enter a **Name**
-2. As **Platform** select **Windows 10 or later**
+2. As **Platform** select **macOS**
 3. As **Profile type** select **Trusted certificate**
 4. Click **Settings**, select **A valid .cer file**
-5. As **Destination store** select **Computer certificate store - Root**
-6. Then, click **OK**
-7. Finally, click **Create**
+5. Then, click **OK**
+6. Finally, click **Create**
 
 When you are done with it you can deploy this profile to your devices.
 
@@ -42,17 +41,17 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 2. Click **Device Configuration**
 3. Choose **Profile** and click **Create profile**
 4. Then, enter a **Name**
-5. Select **Windows 10 and later** as **Platform**
+5. Select **macOS** as **Platform**
 6. Select **SCEP Certificate** as **Profile type**
 7. Click **Settings**
 
-[![SCEPCertificate](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman28.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman28.png)
+[![SCEPCertificate](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman_macos1_1.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman_macos1_1.png)
 
 1. Configure the **SCEP Certificate**
 
 > \[!IMPORTANT\] You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman \(for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below\). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to fixed 6 month currently. The red rectangle are settings which are free to modify. Long term all settings will be supported for configuration. **There is a dependency on the  in the subject name, which is used as a seed for the certificate serial number generation. Therefore the subject name must include** .
 >
-> [![SCEPCertificateMandatory](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman29.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman29.png)
+> [![SCEPCertificateMandatory](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman_macos2.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman_macos2.png)
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**
@@ -65,7 +64,6 @@ When all its done, you have the following two certificate configurations:
 
 ## Next Steps
 
-* [Deploying Device Certificates - macOS](06_certificate_deployment_macos.md)
 * [Deploying Mobile Device Certificates](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/docs/07_cert_mobile_client.md)
 * [Troubleshooting](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/docs/11_troubleshooting.md)
 
