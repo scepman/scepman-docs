@@ -1,0 +1,21 @@
+# Table of contents
+
+* [Welcome](README.md)
+* [Introduction](index.md)
+* [Deployment](deployment/README.md)
+  * [Azure App Registration](deployment/01_azure_app_registration.md)
+  * [Azure Marketplace Deployment](deployment/02_azure_marketplace.md)
+  * [GitHub Deployment](deployment/03_deploy_via_github.md)
+* [Deployment \(optional\)](deployment-optional/README.md)
+  * [Custom Domain](deployment-optional/03_customdomain.md)
+  * [Load Balancer Deployment](deployment-optional/04_load_balancer_deployment.md)
+* [Configuration](configuration/README.md)
+  * [Windows 10](configuration/05_certificate_deployment_win10.md)
+  * [MacOS](configuration/06_certificate_deployment_macos.md)
+  * [iOS](configuration/08_certificate_deployment_ios.md)
+  * [Android](configuration/07_certificate_deployment_android.md)
+* [Troubleshooting](troubleshooting-1/README.md)
+  * [Troubleshooting Steps](troubleshooting-1/troubleshooting.md)
+  * [Important Links](troubleshooting-1/important-links.md)
+* [Changelog](changelog.md)
+
