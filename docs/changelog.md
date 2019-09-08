@@ -3,36 +3,30 @@ title: Changelog
 order: 1
 ---
 
-# Changelog
-
-### 1.2
+## 1.2
 
 * Changed Log component
 * Validity Period support
 
-### 1.1
+## 1.1
 
 * Support for SAN Attributes
 * Sanity Checks
 * First release of Community Edition
 
-### 1.0
+## 1.0
 
 * Initial release
 
-## Roadmap
+# Roadmap
 
-### Currently in Development
+## Currently in Development
 
 * Support for Intune blade certificate list
 
-### Currently in Research
+## Currently in Research
 
 * More options from GraphAPI  
-
   Use compliance state in addition to active device information.  
-
 * Support for user certificates  
-
-  Authentication-Only user certificates \(VPN, Wifi, network\) could be integrated in addition to device certificates.  
-
+  Authentication-Only user certificates (VPN, Wifi, network) could be integrated in addition to device certificates.  

@@ -4,7 +4,7 @@ title: Azure Marketplace
 order: 2
 ---
 
-# Deploy SCEPman via Azure Marketplace
+## Deploy SCEPman via Azure Marketplace
 
 > You need your Client ID and your Client Secret before you can start the deployment
 
@@ -14,21 +14,20 @@ To get SCEPman navigate to the **Azure Marketplace**. Enter SCEPman in the **Sea
 
 Follow these steps to create a SCEPman Intune SCEP-as-a-Service instance:
 
-[![Basics](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman19.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman19.png)
+[![Basics](./media/scepman19.png)](./media/scepman19.png)
 
-For **Azure AD App Registration** enter the **Application \(client\) ID** and the value from **Certificates & secrets**:
+For **Azure AD App Registration** enter the **Application (client) ID** and the value from **Certificates & secrets**:
 
-[![Basics](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman20.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman20.png)
+[![Basics](./media/scepman20.png)](./media/scepman20.png)
 
 When everything is right you will see **Validation passed** in the **Summary** section. Click **OK** to go to section **Buy**.
 
-[![Summary](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman21.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman21.png)
+[![Summary](./media/scepman21.png)](./media/scepman21.png)
 
 In the **Buy** section click **Create** to start the deployment process.
 
 To check if SCEPman is running, navigate to **App Services**. Choose the SCEPman application and click on **Browse** to see the SCEPman website. When everything works as intended **Vault**, **Intune** and **Graph** are set as **connected**.
 
-[![Dashboard](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman23.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/98c2c2fb5f8b976146bae6f1bea75e9f890303fc/media/scepman23.png)
+[![Dashboard](./media/scepman23.png)](./media/scepman23.png)
 
 The option **click here to start** creates the Azure Key Vault RootCA certificate. The initial root certificate should be created only once in a farm. If valid, select **I have read the documentation** and click **Create First Node**.
-

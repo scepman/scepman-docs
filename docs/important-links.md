@@ -4,8 +4,6 @@ title: Important Links
 order: 2
 ---
 
-# important-links
-
 ## Blog Article about SCEPman
 
 [https://oliverkieselbach.com/2019/07/02/the-easy-way-to-deploy-device-certificates-with-intune/](https://oliverkieselbach.com/2019/07/02/the-easy-way-to-deploy-device-certificates-with-intune/)
@@ -17,4 +15,3 @@ order: 2
 ## SCEPman on GitHub
 
 [https://github.com/glueckkanja/gk-scepman](https://github.com/glueckkanja/gk-scepman)
-
