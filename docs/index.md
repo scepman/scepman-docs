@@ -6,7 +6,7 @@ permalink: /docs/index.html
 
 # Introduction
 
-The following documentation will show you an easy way to deploy device certificates to modern cloud managed clients. Without any on-premises PKI your devices will be able to get certificates.
+The following documentation will show you an easy way to deploy certificates to modern cloud managed clients. Without any on-premises PKI your users and devices will be able to get certificates.
 
 ## What is SCEP
 
@@ -16,7 +16,15 @@ SCEP is originally developed by Cisco. The core mission of SCEP is the deploymen
 
 ## What is SCEPman
 
-If you use SCEP in a 'traditional way' you need a lot of on-premises components. Microsoft Intune [allows third-party certificate authorities \(CA\)](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview) to issue and validate certificates using SCEP and SCEPman is a slim and resource-friendly solution. It is an Azure Web App providing the SCEP protocol and works directly with the Intune API. SCEPman uses an Azure Key Vault based Root CA and certificate creation. No other component is involved, neither a database nor any other stateful storage except the Azure Key Vault itself. That said, SCEPman will not need any backup procedures or other operation level tasks. Only an Azure subscription is necessary to deploy it.
+If you use SCEP in a 'traditional way' you need an amount of on-premises components. Microsoft Intune [allows third-party certificate authorities \(CA\)](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview) to issue and validate certificates using SCEP and SCEPman is a slim and resource-friendly solution. It is an Azure Web App providing the SCEP protocol and works directly with the Intune API. SCEPman uses an Azure Key Vault based Root CA and certificate creation. No other component is involved, neither a database nor any other stateful storage except the Azure Key Vault itself. That said, SCEPman **will not need any backup procedures** or other operation level tasks. Only an Azure subscription is necessary to deploy it.
+
+{% hint style="info" %}
+**Warning**  
+  
+SCEPman is intended to use for authentication and transport encryption certificates. That said, you can deploy user and device certificates used for network authentication, WiFi, VPN, RADIUS and similar services.  
+  
+Do not use SCEPman for email-encyrption or digital signatures \(without a separate technology for key management\). The nature of the SCEP protocol does not include a mechanism to backup or archive private key material. If you would use SCEP for email-encyrption or digital signatures you may loose the keys to decrypt or verify at a later time.
+{% endhint %}
 
 For more details about the technical certificate workflow and the third-party certification authority SCEP integration, click [here](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview#overview).
 
@@ -37,13 +45,13 @@ Process of certificate validation during certificate based authentication:
 SCEPman is an Azure Web App with the following features:
 
 * A SCEP interface that is compatible with the Intune [SCEP API](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview) in particular.
-* SCEPman provides certificates signed by a CA root key stored in Azure Key Vault.
-* SCEPman contains an OCSP \(see below\) responder to provide certificate validity in real-time. A certificate is valid if its corresponding Azure Active Directory \(Azure AD\) device exists and is enabled.
+* SCEPman provides certificates signed by a CA root key stored in **Azure Key Vault**.
+* SCEPman contains an **OCSP responder** \(see below\) to provide certificate validity in real-time. A certificate is valid if its corresponding **Azure Active Directory \(Azure AD\)** device or user exists and is enabled.
 * A full replacement of Legacy PKI.
 
 SCEPman creates the CA root certificate during initial installation. However, if for whatever reason an alternative CA key material shall be used it is possible to replace this CA key and certificate with your own in Azure Key Vault. For example, if you want to use a Sub CA certificate signed by an existing internal Root CA.
 
-SCEPman issues device certificates that are compatible with Intune's internally used authentication certificates. They contain Intune's extensions determining the tenant and the machine. Additionally, the tenant ID and machine ID is stored in the certificate subject to allow a RADIUS server, like [RADIUS-as-a-Service](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/gluckkanja.radius-aas?tab=Overview), to use these certificates for authentication.
+SCEPman issues device and user certificates that are compatible with Intune's internally used authentication certificates. They contain Intune's extensions determining the tenant and the machine. Additionally, when using device certificates the tenant ID and machine ID is stored in the certificate subject alternative names to allow a RADIUS server, like [RADIUS-as-a-Service](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/gluckkanja.radius-aas?tab=Overview), to use these certificates for authentication.
 
 ### SCEPman OCSP \(Online Certificate Status Protocol\)
 

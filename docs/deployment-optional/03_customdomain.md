@@ -6,7 +6,9 @@ order: 1
 
 # Custom Domain
 
-> SCEPman Enterprise Edition only
+{% hint style="info" %}
+SCEPman Enterprise Edition only
+{% endhint %}
 
 ## Custom Domain Configuration \(optional\)
 
