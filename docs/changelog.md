@@ -22,9 +22,10 @@ order: 1
 
 ## Roadmap
 
-### Currently in Development
+### Currently in Beta
 
 * Support for Intune blade certificate list
+* Support for user certificates Authentication-Only user certificates \(VPN, Wifi, network\) in addition to device certificates.
 
 ### Currently in Research
 
@@ -32,7 +33,4 @@ order: 1
 
   Use compliance state in addition to active device information.  
 
-* Support for user certificates  
-
-  Authentication-Only user certificates \(VPN, Wifi, network\) could be integrated in addition to device certificates.  
-
+* 

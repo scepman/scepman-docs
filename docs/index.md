@@ -23,7 +23,7 @@ If you use SCEP in a 'traditional way' you need an amount of on-premises compone
   
 SCEPman is intended to use for authentication and transport encryption certificates. That said, you can deploy user and device certificates used for network authentication, WiFi, VPN, RADIUS and similar services.  
   
-Do not use SCEPman for email-encyrption or digital signatures \(without a separate technology for key management\). The nature of the SCEP protocol does not include a mechanism to backup or archive private key material. If you would use SCEP for email-encyrption or digital signatures you may loose the keys to decrypt or verify at a later time.
+Do not use SCEPman for email-encyrption or digital signatures \(without a separate technology for key management\). The nature of the SCEP protocol does not include a mechanism to backup or archive private key material. If you would use SCEP for email-encryption or digital signatures you may loose the keys to decrypt or verify at a later time.
 {% endhint %}
 
 For more details about the technical certificate workflow and the third-party certification authority SCEP integration, click [here](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview#overview).
@@ -34,11 +34,11 @@ Here's an overview about the SCEPman workflow. The first figure shows the certif
 
 Process of certificate issuance:
 
-[![scepworkflow1](.gitbook/assets/overview1.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/Overview1.png)
+![](.gitbook/assets/overview1.png)
 
 Process of certificate validation during certificate based authentication:
 
-[![scepworkflow2](.gitbook/assets/overview2.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/Overview2.png)
+![](.gitbook/assets/overview2.png)
 
 ### SCEPman Features
 
@@ -71,7 +71,9 @@ SCEPman EE offers all services and all features. If you need enterprise-class fe
 
 If your are a tech enthusiast with the ability to self-support, our Community Edition products are freely available and offer powerful capabilities for non-critical business process or content needs. The only technical difference between SCEPman CE and SCEPman Enterprise is that SCEPman CE **does not support redundancy through Azure Traffic Manager** \(no support for Azure WebApp custom domains\).
 
-> SCEPman CE is not backed by our support services.
+{% hint style="warning" %}
+SCEPman CE is not backed by our support services.
+{% endhint %}
 
 ### Trial Version
 

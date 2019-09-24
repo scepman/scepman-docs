@@ -39,7 +39,9 @@ The first step is the registration of an application in Azure AD:
 | 3. Define a **Description** and select **Never** |  |
 | 4. Finally, click **Add** | [![NewSecret](../.gitbook/assets/scepman9.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman9.png) |
 
-> Copy the client secret value. You will not be able to retrieve it after you leave this submenu. [![ClientSecretValue](../.gitbook/assets/scepman10.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman10.png)
+{% hint style="warning" %}
+Copy the client secret value. You will not be able to retrieve it after you leave this submenu
+{% endhint %}
 
 ## Azure App Registration / API permissions
 

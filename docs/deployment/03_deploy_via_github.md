@@ -14,7 +14,9 @@ This article will show you how you can deploy SCEPman via GitHub. But why should
 
 ## Start the Deployment
 
-> You need your Client ID and your Client Secret before you can start the deployment
+{% hint style="info" %}
+You need your Client ID and your Client Secret before you can start the deployment.
+{% endhint %}
 
 Instead of using Azure Marketplace you can deploy SCEPman via Github. Click the following deploy button to start the deployment via GitHub:
 
@@ -22,7 +24,7 @@ Instead of using Azure Marketplace you can deploy SCEPman via Github. Click the 
 
 Next, you will see the following configuration menu:
 
-[![Deployment](../.gitbook/assets/scepman_optional1.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman_optional1.png)
+![](../.gitbook/assets/scepman_optional1.png)
 
 1. Select an existing resource group or create a new one \(SCEPman resources will be deployed in this group\)
 2. Set the location according to your location
@@ -32,7 +34,7 @@ Next, you will see the following configuration menu:
 6. Then, click **I agree to the terms...**
 7. Finally, click **Purchase**
 
-When you did it you need to create a custom domain \(link zum Artikel einbauen\)
+When you did it you need to create a [custom domain](../deployment-optional/03_customdomain.md).
 
 To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/glueckkanja/gk-scepman) of SCEPman. During every restart the Azure Web App will do a check and a copy deployment if necessary. To configure this do the following:
 
@@ -42,11 +44,9 @@ To get continuous updates for SCEPman you can point a configuration variable to 
 4. Then, click **Configuration** \(submenu **Setting**\)
 5. Look for **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
 
-   [![website\_run\_from\_package](../.gitbook/assets/scepman_optional2.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman_optional2.png)
+![](../.gitbook/assets/scepman_optional2.png)
 
-6. Then replace the URL with the SCEPman GitHub URL:  
+6. Then replace the URL with the SCEPman GitHub URL: https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip
 
-   `https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip`  
-
-   [![GitHubURL](../.gitbook/assets/scepman_optional3.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman_optional3.png)
+![](../.gitbook/assets/scepman_optional3.png)
 
