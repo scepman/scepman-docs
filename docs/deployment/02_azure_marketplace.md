@@ -18,6 +18,10 @@ Follow these steps to create a SCEPman Intune SCEP-as-a-Service instance:
 
 ![](../.gitbook/assets/scepman19.png)
 
+{% hint style="info" %}
+If you have a license key, you can paste it in the field **License Key**. Leave it empty to use the free community edition of SCEPman.
+{% endhint %}
+
 For **Azure AD App Registration** enter the **Application \(client\) ID** and the value from **Certificates & secrets**:
 
 ![](../.gitbook/assets/scepman20.png)

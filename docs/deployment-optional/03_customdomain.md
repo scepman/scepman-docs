@@ -6,7 +6,7 @@ order: 1
 
 # Custom Domain
 
-{% hint style="info" %}
+{% hint style="warning" %}
 SCEPman Enterprise Edition only
 {% endhint %}
 

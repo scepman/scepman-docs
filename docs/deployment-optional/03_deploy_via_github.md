@@ -6,7 +6,9 @@ order: 3
 
 # GitHub Deployment
 
-> This is an alternative approach to Azure Marketplace Deployment
+{% hint style="warning" %}
+This is an alternative approach to Azure Marketplace Deployment
+{% endhint %}
 
 ## SCEPman Delpoyment via GitHub \(optional\)
 
@@ -34,7 +36,7 @@ Next, you will see the following configuration menu:
 6. Then, click **I agree to the terms...**
 7. Finally, click **Purchase**
 
-When you did it you need to create a [custom domain](../deployment-optional/03_customdomain.md).
+When you did it you need to create a [custom domain](03_customdomain.md).
 
 To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/glueckkanja/gk-scepman) of SCEPman. During every restart the Azure Web App will do a check and a copy deployment if necessary. To configure this do the following:
 
@@ -46,7 +48,8 @@ To get continuous updates for SCEPman you can point a configuration variable to 
 
 ![](../.gitbook/assets/scepman_optional2.png)
 
-6. Then replace the URL with the SCEPman GitHub URL: https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip
+6. Then replace the URL with the SCEPman GitHub URL:   
+`https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip`
 
 ![](../.gitbook/assets/scepman_optional3.png)
 

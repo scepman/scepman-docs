@@ -4,15 +4,17 @@ title: Load Balancer Deployment
 order: 2
 ---
 
-# Load Balancer Deployment
+# High Availability Scenario
 
-> SCEPman Enterprise Edition only
+{% hint style="warning" %}
+SCEPman Enterprise Edition only
+{% endhint %}
 
 ## Load Balancer Deployment \(optional\)
 
 This section describes a high availability architecture for production use.
 
-[![Architecture](../.gitbook/assets/scepman_loadbalancer1.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman_loadbalancer1.png)
+![](../.gitbook/assets/scepman_loadbalancer1.png)
 
 ## Clone App
 
@@ -41,9 +43,9 @@ Next, you need a managed identity for the cloned app:
 
 Your **Identity** should look like this:
 
-[![Identity](../.gitbook/assets/scepman_identity3.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman_identity3.png)
+![](../.gitbook/assets/scepman_identity3.png)
 
-## Setup Azure Key Vault access policy
+## Setup Azure Key Vault Access Policy
 
 | Task | Image |
 | :--- | :--- |
@@ -72,7 +74,7 @@ Your **Identity** should look like this:
 
 In the **Overview** your traffic manager should like this \(here you find the traffic manage URL\):
 
-[![Overview](../.gitbook/assets/scepman_trafficmanager4.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman_trafficmanager4.png)
+![](../.gitbook/assets/scepman_trafficmanager4.png)
 
 ## Own Application Setup \(optional\)
 
