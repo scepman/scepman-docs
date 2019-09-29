@@ -5,6 +5,11 @@ order: 1
 
 # Changelog
 
+### 1.3
+
+* Support for user certificates  Authentication-Only user certificates \(VPN, Wifi, network\) in addition to device certificates.
+* Support for Intune blade certificate list
+
 ### 1.2
 
 * Changed Log component
@@ -22,15 +27,11 @@ order: 1
 
 ## Roadmap
 
-### Currently in Beta
-
-* Support for Intune blade certificate list
-* Support for user certificates Authentication-Only user certificates \(VPN, Wifi, network\) in addition to device certificates.
-
 ### Currently in Research
 
 * More options from GraphAPI  
 
   Use compliance state in addition to active device information.  
 
-* 
+
+
