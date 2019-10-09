@@ -138,3 +138,7 @@ certutil -url <path-to-exported-device-certificate>
 
 ![](../.gitbook/assets/scepman_revocation4.png)
 
+### My SCEP configuration profile shows pending and is not applied
+
+The SCEP configuration profile depends on the Trusted Root certificate profile. Assign both profiles to the same Azure Active Directory user or device group to make sure the user or device overlaps and both profiles are targeted to the device. Do not mix user and device groups. If you see pending as status for the configurations profiles in Intune for a long time, the assignment is probably wrong.
+
