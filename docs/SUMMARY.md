@@ -13,7 +13,7 @@
   * [Windows 10](configuration/05_certificate_deployment_win10.md)
   * [MacOS](configuration/06_certificate_deployment_macos.md)
   * [iOS](configuration/08_certificate_deployment_ios.md)
-  * [Android](configuration/07_certificate_deployment_android.md)
+  * [Android](configuration/android.md)
 * [Troubleshooting](troubleshooting-1/README.md)
   * [Troubleshooting Steps](troubleshooting-1/troubleshooting.md)
   * [Important Links](troubleshooting-1/important-links.md)
