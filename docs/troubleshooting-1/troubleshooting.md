@@ -142,3 +142,11 @@ certutil -url <path-to-exported-device-certificate>
 
 The SCEP configuration profile depends on the Trusted Root certificate profile. Assign both profiles to the same Azure Active Directory user or device group to make sure the user or device overlaps and both profiles are targeted to the device. Do not mix user and device groups. If you see pending as status for the configurations profiles in Intune for a long time, the assignment is probably wrong.
 
+### Cisco ISE is showing OCSP unreachable error
+
+Cisco ISE is still not supporting HTTP 1.1 when looking up OCSP and therefore can't connect to a general SCEPman instance running on Azure App Services. The error message may look like this:
+
+![](../.gitbook/assets/cisco-ocsp-error.jpg)
+
+Please see [here](cisco-ise-host-header-limitation.md) for a solution.
+
