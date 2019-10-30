@@ -13,7 +13,6 @@ order: 1
 ### 1.2
 
 * Changed Log component
-* Validity Period support
 
 ### 1.1
 
