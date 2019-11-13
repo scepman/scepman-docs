@@ -10,9 +10,9 @@ order: 3
 This is an alternative approach to Azure Marketplace Deployment
 {% endhint %}
 
-## SCEPman Delpoyment via GitHub \(optional\)
+## SCEPman Deployment via GitHub \(optional\)
 
-This article will show you how you can deploy SCEPman via GitHub. But why should you do this? If your are a tech enthusiast with the ability to self-support and you want to note topics and issues \(without guarantee for an answer or a direct troubleshooting or fixing\) the GitHub deployment is just right for you.
+This article will show you how you can deploy SCEPman via GitHub. But why should you do this? If you are a tech enthusiast with the ability to self-support and you want to note topics and issues \(without guarantee for an answer or direct troubleshooting or fixing\) the GitHub deployment is just right for you.
 
 ## Start the Deployment
 
@@ -38,7 +38,7 @@ Next, you will see the following configuration menu:
 
 When you did it you need to create a [custom domain](03_customdomain.md).
 
-To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/glueckkanja/gk-scepman) of SCEPman. During every restart the Azure Web App will do a check and a copy deployment if necessary. To configure this do the following:
+To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/glueckkanja/gk-scepman) of SCEPman. During every restart, the Azure Web App will do a check and a copy deployment if necessary. To configure this do the following:
 
 1. Go to your Azure AD
 2. Navigate to **App Service**

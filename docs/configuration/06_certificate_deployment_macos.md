@@ -29,7 +29,7 @@ Then, create a profile in Microsoft Intune:
 5. Then, click **OK**
 6. Finally, click **Create**
 
-When you are done with it you can deploy this profile to your devices.
+When you are done with it, you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
 
@@ -53,7 +53,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 8. Configure the **SCEP Certificate**
 
 {% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman \(for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below\). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to fixed 6 month currently. The red rectangle are settings which are free to modify. Long term all settings will be supported for configuration. **There is a dependency on the {{AAD\_Device\_ID} in the subject name, which is used as a seed for the certificate serial number generation. Therefore the subject name must include**.
+You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically to set by SCEPman \(for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below\). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to fixed a 6 month currently. The red rectangle is a setting that is free to modify. Long term all settings will be supported for configuration. **There is a dependency on the {{AAD\_Device\_ID} in the subject name, which is used as a seed for the certificate serial number generation. Therefore the subject name must include**.
 
 With our automatically set settings, we fulfill Apple's certificate requirements. For more details click [here](https://support.apple.com/en-us/HT210176).
 {% endhint %}
@@ -64,7 +64,7 @@ With our automatically set settings, we fulfill Apple's certificate requirements
 2. Then, click **Add**
 3. Next click **OK** and finally click **Create**
 
-When all its done, you have the following two certificate configurations:
+When all its is done, you have the following two certificate configurations:
 
 * SCEPman - SCEP device certificate
 * SCEPman - Trusted root certificate
@@ -116,7 +116,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 8. Configure the **SCEP Certificate**
 
 {% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman \(for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below\). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to fixed 6 month currently. The red rectangle are settings which are free to modify. Long term all settings will be supported for configuration. **The setting for 'Subject name format' is freely selectable. For Subject alternative name we recommend to set 'User principial name \(UPN\)'.**
+You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman \(for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below\). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to fixed a 6 month currently. The red rectangle is a settings that is free to modify. Long term all settings will be supported for configuration. **The setting for 'Subject name format' is freely selectable. For Subject alternative name we recommend to set 'User principal name \(UPN\)'.**
 
 With our automatically set settings, we fulfill Apple's certificate requirements. For more details click [here](https://support.apple.com/en-us/HT210176).
 {% endhint %}

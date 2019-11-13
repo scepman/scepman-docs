@@ -26,7 +26,7 @@ For **Azure AD App Registration** enter the **Application \(client\) ID** and th
 
 ![](../.gitbook/assets/scepman20.png)
 
-When everything is right you will see **Validation passed** in the **Summary** section. Click **OK** to go to section **Buy**.
+When everything is right, you will see **Validation passed** in the **Summary** section. Click **OK** to go to section **Buy**.
 
 ![](../.gitbook/assets/scepman21.png)
 

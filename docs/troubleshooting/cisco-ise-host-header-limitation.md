@@ -4,9 +4,9 @@ Cisco ISE is still not supporting HTTP 1.1 when looking up OCSP and therefore ca
 
 ![](../.gitbook/assets/cisco-ocsp-error.jpg)
 
-Cisco is currently investigating future enhancements but for the time beeing you can use an [Azure Application Gateway](https://azure.microsoft.com/en-us/services/application-gateway/) to provide an instance of SCEPman not requiring a Host Header. 
+Cisco is currently investigating future enhancements but for the time being you can use an [Azure Application Gateway](https://azure.microsoft.com/en-us/services/application-gateway/) to provide an instance of SCEPman not requiring a Host Header. 
 
-This documentation is a quick introduction of the basic steps required to create such an Application Gateway. Please forgive the rudimentary form.
+This documentation is a quick introduction to the basic steps required to create such an Application Gateway. Please forgive the rudimentary form.
 
 Create an Azure Application Gateway for SCEPman
 

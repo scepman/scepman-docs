@@ -18,7 +18,7 @@ This section describes a high availability architecture for production use.
 
 ## Clone App
 
-After successful deployment of SCEPman you can set up a load balancer for higher availability. Start cloning the app:
+After successful deployment of SCEPman, you can set up a load balancer for higher availability. Start cloning the app:
 
 | Task | Image |
 | :--- | :--- |
@@ -78,7 +78,7 @@ In the **Overview** your traffic manager should like this \(here you find the tr
 
 ## Own Application Setup \(optional\)
 
-The SCEPman application will be loaded from zip file which is located in a Glück & Kanja [Github repository](https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip). This zip file will be updated automatically from the Glück & Kanja development team, if a customer do not want to get auto updates, the web apps can load the zip file from self-managed storage account.
+The SCEPman application will be loaded from the zip file which is located in a Glück & Kanja [Github repository](https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip). This zip file will be updated automatically from the Glück & Kanja development team. If a customer does not want to get auto-updates, the web apps can load the zip file from the self-managed storage account.
 
 | Task | Image |  |
 | :--- | :--- | :--- |
