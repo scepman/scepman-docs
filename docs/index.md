@@ -16,7 +16,7 @@ SCEP is originally developed by Cisco. The core mission of SCEP is the deploymen
 
 ## What is SCEPman
 
-If you use SCEP in a 'traditional way' you need an amount of on-premises components. Microsoft Intune [allows third-party certificate authorities \(CA\)](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview) to issue and validate certificates. Using SCEP and SCEPman is a slim and resource-friendly solution. It is an Azure Web App providing the SCEP protocol and works directly with the Intune API. SCEPman uses an Azure Key Vault based Root CA and certificate creation. No other component is involved, neither a database nor any other stateful storage except the Azure Key Vault itself. That said, SCEPman **will not need any backup procedures** or other operation level tasks. Only an Azure subscription is necessary to deploy it.
+If you use SCEP in a 'traditional way' you need an amount of on-premises components. Microsoft Intune [allows third-party certificate authorities \(CA\)](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview) to issue and validate certificates using SCEP. SCEPman is a slim and resource-friendly solution. It is an Azure Web App providing the SCEP protocol and works directly with the Intune API. SCEPman uses an Azure Key Vault based Root CA and certificate creation. No other component is involved, neither a database nor any other stateful storage except the Azure Key Vault itself. That said, SCEPman **will not need any backup procedures** or other operation level tasks. Only an Azure subscription is necessary to deploy it.
 
 {% hint style="info" %}
 **Warning**  
