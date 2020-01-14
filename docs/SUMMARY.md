@@ -15,6 +15,7 @@
   * [iOS](configuration/08_certificate_deployment_ios.md)
   * [Android](configuration/android.md)
 * [Troubleshooting](troubleshooting/README.md)
+  * [FAQ](troubleshooting/faq.md)
   * [Troubleshooting Steps](troubleshooting/troubleshooting.md)
   * [Important Links](troubleshooting/important-links.md)
   * [Cisco ISE Host Header Limitation](troubleshooting/cisco-ise-host-header-limitation.md)
