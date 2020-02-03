@@ -6,59 +6,69 @@ order: 1
 
 # Azure App Registration
 
-## Azure App Registration
+SCEPman needs to interact with your Azure Active Directory and Intune endpoints to provide the certificate and OCSP validation of users and devices. To provide the necessary permissions to SCEPman you need to create an App Registration within your tenant.
 
-The first step is the registration of an application in Azure AD:
+### Basic App Registration
 
-| Task | Image |
-| :--- | :--- |
-| 1. Login in to [Azure Portal](https://portal.azure.com) |  |
-| 2. Navigate to **Azure Active Directory** |  |
-| 3. Click **App registrations** | [![AppReg](../.gitbook/assets/scepman2.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman2.png) |
-| 4. Then, **New registration** | [![NewReg](../.gitbook/assets/scepman3.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman3.png) |
-| 5. Enter a **Name** \(e.g. SCEPman\) |  |
-| 6. For **Supported account types** choose **Accounts in this organizational directory only** | [![AccountTypes](../.gitbook/assets/scepman4.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman4.png) |
-| 7. Then, click **Register** |  |
-| 8. Save the **Application \(client\) ID**. The ID is important and will be needed later | [![AppID](../.gitbook/assets/scepman5.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman5.png) |
+1. Login in to [Azure Portal](https://portal.azure.com)
 
-## Azure App Registration / Authentication
+2. Navigate to **Azure Active Directory**
 
-| Task | Image |
-| :--- | :--- |
-| 1. Click **Authentication** | [![Auth](../.gitbook/assets/scepman6.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman6.png) |
-| 2. Scroll down to **Advanced settings** |  |
-| 3. Select **ID tokens** | [![IDtokens](../.gitbook/assets/scepman7.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman7.png) |
-| 4. Finally, click **Save** |  |
+3. Click **App registrations**
 
-## Azure App Registration / Client Secret
+![](../.gitbook/assets/azure-app-registration.png)
 
-| Task | Image |
-| :--- | :--- |
-| 1. Click **Certificates & secrets** | [![Secret](../.gitbook/assets/scepman8.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman8.png) |
-| 2. Click **New client secret** |  |
-| 3. Define a **Description** and select **Never** |  |
-| 4. Finally, click **Add** | [![NewSecret](../.gitbook/assets/scepman9.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman9.png) |
+4. Click **New registration** and enter a **name**, i.e. SCEPman. For supported account types choose **Accounts in this organizational directory only** and click register.
+
+![](../.gitbook/assets/azure-app-registration-register.png)
+
+5. You may copy the **Application \(client\) ID** now. The ID is important and will be needed later when installing SCEPman from marketplace. But you can access this ID anytime.
+
+![](../.gitbook/assets/azure-app-registration-scepman.png)
+
+### Azure App Registration / Client Secret
+
+1. Stay within **App registrations** and click on **Certificates & secrets**
+
+![](../.gitbook/assets/azure-app-registration-client-secret.png)
+
+2. Click **New client secret**, add a description and coose the expiration. We recommend **Never**, this helps to provide an ongoing service for a long time. Yo can revoke a secret at any time. Click **Add**.
+
+![](../.gitbook/assets/azure-app-registration-client-secret-new.png)
+
+3. **Copy the secret** and write it down in a secure place.
 
 {% hint style="warning" %}
 Copy the client secret value. You will not be able to retrieve it after you leave this submenu
 {% endhint %}
 
-## Azure App Registration / API permissions
+![](../.gitbook/assets/azure-app-registration-client-secret-copy.png)
 
-| Task | Image |
-| :--- | :--- |
-| 1. Still in the SCEPman Application, click **API permissions** |  |
-| 2. Click **Add a permission** | [![AddPermission](../.gitbook/assets/scepman11.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman11.png) |
-| 3. Then, click **Intune** | [![Intune](../.gitbook/assets/scepman12.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman12.png) |
-| 4. Select **Application permissions** | [![PermissionType](../.gitbook/assets/scepman13.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman13.png) |
-| 5. Click **scep\_challenge\_provider** | [![SelectPermission](../.gitbook/assets/scepman14.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman14.png) |
-| 6. Then, click **Add permissions** |  |
-| 7. Next, click **Microsoft Graph** | ![](../.gitbook/assets/screenshot-2020-02-03-at-07.57.59.png) |
-| 8. Scroll down to **Directory** and click it |  |
-| 9. Select **Directory.Read.All** | [![Directory](../.gitbook/assets/scepman16.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman16.png) |
-| 10. Then, click **Add permission** |  |
-| 11. Click **Grant admin consent for...** and confirm the displayed dialog with **Yes** | [![GrantAdmin](../.gitbook/assets/scepman17.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman17.png) |
-| 12. The Azure AD app registration is finished |  |
+### Azure App Registration / API permissions
 
+1. Stay within **App registrations** and click on **API permissions**
 
+**2. Remove** the default **User Read** permission
+
+![](../.gitbook/assets/screenshot-2020-02-03-at-10.54.48.png)
+
+3. Click on **Add a permission** and choose **Microsoft Graph**. When choosen, select **Application permission** and search for directory. Add **Directory.ReadAll** as a permission.
+
+![](../.gitbook/assets/app-permission-graph.png)
+
+![](../.gitbook/assets/app-permission-directory-read.png)
+
+4. Now click on **Add a permission** and choose **Intune**. When choosen, select **Application permission** and search for scepp. Add **scep\_challenge\_provider** as a permission.
+
+![](../.gitbook/assets/app-permission-intune.png)
+
+![](../.gitbook/assets/app-permission-scep.png)
+
+5. Finally click on **Grant admin consent** and **confirm** the consent for the given app registration.
+
+![](../.gitbook/assets/app-registration-consent.png)
+
+![](../.gitbook/assets/app-registration-consent-confirm.png)
+
+The app registration is done.
 
