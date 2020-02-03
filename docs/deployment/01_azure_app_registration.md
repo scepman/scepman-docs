@@ -53,10 +53,12 @@ Copy the client secret value. You will not be able to retrieve it after you leav
 | 4. Select **Application permissions** | [![PermissionType](../.gitbook/assets/scepman13.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman13.png) |
 | 5. Click **scep\_challenge\_provider** | [![SelectPermission](../.gitbook/assets/scepman14.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman14.png) |
 | 6. Then, click **Add permissions** |  |
-| 7. Next, click **Microsoft Graph** | [![MicrosoftGraph](../.gitbook/assets/scepman15.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman15.png) |
+| 7. Next, click **Microsoft Graph** | ![](../.gitbook/assets/screenshot-2020-02-03-at-07.57.59.png) |
 | 8. Scroll down to **Directory** and click it |  |
 | 9. Select **Directory.Read.All** | [![Directory](../.gitbook/assets/scepman16.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman16.png) |
 | 10. Then, click **Add permission** |  |
 | 11. Click **Grant admin consent for...** and confirm the displayed dialog with **Yes** | [![GrantAdmin](../.gitbook/assets/scepman17.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman17.png) |
 | 12. The Azure AD app registration is finished |  |
+
+
 
