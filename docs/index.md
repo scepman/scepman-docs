@@ -69,13 +69,11 @@ SCEPman EE offers all services and all features. If you need enterprise-class fe
 
 ### SCEPman Community Edition \(SCEPman CE\)
 
-If you are a tech enthusiast with the ability to self-support, our Community Edition products are freely available and offer powerful capabilities for a non-critical business process or content needs. The only technical difference between SCEPman CE and SCEPman Enterprise is that SCEPman CE **does not support redundancy through Azure Traffic Manager** \(no support for Azure WebApp custom domains\).
+If you are a tech enthusiast with the ability to self-support, our Community Edition products are freely available and offer powerful capabilities for a non-critical business process or content needs. The only technical difference between SCEPman CE and SCEPman EE is that SCEPman CE **does not support redundancy through Azure Traffic Manager** \(no support for Azure WebApp custom domains\).  
+  
+If you want to test SCEPman CE in your own environment you can use the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/gluckkanja.scepman) and install SCEPman CE directly into your lab or production subscription. When you later decide to buy SCEPman EE you will receive a license key that you can add to your already installed instance.
 
 {% hint style="warning" %}
 SCEPman CE is not backed by our support services.
 {% endhint %}
-
-### Trial Version
-
-If you want to test SCEPman in your own environment you can use the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/gluckkanja.scepman) and install directly into your lab or production subscription. When you later decide to buy SCEPman you will receive a license key that you can add to your already installed instance.
 

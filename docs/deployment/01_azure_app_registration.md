@@ -32,7 +32,7 @@ SCEPman needs to interact with your Azure Active Directory and Intune endpoints 
 
 ![](../.gitbook/assets/azure-app-registration-client-secret.png)
 
-2. Click **New client secret**, add a description and coose the expiration. We recommend **Never**, this helps to provide an ongoing service for a long time. Yo can revoke a secret at any time. Click **Add**.
+2. Click **New client secret**, add a description and choose the expiration. We recommend **Never**, this helps to provide an ongoing service for a long time. You can revoke a secret at any time. Click **Add**.
 
 ![](../.gitbook/assets/azure-app-registration-client-secret-new.png)
 
@@ -52,13 +52,13 @@ Copy the client secret value. You will not be able to retrieve it after you leav
 
 ![](../.gitbook/assets/screenshot-2020-02-03-at-10.54.48.png)
 
-3. Click on **Add a permission** and choose **Microsoft Graph**. When choosen, select **Application permission** and search for directory. Add **Directory.ReadAll** as a permission.
+3. Click on **Add a permission** and choose **Microsoft Graph**. When chosen, select **Application permissions** and search for directory. Add **Directory.ReadAll** as a permission.
 
 ![](../.gitbook/assets/app-permission-graph.png)
 
 ![](../.gitbook/assets/app-permission-directory-read.png)
 
-4. Now click on **Add a permission** and choose **Intune**. When choosen, select **Application permission** and search for scepp. Add **scep\_challenge\_provider** as a permission.
+4. Now click on **Add a permission** and choose **Intune**. When chosen, select **Application permissions** and search for scep. Add **scep\_challenge\_provider** as a permission.
 
 ![](../.gitbook/assets/app-permission-intune.png)
 
