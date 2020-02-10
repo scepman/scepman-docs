@@ -14,6 +14,7 @@
   * [MacOS](configuration/06_certificate_deployment_macos.md)
   * [iOS](configuration/08_certificate_deployment_ios.md)
   * [Android](configuration/android.md)
+  * [Add a License Key](configuration/add-a-license-key.md)
 * [Troubleshooting](troubleshooting/README.md)
   * [FAQ](troubleshooting/faq.md)
   * [Troubleshooting Steps](troubleshooting/troubleshooting.md)
