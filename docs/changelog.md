@@ -5,9 +5,14 @@ order: 1
 
 # Changelog
 
+### 1.5 (Currently in beta)
+
+* Key Usage, Extended Key Usage, and validity period configured in the request (i.e. in Intune)
+* Improved performance when answering to certificate and OCSP requests
+
 ### 1.3
 
-* Support for user certificates  Authentication-Only user certificates \(VPN, Wifi, network\) in addition to device certificates.
+* Support for Authentication-Only user certificates \(VPN, Wifi, network\) in addition to device certificates.
 * Support for Intune blade certificate list
 
 ### 1.2
