@@ -1,7 +1,7 @@
 ---
-category: Deployment
+category: Deployment (Optional)
 title: GitHub Deployment
-order: 3
+order: 1
 ---
 
 # GitHub Deployment
