@@ -5,10 +5,15 @@ order: 1
 
 # Changelog
 
-### 1.5 (Currently in beta)
+### 1.5 \(Currently in beta\)
 
-* Key Usage, Extended Key Usage, and validity period configured in the request (i.e. in Intune)
+* Key Usage, Extended Key Usage, and validity period configured in the request \(i.e. in Intune\)
 * Improved performance when answering to certificate and OCSP requests
+
+### 1.4
+
+* Performance enhancements
+* Bug fixing
 
 ### 1.3
 
@@ -33,9 +38,7 @@ order: 1
 
 ### Currently in Research
 
-* More options from GraphAPI  
+* More options from GraphAPI
 
-  Use compliance state in addition to active device information.  
-
-
+  Use compliance state in addition to active device information.
 

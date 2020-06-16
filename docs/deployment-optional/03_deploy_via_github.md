@@ -22,11 +22,11 @@ You need your Client ID and your Client Secret before you can start the deployme
 
 Instead of using Azure Marketplace you can deploy SCEPman via Github. Click the following deploy button to start the deployment via GitHub:
 
- [![](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fglueckkanja%2Fgk-scepman%2Fmaster%2Fazuredeploy.json)
+[![](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fglueckkanja%2Fgk-scepman%2Fmaster%2Fazuredeploy.json)
 
 Next, you will see the following configuration menu:
 
-![](../.gitbook/assets/scepman_optional1.png)
+![](../.gitbook/assets/scepman_optional1%20%281%29.png)
 
 1. Select an existing resource group or create a new one \(SCEPman resources will be deployed in this group\)
 2. Set the location according to your location
@@ -46,10 +46,11 @@ To get continuous updates for SCEPman you can point a configuration variable to 
 4. Then, click **Configuration** \(submenu **Setting**\)
 5. Look for **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
 
-![](../.gitbook/assets/scepman_optional2.png)
+![](../.gitbook/assets/scepman_optional2%20%281%29.png)
 
-6. Then replace the URL with the SCEPman GitHub URL:   
-`https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip`
+1. Then replace the URL with the SCEPman GitHub URL:   
 
-![](../.gitbook/assets/scepman_optional3.png)
+   `https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip`
+
+![](../.gitbook/assets/scepman_optional3%20%281%29.png)
 
