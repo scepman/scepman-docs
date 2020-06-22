@@ -1,31 +1,37 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Configuration](configuration/README.md)
-  * [Windows 10](configuration/05_certificate_deployment_win10.md)
-  * [MacOS](configuration/06_certificate_deployment_macos.md)
-  * [iOS](configuration/08_certificate_deployment_ios.md)
-  * [Android](configuration/android.md)
-  * [Add a License Key](configuration/add-a-license-key.md)
-* [Troubleshooting](troubleshooting/README.md)
-  * [FAQ](troubleshooting/faq.md)
-  * [Troubleshooting Steps](troubleshooting/troubleshooting.md)
-  * [Important Links](troubleshooting/important-links.md)
-  * [Cisco ISE Host Header Limitation](troubleshooting/cisco-ise-host-header-limitation.md)
 * [Introduction](index.md)
-* [Changelog](changelog.md)
 
-## Setup <a id="setup-community"></a>
+## Setup
 
-* [1 - Azure App Registration](setup-community/01_azure_app_registration.md)
-* [2 - Deployment Options](setup-community/deployment-options/README.md)
-  * [2.1 - Test and Community](setup-community/deployment-options/02_azure_marketplace.md)
-  * [2.2 - Production](setup-community/deployment-options/03_deploy_via_github.md)
-* [3 - Custom Domain](setup-community/03_customdomain.md)
-* [4 - SCEPman Version](setup-community/scepman-version.md)
-* [Change channel](setup-community/change-channel.md)
+* [1 - Azure App Registration](setup/01_azure_app_registration.md)
+* [2 - Deployment Options](setup/deployment-options/README.md)
+  * [2.1 - Test and Community](setup/deployment-options/02_azure_marketplace.md)
+  * [2.2 - Production](setup/deployment-options/03_deploy_via_github.md)
+* [3 - Custom Domain](setup/03_customdomain.md)
+* [4 - SCEPman Version](setup/scepman-version.md)
+* [Change channel](setup/change-channel.md)
+* [Add a License Key](setup/add-a-license-key.md)
 
 ## Intune - Deployment
+
+---
+
+* [Windows 10](05_certificate_deployment_win10.md)
+* [MacOS](06_certificate_deployment_macos.md)
+* [iOS](08_certificate_deployment_ios.md)
+* [Android](android.md)
+
+## Other
+
+---
+
+* [FAQ](faq.md)
+* [Important Links](important-links.md)
+* [Troubleshooting Steps](troubleshooting-2.md)
+* [Cisco ISE Host Header Limitation](cisco-ise-host-header-limitation.md)
+* [Changelog](changelog.md)
 
 ## TBD
 

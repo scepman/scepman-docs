@@ -16,11 +16,11 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](../.gitbook/assets/scepman24%20%281%29%20%283%29.png)
+![](.gitbook/assets/scepman24%20%281%29%20%283%29.png)
 
 Then, create a profile in Microsoft Intune:
 
-![](../.gitbook/assets/scepman_ios1%20%281%29.png)
+![](.gitbook/assets/scepman_ios1%20%281%29.png)
 
 1. Download the CA Certificate
 2. Then, create a profile in Microsoft Intune
@@ -34,7 +34,7 @@ When you are done with it you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
 
-![](../.gitbook/assets/scepman27%20%281%29%20%283%29.png)
+![](.gitbook/assets/scepman27%20%281%29%20%283%29.png)
 
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)  
 \('xxx' is a placeholder\)
@@ -49,7 +49,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 6. Select **SCEP certificate** as **Profile type**
 7. Click **Settings**
 
-![](../.gitbook/assets/scepman_ios1_1.png)
+![](.gitbook/assets/scepman_ios1_1.png)
 
 1. Configure the **SCEP Certificate**
 
@@ -59,7 +59,7 @@ You can not configure all **SCEP Certificate** settings. This is because some se
 With our automatically set settings, we fulfill Apple's certificate requirements. For more details click [here](https://support.apple.com/en-us/HT210176).
 {% endhint %}
 
-![](../.gitbook/assets/scepman_ios2.png)
+![](.gitbook/assets/scepman_ios2.png)
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**
@@ -78,11 +78,11 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](../.gitbook/assets/scepman24%20%281%29.png)
+![](.gitbook/assets/scepman24%20%281%29.png)
 
 Then, create a profile in Microsoft Intune:
 
-![](../.gitbook/assets/scepman_ios1.png)
+![](.gitbook/assets/scepman_ios1.png)
 
 1. Download the CA Certificate
 2. Then, create a profile in Microsoft Intune
@@ -96,7 +96,7 @@ When you are done with it you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
 
-![](../.gitbook/assets/scepman27%20%281%29.png)
+![](.gitbook/assets/scepman27%20%281%29.png)
 
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)  
 _\*\*_\('xxx' is a placeholder\)
@@ -111,7 +111,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 6. Select **SCEP certificate** as **Profile type**
 7. Click **Settings**
 
-![](../.gitbook/assets/scepman_user_ios_1.png)
+![](.gitbook/assets/scepman_user_ios_1.png)
 
 1. Configure the **SCEP Certificate**
 
@@ -121,7 +121,7 @@ You can not configure all **SCEP Certificate** settings. This is because some se
 With our automatically set settings, we fulfill Apple's certificate requirements. For more details click [here](https://support.apple.com/en-us/HT210176).
 {% endhint %}
 
-![](../.gitbook/assets/scepman_user_ios_2.png)
+![](.gitbook/assets/scepman_user_ios_2.png)
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**

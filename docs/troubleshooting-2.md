@@ -24,13 +24,13 @@ This could happen when a wrong trusted root certificate was selected in the SCEP
 8. It contains a short error report
    * SCEP: Certificate enroll failed. Result \(The hash value is not correct.\).
 
-![](../.gitbook/assets/event32_1.png)
+![](.gitbook/assets/event32_1.png)
 
 ### SCEPman Azure Web App is not running
 
 Check if the Azure resource is up and running.
 
-![](../.gitbook/assets/event32_2.png)
+![](.gitbook/assets/event32_2.png)
 
 ### SCEPman has a configuration or internal problem
 
@@ -43,18 +43,18 @@ Check Azure Web App log files via **Advanced Tools**:
 
 Click on the download icon on the latest .txt file and review it
 
-![](../.gitbook/assets/event32_3.png)
+![](.gitbook/assets/event32_3.png)
 
-![](../.gitbook/assets/event32_4.png)
+![](.gitbook/assets/event32_4.png)
 
 ## Additional way of logging
 
 1. Configure the **App Services Logs**
 2. Check the **Log Stream** of the **App Service**.
 
-![](../.gitbook/assets/event32_5.png)
+![](.gitbook/assets/event32_5.png)
 
-![](../.gitbook/assets/event32_6.png)
+![](.gitbook/assets/event32_6.png)
 
 1. Monitor the log stream
 2. Reproduce the error
@@ -69,7 +69,7 @@ This is just a problem before version 1.2
 
 If the device certificate has a localhost URL for the OCSP entry in the certificate like this:
 
-![](../.gitbook/assets/event32_7.png)
+![](.gitbook/assets/event32_7.png)
 
 The App Service is missing an important application setting with the name **AppConfig:BaseUrl** set to the azurewebsite URL. To fix this, add the variable and save the App Service config:
 
@@ -80,7 +80,7 @@ https://scepman-XXXXX.azurewebsites.net
 
 Delete this certificate from the device and do the MDM sync. If you did it you will see a proper URL for the OCSP entry:
 
-![](../.gitbook/assets/event32_8.png)
+![](.gitbook/assets/event32_8.png)
 
 ## Revocation of a Certificate
 
@@ -92,7 +92,7 @@ certutil -verifyStore MY
 
 Look at the certificate with the device ID issued by the SCEPman-Device-Root-CA-V1 and verify if the certificate is valid \(see last line\).
 
-![](../.gitbook/assets/scepman_revocation1.png)
+![](.gitbook/assets/scepman_revocation1.png)
 
 To verify that the OCSP responder is working, you can look at the OCSP url cache with the following command:
 
@@ -100,7 +100,7 @@ To verify that the OCSP responder is working, you can look at the OCSP url cache
 certutil -urlcache OCSP
 ```
 
-![](../.gitbook/assets/scepman_revocation2.png)
+![](.gitbook/assets/scepman_revocation2.png)
 
 If you want to revoke a device certificate, you have two options:
 
@@ -121,7 +121,7 @@ certutil -verifyStore MY
 
 As you can see in the last line, the **Certificate is REVOKED**
 
-![](../.gitbook/assets/scepman_revocation3.png)
+![](.gitbook/assets/scepman_revocation3.png)
 
 When you enable the device in Azure AD again and you type in the command from above again, the certificate should be marked as valid.
 
@@ -135,7 +135,7 @@ As an alternate you can export the device certificate and use `certutil` to disp
 certutil -url <path-to-exported-device-certificate>
 ```
 
-![](../.gitbook/assets/scepman_revocation4.png)
+![](.gitbook/assets/scepman_revocation4.png)
 
 ### My SCEP configuration profile shows pending and is not applied
 
@@ -145,7 +145,7 @@ The SCEP configuration profile depends on the Trusted Root certificate profile. 
 
 Cisco ISE is still not supporting HTTP 1.1 when looking up OCSP and therefore can't connect to a general SCEPman instance running on Azure App Services. The error message may look like this:
 
-![](../.gitbook/assets/cisco-ocsp-error.jpg)
+![](.gitbook/assets/cisco-ocsp-error.jpg)
 
 Please see [here](cisco-ise-host-header-limitation.md) for a solution.
 
