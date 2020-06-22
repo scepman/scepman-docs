@@ -1,2 +1,2 @@
-# 2 - Deployment Options
+# 2\) Deployment Options
 

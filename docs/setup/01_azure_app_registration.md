@@ -4,7 +4,7 @@ title: Azure App Registration
 order: 1
 ---
 
-# 1 - Azure App Registration
+# 1\) Azure App Registration
 
 SCEPman needs to interact with your Azure Active Directory and Intune endpoints to provide the certificate and OCSP validation of users and devices. To provide the necessary permissions to SCEPman you need to create an App Registration within your tenant.
 

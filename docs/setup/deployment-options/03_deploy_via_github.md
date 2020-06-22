@@ -5,7 +5,7 @@ order: 1
 description: GitHub Deployment
 ---
 
-# 2.2 - Production
+# 2.2\) - Production
 
 {% hint style="warning" %}
 This deployment only works for purchased Enterprise versions and is recommended for production environments.

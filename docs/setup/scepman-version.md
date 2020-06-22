@@ -1,2 +1,2 @@
-# 4 - SCEPman Version
+# 4\) SCEPman Version
 
