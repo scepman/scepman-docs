@@ -8,7 +8,11 @@ description: GitHub Deployment
 # 2.2\) - Production
 
 {% hint style="warning" %}
-This deployment only works for purchased Enterprise versions and is recommended for production environments.
+SCEPman Enterprise Edition only
+{% endhint %}
+
+{% hint style="success" %}
+Recommended for production
 {% endhint %}
 
 This article will show you how you can deploy SCEPman via GitHub. But why should you do this?  

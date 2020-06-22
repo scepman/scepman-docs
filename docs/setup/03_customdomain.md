@@ -10,7 +10,7 @@ order: 1
 SCEPman Enterprise Edition only
 {% endhint %}
 
-## Custom Domain Configuration \(optional\)
+## Custom Domain Configuration
 
 If you want to create your own custom domain for your web app URL, follow these steps:
 
