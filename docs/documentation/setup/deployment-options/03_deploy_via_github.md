@@ -5,7 +5,7 @@ order: 1
 description: GitHub Deployment
 ---
 
-# 2.2\) - Production
+# Production
 
 {% hint style="warning" %}
 SCEPman Enterprise Edition only

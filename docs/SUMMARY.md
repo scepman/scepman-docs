@@ -6,11 +6,11 @@
 ## Documentation
 
 * [Setup](documentation/setup/README.md)
-  * [1\) Azure App Registration](documentation/setup/01_azure_app_registration.md)
-  * [2\) Deployment Options](documentation/setup/deployment-options/README.md)
-    * [2.1\) - Test and Community](documentation/setup/deployment-options/02_azure_marketplace.md)
-    * [2.2\) - Production](documentation/setup/deployment-options/03_deploy_via_github.md)
-  * [3\) Custom Domain](documentation/setup/03_customdomain.md)
+  * [Azure App Registration](documentation/setup/01_azure_app_registration.md)
+  * [Deployment Options](documentation/setup/deployment-options/README.md)
+    * [Test / Community](documentation/setup/deployment-options/02_azure_marketplace.md)
+    * [Production](documentation/setup/deployment-options/03_deploy_via_github.md)
+  * [Custom Domain](documentation/setup/03_customdomain.md)
   * [Optional](documentation/setup/optional/README.md)
     * [Add a License Key](documentation/setup/optional/add-a-license-key.md)
     * [Application Resources](documentation/setup/optional/change-channel.md)
