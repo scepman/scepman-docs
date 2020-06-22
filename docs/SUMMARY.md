@@ -15,7 +15,7 @@
     * [Add a License Key](documentation/setup/optional/add-a-license-key.md)
     * [Application Resources](documentation/setup/optional/change-channel.md)
     * [Geo-redundancy](documentation/setup/optional/04_load_balancer_deployment.md)
-* [Intune - Deployment](documentation/intune-deployment/README.md)
+* [Certificate Deployment](documentation/intune-deployment/README.md)
   * [Windows 10](documentation/intune-deployment/05_certificate_deployment_win10.md)
   * [MacOS](documentation/intune-deployment/06_certificate_deployment_macos.md)
   * [iOS](documentation/intune-deployment/08_certificate_deployment_ios.md)
