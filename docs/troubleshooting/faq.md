@@ -21,5 +21,3 @@ Its not possible out-of-the-box at the moment. But on this page you cannot find 
 
 What you can do is changing the path mapping in your web application. If you only want to hide the status page this would be an option.
 
-
-

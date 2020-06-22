@@ -1,4 +1,4 @@
 # Welcome
 
-vNext Docu SCEPman.
-By Gerrit Reinke
+vNext Docu SCEPman. By Gerrit Reinke
+

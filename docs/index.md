@@ -19,10 +19,10 @@ SCEP is originally developed by Cisco. The core mission of SCEP is the deploymen
 If you use SCEP in a 'traditional way' you need an amount of on-premises components. Microsoft Intune [allows third-party certificate authorities \(CA\)](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview) to issue and validate certificates using SCEP. SCEPman is a slim and resource-friendly solution. **It is an Azure Web App providing the SCEP protocol and works directly with the Intune API.** SCEPman uses an Azure Key Vault based Root CA and certificate creation. No other component is involved, neither a database nor any other stateful storage except the Azure Key Vault itself. That said, SCEPman **will not need any backup procedures** or other operation level tasks. Only an Azure subscription is necessary to deploy it.
 
 {% hint style="info" %}
-**Warning**  
-  
-SCEPman is intended to use for authentication and transport encryption certificates. That said, you can deploy user and device certificates used for network authentication, WiFi, VPN, RADIUS and similar services.  
-  
+**Warning**
+
+SCEPman is intended to use for authentication and transport encryption certificates. That said, you can deploy user and device certificates used for network authentication, WiFi, VPN, RADIUS and similar services.
+
 Do not use SCEPman for email-encryption or digital signatures \(without a separate technology for key management\). The nature of the SCEP protocol does not include a mechanism to backup or archive private key material. If you would use SCEP for email-encryption or digital signatures you may lose the keys to decrypt or verify at a later time.
 {% endhint %}
 
@@ -69,8 +69,8 @@ SCEPman EE offers all services and all features. If you need enterprise-class fe
 
 ### SCEPman Community Edition \(SCEPman CE\)
 
-If you are a tech enthusiast with the ability to self-support, our Community Edition products are freely available and offer powerful capabilities for a non-critical business process or content needs. The only technical difference between SCEPman CE and SCEPman EE is that SCEPman CE **does not support redundancy through Azure Traffic Manager** \(no support for Azure WebApp custom domains\).  
-  
+If you are a tech enthusiast with the ability to self-support, our Community Edition products are freely available and offer powerful capabilities for a non-critical business process or content needs. The only technical difference between SCEPman CE and SCEPman EE is that SCEPman CE **does not support redundancy through Azure Traffic Manager** \(no support for Azure WebApp custom domains\).
+
 If you want to test SCEPman CE in your own environment you can use the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/gluckkanja.scepman) and install SCEPman CE directly into your lab or production subscription. When you later decide to buy SCEPman EE you will receive a license key that [you can add to your already installed instance](configuration/add-a-license-key.md).
 
 {% hint style="warning" %}

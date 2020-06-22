@@ -22,7 +22,6 @@ This could happen when a wrong trusted root certificate was selected in the SCEP
 6. In the window which will appear, click **Admin**
 7. Scroll through the list an search for event ID **32**
 8. It contains a short error report
-
    * SCEP: Certificate enroll failed. Result \(The hash value is not correct.\).
 
 ![](../.gitbook/assets/event32_1.png)

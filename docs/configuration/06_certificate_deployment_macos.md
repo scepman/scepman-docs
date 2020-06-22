@@ -20,7 +20,7 @@ Download the CA certificate:
 
 Then, create a profile in Microsoft Intune:
 
-![](../.gitbook/assets/scepman_macos1.png)
+![](../.gitbook/assets/scepman_macos1%20%281%29.png)
 
 1. Enter a **Name**
 2. As **Platform** select **macOS**
@@ -50,7 +50,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 
 ![](../.gitbook/assets/scepman_macos1_1.png)
 
-8. Configure the **SCEP Certificate**
+1. Configure the **SCEP Certificate**
 
 {% hint style="warning" %}
 You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically to set by SCEPman \(for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below\). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to fixed a 6 month currently. The red rectangle is a setting that is free to modify. Long term all settings will be supported for configuration. **There is a dependency on the {{AAD\_Device\_ID} in the subject name, which is used as a seed for the certificate serial number generation. Therefore the subject name must include**.
@@ -96,10 +96,8 @@ Now, you have to create a SCEP certificate profile to deploy the device certific
 
 ![](../.gitbook/assets/scepman27%20%281%29.png)
 
-
-
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)  
-****\('xxx' is a placeholder\)
+_\*\*_\('xxx' is a placeholder\)
 
 Next, to finally deploy the device certificates you have to create a SCEP certificate profile in Intune:
 
@@ -113,7 +111,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 
 ![](../.gitbook/assets/scepman_user_mac_1.png)
 
-8. Configure the **SCEP Certificate**
+1. Configure the **SCEP Certificate**
 
 {% hint style="warning" %}
 You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman \(for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below\). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to fixed a 6 month currently. The red rectangle is a settings that is free to modify. Long term all settings will be supported for configuration. **The setting for 'Subject name format' is freely selectable. For Subject alternative name we recommend to set 'User principal name \(UPN\)'.**
@@ -131,6 +129,4 @@ When all its done, you have the following two certificate configurations:
 
 * SCEPman - SCEP user certificate
 * SCEPman - Trusted root certificate
-
-
 

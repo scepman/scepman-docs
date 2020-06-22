@@ -7,17 +7,21 @@ order: 1
 # GitHub Deployment
 
 {% hint style="warning" %}
-This is an alternative approach to Azure Marketplace Deployment
+This is an alternative approach to Azure Marketplace Deployment  
+We recommend this for production Enterprise deployments!
 {% endhint %}
 
-## SCEPman Deployment via GitHub \(optional\)
+## SCEPman Deployment via GitHub
 
-This article will show you how you can deploy SCEPman via GitHub. But why should you do this? If you are a tech enthusiast with the ability to self-support and you want to note topics and issues \(without guarantee for an answer or direct troubleshooting or fixing\) the GitHub deployment is just right for you.
+This article will show you how you can deploy SCEPman via GitHub. But why should you do this?  
+Via the GitHub deployment you have full controll of the ressource naming. 
 
 ## Start the Deployment
 
 {% hint style="info" %}
 You need your Client ID and your Client Secret before you can start the deployment.
+
+See [Azure App Registration](../deployment/01_azure_app_registration.md)
 {% endhint %}
 
 Instead of using Azure Marketplace you can deploy SCEPman via Github. Click the following deploy button to start the deployment via GitHub:
@@ -36,7 +40,7 @@ Next, you will see the following configuration menu:
 6. Then, click **I agree to the terms...**
 7. Finally, click **Purchase**
 
-When you did it you need to create a [custom domain](03_customdomain.md).
+When you did it you need to create a [custom domain](../deployment/03_customdomain.md).
 
 To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/glueckkanja/gk-scepman) of SCEPman. During every restart, the Azure Web App will do a check and a copy deployment if necessary. To configure this do the following:
 
@@ -48,7 +52,7 @@ To get continuous updates for SCEPman you can point a configuration variable to 
 
 ![](../.gitbook/assets/scepman_optional2%20%281%29.png)
 
-1. Then replace the URL with the SCEPman GitHub URL:   
+1. Then replace the URL with the SCEPman GitHub URL:
 
    `https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip`
 
