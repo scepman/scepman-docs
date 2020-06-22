@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Optional](deployment-optional.md)
 * [Configuration](configuration/README.md)
   * [Windows 10](configuration/05_certificate_deployment_win10.md)
   * [MacOS](configuration/06_certificate_deployment_macos.md)
@@ -13,11 +12,6 @@
   * [Troubleshooting Steps](troubleshooting/troubleshooting.md)
   * [Important Links](troubleshooting/important-links.md)
   * [Cisco ISE Host Header Limitation](troubleshooting/cisco-ise-host-header-limitation.md)
-
-## First Steps
-
----
-
 * [Introduction](index.md)
 * [Changelog](changelog.md)
 
@@ -25,17 +19,20 @@
 
 ---
 
-* [Deployment](deployment/README.md)
-  * [Azure App Registration](deployment/01_azure_app_registration.md)
-  * [Azure Marketplace Deployment](deployment/02_azure_marketplace.md)
-  * [Custom Domain](deployment/03_customdomain.md)
+* [Azure Setup](azure-deployment/README.md)
+  * [Azure App Registration](azure-deployment/01_azure_app_registration.md)
+  * [Deployment Options](azure-deployment/deployment-options/README.md)
+    * [Test and Community](azure-deployment/deployment-options/02_azure_marketplace.md)
+    * [Production](azure-deployment/deployment-options/03_deploy_via_github.md)
+  * [Custom Domain](azure-deployment/03_customdomain.md)
+  * [SCEPman Version](azure-deployment/scepman-version/README.md)
+    * [Change channel](azure-deployment/scepman-version/change-channel.md)
 
-## Setup - Ready for Production <a id="setup-enterprise"></a>
+## Intune - Deployment
 
 ---
 
-* [Deployment](deployment-1/README.md)
-  * [GitHub Deployment](deployment-1/03_deploy_via_github.md)
+* [Azure Deployment](azure-deployment-prd.md)
 
 ## TBD
 
