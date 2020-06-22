@@ -9,8 +9,9 @@
     * [2.2 - Production](setup/deployment-options/03_deploy_via_github.md)
   * [3 - Custom Domain](setup/03_customdomain.md)
   * [4 - SCEPman Version](setup/scepman-version.md)
-  * [Change channel](setup/change-channel.md)
-  * [Add a License Key](setup/add-a-license-key.md)
+  * [Optional](setup/optional/README.md)
+    * [Add a License Key](setup/optional/add-a-license-key.md)
+    * [Change channel](setup/optional/change-channel.md)
 * [Intune - Deployment](intune-deployment/README.md)
   * [Windows 10](intune-deployment/05_certificate_deployment_win10.md)
   * [MacOS](intune-deployment/06_certificate_deployment_macos.md)
@@ -19,13 +20,11 @@
 
 ## Other
 
----
-
-* [FAQ](faq.md)
-* [Important Links](important-links.md)
-* [Troubleshooting Steps](troubleshooting-2.md)
-* [Cisco ISE Host Header Limitation](cisco-ise-host-header-limitation.md)
-* [Changelog](changelog.md)
+* [FAQ](other/faq.md)
+* [Important Links](other/important-links.md)
+* [Troubleshooting Steps](other/troubleshooting-steps/README.md)
+  * [Cisco ISE Host Header Limitation](other/troubleshooting-steps/cisco-ise-host-header-limitation.md)
+* [Changelog](other/changelog.md)
 
 ## TBD
 
