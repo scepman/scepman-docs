@@ -4,7 +4,7 @@ title: Troubleshooting Steps
 order: 1
 ---
 
-# Troubleshooting Steps
+# Troubleshooting
 
 ## Trusted Root Certificate is deployed but my Device Certificate via SCEP Profile results in an Error
 

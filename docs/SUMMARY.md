@@ -2,30 +2,30 @@
 
 * [Welcome](README.md)
 * [Introduction](index.md)
-* [Setup](setup/README.md)
-  * [1\) Azure App Registration](setup/01_azure_app_registration.md)
-  * [2\) Deployment Options](setup/deployment-options/README.md)
-    * [2.1\) - Test and Community](setup/deployment-options/02_azure_marketplace.md)
-    * [2.2\) - Production](setup/deployment-options/03_deploy_via_github.md)
-  * [3\) Custom Domain](setup/03_customdomain.md)
-  * [Optional](setup/optional/README.md)
-    * [Add a License Key](setup/optional/add-a-license-key.md)
-    * [Change channel](setup/optional/change-channel.md)
-* [Intune - Deployment](intune-deployment/README.md)
-  * [Windows 10](intune-deployment/05_certificate_deployment_win10.md)
-  * [MacOS](intune-deployment/06_certificate_deployment_macos.md)
-  * [iOS](intune-deployment/08_certificate_deployment_ios.md)
-  * [Android](intune-deployment/android.md)
+
+## Documentation
+
+* [Setup](documentation/setup/README.md)
+  * [1\) Azure App Registration](documentation/setup/01_azure_app_registration.md)
+  * [2\) Deployment Options](documentation/setup/deployment-options/README.md)
+    * [2.1\) - Test and Community](documentation/setup/deployment-options/02_azure_marketplace.md)
+    * [2.2\) - Production](documentation/setup/deployment-options/03_deploy_via_github.md)
+  * [3\) Custom Domain](documentation/setup/03_customdomain.md)
+  * [Optional](documentation/setup/optional/README.md)
+    * [Add a License Key](documentation/setup/optional/add-a-license-key.md)
+    * [Application Resources](documentation/setup/optional/change-channel.md)
+    * [Geo-redundancy](documentation/setup/optional/04_load_balancer_deployment.md)
+* [Intune - Deployment](documentation/intune-deployment/README.md)
+  * [Windows 10](documentation/intune-deployment/05_certificate_deployment_win10.md)
+  * [MacOS](documentation/intune-deployment/06_certificate_deployment_macos.md)
+  * [iOS](documentation/intune-deployment/08_certificate_deployment_ios.md)
+  * [Android](documentation/intune-deployment/android.md)
+* [Troubleshooting](documentation/troubleshooting/README.md)
+  * [Cisco ISE Host Header Limitation](documentation/troubleshooting/cisco-ise-host-header-limitation.md)
 
 ## Other
 
 * [FAQ](other/faq.md)
-* [Important Links](other/important-links.md)
-* [Troubleshooting Steps](other/troubleshooting-steps/README.md)
-  * [Cisco ISE Host Header Limitation](other/troubleshooting-steps/cisco-ise-host-header-limitation.md)
 * [Changelog](other/changelog.md)
-
-## TBD
-
-* [High Availability Scenario](tbd/04_load_balancer_deployment.md)
+* [Important Links](other/important-links.md)
 
