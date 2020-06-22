@@ -20,7 +20,20 @@ To get continuous updates for SCEPman you can point a configuration variable to 
 
 We offer three channels for our SCEPman application. For Production use please choose the "Production" channel!  
   
-With the Beta channel you can test the development
+Production  
+- full released version  
+- function and load-tested  
+- bugs not expected  
+  
+Beta  
+- next production release  
+- function tested, but no load-test  
+- bugs possible  
+  
+Intern  
+- ongoing development  
+- limited function tested, but no load-test  
+- bugs expected
 
 {% tabs %}
 {% tab title="Production" %}
