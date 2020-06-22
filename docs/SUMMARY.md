@@ -3,6 +3,11 @@
 * [Welcome](README.md)
 * [Introduction](index.md)
 
+## Get Started
+
+* [Community Guide](get-started/community-guide.md)
+* [Enterprise Guide](get-started/enterprise-guide.md)
+
 ## Documentation
 
 * [Setup](documentation/setup/README.md)
