@@ -4,7 +4,7 @@ title: Custom Domain
 order: 1
 ---
 
-# Custom Domain
+# 3 - Custom Domain
 
 {% hint style="warning" %}
 SCEPman Enterprise Edition only

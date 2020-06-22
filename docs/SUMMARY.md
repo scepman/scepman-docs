@@ -17,26 +17,17 @@
 
 ## Setup <a id="setup-community"></a>
 
----
-
-* [Azure Setup](azure-deployment/README.md)
-  * [Azure App Registration](azure-deployment/01_azure_app_registration.md)
-  * [Deployment Options](azure-deployment/deployment-options/README.md)
-    * [Test and Community](azure-deployment/deployment-options/02_azure_marketplace.md)
-    * [Production](azure-deployment/deployment-options/03_deploy_via_github.md)
-  * [Custom Domain](azure-deployment/03_customdomain.md)
-  * [SCEPman Version](azure-deployment/scepman-version/README.md)
-    * [Change channel](azure-deployment/scepman-version/change-channel.md)
+* [1 - Azure App Registration](setup-community/01_azure_app_registration.md)
+* [2 - Deployment Options](setup-community/deployment-options/README.md)
+  * [2.1 - Test and Community](setup-community/deployment-options/02_azure_marketplace.md)
+  * [2.2 - Production](setup-community/deployment-options/03_deploy_via_github.md)
+* [3 - Custom Domain](setup-community/03_customdomain.md)
+* [4 - SCEPman Version](setup-community/scepman-version/README.md)
+  * [Change channel](setup-community/scepman-version/change-channel.md)
 
 ## Intune - Deployment
 
----
-
-* [Azure Deployment](azure-deployment-prd.md)
-
 ## TBD
 
----
-
-* [High Availability Scenario](04_load_balancer_deployment.md)
+* [High Availability Scenario](tbd/04_load_balancer_deployment.md)
 

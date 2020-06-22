@@ -5,16 +5,14 @@ order: 1
 description: GitHub Deployment
 ---
 
-# Production
-
-
+# 2.2 - Production
 
 {% hint style="warning" %}
 This deployment only works for purchased Enterprise versions and is recommended for production environments.
 {% endhint %}
 
 This article will show you how you can deploy SCEPman via GitHub. But why should you do this?  
-Via the GitHub deployment you have full controll of the ressource naming. 
+Via the GitHub deployment you have full controll of the ressource naming.
 
 ## Start the Deployment
 
@@ -28,7 +26,7 @@ Click the following deploy button to start the deployment via GitHub:
 
 Next, you will see the following configuration menu:
 
-![](../../.gitbook/assets/scepman_optional1%20%281%29.png)
+![](../../.gitbook/assets/scepman_optional1%20%281%29%20%281%29.png)
 
 1. Select an existing resource group or create a new one \(SCEPman resources will be deployed in this group\)
 2. Set the location according to your location
@@ -39,3 +37,4 @@ Next, you will see the following configuration menu:
 7. Finally, click **Purchase**
 
 When you did it you need to create a [custom domain](../03_customdomain.md).
+
