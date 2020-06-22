@@ -8,7 +8,6 @@
     * [2.1\) - Test and Community](setup/deployment-options/02_azure_marketplace.md)
     * [2.2\) - Production](setup/deployment-options/03_deploy_via_github.md)
   * [3\) Custom Domain](setup/03_customdomain.md)
-  * [4\) SCEPman Version](setup/scepman-version.md)
   * [Optional](setup/optional/README.md)
     * [Add a License Key](setup/optional/add-a-license-key.md)
     * [Change channel](setup/optional/change-channel.md)
