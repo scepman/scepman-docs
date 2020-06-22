@@ -22,8 +22,8 @@
   * [2.1 - Test and Community](setup-community/deployment-options/02_azure_marketplace.md)
   * [2.2 - Production](setup-community/deployment-options/03_deploy_via_github.md)
 * [3 - Custom Domain](setup-community/03_customdomain.md)
-* [4 - SCEPman Version](setup-community/scepman-version/README.md)
-  * [Change channel](setup-community/scepman-version/change-channel.md)
+* [4 - SCEPman Version](setup-community/scepman-version.md)
+* [Change channel](setup-community/change-channel.md)
 
 ## Intune - Deployment
 
