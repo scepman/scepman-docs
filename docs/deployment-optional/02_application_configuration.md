@@ -1,6 +1,6 @@
 ---
 category: Deployment (Optional)
-title: Windows 10
+title: Application Configuration
 order: 2
 ---
 
