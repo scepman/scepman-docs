@@ -5,7 +5,7 @@ order: 1
 
 # Changelog
 
-### 1.5 \(Currently in beta\)
+### 1.5
 
 * Key Usage, Extended Key Usage, and validity period configured in the request \(i.e. in Intune\)
 * Improved performance when answering to certificate and OCSP requests
