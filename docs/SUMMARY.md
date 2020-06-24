@@ -6,6 +6,7 @@
   * [Azure App Registration](deployment/01_azure_app_registration.md)
   * [Azure Marketplace Deployment](deployment/02_azure_marketplace.md)
 * [Optional](deployment-optional/README.md)
+  * [Application Configuration](deployment-optional/02_application_configuration.md)
   * [GitHub Deployment](deployment-optional/03_deploy_via_github.md)
   * [Custom Domain](deployment-optional/03_customdomain.md)
   * [High Availability Scenario](deployment-optional/04_load_balancer_deployment.md)
