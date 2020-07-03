@@ -4,7 +4,7 @@
 
 Yes, but SCEP needs the “key encipherment” and “certificate signing” as key usage. If your existing PKI cannot create such a certificate it will not work. Our recommendation is that you create a SCEPman instance and test this scenario.
 
-To use such a intermediate root just switch the certificate in the Azure Key Vault and update two application settings in your app service.
+To use such an intermediate root just switch the certificate in the Azure Key Vault and update two application settings in your app service.
 
 ```text
 AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName
