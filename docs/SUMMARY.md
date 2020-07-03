@@ -30,7 +30,7 @@
 
 ## Other
 
-* [FAQ](other/faq.md)
+* [FAQ](https://glueckkanja.zendesk.com/hc/en-us/sections/360002363340-FAQ)
 * [Changelog](other/changelog.md)
 * [Important Links](other/important-links.md)
 
