@@ -19,5 +19,5 @@ To access the SCEP endpoint no authentication is required. But any request to th
 
 Its not possible out-of-the-box at the moment. But on this page you cannot find any sensitive information, that’s why it can be accessed anonymously. The SCEPman endpoint needs to be accessible without authentication on port 80 and 443 for the SCEP and OCSP handling. The same port is used to access the status page.
 
-What you can do is changing the path mapping in your web application. If you only want to hide the status page this would be an option.
+What you can do is changing the path mapping in your web application. If you only want to hide the status page this would be an option. 
 
