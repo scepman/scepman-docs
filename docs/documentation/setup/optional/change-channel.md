@@ -32,7 +32,7 @@ Beta
   
 Intern  
 - ongoing development  
-- limited function tested, but no load-test  
+- limited function tested and no load-test  
 - bugs expected
 
 {% tabs %}
