@@ -41,6 +41,8 @@ False: Key Usage is always Key Encipherment + Digital Signature. Extended Key Us
 
 The maximum number of days that an issued certificate is valid. Defaults to 200 days if not configured.
 
+You can configure shorter validity periods in each SCEP profile in Intune as described in the [Microsoft documentation](https://docs.microsoft.com/en-us/mem/intune/protect/certificates-scep-configure#modify-the-validity-period-of-the-certificate-template). Note however, that Intune does not support this feature on iOS and macOS platforms.
+
 #### AppConfig:LicenseKey
 
 See [Add a License Key](../configuration/add-a-license-key).
