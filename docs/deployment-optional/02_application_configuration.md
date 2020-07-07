@@ -35,6 +35,8 @@ You can use this URL to switch to another deployment channel.
 True: The MDM defines the Key Usage and Extended Key Usage extensions in the certificates.
 False: Key Usage is always Key Encipherment + Digital Signature. Extended Key Usage is always *Client Authentication*.
 
+Note that iOS devices do not support customized Extended Key Usages. Their certificates will always have *Client Authentication* as Extended Key Usage.
+
 #### AppConfig:RemoteDebug
 
 #### AppConfig:ValidityPeriodDays (v1.5 and above)
