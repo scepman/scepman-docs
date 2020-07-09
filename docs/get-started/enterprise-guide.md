@@ -73,7 +73,7 @@ All these resources are recommended but not needed for a production environment.
     <tr>
       <td style="text-align:left">Log Analytics workspace</td>
       <td style="text-align:left">
-        <p>A centralized and cloud based log storage. The &quot;App Service&quot;
+        <p>A centralized and cloud-based log storage. The &quot;App Service&quot;
           will save all</p>
         <p>platform logs and metrics into this workspace.</p>
       </td>
@@ -90,7 +90,9 @@ Please follow this setup instructions: [Azure App Registration](../documentation
 
 To start with the deployment, you need to follow our Setup instruction: [Enterprise deployment](../documentation/setup/deployment-options/enterprise-deployment.md)
 
+### Step 3: Configure a Custom Domain
 
+To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.**
 
 ### 
 
