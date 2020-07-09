@@ -63,9 +63,12 @@ Follow this instruction to create a storage account:
 
 ## Change Artifacts
 
-To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/glueckkanja/gk-scepman) of SCEPman. During every restart, the Azure Web App will do a check and a copy deployment if necessary.   
+To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/glueckkanja/gk-scepman) of SCEPman. During every restart, the Azure Web App will do a check and a copy deployment if necessary. 
+
+{% hint style="info" %}
 If you want to have more control about the updates you can use your own location.   
 \(See [Application Resources](application-artifacts.md#custom-artifact-location)\)
+{% endhint %}
 
 To configure this, do the following:
 
@@ -77,7 +80,7 @@ To configure this, do the following:
 
 ![](../../../.gitbook/assets/scepman_optional2%20%281%29%20%281%29.png)
 
-1. Then replace the URL with the SCEPman GitHub URL:
+1. Then replace the URL with the SCEPman GitHub URL or your Storage account blob URL:
 
 ![](../../../.gitbook/assets/scepman_optional3%20%281%29%20%281%29.png)
 
