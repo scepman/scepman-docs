@@ -21,6 +21,7 @@
     * [Application Artifacts](documentation/setup/optional/application-artifacts.md)
     * [Geo-redundancy](documentation/setup/optional/04_load_balancer_deployment.md)
     * [Application Settings](documentation/setup/optional/appconfig.md)
+    * [App Service logging](documentation/setup/optional/app-service-logging.md)
 * [Certificate Deployment](documentation/intune-deployment/README.md)
   * [Windows 10](documentation/intune-deployment/05_certificate_deployment_win10.md)
   * [MacOS](documentation/intune-deployment/06_certificate_deployment_macos.md)
