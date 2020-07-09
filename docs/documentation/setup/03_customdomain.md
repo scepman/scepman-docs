@@ -6,10 +6,6 @@ order: 1
 
 # Custom Domain
 
-{% hint style="warning" %}
-SCEPman Enterprise Edition only
-{% endhint %}
-
 ## Custom Domain Configuration
 
 If you want to create your own custom domain for your **App Service** URL, follow these steps:
