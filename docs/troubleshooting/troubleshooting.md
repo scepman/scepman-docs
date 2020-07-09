@@ -6,6 +6,12 @@ order: 1
 
 # Troubleshooting Steps
 
+## I deployed SCEPman from GitHub and it used to work, but now the Web App does not start anymore
+
+If the error is '503 Cannot download ZIP', then the web app cannot download the ZIP with the application binaries from the URL configured in the app setting WEBSITE_RUN_FROM_PACKAGE (see [Application Configuration](../deployment-optional/02_application_configuration)).
+
+The URL https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip that we had recommended for GitHub deployments in earlier versions of this documentation redirects to the URL https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts.zip. Microsoft changed the behavior of some of their Web Apps and now some versions do not support redirects together with WEBSITE_RUN_FROM_PACKAGE. Hence, you need to change the URL to `https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts.zip`.
+
 ## Trusted Root Certificate is deployed but my Device Certificate via SCEP Profile results in an Error
 
 The SCEP profile will result in an error if the certificate deployment was not successful. Errors can have several reasons:

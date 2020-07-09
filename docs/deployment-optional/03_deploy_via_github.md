@@ -50,7 +50,7 @@ To get continuous updates for SCEPman you can point a configuration variable to 
 
 1. Then replace the URL with the SCEPman GitHub URL:   
 
-   `https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip`
+   `https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts.zip`
 
 ![](../.gitbook/assets/scepman_optional3%20%281%29.png)
 
