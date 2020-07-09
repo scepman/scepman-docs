@@ -26,7 +26,11 @@ To have full control about the update process and what artifacts loaded by your 
 
 Follow this instruction to create a storage account:
 
-
+| Steps | Images |
+| :--- | :--- |
+| Start at your **Resource group** where you have deployed SCEPman and click **+ Add** |  |
+| Search for **storage account** in the Marketplace search bar and click on **Storage account - blob, file, table, queue** |  |
+| Your Subscription and resource group are pre-selected and you can start with defining **Storage account name, Location Performance, Account kind, Replication and Access tier** |  ![](../../../.gitbook/assets/image.png)  |
 
 ## Available Channels
 
