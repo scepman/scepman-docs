@@ -8,7 +8,7 @@ If you want to make a test deployment or want to use the Community Edition \(SCE
 
 ## Azure Deployment
 
-Let´s start with the deployment of your Azure resources.  
+Let´s start with the requirements and a resource overview.  
 Keep in mind that you need to plan a useful Azure resource design.
 
 ### Checklist pre-requirements
@@ -81,6 +81,8 @@ All these resources are recommended but not needed for a production environment.
   </tbody>
 </table>
 
+## Configuration Steps
+
 ### Step 1: Azure App Registration
 
 Before we can start the resource deployment, we need to create an "Azure App Registration".  
@@ -94,11 +96,24 @@ To start with the deployment, you need to follow our Setup instruction: [Enterpr
 
 To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.** Follow this instruction to configure the Custom Domain and SSL certificate configuration: [Custom Domain](../documentation/setup/03_customdomain.md)
 
-Step x: Deploy Storage Account and change Artifacts
+### Step 4: Deploy Storage Account and change Artifacts
+
+The next step is to configure the Storage account and change the Artifact location in your App Service.  
+Follow this instruction to do this: [Application Artifacts](../documentation/setup/optional/application-artifacts.md)
+
+{% hint style="info" %}
+Not worth to mention, but we recommend the production channel.
+{% endhint %}
+
+### Step 5: Configure App Service logs
+
+### Step 6: Configure Diagnostic settings
+
+### Step 7: Deploy Application Insights
 
 
 
-### Step x: Deploy Application Insights
+
 
 
 
