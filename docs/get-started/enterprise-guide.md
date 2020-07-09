@@ -107,6 +107,13 @@ Not worth to mention, but we recommend the production channel.
 
 ### Step 5: Configure App Service logs
 
+To retain your log files for later use or support purpose you can configure the **App Service logging**.  
+Follow this instruction to do this: [App Service logging](../documentation/setup/optional/app-service-logging.md)
+
+{% hint style="info" %}
+Use the storage account we created in **Step 4** and create two new blob containers. This blob containers can be selected in the **App Service logging** instructions.
+{% endhint %}
+
 ### Step 6: Configure Diagnostic settings
 
 ### Step 7: Deploy Application Insights
