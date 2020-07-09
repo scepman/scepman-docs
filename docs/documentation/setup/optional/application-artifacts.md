@@ -1,10 +1,10 @@
-# Application Resources
+# Application Artifacts
 
 ## Change Artifacts
 
 To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/glueckkanja/gk-scepman) of SCEPman. During every restart, the Azure Web App will do a check and a copy deployment if necessary.   
 If you want to have more control about the updates you can use your own location.   
-\(See [Application Resources](change-channel.md#custom-artifact-location)\)
+\(See [Application Resources](application-artifacts.md#custom-artifact-location)\)
 
 To configure this, do the following:
 
@@ -28,9 +28,11 @@ Follow this instruction to create a storage account:
 
 1. Start at your **Resource group** where you have deployed SCEPman and click **+ Add**
 2. Search for **storage account** in the Marketplace search bar and click on **Storage account - blob, file, table, queue**
-3. Your Subscription and resource group are pre-selected and you can start with defining **Storage account name, Location Performance, Account kind, Replication and Access tier**  ![](../../../.gitbook/assets/image.png) 
+3. Your Subscription and resource group are pre-selected and you can start with defining **Storage account name, Location Performance, Account kind, Replication and Access tier** \(Use settings as shown in the screenshot\)
 
 ![](../../../.gitbook/assets/image.png)
+
+4. Cick ****on the **Advanced** tab and 
 
 ## Available Channels
 
