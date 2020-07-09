@@ -5,7 +5,7 @@ order: 1
 description: GitHub Deployment
 ---
 
-# Production
+# Enterprise deployment
 
 {% hint style="warning" %}
 SCEPman Enterprise Edition only
@@ -16,7 +16,7 @@ Recommended for production
 {% endhint %}
 
 This article will show you how you can deploy SCEPman via GitHub. But why should you do this?  
-Via the GitHub deployment you have full controll of the ressource naming.
+Via the GitHub deployment you have full control of the resource naming.
 
 ## Start the Deployment
 
@@ -36,9 +36,7 @@ Next, you will see the following configuration menu:
 2. Set the location according to your location
 3. Enter your **App Registration Guid** \(App client ID\)
 4. Enter your **App Registration Key** \(Client secret\)
-5. Define a **Key Vault Name**, **App Service Plan Name** and web site
+5. Define a **Key Vault Name**, **App Service Plan Name** and **App Service Name**
 6. Then, click **I agree to the terms...**
 7. Finally, click **Purchase**
-
-When you did it you need to create a [custom domain](../03_customdomain.md).
 
