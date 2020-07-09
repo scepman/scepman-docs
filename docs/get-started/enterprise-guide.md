@@ -90,9 +90,17 @@ Please follow this setup instructions: [Azure App Registration](../documentation
 
 To start with the deployment, you need to follow our Setup instruction: [Enterprise deployment](../documentation/setup/deployment-options/enterprise-deployment.md)
 
-### Step 3: Configure a Custom Domain
+### Step 3: Configure a Custom Domain and SSL certificate
 
-To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.**
+To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.** Follow this instruction to configure the Custom Domain and SSL certificate configuration: [Custom Domain](../documentation/setup/03_customdomain.md)
+
+Step x: Deploy Storage Account and change Artifacts
+
+
+
+### Step x: Deploy Application Insights
+
+
 
 ### 
 

@@ -1,8 +1,12 @@
 # Application Resources
 
-## Change channel
+## Change Artifacts
 
-To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/glueckkanja/gk-scepman) of SCEPman. During every restart, the Azure Web App will do a check and a copy deployment if necessary. To configure this do the following:
+To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/glueckkanja/gk-scepman) of SCEPman. During every restart, the Azure Web App will do a check and a copy deployment if necessary.   
+If you want to have more control about the updates you can use your own location.   
+\(See [Application Resources](change-channel.md#custom-artifact-location)\)
+
+To configure this do the following:
 
 1. Go to your Azure AD
 2. Navigate to **App Service**
@@ -55,5 +59,5 @@ https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts-Intern.zip
 {% endtab %}
 {% endtabs %}
 
-
+## Custom Artifact location
 
