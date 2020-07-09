@@ -20,10 +20,18 @@ To configure this, do the following:
 
 ![](../../../.gitbook/assets/scepman_optional3%20%281%29%20%281%29.png)
 
+## Custom Artifact location
+
+To have full control about the update process and what artifacts loaded by your App Service you can deploy your own Azure Storage Account.
+
+Follow this instruction to create a storage account:
+
+
+
 ## Available Channels
 
-We offer three channels for our SCEPman application. For Production use please choose the "Production" channel!  
-  
+We offer three channels for our SCEPman application. 
+
 Production  
 - full released version  
 - function and load-tested  
@@ -42,22 +50,20 @@ Intern
 {% tabs %}
 {% tab title="Production" %}
 ```text
-https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip
+https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts.zip
 ```
 {% endtab %}
 
 {% tab title="Beta" %}
 ```
-https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts-Beta.zip
+https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts-Beta.zip
 ```
 {% endtab %}
 
 {% tab title="Intern" %}
 ```
-https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts-Intern.zip
+https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts-Intern.zip
 ```
 {% endtab %}
 {% endtabs %}
-
-## Custom Artifact location
 
