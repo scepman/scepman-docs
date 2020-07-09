@@ -6,7 +6,7 @@ To get continuous updates for SCEPman you can point a configuration variable to 
 If you want to have more control about the updates you can use your own location.   
 \(See [Application Resources](change-channel.md#custom-artifact-location)\)
 
-To configure this do the following:
+To configure this, do the following:
 
 1. Go to your Azure AD
 2. Navigate to **App Service**
