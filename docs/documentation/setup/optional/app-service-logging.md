@@ -1,4 +1,6 @@
-# App Service logging
+# Log configuration
+
+## App Service Logs
 
 To retain or archive the log files, we can configure the **Application logging \(Blob\)** and **Web server logging** in the **App Service**.
 
@@ -16,5 +18,7 @@ To retain or archive the log files, we can configure the **Application logging \
 
 ![](../../../.gitbook/assets/image%20%281%29.png)
 
-\*\*\*\*
+## Diagnostic settings
+
+
 

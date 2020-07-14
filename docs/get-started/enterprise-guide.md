@@ -105,16 +105,21 @@ Follow this instruction to do this: [Application Artifacts](../documentation/set
 Not worth to mention, but we recommend the production channel.
 {% endhint %}
 
-### Step 5: Configure App Service logs
+### Step 5: Configure Log collection
 
-To retain your log files for later use or support purpose you can configure the **App Service logging**.  
-Follow this instruction to do this: [App Service logging](../documentation/setup/optional/app-service-logging.md)
+You can configure two different logging parts in your App Service. The one part is the **App Service Logs**, which will save all application and IIS server-based log data. The other part is the Diagnostic 
+
+To retain your log files for later use or support purpose you can configure the **App Service Logs**.  
+Follow this instruction to do this: [Log configuration](../documentation/setup/optional/app-service-logging.md#app-service-logs)
 
 {% hint style="info" %}
-Use the storage account we created in **Step 4** and create two new blob containers. This blob containers can be selected in the **App Service logging** instructions.
+Use the storage account we created in **Step 4** and create two new blob containers. This blob containers can be selected in the **App Service Logs** instructions.
 {% endhint %}
 
 ### Step 6: Configure Diagnostic settings
+
+To log all diagnostic logs \(\) from your App Service you can configure the Diagnostic settings.  
+Follow this instruction to do this: [Log configuration](../documentation/setup/optional/app-service-logging.md#diagnostic-settings)
 
 ### Step 7: Deploy Application Insights
 

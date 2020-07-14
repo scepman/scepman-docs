@@ -19,7 +19,7 @@
   * [Optional](documentation/setup/optional/README.md)
     * [Add a License Key](documentation/setup/optional/add-a-license-key.md)
     * [Application Artifacts](documentation/setup/optional/application-artifacts.md)
-    * [App Service logging](documentation/setup/optional/app-service-logging.md)
+    * [Log configuration](documentation/setup/optional/app-service-logging.md)
     * [Geo-redundancy](documentation/setup/optional/04_load_balancer_deployment.md)
     * [Application Settings](documentation/setup/optional/appconfig.md)
 * [Certificate Deployment](documentation/intune-deployment/README.md)
