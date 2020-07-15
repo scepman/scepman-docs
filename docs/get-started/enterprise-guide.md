@@ -86,20 +86,20 @@ All these resources are recommended but not needed for a production environment.
 ### Step 1: Azure App Registration
 
 Before we can start the resource deployment, we need to create an "Azure App Registration".  
-Please follow this setup instructions: [Azure App Registration](../documentation/setup/01_azure_app_registration.md)
+Please follow this setup instructions: [Azure App Registration](../documentation/scepman-configuration/01_azure_app_registration.md)
 
 ### Step 2: Deploy SCEPman base services
 
-To start with the deployment, you need to follow our Setup instruction: [Enterprise deployment](../documentation/setup/deployment-options/enterprise-deployment.md)
+To start with the deployment, you need to follow our Setup instruction: [Enterprise deployment](../documentation/scepman-configuration/deployment-options/enterprise-deployment.md)
 
 ### Step 3: Configure a Custom Domain and SSL certificate
 
-To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.** Follow this instruction to configure the Custom Domain and SSL certificate configuration: [Custom Domain](../documentation/setup/03_customdomain.md)
+To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.** Follow this instruction to configure the Custom Domain and SSL certificate configuration: [Custom Domain](../documentation/scepman-configuration/03_customdomain.md)
 
 ### Step 4: Deploy Storage Account and change Artifacts
 
 The next step is to configure the Storage account and change the Artifact location in your App Service.  
-Follow this instruction to do this: [Application Artifacts](../documentation/setup/optional/application-artifacts.md)
+Follow this instruction to do this: [Application Artifacts](../documentation/scepman-configuration/optional/application-artifacts.md)
 
 {% hint style="info" %}
 Not worth to mention, but we recommend the production channel.
@@ -109,7 +109,7 @@ Not worth to mention, but we recommend the production channel.
 
 You can configure two different logging parts in your App Service, to retain your log data. The one part is the **App Service Logs**, which will save all application and IIS server-based log data. The other part is the **Diagnostic settings**, this contains platform logs and metrics data.
 
-Follow this instruction to do this: [Log configuration](../documentation/setup/optional/app-service-logging.md)
+Follow this instruction to do this: [Log configuration](../documentation/scepman-configuration/optional/app-service-logging.md)
 
 {% hint style="info" %}
 Use the storage account we created in **Step 4** and create two new blob containers. This blob containers can be selected in the **App Service Logs** instructions.
@@ -118,7 +118,7 @@ Use the storage account we created in **Step 4** and create two new blob contain
 ### Step 6: Configure Diagnostic settings
 
 To log all diagnostic logs \(\) from your App Service you can configure the Diagnostic settings.  
-Follow this instruction to do this: [Log configuration](../documentation/setup/optional/app-service-logging.md#diagnostic-settings)
+Follow this instruction to do this: [Log configuration](../documentation/scepman-configuration/optional/app-service-logging.md#diagnostic-settings)
 
 ### Step 7: Deploy Application Insights
 
