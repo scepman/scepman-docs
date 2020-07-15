@@ -5,7 +5,7 @@ order: 2
 description: Azure Marketplace Deployment
 ---
 
-# Community deployment
+# Marketplace deployment
 
 {% hint style="info" %}
 You need your Client ID and your Client Secret before you can start the deployment.

@@ -5,6 +5,7 @@
 
 ## Get Started
 
+* [Untitled](get-started/untitled.md)
 * [Community Guide](get-started/community-guide.md)
 * [Enterprise Guide](get-started/enterprise-guide.md)
 
@@ -13,7 +14,7 @@
 * [Setup](documentation/setup/README.md)
   * [Azure App Registration](documentation/setup/01_azure_app_registration.md)
   * [Deployment Options](documentation/setup/deployment-options/README.md)
-    * [Community deployment](documentation/setup/deployment-options/community-deployment.md)
+    * [Marketplace deployment](documentation/setup/deployment-options/community-deployment.md)
     * [Enterprise deployment](documentation/setup/deployment-options/enterprise-deployment.md)
   * [Custom Domain](documentation/setup/03_customdomain.md)
   * [Optional](documentation/setup/optional/README.md)
