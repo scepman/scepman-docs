@@ -5,7 +5,7 @@
 
 ## Get Started
 
-* [Test Guide](get-started/untitled.md)
+* [Trial Guide](get-started/untitled.md)
 * [Community Guide](get-started/community-guide.md)
 * [Enterprise Guide](get-started/enterprise-guide.md)
 
