@@ -107,10 +107,9 @@ Not worth to mention, but we recommend the production channel.
 
 ### Step 5: Configure Log collection
 
-You can configure two different logging parts in your App Service. The one part is the **App Service Logs**, which will save all application and IIS server-based log data. The other part is the Diagnostic 
+You can configure two different logging parts in your App Service, to retain your log data. The one part is the **App Service Logs**, which will save all application and IIS server-based log data. The other part is the **Diagnostic settings**, this contains platform logs and metrics data.
 
-To retain your log files for later use or support purpose you can configure the **App Service Logs**.  
-Follow this instruction to do this: [Log configuration](../documentation/setup/optional/app-service-logging.md#app-service-logs)
+Follow this instruction to do this: [Log configuration](../documentation/setup/optional/app-service-logging.md)
 
 {% hint style="info" %}
 Use the storage account we created in **Step 4** and create two new blob containers. This blob containers can be selected in the **App Service Logs** instructions.

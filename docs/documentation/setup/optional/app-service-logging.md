@@ -20,5 +20,6 @@ To retain or archive the log files, we can configure the **Application logging \
 
 ## Diagnostic settings
 
-
+To retain your diagnostic data, you can configure the streaming export of platform logs and metrics.  
+You can choose different destinations as a storage.
 
