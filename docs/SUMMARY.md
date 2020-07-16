@@ -39,4 +39,4 @@
   * [Cisco ISE Host Header Limitation](other/troubleshooting/cisco-ise-host-header-limitation.md)
 * [FAQ](https://glueckkanja.zendesk.com/hc/en-us/sections/360002363340-FAQ)
 * [Important Links](other/important-links.md)
-
+* [Changelog](other/changelog.md)
