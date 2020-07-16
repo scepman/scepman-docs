@@ -12,27 +12,25 @@
 
 ## SCEPman Configuration
 
----
-
-* [Azure App Registration](01_azure_app_registration.md)
-* [Deployment Options](deployment-options/README.md)
-  * [Marketplace deployment](deployment-options/community-deployment.md)
-  * [Enterprise deployment](deployment-options/enterprise-deployment.md)
-* [Custom Domain](03_customdomain.md)
-* [Optional](optional/README.md)
-  * [Add a License Key](optional/add-a-license-key.md)
-  * [Application Artifacts](optional/application-artifacts.md)
-  * [Log configuration](optional/app-service-logging.md)
-  * [Geo-redundancy](optional/04_load_balancer_deployment.md)
-  * [Application Insights](optional/application-insights.md)
-  * [Autoscaling](optional/autoscaling.md)
-  * [Application Settings](optional/appconfig.md)
+* [Azure App Registration](scepman-configuration/azure-app-registration.md)
+* [Deployment Options](scepman-configuration/deployment-options/README.md)
+  * [Marketplace deployment](scepman-configuration/deployment-options/marketplace-deployment.md)
+  * [Enterprise deployment](scepman-configuration/deployment-options/enterprise-deployment.md)
+* [Custom Domain](scepman-configuration/custom-domain.md)
+* [Optional](scepman-configuration/optional/README.md)
+  * [Add a License Key](scepman-configuration/optional/add-a-license-key.md)
+  * [Application Artifacts](scepman-configuration/optional/application-artifacts.md)
+  * [Log configuration](scepman-configuration/optional/log-configuration.md)
+  * [Geo-redundancy](scepman-configuration/optional/geo-redundancy.md)
+  * [Application Insights](scepman-configuration/optional/application-insights.md)
+  * [Autoscaling](scepman-configuration/optional/autoscaling.md)
+  * [Application Settings](scepman-configuration/optional/application-settings.md)
 
 ## Certificate Deployment
 
-* [Windows 10](certificate-deployment/05_certificate_deployment_win10.md)
-* [MacOS](certificate-deployment/06_certificate_deployment_macos.md)
-* [iOS](certificate-deployment/08_certificate_deployment_ios.md)
+* [Windows 10](certificate-deployment/windows-10.md)
+* [MacOS](certificate-deployment/macos.md)
+* [iOS](certificate-deployment/ios.md)
 * [Android](certificate-deployment/android.md)
 
 ## Other
@@ -43,4 +41,3 @@
 * [Changelog](other/changelog.md)
 * [Important Links](other/important-links.md)
 
- 

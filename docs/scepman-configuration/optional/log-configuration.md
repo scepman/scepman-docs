@@ -16,7 +16,7 @@ To retain or archive the log files, we can configure the **Application logging \
 
 **Your configuration should look like this:**
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../../.gitbook/assets/image%20%281%29.png)
 
 ## Diagnostic settings
 
@@ -36,7 +36,7 @@ We recommend storing your data in Log Analytics
 5. The last step is to select the needed data. Normally we recommend **all Categories.**
 6. Finally, click on the **Save** button
 
-![](../.gitbook/assets/image%20%283%29.png)
+![](../../.gitbook/assets/image%20%283%29.png)
 
 ### Azure Storage
 
@@ -52,9 +52,9 @@ If you have created a storage account to store your SCEPman artifacts, you can u
 6. Select the needed data and type in your retention time in days. Normally we recommend **all Categories** and a retention time of **30** days.
 7. Finally, click on the **Save** button.
 
-![](../.gitbook/assets/image%20%282%29.png)
+![](../../.gitbook/assets/image%20%282%29.png)
 
-| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide](../getting-started/enterprise-guide.md#step-5-configure-log-collection)​ |
+| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide](../../getting-started/enterprise-guide.md#step-5-configure-log-collection)​ |
 | :--- | :--- | :--- |
 
 

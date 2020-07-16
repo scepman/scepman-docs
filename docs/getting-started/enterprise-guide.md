@@ -91,25 +91,25 @@ All these resources are recommended but not needed for a production environment.
 
 Before we can start the resource deployment, we need to create an "Azure App Registration".
 
-{% page-ref page="../01\_azure\_app\_registration.md" %}
+{% page-ref page="../scepman-configuration/azure-app-registration.md" %}
 
 ### Step 2: Deploy SCEPman base services
 
 To start with the deployment, you need to follow our Setup instruction:
 
-{% page-ref page="../deployment-options/enterprise-deployment.md" %}
+{% page-ref page="../scepman-configuration/deployment-options/enterprise-deployment.md" %}
 
 ### Step 3: Configure a Custom Domain and SSL certificate
 
 To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.**
 
-{% page-ref page="../03\_customdomain.md" %}
+{% page-ref page="../scepman-configuration/custom-domain.md" %}
 
 ### Step 4: Deploy Storage Account and change Artifacts
 
 The next step is to configure the Storage account and change the Artifact location in your App Service.
 
-{% page-ref page="../optional/application-artifacts.md" %}
+{% page-ref page="../scepman-configuration/optional/application-artifacts.md" %}
 
 {% hint style="info" %}
 Not worth to mention, but we recommend the production channel.
@@ -119,7 +119,7 @@ Not worth to mention, but we recommend the production channel.
 
 You can configure two different logging parts in your App Service, to retain your log data. The one part is the **App Service Logs**, which will save all application and IIS server-based log data. The other part is the **Diagnostic settings**, this contains platform logs and metrics data.
 
-{% page-ref page="../optional/app-service-logging.md" %}
+{% page-ref page="../scepman-configuration/optional/log-configuration.md" %}
 
 {% hint style="info" %}
 Use the storage account we created in **Step 4** and create two new blob containers. This blob containers can be selected in the **App Service Logs** instructions. In the **Diagnostic settings** you can directly choose the storage account and blob containers will be created automatically.
@@ -129,7 +129,7 @@ Use the storage account we created in **Step 4** and create two new blob contain
 
 The Application Insights can be used to get an overview of the App Service performance and to get deeper insights of the request processing of SCEPman. We recommend to always configure Application Insights to monitor, maintain and optimize the App Service.
 
-{% page-ref page="../optional/application-insights.md" %}
+{% page-ref page="../scepman-configuration/optional/application-insights.md" %}
 
 ### Step 7: Configure Autoscaling
 
@@ -139,7 +139,7 @@ The second task is the certificate validation: After we deployed certificates to
 
 To have an optimized performance and take care of the costs we recommend to setup the Autoscaling functionality of the App Service. With this feature your application can scale-out and scale-in based on metrics.
 
-{% page-ref page="../optional/autoscaling.md" %}
+{% page-ref page="../scepman-configuration/optional/autoscaling.md" %}
 
 ### Step 8: Configure Geo-redundancy \(Optional\)
 

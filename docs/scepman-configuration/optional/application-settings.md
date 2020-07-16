@@ -11,7 +11,7 @@ On your **App Service** navigate to **Configuration** and then you find this und
 **Value:** _App Service Name_ or _https://customcname.domain.com_  
   
 **Description:**  
-This filed defines the public OCSP endpoint URL for the certificates. By default, the value contains the **App Service Name**. If you want to use a [Custom Domain](../03_customdomain.md), you need to change this value.
+This filed defines the public OCSP endpoint URL for the certificates. By default, the value contains the **App Service Name**. If you want to use a [Custom Domain](../custom-domain.md), you need to change this value.
 
 ### AppConfig:LicenseKey
 

@@ -49,14 +49,14 @@ Follow this instruction to create a storage account:
 2. Search for **storage account** in the Marketplace search bar and click on **Storage account - blob, file, table, queue**
 3. Your Subscription and resource group are pre-selected and you can start with defining **Storage account name, Location Performance, Account kind, Replication and Access tier** \(Use settings as shown in the screenshot\)
 
-![](../.gitbook/assets/image.png)
+![](../../.gitbook/assets/image.png)
 
 4. Go to the **Advanced** tab and set the **Blob public access** to **Enabled**  
 5. Click on **Review + create** and then on **Create**  
 6. After the successful creation of your storage account you can open the Storage account overview and open the **Storage Explorer \(preview\)**  
 7. In the **Storage Explorer \(preview\)** you can right click on the **BLOB CONTAINERS** and select **Create blob container.** Specify a **Name** and set the **Public access level** to **Blob.** After this you can click on **Create**
 
-![](../.gitbook/assets/screenshot-2020-07-09-at-17.20.42.png)
+![](../../.gitbook/assets/screenshot-2020-07-09-at-17.20.42.png)
 
 8. You need to reload the **Storage Explorer \(Preview\)** and then you can see your container under **BLOB CONTAINERS**. Now you can download the Artifacts from our GithHub \(See [Application Artifacts](application-artifacts.md#available-channels)\) and upload the artifacts here.  
 9. After the successful upload you can select your blob and click on **Copy URL.** You need this URL in the Part **Change Artifacts \(**[**Application Artifacts**](application-artifacts.md#change-artifacts)**\)**
@@ -78,13 +78,13 @@ To configure this, do the following:
 4. Then, click **Configuration** \(submenu **Setting**\)
 5. Look for **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
 
-![](../.gitbook/assets/scepman_optional2%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/scepman_optional2%20%281%29%20%281%29.png)
 
 1. Then replace the URL with the SCEPman GitHub URL or your Storage account blob URL:
 
-![](../.gitbook/assets/scepman_optional3%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/scepman_optional3%20%281%29%20%281%29.png)
 
-| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide](../getting-started/enterprise-guide.md#step-4-deploy-storage-account-and-change-artifacts)​ |
+| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide](../../getting-started/enterprise-guide.md#step-4-deploy-storage-account-and-change-artifacts)​ |
 | :--- | :--- | :--- |
 
 
