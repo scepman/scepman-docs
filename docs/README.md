@@ -24,3 +24,5 @@ The following documentation will show you a straightforward way to deploy certif
 
 If you want to have a detailed look at specific documentation steps you can manually scroll through the **SCEPMAN CONFIGURATION** or **CERTIFICATE DEPLOYMENT**.
 
+{% page-ref page="other/changelog.md" %}
+
