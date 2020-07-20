@@ -3,11 +3,10 @@
 This will guide you through all steps to get a recommended Enterprise \(SCEPman EE\) production environment.
 
 {% hint style="info" %}
-If you want to deploy a trial environment, please follow the [Trial Guide](trial-guide.md)
-{% endhint %}
+If you want to deploy:
 
-{% hint style="info" %}
-If you want to deploy a community edition environment \(SCEPman CE\), please follow the [Community Guide](community-guide.md)
+* a trial environment, please follow the [Trial Guide](trial-guide.md)
+* a community edition environment \(SCEPman CE\), please follow the [Community Guide](community-guide.md)
 {% endhint %}
 
 ## Azure Deployment
