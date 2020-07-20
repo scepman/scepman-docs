@@ -3,7 +3,7 @@
 This is a quick start guide to get a trial environment.
 
 {% hint style="info" %}
-If you want to deploy a production community environment \(SCEPman CE\), please follow the [Community Guide](community-guide.md)
+If you want to deploy a community edition environment \(SCEPman CE\), please follow the [Community Guide](community-guide.md)
 {% endhint %}
 
 {% hint style="info" %}

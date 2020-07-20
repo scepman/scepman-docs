@@ -7,7 +7,7 @@ If you want to deploy a trial environment, please follow the [Trial Guide](trial
 {% endhint %}
 
 {% hint style="info" %}
-If you want to deploy a production community environment \(SCEPman CE\), please follow the [Community Guide](community-guide.md)
+If you want to deploy a community edition environment \(SCEPman CE\), please follow the [Community Guide](community-guide.md)
 {% endhint %}
 
 ## Azure Deployment
