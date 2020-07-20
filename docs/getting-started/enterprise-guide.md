@@ -26,7 +26,7 @@ Keep in mind that you need to plan a useful Azure resource design.
 
 ### Overview Azure Resource
 
-All these resources are recommended but not needed for a production environment.
+All these resources are recommended for a production environment.
 
 <table>
   <thead>
