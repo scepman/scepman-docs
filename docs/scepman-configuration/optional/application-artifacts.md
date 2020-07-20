@@ -4,40 +4,35 @@
 
 We offer three channels for our SCEPman application. 
 
-Production  
-- full released version  
-- function and load-tested  
-- bugs not expected  
-  
-Beta  
-- next production release  
-- function tested, but no load-test  
-- bugs possible  
-  
-Intern  
-- ongoing development  
-- limited function tested and no load-test  
-- bugs expected
+### Production
 
-{% tabs %}
-{% tab title="Production" %}
+* full released version
+* function and load-tested
+* bugs not expected
+
 ```text
 https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts.zip
 ```
-{% endtab %}
 
-{% tab title="Beta" %}
-```
+### Beta
+
+* next production release
+* function tested, but no load-test
+* bugs possible
+
+```text
 https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts-Beta.zip
 ```
-{% endtab %}
 
-{% tab title="Intern" %}
-```
+### Intern
+
+* ongoing development
+* limited function tested and no load-test
+* bugs expected
+
+```text
 https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts-Intern.zip
 ```
-{% endtab %}
-{% endtabs %}
 
 ## Custom Artifact location
 
