@@ -101,3 +101,7 @@ The SCEPman application will be loaded from the zip file which is located in a G
 | 17. In **Application settings** search **WEBSITE\_RUN\_FROM\_PACKAGE** | [![AppSettings](../../.gitbook/assets/scepman_storage6.png)](https://github.com/glueckkanja/gk-scepman-docs/tree/8dd5e83c3dd91576810d6a7f58bb173cb6cc9536/docs/media/scepman_storage6.png) |  |
 | 18. Repeat the steps 14 to 17 for each web app and restart these web apps after your changes |  |  |
 
+| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-8-configure-geo-redundancy-optional) |
+| :--- | :--- | :--- |
+
+
