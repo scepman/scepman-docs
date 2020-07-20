@@ -143,7 +143,7 @@ To have an optimized performance and take care of the costs we recommend to setu
 
 ### Step 8: Configure Geo-redundancy \(Optional\)
 
-Coming soon!
+{% page-ref page="../scepman-configuration/optional/geo-redundancy.md" %}
 
 
 
