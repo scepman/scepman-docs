@@ -1,25 +1,43 @@
 # Table of contents
 
 * [Welcome](README.md)
-* [Introduction](index.md)
-* [Deployment](deployment/README.md)
-  * [Azure App Registration](deployment/01_azure_app_registration.md)
-  * [Azure Marketplace Deployment](deployment/02_azure_marketplace.md)
-* [Optional](deployment-optional/README.md)
-  * [Application Configuration](deployment-optional/02_application_configuration.md)
-  * [GitHub Deployment](deployment-optional/03_deploy_via_github.md)
-  * [Custom Domain](deployment-optional/03_customdomain.md)
-  * [High Availability Scenario](deployment-optional/04_load_balancer_deployment.md)
-* [Configuration](configuration/README.md)
-  * [Windows 10](configuration/05_certificate_deployment_win10.md)
-  * [MacOS](configuration/06_certificate_deployment_macos.md)
-  * [iOS](configuration/08_certificate_deployment_ios.md)
-  * [Android](configuration/android.md)
-  * [Add a License Key](configuration/add-a-license-key.md)
-* [Troubleshooting](troubleshooting/README.md)
-  * [FAQ](troubleshooting/faq.md)
-  * [Troubleshooting Steps](troubleshooting/troubleshooting.md)
-  * [Important Links](troubleshooting/important-links.md)
-  * [Cisco ISE Host Header Limitation](troubleshooting/cisco-ise-host-header-limitation.md)
-* [Changelog](changelog.md)
+* [Details](details.md)
+* [Editions](editions.md)
+
+## Getting started
+
+* [Trial Guide](getting-started/trial-guide.md)
+* [Community Guide](getting-started/community-guide.md)
+* [Enterprise Guide](getting-started/enterprise-guide.md)
+
+## SCEPman Configuration
+
+* [Azure App Registration](scepman-configuration/azure-app-registration.md)
+* [Deployment Options](scepman-configuration/deployment-options/README.md)
+  * [Marketplace deployment](scepman-configuration/deployment-options/marketplace-deployment.md)
+  * [Enterprise deployment](scepman-configuration/deployment-options/enterprise-deployment.md)
+* [Custom Domain](scepman-configuration/custom-domain.md)
+* [Optional](scepman-configuration/optional/README.md)
+  * [Add a License Key](scepman-configuration/optional/add-a-license-key.md)
+  * [Application Artifacts](scepman-configuration/optional/application-artifacts.md)
+  * [Log configuration](scepman-configuration/optional/log-configuration.md)
+  * [Geo-redundancy](scepman-configuration/optional/geo-redundancy.md)
+  * [Application Insights](scepman-configuration/optional/application-insights.md)
+  * [Autoscaling](scepman-configuration/optional/autoscaling.md)
+  * [Application Settings](scepman-configuration/optional/application-settings.md)
+
+## Certificate Deployment
+
+* [Windows 10](certificate-deployment/windows-10.md)
+* [MacOS](certificate-deployment/macos.md)
+* [iOS](certificate-deployment/ios.md)
+* [Android](certificate-deployment/android.md)
+
+## Other
+
+* [Troubleshooting](other/troubleshooting/README.md)
+  * [Cisco ISE Host Header Limitation](other/troubleshooting/cisco-ise-host-header-limitation.md)
+* [FAQ](https://glueckkanja.zendesk.com/hc/en-us/sections/360002363340-FAQ)
+* [Important Links](other/important-links.md)
+* [Changelog](other/changelog.md)
 
