@@ -14,7 +14,7 @@ SCEP is originally developed by Cisco. The core mission of SCEP is the deploymen
 
 ## What is SCEPman?
 
-If you use SCEP in a 'traditional way' you need an number of on-premises components. Microsoft Intune [allows third-party certificate authorities \(CA\)](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview) to issue and validate certificates using SCEP.   
+If you use SCEP in a 'traditional way' you need an number of on-premises components. Microsoft Intune [allows third-party certificate authorities \(CA\)](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview) to issue and validate certificates using SCEP.  
 To get rid of the on-premises components we developed SCEPman.
 
 {% hint style="warning" %}
@@ -31,11 +31,11 @@ Here's an overview about the SCEPman workflow. The first figure shows the certif
 
 Process of certificate issuance:
 
-![](.gitbook/assets/overview1.png)
+![](.gitbook/assets/overview1%20%281%29.png)
 
 Process of certificate validation during certificate-based authentication:
 
-![](.gitbook/assets/overview2.png)
+![](.gitbook/assets/overview2%20%281%29.png)
 
 ### SCEPman Features
 
@@ -55,6 +55,4 @@ SCEPman issues device and user certificates that are compatible with Intune's in
 An [Online Certificate Status Protocol](https://community.digicert.com/en/blogs.entry.html/2015/02/26/what-is-ocsp.html) \(OCSP\) is an Internet protocol which is in use to determine the state of a certificate.
 
 Usually, an OCSP client sends a status request to an OCSP responder. An OCSP responder verifies the validity of a certificate based on revocation state or other mechanisms. In comparison to a certificate revocation list \(CRL\), an OCSP is always up-to-date and the response is available within seconds. A CRL has the disadvantage that it is based on a database that must refresh manually and may weight a lot of data.
-
-
 

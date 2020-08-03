@@ -144,7 +144,3 @@ To have an optimized performance and take care of the costs we recommend to setu
 
 {% page-ref page="../scepman-configuration/optional/geo-redundancy.md" %}
 
-
-
-### 
-

@@ -2,7 +2,7 @@
 
 ## Available Channels
 
-We offer three channels for our SCEPman application. 
+We offer three channels for our SCEPman application.
 
 ### Production
 
@@ -46,22 +46,22 @@ Follow this instruction to create a storage account:
 
 ![](../../.gitbook/assets/image.png)
 
-4. Go to the **Advanced** tab and set the **Blob public access** to **Enabled**  
-5. Click on **Review + create** and then on **Create**  
-6. After the successful creation of your storage account you can open the Storage account overview and open the **Storage Explorer \(preview\)**  
-7. In the **Storage Explorer \(preview\)** you can right click on the **BLOB CONTAINERS** and select **Create blob container.** Specify a **Name** and set the **Public access level** to **Blob.** After this you can click on **Create**
+1. Go to the **Advanced** tab and set the **Blob public access** to **Enabled**  
+2. Click on **Review + create** and then on **Create**  
+3. After the successful creation of your storage account you can open the Storage account overview and open the **Storage Explorer \(preview\)**  
+4. In the **Storage Explorer \(preview\)** you can right click on the **BLOB CONTAINERS** and select **Create blob container.** Specify a **Name** and set the **Public access level** to **Blob.** After this you can click on **Create**
 
 ![](../../.gitbook/assets/screenshot-2020-07-09-at-17.20.42.png)
 
-8. You need to reload the **Storage Explorer \(Preview\)** and then you can see your container under **BLOB CONTAINERS**. Now you can download the Artifacts from our GithHub \(See [Application Artifacts](application-artifacts.md#available-channels)\) and upload the artifacts here.  
-9. After the successful upload you can select your blob and click on **Copy URL.** You need this URL in the Part **Change Artifacts \(**[**Application Artifacts**](application-artifacts.md#change-artifacts)**\)**
+1. You need to reload the **Storage Explorer \(Preview\)** and then you can see your container under **BLOB CONTAINERS**. Now you can download the Artifacts from our GithHub \(See [Application Artifacts](application-artifacts.md#available-channels)\) and upload the artifacts here.  
+2. After the successful upload you can select your blob and click on **Copy URL.** You need this URL in the Part **Change Artifacts \(**[**Application Artifacts**](application-artifacts.md#change-artifacts)**\)**
 
 ## Change Artifacts
 
-To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/glueckkanja/gk-scepman) of SCEPman. During every restart, the Azure Web App will do a check and a copy deployment if necessary. 
+To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/glueckkanja/gk-scepman) of SCEPman. During every restart, the Azure Web App will do a check and a copy deployment if necessary.
 
 {% hint style="info" %}
-If you want to have more control about the updates you can use your own location.   
+If you want to have more control about the updates you can use your own location.  
 \(See [Application Resources](application-artifacts.md#custom-artifact-location)\)
 {% endhint %}
 

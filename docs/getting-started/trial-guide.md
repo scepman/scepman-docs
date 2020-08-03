@@ -13,5 +13,3 @@ If you want to deploy:
 We will deliver a Trial Guide soon!
 {% endhint %}
 
-
-
