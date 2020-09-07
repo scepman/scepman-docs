@@ -35,8 +35,8 @@ Applicable to version 1.5 and above
 
 **Value:** _true_ or _false_
 
-**Description:  
-True:** The Key Usage and Extended Key Usage extensions in the certificates are defined by the MDM solution.  
+**Description:**
+**True:** The Key Usage and Extended Key Usage extensions in the certificates are defined by the MDM solution.  
 **False:** Key Usage is always Key Encipherment + Digital Signature. Extended Key Usage is always _Client Authentication_.
 
 {% hint style="warning" %}
@@ -59,6 +59,31 @@ You can also configure shorter validity periods in each SCEP profile in Intune a
 {% hint style="warning" %}
 iOS and macOS devices do not support the configuration via Intune and you need to configure this setting.
 {% endhint %}
+
+## AppConfig:DCValidation:Enabled
+
+{% hint style="info" %}
+Applicable to version 1.6 and above
+{% endhint %}
+
+**Value:** _true_ or _false_
+
+**Description:**
+This setting helps you to request Kerberos server certificates for your on-premises Domain Controllers. See [Domain Controller Certificates](domain-controller-certificates.md) for details.
+
+**True**: SCEPman listens at the additional SCEP server endpoint with the path `/dc`. Use in conjunction with AppConfig:DCValidation:RequestPassword.
+**False** (default): SCEPman does not issue certificates for Domain Controllers.
+
+## AppConfig:DCValidation:RequestPassword
+
+{% hint style="info" %}
+Applicable to version 1.6 and above
+{% endhint %}
+
+**Value:** _String_
+
+**Description:**
+A challenge password that the Domain Controllers must include in every SCEP request to acquire a certificate. Only used if AppConfig:DCValidation:Enabled is set to _true_.
 
 ## WEBSITE\_RUN\_FROM\_PACKAGE
 

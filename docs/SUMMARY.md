@@ -24,6 +24,7 @@
   * [Geo-redundancy](scepman-configuration/optional/geo-redundancy.md)
   * [Application Insights](scepman-configuration/optional/application-insights.md)
   * [Autoscaling](scepman-configuration/optional/autoscaling.md)
+  * [Domain Controller Certificates](scepman-configuration/optional/domain-controller-certificates.md)
   * [Application Settings](scepman-configuration/optional/application-settings.md)
 
 ## Certificate Deployment
