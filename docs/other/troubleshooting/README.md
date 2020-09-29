@@ -147,11 +147,13 @@ certutil -url <path-to-exported-device-certificate>
 
 The SCEP configuration profile depends on the Trusted Root certificate profile. Assign both profiles to the same Azure Active Directory user or device group to make sure the user or device overlaps and both profiles are targeted to the device. Do not mix user and device groups. If you see pending as status for the configurations profiles in Intune for a long time, the assignment is probably wrong.
 
-### Cisco ISE is showing OCSP unreachable error
+### Access Point cannot verify an authentication certificate that SCEPman has issued
 
-Cisco ISE is still not supporting HTTP 1.1 when looking up OCSP and therefore can't connect to a general SCEPman instance running on Azure App Services. The error message may look like this:
+*Symptoms*: Cisco ISE shows an OCSP unreachable error. Aruba ClearPass also has this problem. The server, seemingly SCEPman, answers with an TCP reset packet to the OCSP request.
+
+*Cause*: Both Cisco ISE as well as Aruba ClearPass do not support HTTP 1.1 when looking up OCSP and do not send a host header in their OCSP request. Therefore, they cannot connect to a general SCEPman instance running on Azure App Services. The error message may look like this:
 
 ![](../../.gitbook/assets/cisco-ocsp-error%20%281%29.jpg)
 
-Please see [here](cisco-ise-host-header-limitation.md) for a solution.
+*Solution*: Please see [here](cisco-ise-host-header-limitation.md).
 

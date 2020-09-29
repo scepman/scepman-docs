@@ -1,14 +1,12 @@
-# Cisco ISE Host Header Limitation
+# Missing OCSP Host Header
 
-Cisco ISE is still not supporting HTTP 1.1 when looking up OCSP and therefore can't connect to a general SCEPman instance running on Azure App Services. The error message may look like this:
+Both Cisco ISE as well as Aruba ClearPass do not support HTTP 1.1 when looking up OCSP and do not send a host header in their OCSP request. Therefore, they cannot connect to a general SCEPman instance running on Azure App Services. The error message may look like this:
 
 ![](../../.gitbook/assets/cisco-ocsp-error%20%281%29.jpg)
 
 Cisco is currently investigating future enhancements but for the time being you can use an [Azure Application Gateway](https://azure.microsoft.com/en-us/services/application-gateway/) to provide an instance of SCEPman not requiring a Host Header.
 
-This documentation is a quick introduction to the basic steps required to create such an Application Gateway. Please forgive the rudimentary form.
-
-Create an Azure Application Gateway for SCEPman
+The following instructions outline the steps required to create an Azure Application Gateway for SCEPman:
 
 1\) Create a new Application Gateway
 
