@@ -3,7 +3,9 @@
 You can use SCEPman to issue Kerberos authentication certificates to your domain controllers. This allows your AAD or hybrid-joined devices to authenticate seamlessly when accessing on-premises resources.
 
 {% hint style="info" %}
-This feature requires version 1.6 or above (currently pre-beta)
+This feature requires version 1.6 or above (currently pre-beta).
+
+Furthermore, your CA certificate must contain either no Enhanced Key Usage (EKU) extension or it must include Kerberos Authentication and Smart Card Logon. This is automatically supported when generating the CA certificate with version 1.6 or above, but CA certificates generated with previous version do not support it. Version 1.6.415 and above tell you on the SCEPman homepage under CA Suitability whether DC certificates are supported.
 {% endhint %}
 
 ## Configuration Changes to the SCEPman Service
