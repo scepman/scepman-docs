@@ -2,6 +2,10 @@
 
 You can use SCEPman to issue Kerberos authentication certificates to your domain controllers. This allows your AAD or hybrid-joined devices to authenticate seamlessly when accessing on-premises resources.
 
+{% hint style="warning" %}
+Work in progress...!
+{% endhint %}
+
 {% hint style="info" %}
 This feature requires version 1.6 or above (currently pre-beta).
 

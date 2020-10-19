@@ -1,12 +1,57 @@
-# Sub-CA
+# Intermediate Certificate
 
 {% hint style="warning" %}
-Comming soon!
+Work in progress...!
 {% endhint %}
+
+If you want to use another Root CA as primary authority, you can create an intermediate certificate.
+You can create the correct certificate direct in Azure Key Vault and download the CSR for signing with your Root CA.
+The signed request can be uploaded and merged into the Azure Key Vault.
 
 ## Creating Intermediate Certificate via API
 
+You have to create the certificate via the Key Vault API.
+This is because not all flags and features are available via UI and PowerShell.
+You can use Postman to work with the API.
+
+For requests against an Azure Key Vault we need a valid authorization token.
+We can use the Azure AD App that is registered for SCEPman. ({% page-ref page="../scepman-configuration/azure-app-registration.md" %})
+
+You need the following information:
+
+- table with information 
+
+### Key Vault Access Policy
+
+We need to allow the Azure AD App and your user account to access the Azure Key Vault.
+
+1. Navigate to your Azure Key Vault in the Azure Portal
+2. Click on **Access policies** in the left navigation pane.
+3. Click on **Add Access Policy** 
+
+**SCRENSHOT 1**
+
+4. Click **Configure from template (optional)** and choose **Key, Secret & Certificate Management**
+5. Click on **Key permissions** and select all **Cryptographic Operations** 
+6. Now you have to select a principal by clicking on **None selected** and search for you Azure AD App registration.
+7. To close the dialog press **Select** and then press **Add**
+
+**SCREENSHOT 2**
+
+8. In the picture above you can see the new entry for the Azure AD App.
+9. Repeat Step 3 to 7 but now select your current user account.
+10. To save your new access policies you have to click on **Save** in the upper left corner of the window.
+
+**SCREENHOT 3**
+
+After we saved this access policies succesfully we can continue with the API calls.
+
 ### Authenticate against Microsoft to retrieve a Token
+
+To get an authorization token we have to send a POST request against the Microsoft OAuth endpoint. This will return a Bearer token.
+
+You can use the following POST request and Body and have to change all **{}** parts.
+If you want to use cURL or Postman you can download a text file with the complete cURL stement. Remeber that you have to change all **{}** parts.
 
 ```text
 POST https://login.microsoftonline.com/{TenantID}/oauth2/v2.0/token
@@ -21,28 +66,24 @@ client_secret:{YourApplicationKey}
 scope:https://vault.azure.net/.default
 ```
 
-```text
-curl --location --request POST 'https://login.microsoftonline.com/{TenantID}/oauth2/v2.0/token' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---header 'Cookie: stsservicecookie=ests; x-ms-gateway-slice=estsfd; fpc=AoCLD8T8y4pCqKTyeXDaIptk-OLhAQAAAIs4H9cOAAAA' \
---data-urlencode 'grant_type=client_credentials' \
---data-urlencode 'client_id={YourApplicationID}' \
---data-urlencode 'client_secret={YourApplicationKey}' \
---data-urlencode 'scope=https://vault.azure.net/.default'
-```
+**LINK TO post-microsoft-login.txt**
 
-Copy the *access_token* from the answer and use this as Token for the next request.
+Copy the *access_token* from the answer and use this in the next request.
 
 
 ### Send new cert request to KeyVault API 
 
+After we received the Bearer token from the OAuth endpoint we can continue with the **create** request againt the Azure Key Vault.
+
+You can use the following POST request and Body and have to change all **{}** parts.
+If you want to use cURL or Postman you can download a text file with the complete cURL stement. Remeber that you have to change all **{}** parts.
+
+You can also change the certificate validity to a value of your choice.
+The format of the subject is only a suggestion from our side, you can choose your favorite subject.
+
 ```text
 POST https://{YourKeyVaultName}.vault.azure.net/certificates/{NewCertName}/create?api-version=7.1
 ```
-
-Authorization:
-
-The token from the first request.
 
 Body:
 
@@ -60,10 +101,7 @@ Body:
     },
     "x509_props": {
       "subject": "CN={NewCertName}, OU={TenantID}, O={CompanyName}",
-      "ekus": [
-                "1.3.6.1.5.5.7.3.1",
-                "1.3.6.1.5.5.7.3.2"
-            ],
+      "ekus": [],
         "key_usage": [
                 "cRLSign",
                 "digitalSignature",
@@ -93,59 +131,35 @@ Body:
 }
 ```
 
-cURL Code:
+**LINK TO post-new-scepman-cert.txt**
 
-```text
-curl --location --request POST 'https://{YourKeyVaultName}.vault.azure.net/certificates/{NewCertName}/create?api-version=7.1' \
---header 'Authorization: Bearer {YourAuthToken}' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "policy": {
-    "key_props": {
-      "exportable": true,
-      "kty": "RSA",
-      "key_size": 2048,
-      "reuse_key": false
-    },
-    "secret_props": {
-      "contentType": "application/x-pkcs12"
-    },
-    "x509_props": {
-      "subject": "CN={NewCertName}, OU={TenantID}, O={CompanyName}",
-      "ekus": [
-                "1.3.6.1.5.5.7.3.1",
-                "1.3.6.1.5.5.7.3.2"
-            ],
-        "key_usage": [
-                "cRLSign",
-                "digitalSignature",
-                "keyCertSign",
-                "keyEncipherment"
-            ],
-            "validity_months": 120,
-            "basic_constraints": {
-                "ca": true
-            }
-    },
-    "lifetime_actions": [
-            {
-                "trigger": {
-                    "lifetime_percentage": 80
-                },
-                "action": {
-                    "action_type": "EmailContacts"
-                }
-            }
-        ],
-    "issuer": {
-            "name": "Unknown",
-            "cert_transparency": false
-        }
-  }
-}'
-```
+### download and signe
 
-| Back to Trial Guide | Back to Community Guide | Back to Enterprise Guide​ |
-| :--- | :--- | :--- |
+1. After you have send the API calls you can see your new certificate in you Azure Key Vault.
 
+**SCREENSHOT 1**
 
+2. To download the CSR and merge the signed request (.cer) you need to click on your certificate and press **Certificate Operation**
+3. Now you can see the options **Download CSR** and **Merge Signed Request**
+
+**SCREENSHOT 2**
+
+4. After you have uploaded the signed request you can see the valid certificate in your Azure Key Vault in the area **Completed**
+
+### Update Azure App Service Settings
+
+The last step is to update the Azure App Service which runs the SCEPman with the new certificate information.
+
+1. Navigate to you Azure App Service
+2. Click on **Configuration** in the left navigation pane
+3. In **Application settings** you have to edit the following settings:
+
+AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName
+AppConfig:KeyVaultConfig:RootCertificateConfig:Subject
+
+4. As value you have to insert your new certificate name and the new subject name.
+5. To complete this step you have to click on **Save** in the upper left part.
+
+**SCREENSHOT 1**
+
+Please reboot the Azure App Service and then navigate to your SCEPman URL. On the SCEPman Status page you can see the new configuration and download the new intermediate certificate to deploy this via Endpoint Manager.
