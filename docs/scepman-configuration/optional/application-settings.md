@@ -35,8 +35,7 @@ Applicable to version 1.5 and above
 
 **Value:** _true_ or _false_
 
-**Description:**
-**True:** The Key Usage and Extended Key Usage extensions in the certificates are defined by the MDM solution.  
+**Description:** **True:** The Key Usage and Extended Key Usage extensions in the certificates are defined by the MDM solution.  
 **False:** Key Usage is always Key Encipherment + Digital Signature. Extended Key Usage is always _Client Authentication_.
 
 {% hint style="warning" %}
@@ -68,11 +67,9 @@ Applicable to version 1.6 and above
 
 **Value:** _true_ or _false_
 
-**Description:**
-This setting helps you to request Kerberos server certificates for your on-premises Domain Controllers. See [Domain Controller Certificates](domain-controller-certificates.md) for details.
+**Description:** This setting helps you to request Kerberos server certificates for your on-premises Domain Controllers. See [Domain Controller Certificates](domain-controller-certificates.md) for details.
 
-**True**: SCEPman listens at the additional SCEP server endpoint with the path `/dc`. Use in conjunction with AppConfig:DCValidation:RequestPassword.
-**False** (default): SCEPman does not issue certificates for Domain Controllers.
+**True**: SCEPman listens at the additional SCEP server endpoint with the path `/dc`. Use in conjunction with AppConfig:DCValidation:RequestPassword. **False** \(default\): SCEPman does not issue certificates for Domain Controllers.
 
 ## AppConfig:DCValidation:RequestPassword
 
@@ -82,8 +79,7 @@ Applicable to version 1.6 and above
 
 **Value:** _String_
 
-**Description:**
-A challenge password that the Domain Controllers must include in every SCEP request to acquire a certificate. Only used if AppConfig:DCValidation:Enabled is set to _true_.
+**Description:** A challenge password that the Domain Controllers must include in every SCEP request to acquire a certificate. Only used if AppConfig:DCValidation:Enabled is set to _true_.
 
 ## WEBSITE\_RUN\_FROM\_PACKAGE
 

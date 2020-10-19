@@ -1,4 +1,4 @@
-# Deployment Slots
+# Deployment slots
 
 {% hint style="warning" %}
 Comming soon!
