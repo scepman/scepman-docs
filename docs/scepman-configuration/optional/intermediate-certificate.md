@@ -33,16 +33,16 @@ We need to allow the Azure AD App and your user account to access the Azure Key 
 
 ![](../../.gitbook/assets/screenshot-2020-10-19-at-15.23.16.png)
 
-1. Click **Configure from template \(optional\)** and choose **Key, Secret & Certificate Management**
-2. Click on **Key permissions** and select all **Cryptographic Operations** 
-3. Now you must select a principal by clicking on **None selected** and search for you Azure AD App registration.
-4. To close the dialog press **Select** and then press **Add**
+4. Click **Configure from template \(optional\)** and choose **Key, Secret & Certificate Management**
+5. Click on **Key permissions** and select all **Cryptographic Operations** 
+6. Now you must select a principal by clicking on **None selected** and search for you Azure AD App registration.
+7. To close the dialog press **Select** and then press **Add**
 
 ![](../../.gitbook/assets/screenshot-2020-10-19-at-15.34.16.png)
 
-1. In the picture above you can see the new entry for the Azure AD App.
-2. Repeat Step 3 to 7 but now select your current user account.
-3. To save your new access policies you must click on **Save** in the upper left corner of the window.
+8. In the picture above you can see the new entry for the Azure AD App.
+9. Repeat Step 3 to 7 but now select your current user account.
+10. To save your new access policies you must click on **Save** in the upper left corner of the window.
 
 ![](../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28.png)
 
@@ -137,12 +137,12 @@ Body:
 
 ![](../../.gitbook/assets/screenshot-2020-10-19-at-15.55.43.png)
 
-1. To download the CSR and merge the signed request \(.cer\) you need to click on your certificate and press **Certificate Operation**
-2. Now you can see the options **Download CSR** and **Merge Signed Request**
+2. To download the CSR and merge the signed request \(.cer\) you need to click on your certificate and press **Certificate Operation**
+3. Now you can see the options **Download CSR** and **Merge Signed Request**
 
 ![](../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18.png)
 
-1. After you have uploaded the signed request you can see the valid certificate in your Azure Key Vault in the area **Completed**
+4. After you have uploaded the signed request you can see the valid certificate in your Azure Key Vault in the area **Completed**
 
 ### Update Azure App Service Settings
 
@@ -154,8 +154,8 @@ The last step is to update the Azure App Service which runs the SCEPman with the
 
 AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName AppConfig:KeyVaultConfig:RootCertificateConfig:Subject
 
-1. As value you must insert your new certificate name and the new subject name.
-2. To complete this step, you must click on **Save** in the upper left part.
+4. As value you must insert your new certificate name and the new subject name.
+5. To complete this step, you must click on **Save** in the upper left part.
 
 ![](../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40.png)
 
