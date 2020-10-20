@@ -19,7 +19,7 @@ You need the following information:
 | {TenantID} | &lt;GUID&gt; of your Azure AD Tenant |
 | {YourApplicationID} | &lt;GUID&gt; -&gt; the **Application \(Client\) ID** of your Azure App Registration |
 | {YourApplicationKey} | Client secret from you Azure App Registration |
-| {YourKeyVaultName} | Name of your Azure Key Vault ressource  |
+| {YourKeyVaultName} | Name of your Azure Key Vault ressource |
 | {NewCertName} | Name of your new Intermediate certificate. Now spaces allowed! |
 | {CompanyName} | Acronym of your Company. No spaces allowed! |
 
@@ -31,20 +31,21 @@ We need to allow the Azure AD App and your user account to access the Azure Key 
 2. Click on **Access policies** in the left navigation pane.
 3. Click on **Add Access Policy** 
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.23.16.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-15.23.16%20%281%29.png)
 
-4. Click **Configure from template \(optional\)** and choose **Key, Secret & Certificate Management**
-5. Click on **Key permissions** and select all **Cryptographic Operations** 
-6. Now you must select a principal by clicking on **None selected** and search for you Azure AD App registration.
+4. Click **Configure from template \(optional\)** and choose **Key, Secret & Certificate Management**  
+5. ****Click on **Key permissions** and select all **Cryptographic Operations**   
+6. Now you must select a principal by clicking on **None selected** and search for you Azure AD App   
+     registration.  
 7. To close the dialog press **Select** and then press **Add**
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.34.16.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-15.34.16%20%281%29.png)
 
-8. In the picture above you can see the new entry for the Azure AD App.
-9. Repeat Step 3 to 7 but now select your current user account.
+8. In the picture above you can see the new entry for the Azure AD App.  
+9. Repeat Step 3 to 7 but now select your current user account.  
 10. To save your new access policies you must click on **Save** in the upper left corner of the window.
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28%20%281%29.png)
 
 After we saved this access policies successfully, we can continue with the API calls.
 
@@ -67,7 +68,7 @@ client_secret:{YourApplicationKey}
 scope:https://vault.azure.net/.default
 ```
 
-{% file src="../../.gitbook/assets/post-microsoft-login.txt" caption="POST Microsoft Login" %}
+{% file src="../../.gitbook/assets/post-microsoft-login \(1\).txt" caption="POST Microsoft Login" %}
 
 Copy the **access\_token** from the answer and use this in the next request.
 
@@ -129,18 +130,18 @@ Body:
 }
 ```
 
-{% file src="../../.gitbook/assets/post-new-scepman-cert.txt" caption="POST New SCEPman Certificate" %}
+{% file src="../../.gitbook/assets/post-new-scepman-cert \(1\).txt" caption="POST New SCEPman Certificate" %}
 
 ### download and sign
 
 1. After you have sent the API calls you can see your new certificate in you Azure Key Vault.
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.55.43.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-15.55.43%20%281%29.png)
 
-2. To download the CSR and merge the signed request \(.cer\) you need to click on your certificate and press **Certificate Operation**
-3. Now you can see the options **Download CSR** and **Merge Signed Request**
+2. To download the CSR and merge the signed request \(.cer\) you need to click on your certificate and press **Certificate Operation**  
+3. ****Now you can see the options **Download CSR** and **Merge Signed Request**
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18%20%281%29.png)
 
 4. After you have uploaded the signed request you can see the valid certificate in your Azure Key Vault in the area **Completed**
 
@@ -154,10 +155,10 @@ The last step is to update the Azure App Service which runs the SCEPman with the
 
 AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName AppConfig:KeyVaultConfig:RootCertificateConfig:Subject
 
-4. As value you must insert your new certificate name and the new subject name.
+4. As value you must insert your new certificate name and the new subject name.  
 5. To complete this step, you must click on **Save** in the upper left part.
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40%20%281%29.png)
 
 Please reboot the Azure App Service and then navigate to your SCEPman URL. On the SCEPman Status page you can see the new configuration and download the new intermediate certificate to deploy this via Endpoint Manager.
 
