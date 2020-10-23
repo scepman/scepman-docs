@@ -108,12 +108,18 @@ certutil -urlcache OCSP
 
 ![](../../.gitbook/assets/scepman_revocation2%20%281%29%20%281%29.png)
 
-If you want to revoke a device certificate, you have two options:
+If you want to revoke a **user** certificate, you have two options:‌
+
+1. Deleting the user from Azure AD or
+2. Block sign-in for the user
+
+  
+If you want to revoke a **device** certificate, you have two options:
 
 1. Deleting the device from Azure AD or
 2. Disabling a device
 
-The following example shows the the second option 'Disabling a device':
+The following example shows the the second option 'Disabling a device'\(the result for user certificates will be the same\):
 
 1. Navigate to **Devices - All devices** in your Azure AD
 2. Choose a device
