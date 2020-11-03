@@ -59,6 +59,18 @@ You can also configure shorter validity periods in each SCEP profile in Intune a
 iOS and macOS devices do not support the configuration via Intune and you need to configure this setting.
 {% endhint %}
 
+## AppConfig:IntuneValidation:WaitForSuccessNotificationResponse
+
+{% hint style="info" %}
+Applicable to version 1.6 (currently internal) and above
+{% endhint %}
+
+**Value:** _true_ or _false_
+
+**Description:** After a certificate was successfully issued, SCEPman sends a notification about the certificate to Intune. Microsoft recommends to wait for the response in its specification. However, some instances show long delays resulting in timeouts occasionally. Therefore **True** is the default.
+
+Setting this to **False** makes SCEPman return the issued certificate before Intune answers to the notification. This is against the letters of the specification, but increases performance and avoids timeouts in instances where this issue arises.
+
 ## AppConfig:DCValidation:Enabled
 
 {% hint style="info" %}
