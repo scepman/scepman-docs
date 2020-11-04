@@ -62,7 +62,7 @@ iOS and macOS devices do not support the configuration via Intune and you need t
 ## AppConfig:IntuneValidation:WaitForSuccessNotificationResponse
 
 {% hint style="info" %}
-Applicable to version 1.6 (currently internal) and above
+Applicable to version 1.6 \(currently internal\) and above
 {% endhint %}
 
 **Value:** _true_ or _false_
