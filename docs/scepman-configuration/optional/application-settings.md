@@ -27,6 +27,13 @@ If you are using a trial deployment or the community edition this field leaves e
 **Description:**  
 You can send Debug log information to a cloud-based monitoring solution of our company for support reasons. This can speed up support cases. You can activate and deactivate this feature by changing the value to **true** or **false**.
 
+## AppConfig:AnonymousHomePageAccess
+
+**Value:** _true_ or _false_
+
+**Description:**  
+When not configured or set to **true**, anyone in the internet knowing the app service's URL can access the SCEPman Homepage and see status information like the SCEPman version and whether SCEPman is up and running (except if you prevent this with a firewall). We consider this non-sensitive information, but if you want to hide it, set this to **false**. Then, the homepage is deactivated for browser access and this information is not visible anymore.
+
 ## AppConfig:UseRequestedKeyUsages
 
 {% hint style="info" %}
