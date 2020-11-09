@@ -102,8 +102,9 @@ The above command requests a new DC certificate whether or not there already is 
 For a fully automated renewal of certificates, you should distribute ScepClient to **all** your domain controllers, together with the PowerShell script `enroll-dc-certificate.ps1` \(please ask the support for download while it is in Beta\). Add a Scheduled task that executes the following command in a SYSTEM context:
 
 ```text
-powershell c:\scepman\enroll-dc-certificate.ps1 -SCEPURL https://your-scepman-domain/dc -SCEPChallenge RequestPassword -ValidityThreshold (New-TimeSpan -Days 30)
+powershell -ExecutionPolicy RemoteSigned c:\scepman\enroll-dc-certificate.ps1 -SCEPURL https://your-scepman-domain/dc -SCEPChallenge RequestPassword -ValidityThreshold (New-TimeSpan -Days 30)
 ```
 
 This checks for existing DC certificates in the machine store. Only if there are no suitable certificates with at least 30 days validity, it uses ScepClient.exe to request a new DC certificate from SCEPman.
 
+For WHfB, all DCs running version 2016 or newer need a Kerberos Authentication certificate. Older DCs forward authentication requests to newer DCs, thus they do not necessarily require a Kerberos Authentication certificate. It is a best practice, though, to supply them with certificates, too.
