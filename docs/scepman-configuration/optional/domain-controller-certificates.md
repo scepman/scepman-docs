@@ -11,7 +11,7 @@ SCEPman Enterprise Edition only
 You can use SCEPman to issue Kerberos authentication certificates to your domain controllers. This allows your AAD or hybrid-joined devices to authenticate seamlessly when accessing on-premises resources. This can be used to implement the **Hybrid Key trust for Windows Hello for Business**. The SCEPman will replace the requirement of a **Public key infrastructure**. Details can be found [here](https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-key-trust-prereqs)
 
 {% hint style="info" %}
-This feature requires version **1.6** or above \(currently beta\).
+This feature requires version **1.6** or above.
 {% endhint %}
 
 ## Root CA with no Enhanced Key Usage \(EKU\)
@@ -81,7 +81,7 @@ Afterwards, the CA certificate is generally trusted in AD and especially trusted
 
 ## Installation on the Client
 
-Then you must download our SCEP client software SCEPClientCore \(please ask the support for download while it is in Beta\). **It requires .NET Core 3.1 to be installed on the target systems.**
+Then you must download our Open Source SCEP client software [SCEPClient](https://github.com/scepman/scepclient/releases/latest). **It requires the [.NET Core 3.1 Runtime](https://download.visualstudio.microsoft.com/download/pr/9845b4b0-fb52-48b6-83cf-4c431558c29b/41025de7a76639eeff102410e7015214/dotnet-runtime-3.1.10-win-x64.exe) to be installed on the target systems.**
 
 Execute the following command in an elevated command prompt on a domain controller to receive a Domain Controller certificate from SCEPman:
 
@@ -99,7 +99,7 @@ The above command requests a new DC certificate whether or not there already is 
 
 ### CA certificate Renewal
 
-For a fully automated renewal of certificates, you should distribute ScepClient to **all** your domain controllers, together with the PowerShell script `enroll-dc-certificate.ps1` \(please ask the support for download while it is in Beta\). Add a Scheduled task that executes the following command in a SYSTEM context:
+For a fully automated renewal of certificates, you should distribute ScepClient to **all** your domain controllers, together with the PowerShell script [enroll-dc-certificate.ps1](https://github.com/scepman/scepclient/blob/master/enroll-dc-certificate.ps1). Add a Scheduled task that executes the following command in a SYSTEM context:
 
 ```text
 powershell -ExecutionPolicy RemoteSigned c:\scepman\enroll-dc-certificate.ps1 -SCEPURL https://your-scepman-domain/dc -SCEPChallenge RequestPassword -ValidityThreshold (New-TimeSpan -Days 30)
