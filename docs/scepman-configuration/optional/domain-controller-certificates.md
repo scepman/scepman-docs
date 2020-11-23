@@ -1,10 +1,6 @@
 # Domain Controller Certificates
 
 {% hint style="warning" %}
-Work in progress...!
-{% endhint %}
-
-{% hint style="warning" %}
 SCEPman Enterprise Edition only
 {% endhint %}
 
