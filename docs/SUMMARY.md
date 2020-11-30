@@ -25,6 +25,7 @@
   * [Application Insights](scepman-configuration/optional/application-insights.md)
   * [Autoscaling](scepman-configuration/optional/autoscaling.md)
   * [Domain Controller Certificates](scepman-configuration/optional/domain-controller-certificates.md)
+  * [3rd-party MDM Certificates](scepman-configuration/optional/static-certificates.md)
   * [Application Settings](scepman-configuration/optional/application-settings.md)
   * [Intermediate certificate](scepman-configuration/optional/intermediate-certificate.md)
   * [Deployment slots](scepman-configuration/optional/deployment-slots.md)

@@ -100,6 +100,28 @@ Applicable to version 1.6 and above
 
 **Description:** A challenge password that the Domain Controllers must include in every SCEP request to acquire a certificate. Only used if AppConfig:DCValidation:Enabled is set to _true_.
 
+## AppConfig:StaticValidation:Enabled
+
+{% hint style="info" %}
+Applicable to version 1.6 and above
+{% endhint %}
+
+**Value:** _true_ or _false_
+
+**Description:** This setting helps you to request certificates from [3rd-party MDM systems](static-certificates.md) (i.e. other than Intune).
+
+**True**: SCEPman listens at the additional SCEP server endpoint with the path `/static`. Use in conjunction with AppConfig:StaticValidation:RequestPassword. **False** \(default\): SCEPman does not issue certificates for 3rd-party MDM systems (i.e. other than Intune).
+
+## AppConfig:StaticValidation:RequestPassword
+
+{% hint style="info" %}
+Applicable to version 1.6 and above
+{% endhint %}
+
+**Value:** _String_
+
+**Description:** A challenge password that a 3rd-party MDM system must include in every SCEP request to acquire a certificate. Only used if AppConfig:StaticValidation:Enabled is set to _true_.
+
 ## WEBSITE\_RUN\_FROM\_PACKAGE
 
 This setting points to the Application Artifacts that will be loaded by starting the App Service.  
