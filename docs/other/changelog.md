@@ -9,10 +9,10 @@ order: 1
 
 ### 1.6 - November 2020
 
-* Bug fixing
 * Support for certificates for [Domain Controllers](../scepman-configuration/optional/domain-controller-certificates), especially for use in Windows Hello for Business (Enterprise Edition only)
 * Generic support for [3rd-party MDM systems via endpoint static](../scepman-configuration/optional/static-certificates)
 * Improved error logging
+* Bug fixing
 
 ### 1.5 - July 2020
 
