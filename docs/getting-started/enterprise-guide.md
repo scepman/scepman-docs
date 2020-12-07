@@ -111,7 +111,7 @@ The next step is to configure the Storage account and change the Artifact locati
 {% page-ref page="../scepman-configuration/optional/application-artifacts.md" %}
 
 {% hint style="info" %}
-Not worth to mention, but we recommend the production channel.
+We recommend the production channel.
 {% endhint %}
 
 ### Step 5: Configure Log collection
