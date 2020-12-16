@@ -31,7 +31,7 @@ We need to allow the Azure AD App and your user account to access the Azure Key 
 2. Click on **Access policies** in the left navigation pane.
 3. Click on **Add Access Policy** 
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.23.16%20%281%29.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-15.23.16.png)
 
 4. Click **Configure from template \(optional\)** and choose **Key, Secret & Certificate Management**  
 5. ****Click on **Key permissions** and select all **Cryptographic Operations**   
@@ -39,13 +39,13 @@ We need to allow the Azure AD App and your user account to access the Azure Key 
      registration.  
 7. To close the dialog press **Select** and then press **Add**
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.34.16%20%281%29.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-15.34.16.png)
 
 8. In the picture above you can see the new entry for the Azure AD App.  
 9. Repeat Step 3 to 7 but now select your current user account.  
 10. To save your new access policies you must click on **Save** in the upper left corner of the window.
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28%20%281%29.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28%20%281%29%20%281%29.png)
 
 After we saved this access policies successfully, we can continue with the API calls.
 
@@ -141,7 +141,7 @@ Body:
 2. To download the CSR and merge the signed request \(.cer\) you need to click on your certificate and press **Certificate Operation**  
 3. ****Now you can see the options **Download CSR** and **Merge Signed Request**
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18%20%281%29.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18%20%281%29%20%281%29.png)
 
 4. After you have uploaded the signed request you can see the valid certificate in your Azure Key Vault in the area **Completed**
 
@@ -158,7 +158,7 @@ AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName AppConfig:KeyVaul
 4. As value you must insert your new certificate name and the new subject name.  
 5. To complete this step, you must click on **Save** in the upper left part.
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40%20%281%29.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40.png)
 
 Please reboot the Azure App Service and then navigate to your SCEPman URL. On the SCEPman Status page you can see the new configuration and download the new intermediate certificate to deploy this via Endpoint Manager.
 

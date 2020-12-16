@@ -31,11 +31,11 @@ Here's an overview about the SCEPman workflow. The first figure shows the certif
 
 Process of certificate issuance:
 
-![](.gitbook/assets/overview1%20%281%29.png)
+![](.gitbook/assets/Overview1.png)
 
 Process of certificate validation during certificate-based authentication:
 
-![](.gitbook/assets/overview2%20%281%29.png)
+![](.gitbook/assets/Overview2.png)
 
 ### SCEPman Features
 
