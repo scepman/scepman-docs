@@ -36,10 +36,14 @@ The following instructions outline the steps required to create an Azure Applica
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.34%20%281%29%20%282%29.png)
 
-6\) Add a routing rule for HTTPS
+6\) Optional: Add a routing rule for HTTPS
+
+{% hint style="warning" %}
+This step requires an HTTPS web server certificate.
+{% endhint %}
 
 {% hint style="info" %}
-Important: This step requires an HTTPS web server certificate.
+The use of HTTP without TLS is not a security vulnerability; PKI-based resources are commonly published via HTTP without TLS, as the TLS handshake may require access to these resources. Using TLS would create a chicken-and-egg problem where the TLS handshake requires access to the PKI resources and access to the PKI resources requires a TLS handshake. Therefore, these PKI resources including the protocols SCEP and OCSP employ their own encryption and/or signatures where it is required.
 {% endhint %}
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.17.34%20%281%29.png)
@@ -78,7 +82,3 @@ Eventually, configure the new name in the SCEPman settings:
 
 3. Enter the DNS name for the IP address prefixed with "http://". If you have configured a TLS certificate in the Azure Application Gateway, you may also use HTTPS.
 ![](../../.gitbook/assets/appconfig-baseurl-gateway.png)
-
-{% hint style="info" %}
-The use of HTTP without TLS is not a security vulnerability; PKI-based resources are commonly published via HTTP without TLS, as the TLS handshake may require access to these resources. Using TLS would create a chicken-and-egg problem where the TLS handshake requires access to the PKI resources and access to the PKI resources requires a TLS handshake. Therefore, these PKI resources including the protocols SCEP and OCSP employ their own encryption and/or signatures where it is required.
-{% endhint %}
