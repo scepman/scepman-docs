@@ -82,3 +82,5 @@ Eventually, configure the new name in the SCEPman settings:
 
 3. Enter the DNS name for the IP address prefixed with "http://". If you have configured a TLS certificate in the Azure Application Gateway, you may also use HTTPS.
 ![](../../.gitbook/assets/appconfig-baseurl-gateway.png)
+
+In the Intune configuration, you may still use the App Service's URL instead of the Azure Application Gateway's. If you do this, the clients communicate directly with the App Service. You must configure the Azure Application Gateway's URL in Cisco ISE, as only this URL supports HTTP 1.0 requests.
