@@ -12,10 +12,10 @@ You can use SCEPman to issue Kerberos authentication certificates to your domain
 
 ## Root CA without Enhanced Key Usage \(EKU\) Extension
 
-**This feature has new requirements to the Root CA.**   
-If you are updating from an earlier version as **1.6** you must generate a **new** Root CA.   
-To support Kerberos authentication certificates the CA certificate must contain either no Enchanced Key Usage \(EKU\) extension or it must include Kerberos Authentication and Smart Card Logon.   
-  
+**This feature has new requirements to the Root CA.**  
+If you are updating from an earlier version as **1.6** you must generate a **new** Root CA.  
+To support Kerberos authentication certificates the CA certificate must contain either no Enchanced Key Usage \(EKU\) extension or it must include Kerberos Authentication and Smart Card Logon.
+
 If you are starting with SCEPman **1.6** and generate the Root CA with our SCEPman, you can skip the following steps.  
 Otherwise please follow this guide to generate a new Root CA.
 
@@ -43,7 +43,7 @@ CA Suitability on SCEPman Dashboard:
 
 ## Configuration Changes to the SCEPman Service
 
-To enable the feature, you must add two application settings in your SCEPman service. In the current implementation we use a pre-shared key \(password\) for DC requests.   
+To enable the feature, you must add two application settings in your SCEPman service. In the current implementation we use a pre-shared key \(password\) for DC requests.  
 **Please generate a new key/password and store it somewhere safe.** \(you will need it in the following steps and later, on the domain Controllers\)
 
 1. Navigate to **App Services**
@@ -77,7 +77,7 @@ Afterwards, the CA certificate is generally trusted in AD and especially trusted
 
 ## Installation on the Client
 
-Then you must download our Open Source SCEP client software [SCEPClient](https://github.com/scepman/scepclient/releases/latest). **It requires the [.NET Core 3.1 Runtime](https://download.visualstudio.microsoft.com/download/pr/9845b4b0-fb52-48b6-83cf-4c431558c29b/41025de7a76639eeff102410e7015214/dotnet-runtime-3.1.10-win-x64.exe) to be installed on the target systems.**
+Then you must download our Open Source SCEP client software [SCEPClient](https://github.com/scepman/scepclient/releases/latest). **It requires the** [**.NET Core 3.1 Runtime**](https://download.visualstudio.microsoft.com/download/pr/9845b4b0-fb52-48b6-83cf-4c431558c29b/41025de7a76639eeff102410e7015214/dotnet-runtime-3.1.10-win-x64.exe) **to be installed on the target systems.**
 
 Execute the following command in an elevated command prompt on a domain controller to receive a Domain Controller certificate from SCEPman:
 
@@ -104,3 +104,4 @@ powershell -ExecutionPolicy RemoteSigned c:\scepman\enroll-dc-certificate.ps1 -S
 This checks for existing DC certificates in the machine store. Only if there are no suitable certificates with at least 30 days validity, it uses ScepClient.exe to request a new DC certificate from SCEPman.
 
 For WHfB, all DCs running version 2016 or newer need a Kerberos Authentication certificate. Older DCs forward authentication requests to newer DCs, thus they do not necessarily require a Kerberos Authentication certificate. It is a best practice, though, to supply them with certificates, too.
+

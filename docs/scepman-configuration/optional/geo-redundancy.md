@@ -14,7 +14,7 @@ SCEPman Enterprise Edition only
 
 This section describes a high availability architecture for production use.
 
-![](../../.gitbook/assets/scepman_loadbalancer1%20%281%29.png)
+![](../../.gitbook/assets/scepman_loadbalancer1.png)
 
 ## Clone App
 
@@ -52,7 +52,7 @@ Next, you need a managed identity for the cloned app:
 
 2. Under System assigned switch the **Status** to **On.**
 
-![](../../.gitbook/assets/scepman_identity2%20%281%29.png)
+![](../../.gitbook/assets/scepman_identity2.png)
 
 3. Click **Save.**
 
@@ -75,7 +75,7 @@ Your **Identity** should look like this:
 
 3. In the submenu **Add access policy** click **Select principial**.
 
-![](../../.gitbook/assets/scepman_keyvault2%20%281%29.png)
+![](../../.gitbook/assets/scepman_keyvault2.png)
 
 4. Search your web app identity.
 
@@ -95,7 +95,7 @@ Your **Identity** should look like this:
 2. Search **Traffic Manager profile** and click **Create.** 
 3. Fill in the fields.
 
-![](../../.gitbook/assets/scepman_trafficmanager1%20%281%29.png)
+![](../../.gitbook/assets/scepman_trafficmanager1.png)
 
 4. Then click **Create**.
 
@@ -103,20 +103,20 @@ Your **Identity** should look like this:
 
 6. Change the settings.
 
-![](../../.gitbook/assets/scepman_trafficmanager2%20%281%29.png)
+![](../../.gitbook/assets/scepman_trafficmanager2.png)
 
 7. Then under **Settings** choose **Endpoints**
 
 8. Click **Add** and choose the primary web app.
 
-![](../../.gitbook/assets/scepman_trafficmanager3%20%281%29.png)
+![](../../.gitbook/assets/scepman_trafficmanager3.png)
 
 9. Repeat these steps for your second web app.  
 
 
 In the **Overview** your traffic manager should like this \(here you find the traffic manage URL\):
 
-![](../../.gitbook/assets/scepman_trafficmanager4%20%281%29.png)
+![](../../.gitbook/assets/scepman_trafficmanager4.png)
 
 ## Own Application Setup \(optional\)
 
@@ -148,7 +148,7 @@ The SCEPman application will be loaded from the zip file which is located in a G
 
 11. Choose the **Artifacts.zip**
 
-![](../../.gitbook/assets/scepman_storage4.png)
+![](../../.gitbook/assets/scepman_storage4%20%281%29.png)
 
 12. Then click **Upload.**
 
@@ -164,7 +164,7 @@ The SCEPman application will be loaded from the zip file which is located in a G
 
 17. In **Application settings** search **WEBSITE\_RUN\_FROM\_PACKAGE**
 
-![](../../.gitbook/assets/scepman_storage6%20%281%29.png)
+![](../../.gitbook/assets/scepman_storage6%20%281%29%20%281%29.png)
 
 
 

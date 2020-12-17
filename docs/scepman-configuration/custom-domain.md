@@ -31,7 +31,7 @@ If you want to create your own custom domain for your **App Service** URL, follo
 
 10. Next click **Add binding.**
 
-![](../.gitbook/assets/scepman_cname3%20%281%29.png)
+![](../.gitbook/assets/scepman_cname3%20%281%29%20%281%29.png)
 
 11. After completing these steps, **Application settings** needs to be updated
 
