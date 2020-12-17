@@ -60,3 +60,25 @@ Important: This step requires an HTTPS web server certificate.
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.19.13%20%281%29%20%281%29.png)
 
+Then, add a DNS name for the Gateway:
+
+1. Open the IP Address resource
+
+2. Add a name of your choice as DNS name label
+![](../../.gitbook/assets/ip-address.png)
+
+3. Optional: You can add a CNAME entry for a DNS record that you own DNS servers.
+
+Eventually, configure the new name in the SCEPman settings:
+
+1. Go the App Service for SCEPman and open the Configuration page in the Settings section.
+
+2. Edit the value AppConfig:BaseURL.
+![](../../.gitbook/assets/appconfig-baseurl.png)
+
+3. Enter the DNS name for the IP address prefixed with "http://". If you have configured a TLS certificate in the Azure Application Gateway, you may also use HTTPS.
+![](../../.gitbook/assets/appconfig-baseurl-gateway.png)
+
+{% hint style="info" %}
+The use of HTTP without TLS is not a security vulnerability; PKI-based resources are commonly published via HTTP without TLS, as the TLS handshake may require access to these resources. Using TLS would create a chicken-and-egg problem where the TLS handshake requires access to the PKI resources and access to the PKI resources requires a TLS handshake. Therefore, these PKI resources including the protocols SCEP and OCSP employ their own encryption and/or signatures where it is required.
+{% endhint %}
