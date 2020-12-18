@@ -15,7 +15,7 @@ If you want to create your own custom domain for your **App Service** URL, follo
 3. Enter your custom domain \(**1**\) and click **Validate**. 
 4. If **CNAME** is set correct \(**2**\) domain ownership is validated \(**3**\).
 
-![](../.gitbook/assets/scepman_cname1%20%281%29.png)
+![](../.gitbook/assets/scepman_cname1%20%281%29%20%281%29.png)
 
 5.  Click **Add custom domain** to finish this configuration.
 
@@ -23,7 +23,7 @@ If you want to create your own custom domain for your **App Service** URL, follo
 
 7. Click **Add binding** on the custom domain screen.
 
-![](../.gitbook/assets/scepman_cname2%20%281%29.png)
+![](../.gitbook/assets/scepman_cname2%20%281%29%20%281%29.png)
 
 8. On the TLS/SSL Binding submenu click **Upload PFX Certificate.**
 

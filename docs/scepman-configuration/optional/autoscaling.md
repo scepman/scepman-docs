@@ -27,11 +27,11 @@ To scale the instance count based on the current load of the service there must 
 
 This is an example of a rule which increases the instance count by one instance when the average CPU usage is higher than 70% for 10 minutes. Adjust the criteria and metrics regarding your specific needs. 
 
-![](../../.gitbook/assets/image%20%286%29.png)
+![](../../.gitbook/assets/image%20%2812%29.png)
 
 #### Decrease Instance Count Rule
 
-![](../../.gitbook/assets/image%20%289%29.png)
+![](../../.gitbook/assets/image%20%2810%29.png)
 
 To decrease the instance count dynamically again a second rule is necessary which negates the first one. In this example the instance count is decreased by one instance when the average CPU usage is less than 20% for 10 minutes.
 

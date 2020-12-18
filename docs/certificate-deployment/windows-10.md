@@ -16,7 +16,7 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](../.gitbook/assets/scepman24%20%281%29%20%287%29%20%285%29.png)
+![](../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%285%29.png)
 
 Then, create a profile in Microsoft Intune:
 
@@ -34,7 +34,7 @@ When you are finsihed with it, you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
 
-![](../.gitbook/assets/scepman27%20%282%29%20%282%29.png)
+![](../.gitbook/assets/scepman27%20%282%29%20%281%29%20%282%29.png)
 
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)  
 \('xxx' is a placeholder\)
@@ -76,7 +76,7 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](../.gitbook/assets/scepman24%20%281%29%20%287%29%20%282%29.png)
+![](../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%282%29.png)
 
 Then, create a profile in Microsoft Intune:
 
@@ -94,7 +94,7 @@ When you are done with it you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
 
-![](../.gitbook/assets/scepman27%20%282%29%20%286%29.png)
+![](../.gitbook/assets/scepman27%20%282%29%20%281%29%20%286%29.png)
 
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)  
 \('xxx' is a placeholder\)
@@ -117,7 +117,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman \(for better visibility we recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below\). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. For SCEPman version before 1.5, the validity period is set to a fixed 6 month. For SCEPman 1.5 and above, SCEPman caps the certificate validity if it is above the configured maximum, but otherwise uses the validity configured in the request. The red rectangle is a setting that is free to modify. Long term all settings will be supported for configuration. **The setting for 'Subject name format' is freely selectable. For the Subject alternative name we recommend to set 'User principal name \(UPN\)'.**
 {% endhint %}
 
-![](../.gitbook/assets/scepman_user_w10_2%20%281%29.png)
+![](../.gitbook/assets/scepman_user_w10_2%20%281%29%20%281%29.png)
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**
