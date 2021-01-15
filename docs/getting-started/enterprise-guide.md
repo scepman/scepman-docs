@@ -102,7 +102,7 @@ To start with the deployment, you need to follow our Setup instruction:
 
 After the deployment completed you have to create the root certificate in the Azure Key Vault.
 
--- Link zu First run root cert --
+{% page-ref page="../scepman-configuration/first-run-root-cert.md" %}
 
 ### Step 4: Configure a Custom Domain and SSL certificate
 
