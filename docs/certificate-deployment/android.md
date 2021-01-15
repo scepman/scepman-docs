@@ -1,6 +1,6 @@
 # Android
 
-The following article describes how to deploy a device certificate or a user certificate for Android. Android certificate deployment is very similar to Windows 10, macOS and iOS certificate deployments.
+The following article describes how to deploy a device certificate or a user certificate for Android. Android certificate deployment is similar to Windows 10, macOS and iOS certificate deployments.
 
 ## Deploying Device Certificate
 
