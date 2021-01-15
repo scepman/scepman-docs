@@ -156,9 +156,10 @@ With the completion of the above steps we have a working SCEPman implementation 
 
 In the Endpoint Manager \(Intune\) you can create Configuration profiles for varoius platforms. Choose your OS platform from the below links:
 
--- Link per OS --
+
 
 ### Step 11: Enjoy the ease of SCEPman certificate deployment
 
-After configuration of the Intune profiles you will get certificates to your devices and can start using them. Enjoy SCEPman and if you have any questions please get in contact with us. Further details can be found on [https://scepman.com](https://scepman.com)
+After configuration of the Intune profiles, we will get your certificates to your devices and can start using them. Now enjoy SCEPman and if you have any questions please contact us.   
+Further details can be found on [https://scepman.com](https://scepman.com)
 
