@@ -9,10 +9,6 @@ If you want to deploy:
 * enterprise \(SCEPman EE\) environment, please follow the [Enterprise Guide](enterprise-guide.md)
 {% endhint %}
 
-{% hint style="warning" %}
-We will deliver a Trial Guide soon!
-{% endhint %}
-
 ## Azure Deployment
 
 Let´s start with the requirements and a resource overview.  
