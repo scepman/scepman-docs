@@ -79,7 +79,7 @@ To configure this, do the following:
 
 ![](../../.gitbook/assets/scepman_optional3%20%281%29%20%282%29%20%283%29%20%283%29%20%282%29.png)
 
-| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide](../../getting-started/enterprise-guide.md#step-4-deploy-storage-account-and-change-artifacts)​ |
+| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-5-deploy-storage-account-and-change-artifacts) |
 | :--- | :--- | :--- |
 
 

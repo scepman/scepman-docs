@@ -43,7 +43,7 @@ To decrease the instance count dynamically again a second rule is necessary whic
         <p>Back to Trial Guide</p>
       </th>
       <th style="text-align:left">Back to Community Guide</th>
-      <th style="text-align:left">&#x200B;<a href="../../getting-started/enterprise-guide.md#step-7-configure-autoscaling">Back to Enterprise Guide&#x200B;</a>
+      <th style="text-align:left">&#x200B;<a href="../../getting-started/enterprise-guide.md#step-8-configure-autoscaling">Back to Enterprise Guide&#x200B;</a>
       </th>
     </tr>
   </thead>

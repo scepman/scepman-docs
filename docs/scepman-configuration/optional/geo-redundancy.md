@@ -168,7 +168,7 @@ The SCEPman application will be loaded from the zip file which is located in a G
 
 
 
-| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-8-configure-geo-redundancy-optional) |
+| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-9-configure-geo-redundancy-optional) |
 | :--- | :--- | :--- |
 
 
