@@ -16,6 +16,7 @@
 * [Deployment Options](scepman-configuration/deployment-options/README.md)
   * [Marketplace deployment](scepman-configuration/deployment-options/marketplace-deployment.md)
   * [Enterprise deployment](scepman-configuration/deployment-options/enterprise-deployment.md)
+* [Root certificate](scepman-configuration/first-run-root-cert.md)
 * [Custom Domain](scepman-configuration/custom-domain.md)
 * [Optional](scepman-configuration/optional/README.md)
   * [Add a License Key](scepman-configuration/optional/add-a-license-key.md)
