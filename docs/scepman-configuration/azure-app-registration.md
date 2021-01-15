@@ -72,7 +72,7 @@ Copy the client secret value. You will not be able to retrieve it after you leav
 
 The app registration is done.
 
-| Back to Trial Guide | Back to Community Guide | [Back to Enterprise Guide](../getting-started/enterprise-guide.md#step-1-azure-app-registration) |
+| [Back to Trial Guide](../getting-started/trial-guide.md#step-1-azure-app-registration) | Back to Community Guide | [Back to Enterprise Guide](../getting-started/enterprise-guide.md#step-1-azure-app-registration) |
 | :--- | :--- | :--- |
 
 
