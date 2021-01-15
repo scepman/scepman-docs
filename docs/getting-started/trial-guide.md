@@ -13,3 +13,84 @@ If you want to deploy:
 We will deliver a Trial Guide soon!
 {% endhint %}
 
+## Azure Deployment
+
+Let´s start with the requirements and a resource overview.  
+Keep in mind that you need to plan a useful Azure resource design.
+
+### Checklist pre-requirements
+
+* [ ] Azure subscription
+* [ ] Azure contributor rights \(at least on Resource Group level\)
+* [ ] Azure AD "Global administrator" \(Consent to access Graph API\)
+
+### Overview Azure Resource
+
+All these resources are deployed for a trial environment.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">App Service</td>
+      <td style="text-align:left">The running SCEPman application and provides a UI to configure different
+        <br
+        />application specific settings like CNAME, SSL certificate and App Settings.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">App Service Plan</td>
+      <td style="text-align:left">
+        <p>A virtual set of compute resources and configurations for the &quot;App
+          Service&quot;.</p>
+        <p>Here you can configure the pricing tier and resource scaling.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Key Vault</td>
+      <td style="text-align:left">
+        <p>Tool to store securely secrets and certificates. The SCEPman application</p>
+        <p>will generate and save the root certificate in your Key Vault.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Configuration Steps
+
+### Step 1: Azure App Registration
+
+Before we can start the resource deployment, we need to create an "Azure App Registration".
+
+{% page-ref page="../scepman-configuration/azure-app-registration.md" %}
+
+### Step 2: Deploy SCEPman base services
+
+To start with the deployment, you need to follow our Setup instruction:
+
+{% page-ref page="../scepman-configuration/deployment-options/marketplace-deployment.md" %}
+
+### Step 3: Create Root certificate
+
+After the deployment complated you need to create the root certificate in the Azure Key Vault.
+
+- Link to "Create Root Cert"
+
+### Step 4: Configure Intune deployment profiles
+
+With the completion of the first steps we have a working SCEPman implementation and can now deploy certificates to our devices.
+
+In the Endpoint Manager (Intune) you can create Configuration profiles for varoius platforms. Choose your OS platform from the below links:
+
+-- Link per OS --
+
+### Step 5: Enjoy the ease of SCEPman certificate deployment 
+
+After configuration of the Intune profiles we will get your certificates to your devices and can start using them.
+Enjoy SCEPman and if you have any questions please get in contact with us. 
+Futher deatails can be found on https://scepman.com
+

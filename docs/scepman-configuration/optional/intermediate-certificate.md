@@ -1,7 +1,7 @@
 # Intermediate certificate
 
 {% hint style="warning" %}
-Work in progress...!
+SCEPman Enterprise Edition only
 {% endhint %}
 
 If you want to use another Root CA as primary authority, you can create an intermediate certificate. You can create the correct certificate direct in Azure Key Vault and download the CSR for signing with your Root CA. The signed request can be uploaded and merged into the Azure Key Vault.

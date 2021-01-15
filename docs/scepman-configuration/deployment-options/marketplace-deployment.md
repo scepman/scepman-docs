@@ -33,9 +33,5 @@ When everything is right, you will see **Validation passed** in the **Summary** 
 
 In the **Buy** section click **Create** to start the deployment process.
 
-To check if SCEPman is running, navigate to **App Services**. Choose the SCEPman application and click on **Browse** to see the SCEPman website. When everything works as intended **Vault**, **Intune** and **Graph** are set as **connected**.
-
-![](../../.gitbook/assets/scepman23.png)
-
-The option **click here to start** creates the Azure Key Vault RootCA certificate. The initial root certificate should be created only once in a farm. If valid, select **I have read the documentation** and click **Create First Node**.
-
+| Back to Trial Guide | Back to Community Guide | [Back to Enterprise Guide](../../getting-started/enterprise-guide.md#step-2-deploy-scepman-base-services) |
+| :--- | :--- | :--- |

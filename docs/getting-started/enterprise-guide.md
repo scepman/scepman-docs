@@ -98,13 +98,19 @@ To start with the deployment, you need to follow our Setup instruction:
 
 {% page-ref page="../scepman-configuration/deployment-options/enterprise-deployment.md" %}
 
-### Step 3: Configure a Custom Domain and SSL certificate
+### Step 3: Create Root certificate
+
+After the deployment completed you have to create the root certificate in the Azure Key Vault.
+
+-- Link zu First run root cert --
+
+### Step 4: Configure a Custom Domain and SSL certificate
 
 To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.**
 
 {% page-ref page="../scepman-configuration/custom-domain.md" %}
 
-### Step 4: Deploy Storage Account and change Artifacts
+### Step 5: Deploy Storage Account and change Artifacts
 
 The next step is to configure the Storage account and change the Artifact location in your App Service.
 
@@ -114,7 +120,7 @@ The next step is to configure the Storage account and change the Artifact locati
 We recommend the production channel.
 {% endhint %}
 
-### Step 5: Configure Log collection
+### Step 6: Configure Log collection
 
 You can configure two different logging parts in your App Service, to retain your log data. The one part is the **App Service Logs**, which will save all application and IIS server-based log data. The other part is the **Diagnostic settings**, this contains platform logs and metrics data.
 
@@ -124,13 +130,13 @@ You can configure two different logging parts in your App Service, to retain you
 Use the storage account we created in **Step 4** and create two new blob containers. This blob containers can be selected in the **App Service Logs** instructions. In the **Diagnostic settings** you can directly choose the storage account and blob containers will be created automatically.
 {% endhint %}
 
-### Step 6: Deploy Application Insights
+### Step 7: Deploy Application Insights
 
 The Application Insights can be used to get an overview of the App Service performance and to get deeper insights of the request processing of SCEPman. We recommend to always configure Application Insights to monitor, maintain and optimize the App Service.
 
 {% page-ref page="../scepman-configuration/optional/application-insights.md" %}
 
-### Step 7: Configure Autoscaling
+### Step 8: Configure Autoscaling
 
 The SCEPman solution has two different tasks and performance requirements.  
 One task is the certificate issuance process: After the configuration of the SCEPman solution we need to deploy certificates to all devices \(user and/or device certificates\), but this is a one-time-task and after the initial deployment this only happens when a new device is enrolled or the certificates needs to be renewed. In those situations, the SCEPman will face a peek of SCEP requests.  
@@ -140,7 +146,20 @@ To have an optimized performance and take care of the costs we recommend to setu
 
 {% page-ref page="../scepman-configuration/optional/autoscaling.md" %}
 
-### Step 8: Configure Geo-redundancy \(Optional\)
+### Step 9: Configure Geo-redundancy \(Optional\)
 
 {% page-ref page="../scepman-configuration/optional/geo-redundancy.md" %}
 
+### Step 10: Configure Intune deployment profiles
+
+With the completion of the above steps we have a working SCEPman implementation and can now deploy certificates to the devices.
+
+In the Endpoint Manager (Intune) you can create Configuration profiles for varoius platforms. Choose your OS platform from the below links:
+
+-- Link per OS --
+
+### Step 11: Enjoy the ease of SCEPman certificate deployment 
+
+After configuration of the Intune profiles you will get certificates to your devices and can start using them.
+Enjoy SCEPman and if you have any questions please get in contact with us. 
+Further details can be found on https://scepman.com
