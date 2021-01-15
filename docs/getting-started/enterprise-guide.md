@@ -139,8 +139,8 @@ The Application Insights can be used to get an overview of the App Service perfo
 ### Step 8: Configure Autoscaling
 
 The SCEPman solution has two different tasks and performance requirements.  
-One task is the certificate issuance process: After the configuration of the SCEPman solution we need to deploy certificates to all devices \(user and/or device certificates\), but this is a one-time-task and after the initial deployment this only happens when a new device is enrolled or the certificates needs to be renewed. In those situations, the SCEPman will face a peek of SCEP requests.  
-The second task is the certificate validation: After we deployed certificates to devices, those certificates needs to be validated each time we use them. For every certificated-based authentication the clients, gateways or RADIUS system \(depends on what you use\) will send an OCSP request to the SCEPman App Service. This will cause a permanent request load on the App Service.
+One task is the certificate issuance process: After the configuration of the SCEPman solution we need to deploy certificates to all devices \(user and/or device certificates\), but this is a one-time-task and after the initial deployment this only happens when a new device is enrolled, or the certificates needs to be renewed. In those situations, the SCEPman will face a peek of SCEP requests.  
+The second task is the certificate validation: After we deployed certificates to devices, those certificates need to be validated each time we use them. For every certificated-based authentication the clients, gateways, or RADIUS system \(depends on what you use\) will send an OCSP request to the SCEPman App Service. This will cause a permanent request load on the App Service.
 
 To have an optimized performance and take care of the costs we recommend to setup the Autoscaling functionality of the App Service. With this feature your application can scale-out and scale-in based on metrics.
 
@@ -152,11 +152,17 @@ To have an optimized performance and take care of the costs we recommend to setu
 
 ### Step 10: Configure Intune deployment profiles
 
-With the completion of the above steps we have a working SCEPman implementation and can now deploy certificates to the devices.
+With the completion of the above steps, we have a working SCEPman implementation and can now deploy certificates to the devices.
 
-In the Endpoint Manager \(Intune\) you can create Configuration profiles for varoius platforms. Choose your OS platform from the below links:
+In the Endpoint Manager \(Intune\) you can create Configuration profiles for various platforms. Choose your OS platform from the below links:
 
+{% page-ref page="../certificate-deployment/windows-10.md" %}
 
+{% page-ref page="../certificate-deployment/macos.md" %}
+
+{% page-ref page="../certificate-deployment/ios.md" %}
+
+{% page-ref page="../certificate-deployment/android.md" %}
 
 ### Step 11: Enjoy the ease of SCEPman certificate deployment
 
