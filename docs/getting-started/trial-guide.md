@@ -74,17 +74,23 @@ To start with the deployment, you need to follow our Setup instruction:
 
 After the deployment complated you need to create the root certificate in the Azure Key Vault.
 
-* Link to "Create Root Cert"
+{% page-ref page="../scepman-configuration/first-run-root-cert.md" %}
 
 ### Step 4: Configure Intune deployment profiles
 
-With the completion of the first steps we have a working SCEPman implementation and can now deploy certificates to our devices.
+With the completion of the first steps, we have a working SCEPman implementation and can now deploy certificates to our devices.
 
-In the Endpoint Manager \(Intune\) you can create Configuration profiles for varoius platforms. Choose your OS platform from the below links:
+In the Endpoint Manager \(Intune\) you can create Configuration profiles for various platforms. Choose your OS platform from the below links:
 
--- Link per OS --
+{% page-ref page="../certificate-deployment/windows-10.md" %}
+
+{% page-ref page="../certificate-deployment/macos.md" %}
+
+{% page-ref page="../certificate-deployment/ios.md" %}
+
+{% page-ref page="../certificate-deployment/android.md" %}
 
 ### Step 5: Enjoy the ease of SCEPman certificate deployment
 
-After configuration of the Intune profiles we will get your certificates to your devices and can start using them. Enjoy SCEPman and if you have any questions please get in contact with us. Futher deatails can be found on [https://scepman.com](https://scepman.com)
+After configuration of the Intune profiles, we will get your certificates to your devices and can start using them. Now enjoy SCEPman and if you have any questions please contact us. Further details can be found on [https://scepman.com](https://scepman.com)
 
