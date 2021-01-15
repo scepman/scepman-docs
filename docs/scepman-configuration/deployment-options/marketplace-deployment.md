@@ -25,13 +25,13 @@ If you have a license key, you can paste it in the field **License Key**. Leave 
 
 For **Azure AD App Registration** enter the **Application \(client\) ID** and the value from **Certificates & secrets**:
 
-![](../../.gitbook/assets/scepman20%20%281%29.png)
+![](../../.gitbook/assets/scepman20%20%282%29.png)
 
 When everything is right, you will see **Validation passed** in the **Summary** section. Click **OK** to go to section **Buy**.
 
-![](../../.gitbook/assets/scepman21.png)
+![](../../.gitbook/assets/scepman21%20%281%29.png)
 
 In the **Buy** section click **Create** to start the deployment process.
 
-| Back to Trial Guide | Back to Community Guide | [Back to Enterprise Guide](../../getting-started/enterprise-guide.md#step-2-deploy-scepman-base-services) |
-| :--- | :--- | :--- |
+\| Back to Trial Guide \| Back to Community Guide \| [Back to Enterprise Guide](../../getting-started/enterprise-guide.md#step-2-deploy-scepman-base-services) \| \| :--- \| :--- \| :--- \|
+
