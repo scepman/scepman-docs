@@ -276,3 +276,7 @@ It is much important to enter a **Subject alternative name** into the **SCEP Cer
 
 To check if your certificate runs well on your Android device you can use [My Certificates](https://play.google.com/store/apps/details?id=com.wesbunton.projects.mycertificates&hl=en) from Google Play.
 
+| ​[Back to Trial Guide​](../getting-started/trial-guide.md#step-4-configure-intune-deployment-profiles) | Back to Community Guide | ​[Back to Enterprise Guide​](../getting-started/enterprise-guide.md#step-10-configure-intune-deployment-profiles) |
+| :--- | :--- | :--- |
+
+

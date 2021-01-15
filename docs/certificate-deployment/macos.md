@@ -130,3 +130,7 @@ When all its done, you have the following two certificate configurations:
 * SCEPman - SCEP user certificate
 * SCEPman - Trusted root certificate
 
+| ​[Back to Trial Guide​](../getting-started/trial-guide.md#step-4-configure-intune-deployment-profiles) | Back to Community Guide | ​[Back to Enterprise Guide​](../getting-started/enterprise-guide.md#step-10-configure-intune-deployment-profiles) |
+| :--- | :--- | :--- |
+
+
