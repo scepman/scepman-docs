@@ -72,7 +72,7 @@ To start with the deployment, you need to follow our Setup instruction:
 
 ### Step 3: Create Root certificate
 
-After the deployment complated you need to create the root certificate in the Azure Key Vault.
+After the deployment completed you need to create the root certificate:
 
 {% page-ref page="../scepman-configuration/first-run-root-cert.md" %}
 
