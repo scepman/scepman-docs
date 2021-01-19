@@ -12,7 +12,7 @@ SCEPman EE only is backed by our support services.
 
 ## Community Edition \(SCEPman CE\)
 
-If you are a tech enthusiast with the ability to self-support, our Community Edition products are freely available and offer powerful capabilities for a non-critical business process or content needs. The only technical difference between SCEPman CE and SCEPman EE is that SCEPman CE **does not support redundancy through Azure Traffic Manager**.
+If you are a tech enthusiast with the ability to self-support, our Community Edition products are freely available and offer powerful capabilities for a non-critical business process or content needs. Both editions use the same codebase, and the technical differences are depended on the Azure setup and configurations.
 
 If you want to test SCEPman in your own environment, you can use the [Trial Guide](getting-started/trial-guide.md) and install SCEPman directly into your lab.  
 When you later decide to buy SCEPman EE you should follow our [Enterprise Guide](getting-started/enterprise-guide.md) to get a recommended production environment.
