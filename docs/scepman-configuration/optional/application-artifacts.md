@@ -77,7 +77,7 @@ To configure this, do the following:
 
 1. Then replace the URL with the SCEPman GitHub URL or your Storage account blob URL:
 
-![](../../.gitbook/assets/scepman_optional3%20%281%29%20%282%29%20%283%29%20%283%29%20%283%29%20%283%29%20%282%29.png)
+![](../../.gitbook/assets/screen-shot-2021-01-19-at-09.42.45.png)
 
 | Back to Trial Guide | [Back to Community Guide](../../getting-started/community-guide.md#step-5-deploy-storage-account-and-change-artifacts) | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-5-deploy-storage-account-and-change-artifacts) |
 | :--- | :--- | :--- |
