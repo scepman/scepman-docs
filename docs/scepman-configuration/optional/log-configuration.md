@@ -54,7 +54,11 @@ If you have created a storage account to store your SCEPman artifacts, you can u
 
 ![](../../.gitbook/assets/image%20%282%29.png)
 
+
+
 | Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-6-configure-log-collection) |
 | :--- | :--- | :--- |
+
+
 
 

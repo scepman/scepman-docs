@@ -21,22 +21,24 @@
 * [Optional](scepman-configuration/optional/README.md)
   * [Add a License Key](scepman-configuration/optional/add-a-license-key.md)
   * [Application Artifacts](scepman-configuration/optional/application-artifacts.md)
-  * [Log configuration](scepman-configuration/optional/log-configuration.md)
-  * [Geo-redundancy](scepman-configuration/optional/geo-redundancy.md)
   * [Application Insights](scepman-configuration/optional/application-insights.md)
+  * [Log configuration](scepman-configuration/optional/log-configuration.md)
   * [Autoscaling](scepman-configuration/optional/autoscaling.md)
-  * [Domain Controller Certificates](scepman-configuration/optional/domain-controller-certificates.md)
-  * [3rd-party MDM Certificates](scepman-configuration/optional/static-certificates.md)
+  * [Geo-redundancy](scepman-configuration/optional/geo-redundancy.md)
   * [Application Settings](scepman-configuration/optional/application-settings.md)
   * [Intermediate certificate](scepman-configuration/optional/intermediate-certificate.md)
   * [Deployment slots](scepman-configuration/optional/deployment-slots.md)
 
 ## Certificate Deployment
 
-* [Windows 10](certificate-deployment/windows-10.md)
-* [MacOS](certificate-deployment/macos.md)
-* [iOS](certificate-deployment/ios.md)
-* [Android](certificate-deployment/android.md)
+* [Microsoft Intune](certificate-deployment/microsoft-intune/README.md)
+  * [Windows 10](certificate-deployment/microsoft-intune/windows-10.md)
+  * [MacOS](certificate-deployment/microsoft-intune/macos.md)
+  * [Android](certificate-deployment/microsoft-intune/android.md)
+  * [iOS](certificate-deployment/microsoft-intune/ios.md)
+* [Other](certificate-deployment/other-1/README.md)
+  * [3rd-party MDM Solutions](certificate-deployment/other-1/static-certificates.md)
+  * [Domain Controller Certificates](certificate-deployment/other-1/domain-controller-certificates.md)
 
 ## Other
 

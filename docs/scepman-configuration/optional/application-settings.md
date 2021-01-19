@@ -86,7 +86,7 @@ Applicable to version 1.6 and above
 
 **Value:** _true_ or _false_
 
-**Description:** This setting helps you to request Kerberos server certificates for your on-premises Domain Controllers. See [Domain Controller Certificates](domain-controller-certificates.md) for details.
+**Description:** This setting helps you to request Kerberos server certificates for your on-premises Domain Controllers. See [Domain Controller Certificates](../../certificate-deployment/other-1/domain-controller-certificates.md) for details.
 
 **True**: SCEPman listens at the additional SCEP server endpoint with the path `/dc`. Use in conjunction with AppConfig:DCValidation:RequestPassword. **False** \(default\): SCEPman does not issue certificates for Domain Controllers.
 
@@ -108,7 +108,7 @@ Applicable to version 1.6 and above
 
 **Value:** _true_ or _false_
 
-**Description:** This setting helps you to request certificates from [3rd-party MDM systems](static-certificates.md) \(i.e. other than Intune\).
+**Description:** This setting helps you to request certificates from [3rd-party MDM systems](../../certificate-deployment/other-1/static-certificates.md) \(i.e. other than Intune\).
 
 **True**: SCEPman listens at the additional SCEP server endpoint with the path `/static`. Use in conjunction with AppConfig:StaticValidation:RequestPassword. **False** \(default\): SCEPman does not issue certificates for 3rd-party MDM systems \(i.e. other than Intune\).
 

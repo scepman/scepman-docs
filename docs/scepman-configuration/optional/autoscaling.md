@@ -35,18 +35,7 @@ This is an example of a rule which increases the instance count by one instance 
 
 To decrease the instance count dynamically again a second rule is necessary which negates the first one. In this example the instance count is decreased by one instance when the average CPU usage is less than 20% for 10 minutes.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">
-        <p></p>
-        <p>Back to Trial Guide</p>
-      </th>
-      <th style="text-align:left">Back to Community Guide</th>
-      <th style="text-align:left">&#x200B;<a href="../../getting-started/enterprise-guide.md#step-8-configure-autoscaling">Back to Enterprise Guide&#x200B;</a>
-      </th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-8-configure-autoscaling) |
+| :---: | :---: | :---: |
+
 

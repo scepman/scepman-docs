@@ -156,13 +156,13 @@ With the completion of the above steps, we have a working SCEPman implementation
 
 In the Endpoint Manager \(Intune\) you can create Configuration profiles for various platforms. Choose your OS platform from the below links:
 
-{% page-ref page="../certificate-deployment/windows-10.md" %}
+{% page-ref page="../certificate-deployment/microsoft-intune/windows-10.md" %}
 
-{% page-ref page="../certificate-deployment/macos.md" %}
+{% page-ref page="../certificate-deployment/microsoft-intune/macos.md" %}
 
-{% page-ref page="../certificate-deployment/ios.md" %}
+{% page-ref page="../certificate-deployment/microsoft-intune/ios.md" %}
 
-{% page-ref page="../certificate-deployment/android.md" %}
+{% page-ref page="../certificate-deployment/microsoft-intune/android.md" %}
 
 ### Step 11: Enjoy the ease of SCEPman certificate deployment
 
