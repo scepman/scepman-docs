@@ -5,7 +5,7 @@ To activate autoscaling navigate to the **Scale out \(App Service plan\)** in th
 ![](../../.gitbook/assets/image%20%284%29.png)
 
 {% hint style="info" %}
-Please ensure that your App Service plan uses at least the **S1** pricing tier. Otherwise the App Service plan will not provide multiple instances.
+Please ensure that your App Service plan uses at least the **S1** pricing tier. Otherwise, the App Service plan will not provide multiple instances.
 {% endhint %}
 
 ### Autoscale Conditions
@@ -15,7 +15,7 @@ To scale the instance count based on the current load of the service there must 
 ![](../../.gitbook/assets/image%20%288%29.png)
 
 * Select **Custom autoscale**
-* Type in a appropriate name in **Autoscale setting name**
+* Type in an appropriate name in **Autoscale setting name**
 * Select **Scale based on a metric** to enable autoscaling based on a defined rule set
 * Set the instance limits:
   * Minimum
@@ -23,17 +23,34 @@ To scale the instance count based on the current load of the service there must 
   * Default
 * **Add a rule** once to increase the instance count and once to decrease the instance account
 
+{% hint style="info" %}
+We recommend the following settings of the increase and decrease rules.   
+But please keep in mind that this can depend on your workload and needs to be monitored and optimized!
+{% endhint %}
+
 #### Increase Instance Count Rule
 
-This is an example of a rule which increases the instance count by one instance when the average CPU usage is higher than 70% for 10 minutes. Adjust the criteria and metrics regarding your specific needs. 
+1. **Enable metric divided by instance count**
+2. Choose **Greater than** as the Operator and set the threshold to **70** \(percent\)
+3. Set the duration to **10** \(minutes\) 
+4. Ensure that the **Time grain statistic** is set to **Average**
+5. Ensure that the **Operation** is set to **Increase count by**
+6. Set the **Cool down \(minutes\)** to **15** \(minutes\)
+7. Check the **Instance count \(1\)** that will be added to the current instances
 
-![](../../.gitbook/assets/image%20%2812%29.png)
+![](../../.gitbook/assets/screen-shot-2021-01-19-at-10.02.50.png)
 
 #### Decrease Instance Count Rule
 
-![](../../.gitbook/assets/image%20%2810%29.png)
+1. **Enable metric divided by instance count**
+2. Choose **Less than** as the Operator and set the threshold to **35** \(percent\)
+3. Set the duration to **20** \(minutes\) 
+4. Ensure that the **Time grain statistic** is set to **Average**
+5. Ensure that the **Operation** is set to **Decrease count by**
+6. Set the **Cool down \(minutes\)** to **30** \(minutes\)
+7. Check the **Instance count \(1\)** that will be removed from the current instances
 
-To decrease the instance count dynamically again a second rule is necessary which negates the first one. In this example the instance count is decreased by one instance when the average CPU usage is less than 20% for 10 minutes.
+![](../../.gitbook/assets/screen-shot-2021-01-19-at-10.08.38.png)
 
 | Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-8-configure-autoscaling) |
 | :---: | :---: | :---: |
