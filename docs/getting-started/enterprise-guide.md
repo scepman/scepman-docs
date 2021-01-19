@@ -136,7 +136,13 @@ The Application Insights can be used to get an overview of the App Service perfo
 
 {% page-ref page="../scepman-configuration/optional/application-insights.md" %}
 
-### Step 8: Configure Autoscaling
+### Step 8: Configure Health check
+
+We can configure a Health check for the App Service to get direct notifications in case that the SCEPman stops working.
+
+{% page-ref page="../scepman-configuration/optional/health-check.md" %}
+
+### Step 9: Configure Autoscaling
 
 The SCEPman solution has two different tasks and performance requirements.  
 One task is the certificate issuance process: After the configuration of the SCEPman solution we need to deploy certificates to all devices \(user and/or device certificates\), but this is a one-time-task and after the initial deployment this only happens when a new device is enrolled, or the certificates needs to be renewed. In those situations, the SCEPman will face a peek of SCEP requests.  
@@ -146,11 +152,11 @@ To have an optimized performance and take care of the costs we recommend to setu
 
 {% page-ref page="../scepman-configuration/optional/autoscaling.md" %}
 
-### Step 9: Configure Geo-redundancy \(Optional\)
+### Step 10: Configure Geo-redundancy \(Optional\)
 
 {% page-ref page="../scepman-configuration/optional/geo-redundancy.md" %}
 
-### Step 10: Configure Intune deployment profiles
+### Step 11: Configure Intune deployment profiles
 
 With the completion of the above steps, we have a working SCEPman implementation and can now deploy certificates to the devices.
 
@@ -164,7 +170,7 @@ In the Endpoint Manager \(Intune\) you can create Configuration profiles for var
 
 {% page-ref page="../certificate-deployment/microsoft-intune/android.md" %}
 
-### Step 11: Enjoy the ease of SCEPman certificate deployment
+### Step 12: Enjoy the ease of SCEPman certificate deployment
 
 After configuration of the Intune profiles, we will get your certificates to your devices and can start using them. Now enjoy SCEPman and if you have any questions please contact us.   
 Further details can be found on [https://scepman.com](https://scepman.com)

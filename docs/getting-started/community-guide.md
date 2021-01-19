@@ -136,7 +136,13 @@ The Application Insights can be used to get an overview of the App Service perfo
 
 {% page-ref page="../scepman-configuration/optional/application-insights.md" %}
 
-### Step 8: Configure Intune deployment profiles
+### Step 8: Configure Health check
+
+We can configure a Health check for the App Service to get direct notifications in case that the SCEPman stops working.
+
+{% page-ref page="../scepman-configuration/optional/health-check.md" %}
+
+### Step 9: Configure Intune deployment profiles
 
 With the completion of the first steps, we have a working SCEPman implementation and can now deploy certificates to our devices.
 
@@ -150,7 +156,7 @@ In the Endpoint Manager \(Intune\) you can create Configuration profiles for var
 
 {% page-ref page="../certificate-deployment/microsoft-intune/android.md" %}
 
-### Step 9: Enjoy the ease of SCEPman certificate deployment
+### Step 10: Enjoy the ease of SCEPman certificate deployment
 
 After configuration of the Intune profiles, we will get your certificates to your devices and can start using them. Now enjoy SCEPman and if you have any questions please contact us. Further details can be found on [https://scepman.com](https://scepman.com)
 
