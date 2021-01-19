@@ -56,7 +56,7 @@ Add and manage TLS/SSL certificates in App Service:
 Create a free certificate:  
 [https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate\#create-a-free-certificate-preview](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)
 
-| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../getting-started/enterprise-guide.md#step-4-configure-a-custom-domain-and-ssl-certificate) |
+| Back to Trial Guide | [Back to Community Guide](../getting-started/community-guide.md#step-4-configure-a-custom-domain-and-ssl-certificate) | ​[Back to Enterprise Guide​](../getting-started/enterprise-guide.md#step-4-configure-a-custom-domain-and-ssl-certificate) |
 | :--- | :--- | :--- |
 
 
