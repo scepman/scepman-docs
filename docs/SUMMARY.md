@@ -19,6 +19,7 @@
 * [Root certificate](scepman-configuration/first-run-root-cert.md)
 * [Custom Domain](scepman-configuration/custom-domain.md)
 * [Optional](scepman-configuration/optional/README.md)
+  * [Health check](scepman-configuration/optional/health-check.md)
   * [Add a License Key](scepman-configuration/optional/add-a-license-key.md)
   * [Application Artifacts](scepman-configuration/optional/application-artifacts.md)
   * [Application Insights](scepman-configuration/optional/application-insights.md)
