@@ -2,7 +2,11 @@
 
 We can configure a health check and alerting for the App Service to get direct notification in case that the SCEPman solution is not responsible anymore.
 
-## Configure Healt Check
+{% hint style="warning" %}
+After you have configured the health check and Alerting correctly it takes some time until the alert rule works properly. It is because the metric **Health check status** needs some time to get the information and the dynamic alert rule threshold needs some time to analyze the metric.
+{% endhint %}
+
+## Configure Health Check
 
 1. Navigate to your **App Service** and on the left side scroll down to **Health check**
 2. Now you can **Enable** the Health check, as probing **path** enter the following: **/probe**
@@ -35,25 +39,24 @@ To get an alert from our health check we need to configure alert rules in our Ap
 
 ![](../../.gitbook/assets/screen-shot-2021-01-19-at-11.00.18.png)
 
-10. If you do not have any action groups available, you can click on Create action group
+10. If you do not have any action groups available, you can click on **Create action group**
 
 ![](../../.gitbook/assets/screen-shot-2021-01-19-at-11.01.15.png)
 
-11. Define an Action group name and Display name
+11. Define an **Action group name** and **Display name**
 
 ![](../../.gitbook/assets/screen-shot-2021-01-19-at-11.09.40.png)
 
-12. Go to Notifications and add Notification type  
-13. In the windows select Email and enter your email address that you want to get the notifications  
-14. Then click on OK  
-15. Enter a Name for the Notification type
+12. Go to **Notifications** and add **Notification type**  
+13. In the windows select **Email** and enter your email address that you want to get the notifications  
+14. Then click on **OK**  
+15. Enter a **Name** for the Notification type
 
 ![](../../.gitbook/assets/screen-shot-2021-01-19-at-11.11.40.png)
 
-16. After that you can click on Review + create and then on Create
+16. After that you can click on **Review + create** and then on **Create**  
+17. At least you must enter an **Alert rule name**, define the **Severity** and **Enable alter rule upon creation**  
+18. Then click on **Create alert rule**
 
-  
-
-
-
+![](../../.gitbook/assets/screen-shot-2021-01-19-at-11.20.29.png)
 
