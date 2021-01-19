@@ -22,7 +22,7 @@ If you want to use an intermediate certifacte \(Enterprise Edition only\) you ca
 
 ![](../.gitbook/assets/image%20%2815%29.png)
 
-| [Back to Trial Guide](../getting-started/trial-guide.md#step-3-create-root-certificate) | Back to Community Guide | ​[Back to Enterprise Guide​](../getting-started/enterprise-guide.md#step-3-create-root-certificate) |
+| [Back to Trial Guide](../getting-started/trial-guide.md#step-3-create-root-certificate) | [Back to Community Guide](../getting-started/community-guide.md#step-3-create-root-certificate) | ​[Back to Enterprise Guide​](../getting-started/enterprise-guide.md#step-3-create-root-certificate) |
 | :--- | :--- | :--- |
 
 
