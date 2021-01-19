@@ -14,7 +14,7 @@ SCEPman needs to interact with your Azure Active Directory and Intune endpoints 
 2. Navigate to **Azure Active Directory**
 3. Click **App registrations**
 
-![](../.gitbook/assets/screenshot-2020-02-03-at-10.23.51%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../.gitbook/assets/screenshot-2020-02-03-at-10.23.51%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 1. Click **New registration** and enter a **name**, i.e. SCEPman. For supported account types choose **Accounts in this organizational directory only** and click register.
 
@@ -32,7 +32,7 @@ SCEPman needs to interact with your Azure Active Directory and Intune endpoints 
 
 1. Click **New client secret**, add a description and choose the expiration. We recommend **Never**, this helps to provide an ongoing service for a long time. You can revoke a secret at any time. Click **Add**.
 
-![](../.gitbook/assets/azure-app-registration-client-secret-new%20%281%29%20%281%29%20%281%29%20%281%29.png)
+![](../.gitbook/assets/azure-app-registration-client-secret-new%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
 
 1. **Copy the secret** and write it down in a secure place.
 

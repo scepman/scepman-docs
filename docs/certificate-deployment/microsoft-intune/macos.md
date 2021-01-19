@@ -16,11 +16,11 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%288%29%20%283%29.png)
+![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%288%29%20%284%29%20%283%29.png)
 
 Then, create a profile in Microsoft Intune:
 
-![](../../.gitbook/assets/scepman_macos1%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/scepman_macos1%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 1. Enter a **Name**
 2. As **Platform** select **macOS**
@@ -77,11 +77,11 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%288%29%20%283%29.png)
+![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%288%29%20%284%29%20%283%29.png)
 
 Then, create a profile in Microsoft Intune:
 
-![](../../.gitbook/assets/scepman_macos1%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
+![](../../.gitbook/assets/scepman_macos1%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
 1. Enter a **Name**
 2. As **Platform** select **macOS**

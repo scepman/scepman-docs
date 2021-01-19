@@ -16,12 +16,12 @@ Keep in mind that you need to plan a useful Azure resource design.
 
 ### Checklist pre-requirements
 
+* [ ] Azure resource naming convention
 * [ ] Azure subscription
 * [ ] Azure contributor rights \(at least on Resource Group level\)
 * [ ] Azure AD "Global administrator" \(Consent to access Graph API\)
 * [ ] Public Domain CNAME \(_scepman.yourdomain.com_\)
 * [ ] SSL \(Wildcard-\)Certificate \(or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)\)
-
 
 ### Overview Azure Resource
 
