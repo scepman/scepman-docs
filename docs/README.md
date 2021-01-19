@@ -16,13 +16,23 @@ The following documentation will show you a straightforward way to deploy certif
 
 ## SCEPman Guides
 
+We offer three guides to deploy the SCEPman environment. The codebase between these guides is the same, so you have no limitations from this point of view. 
+
+The Trial Guide is made for those who wants to get the first experience and test the SCEPman functionalities. This is the smallest Azure setup, and you can test all features.
+
 {% page-ref page="getting-started/trial-guide.md" %}
 
+The Community Guide is made for small companies and anyone that don´t need a full support of the SCEPman solution. In addition to the basic Azure resources, this Guide will help you to setup logging and some helpful configurations for a production environment.
+
 {% page-ref page="getting-started/community-guide.md" %}
+
+The Enterprise Guide represents the full-blown setup for a production environment and is targeted to enterprise customers. In addition to the basic Azure environment, this Guide will give you some recommendations and shows you how to setup logging, autoscaling, deployment slots and more.
 
 {% page-ref page="getting-started/enterprise-guide.md" %}
 
 If you want to have a detailed look at specific documentation steps you can manually scroll through the **SCEPMAN CONFIGURATION** or **CERTIFICATE DEPLOYMENT**.
+
+News from our development and our roadmap can be found under the **Changelog**.
 
 {% page-ref page="other/changelog.md" %}
 

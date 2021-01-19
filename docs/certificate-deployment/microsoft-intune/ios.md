@@ -16,11 +16,11 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%286%29.png)
+![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%288%29%20%286%29.png)
 
 Then, create a profile in Microsoft Intune:
 
-![](../../.gitbook/assets/scepman_ios1%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/scepman_ios1%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 1. Download the CA Certificate
 2. Then, create a profile in Microsoft Intune
@@ -78,11 +78,11 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%283%29.png)
+![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%288%29%20%283%29.png)
 
 Then, create a profile in Microsoft Intune:
 
-![](../../.gitbook/assets/scepman_ios1%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/scepman_ios1%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 1. Download the CA Certificate
 2. Then, create a profile in Microsoft Intune
@@ -111,7 +111,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 6. Select **SCEP certificate** as **Profile type**
 7. Click **Settings**
 
-![](../../.gitbook/assets/scepman_user_ios_1%20%281%29%20%281%29%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/scepman_user_ios_1%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
 
 1. Configure the **SCEP Certificate**
 

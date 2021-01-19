@@ -39,7 +39,7 @@ If you generate a new CA certificate you must update your Intune policies and de
 
 CA Suitability on SCEPman Dashboard:
 
-![](../../.gitbook/assets/screenshot-2020-11-04-at-11.30.23%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/screenshot-2020-11-04-at-11.30.23%20%281%29%20%281%29%20%281%29.png)
 
 ## Configuration Changes to the SCEPman Service
 

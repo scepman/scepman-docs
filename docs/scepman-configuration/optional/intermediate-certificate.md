@@ -47,7 +47,7 @@ We need to allow the Azure AD App and your user account to access the Azure Key 
 2. Repeat Step 3 to 7 but now select your current user account.  
 3. To save your new access policies you must click on **Save** in the upper left corner of the window.
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28%20%281%29.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28%20%281%29%20%282%29.png)
 
 After we saved this access policies successfully, we can continue with the API calls.
 
@@ -143,7 +143,7 @@ Body:
 1. To download the CSR and merge the signed request \(.cer\) you need to click on your certificate and press **Certificate Operation**  
 2. **\*\*Now you can see the options** Download CSR **and** Merge Signed Request\*\*
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18%20%281%29%20%282%29.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18%20%281%29%20%282%29%20%282%29.png)
 
 1. After you have uploaded the signed request you can see the valid certificate in your Azure Key Vault in the area **Completed**
 
