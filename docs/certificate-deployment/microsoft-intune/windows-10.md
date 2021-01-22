@@ -72,8 +72,6 @@ The setting Key Storage Provider \(KSP\) determines the storage location of the 
 * Intel: 11.8.50.3399
 
 If you use TPMs with these firmwares, either update your firmware to a newer version or select "Software KSP" as key storage provider.
-
-Unrelatedly, SCEPman currently does not support Windows Hello for Business as KSP.
 {% endhint %}
 
 1. Scroll down and enter the URL you have noted
@@ -149,8 +147,6 @@ The setting Key Storage Provider \(KSP\) determines the storage location of the 
 * Intel: 11.8.50.3399
 
 If you use TPMs with these firmwares, either update your firmware to a newer version or select "Software KSP" as key storage provider.
-
-Unrelatedly, SCEPman currently does not support Windows Hello for Business as KSP.
 {% endhint %}
 
 1. Scroll down and enter the URL you have noted
