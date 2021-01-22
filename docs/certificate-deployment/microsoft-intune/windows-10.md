@@ -66,7 +66,7 @@ For SCEPman version before 1.5, the validity period is set to a fixed 6 month. F
 ![](../../.gitbook/assets/scepman29%20%281%29.png)
 
 {% hint style="warning" %}
-The setting Key Storage Provider (KSP) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is a bug in some older TPM firmware versions that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
+The setting Key Storage Provider (KSP) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
 - STMicroelectronics: 71.12
 - Intel: 11.8.50.3399
 
@@ -142,7 +142,7 @@ For SCEPman version before 1.5, the validity period is set to a fixed 6 month. F
 ![](../../.gitbook/assets/scepman_user_w10_2%20%281%29%20%281%29.png)
 
 {% hint style="warning" %}
-The setting Key Storage Provider (KSP) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is a bug in some older TPM firmware versions that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
+The setting Key Storage Provider (KSP) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
 - STMicroelectronics: 71.12
 - Intel: 11.8.50.3399
 
