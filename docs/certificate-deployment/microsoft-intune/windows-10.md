@@ -54,10 +54,25 @@ Next, to finally deploy the device certificates, you have to create a SCEP certi
 1. Configure the **SCEP Certificate**
 
 {% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory to set by SCEPman, the yellow rectangle is automatically set by SCEPman \(for better visibility we recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below\). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to fixed 6 months currently. The red rectangle is a setting that is free to modify. Long term all settings will be supported for configuration. **There is a dependency on the {{AAD\_Device\_ID} in the subject name, which is used as a seed for the certificate serial number generation. Therefore the subject name must include**.
+There are some restrictions to the **SCEP Certificate** settings:
+
+**You must add the '{{AAD_Device_ID}}' as CN in Subject name format or in the User principal name (UPN) of the Subject alternative name field.** This ensures that SCEPman can link certificates to device objects in AAD.
+
+SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the settings configured here, unless the setting *AppConfig:UseRequestedKeyUsages* is set to *true*.
+
+For SCEPman version before 1.5, the validity period is set to a fixed 6 month. For SCEPman 1.5 and above, SCEPman caps the certificate validity to the configured maximum, but otherwise uses the validity configured in the request.
 {% endhint %}
 
 ![](../../.gitbook/assets/scepman29%20%281%29.png)
+
+{% hint style="warning" %}
+The setting Key Storage Provider (KSP) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is a bug in some older TPM firmware versions that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
+- STMicroelectronics: 71.12
+- Intel: 11.8.50.3399
+If you use TPMs with these firmwares, either update your firmware to a newer version or select "Software KSP" as key storage provider.
+
+Unrelatedly, SCEPman currently does not support Windows Hello for Business as KSP.
+{% endhint %}
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**
@@ -114,7 +129,13 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 1. Configure the **SCEP Certificate**
 
 {% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman \(for better visibility we recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below\). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. For SCEPman version before 1.5, the validity period is set to a fixed 6 month. For SCEPman 1.5 and above, SCEPman caps the certificate validity if it is above the configured maximum, but otherwise uses the validity configured in the request. The red rectangle is a setting that is free to modify. Long term all settings will be supported for configuration. **The setting for 'Subject name format' is freely selectable. For the Subject alternative name we recommend to set 'User principal name \(UPN\)'.**
+There are some restrictions to the **SCEP Certificate** settings:
+
+**You must add the 'User principal name \(UPN\)' as Subject alternative name.** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.
+
+SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the settings configured here, unless the setting *AppConfig:UseRequestedKeyUsages* is set to *true*.
+
+For SCEPman version before 1.5, the validity period is set to a fixed 6 month. For SCEPman 1.5 and above, SCEPman caps the certificate validity to the configured maximum, but otherwise uses the validity configured in the request.
 {% endhint %}
 
 ![](../../.gitbook/assets/scepman_user_w10_2%20%281%29%20%281%29.png)
