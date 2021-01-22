@@ -119,6 +119,15 @@ You can not configure all **SCEP Certificate** settings. This is because some se
 
 ![](../../.gitbook/assets/scepman_user_w10_2%20%281%29%20%281%29.png)
 
+{% hint style="warning" %}
+The setting Key Storage Provider (KSP) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is a bug in some older TPM firmware versions that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
+- STMicroelectronics: 71.12
+- Intel: 11.8.50.3399
+If you use TPMs with these firmwares, either update your firmware to a newer version or select "Software KSP" as key storage provider.
+
+Unrelatedly, SCEPman currently does not support Windows Hello for Business as KSP.
+{% endhint %}
+
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**
 3. Next click **OK** and finally click **Create**
