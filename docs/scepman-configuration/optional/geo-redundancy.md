@@ -164,7 +164,7 @@ The SCEPman application will be loaded from the zip file which is located in a G
 
 17. In **Application settings** search **WEBSITE\_RUN\_FROM\_PACKAGE**
 
-![](../../.gitbook/assets/scepman_storage6%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/scepman_storage6%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
 
 
 
