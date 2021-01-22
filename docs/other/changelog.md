@@ -14,6 +14,11 @@ order: 1
 * Improved error logging
 * Bug fixing
 
+#### 1.6.465 - January 2021
+
+* Bugfix where some OCSP requests were unanswered
+* Bugfix impacting local logging
+
 ### 1.5 - July 2020
 
 * Key Usage, Extended Key Usage, and validity period configured in the request \(i.e. in Intune\)
