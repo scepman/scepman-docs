@@ -17,7 +17,7 @@ To get SCEPman navigate to the **Azure Marketplace**. Enter SCEPman in the **Sea
 
 Follow these steps to create a SCEPman Intune SCEP-as-a-Service instance:
 
-![](../../.gitbook/assets/scepman19%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
+![](../../.gitbook/assets/scepman19%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%281%29.png)
 
 {% hint style="info" %}
 If you have a license key, you can paste it in the field **License Key**. Leave it empty to use the free community edition of SCEPman.
@@ -25,11 +25,11 @@ If you have a license key, you can paste it in the field **License Key**. Leave 
 
 For **Azure AD App Registration** enter the **Application \(client\) ID** and the value from **Certificates & secrets**:
 
-![](../../.gitbook/assets/scepman20%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/scepman20%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 When everything is right, you will see **Validation passed** in the **Summary** section. Click **OK** to go to section **Buy**.
 
-![](../../.gitbook/assets/scepman21%20%282%29%20%282%29%20%282%29%20%281%29.png)
+![](../../.gitbook/assets/scepman21%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
 In the **Buy** section click **Create** to start the deployment process.
 

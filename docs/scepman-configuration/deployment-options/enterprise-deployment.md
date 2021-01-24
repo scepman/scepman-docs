@@ -30,7 +30,7 @@ Click the following deploy button to start the deployment via GitHub:
 
 Next, you will see the following configuration menu:
 
-![](../../.gitbook/assets/scepman_optional1%20%281%29%20%282%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%282%29.png)
+![](../../.gitbook/assets/scepman_optional1%20%281%29%20%282%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%282%29.png)
 
 1. Select an existing resource group or create a new one \(SCEPman resources will be deployed in this group\)
 2. Set the location according to your location

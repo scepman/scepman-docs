@@ -76,6 +76,8 @@ After the deployment completed you need to create the root certificate:
 
 {% page-ref page="../scepman-configuration/first-run-root-cert.md" %}
 
+{% page-ref page="../scepman-configuration/first-run-root-cert.md" %}
+
 ### Step 4: Configure Intune deployment profiles
 
 With the completion of the first steps, we have a working SCEPman implementation and can now deploy certificates to our devices.
@@ -84,13 +86,24 @@ In the Endpoint Manager \(Intune\) you can create Configuration profiles for var
 
 {% page-ref page="../certificate-deployment/microsoft-intune/windows-10.md" %}
 
+{% page-ref page="../certificate-deployment/microsoft-intune/windows-10.md" %}
+
 {% page-ref page="../certificate-deployment/microsoft-intune/macos.md" %}
+
+{% page-ref page="../certificate-deployment/microsoft-intune/macos.md" %}
+
+{% page-ref page="../certificate-deployment/microsoft-intune/ios.md" %}
 
 {% page-ref page="../certificate-deployment/microsoft-intune/ios.md" %}
 
 {% page-ref page="../certificate-deployment/microsoft-intune/android.md" %}
 
+{% page-ref page="../certificate-deployment/microsoft-intune/android.md" %}
+
 ### Step 5: Enjoy the ease of SCEPman certificate deployment
+
+After configuration of the Intune profiles, we will get your certificates to your devices and can start using them. Now enjoy SCEPman and if you have any questions please contact us.   
+Further details can be found on [https://scepman.com](https://scepman.com)
 
 After configuration of the Intune profiles, we will get your certificates to your devices and can start using them. Now enjoy SCEPman and if you have any questions please contact us. Further details can be found on [https://scepman.com](https://scepman.com)
 
