@@ -28,7 +28,7 @@
   * [Geo-redundancy](scepman-configuration/optional/geo-redundancy.md)
   * [Application Settings](scepman-configuration/optional/application-settings.md)
   * [Intermediate certificate](scepman-configuration/optional/intermediate-certificate.md)
-  * [Deployment slots](scepman-configuration/optional/deployment-slots.md)
+  * [Update Strategy](scepman-configuration/optional/update-strategy.md)
 
 ## Certificate Deployment
 

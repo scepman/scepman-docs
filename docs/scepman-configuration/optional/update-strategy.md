@@ -1,4 +1,4 @@
-# Deployment slots
+# Update Strategy
 
 {% hint style="warning" %}
 Comming soon!
