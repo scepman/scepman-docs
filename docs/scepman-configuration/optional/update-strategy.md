@@ -10,7 +10,7 @@ How to do that is mention under this article:
 
 {% page-ref page="application-artifacts.md" %}
 
-With this approach you always get the newest features and security updates.   
+With this approach you always get the newest features and security updates. Keep in mind that an actual update occurs when the App Service is stopped and started again. This is the event when the ZIP-Deployment is triggered. By default there is no start and stop automatically.  
 In a production enterprise environment, you want to have more control about the update process and for this we can use the Microsoft feature **Deployment slots**.
 
 ## Deployment slot configuration
