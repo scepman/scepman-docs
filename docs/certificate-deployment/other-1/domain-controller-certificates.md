@@ -73,7 +73,7 @@ Analogously, execute the following command to push the SCEPman CA certificate to
 certutil -f -dsPublish scepman-root.cer RootCA
 ```
 
-Afterwards, the CA certificate is generally trusted in AD and especially trusted for Kerberos Authentication.
+Afterwards, the CA certificate is generally trusted in AD and especially trusted for Kerberos Authentication. However, it takes some time (in default configuration up to 8 hours) until all devices receive this configuration. You may speedup this process on any machine by executing `gpupdate /force`, e.g. on the domain controllers.
 
 ## Installation on the Client
 
