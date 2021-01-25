@@ -124,7 +124,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 6. Select **SCEP certificate** as **Profile type**
 7. Click **Settings**
 
-![](../../.gitbook/assets/scepman_user_w10_1%20%285%29%20%285%29%20%284%29.png)
+![](../../.gitbook/assets/scepman_user_w10_1%20%285%29%20%285%29%20%286%29%20%284%29.png)
 
 1. Configure the **SCEP Certificate**
 

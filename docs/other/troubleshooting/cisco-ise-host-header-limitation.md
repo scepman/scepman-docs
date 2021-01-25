@@ -10,11 +10,11 @@ The following instructions outline the steps required to create an Azure Applica
 
 1\) Create a new Application Gateway
 
-![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.12.40%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.12.40%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
 2\) Provide the necessary basic information
 
-![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.13.55%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.13.55%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 3\) Create a new static public IP address
 
@@ -26,15 +26,15 @@ The following instructions outline the steps required to create an Azure Applica
 
 5\) Add a routing rule for HTTP
 
-![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.36%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.36%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
-![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.56%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.56%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 5b\) Add a new HTTP Setting with Host Header \(your SCEPman public FQDN\)
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.21%20%281%29%20%281%29%20%282%29%20%284%29%20%283%29%20%281%29%20%283%29.png)
 
-![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.34%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.34%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 6\) Optional: Add a routing rule for HTTPS
 
