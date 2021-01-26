@@ -63,7 +63,7 @@ The maximum number of days that an issued certificate is valid. By default, this
 You can also configure shorter validity periods in each SCEP profile in Intune as described in the [Microsoft documentation](https://docs.microsoft.com/en-us/mem/intune/protect/certificates-scep-configure#modify-the-validity-period-of-the-certificate-template).
 
 {% hint style="warning" %}
-iOS and macOS devices do not support the configuration via Intune and you need to configure this setting.
+iOS and macOS devices ignore the configuration of the validity period via Intune. Therefore you need to configure this setting in SCEPman if you want to have shorter validity periods than 200 days for your iOS and macOS devices.
 {% endhint %}
 
 ## AppConfig:IntuneValidation:WaitForSuccessNotificationResponse
