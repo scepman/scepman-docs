@@ -112,7 +112,7 @@ After the deployment completed you need to create the root certificate:
 
 To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.**
 
-{% page-ref page="../scepman-configuration/custom-domain.md" %}
+{% page-ref page="../scepman-configuration/optional/custom-domain.md" %}
 
 ### Step 5: Deploy Storage Account and change Artifacts
 
