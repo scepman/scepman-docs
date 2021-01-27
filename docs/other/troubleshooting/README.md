@@ -10,7 +10,7 @@ order: 1
 
 If the error is '503 Cannot download ZIP', then the web app cannot download the ZIP with the application binaries from the URL configured in the app setting WEBSITE\_RUN\_FROM\_PACKAGE \(see [Application Configuration](https://github.com/glueckkanja/gk-scepman-docs/tree/a12be7b940f4bb801d1f91fc7150b3b50dcb0209/docs/other/deployment-optional/02_application_configuration/README.md)\).
 
-The URL [https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip](https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip) that we had recommended for GitHub deployments in earlier versions of this documentation redirects to the URL [https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts.zip](https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts.zip). Microsoft changed the behavior of some of their Web Apps and now some versions do not support redirects together with WEBSITE\_RUN\_FROM\_PACKAGE. Hence, you need to change the URL to `https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts.zip`.
+The URL [https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip](https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip) that we had recommended for GitHub deployments in earlier versions of this documentation redirects to another URL. Microsoft changed the behavior of some of their Web Apps and now some versions do not support redirects together with WEBSITE\_RUN\_FROM\_PACKAGE. Hence, you need to change the URL to `https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts.zip`.
 
 ## Trusted Root Certificate is deployed but my Device Certificate via SCEP Profile results in an Error
 

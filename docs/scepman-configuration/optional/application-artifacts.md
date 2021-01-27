@@ -11,7 +11,7 @@ We offer three channels for our SCEPman application.
 * bugs not expected
 
 ```text
-https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts.zip
+https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts.zip
 ```
 
 ### Beta
@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts.z
 * bugs possible
 
 ```text
-https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts-Beta.zip
+https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Beta.zip
 ```
 
 ### Intern
@@ -31,7 +31,7 @@ https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts-B
 * bugs expected
 
 ```text
-https://raw.githubusercontent.com/glueckkanja/gk-scepman/master/dist/Artifacts-Intern.zip
+https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Intern.zip
 ```
 
 ## Custom Artifact location
@@ -58,7 +58,7 @@ Follow this instruction to create a storage account:
 
 ## Change Artifacts
 
-To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/glueckkanja/gk-scepman) of SCEPman. During every restart, the Azure Web App will do a check and a copy deployment if necessary.
+To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/scepman/install) of SCEPman. During every restart, the Azure Web App will do a check and a copy deployment if necessary.
 
 {% hint style="info" %}
 If you want to have more control about the updates you can use your own location.  

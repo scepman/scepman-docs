@@ -16,5 +16,5 @@ order: 2
 
 ## SCEPman on GitHub
 
-[https://github.com/glueckkanja/gk-scepman](https://github.com/glueckkanja/gk-scepman)
+[https://github.com/glueckkanja/gk-scepman](https://github.com/scepman/install)
 

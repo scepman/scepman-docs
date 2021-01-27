@@ -120,7 +120,7 @@ In the **Overview** your traffic manager should like this \(here you find the tr
 
 ## Own Application Setup \(optional\)
 
-The SCEPman application will be loaded from the zip file which is located in a Glück & Kanja [Github repository](https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip). This zip file will be updated automatically from the Glück & Kanja development team. If a customer does not want to get auto-updates, the web apps can load the zip file from the self-managed storage account.
+The SCEPman application will be loaded from the zip file which is located in a Glück & Kanja [Github repository](https://github.com/scepman/install/raw/master/dist/Artifacts.zip). This zip file will be updated automatically from the Glück & Kanja development team. If a customer does not want to get auto-updates, the web apps can load the zip file from the self-managed storage account.
 
 1. In Microsoft Azure click **Create a resource**. 
 2. Search for **Storage account** and click **Create**. 
