@@ -113,7 +113,6 @@ If you want to revoke a **user** certificate, you have two options:‌
 1. Deleting the user from Azure AD or
 2. Block sign-in for the user
 
-  
 If you want to revoke a **device** certificate, you have two options:
 
 1. Deleting the device from Azure AD or

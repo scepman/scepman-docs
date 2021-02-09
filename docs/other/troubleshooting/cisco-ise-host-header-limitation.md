@@ -14,7 +14,7 @@ The following instructions outline the steps required to create an Azure Applica
 
 2\) Provide the necessary basic information
 
-![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.13.55%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.13.55%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 3\) Create a new static public IP address
 
@@ -26,9 +26,9 @@ The following instructions outline the steps required to create an Azure Applica
 
 5\) Add a routing rule for HTTP
 
-![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.36%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.36%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
-![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.56%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.56%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 5b\) Add a new HTTP Setting with Host Header \(your SCEPman public FQDN\)
 

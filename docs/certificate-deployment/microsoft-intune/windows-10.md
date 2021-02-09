@@ -63,7 +63,7 @@ SCEPman automatically sets the Key usage to **Digital signature** and **Key enci
 For SCEPman version before 1.5, the validity period is set to a fixed 6 month. For SCEPman 1.5 and above, SCEPman caps the certificate validity to the configured maximum in setting _AppConfig:ValidityPeriodDays_, but otherwise uses the validity configured in the request.
 {% endhint %}
 
-![](../../.gitbook/assets/scepman29%20%284%29%20%284%29.png)
+![](../../.gitbook/assets/screen-shot-2021-02-09-at-11.58.35.png)
 
 {% hint style="warning" %}
 The setting Key Storage Provider \(KSP\) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
@@ -124,7 +124,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 6. Select **SCEP certificate** as **Profile type**
 7. Click **Settings**
 
-![](../../.gitbook/assets/scepman_user_w10_1%20%285%29%20%285%29%20%286%29%20%284%29.png)
+![](../../.gitbook/assets/scepman_user_w10_1%20%285%29%20%285%29%20%286%29%20%281%29%20%284%29.png)
 
 1. Configure the **SCEP Certificate**
 
@@ -138,7 +138,7 @@ SCEPman automatically sets the Key usage to **Digital signature** and **Key enci
 For SCEPman version before 1.5, the validity period is set to a fixed 6 month. For SCEPman 1.5 and above, SCEPman caps the certificate validity to the configured maximum in setting _AppConfig:ValidityPeriodDays_, but otherwise uses the validity configured in the request.
 {% endhint %}
 
-![](../../.gitbook/assets/scepman_user_w10_2%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/screen-shot-2021-02-09-at-12.00.26.png)
 
 {% hint style="warning" %}
 The setting Key Storage Provider \(KSP\) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:

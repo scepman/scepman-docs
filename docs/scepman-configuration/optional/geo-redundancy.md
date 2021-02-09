@@ -26,23 +26,18 @@ After successful deployment of SCEPman, you can set up a load balancer for highe
 
 ![](../../.gitbook/assets/scepman_cloneapp1%20%281%29.png)
 
-4. Click **App Service plan/Location.**
+1. Click **App Service plan/Location.**
 
 ![](../../.gitbook/assets/scepman_cloneapp2%20%281%29.png)
 
-5. Then click **Create new** to create a new service plan.
-
-6. Enter a **App Service plan** and select a **Location** and a **Pricing tier.**
+1. Then click **Create new** to create a new service plan.
+2. Enter a **App Service plan** and select a **Location** and a **Pricing tier.**
 
 ![](../../.gitbook/assets/scepman_cloneapp3%20%281%29.png)
 
-7. Click **OK.**
-
-8. Do not configure the **Clone Settings**.
-
-9. Finally click **Create**.
-
-
+1. Click **OK.**
+2. Do not configure the **Clone Settings**.
+3. Finally click **Create**.
 
 Next, you need a managed identity for the cloned app:
 
@@ -50,15 +45,12 @@ Next, you need a managed identity for the cloned app:
 
 ![](../../.gitbook/assets/scepman_identity1%20%281%29.png)
 
-2. Under System assigned switch the **Status** to **On.**
+1. Under System assigned switch the **Status** to **On.**
 
 ![](../../.gitbook/assets/scepman_identity2.png)
 
-3. Click **Save.**
-
-4. This will register your web app into Azure AD.
-
-
+1. Click **Save.**
+2. This will register your web app into Azure AD.
 
 Your **Identity** should look like this:
 
@@ -66,28 +58,23 @@ Your **Identity** should look like this:
 
 ## Setup Azure Key Vault Access Policy
 
-
-
 1. Go to your Key Vault. 
 2. Click **Access policies** and then click **Add new.**
 
 ![](../../.gitbook/assets/scepman_keyvault1%20%281%29.png)
 
-3. In the submenu **Add access policy** click **Select principial**.
+1. In the submenu **Add access policy** click **Select principial**.
 
 ![](../../.gitbook/assets/scepman_keyvault2.png)
 
-4. Search your web app identity.
-
-5. Now select **Key permissions, Secret permissions** and **Certificate permissions**.
-
-6. Your access policy should look like this:
+1. Search your web app identity.
+2. Now select **Key permissions, Secret permissions** and **Certificate permissions**.
+3. Your access policy should look like this:
 
 ![](../../.gitbook/assets/scepman_keyvault3%20%281%29.png)
 
-7. Then click **Add**.
-
-8. Finally click **Save**.
+1. Then click **Add**.
+2. Finally click **Save**.
 
 ## Setup Traffic Manager
 
@@ -97,22 +84,18 @@ Your **Identity** should look like this:
 
 ![](../../.gitbook/assets/scepman_trafficmanager1.png)
 
-4. Then click **Create**.
-
-5. After your Traffic Manager is deployed, go to it and click **Configuration**.
-
-6. Change the settings.
+1. Then click **Create**.
+2. After your Traffic Manager is deployed, go to it and click **Configuration**.
+3. Change the settings.
 
 ![](../../.gitbook/assets/scepman_trafficmanager2.png)
 
-7. Then under **Settings** choose **Endpoints**
-
-8. Click **Add** and choose the primary web app.
+1. Then under **Settings** choose **Endpoints**
+2. Click **Add** and choose the primary web app.
 
 ![](../../.gitbook/assets/scepman_trafficmanager3.png)
 
-9. Repeat these steps for your second web app.  
-
+1. Repeat these steps for your second web app.  
 
 In the **Overview** your traffic manager should like this \(here you find the traffic manage URL\):
 
@@ -128,45 +111,34 @@ The SCEPman application will be loaded from the zip file which is located in a G
 
 ![](../../.gitbook/assets/scepman_storage1%20%281%29.png)
 
-4. Click **Create.**
-
-5. Go to your Storage account and chose **Blobs.**
+1. Click **Create.**
+2. Go to your Storage account and chose **Blobs.**
 
 ![](../../.gitbook/assets/scepman_storage2%20%281%29.png)
 
-6. Then click **+Customer.**
-
-7. Enter a **Name.**
-
-8. As **Public access level** select **Blob \(anonymous read access for blobs only\).**
+1. Then click **+Customer.**
+2. Enter a **Name.**
+3. As **Public access level** select **Blob \(anonymous read access for blobs only\).**
 
 ![](../../.gitbook/assets/scepman_storage3%20%281%29.png)
 
-9. Click **OK.**
-
-10. Select your Container and click **Upload**.
-
-11. Choose the **Artifacts.zip**
+1. Click **OK.**
+2. Select your Container and click **Upload**.
+3. Choose the **Artifacts.zip**
 
 ![](../../.gitbook/assets/scepman_storage4%20%281%29.png)
 
-12. Then click **Upload.**
-
-13. Next click on the zip-file.
-
-14. Click **Properties** and copy the **Uri** value.
-
-15. Then navigate to your primary web app in **App Services**
-
-16. Click **Configuration**
+1. Then click **Upload.**
+2. Next click on the zip-file.
+3. Click **Properties** and copy the **Uri** value.
+4. Then navigate to your primary web app in **App Services**
+5. Click **Configuration**
 
 ![](../../.gitbook/assets/scepman_storage5%20%281%29.png)
 
-17. In **Application settings** search **WEBSITE\_RUN\_FROM\_PACKAGE**
+1. In **Application settings** search **WEBSITE\_RUN\_FROM\_PACKAGE**
 
 ![](../../.gitbook/assets/scepman_storage6%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
-
-
 
 | Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-10-configure-geo-redundancy-optional) |
 | :--- | :--- | :--- |
