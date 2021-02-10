@@ -13,9 +13,9 @@ You need your Client ID and your Client Secret before you can start the deployme
 
 When the registration of the application is done, SCEPman can be deployed to the Azure subscription.
 
-To get SCEPman navigate to the **Azure Marketplace**. Enter SCEPman in the **Search for Marketplace** field. Find **SCEPman - Intune SCEP-as-a-Service**. Click **Create** to start with SCEPman.
+To get SCEPman go to the [SCEPMAN page in **Azure Marketplace**](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/gluckkanja.scepman?tab=Overview). Click on **GET IT NOW**, select the software plan **SCEPman Community Edition** and click **CONTINUE**. Then click on **CREATE**.
 
-Follow these steps to create a SCEPman Intune SCEP-as-a-Service instance:
+Now follow these steps to create a SCEPman Intune SCEP-as-a-Service instance:
 
 ![](../../.gitbook/assets/scepman19%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%281%29.png)
 
