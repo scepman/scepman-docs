@@ -86,17 +86,9 @@ In the Endpoint Manager \(Intune\) you can create Configuration profiles for var
 
 {% page-ref page="../certificate-deployment/microsoft-intune/windows-10.md" %}
 
-{% page-ref page="../certificate-deployment/microsoft-intune/windows-10.md" %}
-
-{% page-ref page="../certificate-deployment/microsoft-intune/macos.md" %}
-
 {% page-ref page="../certificate-deployment/microsoft-intune/macos.md" %}
 
 {% page-ref page="../certificate-deployment/microsoft-intune/ios.md" %}
-
-{% page-ref page="../certificate-deployment/microsoft-intune/ios.md" %}
-
-{% page-ref page="../certificate-deployment/microsoft-intune/android.md" %}
 
 {% page-ref page="../certificate-deployment/microsoft-intune/android.md" %}
 
