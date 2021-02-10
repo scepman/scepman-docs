@@ -25,7 +25,7 @@ Keep in mind that you need to plan a useful Azure resource design.
 
 ### Overview Azure Resource
 
-All these resources are deployed for a trial environment.
+All these resources are deployed for a Community Edition environment.
 
 <table>
   <thead>
