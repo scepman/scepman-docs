@@ -76,8 +76,6 @@ After the deployment completed you need to create the root certificate:
 
 {% page-ref page="../scepman-configuration/first-run-root-cert.md" %}
 
-{% page-ref page="../scepman-configuration/first-run-root-cert.md" %}
-
 ### Step 4: Configure Intune deployment profiles
 
 With the completion of the first steps, we have a working SCEPman implementation and can now deploy certificates to our devices.
