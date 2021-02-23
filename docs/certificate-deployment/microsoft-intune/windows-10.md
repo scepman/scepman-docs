@@ -48,10 +48,8 @@ Next, to finally deploy the device certificates, you have to create a SCEP certi
 5. Select **Windows 10 and later** as **Platform**
 6. Select **SCEP certificate** as **Profile type**
 7. Click **Settings**
-
-![](../../.gitbook/assets/scepman28%20%283%29.png)
-
-1. Configure the **SCEP Certificate**
+    ![](../../.gitbook/assets/scepman28%20%283%29.png)
+8. Configure the **SCEP Certificate**
 
 {% hint style="warning" %}
 There are some restrictions to the **SCEP Certificate** settings:
