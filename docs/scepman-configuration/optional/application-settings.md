@@ -66,10 +66,22 @@ You can also configure shorter validity periods in each SCEP profile in Intune a
 iOS and macOS devices ignore the configuration of the validity period via Intune. Therefore you need to configure this setting in SCEPman if you want to have shorter validity periods than 200 days for your iOS and macOS devices.
 {% endhint %}
 
+## AppConfig:IntuneValidation:ComplianceCheck
+
+{% hint style="info" %}
+Applicable to version 1.7 and above
+{% endhint %}
+
+**Value:** _Always_ or _Never_
+
+**Description:** When SCEPman receives an OCSP request, SCEPman can optionally check the device compliance state. When set to **Always** SCEPman will query the device compliance state and the OCSP result can only be GOOD if the device is also marked as compliant in Azure AD.
+
+Settting this to **Never** will disable the compliance check.
+
 ## AppConfig:IntuneValidation:WaitForSuccessNotificationResponse
 
 {% hint style="info" %}
-Applicable to version 1.6 \(currently internal\) and above
+Applicable to version 1.6 and above
 {% endhint %}
 
 **Value:** _true_ or _false_
