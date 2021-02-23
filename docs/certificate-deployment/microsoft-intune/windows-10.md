@@ -54,7 +54,7 @@ Next, to finally deploy the device certificates, you have to create a SCEP certi
 {% hint style="warning" %}
 There are some restrictions to the **SCEP Certificate** settings:
 
-**Important: You must add the '&#123;&#123;AAD\_Device\_ID&#125;&#125;' as CN in Subject name format or in the User principal name \(UPN\) of the Subject alternative name field.** This ensures that SCEPman can link certificates to device objects in AAD.
+**Important**: You must add the AAD Device ID to the subject. **Add '&#123;&#123;AAD\_Device\_ID&#125;&#125;' as CN in the field Subject name format** or alternatively add the device ID as SAN UPN. This ensures that SCEPman can link certificates to device objects in AAD.
 
 SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the settings configured here, unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_.
 
@@ -129,7 +129,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 {% hint style="warning" %}
 There are some restrictions to the **SCEP Certificate** settings:
 
-**You must add the 'User principal name \(UPN\)' as Subject alternative name.** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.
+You must add the User principal name as Subject alternative name. **Add '&#123;&#123;UserPrincipalName&#125;&#125;' as Subject Alternative Name of type User principal name (UPN).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.
 
 SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the settings configured here, unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_.
 
