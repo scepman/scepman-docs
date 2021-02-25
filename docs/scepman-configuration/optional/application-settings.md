@@ -69,7 +69,9 @@ iOS and macOS devices ignore the configuration of the validity period via Intune
 ## AppConfig:IntuneValidation:ComplianceCheck
 
 {% hint style="info" %}
-Applicable to version 1.7 and above
+Applicable to version 1.7 and above.
+
+SCEPman Enterprise only
 {% endhint %}
 
 **Value:** _Always_ or _Never_
@@ -94,6 +96,8 @@ Setting this to **False** makes SCEPman return the issued certificate before Int
 
 {% hint style="info" %}
 Applicable to version 1.6 and above
+
+SCEPman Enterprise only
 {% endhint %}
 
 **Value:** _true_ or _false_
@@ -106,6 +110,8 @@ Applicable to version 1.6 and above
 
 {% hint style="info" %}
 Applicable to version 1.6 and above
+
+SCEPman Enterprise only
 {% endhint %}
 
 **Value:** _String_

@@ -16,7 +16,7 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%288%29%20%284%29%20%2818%29.png)
+![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%288%29%20%284%29%20%285%29.png)
 
 Then, create a profile in Microsoft Intune:
 
@@ -34,7 +34,7 @@ When you are finished with it, you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
 
-![](../../.gitbook/assets/scepman27%20%282%29%20%281%29%20%286%29.png)
+![](../../.gitbook/assets/scepman27%20%282%29%20%281%29%20%2811%29.png)
 
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)  
 \('xxx' is a placeholder\)
@@ -48,13 +48,15 @@ Next, to finally deploy the device certificates, you have to create a SCEP certi
 5. Select **Windows 10 and later** as **Platform**
 6. Select **SCEP certificate** as **Profile type**
 7. Click **Settings**
+
     ![](../../.gitbook/assets/scepman28%20%283%29.png)
+
 8. Configure the **SCEP Certificate**
 
 {% hint style="warning" %}
 There are some restrictions to the **SCEP Certificate** settings:
 
-**Important**: You must add the AAD Device ID to the subject. **Add '&#123;&#123;AAD\_Device\_ID&#125;&#125;' as CN in the field Subject name format** or alternatively add the device ID as SAN UPN. This ensures that SCEPman can link certificates to device objects in AAD.
+**Important**: You must add the AAD Device ID to the subject. **Add '{{AAD\_Device\_ID}}' as CN in the field Subject name format** or alternatively add the device ID as SAN UPN. This ensures that SCEPman can link certificates to device objects in AAD.
 
 SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the settings configured here, unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_.
 
@@ -89,11 +91,11 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%288%29%20%284%29%20%285%29.png)
+![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%288%29%20%284%29%20%2812%29.png)
 
 Then, create a profile in Microsoft Intune:
 
-![](../../.gitbook/assets/scepman26%20%285%29.png)
+![](../../.gitbook/assets/scepman26%20%282%29.png)
 
 1. Enter a **Name**
 2. As **Platform** select **Windows 10 or later**
@@ -107,7 +109,7 @@ When you are done with it you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
 
-![](../../.gitbook/assets/scepman27%20%282%29%20%281%29%20%2816%29.png)
+![](../../.gitbook/assets/scepman27%20%282%29%20%281%29%20%2821%29.png)
 
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)  
 \('xxx' is a placeholder\)
@@ -129,7 +131,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 {% hint style="warning" %}
 There are some restrictions to the **SCEP Certificate** settings:
 
-You must add the User principal name as Subject alternative name. **Add '&#123;&#123;UserPrincipalName&#125;&#125;' as Subject Alternative Name of type User principal name (UPN).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.
+You must add the User principal name as Subject alternative name. **Add '{{UserPrincipalName}}' as Subject Alternative Name of type User principal name \(UPN\).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.
 
 SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the settings configured here, unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_.
 
