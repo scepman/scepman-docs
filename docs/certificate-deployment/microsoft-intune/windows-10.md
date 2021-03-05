@@ -70,6 +70,7 @@ The setting Key Storage Provider \(KSP\) determines the storage location of the 
 
 * STMicroelectronics: 71.12
 * Intel: 11.8.50.3399
+* Infineon: 7.63.3353.0
 
 If you use TPMs with these firmwares, either update your firmware to a newer version or select "Software KSP" as key storage provider.
 {% endhint %}
