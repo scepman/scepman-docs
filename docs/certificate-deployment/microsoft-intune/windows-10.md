@@ -161,7 +161,11 @@ When all its done, you have the following two certificate configurations:
 
 ## Deploying User Digital Signature Certificate
 
-Deploying user certificates used for digital signatures can be achieved by following these instructions. Please do not use SCEPman for Email Encryption as SCEPman does not have a key management in the backend, it is operating stateless. 
+Deploying user certificates used for **Digital Signatures** can be achieved by following these instructions. 
+
+{% hint style="warning" %}
+**Please do not use** SCEPman for **Email Encryption** as SCEPman does not have a key management in the backend, it is operating stateless. 
+{% endhint %}
 
 You must set these configuration variables otherwise the requested key usage and extended validity period in the SCEP profile is not honored by SCEPman:
 
