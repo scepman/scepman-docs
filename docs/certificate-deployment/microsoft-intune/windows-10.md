@@ -164,7 +164,9 @@ When all its done, you have the following two certificate configurations:
 Deploying user certificates used for **Digital Signatures** can be achieved by following these instructions. 
 
 {% hint style="warning" %}
-**Please do not use** SCEPman for **Email Encryption** as SCEPman does not have a key management in the backend, it is operating stateless. 
+**You may** use SCEPman for transactional **digital signatures** i.e. for S/MIME signing in Microsoft Outlook. If you plan to use the certificates for message signing you need to add the corresponding extended key usages in the Intune profile configuration.
+
+**Do not** use SCEPman **for email-encryption** i.e. for S/MIME mail encryption in Microsoft Outlook \(without a separate technology for key management\). The nature of **the SCEP protocol does not include a mechanism to backup or archive private key material.** If you would use SCEP for email-encryption you may lose the keys to decrypt the messages later.
 {% endhint %}
 
 You must set these configuration variables otherwise the requested key usage and extended validity period in the SCEP profile is not honored by SCEPman:

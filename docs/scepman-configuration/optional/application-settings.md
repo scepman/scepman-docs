@@ -68,10 +68,12 @@ iOS and macOS devices ignore the configuration of the validity period via Intune
 
 ## AppConfig:IntuneValidation:ComplianceCheck
 
-{% hint style="info" %}
-Applicable to version 1.7 and above.
+{% hint style="warning" %}
+**Experimental Setting** - Applicable to version 1.7 and above. 
 
 SCEPman Enterprise Edition only
+
+Due to delayed compliance state evaluation during enrollment this feature breaks Windows Autopilot enrollment. After certificate deployment the immediate following OCSP check will return '**not valid**' during enrollment time and the Autopilot process will not succeed.
 {% endhint %}
 
 **Value:** _Always_ or _Never_
