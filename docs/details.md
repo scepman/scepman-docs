@@ -14,15 +14,16 @@ SCEP is originally developed by Cisco. The core mission of SCEP is the deploymen
 
 ## What is SCEPman?
 
-If you use SCEP in a 'traditional way' you need an number of on-premises components. Microsoft Intune [allows third-party certificate authorities \(CA\)](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview) to issue and validate certificates using SCEP.  
+If you use SCEP in a 'traditional way' you need an number of on-premises components. Microsoft Intune [allows third-party certificate authorities \(CA\)](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview) to issue and validate certificates using SCEP.
+
 To get rid of the on-premises components we developed SCEPman.
 
 {% hint style="warning" %}
 SCEPman is **intended to use for authentication and transport encryption** certificates. That said, you can deploy user and device certificates used for network authentication, WiFi, VPN, RADIUS and similar services.
 
-**You may** use SCEPman for **digital signatures** i.e. for S/MIME signing in Microsoft Outlook. If you plan to use the certificates for message signing you need to add the corresponding extended key usages in the Intune profile configuration.
+**You may** use SCEPman for transactional **digital signatures** i.e. for S/MIME signing in Microsoft Outlook. If you plan to use the certificates for message signing you need to add the corresponding extended key usages in the Intune profile configuration.
 
-**Do not** use SCEPman **for email-encryption** i.e. for S/MIME mail encryption in Microsoft Outlook. \(without a separate technology for key management\). The nature of the SCEP protocol does not include a mechanism to backup or archive private key material. If you would use SCEP for email-encryption or digital signatures you may lose the keys to decrypt or verify later.
+**Do not** use SCEPman **for email-encryption** i.e. for S/MIME mail encryption in Microsoft Outlook \(without a separate technology for key management\). The nature of **the SCEP protocol does not include a mechanism to backup or archive private key material.** If you would use SCEP for email-encryption you may lose the keys to decrypt the messages at a later time.
 {% endhint %}
 
 For more details about the technical certificate workflow and the third-party certification authority SCEP integration, click [here](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview#overview).
