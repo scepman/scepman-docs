@@ -1,19 +1,90 @@
 # Editions
 
+## Overview
+
 We offer two different SCEPman editions:
+
+* Enterprise Edition
+* Community Edition
+
+Both editions use the same codebase and binaries. A Community Edition can be converted to an Enterprise Edition just by inserting a SCEPman license key \(and maybe doing some additional config work\).
 
 ## Enterprise Edition \(SCEPman EE\)
 
-SCEPman EE offers all services and all features. If you need enterprise-class features, scalability, and performance, or if you plan to use the software in a production environment that requires support from our highly specialized support and operations team, you should consider the SCEPman Enterprise Edition.
+SCEPman EE comes with all features and is supported by our team. We charge a subscription fee for SCEPman EE.
 
-{% hint style="warning" %}
-SCEPman EE only is backed by our support services.
-{% endhint %}
+We recommend SCEPman EE for:
+
+* Productive environments
+* Scalability and performance
+* Enterprise feature set
 
 ## Community Edition \(SCEPman CE\)
 
-If you are a tech enthusiast with the ability to self-support, our Community Edition products are freely available and offer powerful capabilities for a non-critical business process or content needs. Both editions use the same codebase, and the technical differences are depended on the Azure setup and configurations.
+SCEPman CE misses some features of SCEPman EE and is not supported by our team. SCEPman CE is free of charge.
+
+We recommend SCEPman CE for:
+
+* Lab environments
+* Small businesses
+* Easy testing of SCEPman
 
 If you want to test SCEPman in your own environment, you can use the [Trial Guide](getting-started/trial-guide.md) and install SCEPman directly into your lab.  
 When you later decide to buy SCEPman EE you should follow our [Enterprise Guide](getting-started/enterprise-guide.md) to get a recommended production environment.
+
+## Version Comparison
+
+The following table shows the most important differences between the two editions:
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">SCEPman Feature</th>
+      <th style="text-align:center">Community Edition</th>
+      <th style="text-align:center">Enterprise Edition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Fee</td>
+      <td style="text-align:center">free</td>
+      <td style="text-align:center">subscription-fee</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Support</td>
+      <td style="text-align:center">no</td>
+      <td style="text-align:center">included</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://docs.scepman.com/scepman-configuration/optional/geo-redundancy">Redundancy</a>
+      </td>
+      <td style="text-align:center">no</td>
+      <td style="text-align:center">yes</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://docs.scepman.com/scepman-configuration/optional/intermediate-certificate">SCEPman as intermediate CA</a>
+      </td>
+      <td style="text-align:center">no</td>
+      <td style="text-align:center">yes</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p><a href="https://docs.scepman.com/certificate-deployment/other-1/domain-controller-certificates">Kerberos authentication certificates for DCs</a>
+        </p>
+        <p>(Access on-prem ressources and use
+          <br />Windows Hello for Business with AAD/Hybrid-joined devices)</p>
+      </td>
+      <td style="text-align:center">no</td>
+      <td style="text-align:center">yes</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://docs.scepman.com/scepman-configuration/optional/application-settings#appconfig-intunevalidation-compliancecheck">Verify AAD/Intune Device Compliance</a>
+      </td>
+      <td style="text-align:center">no</td>
+      <td style="text-align:center">preview</td>
+    </tr>
+  </tbody>
+</table>
+
+
 
