@@ -46,36 +46,14 @@ The following table shows the most important differences between the two edition
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">Fee</td>
-      <td style="text-align:center">free</td>
-      <td style="text-align:center">subscription-fee</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Support</td>
-      <td style="text-align:center">no</td>
-      <td style="text-align:center">included</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="https://docs.scepman.com/scepman-configuration/optional/geo-redundancy">Redundancy</a>
-      </td>
-      <td style="text-align:center">no</td>
-      <td style="text-align:center">yes</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><a href="https://docs.scepman.com/scepman-configuration/optional/intermediate-certificate">SCEPman as intermediate CA</a>
-      </td>
-      <td style="text-align:center">no</td>
-      <td style="text-align:center">yes</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Machine certificates for Intune-managed devices (Windows 10, MacOS, Android, iOS)
-      </td>
+      <td style="text-align:left">Machine certificates for Intune-managed devices
+        <br />(Windows 10, MacOS, Android, iOS)</td>
       <td style="text-align:center">yes</td>
       <td style="text-align:center">yes</td>
     </tr>
     <tr>
-      <td style="text-align:left">User certificates on Intune-managed devices (Windows 10, MacOS, Android, iOS)
-      </td>
+      <td style="text-align:left">User certificates on Intune-managed devices
+        <br />(Windows 10, MacOS, Android, iOS)</td>
       <td style="text-align:center">yes</td>
       <td style="text-align:center">yes</td>
     </tr>
@@ -90,13 +68,33 @@ The following table shows the most important differences between the two edition
       <td style="text-align:center">yes</td>
     </tr>
     <tr>
+      <td style="text-align:left"><a href="https://docs.scepman.com/scepman-configuration/optional/geo-redundancy">Redundancy</a>
+      </td>
+      <td style="text-align:center">no</td>
+      <td style="text-align:center">yes</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><a href="https://docs.scepman.com/scepman-configuration/optional/intermediate-certificate">SCEPman as intermediate CA</a>
+      </td>
+      <td style="text-align:center">no</td>
+      <td style="text-align:center">yes</td>
+    </tr>
+    <tr>
       <td style="text-align:left"><a href="https://docs.scepman.com/scepman-configuration/optional/application-settings#appconfig-intunevalidation-compliancecheck">Verify AAD/Intune Device Compliance</a>
       </td>
       <td style="text-align:center">no</td>
       <td style="text-align:center">preview</td>
     </tr>
+    <tr>
+      <td style="text-align:left">Support</td>
+      <td style="text-align:center">no</td>
+      <td style="text-align:center">included</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Fee</td>
+      <td style="text-align:center">free</td>
+      <td style="text-align:center">subscription-fee</td>
+    </tr>
   </tbody>
 </table>
-
-
 
