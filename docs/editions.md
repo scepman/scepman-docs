@@ -68,15 +68,13 @@ The following table shows the most important differences between the two edition
       <td style="text-align:center">yes</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        Machine certificates for Intune-managed devices (Windows 10, MacOS, Android, iOS)
+      <td style="text-align:left">Machine certificates for Intune-managed devices (Windows 10, MacOS, Android, iOS)
       </td>
       <td style="text-align:center">yes</td>
       <td style="text-align:center">yes</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        User certificates on Intune-managed devices (Windows 10, MacOS, Android, iOS)
+      <td style="text-align:left">User certificates on Intune-managed devices (Windows 10, MacOS, Android, iOS)
       </td>
       <td style="text-align:center">yes</td>
       <td style="text-align:center">yes</td>
