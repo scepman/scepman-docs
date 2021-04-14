@@ -69,6 +69,20 @@ The following table shows the most important differences between the two edition
     </tr>
     <tr>
       <td style="text-align:left">
+        Machine certificates for Intune-managed devices (Windows 10, MacOS, Android, iOS)
+      </td>
+      <td style="text-align:center">yes</td>
+      <td style="text-align:center">yes</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        User certificates on Intune-managed devices (Windows 10, MacOS, Android, iOS)
+      </td>
+      <td style="text-align:center">yes</td>
+      <td style="text-align:center">yes</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
         <p><a href="https://docs.scepman.com/certificate-deployment/other-1/domain-controller-certificates">Kerberos authentication certificates for DCs</a>
         </p>
         <p>(Access on-prem ressources and use
