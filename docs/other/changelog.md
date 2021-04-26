@@ -18,6 +18,8 @@ order: 1
   - Work around a bug on some Android version to gain correct validity periods
   - SCEPman CA certificates receive an Extended Key Usage to improve compatibility with some versions of Cisco ISE
   - Further improvements to error messages
+  - Updated some dependencies
+  - Improved Homepage
 
 ### 1.6 - November 2020
 
