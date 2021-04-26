@@ -2,39 +2,59 @@
 
 The section describes additional settings for the behavior of SCEPman. All of these are optional, though, and we recommend to just start with the defaults.
 
-Settings can add or changed manually if needed. Some changes can harm your service, please note the information below.
+Settings can be added or changed manually if needed. Some changes can harm your service. Please carefully read all information about a setting before changing.
 
-On your **App Service** navigate to **Configuration** and then you find this under **Application settings**.
+For each Setting, you can choose whether you want to define the setting in the App Service Configuration or in Azure Key Vault. If you define the same setting in both places, Azure Key Vault takes precedence.
 
-## AppConfig:BaseUrl
+## Convenient Configuration in the App Service Configuration
+
+On your **App Service** navigate to **Configuration** and then you find this under **Application settings**. Use the setting names as described below.
+
+We recommend to define settings in the App Service Configuration except for passwords.
+
+## Secure Configuration in Azure Key Vault
+
+{% hint style="info" %}
+This feature requires version **1.7** or above.
+{% endhint %}
+
+Especially for sensitive information, you can also configure settings as Secrets in Azure Key Vault. You must first grant edit rights to Secrets in the Azure Key Vault associated with your SCEPman instance to an administrator account. Then, you can use this administrator account to define new Secrets.
+
+**Remark:** Use double dashes instead of colons in configuration names! For example, instead of *AppConfig:DCValidation:RequestPassword*, the Secret must be named *AppConfig--DCValidation--RequestPassword*.
+
+We recommend to use this type of configuration only for sensitive information.
+
+## List of Settings
+
+### AppConfig:BaseUrl
 
 **Value:** _App Service Name_ or [https://customcname.domain.com](https://customcname.domain.com)
 
 **Description:**  
 This filed defines the public OCSP endpoint URL for the certificates. By default, the value contains the **App Service Name**. If you want to use a [Custom Domain](custom-domain.md), you need to change this value.
 
-## AppConfig:LicenseKey
+### AppConfig:LicenseKey
 
 **Value:** _empty_ **or** _license key_
 
 **Description:**  
 If you are using a trial deployment or the community edition this field leaves empty. After you purchased the Enterprise Edition you will receive a license key from us, then you can insert this key into this setting.
 
-## AppConfig:RemoteDebug
+### AppConfig:RemoteDebug
 
 **Value:** _true_ or _false_
 
 **Description:**  
 You can send Debug log information to a cloud-based monitoring solution of our company for support reasons. This can speed up support cases. You can activate and deactivate this feature by changing the value to **true** or **false**.
 
-## AppConfig:AnonymousHomePageAccess
+### AppConfig:AnonymousHomePageAccess
 
 **Value:** _true_ or _false_
 
 **Description:**  
 When not configured or set to **true**, anyone in the internet knowing the app service's URL can access the SCEPman Homepage and see status information like the SCEPman version and whether SCEPman is up and running \(except if you prevent this with a firewall\). We consider this non-sensitive information, but if you want to hide it, set this to **false**. Then, the homepage is deactivated for browser access and this information is not visible anymore.
 
-## AppConfig:UseRequestedKeyUsages
+### AppConfig:UseRequestedKeyUsages
 
 {% hint style="info" %}
 Applicable to version 1.5 and above
@@ -49,7 +69,7 @@ Applicable to version 1.5 and above
 iOS devices do not support customized Extended Key Usages. Their certificates will always have _Client Authentication_ as Extended Key Usage.
 {% endhint %}
 
-## AppConfig:ValidityPeriodDays
+### AppConfig:ValidityPeriodDays
 
 {% hint style="info" %}
 Applicable to version 1.5 and above
@@ -58,15 +78,17 @@ Applicable to version 1.5 and above
 **Value:** _Integer_
 
 **Description:**  
-The maximum number of days that an issued certificate is valid. By default, this setting is not available and the validity period is **200 days.**
+The maximum number of days that an issued certificate is valid. By default, this setting is not available and the validity period is **200 days**. SCEPman never issues certificates with a longer validity than the value defined here. There are ways to reduce validity for specific certificates, though.
 
-You can also configure shorter validity periods in each SCEP profile in Intune as described in the [Microsoft documentation](https://docs.microsoft.com/en-us/mem/intune/protect/certificates-scep-configure#modify-the-validity-period-of-the-certificate-template).
+You can configure shorter validity periods in each SCEP profile in Intune as described in the [Microsoft documentation](https://docs.microsoft.com/en-us/mem/intune/protect/certificates-scep-configure#modify-the-validity-period-of-the-certificate-template).
 
 {% hint style="warning" %}
 iOS and macOS devices ignore the configuration of the validity period via Intune. Therefore you need to configure this setting in SCEPman if you want to have shorter validity periods than 200 days for your iOS and macOS devices.
 {% endhint %}
 
-## AppConfig:IntuneValidation:ComplianceCheck
+You can also configure shorter validity periods for each SCEP endpoint. These can never exceed the validity defined in this global setting, though!
+
+### AppConfig:IntuneValidation:ComplianceCheck
 
 {% hint style="warning" %}
 **Experimental Setting** - Applicable to version 1.7 and above. 
@@ -82,7 +104,7 @@ Due to delayed compliance state evaluation during enrollment this feature breaks
 
 Settting this to **Never** will disable the compliance check.
 
-## AppConfig:IntuneValidation:WaitForSuccessNotificationResponse
+### AppConfig:IntuneValidation:WaitForSuccessNotificationResponse
 
 {% hint style="info" %}
 Applicable to version 1.6 and above
@@ -94,7 +116,17 @@ Applicable to version 1.6 and above
 
 Setting this to **False** makes SCEPman return the issued certificate before Intune answers to the notification. This is against the letters of the specification, but increases performance and avoids timeouts in instances where this issue arises.
 
-## AppConfig:DCValidation:Enabled
+### AppConfig:IntuneValidation:ValidityPeriodDays
+
+{% hint style="info" %}
+Applicable to version 1.7 and above
+{% endhint %}
+
+**Value:** Positive _Integer_
+
+**Description:** This setting further reduces the global ValidityPeriodDays for the Intune endpoint.
+
+### AppConfig:DCValidation:Enabled
 
 {% hint style="info" %}
 Applicable to version 1.6 and above
@@ -108,7 +140,7 @@ SCEPman Enterprise Edition only
 
 **True**: SCEPman listens at the additional SCEP server endpoint with the path `/dc`. Use in conjunction with AppConfig:DCValidation:RequestPassword. **False** \(default\): SCEPman does not issue certificates for Domain Controllers.
 
-## AppConfig:DCValidation:RequestPassword
+### AppConfig:DCValidation:RequestPassword
 
 {% hint style="info" %}
 Applicable to version 1.6 and above
@@ -120,7 +152,21 @@ SCEPman Enterprise Edition only
 
 **Description:** A challenge password that the Domain Controllers must include in every SCEP request to acquire a certificate. Only used if AppConfig:DCValidation:Enabled is set to _true_.
 
-## AppConfig:StaticValidation:Enabled
+We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name *AppConfig--DCValidation--RequestPassword*.
+
+### AppConfig:DCValidation:ValidityPeriodDays
+
+{% hint style="info" %}
+Applicable to version 1.7 and above
+
+SCEPman Enterprise Edition only
+{% endhint %}
+
+**Value:** Positive _Integer_
+
+**Description:** This setting further reduces the global ValidityPeriodDays for the Domain Controller endpoint. For example, you may define a low value like 10 days here and reduce the validity of Domain Controller certificates, while still having a long validity for your client certificates.
+
+### AppConfig:StaticValidation:Enabled
 
 {% hint style="info" %}
 Applicable to version 1.6 and above
@@ -128,11 +174,11 @@ Applicable to version 1.6 and above
 
 **Value:** _true_ or _false_
 
-**Description:** This setting helps you to request certificates from [3rd-party MDM systems](../../certificate-deployment/other-1/static-certificates.md) \(i.e. other than Intune\).
+**Description:** This setting helps you to request certificates from [3rd-party MDM systems](../../certificate-deployment/other-1/static-certificates.md) \(i.e. other than Intune and JAMF\).
 
-**True**: SCEPman listens at the additional SCEP server endpoint with the path `/static`. Use in conjunction with AppConfig:StaticValidation:RequestPassword. **False** \(default\): SCEPman does not issue certificates for 3rd-party MDM systems \(i.e. other than Intune\).
+**True**: SCEPman listens at the additional SCEP server endpoint with the path `/static`. Use in conjunction with AppConfig:StaticValidation:RequestPassword. **False** \(default\): SCEPman does not issue certificates for 3rd-party MDM systems \(i.e. other than Intune and JAMF\).
 
-## AppConfig:StaticValidation:RequestPassword
+### AppConfig:StaticValidation:RequestPassword
 
 {% hint style="info" %}
 Applicable to version 1.6 and above
@@ -142,12 +188,90 @@ Applicable to version 1.6 and above
 
 **Description:** A challenge password that a 3rd-party MDM system must include in every SCEP request to acquire a certificate. Only used if AppConfig:StaticValidation:Enabled is set to _true_.
 
-## WEBSITE\_RUN\_FROM\_PACKAGE
+We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name *AppConfig--StaticValidation--RequestPassword*.
+
+### AppConfig:StaticValidation:ValidityPeriodDays
+
+{% hint style="info" %}
+Applicable to version 1.7 and above
+{% endhint %}
+
+**Value:** Positive _Integer_
+
+**Description:** This setting further reduces the global ValidityPeriodDays for the Static endpoint. For example, you may define a low value like 10 days here and reduce the validity of certificates issued over the static endpoint, while still having a long validity for your regular client certificates.
+
+### AppConfig:JamfValidation:Enabled
+
+{% hint style="info" %}
+Applicable to version 1.7 and above
+{% endhint %}
+
+**Value:** _true_ or _false_
+
+**Description:** This setting helps you to request certificates via the [JAMF](../../certificate-deployment/jamf/general.md) MDM system.
+
+**True**: SCEPman listens at the additional SCEP server endpoint with the path `/jamf`. Use in conjunction with AppConfig:JamfValidation:RequestPassword. **False** \(default\): SCEPman does not issue certificates for JAMF.
+
+### AppConfig:JamfValidation:RequestPassword
+
+{% hint style="info" %}
+Applicable to version 1.7 and above
+{% endhint %}
+
+**Value:** _String_
+
+**Description:** A challenge password that JAMF must include in every SCEP request to acquire a certificate. Only used if AppConfig:JamfValidation:Enabled is set to _true_.
+
+We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name *AppConfig--JamfValidation--RequestPassword*.
+
+### AppConfig:JamfValidation:ValidityPeriodDays
+
+{% hint style="info" %}
+Applicable to version 1.7 and above
+{% endhint %}
+
+**Value:** Positive _Integer_
+
+**Description:** This setting further reduces the global ValidityPeriodDays for the Jamf endpoint.
+
+### AppConfig:JamfValidation:URL
+
+{% hint style="info" %}
+Applicable to version 1.7 and above
+{% endhint %}
+
+**Value:** _String_
+
+**Description:** Under construction.
+
+### AppConfig:JamfValidation:APIUsername
+
+{% hint style="info" %}
+Applicable to version 1.7 and above
+{% endhint %}
+
+**Value:** _String_
+
+**Description:** Under construction.
+
+### AppConfig:JamfValidation:APIPassword
+
+{% hint style="info" %}
+Applicable to version 1.7 and above
+{% endhint %}
+
+**Value:** _String_
+
+**Description:** Under construction.
+
+We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name *AppConfig--JamfValidation--APIPassword*.
+
+### WEBSITE\_RUN\_FROM\_PACKAGE
 
 This setting points to the Application Artifacts that will be loaded by starting the App Service.  
 Please have a look at these instructions: [Application Artifacts](application-artifacts.md#change-artifacts).
 
-## AppConfig:AuthConfig:ApplicationId
+### AppConfig:AuthConfig:ApplicationId
 
 The Application ID from your Azure AD App registration. This setting is configured during the setup.
 
@@ -155,7 +279,7 @@ The Application ID from your Azure AD App registration. This setting is configur
 Changes can harm you service!
 {% endhint %}
 
-## AppConfig:AuthConfig:ApplicationKey
+### AppConfig:AuthConfig:ApplicationKey
 
 The Application Key \(Client secret\) from your Azure AD App registration. This setting is configured during the setup.
 
@@ -163,7 +287,7 @@ The Application Key \(Client secret\) from your Azure AD App registration. This 
 Changes can harm you service!
 {% endhint %}
 
-## AppConfig:AuthConfig:TenantName
+### AppConfig:AuthConfig:TenantName
 
 The Azure AD Tenant ID. This setting is automatically configured during the setup.
 
@@ -171,15 +295,17 @@ The Azure AD Tenant ID. This setting is automatically configured during the setu
 Changes can harm you service!
 {% endhint %}
 
-## AppConfig:KeyVaultConfig:KeyVaultURL
+### AppConfig:KeyVaultConfig:KeyVaultURL
 
 The Azure Key Vault URL. This setting is automatically configured during the setup.
+
+You must define this setting in the configuration of your App Service. It is NOT possible to define this setting as a Secret in Azure Key Vault!
 
 {% hint style="danger" %}
 Changes can harm you service!
 {% endhint %}
 
-## AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName
+### AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName
 
 The Root Certificate Name. This setting is automatically configured during the Root CA creation.
 
@@ -187,7 +313,7 @@ The Root Certificate Name. This setting is automatically configured during the R
 Changes can harm you service!
 {% endhint %}
 
-## AppConfig:KeyVaultConfig:RootCertificateConfig:Subject
+### AppConfig:KeyVaultConfig:RootCertificateConfig:Subject
 
 The Root Certificate Subject. This setting is automatically configured during the Root CA creation.
 

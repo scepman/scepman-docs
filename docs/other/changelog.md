@@ -7,6 +7,12 @@ order: 1
 
 ## Versions
 
+### 1.7 - April 2021 (Currently in Beta)
+
+* Support for [JAMF Computer and Device Certificates](../certificate-deployment/jamf/general.md)
+* [Secure application configuration in Key Vault](../scepman/configuration/optional/application-settings.md#Secure_Configuration_in_Azure_Key_Vault)
+* Further improvements to error messages
+
 ### 1.6 - November 2020
 
 * Support for certificates for [Domain Controllers](../certificate-deployment/other-1/domain-controller-certificates.md), especially for use in Windows Hello for Business \(Enterprise Edition only\)
