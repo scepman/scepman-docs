@@ -10,14 +10,14 @@ order: 1
 ### 1.7 - April 2021 (Currently in Internal Channel)
 
 * Support for [JAMF Computer and Device Certificates](../certificate-deployment/jamf/general.md)
-* Separate Certificate Lifetimes for each endpoint
-* [Secure application configuration in Key Vault](../scepman/configuration/optional/application-settings.md#Secure_Configuration_in_Azure_Key_Vault)
+* Separate Certificate Lifetimes for each endpoint, e.g. for [Domain Controller Certificates](../scepman/configuration/optional/application-settings.md#AppConfig-DCValidation-ValidityPeriodDays)
+* [Secure application configuration in Key Vault](../scepman/configuration/optional/application-settings.md#Secure-Configuration-in-Azure-Key-Vault)
 * Moved release path to https://github/scepman/install. Please update your setting WEBSITE_RUN_FROM_PACKAGE as described in [Section Application Artifacts](../scepman/configuration/optional/application-artifacts.md).
-* Further improvements to error messages
+* Preview of Compliance Checks(../scepman/configuration/optional/application-settings.md#appconfig-intunevalidation-compliancecheck)
 * Minor advancements
   - Work around a bug on some Android version to gain correct validity periods
   - SCEPman CA certificates receive an Extended Key Usage to improve compatibility with some versions of Cisco ISE
-  - 
+  - Further improvements to error messages
 
 ### 1.6 - November 2020
 
