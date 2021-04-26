@@ -38,7 +38,7 @@
   * [Android](certificate-deployment/microsoft-intune/android.md)
   * [iOS](certificate-deployment/microsoft-intune/ios.md)
 * [JAMF](certificate-deployment/jamf/README.md)
-  * [3rd-party MDM Solutions](certificate-deployment/jamf/general.md)
+  * [General Configuration](certificate-deployment/jamf/general.md)
 * [Other](certificate-deployment/other-1/README.md)
   * [3rd-party MDM Solutions](certificate-deployment/other-1/static-certificates.md)
   * [Domain Controller Certificates](certificate-deployment/other-1/domain-controller-certificates.md)
