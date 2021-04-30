@@ -162,10 +162,9 @@ _Cause_: Both Cisco ISE as well as Aruba ClearPass do not support HTTP 1.1 when 
 
 _Solution_: Please see [here](cisco-ise-host-header-limitation.md).
 
-## Device Certificates on my Android (dedicated) systems are not valid
+## Device Certificates on my Android \(dedicated\) systems are not valid
 
-On Android (dedicated) systems, Intune or Android accidentially puts the Intune Device ID into the certificate instead of the AAD Device ID in random cases, although you configure the variable &#123;&#123;AAD\_Device\_ID&#125;&#125; in the SCEP configuration profile. SCEPman then cannot find a device with this ID in AAD and therefore considers the certificate revoked.
+On Android \(dedicated\) systems, Intune or Android accidentially puts the Intune Device ID into the certificate instead of the AAD Device ID in random cases, although you configure the variable {{AAD\_Device\_ID}} in the SCEP configuration profile. SCEPman then cannot find a device with this ID in AAD and therefore considers the certificate revoked.
 
-<!-- For the cases we have seen, the issue was resolved when using &#123;&#123;AzureADDeviceId&#125;&#125; instead of &#123;&#123;AAD\_Device\_ID&#125;&#125; in the configuration profile. -->
+This issue occurs only if a Subject Alternative Name \(SAN\) is defined in the configuration profile. If you remove the SAN configuration, but keep {{AAD\_Device\_ID}} in the subject, the certificates will consistently get the actual Azure AD Device ID in their subject. This fixes the problem.
 
-This issue occurs only if a Subject Alternative Name (SAN) is defined in the configuration profile. If you remove the SAN configuration, but keep &#123;&#123;AAD\_Device\_ID&#125;&#125; in the subject, the certificates will consistently get the actual Azure AD Device ID in their subject. This fixes the problem.
