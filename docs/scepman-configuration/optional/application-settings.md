@@ -20,7 +20,7 @@ This feature requires version **1.7** or above.
 
 Especially for sensitive information, you can also configure settings as Secrets in Azure Key Vault. You must first grant edit rights to Secrets in the Azure Key Vault associated with your SCEPman instance to an administrator account. Then, you can use this administrator account to define new Secrets.
 
-**Remark:** Use double dashes instead of colons in configuration names! For example, instead of *AppConfig:DCValidation:RequestPassword*, the Secret must be named *AppConfig--DCValidation--RequestPassword*.
+**Remark:** Use double dashes instead of colons in configuration names! For example, instead of _AppConfig:DCValidation:RequestPassword_, the Secret must be named _AppConfig--DCValidation--RequestPassword_.
 
 We recommend to use this type of configuration only for sensitive information.
 
@@ -91,7 +91,7 @@ You can also configure shorter validity periods for each SCEP endpoint. These ca
 ### AppConfig:IntuneValidation:ComplianceCheck
 
 {% hint style="warning" %}
-**Experimental Setting** - Applicable to version 1.7 and above. 
+**Experimental Setting** - Applicable to version 1.7 and above.
 
 SCEPman Enterprise Edition only
 
@@ -152,7 +152,7 @@ SCEPman Enterprise Edition only
 
 **Description:** A challenge password that the Domain Controllers must include in every SCEP request to acquire a certificate. Only used if AppConfig:DCValidation:Enabled is set to _true_.
 
-We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name *AppConfig--DCValidation--RequestPassword*.
+We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--DCValidation--RequestPassword_.
 
 ### AppConfig:DCValidation:ValidityPeriodDays
 
@@ -188,7 +188,7 @@ Applicable to version 1.6 and above
 
 **Description:** A challenge password that a 3rd-party MDM system must include in every SCEP request to acquire a certificate. Only used if AppConfig:StaticValidation:Enabled is set to _true_.
 
-We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name *AppConfig--StaticValidation--RequestPassword*.
+We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--StaticValidation--RequestPassword_.
 
 ### AppConfig:StaticValidation:ValidityPeriodDays
 
@@ -208,7 +208,7 @@ Applicable to version 1.7 and above
 
 **Value:** _true_ or _false_
 
-**Description:** This setting helps you to request certificates via the [JAMF](../../certificate-deployment/jamf/general.md) MDM system.
+**Description:** This setting helps you to request certificates via the [JAMF](https://github.com/scepman/scepman-docs/tree/6358a93fe3c35dd51ae9501a385049ad1c8feb0b/docs/certificate-deployment/jamf/general.md) MDM system.
 
 **True**: SCEPman listens at the additional SCEP server endpoint with the path `/jamf`. Use in conjunction with AppConfig:JamfValidation:RequestPassword. **False** \(default\): SCEPman does not issue certificates for JAMF.
 
@@ -222,7 +222,7 @@ Applicable to version 1.7 and above
 
 **Description:** A challenge password that JAMF must include in every SCEP request to acquire a certificate. Only used if AppConfig:JamfValidation:Enabled is set to _true_.
 
-We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name *AppConfig--JamfValidation--RequestPassword*.
+We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--JamfValidation--RequestPassword_.
 
 ### AppConfig:JamfValidation:ValidityPeriodDays
 
@@ -264,7 +264,7 @@ Applicable to version 1.7 and above
 
 **Description:** Under construction.
 
-We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name *AppConfig--JamfValidation--APIPassword*.
+We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--JamfValidation--APIPassword_.
 
 ### WEBSITE\_RUN\_FROM\_PACKAGE
 

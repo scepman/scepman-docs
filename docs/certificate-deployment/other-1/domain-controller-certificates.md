@@ -95,11 +95,15 @@ The above command requests a new DC certificate whether or not there already is 
 
 ### CA certificate Renewal
 
-For a fully automated renewal of certificates, you should distribute ScepClient to **all** your domain controllers, together with the PowerShell script [enroll-dc-certificate.ps1](https://github.com/scepman/scepclient/blob/master/enroll-dc-certificate.ps1). Add a Scheduled task that executes the following command in a SYSTEM context:
+For a fully automated renewal of certificates, you should distribute ScepClient to **all** your domain controllers, together with the PowerShell script [enroll-dc-certificate.ps1](https://github.com/scepman/scepclient/blob/master/enroll-dc-certificate.ps1). Add a Scheduled task that executes the following command in a SYSTEM context \(adapt the URL and request password\):
 
 ```text
 powershell -ExecutionPolicy RemoteSigned c:\scepman\enroll-dc-certificate.ps1 -SCEPURL https://your-scepman-domain/dc -SCEPChallenge RequestPassword -ValidityThreshold (New-TimeSpan -Days 30)
 ```
+
+Please make sure that the PowerShell script resides in the same directory as SCEPClient.exe and its additional dependencies. Furthermore, ensure that the working directory is the same as the one where SCEPClient.exe is stored:
+
+![Configuring the execution action in the Scheduled Task](../../.gitbook/assets/image%20%2817%29.png)
 
 This checks for existing DC certificates in the machine store. Only if there are no suitable certificates with at least 30 days validity, it uses ScepClient.exe to request a new DC certificate from SCEPman.
 
