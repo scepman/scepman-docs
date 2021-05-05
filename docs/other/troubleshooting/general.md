@@ -145,4 +145,6 @@ On Android (dedicated) systems, Intune or Android accidentially puts the Intune 
 
 <!-- This issue occurs only if a Subject Alternative Name (SAN) is defined in the configuration profile. If you remove the SAN configuration, but keep &#123;&#123;AAD\_Device\_ID&#125;&#125; in the subject, the certificates will consistently get the actual Azure AD Device ID in their subject. This fixes the problem. -->
 
-We are currently working with Microsoft to solve this issue. Please contact our support if you are also affected.
+This happens only when you use the default enrollment method for corporate-owned dedicated devices. If you use the Azure-AD-Shared mode, you will not be affected by the problem. Intune will still put the Intune Device ID into the certificate instead of the AAD Device ID, but they will be the same for Azure-AD-Shared mode, so it does not matter. To change the enrollment mode, go to the [Android enrollment settings of Microsoft Endpoint Manager admin center](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesAndroidMenu/androidEnrollment) and choose `Corporate-owned dedicated device with Azure AD shared mode`. Please refer to the [Microsoft documentation](https://docs.microsoft.com/en-us/mem/intune/enrollment/android-kiosk-enroll) for the implications of this selection.
+
+We are currently working with Microsoft to solve this issue in all configurations. Please contact our support if you are also affected.
