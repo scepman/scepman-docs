@@ -8,7 +8,7 @@ As first step you need to deploy SCEPman root certficate. Download this CA certi
 
 Add a new "macOS Configuration Profile" and choose "Certificate" as payload. Enter a meaningful name, upload the certificate \(for"Select Certificate Option" select "Upload\)" and activate "Allow all apps access":
 
-![](../../.gitbook/assets/image%20%2828%29.png)
+![](../../.gitbook/assets/image%20%2829%29.png)
 
 Distribute that profile to all clients that should get SCEP certificates later.
 
@@ -33,7 +33,7 @@ Please adjust other options on your needs.
 
 Besides reporting on Jamf, you can easily verify the distribution of SCEPman Root Certificate and Device Certificate via "Keychain Access" on the desired client \(under "System"\):
 
-![SCEPman Root Certificate](../../.gitbook/assets/image%20%2830%29.png)
+![SCEPman Root Certificate](../../.gitbook/assets/image%20%2831%29.png)
 
-![Device Certificate](../../.gitbook/assets/image%20%2831%29.png)
+![Device Certificate](../../.gitbook/assets/image%20%2832%29.png)
 

@@ -20,7 +20,7 @@ Please add another "Mobile Device Configuration Profile" and choose "SCEP" as pa
 | Redistribute Profile | re-deploys profile for renewal | e.g. "14 days" |
 | Subject | subject for certificate, additions are possible | CN=$JSSID,OU=devices,CN=$PROFILE\_IDENTIFIER |
 
-![](../../.gitbook/assets/image%20%2827%29.png)
+![](../../.gitbook/assets/image%20%2828%29.png)
 
 Distribute the profile to your clients as desired.
 

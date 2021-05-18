@@ -28,13 +28,13 @@ Please fill out the following fields and save the configuration:
 | **Name** | name of instance | SCEPman Contoso |
 | **Subject** | entities following X.500 standard | O=Contoso |
 | **Challenge Type** | challenge type for verification of certificate issuing | Static |
-| **\(Verify\) Challenge** | pre-shared secret \(challenge\) | ABCDEFGH123456789 |
+| **\(Verify\) Challenge** | pre-shared secret \(challenge\) | defined in SCEPman via [AppConfig](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-requestpassword) parameter |
 | Key Size | key size in bits | 2048 |
 | Use as digital signature |  | Yes \(if needed\) |
 | Use for key encipherment |  | Yes \(if needed\) |
 | Fingerprint | Thumbprint of SCEPman CA-Cert \(SHA-1\) | visible via SCEPman dashboard \("CA Thumbprint"\) |
 
-![](../../.gitbook/assets/image%20%2829%29.png)
+![](../../.gitbook/assets/image%20%2827%29.png)
 
 ## Signing Certificate
 
