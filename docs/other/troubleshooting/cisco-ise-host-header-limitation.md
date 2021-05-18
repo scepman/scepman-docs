@@ -24,11 +24,11 @@ The following instructions outline the steps required to create an Azure Applica
 
 3\) Create a new static public IP address
 
-![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.19%20%282%29%20%284%29%20%285%29%20%285%29%20%285%29%20%282%29%20%281%29%20%282%29.png)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.19%20%282%29%20%284%29%20%285%29%20%285%29%20%285%29%20%282%29%20%281%29%20%283%29.png)
 
 4\) Create a new Backend Pool
 
-![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.55%20%282%29%20%284%29%20%285%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.55%20%282%29%20%284%29%20%285%29%20%282%29%20%284%29.png)
 
 5\) Add a routing rule for HTTP
 
@@ -52,9 +52,9 @@ This step requires an HTTPS web server certificate.
 The use of HTTP without TLS is not a security vulnerability; PKI-based resources are commonly published via HTTP without TLS, as the TLS handshake may require access to these resources. Using TLS would create a chicken-and-egg problem where the TLS handshake requires access to the PKI resources and access to the PKI resources requires a TLS handshake. Therefore, these PKI resources including the protocols SCEP and OCSP employ their own encryption and/or signatures where it is required.
 {% endhint %}
 
-![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.17.34%20%281%29%20%282%29%20%284%29%20%284%29%20%281%29%20%283%29.png)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.17.34%20%281%29%20%282%29%20%284%29%20%284%29%20%281%29%20%282%29.png)
 
-![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.17.44%20%282%29%20%284%29%20%283%29%20%282%29.png)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.17.44%20%282%29%20%284%29%20%283%29%20%285%29.png)
 
 6b\) Add a new HTTPS Setting with Host Header \(your SCEPman public FQDN\)
 
@@ -68,7 +68,7 @@ The use of HTTP without TLS is not a security vulnerability; PKI-based resources
 
 8\) Finalize
 
-![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.19.13%20%282%29%20%284%29%20%283%29%20%281%29%20%283%29.png)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.19.13%20%282%29%20%284%29%20%283%29%20%281%29%20%284%29.png)
 
 Then, add a DNS name for the Gateway:
 

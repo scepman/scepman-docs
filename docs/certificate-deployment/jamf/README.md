@@ -1,2 +1,2 @@
-# JAMF
+# Jamf
 
