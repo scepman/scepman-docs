@@ -1,5 +1,7 @@
 # Computers
 
+Please follow this guide to distribute certificates to computers \(macOS\):
+
 ## SCEPman Root Certificate
 
 As first step you need to deploy SCEPman root certficate. Download this CA certificate via SCEPman dashboard:

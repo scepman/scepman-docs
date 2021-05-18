@@ -210,7 +210,7 @@ Applicable to version 1.7 and above
 
 **Description:** This setting helps you to request certificates via the [JAMF](https://github.com/scepman/scepman-docs/tree/6358a93fe3c35dd51ae9501a385049ad1c8feb0b/docs/certificate-deployment/jamf/general.md) MDM system.
 
-**True**: SCEPman listens at the additional SCEP server endpoint with the path `/jamf`. Use in conjunction with AppConfig:JamfValidation:RequestPassword. **False** \(default\): SCEPman does not issue certificates for JAMF.
+**True**: SCEPman listens at the additional SCEP server endpoint with the path `/jamf`. Use in conjunction with AppConfig:JamfValidation:RequestPassword. **False** \(default\): SCEPman does not issue certificates for Jamf.
 
 ### AppConfig:JamfValidation:RequestPassword
 
@@ -220,7 +220,7 @@ Applicable to version 1.7 and above
 
 **Value:** _String_
 
-**Description:** A challenge password that JAMF must include in every SCEP request to acquire a certificate. Only used if AppConfig:JamfValidation:Enabled is set to _true_.
+**Description:** A challenge password that Jamf must include in every SCEP request to acquire a certificate. Only used if AppConfig:JamfValidation:Enabled is set to _true_.
 
 We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--JamfValidation--RequestPassword_.
 

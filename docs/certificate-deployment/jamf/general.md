@@ -10,6 +10,22 @@ Under construction.
 
 SCEPman can be connected to Jamf as External CA. Via SCEPman's static interface and a challenge password enrolled devices will be able to obtain certificates. In addition, Jamf acts as SCEP Proxy for configuration profiles. So, Jamf proxies the communication between SCEPman and your devices.
 
+## Enable Jamf Integration
+
+Jamf integration of SCEPman can be easily enabled via the following app configurations:
+
+* [AppConfig:JamfValidation:Enabled](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-enabled)
+* [AppConfig:JamfValidation:RequestPassword](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-requestpassword)
+* [AppConfig:JamfValidation:ValidityPeriodDays](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-validityperioddays) \(optional\)
+
+## API Connection
+
+SCEPman needs to be connected to the Jamf API to check the status of onboarded clients. This is used for the revocation of certificates. Please define the following app configuration parameters:
+
+* [AppConfig:JamfValidation:URL](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-url)
+* [AppConfig:JamfValidation:APIUsername](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-apiusername)
+* [AppConfig:JamfValidation:APIPassword](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-apipassword)
+
 ## External CA Connection
 
 Open Jamf settings and choose "PKI Certificates" under "Global Management":
@@ -40,13 +56,9 @@ Please fill out the following fields and save the configuration:
 
 When using an external CA Jamf requires an import of the signing and CA certificate. Otherwise, connection between Jamf and SCEPman will fail \(because signing and CA certificates of the Jamf Pro built-in CA are used\).
 
-## API Connection
-
-SCEPman needs to be connected to the Jamf API to check the validity status of clients. This is used for the revocation of certificates.
-
 ## Other Settings
 
-Please refer to "Application Settings" for other Jamf related configuration parameters.
+Please refer to "Application Settings" for all Jamf related configuration parameters.
 
 {% page-ref page="../../scepman-configuration/optional/application-settings.md" %}
 

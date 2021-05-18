@@ -1,5 +1,7 @@
 # Devices
 
+Please follow this guide to distribute certificates to devices \(e.g.: iOS, iPadOS\):
+
 ## SCEPman Root Certificate
 
 As first step you need to deploy SCEPman root certficate. Download this CA certificate via SCEPman dashboard:
