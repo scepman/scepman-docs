@@ -7,7 +7,7 @@ order: 1
 
 ## Versions
 
-### 1.7 - April 2021 \(Currently in Internal Channel\)
+### 1.7 - May 2021
 
 * Support for [Computer and Device Certificates via JAMF](../certificate-deployment/jamf/general.md)
 * Separate Certificate Lifetimes for each endpoint, e.g. for [Domain Controller Certificates](../scepman-configuration/optional/application-settings.md#appconfig-dcvalidation-validityperioddays)
