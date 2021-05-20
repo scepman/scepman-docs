@@ -14,7 +14,7 @@ Add a new "macOS Configuration Profile" and choose "Certificate" as payload. Ent
 
 Distribute that profile to all clients that should get SCEP certificates later.
 
-## Device Certificate
+## Machine Certificate
 
 Please add another "macOS Configuration Profile" and choose "SCEP" as payload. Activate "Use the External Certificate Authority settings to enable Jamf Pro as SCEP proxy for this configuration profile" and enter the following information:
 
@@ -22,7 +22,7 @@ Please add another "macOS Configuration Profile" and choose "SCEP" as payload. A
 | :--- | :--- | :--- |
 | Name | name/purpose | e.g. "Device Authentication" |
 | Redistribute Profile | re-deploys profile for renewal | e.g. "14 days" |
-| Subject | subject for certificate, additions are possible | CN=$JSSID,OU=devices,CN=$PROFILE\_IDENTIFIER |
+| Subject | subject for certificate, additions are possible | CN=$JSSID,OU=computers,CN=$PROFILE\_IDENTIFIER |
 | Allow export from keychain | controls wether private key is exportable | No |
 
 Please adjust other options on your needs.
