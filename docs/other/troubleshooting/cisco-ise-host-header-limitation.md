@@ -14,35 +14,35 @@ Cisco is currently investigating future enhancements but for the time being you 
 
 The following instructions outline the steps required to create an Azure Application Gateway for SCEPman:
 
-### 1\) Create a new Application Gateway
+## 1\) Create a new Application Gateway
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.12.40%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
-### 2\) Provide the necessary basic information
+## 2\) Provide the necessary basic information
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.13.55%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
-### 3\) Create a new static public IP address
+## 3\) Create a new static public IP address
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.19%20%282%29%20%284%29%20%285%29%20%285%29%20%285%29%20%282%29%20%281%29%20%283%29.png)
 
-### 4\) Create a new Backend Pool
+## 4\) Create a new Backend Pool
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.55%20%282%29%20%284%29%20%285%29%20%282%29%20%284%29.png)
 
-### 5\) Add a routing rule for HTTP
+## 5\) Add a routing rule for HTTP
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.36%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.56%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
-### 5b\) Add a new HTTP Setting with Host Header \(your SCEPman public FQDN\)
+## 5b\) Add a new HTTP Setting with Host Header \(your SCEPman public FQDN\)
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.21%20%281%29%20%281%29%20%282%29%20%284%29%20%283%29%20%281%29%20%283%29.png)
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.34%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
-### 6\) Optional: Add a routing rule for HTTPS
+## 6\) Optional: Add a routing rule for HTTPS
 
 {% hint style="warning" %}
 This step requires an HTTPS web server certificate.
@@ -56,21 +56,21 @@ The use of HTTP without TLS is not a security vulnerability; PKI-based resources
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.17.44%20%282%29%20%284%29%20%283%29%20%285%29.png)
 
-### 6b\) Add a new HTTPS Setting with Host Header \(your SCEPman public FQDN\)
+## 6b\) Add a new HTTPS Setting with Host Header \(your SCEPman public FQDN\)
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.18.37%20%281%29%20%282%29%20%284%29%20%285%29%20%282%29%20%281%29.png)
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.18.47%20%281%29%20%281%29%20%281%29%20%283%29%20%285%29%20%283%29.png)
 
-### 7\) Confirm Routing Rules
+## 7\) Confirm Routing Rules
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.18.56%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
-### 8\) Finalize the Application Gateway configuration
+## 8\) Finalize the Application Gateway configuration
 
 ![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.19.13%20%282%29%20%284%29%20%283%29%20%281%29%20%284%29.png)
 
-### 9\) Configure the DNS name for the IP
+## 9\) Configure the DNS name for the IP
 
 Then, add a DNS name for the Gateway:
 
@@ -79,9 +79,9 @@ Then, add a DNS name for the Gateway:
 
 ![](../../.gitbook/assets/ip-address.png)
 
-3. Optional: You can add a CNAME entry for a DNS record that you own DNS servers.
+1. Optional: You can add a CNAME entry for a DNS record that you own DNS servers.
 
-### 10\) Add the Application Gateway DNS name to SCEPman configuration
+## 10\) Add the Application Gateway DNS name to SCEPman configuration
 
 Eventually, configure the new name in the SCEPman settings:
 
@@ -89,7 +89,7 @@ Eventually, configure the new name in the SCEPman settings:
 2. Edit the value AppConfig:BaseURL. ![](../../.gitbook/assets/appconfig-baseurl.png)
 3. Enter the DNS name for the IP address prefixed with "http://". If you have configured a TLS certificate in the Azure Application Gateway, you may also use HTTPS. ![](../../.gitbook/assets/appconfig-baseurl-gateway.png)
 
-### Intune/JAMF configuration
+## Intune/JAMF configuration
 
 In the Intune configuration, you may still use the App Service's URL instead of the Azure Application Gateway's. If you do this, the clients communicate directly with the App Service. You must configure the Azure Application Gateway's URL in Cisco ISE, as only this URL supports HTTP 1.0 requests.
 
