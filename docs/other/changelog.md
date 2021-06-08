@@ -21,6 +21,10 @@ order: 1
   * Updated some dependencies
   * Improved Homepage
 
+#### 1.7.122 - June 2021
+
+* Bugfix regarding OCSP checks for certificates issued via JAMF 
+
 ### 1.6 - November 2020
 
 * Support for certificates for [Domain Controllers](../certificate-deployment/other-1/domain-controller-certificates.md), especially for use in Windows Hello for Business \(Enterprise Edition only\)
