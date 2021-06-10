@@ -56,7 +56,7 @@ Next, to finally deploy the device certificates, you must create a SCEP certific
 6. Select **Templates** as **Profile type**
 7. Select **SCEP certificate** from the Template name list
 8. Click **Create**
-9. Provide a **Name** e.g. ****_Win10 - SCEP certificate - User certificate_
+9. Provide a **Name** e.g. _\*\*Win10 - SCEP certificate - User certificate_
 
 Set the properties like shown below.
 
@@ -132,7 +132,7 @@ Next, to finally deploy the device certificates you must create a SCEP certifica
 6. Select **Templates** as **Profile type**
 7. Select **SCEP certificate** from the Template name list
 8. Click **Create**
-9. Provide a **Name** e.g. ****_Win10 - SCEP certificate - User certificate_
+9. Provide a **Name** e.g. _\*\*Win10 - SCEP certificate - User certificate_
 
 Set the properties like shown below.
 
@@ -171,7 +171,7 @@ When all its done, you have the following two certificate configurations:
 
 ## Deploying User Digital Signature Certificate
 
-Deploying user certificates used for **Digital Signatures** can be achieved by following these instructions. 
+Deploying user certificates used for **Digital Signatures** can be achieved by following these instructions.
 
 {% hint style="warning" %}
 **You may** use SCEPman for transactional **digital signatures** i.e. for S/MIME signing in Microsoft Outlook. If you plan to use the certificates for message signing you need to add the corresponding extended key usages in the Intune profile configuration.
@@ -198,7 +198,7 @@ To deploy the user digital signature certificate, you must create a SCEP certifi
 6. Select **Templates** as **Profile type**
 7. Select **SCEP certificate** from the Template name list
 8. Click **Create**
-9. Provide a **Name** e.g. ****_Win10 - SCEP certificate - Digital Signature_
+9. Provide a **Name** e.g. _\*\*Win10 - SCEP certificate - Digital Signature_
 
 Set the properties like shown below. Have special attention for the Key Usage select _only_ '**Digital Signature**' and for the Extended key usage '**Secure Email**'.
 
@@ -211,8 +211,6 @@ Assign the profile to your user group and wait for the device to synchronize. Af
 The certificate will be available for Digital Signature usage in e.g. Outlook. Below an example of the usage:
 
 ![](../../.gitbook/assets/image%20%2814%29.png)
-
-
 
 | ​[Back to Trial Guide​](../../getting-started/trial-guide.md#step-4-configure-intune-deployment-profiles) | [Back to Community Guide](../../getting-started/community-guide.md#step-9-configure-intune-deployment-profiles) | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-11-configure-intune-deployment-profiles) |
 | :--- | :--- | :--- |
