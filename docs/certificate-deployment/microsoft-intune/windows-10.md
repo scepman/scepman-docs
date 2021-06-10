@@ -91,7 +91,7 @@ When all is finished, you have the following two certificate configurations:
 * SCEPman - SCEP device certificate
 * SCEPman - Trusted root certificate
 
-## Deploying User Certificates
+## Deploying User Authentication Certificates
 
 The following section will show you how you can deploy user certificates via Intune Certificate profile on Windows 10 \(or later\) devices.
 
@@ -140,6 +140,8 @@ Set the properties like shown below.
 There are some restrictions to the **SCEP Certificate** settings:
 
 You must add the User principal name as Subject alternative name. **Add '{{UserPrincipalName}}' as Subject Alternative Name of type User principal name \(UPN\).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.
+
+You should **add 'L={{AAD\_Device\_ID}}'** as part of the Subject. This ensures the user certificate can be linked to the device where it resides on. This may improve revocation and compliance checks.
 
 SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the settings configured here unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_.
 
