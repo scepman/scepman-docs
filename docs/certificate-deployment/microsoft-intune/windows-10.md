@@ -20,6 +20,11 @@ Download the CA certificate:
 
 Then, create a profile in Microsoft Intune:
 
+1. Navigate to **Microsoft Intune**
+2. Click **Devices**
+3. Click **Configuration profiles**
+4. Click + **Create profile**
+
 ![](../../.gitbook/assets/scepman26.png)
 
 1. Enter a **Name**
