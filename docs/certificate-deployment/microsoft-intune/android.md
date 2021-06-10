@@ -22,7 +22,7 @@ Then, create a profile in Microsoft Intune:
 2. Then, create a profile in Microsoft Intune
 3. Select **Android Enterprise** as **Platform**
 4. As **Profile type** select **Trusted certificate** \(under **Work Profile Only**\)
-5. Click **Settings** and **select A valid .cer file**
+5. Click **Settings** and **select a valid .cer file**
 6. Then click **OK**
 7. Finally click **Create**
 
