@@ -27,6 +27,8 @@ Then, create a profile in Microsoft Intune:
 
 ![](../../.gitbook/assets/scepman26.png)
 
+Choose the following profile setting:
+
 1. Enter a **Name**
 2. As **Platform** select **Windows 10 or later**
 3. As **Profile type** select **Trusted certificate**
