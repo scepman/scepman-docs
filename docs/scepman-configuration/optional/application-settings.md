@@ -242,7 +242,7 @@ Applicable to version 1.7 and above
 
 **Value:** _String_
 
-**Description:** Under construction.
+**Description:** The root URL of your JAMF instance. If you use JAMF Cloud, this will probably look like `https://your-instance.jamfcloud.com/`.
 
 ### AppConfig:JamfValidation:APIUsername
 
@@ -252,7 +252,10 @@ Applicable to version 1.7 and above
 
 **Value:** _String_
 
-**Description:** Under construction.
+**Description:** The name of a service account in JAMF that SCEPman uses to authenticate on your JAMF instance. SCEPman needs the following permissions to query for computers, devices, and users:
+- Computers -> Read
+- Mobile Devices -> Read
+- Users -> Read
 
 ### AppConfig:JamfValidation:APIPassword
 
@@ -262,7 +265,7 @@ Applicable to version 1.7 and above
 
 **Value:** _String_
 
-**Description:** Under construction.
+**Description:** The password of the service account configured in AppConfig:JamfValidation:APIUsername.
 
 We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--JamfValidation--APIPassword_.
 
