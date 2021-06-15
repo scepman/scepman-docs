@@ -40,7 +40,7 @@ Please fill out the following fields and save the configuration:
 
 | Field | Description | Example/Value |
 | :--- | :--- | :--- |
-| **URL** | URL to SCEPman | https://scepman.contoso.com/jamf |
+| **URL** | URL to SCEPman | [https://scepman.contoso.com/jamf](https://scepman.contoso.com/jamf) |
 | **Name** | name of instance | SCEPman Contoso |
 | **Subject** | entities following X.500 standard | O=Contoso |
 | **Challenge Type** | challenge type for verification of certificate issuing | Static |
@@ -54,23 +54,25 @@ Please fill out the following fields and save the configuration:
 
 ## Signing Certificate
 
-When using an external CA, Jamf requires that you add the CA certificate so Jamf can compare whether the certificates are correctly signed. However, Jamf allows adding a CA certificate only, if you also add a signing certificate with a corresponding private key. Jamf uses this signing certificate to sign certificate requests send to SCEPman. However, SCEPman does not evaluate the signature on requests and accepts even unsigned requests (e.g. from Intune), because the request validity stems solely from using the right request challenge password configured in Jamf.
+When using an external CA, Jamf requires that you add the CA certificate so Jamf can compare whether the certificates are correctly signed. However, Jamf allows adding a CA certificate only, if you also add a signing certificate with a corresponding private key. Jamf uses this signing certificate to sign certificate requests send to SCEPman. However, SCEPman does not evaluate the signature on requests and accepts even unsigned requests \(e.g. from Intune\), because the request validity stems solely from using the right request challenge password configured in Jamf.
 
 Hence, you may use any certificate you like as signing certificate, for example you can generate a self-signed certificate with the following PowerShell command:
 
-```PowerShell
+```text
 $cert = New-SelfSignedCertificate -Subject "CN=JAMF Signer Certificate for SCEPman" -CertStoreLocation "Cert:\CurrentUser\My" -NotAfter (Get-Date).AddYears(10)
 $pfxBytes = $cert.Export([System.Security.Cryptography.X509Certificates.X509ContentType]::Pfx, "password")
 [System.IO.File]::WriteAllBytes("c:\temp\jamf.pfx", $pfxBytes)
 ```
 
-Then click on "Change Signing Certificate" in Jamf and upload the PFX file with the signing certificate to Jamf when it asks for it (Note: Pkcs#12 and PFX are synonyms). In the next steps, enter the password for the PFX file and confirm the selection of the signing certificate. In the tab "Upload CA Certificate", you must upload the SCEPman CA certificate. You can obtain the SCEPman CA certificate by clicking on the link "Get CACert" on the top left of the homepage of your SCEPman instance. Finally, confirm your changes.
+Then click on "Change Signing Certificate" in Jamf
+
+![](../../.gitbook/assets/jamfsigningcertificate.png)
+
+In the wizard, upload the PFX file with the signing certificate to Jamf when it asks for it \(Note: Pkcs\#12 and PFX are synonyms\). In the next steps, enter the password for the PFX file and confirm the selection of the signing certificate. In the tab "Upload CA Certificate", you must upload the SCEPman CA certificate. You can obtain the SCEPman CA certificate by clicking on the link "Get CACert" on the top left of the homepage of your SCEPman instance. Finally, confirm your changes.
 
 ## Other Settings
 
 Please refer to "Application Settings" for all Jamf related configuration parameters.
 
 {% page-ref page="../../scepman-configuration/optional/application-settings.md" %}
-
-
 
