@@ -253,9 +253,10 @@ Applicable to version 1.7 and above
 **Value:** _String_
 
 **Description:** The name of a service account in JAMF that SCEPman uses to authenticate on your JAMF instance. SCEPman needs the following permissions to query for computers, devices, and users:
-- Computers -> Read
-- Mobile Devices -> Read
-- Users -> Read
+
+* Computers -&gt; Read
+* Mobile Devices -&gt; Read
+* Users -&gt; Read
 
 ### AppConfig:JamfValidation:APIPassword
 

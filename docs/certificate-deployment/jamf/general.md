@@ -10,8 +10,8 @@ SCEPman can be connected to Jamf as External CA. Via SCEPman's static interface 
 
 Jamf integration of SCEPman can be easily enabled via the following app configurations:
 
-| Setting           | Description                                   | Example |
-| ----------------- | --------------------------------------------- | ------- |
+| Setting | Description | Example |
+| :--- | :--- | :--- |
 | [AppConfig:JamfValidation:Enabled](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-enabled) | Do you want to use SCEPman with JAMF? | true |
 | [AppConfig:JamfValidation:RequestPassword](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-requestpassword) | JAMF authenticates its certificate requests at SCEPman with this secure password | _auto generated 32 character password_ |
 | [AppConfig:JamfValidation:ValidityPeriodDays](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-validityperioddays) \(optional\) | How many days shall certificates issued via JAMF be valid at most? | 365 |
@@ -20,16 +20,17 @@ Jamf integration of SCEPman can be easily enabled via the following app configur
 
 SCEPman needs to be connected to the Jamf API to check the status of onboarded clients. This is used for the revocation of certificates. Please define the following app configuration parameters:
 
-| Setting           | Description                                   | Example |
-| ----------------- | --------------------------------------------- | ------- |
+| Setting | Description | Example |
+| :--- | :--- | :--- |
 | [AppConfig:JamfValidation:URL](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-url) | The URL of your JAMF instance | `https://contoso.jamfcloud.com` |
 | [AppConfig:JamfValidation:APIUsername](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-apiusername) | The user name of JAMF user | svc-scepman |
 | [AppConfig:JamfValidation:APIPassword](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-apipassword) | The password for the above user | password123 |
 
 The JAMF user needs the following three **read** permissions:
-- Computers
-- Mobile devices
-- Users
+
+* Computers
+* Mobile devices
+* Users
 
 ## External CA Connection
 
@@ -66,7 +67,7 @@ Hence, you may use any certificate you like as signing certificate, for example 
 ```text
 $cert = New-SelfSignedCertificate -Subject "CN=JAMF Signer Certificate for SCEPman" -CertStoreLocation "Cert:\CurrentUser\My" -NotAfter (Get-Date).AddYears(10)
 $pfxBytes = $cert.Export([System.Security.Cryptography.X509Certificates.X509ContentType]::Pfx, "password")
-[System.IO.File]::WriteAllBytes("c:\temp\jamf.pfx", $pfxBytes)
+[System.IO.File]::WriteAllBytes("c:\temp\temp\jamf.pfx", $pfxBytes)
 ```
 
 Then click on "Change Signing and CA Certificates" in the External CA configuration of Jamf
@@ -74,3 +75,4 @@ Then click on "Change Signing and CA Certificates" in the External CA configurat
 ![](../../.gitbook/assets/jamfsigningcertificate.png)
 
 In the wizard, upload the PFX file with the signing certificate to Jamf when it asks for it \(Note: Pkcs\#12 and PFX are synonyms\). In the next steps, enter the password for the PFX file and confirm the selection of the signing certificate. In the tab "Upload CA Certificate", you must upload the SCEPman CA certificate. You can obtain the SCEPman CA certificate by clicking on the link "Get CACert" on the top left of the homepage of your SCEPman instance. Finally, confirm your changes.
+
