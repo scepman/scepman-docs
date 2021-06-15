@@ -4,27 +4,32 @@
 This feature requires version **1.7** or above.
 {% endhint %}
 
-{% hint style="warning" %}
-Under construction.
-{% endhint %}
-
 SCEPman can be connected to Jamf as External CA. Via SCEPman's static interface and a challenge password enrolled devices will be able to obtain certificates. In addition, Jamf acts as SCEP Proxy for configuration profiles. So, Jamf proxies the communication between SCEPman and your devices.
 
 ## Enable Jamf Integration
 
 Jamf integration of SCEPman can be easily enabled via the following app configurations:
 
-* [AppConfig:JamfValidation:Enabled](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-enabled)
-* [AppConfig:JamfValidation:RequestPassword](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-requestpassword)
-* [AppConfig:JamfValidation:ValidityPeriodDays](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-validityperioddays) \(optional\)
+| Setting           | Description                                   | Example |
+| ----------------- | --------------------------------------------- | ------- |
+| [AppConfig:JamfValidation:Enabled](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-enabled) | Do you want to use SCEPman with JAMF? | true |
+| [AppConfig:JamfValidation:RequestPassword](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-requestpassword) | JAMF authenticates its certificate requests at SCEPman with this secure password | _auto generated 32 character password_ |
+| [AppConfig:JamfValidation:ValidityPeriodDays](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-validityperioddays) \(optional\) | How many days shall certificates issued via JAMF be valid at most? | 365 |
 
 ## API Connection
 
 SCEPman needs to be connected to the Jamf API to check the status of onboarded clients. This is used for the revocation of certificates. Please define the following app configuration parameters:
 
-* [AppConfig:JamfValidation:URL](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-url)
-* [AppConfig:JamfValidation:APIUsername](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-apiusername)
-* [AppConfig:JamfValidation:APIPassword](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-apipassword)
+| Setting           | Description                                   | Example |
+| ----------------- | --------------------------------------------- | ------- |
+| [AppConfig:JamfValidation:URL](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-url) | The URL of your JAMF instance | `https://contoso.jamfcloud.com` |
+| [AppConfig:JamfValidation:APIUsername](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-apiusername) | The user name of JAMF user | svc-scepman |
+| [AppConfig:JamfValidation:APIPassword](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-apipassword) | The password for the above user | password123 |
+
+The JAMF user needs the following three **read** permissions:
+- Computers
+- Mobile devices
+- Users
 
 ## External CA Connection
 
@@ -52,7 +57,7 @@ Please fill out the following fields and save the configuration:
 
 ![](../../.gitbook/assets/image%20%2827%29.png)
 
-## Signing Certificate
+### Signing Certificate
 
 When using an external CA, Jamf requires that you add the CA certificate so Jamf can compare whether the certificates are correctly signed. However, Jamf allows adding a CA certificate only, if you also add a signing certificate with a corresponding private key. Jamf uses this signing certificate to sign certificate requests send to SCEPman. However, SCEPman does not evaluate the signature on requests and accepts even unsigned requests \(e.g. from Intune\), because the request validity stems solely from using the right request challenge password configured in Jamf.
 
@@ -64,15 +69,8 @@ $pfxBytes = $cert.Export([System.Security.Cryptography.X509Certificates.X509Cont
 [System.IO.File]::WriteAllBytes("c:\temp\jamf.pfx", $pfxBytes)
 ```
 
-Then click on "Change Signing Certificate" in Jamf
+Then click on "Change Signing and CA Certificates" in the External CA configuration of Jamf
 
 ![](../../.gitbook/assets/jamfsigningcertificate.png)
 
 In the wizard, upload the PFX file with the signing certificate to Jamf when it asks for it \(Note: Pkcs\#12 and PFX are synonyms\). In the next steps, enter the password for the PFX file and confirm the selection of the signing certificate. In the tab "Upload CA Certificate", you must upload the SCEPman CA certificate. You can obtain the SCEPman CA certificate by clicking on the link "Get CACert" on the top left of the homepage of your SCEPman instance. Finally, confirm your changes.
-
-## Other Settings
-
-Please refer to "Application Settings" for all Jamf related configuration parameters.
-
-{% page-ref page="../../scepman-configuration/optional/application-settings.md" %}
-
