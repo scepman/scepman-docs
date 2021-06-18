@@ -25,6 +25,10 @@ order: 1
 
 * Bugfix regarding OCSP checks for certificates issued via JAMF 
 
+#### 1.7.140 - June 2021
+
+* Solution for [Microsoft's additional permission requirements preventing SCEPman from issuing certificates via Intune](https://glueckkanja.zendesk.com/hc/en-us/articles/4402360224530-SCEPman-does-not-issue-certificates)
+
 ### 1.6 - November 2020
 
 * Support for certificates for [Domain Controllers](../certificate-deployment/other-1/domain-controller-certificates.md), especially for use in Windows Hello for Business \(Enterprise Edition only\)
