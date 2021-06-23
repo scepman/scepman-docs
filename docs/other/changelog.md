@@ -7,14 +7,14 @@ order: 1
 
 ## Versions
 
-### 1.8 (Currently in Internal Channel)
+### 1.8 \(Currently in Internal Channel\)
 
- * Improved robustness in exceptional situations
-   * Correct answers to invalid OCSP requests, which may occur rarely for certificates issued by SCEPman 1.5 or ealier
-   * [Certificate issuance scheduling in overload situations](../scepman-configuration/optional/application-settings.md#appconfig-concurrentsceprequestlimit)
-   * Option to configure a "Clock Skew" for clients with clocks running slow (> 10 minutes), which happens in few tenants for Intune-managed Windows devices
- * Logging
-   * Less log clutter on Info level
+* Improved robustness in exceptional situations
+  * Correct answers to invalid OCSP requests, which may occur rarely for certificates issued by SCEPman 1.5 or ealier
+  * [Certificate issuance scheduling in overload situations](../scepman-configuration/optional/application-settings.md#appconfig-concurrentsceprequestlimit)
+  * Option to configure a "Clock Skew" for clients with clocks running slow \(&gt; 10 minutes\), which happens in few tenants for Intune-managed Windows devices
+* Logging
+  * Less log clutter on Info level
 
 ### 1.7 - May 2021
 

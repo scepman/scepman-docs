@@ -282,7 +282,7 @@ Applicable to version 1.8 and above
 
 **Description:** When more SCEP requests arrive at SCEPman, it takes longer for each request to finish. At high request frequencies, e.g. immediately after assigning a SCEP configuration profile to a large number of devices, processing the requests may take so long that the requests time out. The clients will retry their failed requests, which may keep the request frequency above the critical overload level.
 
-With this setting, SCEPman will work only on this number of SCEP requests in parallel. If there are more requests, SCEPman returns HTTP 329 (Too Many Requests). Intune-based clients will retry certificate issuance again later in this case, so usually no request is lost. This ensures that SCEPman can finish requests on time and has a chance to work off the queue.
+With this setting, SCEPman will work only on this number of SCEP requests in parallel. If there are more requests, SCEPman returns HTTP 329 \(Too Many Requests\). Intune-based clients will retry certificate issuance again later in this case, so usually no request is lost. This ensures that SCEPman can finish requests on time and has a chance to work off the queue.
 
 The optimal setting depends on the performance of the App Service Plan. As a rule of thumb, 12 is a good limit for a single instance on an S1 App Service Plan. Note that setting a too low value may prevent automatic out-scaling, as it may reduce resource usage to a value below the thresholds.
 

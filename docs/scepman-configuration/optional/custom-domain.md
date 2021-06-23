@@ -17,33 +17,26 @@ If you want to create your own custom domain for your **App Service** URL, follo
 
 ![](../../.gitbook/assets/scepman_cname1%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
 
-5.  Click **Add custom domain** to finish this configuration.
-
-6. When the domain is added, create a SSL binding.
-
-7. Click **Add binding** on the custom domain screen.
+1. Click **Add custom domain** to finish this configuration.
+2. When the domain is added, create a SSL binding.
+3. Click **Add binding** on the custom domain screen.
 
 ![](../../.gitbook/assets/scepman_cname2%20%281%29%20%281%29.png)
 
-8. On the TLS/SSL Binding submenu click **Upload PFX Certificate.**
-
-9. After uploading select your certificate and the binding type.
-
-10. Next click **Add binding.**
+1. On the TLS/SSL Binding submenu click **Upload PFX Certificate.**
+2. After uploading select your certificate and the binding type.
+3. Next click **Add binding.**
 
 ![](../../.gitbook/assets/scepman_cname3%20%281%29%20%281%29.png)
 
-11. After completing these steps, **Application settings** needs to be updated
-
-12. Choose app service and click **Configuration**
-
-13. Then click **Application Settings** and edit the setting **AppConfig:BaseUrl**
-
-14. Enter your custom domain and click **OK**.
+1. After completing these steps, **Application settings** needs to be updated
+2. Choose app service and click **Configuration**
+3. Then click **Application Settings** and edit the setting **AppConfig:BaseUrl**
+4. Enter your custom domain and click **OK**.
 
 ![](../../.gitbook/assets/scepman_cname4_1.png)
 
-15. Finally click **Save**.
+1. Finally click **Save**.
 
 ### Microsoft Documentation and Managed Certificates
 
