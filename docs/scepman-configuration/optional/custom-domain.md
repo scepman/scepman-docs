@@ -35,7 +35,7 @@ If you want to create your own custom domain for your **App Service** URL, follo
 
 11. After completing these steps, **Application settings** needs to be updated
 
-12. Choose web app and click **Configuration**
+12. Choose app service and click **Configuration**
 
 13. Then click **Application Settings** and edit the setting **AppConfig:BaseUrl**
 
