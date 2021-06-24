@@ -67,6 +67,12 @@ Delete this certificate from the device and do the MDM sync. If you did it you w
 
 The SCEP configuration profile depends on the Trusted Root certificate profile. Assign both profiles to the same Azure Active Directory user or device group to make sure the user or device overlaps and both profiles are targeted to the device. Do not mix user and device groups. If you see pending as status for the configurations profiles in Intune for a long time, the assignment is probably wrong.
 
+### Windows 10 devices cannot enroll with AutoPilot
+
+Currently, some Windows 10 devices do not have the correct time during the OOBE experience. This is not easy to see, since the screen shows no clock. This causes a problem with newly issued certificates, as they are *not yet* valid. Windows then discards these "invalid" certificates and shows an error. Certificates are issued 10 minutes in the past by default to address smaller clock issues, but we have recently seen Windows 10 devices that are up to 9 hours behind time.
+
+You may proceed with the enrollment and once this is finished, the device will get a certificate successfully, as the clock is correct then. You may also use the new option **AppConfig:ValidityClockSkewMinutes** to date back certificates more than 10 minutes. Use 1440 minutes to date back the certificates for a whole day. This will be the default for v 1.8, too, to address this issue.
+
 ## Problems with the Validity of Certificates
 
 ### Revocation of a Certificate
