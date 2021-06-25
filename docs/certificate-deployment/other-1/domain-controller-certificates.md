@@ -93,7 +93,7 @@ The request password is encrypted with SCEPman's CA certificate, so only SCEPman
 The above command requests a new DC certificate whether or not there already is a valid certificate. See the following Section to learn how to renew certificates only if the existing certificate is about to expire.
 {% endhint %}
 
-### CA certificate Renewal
+### Automated Certificate Renewal
 
 For a fully automated renewal of certificates, you should distribute ScepClient to **all** your domain controllers, together with the PowerShell script [enroll-dc-certificate.ps1](https://github.com/scepman/scepclient/blob/master/enroll-dc-certificate.ps1). Add a Scheduled task that executes the following command in a SYSTEM context \(adapt the URL and request password\):
 
