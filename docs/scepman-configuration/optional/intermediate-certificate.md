@@ -164,7 +164,7 @@ AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName AppConfig:KeyVaul
 
 Please reboot the Azure App Service and then navigate to your SCEPman URL. On the SCEPman Status page you can see the new configuration and download the new intermediate certificate to deploy this via Endpoint Manager.
 
-| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../deployment/enterprise-guide.md#step-6-configure-log-collection) |
+| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-6-configure-log-collection) |
 | :--- | :--- | :--- |
 
 

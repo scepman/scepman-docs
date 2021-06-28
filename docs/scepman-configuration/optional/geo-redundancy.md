@@ -140,7 +140,7 @@ The SCEPman application will be loaded from the zip file which is located in a G
 
 ![](../../.gitbook/assets/scepman_storage6%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
-| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../deployment/enterprise-guide.md#step-10-configure-geo-redundancy-optional) |
+| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-10-configure-geo-redundancy-optional) |
 | :--- | :--- | :--- |
 
 

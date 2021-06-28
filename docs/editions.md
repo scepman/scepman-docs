@@ -29,8 +29,8 @@ We recommend SCEPman CE for:
 * Small businesses
 * Easy testing of SCEPman
 
-If you want to test SCEPman in your own environment, you can use the [Trial Guide](deployment/trial-guide.md) and install SCEPman directly into your lab.  
-When you later decide to buy SCEPman EE you should follow our [Enterprise Guide](deployment/enterprise-guide.md) to get a recommended production environment.
+If you want to test SCEPman in your own environment, you can use the [Trial Guide](scepman-deployment/trial-guide.md) and install SCEPman directly into your lab.  
+When you later decide to buy SCEPman EE you should follow our [Enterprise Guide](scepman-deployment/enterprise-guide.md) to get a recommended production environment.
 
 ## Version Comparison
 

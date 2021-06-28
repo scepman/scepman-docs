@@ -4,11 +4,11 @@
 * [Details](details.md)
 * [Editions](editions.md)
 
-## Deployment
+## SCEPMAN Deployment
 
-* [Trial Guide](deployment/trial-guide.md)
-* [Community Guide](deployment/community-guide.md)
-* [Enterprise Guide](deployment/enterprise-guide.md)
+* [Trial Guide](scepman-deployment/trial-guide.md)
+* [Community Guide](scepman-deployment/community-guide.md)
+* [Enterprise Guide](scepman-deployment/enterprise-guide.md)
 
 ## SCEPman Configuration
 

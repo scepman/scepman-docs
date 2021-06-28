@@ -52,7 +52,7 @@ But please keep in mind that this can depend on your workload and needs to be mo
 
 ![](../../.gitbook/assets/screen-shot-2021-01-19-at-10.08.38.png)
 
-| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../deployment/enterprise-guide.md#step-9-configure-autoscaling) |
+| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-9-configure-autoscaling) |
 | :---: | :---: | :---: |
 
 

@@ -33,7 +33,7 @@ When everything is right, you will see **Validation passed** in the **Summary** 
 
 In the **Buy** section click **Create** to start the deployment process.
 
-| [Back to Trial Guide](../../deployment/trial-guide.md#step-2-deploy-scepman-base-services) | [Back to Community Guide](../../deployment/community-guide.md#step-2-deploy-scepman-base-services) | [Back to Enterprise Guide](../../deployment/enterprise-guide.md#step-1-azure-app-registration) |
+| [Back to Trial Guide](../../scepman-deployment/trial-guide.md#step-2-deploy-scepman-base-services) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-2-deploy-scepman-base-services) | [Back to Enterprise Guide](../../scepman-deployment/enterprise-guide.md#step-1-azure-app-registration) |
 | :--- | :--- | :--- |
 
 
