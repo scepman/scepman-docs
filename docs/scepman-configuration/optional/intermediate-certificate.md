@@ -47,7 +47,7 @@ We need to allow the Azure AD App and your user account to access the Azure Key 
 2. Repeat Step 3 to 7 but now select your current user account.  
 3. To save your new access policies you must click on **Save** in the upper left corner of the window.
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 After we saved this access policies successfully, we can continue with the API calls.
 
@@ -164,7 +164,7 @@ AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName AppConfig:KeyVaul
 
 Please reboot the Azure App Service and then navigate to your SCEPman URL. On the SCEPman Status page you can see the new configuration and download the new intermediate certificate to deploy this via Endpoint Manager.
 
-| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-6-configure-log-collection) |
+| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-6-configure-log-collection) |
 | :--- | :--- | :--- |
 
 

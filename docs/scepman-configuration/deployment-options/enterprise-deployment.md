@@ -40,7 +40,7 @@ Next, you will see the following configuration menu:
 6. Then, click **I agree to the terms...**
 7. Finally, click **Purchase**
 
-| Back to Trial Guide | Back to Community Guide | [Back to Enterprise Guide](../../getting-started/enterprise-guide.md#step-2-deploy-scepman-base-services) |
+| Back to Trial Guide | Back to Community Guide | [Back to Enterprise Guide](../../scepman-deployment/enterprise-guide.md#step-2-deploy-scepman-base-services) |
 | :--- | :--- | :--- |
 
 

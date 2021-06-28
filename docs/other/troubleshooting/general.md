@@ -40,7 +40,7 @@ This could happen when a wrong trusted root certificate was selected in the SCEP
 8. It contains a short error report
    * SCEP: Certificate enroll failed. Result \(The hash value is not correct.\).
 
-![](../../.gitbook/assets/event32_1%20%282%29%20%283%29%20%283%29%20%283%29%20%282%29%20%281%29%20%284%29.png)
+![](../../.gitbook/assets/event32_1%20%282%29%20%283%29%20%283%29%20%283%29%20%282%29%20%281%29%20%281%29.png)
 
 ### My Certificate does not have the correct OCSP URL Entry
 
@@ -50,7 +50,7 @@ This is just a problem before version 1.2
 
 If the device certificate has a localhost URL for the OCSP entry in the certificate like this:
 
-![](../../.gitbook/assets/event32_7%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%281%29%20%286%29.png)
+![](../../.gitbook/assets/event32_7%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%281%29%20%288%29.png)
 
 The App Service is missing an important application setting with the name **AppConfig:BaseUrl** set to the azurewebsite URL. To fix this, add the variable and save the App Service config:
 
@@ -69,9 +69,9 @@ The SCEP configuration profile depends on the Trusted Root certificate profile. 
 
 ### Windows 10 devices cannot enroll with AutoPilot
 
-Currently, some Windows 10 devices do not have the correct time during the OOBE experience. This is not easy to see, since the screen shows no clock. This causes a problem with newly issued certificates, as they are *not yet* valid. Windows then discards these "invalid" certificates and shows an error. Certificates are issued 10 minutes in the past by default to address smaller clock issues, but we have recently seen Windows 10 devices that are up to 9 hours behind time.
+Currently, some Windows 10 devices do not have the correct time during the OOBE experience. This is not easy to see, since the screen shows no clock. This causes a problem with newly issued certificates, as they are _not yet_ valid. Windows then discards these "invalid" certificates and shows an error. Certificates are issued 10 minutes in the past by default to address smaller clock issues, but we have recently seen Windows 10 devices that are up to 9 hours behind time.
 
-You may proceed with the enrollment and once this is finished, the device will get a certificate successfully, as the clock is correct then. You may also use the new option [**AppConfig:ValidityClockSkewMinutes**](../scepman-configuration/optional/application-settings.md#appconfig-validityclockskewminutes) to date back certificates more than 10 minutes. Use 1440 minutes to date back the certificates for a whole day. This will be the default for v 1.8, too, to address this issue.
+You may proceed with the enrollment and once this is finished, the device will get a certificate successfully, as the clock is correct then. You may also use the new option [**AppConfig:ValidityClockSkewMinutes**](https://github.com/scepman/scepman-docs/tree/d1d44dbc4c987ae837e61f5522160e156262e3e6/docs/other/scepman-configuration/optional/application-settings.md#appconfig-validityclockskewminutes) to date back certificates more than 10 minutes. Use 1440 minutes to date back the certificates for a whole day. This will be the default for v 1.8, too, to address this issue.
 
 ## Problems with the Validity of Certificates
 
@@ -119,7 +119,7 @@ certutil -verifyStore MY
 
 As you can see in the last line, the **Certificate is REVOKED**
 
-![](../../.gitbook/assets/scepman_revocation3%20%282%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%282%29%20%288%29.png)
+![](../../.gitbook/assets/scepman_revocation3%20%282%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%282%29%20%283%29.png)
 
 When you enable the device in Azure AD again and you type in the command from above again, the certificate should be marked as valid.
 
@@ -141,13 +141,13 @@ _Symptoms_: Cisco ISE shows an OCSP unreachable error. Aruba ClearPass also has 
 
 _Cause_: Both Cisco ISE as well as Aruba ClearPass do not support HTTP 1.1 when looking up OCSP and do not send a host header in their OCSP request. Therefore, they cannot connect to a general SCEPman instance running on Azure App Services. The error message may look like this:
 
-![](../../.gitbook/assets/cisco-ocsp-error%20%282%29%20%284%29%20%284%29%20%284%29%20%284%29%20%284%29%20%282%29%20%281%29%20%286%29.jpg)
+![](../../.gitbook/assets/cisco-ocsp-error%20%282%29%20%284%29%20%284%29%20%284%29%20%284%29%20%284%29%20%282%29%20%281%29.jpg)
 
 _Solution_: Please see [here](cisco-ise-host-header-limitation.md).
 
 ### Device Certificates on my Android \(dedicated\) systems are not valid
 
-On Android \(dedicated\) systems, Intune or Android accidentially puts the Intune Device ID into the certificate instead of the AAD Device ID in random cases, although you configure the variable {{AAD\_Device\_ID}} in the SCEP configuration profile. SCEPman then cannot find a device with this ID in AAD and therefore considers the certificate revoked.
+On Android \(dedicated\) systems, Intune or Android accidentially puts the Intune Device ID into the certificate instead of the AAD Device ID in random cases, although you configure the variable  in the SCEP configuration profile. SCEPman then cannot find a device with this ID in AAD and therefore considers the certificate revoked.
 
 This happens only when you use the Azure AD shared mode for enrollment method for corporate-owned dedicated devices instead of the default mode. If you use the default mode for Token types `Corporate-owned dedicated device`, you will not be affected by the problem. Intune will still put the Intune Device ID into the certificate instead of the AAD Device ID, but they will be the same for the default mode, so it does not matter. To change the enrollment mode, go to the [Android enrollment settings of Microsoft Endpoint Manager admin center](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesAndroidMenu/androidEnrollment) and choose `Corporate-owned dedicated device (default)` instead of `Corporate-owned dedicated device with Azure AD shared mode`. Please refer to the [Microsoft documentation](https://docs.microsoft.com/en-us/mem/intune/enrollment/android-kiosk-enroll) for the implications of this selection.
 

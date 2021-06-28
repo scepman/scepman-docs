@@ -301,7 +301,7 @@ Applicable to version 1.8 and above
 
 **Default:** 10
 
-**Description:** When SCEPman issues a certificate, it will not be valid exactly from the time of issuance, but already a few minutes earlier (default is 10). This is because the client's clock may run slower then SCEPman's and then assume that the certificate is not yet valid. Some platforms immediately discard invalid certificates, even if they became valid a few seconds later.
+**Description:** When SCEPman issues a certificate, it will not be valid exactly from the time of issuance, but already a few minutes earlier \(default is 10\). This is because the client's clock may run slower then SCEPman's and then assume that the certificate is not yet valid. Some platforms immediately discard invalid certificates, even if they became valid a few seconds later.
 
 Starting with version 1.8, you can configure the number of minutes that certificates are pre-dated. If you have issues with clocks on clients running late, you may increase this value.
 

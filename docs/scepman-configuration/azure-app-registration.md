@@ -72,7 +72,7 @@ Copy the client secret value. You will not be able to retrieve it after you leav
 
 The app registration is done.
 
-| [Back to Trial Guide](../getting-started/trial-guide.md#step-1-azure-app-registration) | [Back to Community Guide](../getting-started/community-guide.md#step-1-azure-app-registration) | [Back to Enterprise Guide](../getting-started/enterprise-guide.md#step-1-azure-app-registration) |
+| [Back to Trial Guide](../scepman-deployment/trial-guide.md#step-1-azure-app-registration) | [Back to Community Guide](../scepman-deployment/community-guide.md#step-1-azure-app-registration) | [Back to Enterprise Guide](../scepman-deployment/enterprise-guide.md#step-1-azure-app-registration) |
 | :--- | :--- | :--- |
 
 
