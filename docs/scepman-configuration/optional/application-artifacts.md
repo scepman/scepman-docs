@@ -79,7 +79,7 @@ To configure this, do the following:
 
 ![](../../.gitbook/assets/screen-shot-2021-01-19-at-09.42.45.png)
 
-| Back to Trial Guide | [Back to Community Guide](../../getting-started/community-guide.md#step-5-deploy-storage-account-and-change-artifacts) | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-5-deploy-storage-account-and-change-artifacts) |
+| Back to Trial Guide | [Back to Community Guide](../../deployment/community-guide.md#step-5-deploy-storage-account-and-change-artifacts) | ​[Back to Enterprise Guide​](../../deployment/enterprise-guide.md#step-5-deploy-storage-account-and-change-artifacts) |
 | :--- | :--- | :--- |
 
 

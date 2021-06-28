@@ -20,7 +20,7 @@ Download the CA certificate:
 
 Then, create a profile in Microsoft Intune:
 
-![](../../.gitbook/assets/scepman_macos1%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/scepman_macos1%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
 1. Enter a **Name**
 2. As **Platform** select **macOS**
@@ -81,7 +81,7 @@ Download the CA certificate:
 
 Then, create a profile in Microsoft Intune:
 
-![](../../.gitbook/assets/scepman_macos1%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
+![](../../.gitbook/assets/scepman_macos1%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
 1. Enter a **Name**
 2. As **Platform** select **macOS**
@@ -130,7 +130,7 @@ When all its done, you have the following two certificate configurations:
 * SCEPman - SCEP user certificate
 * SCEPman - Trusted root certificate
 
-| ​[Back to Trial Guide​](../../getting-started/trial-guide.md#step-4-configure-intune-deployment-profiles) | [Back to Community Guide](../../getting-started/community-guide.md#step-9-configure-intune-deployment-profiles) | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-11-configure-intune-deployment-profiles) |
+| ​[Back to Trial Guide​](../../deployment/trial-guide.md#step-4-configure-intune-deployment-profiles) | [Back to Community Guide](../../deployment/community-guide.md#step-9-configure-intune-deployment-profiles) | ​[Back to Enterprise Guide​](../../deployment/enterprise-guide.md#step-11-configure-intune-deployment-profiles) |
 | :--- | :--- | :--- |
 
 

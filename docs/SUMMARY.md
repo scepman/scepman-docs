@@ -4,11 +4,11 @@
 * [Details](details.md)
 * [Editions](editions.md)
 
-## Getting started
+## Deployment
 
-* [Trial Guide](getting-started/trial-guide.md)
-* [Community Guide](getting-started/community-guide.md)
-* [Enterprise Guide](getting-started/enterprise-guide.md)
+* [Trial Guide](deployment/trial-guide.md)
+* [Community Guide](deployment/community-guide.md)
+* [Enterprise Guide](deployment/enterprise-guide.md)
 
 ## SCEPman Configuration
 

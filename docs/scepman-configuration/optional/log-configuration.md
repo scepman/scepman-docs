@@ -56,7 +56,7 @@ If you have created a storage account to store your SCEPman artifacts, you can u
 
 
 
-| Back to Trial Guide | [Back to Community Guide](../../getting-started/community-guide.md#step-6-configure-log-collection) | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-6-configure-log-collection) |
+| Back to Trial Guide | [Back to Community Guide](../../deployment/community-guide.md#step-6-configure-log-collection) | ​[Back to Enterprise Guide​](../../deployment/enterprise-guide.md#step-6-configure-log-collection) |
 | :--- | :--- | :--- |
 
 

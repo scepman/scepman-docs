@@ -27,7 +27,7 @@ If you want to create your own custom domain for your **App Service** URL, follo
 2. After uploading select your certificate and the binding type.
 3. Next click **Add binding.**
 
-![](../../.gitbook/assets/scepman_cname3%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/scepman_cname3%20%281%29%20%282%29.png)
 
 1. After completing these steps, **Application settings** needs to be updated
 2. Choose app service and click **Configuration**
@@ -49,7 +49,7 @@ Add and manage TLS/SSL certificates in App Service:
 Create a free certificate:  
 [https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate\#create-a-free-certificate-preview](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)
 
-| Back to Trial Guide | [Back to Community Guide](../../getting-started/community-guide.md#step-4-configure-a-custom-domain-and-ssl-certificate) | ​[Back to Enterprise Guide​](../../getting-started/enterprise-guide.md#step-4-configure-a-custom-domain-and-ssl-certificate) |
+| Back to Trial Guide | [Back to Community Guide](../../deployment/community-guide.md#step-4-configure-a-custom-domain-and-ssl-certificate) | ​[Back to Enterprise Guide​](../../deployment/enterprise-guide.md#step-4-configure-a-custom-domain-and-ssl-certificate) |
 | :--- | :--- | :--- |
 
 
