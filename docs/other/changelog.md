@@ -80,20 +80,3 @@ order: 1
 ### 1.0 - 2019
 
 * Initial release
-
-## Roadmap
-
-### 1.7
-
-* Update to .NET 5.0 \(increased performance\)
-* Full JAMF integration
-
-### Currently in Research
-
-* More options from GraphAPI
-
-  Use compliance state in addition to active device information.
-
-* Intune auto-configuration
-* Additional certificate revocation options
-
