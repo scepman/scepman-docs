@@ -7,7 +7,7 @@ order: 1
 
 ## Versions
 
-### 1.8 \(Currently in Internal Channel\)
+### 1.8 - June 2021
 
 * Improved robustness in exceptional situations
   * Correct answers to invalid OCSP requests, which may occur rarely for certificates issued by SCEPman 1.5 or ealier
