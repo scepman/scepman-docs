@@ -197,6 +197,10 @@ Set the properties like shown below. Have special attention for the Key Usage se
 
 ![](../../.gitbook/assets/2021-06-29-14_34_59-%20%281%29.png)
 
+* Scroll down and enter the URL you have noted, Click **Next**
+* Assign users and groups, click **Next**
+* Finally click **Create**
+
 Assign the profile to your user group and wait for the device to synchronize. After successful sync you should see the user certificate for Intended Purposes **Secure Email**
 
 ![](../../.gitbook/assets/image%20%2816%29.png)
