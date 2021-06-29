@@ -75,10 +75,10 @@ There are some restrictions to the **SCEP Device Certificate** settings:
 
 SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the setting here unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_.
 
-For SCEPman version before 1.5, the validity period is set to a fixed 6 month. For SCEPman 1.5 and above, SCEPman caps the certificate validity to the configured maximum in setting _AppConfig:ValidityPeriodDays_, but otherwise uses the validity configured in the request.
+SCEPman caps the certificate validity to the configured maximum in setting _AppConfig:ValidityPeriodDays_, but otherwise uses the validity configured in the request.
 {% endhint %}
 
-![](../../.gitbook/assets/screen-shot-2021-02-09-at-11.58.35.png)
+![](../../.gitbook/assets/2021-06-29-14_10_34-.png)
 
 {% hint style="warning" %}
 The setting Key Storage Provider \(KSP\) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
@@ -90,9 +90,11 @@ The setting Key Storage Provider \(KSP\) determines the storage location of the 
 If you use TPM with this firmware, either update your firmware to a newer version or select "Software KSP" as key storage provider.
 {% endhint %}
 
-1. Scroll down and enter the URL you have noted
-2. Then, click **Add**
-3. Next, click **OK** and finally click **Create**
+* Scroll down and enter the URL you have noted
+* Then, click **Next**
+* Assign Users and Devices, click **Next**
+* **Applicability Rules** is Optional, **Next**
+* Finally click **Create**
 
 When all is finished, you have the following two certificate configurations:
 
@@ -139,7 +141,7 @@ SCEPman automatically sets the Key usage to **Digital signature** and **Key enci
 For SCEPman version before 1.5, the validity period is set to a fixed 6 month. For SCEPman 1.5 and above, SCEPman caps the certificate validity to the configured maximum in setting _AppConfig:ValidityPeriodDays_, but otherwise uses the validity configured in the request.
 {% endhint %}
 
-![](../../.gitbook/assets/user-certificate.png)
+![](../../.gitbook/assets/2021-06-29-14_27_06-.png)
 
 {% hint style="warning" %}
 The setting Key Storage Provider \(KSP\) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
@@ -151,16 +153,16 @@ The setting Key Storage Provider \(KSP\) determines the storage location of the 
 If you use TPMs with this firmware, either update your firmware to a newer version or select "Software KSP" as key storage provider.
 {% endhint %}
 
-1. Scroll down and enter the URL you have noted
-2. Then, click **Add**
-3. Next click **OK** and finally click **Create**
+* Scroll down and enter the URL you have noted, Click **Next**
+* Assign users and groups, click **Next**
+* Finally click **Create**
 
 When all its done, you have the following two certificate configurations:
 
-* SCEPman - SCEP user certificate
+* SCEPman - SCEP Device certificate
 * SCEPman - Trusted root certificate
 
-## Deploying User Digital Signature Certificate
+## Deploy User Digital Signature Certificate
 
 Deploying user certificates used for **Digital Signatures** can be achieved by following these instructions.
 
