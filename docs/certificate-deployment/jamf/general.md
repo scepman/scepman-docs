@@ -23,13 +23,17 @@ SCEPman needs to be connected to the Jamf API to check the status of onboarded c
 | Setting | Description | Example |
 | :--- | :--- | :--- |
 | [AppConfig:JamfValidation:URL](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-url) | The URL of your JAMF instance | `https://contoso.jamfcloud.com` |
-| [AppConfig:JamfValidation:APIUsername](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-apiusername) | The user name of JAMF user | svc-scepman |
-| [AppConfig:JamfValidation:APIPassword](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-apipassword) | The password for the above user | password123 |
+| [AppConfig:JamfValidation:APIUsername](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-apiusername) | The user name of Jamf service account | svc-scepman \(see screenshot\) |
+| [AppConfig:JamfValidation:APIPassword](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-apipassword) | The password for the above account | password123 \(see screenshot\) |
 
-The JAMF user needs the following three **read** permissions:
+Please add an appropriate service account:
+
+![](../../.gitbook/assets/image%20%2833%29.png)
+
+This accounts needs the following three **read** permissions under "Privileges" and "Jamf Pro Server Objects":
 
 * Computers
-* Mobile devices
+* Mobile Devices
 * Users
 
 ## External CA Connection
