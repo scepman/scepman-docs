@@ -31,11 +31,19 @@ Choose the following profile setting:
 
 1. Enter a **Name**
 2. As **Platform** select **Windows 10 or later**
-3. As **Profile type** select **Trusted certificate**
-4. Click **Settings**, select **A valid .cer file**
-5. As **Destination store** select **Computer certificate store - Root**
-6. Then, click **OK**
-7. Finally, click **Create**
+3. As **Profile type** select **Templates** then select **Trusted certificate**
+4. Click **Create**
+
+Now you will get the following window:
+
+![](../../.gitbook/assets/2021-06-29-10_41_25-trusted-certificate-microsoft-endpoint-manager-admin-center-and-4-more-pages-.png)
+
+1. Choose a profile name and **Next**
+2. select **A valid .cer file** which you already downloaded
+3. As **Destination store** select **Computer certificate store - Root** and **Next**
+4. Include the devices and users you want, **Next**
+5. Applying **Applicability Rules** is optional, **Next**
+6. Finally, click **Create**
 
 When you are finished with it, you can deploy this profile to your devices.
 

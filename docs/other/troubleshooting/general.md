@@ -147,7 +147,7 @@ _Solution_: Please see [here](cisco-ise-host-header-limitation.md).
 
 ### Device Certificates on my Android \(dedicated\) systems are not valid
 
-On Android \(dedicated\) systems, Intune or Android accidentially puts the Intune Device ID into the certificate instead of the AAD Device ID in random cases, although you configure the variable  in the SCEP configuration profile. SCEPman then cannot find a device with this ID in AAD and therefore considers the certificate revoked.
+On Android \(dedicated\) systems, Intune or Android accidentially puts the Intune Device ID into the certificate instead of the AAD Device ID in random cases, although you configure the variable in the SCEP configuration profile. SCEPman then cannot find a device with this ID in AAD and therefore considers the certificate revoked.
 
 This happens only when you use the Azure AD shared mode for enrollment method for corporate-owned dedicated devices instead of the default mode. If you use the default mode for Token types `Corporate-owned dedicated device`, you will not be affected by the problem. Intune will still put the Intune Device ID into the certificate instead of the AAD Device ID, but they will be the same for the default mode, so it does not matter. To change the enrollment mode, go to the [Android enrollment settings of Microsoft Endpoint Manager admin center](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesAndroidMenu/androidEnrollment) and choose `Corporate-owned dedicated device (default)` instead of `Corporate-owned dedicated device with Azure AD shared mode`. Please refer to the [Microsoft documentation](https://docs.microsoft.com/en-us/mem/intune/enrollment/android-kiosk-enroll) for the implications of this selection.
 
