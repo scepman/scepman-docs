@@ -7,6 +7,11 @@ order: 1
 
 ## Versions
 
+### 1.9 - Currently in Internal Channel
+
+* Support for User Certificates via JAMF
+* Option to downgrade the SCEP message encryption algorithm to support older network devices
+
 ### 1.8 - June 2021
 
 * Improved robustness in exceptional situations
