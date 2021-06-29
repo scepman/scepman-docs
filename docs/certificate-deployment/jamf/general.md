@@ -26,11 +26,11 @@ SCEPman needs to be connected to the Jamf API to check the status of onboarded c
 | [AppConfig:JamfValidation:APIUsername](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-apiusername) | The user name of Jamf service account | svc-scepman \(see screenshot\) |
 | [AppConfig:JamfValidation:APIPassword](../../scepman-configuration/optional/application-settings.md#appconfig-jamfvalidation-apipassword) | The password for the above account | password123 \(see screenshot\) |
 
-Please add an appropriate service account:
+Therefore, please add an appropriate service account under "Jamf Pro User Accounts & Groups":
 
 ![](../../.gitbook/assets/image%20%2833%29.png)
 
-This accounts needs the following three **read** permissions under "Privileges" and "Jamf Pro Server Objects":
+This accounts needs the following three **read** permissions under "Privileges" \(section "Jamf Pro Server Objects"\):
 
 * Computers
 * Mobile Devices
