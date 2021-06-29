@@ -64,12 +64,12 @@ Next, to finally deploy the device certificates, you must create a SCEP certific
 6. Select **Templates** as **Profile type**
 7. Select **SCEP certificate** from the Template name list
 8. Click **Create**
-9. Provide a **Name** e.g. _\*\*Win10 - SCEP certificate - User certificate_
+9. Provide a **Name** e.g. _\*\*Win10 - SCEP certificate - Device certificate_
 
 Set the properties like shown below.
 
 {% hint style="warning" %}
-There are some restrictions to the **SCEP Certificate** settings:
+There are some restrictions to the **SCEP Device Certificate** settings:
 
 **Important**: You must add the AAD Device ID to the subject. **Add '{{AAD\_Device\_ID}}' as CN in the field Subject name format** or alternatively add the device ID as SAN UPN. This ensures that SCEPman can link certificates to device objects in AAD.
 
@@ -99,7 +99,7 @@ When all is finished, you have the following two certificate configurations:
 * SCEPman - SCEP device certificate
 * SCEPman - Trusted root certificate
 
-## Deploying User Authentication Certificates
+## Deploy User Authentication Certificates
 
 The following section will show you how you can deploy user certificates via Intune Certificate profile on Windows 10 \(or later\) devices.
 
@@ -130,7 +130,7 @@ Now, you must create a SCEP certificate profile to deploy the device certificate
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)  
 \('xxx' is a placeholder\)
 
-Next, to finally deploy the device certificates you must create a SCEP certificate profile in Intune:
+Next, to finally deploy the user certificates you must create a SCEP certificate profile in Intune:
 
 1. Navigate to **Microsoft Intune**
 2. Click **Devices**
@@ -145,7 +145,7 @@ Next, to finally deploy the device certificates you must create a SCEP certifica
 Set the properties like shown below.
 
 {% hint style="warning" %}
-There are some restrictions to the **SCEP Certificate** settings:
+There are some restrictions to the **SCEP User Certificate** settings:
 
 You must add the User principal name as Subject alternative name. **Add '{{UserPrincipalName}}' as Subject Alternative Name of type User principal name \(UPN\).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.
 
