@@ -71,7 +71,7 @@ Set the properties like shown below.
 {% hint style="warning" %}
 There are some restrictions to the **SCEP Device Certificate** settings:
 
-**Important**: You must add the AAD Device ID to the subject. **Add '{{AAD\_Device\_ID}}' as CN in the field Subject name format** or alternatively add the device ID as SAN UPN. This ensures that SCEPman can link certificates to device objects in AAD.
+**Important**: You must add the AAD Device ID to the subject. **Add '' as CN in the field Subject name format** or alternatively add the device ID as SAN UPN. This ensures that SCEPman can link certificates to device objects in AAD.
 
 SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the setting here unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_.
 
@@ -105,7 +105,7 @@ When all is finished, you have the following two certificate configurations:
 
 The following section will show you how you can deploy user certificates via Intune Certificate profile on Windows 10 \(or later\) devices.
 
-First, we need to trust the public root certificate from SCEPman.   
+First, we need to trust the public root certificate from SCEPman.  
 Therefore follow the instructions [here](windows-10.md#deploy-root-ca-certificate).
 
 Now, you must create a SCEP certificate profile to deploy the user certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
@@ -132,9 +132,9 @@ Set the properties like shown below.
 {% hint style="warning" %}
 There are some restrictions to the **SCEP User Certificate** settings:
 
-You must add the User principal name as Subject alternative name. **Add '{{UserPrincipalName}}' as Subject Alternative Name of type User principal name \(UPN\).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.
+You must add the User principal name as Subject alternative name. **Add '' as Subject Alternative Name of type User principal name \(UPN\).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.
 
-You should **add 'L={{AAD\_Device\_ID}}'** as part of the Subject. This ensures the user certificate can be linked to the device where it resides on. This may improve revocation and compliance checks.
+You should **add 'L='** as part of the Subject. This ensures the user certificate can be linked to the device where it resides on. This may improve revocation and compliance checks.
 
 SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the settings configured here unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_.
 
@@ -155,7 +155,6 @@ If you use TPMs with this firmware, either update your firmware to a newer versi
 
 * Scroll down and enter the URL you have noted, Click **Next**
 * Assign users and groups, click **Next**
-* **Applicability Rules** is optional, ****click **Next**
 * Finally click **Create**
 
 When all its done, you have the following two certificate configurations:
@@ -196,12 +195,7 @@ To deploy the user digital signature certificate, you must create a SCEP certifi
 
 Set the properties like shown below. Have special attention for the Key Usage select _only_ '**Digital Signature**' and for the Extended key usage '**Secure Email**'.
 
-![](../../.gitbook/assets/2021-06-29-14_34_59-.png)
-
-* Scroll down and enter the URL you have noted, Click **Next**
-* Assign users and groups, click **Next**
-* **Applicability Rules** is optional, ****click **Next**
-* Finally click **Create**
+![](../../.gitbook/assets/2021-06-29-14_34_59-%20%281%29.png)
 
 Assign the profile to your user group and wait for the device to synchronize. After successful sync you should see the user certificate for Intended Purposes **Secure Email**
 
