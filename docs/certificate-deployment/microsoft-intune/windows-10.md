@@ -155,6 +155,7 @@ If you use TPMs with this firmware, either update your firmware to a newer versi
 
 * Scroll down and enter the URL you have noted, Click **Next**
 * Assign users and groups, click **Next**
+* **Applicability Rules** is optional, ****click **Next**
 * Finally click **Create**
 
 When all its done, you have the following two certificate configurations:
@@ -195,7 +196,12 @@ To deploy the user digital signature certificate, you must create a SCEP certifi
 
 Set the properties like shown below. Have special attention for the Key Usage select _only_ '**Digital Signature**' and for the Extended key usage '**Secure Email**'.
 
-![](../../.gitbook/assets/image%20%2813%29.png)
+![](../../.gitbook/assets/2021-06-29-14_34_59-.png)
+
+* Scroll down and enter the URL you have noted, Click **Next**
+* Assign users and groups, click **Next**
+* **Applicability Rules** is optional, ****click **Next**
+* Finally click **Create**
 
 Assign the profile to your user group and wait for the device to synchronize. After successful sync you should see the user certificate for Intended Purposes **Secure Email**
 
