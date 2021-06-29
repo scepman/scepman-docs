@@ -8,9 +8,7 @@ order: 1
 
 The following article describes how to deploy a device certificate or a user certificate for Windows 10.
 
-## Deploying Device Certificates
-
-The following section will show you how you can deploy device certificates via Intune Certificate profile on Windows 10 \(or later\) devices.
+## Deploy Root CA Certificate
 
 First, we need to trust the public root certificate from SCEPman. Therefore, you must download the CA certificate \(from SCEPman\) and deploy it via a trusted certificate profile in Microsoft Intune:
 
@@ -46,6 +44,8 @@ Now you will get the following window:
 6. Finally, click **Create**
 
 When you are finished with it, you can deploy this profile to your devices.
+
+## Deploy Device Certificates
 
 Now, you must create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
 
