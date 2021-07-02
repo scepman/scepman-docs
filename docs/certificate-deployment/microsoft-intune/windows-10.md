@@ -23,8 +23,6 @@ Then, create a profile in Microsoft Intune:
 3. Click **Configuration profiles**
 4. Click + **Create profile**
 
-![](../../.gitbook/assets/scepman26.png)
-
 Choose the following profile setting:
 
 1. Enter a **Name**
@@ -32,14 +30,16 @@ Choose the following profile setting:
 3. As **Profile type** select **Templates** then select **Trusted certificate**
 4. Click **Create**
 
+![](../../.gitbook/assets/2021-07-02-13_46_41-.png)
+
 Now you will get the following window:
 
 ![](../../.gitbook/assets/2021-06-29-10_41_25-trusted-certificate-microsoft-endpoint-manager-admin-center-and-4-more-pages-.png)
 
 1. Choose a profile name and **Next**
-2. select **A valid .cer file** which you already downloaded
+2. Select **A valid .cer file** which you already downloaded
 3. As **Destination store** select **Computer certificate store - Root** and **Next**
-4. Include the devices and users you want, **Next**
+4. Assign devices and users you for the profile, **Next**
 5. Applying **Applicability Rules** is optional, **Next**
 6. Finally, click **Create**
 
