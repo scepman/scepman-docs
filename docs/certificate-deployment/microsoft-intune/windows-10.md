@@ -51,8 +51,11 @@ Now, you must create a SCEP certificate profile to deploy the device certificate
 
 ![](../../.gitbook/assets/scepman27%20%282%29%20%281%29%20%285%29.png)
 
-Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)  
-\('xxx' is a placeholder\)
+Now if you click on the URL you will be redirect to the SCEPman instance website:
+
+![](../../.gitbook/assets/2021-07-02-16_19_49-scepman-server-node-and-4-more-pages-c4a8-ehamed-microsoft-edge.png)
+
+Copy the path URL \(you can copy the path by clicking on the symbol at the end\) and note it, you will need it later on.
 
 Next, to finally deploy the device certificates, you must create a SCEP certificate profile in Intune:
 
