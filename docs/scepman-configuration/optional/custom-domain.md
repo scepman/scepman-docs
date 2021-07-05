@@ -12,10 +12,22 @@ If you want to create your own custom domain for your **App Service** URL, follo
 
 1. Choose your **App Service,** on the left select **Custom domain**. 
 2. Click **Add custom domain.** 
-3. Enter your custom domain \(**1**\) and click **Validate**. 
+3. Enter your custom domain \(**1**\) and click **Validate\***. 
 4. If **CNAME** is set correct \(**2**\) domain ownership is validated \(**3**\).
 
 ![](../../.gitbook/assets/scepman_cname1%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
+
+\*if you don't have a custom domain yet follow the steps:
+
+1. Go to TLS/SSL settings
+2. Click on Private Key Certificates \(.pfx\)
+3. Create App Service Managed Certificate
+
+![](../../.gitbook/assets/image%20%2835%29.png)
+
+More information about configure SSL Certificate [click here](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate)
+
+Now **SSL binding:**
 
 1. Click **Add custom domain** to finish this configuration.
 2. When the domain is added, create a SSL binding.
