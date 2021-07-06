@@ -47,17 +47,9 @@ When you are finished with it, you can deploy this profile to your devices.
 
 ## Deploy Device Certificates
 
-Now, you must create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** sub-menu of the app service of SCEPman:
+Now, you must create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server, you can find it from [here](windows-10.md#how-to-find-scep-url-for-intune)
 
-![](../../.gitbook/assets/scepman27%20%282%29%20%281%29%20%285%29.png)
-
-Now click on the URL, you will be redirected to the SCEPman instance website:
-
-![](../../.gitbook/assets/2021-07-02-16_19_49-scepman-server-node-and-4-more-pages-c4a8-ehamed-microsoft-edge.png)
-
-Copy the path URL \(you can copy it by clicking on the copy symbol at the end\) and note it, you will need it later on.
-
-Next, to finally deploy the device certificates, you must create a SCEP certificate profile in Intune:
+to deploy the device certificates, you must create a SCEP certificate profile in Intune:
 
 1. Navigate to **Microsoft Intune**
 2. Click **Devices**
@@ -81,6 +73,9 @@ SCEPman automatically sets the Key usage to **Digital signature** and **Key enci
 SCEPman caps the certificate validity to the configured maximum in setting _AppConfig:ValidityPeriodDays_, but otherwise uses the validity configured in the request.
 {% endhint %}
 
+* **Certificate type**: Device
+* **Subject name format:** CN={{AAD\_Device\_ID}}
+
 ![](../../.gitbook/assets/2021-06-29-14_10_34-.png)
 
 {% hint style="warning" %}
@@ -101,6 +96,8 @@ If you use TPM with this firmware, either update your firmware to a newer versio
 
 When all is finished, you have the following two certificate configurations:
 
+
+
 * SCEPman - SCEP device certificate
 * SCEPman - Trusted root certificate
 
@@ -111,17 +108,9 @@ The following section will show you how you can deploy user certificates via Int
 First, we need to trust the public root certificate from SCEPman.  
 Therefore follow the instructions [here](windows-10.md#deploy-root-ca-certificate).
 
-Now, you must create a SCEP certificate profile to deploy the user certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** sub-menu of the app service of SCEPman:
+Now, you must create a SCEP certificate profile to deploy the user certificates. Important for this step is the SCEP Server URL, you can find it [here](windows-10.md#how-to-find-scep-url-for-intune)
 
-![](../../.gitbook/assets/scepman27%20%282%29%20%281%29.png)
-
-Now click on the URL, you will be redirected to the SCEPman instance website:
-
-![](../../.gitbook/assets/2021-07-02-16_19_49-scepman-server-node-and-4-more-pages-c4a8-ehamed-microsoft-edge.png)
-
-Copy the path URL \(you can copy it by clicking on the symbol at the end\) and note it, you will need it later on.
-
-Next, to finally deploy the user certificates you must create a SCEP certificate profile in Intune:
+Next, to deploy the user certificates you must create a SCEP certificate profile in Intune:
 
 1. Navigate to **Microsoft Intune**
 2. Click **Devices**
@@ -146,6 +135,14 @@ SCEPman automatically sets the Key usage to **Digital signature** and **Key enci
 
 For SCEPman version before 1.5, the validity period is set to a fixed 6 month. For SCEPman 1.5 and above, SCEPman caps the certificate validity to the configured maximum in setting _AppConfig:ValidityPeriodDays_, but otherwise uses the validity configured in the request.
 {% endhint %}
+
+* **Certificate type**: User
+* **Subject name format:** CN={{UserName}},L={{AAD\_Device\_ID}}
+* **Subject alternative name:**
+
+| Attribute | Value |
+| :--- | :--- |
+| User principal name \(UPN\) | {{UserPrincipalName}} |
 
 ![](../../.gitbook/assets/2021-06-29-14_27_06-.png)
 
@@ -178,6 +175,10 @@ Deploying user certificates used for **Digital Signatures** can be achieved by f
 **Do not** use SCEPman **for email-encryption** i.e. for S/MIME mail encryption in Microsoft Outlook \(without a separate technology for key management\). The nature of **the SCEP protocol does not include a mechanism to backup or archive private key material.** If you would use SCEP for email-encryption you may lose the keys to decrypt the messages later.
 {% endhint %}
 
+
+
+
+
 You must set these configuration variables otherwise the requested key usage and extended validity period in the SCEP profile is not honored by SCEPman:
 
 {% hint style="warning" %}
@@ -187,15 +188,7 @@ AppConfig:ValidityPeriodDays set to 365 \(a maximum value of 1825 - 5 years is p
 
 Another requirement is trusted root certificate of SCEPman, it must be deployed like described in the user or device certificate deployment section above to be referenced in this new digital signature profile.
 
-To deploy the user digital signature certificate, you must create a SCEP certificate profile in Intune, before that you need to copy the SCEPman Server URL, this URL can be found in the **Overview** sub-menu of the app service of SCEPman:
-
-![](../../.gitbook/assets/scepman27%20%282%29%20%281%29.png)
-
-Now click on the URL, you will be redirected to the SCEPman instance website:
-
-![](../../.gitbook/assets/2021-07-02-16_19_49-scepman-server-node-and-4-more-pages-c4a8-ehamed-microsoft-edge.png)
-
-Copy the path URL \(you can copy it by clicking on the symbol at the end\) and note it, you will need it later on.
+To deploy the user digital signature certificate, you must create a SCEP certificate profile in Intune, before that you need to copy the SCEPman Server URL, you can finde it [here](windows-10.md#how-to-find-scep-url-for-intune)
 
 Now the Go to Intune to create a SCEP certificate profile:
 
@@ -212,11 +205,12 @@ Now the Go to Intune to create a SCEP certificate profile:
 Set the properties like shown below. Have special attention for the Key Usage select _only_ '**Digital Signature**' and for the Extended key usage '**Secure Email**'.
 
 * **Certificate type**: User
-* **Subject name format:** CN={{UserName}},E={{EmailAddress}},L={{AAD_DeviceID_}}
+* **Subject name format:** CN={{UserName}},E={{EmailAddress}},L={{AAD\_Device\_ID}}
 * **Subject alternative name:**
 
-| User principal name \(UPN\) | {{UserPrincipalName}} |
+| Attribute | Value |
 | :--- | :--- |
+| User principal name \(UPN\) | {{UserPrincipalName}} |
 | Email address | {{EmailAddress}} |
 
 ![](../../.gitbook/assets/2021-07-06-12_02_24-scep-certificate-microsoft-endpoint-manager-admin-center-and-4-more-pages-c4.png)
@@ -235,7 +229,21 @@ The certificate will be available for Digital Signature usage in e.g. Outlook. B
 
 ![](../../.gitbook/assets/image%20%2814%29.png)
 
+## How to find SCEP-URL for Intune
+
+This URL can be found in the **Overview** sub-menu of the app service of SCEPman:
+
+![](../../.gitbook/assets/scepman27%20%282%29%20%281%29%20%285%29.png)
+
+Now click on the URL, you will be redirected to the SCEPman instance website:
+
+![](../../.gitbook/assets/2021-07-02-16_19_49-scepman-server-node-and-4-more-pages-c4a8-ehamed-microsoft-edge.png)
+
+Copy the path URL \(you can copy it by clicking on the copy symbol at the end\) and note it, you will need it later on.
+
 | ​[Back to Trial Guide​](../../scepman-deployment/trial-guide.md#step-4-configure-intune-deployment-profiles) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-9-configure-intune-deployment-profiles) | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-11-configure-intune-deployment-profiles) |
 | :--- | :--- | :--- |
+
+
 
 
