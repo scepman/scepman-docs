@@ -18,7 +18,9 @@ This section describes a high availability architecture for production use.
 
 ## Clone App
 
-After successful deployment of SCEPman, you can set up a load balancer for higher availability. Start cloning the app:
+After successful deployment of SCEPman, Set up a custom domain for this SCEPman instance as described [here](custom-domain.md).
+
+Now you can set up a load balancer for higher availability. Start cloning the app:
 
 1. Navigate to **App Service.** 
 2. Scroll down to **Development Tools** and click **Clone App.** 
@@ -100,6 +102,17 @@ Your **Identity** should look like this:
 In the **Overview** your traffic manager should like this \(here you find the traffic manage URL\):
 
 ![](../../.gitbook/assets/scepman_trafficmanager4%20%281%29.png)
+
+* Navigate to your **AppService** for the cloned SCEPman instance
+* Under **Custom Domains**, repeat the SSL certificate binding process as described [here](https://docs.scepman.com/scepman-configuration/optional/custom-domain)
+* Both instances of SCEPman must have the same custom domain
+* Navigate to your DNS management service \(e.g. **Azure DNS Zones**\)
+* Remove the CNAME entry for the custom SCEPman domain, in case it was created.
+* Add a CNAME that maps the custom SCEPman domain to the Traffic Manager endpoint, \(if it's not already exist\).
+
+{% hint style="info" %}
+In **Azure DNS Zone**, in order to modify record, you first have to remove the DNS lock by navigating to **Locks**.
+{% endhint %}
 
 ## Own Application Setup \(optional\)
 
