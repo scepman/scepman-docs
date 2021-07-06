@@ -211,7 +211,15 @@ Now the Go to Intune to create a SCEP certificate profile:
 
 Set the properties like shown below. Have special attention for the Key Usage select _only_ '**Digital Signature**' and for the Extended key usage '**Secure Email**'.
 
-![](../../.gitbook/assets/2021-06-29-14_34_59-%20%281%29.png)
+* **Certificate type**: User
+* **Subject name format:** CN={{UserName}},E={{EmailAddress}},L={{AAD_DeviceID_}}
+* **Subject alternative name:**
+
+| User principal name \(UPN\) | {{UserPrincipalName}} |
+| :--- | :--- |
+| Email address | {{EmailAddress}} |
+
+![](../../.gitbook/assets/2021-07-06-12_02_24-scep-certificate-microsoft-endpoint-manager-admin-center-and-4-more-pages-c4.png)
 
 We recommend to set Renewal Threshold \(%\) to a value that ensures certificates are renewed at least 6 months before expiration when issuing S/MIME signature certificates. This is because emails signed with expired certificates are shown to have invalid signatures in Outlook, which confuses users. Having a new certificate long before the old one expires ensures that only older emails show this behavior, which users are more unlikely to look at. For example, if your signature certificates are valid for one year, you should set the Renewal Threshold to at least 50 %.
 
