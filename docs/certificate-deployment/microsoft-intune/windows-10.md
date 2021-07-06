@@ -74,7 +74,7 @@ Set the properties like shown below.
 {% hint style="warning" %}
 There are some restrictions to the **SCEP Device Certificate** settings:
 
-**Important**: You must add the AAD Device ID to the subject. **Add '' as CN in the field Subject name format** or alternatively add the device ID as SAN UPN. This ensures that SCEPman can link certificates to device objects in AAD.
+**Important**: You must add the AAD Device ID to the subject. **Add '{{AAD_Device_ID}}' as CN in the field Subject name format**. This ensures that SCEPman can link certificates to device objects in AAD.
 
 SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the setting here unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_.
 
@@ -138,7 +138,7 @@ Set the properties like shown below.
 {% hint style="warning" %}
 There are some restrictions to the **SCEP User Certificate** settings:
 
-You must add the User principal name as Subject alternative name. **Add '' as Subject Alternative Name of type User principal name \(UPN\).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.
+You must add the User principal name as Subject alternative name. **Add '{{UserPrincipalName}}' as Subject Alternative Name of type User principal name \(UPN\).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.
 
 You should **add 'L='** as part of the Subject. This ensures the user certificate can be linked to the device where it resides on. This may improve revocation and compliance checks.
 
@@ -212,6 +212,8 @@ Now the Go to Intune to create a SCEP certificate profile:
 Set the properties like shown below. Have special attention for the Key Usage select _only_ '**Digital Signature**' and for the Extended key usage '**Secure Email**'.
 
 ![](../../.gitbook/assets/2021-06-29-14_34_59-%20%281%29.png)
+
+We recommend to set Renewal Threshold (%) to a value that ensures certificates are renewed at least 6 months before expiration when issuing S/MIME signature certificates. This is because emails signed with expired certificates are shown to have invalid signatures in Outlook, which confuses users. Having a new certificate long before the old one expires ensures that only older emails show this behavior, which users are more unlikely to look at. For example, if your signature certificates are valid for one year, you should set the Renewal Threshold to at least 50 %.
 
 * Scroll down and enter the URL you have noted, Click **Next**
 * Assign users and groups, click **Next**
