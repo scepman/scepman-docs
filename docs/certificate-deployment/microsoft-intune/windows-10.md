@@ -175,10 +175,6 @@ Deploying user certificates used for **Digital Signatures** can be achieved by f
 **Do not** use SCEPman **for email-encryption** i.e. for S/MIME mail encryption in Microsoft Outlook \(without a separate technology for key management\). The nature of **the SCEP protocol does not include a mechanism to backup or archive private key material.** If you would use SCEP for email-encryption you may lose the keys to decrypt the messages later.
 {% endhint %}
 
-
-
-
-
 You must set these configuration variables otherwise the requested key usage and extended validity period in the SCEP profile is not honored by SCEPman:
 
 {% hint style="warning" %}
