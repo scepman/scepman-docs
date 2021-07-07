@@ -107,8 +107,7 @@ In the **Overview** your Traffic Manager should like this \(here you find the Tr
 * Under **Custom Domains**, repeat the SSL certificate binding process as described [here](https://docs.scepman.com/scepman-configuration/optional/custom-domain#SSL-Binding)
 * Both instances of SCEPman must have the same custom domain
 * Navigate to your DNS management service \(e.g. **Azure DNS Zones**\)
-* Remove the CNAME entry for the custom SCEPman domain, in case it was created.
-* Add a CNAME that maps the custom SCEPman domain to the Traffic Manager endpoint, \(if it's not already exist\).
+* There shall be a CNAME entry for the custom SCEPman domain that maps to the Traffic Manager endpoint. This entry may exist already if you are using Azure DNS and Traffic Manager created the entry for you. If it does not exist, remove any possibly existing wrong CNAME entry and add a CNAME that maps the custom SCEPman domain to the Traffic Manager endpoint now.
 
 {% hint style="info" %}
 In **Azure DNS Zone**, in order to modify record, you first have to remove the DNS lock by navigating to **Locks**.
