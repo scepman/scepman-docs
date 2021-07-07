@@ -87,7 +87,7 @@ Your **Identity** should look like this:
 
 1. Then click **Create**.
 2. After your Traffic Manager is deployed, go to it and click **Configuration** under settings.
-3. Change the settings as followed:
+3. Change the settings as follows:
 
 ![](../../.gitbook/assets/scepman_trafficmanager2%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
