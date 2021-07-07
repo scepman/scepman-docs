@@ -113,45 +113,6 @@ In the **Overview** your Traffic Manager should like this \(here you find the Tr
 In **Azure DNS Zone**, in order to modify record, you first have to remove the DNS lock by navigating to **Locks**.
 {% endhint %}
 
-## Own Application Setup \(optional\)
-
-The SCEPman application will be loaded from the zip file which is located in a Glück & Kanja [Github repository](https://github.com/scepman/install/raw/master/dist/Artifacts.zip). This zip file will be updated automatically from the Glück & Kanja development team. If a customer does not want to get auto-updates, the web apps can load the zip file from the self-managed storage account.
-
-1. In Microsoft Azure click **Create a resource**. 
-2. Search for **Storage account** and click **Create**. 
-3. Configure your storage account like this:
-
-![](../../.gitbook/assets/scepman_storage1%20%281%29.png)
-
-1. Click **Create.**
-2. Go to your Storage account and chose **Blobs.**
-
-![](../../.gitbook/assets/scepman_storage2%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
-
-1. Then click **+Customer.**
-2. Enter a **Name.**
-3. As **Public access level** select **Blob \(anonymous read access for blobs only\).**
-
-![](../../.gitbook/assets/scepman_storage3%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
-
-1. Click **OK.**
-2. Select your Container and click **Upload**.
-3. Choose the **Artifacts.zip**
-
-![](../../.gitbook/assets/scepman_storage4%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
-
-1. Then click **Upload.**
-2. Next click on the zip-file.
-3. Click **Properties** and copy the **Uri** value.
-4. Then navigate to your primary web app in **App Services**
-5. Click **Configuration**
-
-![](../../.gitbook/assets/scepman_storage5%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
-
-1. In **Application settings** search **WEBSITE\_RUN\_FROM\_PACKAGE**
-
-![](../../.gitbook/assets/scepman_storage6%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
-
 | Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-10-configure-geo-redundancy-optional) |
 | :--- | :--- | :--- |
 
