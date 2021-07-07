@@ -99,7 +99,7 @@ Your **Identity** should look like this:
 
 1. Repeat these steps for your second web service.  
 
-In the **Overview** your traffic manager should like this \(here you find the traffic manage URL\):
+In the **Overview** your Traffic Manager should like this \(here you find the Traffic Manager URL\):
 
 ![](../../.gitbook/assets/scepman_trafficmanager4%20%281%29.png)
 
