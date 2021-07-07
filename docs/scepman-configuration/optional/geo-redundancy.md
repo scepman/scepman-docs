@@ -104,7 +104,7 @@ In the **Overview** your Traffic Manager should like this \(here you find the Tr
 ![](../../.gitbook/assets/scepman_trafficmanager4%20%281%29.png)
 
 * Navigate to your **AppService** for the cloned SCEPman instance
-* Under **Custom Domains**, repeat the SSL certificate binding process as described [here](https://docs.scepman.com/scepman-configuration/optional/custom-domain)
+* Under **Custom Domains**, repeat the SSL certificate binding process as described [here](https://docs.scepman.com/scepman-configuration/optional/custom-domain#SSL_Binding)
 * Both instances of SCEPman must have the same custom domain
 * Navigate to your DNS management service \(e.g. **Azure DNS Zones**\)
 * Remove the CNAME entry for the custom SCEPman domain, in case it was created.
