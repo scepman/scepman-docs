@@ -22,37 +22,39 @@ After successful deployment of SCEPman, Set up a custom domain for this SCEPman 
 
 Now you can set up a load balancer for higher availability. Start cloning the app:
 
-1. Navigate to **App Service.** 
-2. Scroll down to **Development Tools** and click **Clone App.** 
-3. Fill in the required fields.
+* Navigate to **App Service.** 
+* Scroll down to **Development Tools** and click **Clone App.** 
+* Fill in the required fields as following:
 
-![](../../.gitbook/assets/scepman_cloneapp1%20%282%29.png)
+1. **App name:** name for the cloned instance
+2. **Resource Group:** create a new Resource Group for the cloned instance of SCEPman
+3. **App Service plan/Location:** 
 
-1. Click **App Service plan/Location.**
+![](../../.gitbook/assets/2021-07-07-10_22_28-scepman02testservicename-microsoft-azure-and-3-more-pages-c4a8-ehamed-micr.png)
 
-![](../../.gitbook/assets/scepman_cloneapp2%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%282%29.png)
+4. Click **App Service plan/Location**
 
 1. Then click **Create new** to create a new service plan.
 2. Enter a **App Service plan** and select a **Location** \(different of the first app location\) and a **Pricing tier.**
 
 ![](../../.gitbook/assets/scepman_cloneapp3%20%281%29.png)
 
-1. Click **OK.**
-2. Do not configure the **Clone Settings**.
-3. Finally click **Create**.
+5. Click **OK**  
+6. Do not change the **Clone Settings**  
+7. Finally click **Create**
 
-Next, you need a managed identity for the cloned app:
-
-1. Go to your cloned web app and click **Identity.**
+Next, you need a managed identity for the cloned app:  
+  
+1. Go to your cloned web app and click on **Identity**
 
 ![](../../.gitbook/assets/scepman_identity1%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
-1. Under System assigned switch the **Status** to **On.**
+2. Under System assigned switch the **Status** to **On**
 
 ![](../../.gitbook/assets/scepman_identity2%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
-1. Click **Save.**
-2. This will register your web app into Azure AD.
+3. Click **Save**  
+4. This will register your web app into Azure AD
 
 Your **Identity** should look like this:
 
