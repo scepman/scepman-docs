@@ -27,7 +27,7 @@ If you want to create your own custom domain for your **App Service** URL, follo
 
 More information about configure SSL Certificate [click here](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate)
 
-Now **SSL binding:**
+### SSL binding
 
 1. Click **Add custom domain** to finish this configuration.
 2. When the domain is added, create a SSL binding.
