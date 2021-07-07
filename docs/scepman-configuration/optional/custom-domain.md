@@ -39,7 +39,7 @@ More information about configure SSL Certificate [click here](https://docs.micro
 2. After uploading select your certificate and the binding type.
 3. Next click **Add binding.**
 
-![](../../.gitbook/assets/scepman_cname3%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../../.gitbook/assets/scepman_cname3%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%283%29.png)
 
 1. After completing these steps, **Application settings** needs to be updated
 2. Choose app service and click **Configuration**

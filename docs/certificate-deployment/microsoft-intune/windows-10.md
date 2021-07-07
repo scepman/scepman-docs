@@ -14,7 +14,7 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%288%29%20%284%29%20%284%29.png)
+![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%288%29%20%284%29%20%2821%29.png)
 
 Then, create a profile in Microsoft Intune:
 
@@ -204,7 +204,7 @@ Set the properties like shown below. Have special attention for the Key Usage se
 | User principal name \(UPN\) | {{UserPrincipalName}} |
 | Email address | {{EmailAddress}} |
 
-![](../../.gitbook/assets/2021-07-06-12_02_24-scep-certificate-microsoft-endpoint-manager-admin-center-and-4-more-pages-c4.png)
+![](../../.gitbook/assets/2021-07-07-10_02_35-christoph-hannebauer-_-microsoft-teams.png)
 
 We recommend to set Renewal Threshold \(%\) to a value that ensures certificates are renewed at least 6 months before expiration when issuing S/MIME signature certificates. This is because emails signed with expired certificates are shown to have invalid signatures in Outlook, which confuses users. Having a new certificate long before the old one expires ensures that only older emails show this behavior, which users are more unlikely to look at. For example, if your signature certificates are valid for one year, you should set the Renewal Threshold to at least 50 %.
 
@@ -224,7 +224,7 @@ The certificate will be available for Digital Signature usage in e.g. Outlook. B
 
 This URL can be found in the **Overview** sub-menu of the app service of SCEPman:
 
-![](../../.gitbook/assets/scepman27%20%282%29%20%281%29%20%285%29.png)
+![](../../.gitbook/assets/scepman27%20%282%29%20%281%29%20%2812%29.png)
 
 Now click on the URL, you will be redirected to the SCEPman instance website:
 
