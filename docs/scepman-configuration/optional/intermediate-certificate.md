@@ -6,9 +6,38 @@ SCEPman Enterprise Edition only
 
 If you want to use another Root CA as primary authority, you can create an intermediate certificate. You can create the correct certificate direct in Azure Key Vault and download the CSR for signing with your Root CA. The signed request can be uploaded and merged into the Azure Key Vault.
 
+## Key Vault Access Policy
+
+You need to grant and Azure AD App and your user account access to the Azure Key Vault. Note that the Azure AD App is different to the Azure App Service! In a SCEPman installation without Intermediate CA, you usually do not have to grant permission to the Azure AD App, but here it is required!
+
+1. Navigate to your Azure Key Vault in the Azure Portal
+2. Click on **Access policies** in the left navigation pane.
+3. Click on **Add Access Policy** 
+
+![](../../.gitbook/assets/screenshot-2020-10-19-at-15.23.16.png)
+
+4. Click **Configure from template \(optional\)** and choose **Certificate Management**.
+5. Now you must select a principal by clicking on **None selected** and search for your Azure AD App Registration.
+6. To close the dialog press **Select** and then press **Add**.
+
+![](../../.gitbook/assets/screenshot-2020-10-19-at-15.34.16.png)
+
+Now repeat this for your own user account:
+
+7. Click on **Add Access Policy** again.
+8. Again, click **Configure from template \(optional\)** and choose **Certificate Management**.
+9. Select a principal by clicking on **None selected**. But this time, search for your own administrative user account.
+10. Close the dialog with **Select** and **Add**.
+
+![](../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+
+11. To save your new access policies you must click on **Save** in the upper left corner of the window.
+
+After saving this access policies successfully, your Azure AD app is permitted to create a CSR and your user account is permitted to upload the certificate.
+
 ## Creating Intermediate Certificate via API
 
-You must create the certificate via the Key Vault API. This is because not all flags and features are available via UI and native PowerShell CMDlets. Add values for the six parameters TenantID, ApplicationID, ApplicationKey, KeyVaultName, NewCertName, and CompanyName to the following PowerShell script:
+You must create the certificate via the Key Vault API. This is because not all flags and features are available via UI and native PowerShell CMDlets. Add values for the six parameters TenantID, ApplicationID, ApplicationKey, KeyVaultName, NewCertName, and CompanyName to the following PowerShell script. [Create a new Application Secret](../azure-app-registration#azure-app-registration-client-secret) to use as ApplicationKey in your Azure AD App registration with minimum lifetime.
 
 ```PowerShell
 ###################################################################################
@@ -30,18 +59,18 @@ $config = @{
     NewCertName =  "" # Name of your new Intermediate certificate. Use Letters, Numbers, and/or spaces.
     CompanyName = "" # Your Company Name. Use Letters, Numbers, and/or spaces.
 }
- 
+
 $body = [ordered]@{
     grant_type = "client_credentials"
     client_id = $config.ApplicationID
     client_secret = $config.ApplicationKey
-    scope = https://vault.azure.net/.default
+    scope = "https://vault.azure.net/.default"
 }
- 
+
 $TokenResponse = Invoke-RestMethod https://login.microsoftonline.com/$($config.TenantID)/oauth2/v2.0/token -Method Post -Body $body -UseBasicParsing
- 
-$AuthHeader = @{Authorization = $TokenResponse.token_type + " " +$TokenResponse.access_token}
- 
+
+$AuthHeader = @{Authorization = $TokenResponse.token_type + " " + $TokenResponse.access_token}
+
 $CertBody = @"
 {
     "policy": {
@@ -85,10 +114,10 @@ $CertBody = @"
     }
   }
 "@
- 
+
 # https://docs.microsoft.com/en-us/rest/api/keyvault/create-certificate/create-certificate#uri-parameters
 $CertReq = Invoke-RestMethod https://$($config.KeyVaultName).vault.azure.net/certificates/$($config.NewCertName -replace "[^A-Za-z0-9-]", "-")/create?api-version=7.2 -Method Post -Body $CertBody -ContentType "application/json" -Headers $AuthHeader -UseBasicParsing
- 
+
 $CSRText = @"
 -----BEGIN CERTIFICATE REQUEST-----
 $([regex]::Matches($CertReq.csr, "[^\s]{1,64}").value -join "`n")
@@ -99,40 +128,18 @@ $CSRText
 
 Write-Host -ForegroundColor Cyan @"
 After Signing the CSR use the values of:
- 
+
 $($config.NewCertName -replace '[^A-Za-z0-9]', "-") in AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName
 and 
 CN=$($config.NewCertName), OU=$($config.TenantID), O=$($config.CompanyName) in AppConfig:KeyVaultConfig:RootCertificateConfig:Subject
 "@
 ```
 
-### Issue the Intermediate CA Certificate
+## Issue the Intermediate CA Certificate
 
 Now, submit your CSR to your Root CA and retrieve your issued Intermediate CA Certificate. Save the certificate on disk (\(.cer\)), we will upload it and merge with the private key in Azure Key Vault later.
 
-### Key Vault Access Policy
-
-You need to grant your user account access to the Azure Key Vault:
-
-1. Navigate to your Azure Key Vault in the Azure Portal
-2. Click on **Access policies** in the left navigation pane.
-3. Click on **Add Access Policy** 
-
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.23.16.png)
-
-4. Click **Configure from template \(optional\)** and choose **Key, Secret & Certificate Management**  
-5. Now you must select a principal by clicking on **None selected** and search for you Azure AD App registration.  
-6. To close the dialog press **Select** and then press **Add**
-
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.34.16.png)
-
-7. To save your new access policies you must click on **Save** in the upper left corner of the window.
-
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
-
-After saving this access policies successfully, your user account is permitted to upload the certificate.
-
-### Upload the Intermediate CA Certificate
+## Upload the Intermediate CA Certificate
 
 1. In Azure Key Vault, click on your certificate and press **Certificate Operation**  
 2. **\*\*Now you can see the options** Download CSR **and** Merge Signed Request\*\*
@@ -141,7 +148,7 @@ After saving this access policies successfully, your user account is permitted t
 
 3. Click on **Merge Signed Request** and upload your Intermediate CA Certificate. After you have uploaded the signed request, you can see the valid certificate in your Azure Key Vault in the area **Completed**
 
-### Update Azure App Service Settings
+## Update Azure App Service Settings
 
 The last step is to update the Azure App Service which runs the SCEPman with the new certificate information.
 
