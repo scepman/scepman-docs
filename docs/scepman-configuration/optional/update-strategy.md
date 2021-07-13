@@ -54,7 +54,7 @@ Now your production App Service is running with a custom artifacts location and 
 
 ![](../../.gitbook/assets/2021-07-09-15_57_46-gkscep02-keyvault-microsoft-azure-and-4-more-pages-c4a8-ehamed-microsoft-.png)
 
-Now add for **Key, Secret and Certificate permissions** all permissions except the **Privileged Certificate Operations** "**Purge"** let it unchecked lik in the picture:
+Now add for **Key, Secret and Certificate permissions** all permissions except the **Privileged Certificate Operations** "**Purge"** let it unchecked like in the picture:
 
 ![](../../.gitbook/assets/2021-07-09-15_59_46-add-access-policy-microsoft-azure-and-4-more-pages-c4a8-ehamed-microsoft-.png)
 
