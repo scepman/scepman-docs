@@ -37,7 +37,7 @@ After saving this access policies successfully, your Azure AD app is permitted t
 
 ## Creating Intermediate Certificate via API
 
-You must create the certificate via the Key Vault API. This is because not all flags and features are available via UI and native PowerShell CMDlets. Add values for the six parameters TenantID, ApplicationID, ApplicationKey, KeyVaultName, NewCertName, and CompanyName to the following PowerShell script. [Create a new Application Secret](../azure-app-registration#azure-app-registration-client-secret) to use as ApplicationKey in your Azure AD App registration with minimum lifetime.
+You must create the certificate via the Key Vault API. This is because not all flags and features are available via UI and native PowerShell CMDlets. Add values for the six parameters TenantID, ApplicationID, ApplicationKey, KeyVaultName, NewCertName, and CompanyName to the following PowerShell script. [Create a new Application Secret](../azure-app-registration.md#azure-app-registration-client-secret) to use as ApplicationKey in your Azure AD App registration with minimum lifetime.
 
 ```PowerShell
 ###################################################################################
