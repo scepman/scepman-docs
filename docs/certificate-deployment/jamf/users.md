@@ -18,7 +18,7 @@ Add a new "Mobile Device Configuration Profile" and/or "macOS Configuration Prof
 
 ## User Certificates on Computers
 
-Please add another "macOS Configuration Profile". Under the General Tab, change the Level to "User Level". Choose "SCEP" as payload. Activate "Use the External Certificate Authority settings to enable Jamf Pro as SCEP proxy for this configuration profile" and enter the following information:
+Under Computers -> Configuration Profiles, please add another "macOS Configuration Profile". Under the General Tab, change the Level to "User Level". On the left side, switch to the "SCEP" tab and configure a new SCEP payload. Activate "Use the External Certificate Authority settings to enable Jamf Pro as SCEP proxy for this configuration profile" and enter the following information:
 
 | Field | Description | Value/Example |
 | :--- | :--- | :--- |
@@ -32,7 +32,7 @@ Distribute the profile to your users as desired.
 
 ## User Certificates on Devices
 
-Please add another "Mobile Device Configuration Profile". Keep the level at "Device Level", as User Level currently does not support SCEP. Then, choose "SCEP" as payload. Activate "Use the External Certificate Authority settings to enable Jamf Pro as SCEP proxy for this configuration profile" and enter the following information:
+Under Devices -> Configuration Profiles, please add another "Mobile Device Configuration Profile". Keep the level at "Device Level", as User Level currently does not support SCEP. Then, choose "SCEP" as payload On the left side. Activate "Use the External Certificate Authority settings to enable Jamf Pro as SCEP proxy for this configuration profile" and enter the following information:
 
 | Field | Description | Value/Example |
 | :--- | :--- | :--- |
