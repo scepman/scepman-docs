@@ -1,6 +1,6 @@
 # Devices
 
-Please follow this guide to distribute certificates to devices \(e.g.: iOS, iPadOS\):
+Please follow this guide to distribute certificates to devices \(e.g.: iOS, iPadOS\). Before deploying the first certificates via JAMF, follow the [general steps for JAMF](general.md) first.
 
 ## SCEPman Root Certificate
 

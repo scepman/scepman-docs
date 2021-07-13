@@ -7,6 +7,10 @@ order: 1
 
 ## Versions
 
+### 1.9 - In Internal Channel
+
+* [JAMF User Certificates](../certificate-deployment/jamf/users.md)
+
 ### 1.8 - June 2021
 
 * Improved robustness in exceptional situations

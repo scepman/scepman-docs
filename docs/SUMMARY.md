@@ -41,6 +41,7 @@
   * [General Configuration](certificate-deployment/jamf/general.md)
   * [Computers](certificate-deployment/jamf/computers.md)
   * [Devices](certificate-deployment/jamf/devices.md)
+  * [Users](certificate-deployment/jamf/users.md)
 * [Other](certificate-deployment/other-1/README.md)
   * [3rd-party MDM Solutions](certificate-deployment/other-1/static-certificates.md)
   * [Domain Controller Certificates](certificate-deployment/other-1/domain-controller-certificates.md)

@@ -1,6 +1,6 @@
 # Computers
 
-Please follow this guide to distribute certificates to computers \(macOS\):
+Please follow this guide to distribute certificates to computers \(macOS\). Before deploying the first certificates via JAMF, follow the [general steps for JAMF](general.md) first.
 
 ## SCEPman Root Certificate
 
