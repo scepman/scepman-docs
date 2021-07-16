@@ -7,9 +7,12 @@ order: 1
 
 ## Versions
 
-### 1.9 - In Internal Channel
+### 1.9 - In Beta Channel
 
 * [JAMF User Certificates](../certificate-deployment/jamf/users.md)
+* Minor advancements
+  * Improved error messages
+  * Improved Compatibility with ISE with [a new default setting](../scepman-configuration/optional/application-settings.md#appconfig-keyvaultconfig-rootcertificateconfig-addextendedkeyusage)
 
 ### 1.8 - June 2021
 
