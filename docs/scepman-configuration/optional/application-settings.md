@@ -305,56 +305,6 @@ Applicable to version 1.8 and above
 
 Starting with version 1.8, you can configure the number of minutes that certificates are pre-dated. If you have issues with clocks on clients running late, you may increase this value.
 
-### AppConfig:AuthConfig:ApplicationId
-
-The Application ID from your Azure AD App registration. This setting is configured during the setup.
-
-{% hint style="danger" %}
-Changes can harm you service!
-{% endhint %}
-
-### AppConfig:AuthConfig:ApplicationKey
-
-The Application Key \(Client secret\) from your Azure AD App registration. This setting is configured during the setup.
-
-{% hint style="danger" %}
-Changes can harm you service!
-{% endhint %}
-
-### AppConfig:AuthConfig:TenantName
-
-The Azure AD Tenant ID. This setting is automatically configured during the setup.
-
-{% hint style="danger" %}
-Changes can harm you service!
-{% endhint %}
-
-### AppConfig:KeyVaultConfig:KeyVaultURL
-
-The Azure Key Vault URL. This setting is automatically configured during the setup.
-
-You must define this setting in the configuration of your App Service. It is NOT possible to define this setting as a Secret in Azure Key Vault!
-
-{% hint style="danger" %}
-Changes can harm you service!
-{% endhint %}
-
-### AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName
-
-The Root Certificate Name. This setting is automatically configured during the Root CA creation.
-
-{% hint style="danger" %}
-Changes can harm you service!
-{% endhint %}
-
-### AppConfig:KeyVaultConfig:RootCertificateConfig:Subject
-
-The Root Certificate Subject. This setting is automatically configured during the Root CA creation.
-
-{% hint style="danger" %}
-Changes can harm you service!
-{% endhint %}
-
 ### AppConfig:KeyVaultConfig:RootCertificateConfig:AddExtendedKeyUsage
 
 {% hint style="info" %}
@@ -368,3 +318,61 @@ Applicable to version 1.8 and above
 **True** (default for 1.9 and above): SCEPman adds an Extended Key Usage extension to newly generated CA certificates.
 
 **False** (default for 1.8 and before): SCEPman generates a CA certificate without Extended Key Usage extension.
+
+### AppConfig:AuthConfig:ApplicationId
+
+The Application ID from your Azure AD App registration. This setting is configured during the setup.
+
+{% hint style="danger" %}
+Changes can harm your service!
+{% endhint %}
+
+### AppConfig:AuthConfig:ApplicationKey
+
+The Application Key \(Client secret\) from your Azure AD App registration. This setting is configured during the setup.
+
+{% hint style="danger" %}
+Changes can harm your service!
+{% endhint %}
+
+### AppConfig:AuthConfig:TenantName
+
+The Azure AD Tenant ID. This setting is automatically configured during the setup.
+
+{% hint style="danger" %}
+Changes can harm your service!
+{% endhint %}
+
+### AppConfig:SCEPResponseEncryptionAlgorithm
+
+The algorithm used to encrypt SCEP responses. Reasonable values include "2.16.840.1.101.3.4.1.42" for AES-256-CBC (the default) and "2.16.840.1.101.3.4.1.2" for AES-128-CBC.
+
+{% hint style="danger" %}
+Changes can harm your service!
+{% endhint %}
+
+### AppConfig:KeyVaultConfig:KeyVaultURL
+
+The Azure Key Vault URL. This setting is automatically configured during the setup.
+
+You must define this setting in the configuration of your App Service. It is NOT possible to define this setting as a Secret in Azure Key Vault!
+
+{% hint style="danger" %}
+Changes can harm your service!
+{% endhint %}
+
+### AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName
+
+The Root Certificate Name. This setting is automatically configured during the Root CA creation.
+
+{% hint style="danger" %}
+Changes can harm your service!
+{% endhint %}
+
+### AppConfig:KeyVaultConfig:RootCertificateConfig:Subject
+
+The Root Certificate Subject. This setting is automatically configured during the Root CA creation.
+
+{% hint style="danger" %}
+Changes can harm your service!
+{% endhint %}
