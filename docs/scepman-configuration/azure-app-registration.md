@@ -14,33 +14,33 @@ SCEPman needs to interact with your Azure Active Directory and Intune endpoints 
 2. Navigate to **Azure Active Directory**
 3. Click **App registrations**
 
-![](../.gitbook/assets/screenshot-2020-02-03-at-10.23.51%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](../.gitbook/assets/2021-07-22-12_18_48-app-registrations-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-.png)
 
 1. Click **New registration** and enter a **name**, i.e. SCEPman. For supported account types choose **Accounts in this organizational directory only** and click register.
 
-![](../.gitbook/assets/azure-app-registration-register.png)
+![](../.gitbook/assets/2021-07-22-12_20_24-register-an-application-microsoft-azure-and-2-more-pages-c4a8-ehamed-micro.png)
 
 1. You may copy the **Application \(client\) ID** now. The ID is important and will be needed later when installing SCEPman from marketplace. But you can access this ID anytime.
 
-![](../.gitbook/assets/azure-app-registration-scepman%20%281%29.png)
+![](../.gitbook/assets/2021-07-22-12_23_30-scepmanreg-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-edgeneu.png)
 
 ## Azure App Registration / Client Secret
 
 1. Stay within **App registrations** and click on **Certificates & secrets**
 
-![](../.gitbook/assets/azure-app-registration-client-secret.png)
+![](../.gitbook/assets/2021-07-22-12_24_23-scepmanreg-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-edge.png)
 
-1. Click **New client secret**, add a description and choose the expiration. We recommend **Never**, this helps to provide an ongoing service for a long time. You can revoke a secret at any time. Click **Add**.
+1. Click **New client secret**, add a description and choose the expiration. We recommend **24 months**, this helps to provide an ongoing service for two years. You can revoke a secret at any time. Click **Add**.
 
-![](../.gitbook/assets/azure-app-registration-client-secret-new%20%281%29%20%281%29%20%281%29%20%281%29%20%281%29.png)
+![](../.gitbook/assets/2021-07-22-12_26_33-.png)
 
-1. **Copy the secret** and write it down in a secure place.
+1. **Copy the secret value** and write it down in a secure place.
 
 {% hint style="warning" %}
 Copy the client secret value. You will not be able to retrieve it after you leave this submenu
 {% endhint %}
 
-![](../.gitbook/assets/azure-app-registration-client-secret-copy%20%281%29.png)
+![](../.gitbook/assets/2021-07-22-12_27_36-scepmanreg-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-edge.png)
 
 ## Azure App Registration / API permissions
 

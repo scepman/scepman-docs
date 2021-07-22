@@ -14,7 +14,7 @@ SCEPman Enterprise Edition only
 
 This section describes a high availability architecture for production use.
 
-![](../../.gitbook/assets/scepman_loadbalancer1%20%287%29%20%285%29.png)
+![](../../.gitbook/assets/scepman_loadbalancer1%20%287%29%20%287%29%20%285%29.png)
 
 ## Clone App
 
@@ -37,7 +37,7 @@ Now you can set up a load balancer for higher availability. Start cloning the ap
 1. Then click **Create new** to create a new service plan.
 2. Enter a **App Service plan** and select a **Location** \(different of the first app location\) and a **Pricing tier.**
 
-![](../../.gitbook/assets/scepman_cloneapp3%20%287%29%20%287%29.png)
+![](../../.gitbook/assets/scepman_cloneapp3%20%287%29%20%287%29%20%287%29.png)
 
 5. Click **OK**  
 6. Do not change the **Clone Settings**  
@@ -47,11 +47,11 @@ Next, you need a managed identity for the cloned app:
   
 1. Go to your cloned web app and click on **Identity**
 
-![](../../.gitbook/assets/scepman_identity1%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%284%29.png)
+![](../../.gitbook/assets/scepman_identity1%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%284%29.png)
 
 2. Under System assigned switch the **Status** to **On**
 
-![](../../.gitbook/assets/scepman_identity2%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%283%29%20%286%29.png)
+![](../../.gitbook/assets/scepman_identity2%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%283%29%20%281%29%20%286%29.png)
 
 3. Click **Save**  
 4. This will register your web app into Azure AD
@@ -65,7 +65,7 @@ Your **Identity** should look like this:
 1. Go to your **Key Vault**  
 2. Click on **Access polices, Add new**
 
-![](../../.gitbook/assets/scepman_keyvault1%20%287%29%20%285%29.png)
+![](../../.gitbook/assets/scepman_keyvault1%20%287%29%20%287%29%20%285%29.png)
 
 3. Then click on **Add Access policy,** to add permissions to your new cloned SCEPman instance.
 
@@ -73,24 +73,24 @@ Your **Identity** should look like this:
 
 4. Now add for **Key, Secret and Certificate permissions** all permissions except the **Privileged Certificate Operations** "**Purge"** leave it unchecked, your access policy should look like this:
 
-![](../../.gitbook/assets/scepman_keyvault3%20%287%29%20%284%29.png)
+![](../../.gitbook/assets/scepman_keyvault3%20%287%29%20%287%29%20%284%29.png)
 
 5. now **Select principal**: select the new cloned instance of SCEPman, **Add** and **Save**
 
-![](../../.gitbook/assets/scepman_keyvault2%20%287%29%20%283%29.png)
+![](../../.gitbook/assets/scepman_keyvault2%20%287%29%20%287%29%20%283%29.png)
 
 ## Setup Traffic Manager
 
 1. Search **Traffic Manager profile** and click **Create.** 
 2. Fill in the fields.
 
-![](../../.gitbook/assets/scepman_trafficmanager1%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%286%29.png)
+![](../../.gitbook/assets/scepman_trafficmanager1%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%286%29%20%287%29.png)
 
 1. Then click **Create**.
 2. After your Traffic Manager is deployed, go to it and click **Configuration** under settings.
 3. Change the settings as follows:
 
-![](../../.gitbook/assets/scepman_trafficmanager2%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%286%29%20%282%29.png)
+![](../../.gitbook/assets/scepman_trafficmanager2%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%286%29%20%287%29%20%282%29.png)
 
 1. Save changes.
 2. Then under **Settings** choose **Endpoints**
