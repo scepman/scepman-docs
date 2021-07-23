@@ -11,7 +11,7 @@ order: 1
 
 * [JAMF User Certificates](../certificate-deployment/jamf/users.md)
 * [Compliance Checks](../scepman-configuration/optional/application-settings.md#appconfig-intunevalidation-compliancecheck)
-  * Also working for Windows devices during enrollment (currently in Internal Channel)
+  * Also working for Windows devices during enrollment \(currently in Internal Channel\)
 * Minor advancements
   * Improved error messages
   * Improved Compatibility with ISE with [a new default setting](../scepman-configuration/optional/application-settings.md#appconfig-keyvaultconfig-rootcertificateconfig-addextendedkeyusage)

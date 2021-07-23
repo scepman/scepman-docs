@@ -29,7 +29,7 @@ Now repeat this for your own user account:
 3. Select a principal by clicking on **None selected**. But this time, search for your own administrative user account.
 4. Close the dialog with **Select** and **Add**.
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28%20%282%29.png)
+![](../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28%20%282%29%20%282%29.png)
 
 1. To save your new access policies you must click on **Save** in the upper left corner of the window.
 
