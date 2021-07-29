@@ -12,7 +12,7 @@ order: 1
 * [JAMF User Certificates](../certificate-deployment/jamf/users.md)
 * Update to the [Compliance Check Preview](../scepman-configuration/optional/application-settings.md#appconfig-intunevalidation-compliancecheck)
   * Also working for Windows devices during enrollment
-* Improved [RADIUSaaService](https://www.radius-as-a-service.com/) compatibility
+* Improved [RADIUS-as-a-Service](https://www.radius-as-a-service.com/) compatibility
 * Minor advancements
   * Improved error messages
   * Improved Compatibility with ISE with [a new default setting](../scepman-configuration/optional/application-settings.md#appconfig-keyvaultconfig-rootcertificateconfig-addextendedkeyusage)
