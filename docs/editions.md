@@ -80,7 +80,7 @@ The following table shows the most important differences between the two edition
       <td style="text-align:center">yes</td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="https://docs.scepman.com/scepman-configuration/optional/application-settings#appconfig-intunevalidation-compliancecheck">Verify AAD/Intune Device Compliance Check</a>
+      <td style="text-align:left"><a href="https://docs.scepman.com/scepman-configuration/optional/application-settings#appconfig-intunevalidation-compliancecheck">AAD Device Compliance Check</a>
       </td>
       <td style="text-align:center">no</td>
       <td style="text-align:center">preview</td>
