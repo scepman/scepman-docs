@@ -52,7 +52,7 @@ The following table shows the most important differences between the two edition
       <td style="text-align:center">yes</td>
     </tr>
     <tr>
-      <td style="text-align:left">User certificates on Intune-or JAMF-managed devices
+      <td style="text-align:left">User certificates on Intune- or JAMF-managed devices
         <br />(Windows 10, MacOS, Android, iOS)</td>
       <td style="text-align:center">yes</td>
       <td style="text-align:center">yes</td>
@@ -83,7 +83,7 @@ The following table shows the most important differences between the two edition
       <td style="text-align:left"><a href="https://docs.scepman.com/scepman-configuration/optional/application-settings#appconfig-intunevalidation-compliancecheck">AAD Device Compliance Check</a>
       </td>
       <td style="text-align:center">no</td>
-      <td style="text-align:center">preview</td>
+      <td style="text-align:center">yes</td>
     </tr>
     <tr>
       <td style="text-align:left">Support</td>
@@ -97,4 +97,6 @@ The following table shows the most important differences between the two edition
     </tr>
   </tbody>
 </table>
+
+
 
