@@ -1,3 +1,10 @@
+---
+category: NAC-Configuration
+layout: docs-default
+title: Configuration of Network Access Controllers (NACs)
+order: 5
+---
+
 # Application Settings
 
 The section describes additional settings for the behavior of SCEPman. All of these are optional, though, and we recommend to just start with the defaults.
