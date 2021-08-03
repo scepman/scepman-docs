@@ -7,7 +7,7 @@ order: 1
 
 # NAC Configuration
 
-We recommend using our RADIUS-as-a-Service as Network Access Controller (NAC), but SCEPman certificates generally work with all NACs that support standard 802.1x certificate-based authentication.
+We recommend using our RADIUS-as-a-Service as Network Access Controller (NAC), as it allows a one-click configuration. SCEPman certificates generally work with all NACs that support standard 802.1x certificate-based authentication, though.
 
 This article describes notable characteristics for some of the most common NACs.
 
