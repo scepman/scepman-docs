@@ -47,6 +47,7 @@
   * [Domain Controller Certificates](certificate-deployment/other-1/domain-controller-certificates.md)
 
 ## NAC Configuration
+
 * [Network Access Controllers](nac-configuration/nac-configuration.md)
 
 ## Other
@@ -57,4 +58,5 @@
 * [FAQ](https://glueckkanja.zendesk.com/hc/en-us/sections/360002363340-FAQ)
 * [Important Links](other/important-links.md)
 * [Changelog](other/changelog.md)
+* [Licensing](other/licensing.md)
 

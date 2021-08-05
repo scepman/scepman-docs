@@ -5,9 +5,9 @@ title: Configuration of Network Access Controllers (NACs)
 order: 1
 ---
 
-# NAC Configuration
+# Network Access Controllers
 
-We recommend using our RADIUS-as-a-Service as Network Access Controller (NAC), as it allows a one-click configuration. SCEPman certificates generally work with all NACs that support standard 802.1x certificate-based authentication, though.
+We recommend using our RADIUS-as-a-Service as Network Access Controller \(NAC\), as it allows a one-click configuration. SCEPman certificates generally work with all NACs that support standard 802.1x certificate-based authentication, though.
 
 This article describes notable characteristics for some of the most common NACs.
 
@@ -25,12 +25,13 @@ At least some versions of Cisco ISE 3.x require an Extended Key Usage extension 
 
 Analogously to Cisco ISE, Aruba ClearPass uses HTTP 1.0 for OCSP requests and therefore requires [extra configuration steps adding an Application Proxy](../other/troubleshooting/cisco-ise-host-header-limitation.md) to work with SCEPman.
 
-## Microsoft Network Policy Server (NPS)
+## Microsoft Network Policy Server \(NPS\)
 
-NPS maps certificates to device or user entities in AD (not AAD). As there is no device synchronization out-of-the-box between AAD and AD, it is usually not possible to use NPS with device certificates distributed via Intune with SCEPman or any other PKI. User certificates can work for users synchronized between AAD and AD. The certificates must contain the users' UPNs, which NPS uses to map to AD user objects with the same UPN.
+NPS maps certificates to device or user entities in AD \(not AAD\). As there is no device synchronization out-of-the-box between AAD and AD, it is usually not possible to use NPS with device certificates distributed via Intune with SCEPman or any other PKI. User certificates can work for users synchronized between AAD and AD. The certificates must contain the users' UPNs, which NPS uses to map to AD user objects with the same UPN.
 
 ## Others
 
 Generally, you have to add the SCEPman Root CA certificate as a trusted CA in the NAC.
 
-Possibly, you have to manually add the SCEPman OCSP URL. You can find OCSP URL in the Authority Information Access (AIA) extension of any client certificate.
+Possibly, you have to manually add the SCEPman OCSP URL. You can find OCSP URL in the Authority Information Access \(AIA\) extension of any client certificate.
+

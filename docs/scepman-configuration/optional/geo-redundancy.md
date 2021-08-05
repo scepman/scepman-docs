@@ -65,7 +65,7 @@ Your **Identity** should look like this:
 1. Go to your **Key Vault**  
 2. Click on **Access polices, Add new**
 
-![](../../.gitbook/assets/scepman_keyvault1%20%287%29%20%287%29%20%287%29%20%287%29%20%285%29.png)
+![](../../.gitbook/assets/scepman_keyvault1%20%287%29%20%287%29%20%287%29%20%287%29%20%284%29%20%285%29.png)
 
 3. Then click on **Add Access policy,** to add permissions to your new cloned SCEPman instance.
 
@@ -73,11 +73,11 @@ Your **Identity** should look like this:
 
 4. Now add for **Key, Secret and Certificate permissions** all permissions except the **Privileged Certificate Operations** "**Purge"** leave it unchecked, your access policy should look like this:
 
-![](../../.gitbook/assets/scepman_keyvault3%20%287%29%20%287%29%20%287%29%20%287%29%20%284%29.png)
+![](../../.gitbook/assets/scepman_keyvault3%20%287%29%20%287%29%20%287%29%20%287%29%20%286%29%20%284%29.png)
 
 5. now **Select principal**: select the new cloned instance of SCEPman, **Add** and **Save**
 
-![](../../.gitbook/assets/scepman_keyvault2%20%287%29%20%287%29%20%287%29%20%287%29%20%283%29.png)
+![](../../.gitbook/assets/scepman_keyvault2%20%287%29%20%287%29%20%287%29%20%287%29%20%285%29%20%283%29.png)
 
 ## Setup Traffic Manager
 
