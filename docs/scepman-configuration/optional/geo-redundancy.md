@@ -60,6 +60,10 @@ Your **Identity** should look like this:
 
 ![](../../.gitbook/assets/scepman_identity3%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%284%29%20%286%29.png)
 
+{% hint style="warning" %}
+Cloning an app service has some restrictions such as **auto scale** settings, **backup schedule** settings, **app Insights**, etc.. so you have to configure them again \(if needed\) for the new cloned app service. For more info visit [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning\#current-restrictions](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions)
+{% endhint %}
+
 ## Setup Azure Key Vault Access Policy
 
 1. Go to your **Key Vault**  
