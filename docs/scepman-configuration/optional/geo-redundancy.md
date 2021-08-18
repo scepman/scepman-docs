@@ -18,13 +18,13 @@ This section describes a high availability architecture for production use.
 
 ## Clone App
 
-After successful deployment of SCEPman, Set up a custom domain for this SCEPman instance as described [here](custom-domain.md).
+After a successful deployment of SCEPman, Set up a custom domain for this SCEPman instance as described [here](custom-domain.md).
 
 Now you can set up a load balancer for higher availability. Start cloning the app:
 
 * Navigate to **App Service.** 
 * Scroll down to **Development Tools** and click **Clone App.** 
-* Fill in the required fields as following:
+* Fill in the required fields as follows:
 
 1. **App name:** name for the cloned instance
 2. **Resource Group:** create a new Resource Group for the cloned instance of SCEPman
@@ -35,7 +35,7 @@ Now you can set up a load balancer for higher availability. Start cloning the ap
 4. Click **App Service plan/Location**
 
 1. Then click **Create new** to create a new service plan.
-2. Enter a **App Service plan** and select a **Location** \(different of the first app location\) and a **Pricing tier.**
+2. Enter an **App Service plan** and select a **Location** \(different from the first app location\) and a **Pricing tier.**
 
 ![](../../.gitbook/assets/scepman_cloneapp3%20%287%29%20%287%29%20%287%29.png)
 
@@ -49,7 +49,7 @@ Next, you need a managed identity for the cloned app:
 
 ![](../../.gitbook/assets/scepman_identity1%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%284%29.png)
 
-2. Under System assigned switch the **Status** to **On**
+2. Under System assigned to switch the **Status** to **On**
 
 ![](../../.gitbook/assets/scepman_identity2%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%283%29%20%281%29%20%286%29.png)
 
@@ -67,7 +67,7 @@ Cloning an app service has some restrictions such as **auto scale** settings, **
 ## Setup Azure Key Vault Access Policy
 
 1. Go to your **Key Vault**  
-2. Click on **Access polices, Add new**
+2. Click on **Access policies, Add new**
 
 ![](../../.gitbook/assets/scepman_keyvault1%20%287%29%20%287%29%20%287%29%20%287%29%20%284%29%20%285%29.png)
 
@@ -115,7 +115,7 @@ In the **Overview** your Traffic Manager should like this \(here you find the Tr
 * There shall be a CNAME entry for the custom SCEPman domain that maps to the Traffic Manager endpoint. This entry may exist already if you are using Azure DNS and Traffic Manager created the entry for you. If it does not exist, remove any possibly existing wrong CNAME entry and add a CNAME that maps the custom SCEPman domain to the Traffic Manager endpoint now.
 
 {% hint style="info" %}
-In **Azure DNS Zone**, in order to modify record, you first have to remove the DNS lock by navigating to **Locks**.
+In **Azure DNS Zone**, in order to modify a record, you first have to remove the DNS lock by navigating to **Locks**.
 {% endhint %}
 
 | Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-10-configure-geo-redundancy-optional) |
