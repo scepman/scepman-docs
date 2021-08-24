@@ -60,3 +60,7 @@
 * [Changelog](other/changelog.md)
 * [Licensing](other/licensing.md)
 
+---
+
+* [SCEPman Website](https://scepman.com/)
+
