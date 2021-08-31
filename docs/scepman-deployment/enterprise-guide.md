@@ -102,10 +102,6 @@ To start with the deployment, you need to follow our Setup instruction:
 
 After the deployment completed you need to create the root certificate for SCEPman:
 
-After the deployment completed you need to create the root certificate:
-
-{% page-ref page="../scepman-configuration/first-run-root-cert.md" %}
-
 {% page-ref page="../scepman-configuration/first-run-root-cert.md" %}
 
 ### Step 4: Configure a Custom Domain and SSL certificate
