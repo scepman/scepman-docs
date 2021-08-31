@@ -4,7 +4,7 @@
 
 To retain or archive the log files, we can configure the **Application logging \(Blob\)** and **Web server logging** in the **App Service**.
 
-1. Go to your **App Service** and click on **App Service logs**
+1. Go to your **App Service** and navigate to **App Service logs** under **Monitoring** 
 2. Activate **Application logging \(Blob\)** and set the **Level** to **Verbose**
 3. Under **Storage Settings** you can select a storage account and container where you want to store the log files.
 4. In the filed **Retention Period \(Days\)** you can enter how long your log files will be retained. We recommend **30** days.
