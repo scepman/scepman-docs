@@ -67,19 +67,20 @@ Cloning an app service has some restrictions such as **auto scale** settings, **
 ## Setup Azure Key Vault Access Policy
 
 1. Go to your **Key Vault**  
-2. Click on **Access policies, Add new**
+2. open your first SCEPman **KeyVault**  
+3. Click on **Access policies** under **Settings, Add new**
 
 ![](../../.gitbook/assets/scepman_keyvault1%20%287%29%20%287%29%20%287%29%20%287%29%20%284%29%20%285%29.png)
 
-3. Then click on **Add Access policy,** to add permissions to your new cloned SCEPman instance.
+4. Then click on **Add Access policy,** to add permissions to your new cloned SCEPman instance.
 
 ![](../../.gitbook/assets/2021-07-09-15_57_46-gkscep02-keyvault-microsoft-azure-and-4-more-pages-c4a8-ehamed-microsoft-.png)
 
-4. Now add for **Key, Secret and Certificate permissions** all permissions except the **Privileged Certificate Operations** "**Purge"** leave it unchecked, your access policy should look like this:
+5. Now add for **Key, Secret and Certificate permissions** all permissions except the **Privileged Certificate Operations** "**Purge"** leave it unchecked, your access policy should look like this:
 
 ![](../../.gitbook/assets/scepman_keyvault3%20%287%29%20%287%29%20%287%29%20%287%29%20%286%29%20%284%29.png)
 
-5. now **Select principal**: select the new cloned instance of SCEPman, **Add** and **Save**
+6. now **Select principal**: select the **new cloned** instance of SCEPman, **Add** and **Save**
 
 ![](../../.gitbook/assets/scepman_keyvault2%20%287%29%20%287%29%20%287%29%20%287%29%20%285%29%20%283%29.png)
 
