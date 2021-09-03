@@ -38,7 +38,7 @@ We recommend storing your data in Log Analytics
 
 ![](../../.gitbook/assets/image%20%283%29.png)
 
-### Azure Storage
+### Archive to storage account
 
 {% hint style="info" %}
 If you have created a storage account to store your SCEPman artifacts, you can use the same storage account and skip the first step.
