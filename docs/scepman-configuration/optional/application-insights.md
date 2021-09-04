@@ -1,5 +1,9 @@
 # Application Insights
 
+{% hint style="info" %}
+We recommend enabling Application Insights to get very helpful graphic representation information about your SCEPman instance such as Failed requests, availability, and Server response time for a specific timeslot! This is very helpful by troubleshooting.
+{% endhint %}
+
 To activate the Application Insights for your App Service, please follow this instruction:
 
 1. Open your **App Service**
