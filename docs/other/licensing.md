@@ -39,6 +39,12 @@ A single user may have up to 10 personal devices:
 * up to 5 desktop devices \(Windows or MacOS\) and
 * up to 5 handheld devices \(Android or iOS\).
 
+### Subscription scope
+
+The scope of a SCEPman subscription is limited to one tenant \(Azure AD and JAMF\). This scope is based on the management source of the clients. 
+
+It is allowed to have clients managed by JAMF as well as AAD/Intune with one subscription, if only one tenant is used. If you want to support clients & users that are managed by different tenants \(e.g. multiple Microsoft 365 Tenants\), you need one SCEPman subscription per tenant.
+
 ### Examples
 
 {% hint style="info" %}
