@@ -116,12 +116,17 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 1. Configure the **SCEP Certificate**
 
 {% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman \(for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below\). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term all settings will be supported for configuration. **The setting for 'Subject name format' is freely selectable. For Subject alternative name we recommend to set 'User principal name \(UPN\)'.**
+You cannot configure all SCEP Certificate settings. Specifically, SCEPman requires that user certificates contain the user's **UPN** in the **Subject alternative name** extension. All iOS versions we tested **ignore** the configured **validity period**. Thus, the [default validity period ](../../scepman-configuration/optional/application-settings.md#appconfig-intunevalidation-validityperioddays)configured in SCEPman applies.  
+Other settings can be chosen according to your requirements, but we **recommend** the settings shown in the below screenshot for the most common use cases: Leave **Subject name format** as is. Set Key usage to **Digital signature** and **Key encipherment**. Have **2048 bits** as Key size. Select the configuration profile of your SCEPman **Root certificate**. Add **Client Authentication** as Extended key usage from the list of predefined values. Leave the Renewal threshold at **20 %**.
+{% endhint %}
 
+{% hint style="warning" %}
 With our automatically set settings, we fulfill Apple's certificate requirements. For more details click [here](https://support.apple.com/en-us/HT210176).
 {% endhint %}
 
-![](../../.gitbook/assets/scepman_user_ios_2%20%281%29%20%281%29.png)
+![](../../.gitbook/assets/ios-usercertificate.png)
+
+![](../../.gitbook/assets/ios-usercertificate%20%281%29.png)
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**
