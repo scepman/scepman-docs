@@ -1,6 +1,6 @@
 # Health check
 
-We can configure a health check and alerting for the App Service to get direct notification in case that the SCEPman solution is not responsible anymore.
+You may configure the health check feature and corresponding alerting for the App Service to get a direct notification in case your SCEPman instance is no longer responsive.
 
 {% hint style="warning" %}
 After you have configured the health check and Alerting correctly it takes some time until the alert rule works properly. It is because the metric **Health check status** needs some time to get the information and the dynamic alert rule threshold needs some time to analyze the metric.
