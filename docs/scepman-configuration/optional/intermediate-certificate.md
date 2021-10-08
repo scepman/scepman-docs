@@ -1,4 +1,4 @@
-# Intermediate certificate
+# Intermediate Certificate
 
 {% hint style="warning" %}
 SCEPman Enterprise Edition only

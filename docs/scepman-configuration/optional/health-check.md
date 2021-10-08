@@ -1,4 +1,4 @@
-# Health check
+# Health Check
 
 You may configure the health check feature and corresponding alerting for the App Service to get a direct notification in case your SCEPman instance is no longer responsive.
 

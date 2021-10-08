@@ -116,7 +116,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 1. Configure the **SCEP Certificate**
 
 {% hint style="warning" %}
-You cannot configure all SCEP Certificate settings. Specifically, SCEPman requires that user certificates contain the user's **UPN** in the **Subject alternative name** extension. All iOS versions we tested **ignore** the configured **validity period**. Thus, the [default validity period ](../../scepman-configuration/optional/application-settings.md#appconfig-intunevalidation-validityperioddays)configured in SCEPman applies.  
+You cannot configure all SCEP Certificate settings. Specifically, SCEPman requires that user certificates contain the user's **UPN** in the **Subject alternative name** extension. All iOS versions we tested **ignore** the configured **validity period**. Thus, the [default validity period ](../../scepman-configuration/optional/application-settings/#appconfig-intunevalidation-validityperioddays)configured in SCEPman applies.  
 Other settings can be chosen according to your requirements, but we **recommend** the settings shown in the below screenshot for the most common use cases: Leave **Subject name format** as is. Set Key usage to **Digital signature** and **Key encipherment**. Have **2048 bits** as Key size. Select the configuration profile of your SCEPman **Root certificate**. Add **Client Authentication** as Extended key usage from the list of predefined values. Leave the Renewal threshold at **20 %**.
 {% endhint %}
 

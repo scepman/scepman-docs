@@ -10,18 +10,18 @@ order: 1
 ### 1.9 - July 2021
 
 * [JAMF User Certificates](../certificate-deployment/jamf/users.md)
-* Update to the [Compliance Check Preview](../scepman-configuration/optional/application-settings.md#appconfig-intunevalidation-compliancecheck)
+* Update to the [Compliance Check Preview](../scepman-configuration/optional/application-settings/#appconfig-intunevalidation-compliancecheck)
   * Also working for Windows devices during enrollment
 * Improved [RADIUS-as-a-Service](https://www.radius-as-a-service.com/) compatibility
 * Minor advancements
   * Improved error messages
-  * Improved Compatibility with ISE with [a new default setting](../scepman-configuration/optional/application-settings.md#appconfig-keyvaultconfig-rootcertificateconfig-addextendedkeyusage)
+  * Improved Compatibility with ISE with [a new default setting](../scepman-configuration/optional/application-settings/#appconfig-keyvaultconfig-rootcertificateconfig-addextendedkeyusage)
 
 ### 1.8 - June 2021
 
 * Improved robustness in exceptional situations
   * Correct answers to invalid OCSP requests, which may occur rarely for certificates issued by SCEPman 1.5 or ealier
-  * [Certificate issuance scheduling in overload situations](../scepman-configuration/optional/application-settings.md#appconfig-concurrentsceprequestlimit)
+  * [Certificate issuance scheduling in overload situations](../scepman-configuration/optional/application-settings/#appconfig-concurrentsceprequestlimit)
   * Option to configure a "Clock Skew" for clients with clocks running slow \(&gt; 10 minutes\), which [happens in few tenants for Intune-managed Windows devices](troubleshooting/general.md#windows-10-devices-cannot-enroll-with-autopilot)
 * Logging
   * Less log clutter on Info level
@@ -31,10 +31,10 @@ order: 1
 ### 1.7 - May 2021
 
 * Support for [Computer and Device Certificates via JAMF](../certificate-deployment/jamf/general.md)
-* Separate Certificate Lifetimes for each endpoint, e.g. for [Domain Controller Certificates](../scepman-configuration/optional/application-settings.md#appconfig-dcvalidation-validityperioddays)
-* [Secure application configuration in Key Vault](../scepman-configuration/optional/application-settings.md#secure-configuration-in-azure-key-vault)
+* Separate Certificate Lifetimes for each endpoint, e.g. for [Domain Controller Certificates](../scepman-configuration/optional/application-settings/#appconfig-dcvalidation-validityperioddays)
+* [Secure application configuration in Key Vault](../scepman-configuration/optional/application-settings/#secure-configuration-in-azure-key-vault)
 * Moved release path to [https://github.com/scepman/install](https://github.com/scepman/install). Please update your setting WEBSITE\_RUN\_FROM\_PACKAGE as described in Section [Application Artifacts](../scepman-configuration/optional/application-artifacts.md).
-* Preview of [Compliance Checks](../scepman-configuration/optional/application-settings.md#appconfig-intunevalidation-compliancecheck)
+* Preview of [Compliance Checks](../scepman-configuration/optional/application-settings/#appconfig-intunevalidation-compliancecheck)
 * Minor advancements
   * Work around a bug on some Android version to gain correct validity periods
   * SCEPman CA certificates receive an Extended Key Usage to improve compatibility with some versions of Cisco ISE

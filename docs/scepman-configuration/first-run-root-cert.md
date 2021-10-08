@@ -1,4 +1,4 @@
-# Root certificate
+# Root Certificate
 
 After you have deployed your SCEPman environment you have to create a root certificate.
 
