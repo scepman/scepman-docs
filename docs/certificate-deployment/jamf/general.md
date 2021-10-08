@@ -12,9 +12,9 @@ Jamf integration of SCEPman can be easily enabled via the following app configur
 
 | Setting | Description | Example |
 | :--- | :--- | :--- |
-| [AppConfig:JamfValidation:Enabled](../../scepman-configuration/optional/application-settings/#appconfig-jamfvalidation-enabled) | Do you want to use SCEPman with JAMF? | true |
-| [AppConfig:JamfValidation:RequestPassword](../../scepman-configuration/optional/application-settings/#appconfig-jamfvalidation-requestpassword) | JAMF authenticates its certificate requests at SCEPman with this secure password | _auto generated 32 character password_ |
-| [AppConfig:JamfValidation:ValidityPeriodDays](../../scepman-configuration/optional/application-settings/#appconfig-jamfvalidation-validityperioddays) \(optional\) | How many days shall certificates issued via JAMF be valid at most? | 365 |
+| [AppConfig:JamfValidation:Enabled](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-enabled) | Do you want to use SCEPman with JAMF? | true |
+| [AppConfig:JamfValidation:RequestPassword](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-requestpassword) | JAMF authenticates its certificate requests at SCEPman with this secure password | _auto generated 32 character password_ |
+| [AppConfig:JamfValidation:ValidityPeriodDays](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-validityperioddays) \(optional\) | How many days shall certificates issued via JAMF be valid at most? | 365 |
 
 ## API Connection
 
@@ -22,15 +22,15 @@ SCEPman needs to be connected to the Jamf API to check the status of onboarded c
 
 | Setting | Description | Example |
 | :--- | :--- | :--- |
-| [AppConfig:JamfValidation:URL](../../scepman-configuration/optional/application-settings/#appconfig-jamfvalidation-url) | The URL of your JAMF instance | `https://contoso.jamfcloud.com` |
-| [AppConfig:JamfValidation:APIUsername](../../scepman-configuration/optional/application-settings/#appconfig-jamfvalidation-apiusername) | The user name of Jamf service account | svc-scepman \(see screenshot\) |
-| [AppConfig:JamfValidation:APIPassword](../../scepman-configuration/optional/application-settings/#appconfig-jamfvalidation-apipassword) | The password for the above account | password123 \(see screenshot\) |
+| [AppConfig:JamfValidation:URL](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-url) | The URL of your JAMF instance | `https://contoso.jamfcloud.com` |
+| [AppConfig:JamfValidation:APIUsername](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-apiusername) | The user name of Jamf service account | svc-scepman \(see screenshot\) |
+| [AppConfig:JamfValidation:APIPassword](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-apipassword) | The password for the above account | password123 \(see screenshot\) |
 
 Therefore, please add an appropriate service account under "Jamf Pro User Accounts & Groups":
 
 ![](../../.gitbook/assets/image%20%2833%29.png)
 
-This accounts needs the following three **read** permissions under "Privileges" \(section "Jamf Pro Server Objects"\):
+This account needs the following three **read** permissions under "Privileges" \(section "Jamf Pro Server Objects"\):
 
 * Computers
 * Mobile Devices
@@ -54,7 +54,7 @@ Please fill out the following fields and save the configuration:
 | **Name** | name of instance | SCEPman Contoso |
 | **Subject** | entities following X.500 standard | O=Contoso |
 | **Challenge Type** | challenge type for verification of certificate issuing | Static |
-| **\(Verify\) Challenge** | pre-shared secret \(challenge\) | defined in SCEPman via [AppConfig](../../scepman-configuration/optional/application-settings/#appconfig-jamfvalidation-requestpassword) parameter |
+| **\(Verify\) Challenge** | pre-shared secret \(challenge\) | defined in SCEPman via [AppConfig](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-requestpassword) parameter |
 | Key Size | key size in bits | 2048 |
 | Use as digital signature |  | Yes \(if needed\) |
 | Use for key encipherment |  | Yes \(if needed\) |
@@ -66,7 +66,7 @@ Please fill out the following fields and save the configuration:
 
 When using an external CA, Jamf requires that you add the CA certificate so Jamf can compare whether the certificates are correctly signed. However, Jamf allows adding a CA certificate only, if you also add a signing certificate with a corresponding private key. Jamf uses this signing certificate to sign certificate requests send to SCEPman. However, SCEPman does not evaluate the signature on requests and accepts even unsigned requests \(e.g. from Intune\), because the request validity stems solely from using the right request challenge password configured in Jamf.
 
-Hence, you may use any certificate you like as signing certificate, for example you can generate a self-signed certificate with the following PowerShell command:
+Hence, you may use any certificate you like signing certificate, for example you can generate a self-signed certificate with the following PowerShell command:
 
 ```text
 $cert = New-SelfSignedCertificate -Subject "CN=JAMF Signer Certificate for SCEPman" -CertStoreLocation "Cert:\CurrentUser\My" -NotAfter (Get-Date).AddYears(10)
