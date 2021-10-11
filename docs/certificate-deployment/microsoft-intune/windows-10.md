@@ -1,20 +1,14 @@
----
-category: Configuration
-title: Windows 10
-order: 1
----
-
 # Windows 10
 
 The following article describes how to deploy a device certificate or a user certificate for Windows 10.
 
 ## Deploy Root CA Certificate
 
-First, we need to trust the public root certificate from SCEPman. Therefore, you must download the CA certificate \(from SCEPman\) and deploy it via a trusted certificate profile in Microsoft Intune:
+First, we need to trust the public root certificate from SCEPman. Therefore, you must download the CA certificate (from SCEPman) and deploy it via a trusted certificate profile in Microsoft Intune:
 
 Download the CA certificate:
 
-![](../../.gitbook/assets/scepman24%20%281%29%20%287%29%20%288%29%20%288%29%20%288%29%20%284%29%20%2821%29.png)
+![](<../../.gitbook/assets/scepman24 (1) (7) (8) (8) (8) (4) (28).png>)
 
 Then, create a profile in Microsoft Intune:
 
@@ -30,11 +24,11 @@ Choose the following profile setting:
 3. As **Profile type** select **Templates** then select **Trusted certificate**
 4. Click **Create**
 
-![](../../.gitbook/assets/2021-07-02-13_46_41-.png)
+![](../../.gitbook/assets/2021-07-02-13\_46\_41-.png)
 
 Now you will get the following window:
 
-![](../../.gitbook/assets/2021-06-29-10_41_25-trusted-certificate-microsoft-endpoint-manager-admin-center-and-4-more-pages-.png)
+![](../../.gitbook/assets/2021-06-29-10\_41\_25-trusted-certificate-microsoft-endpoint-manager-admin-center-and-4-more-pages-.png)
 
 1. Choose a profile name and **Next**
 2. Select **A valid .cer file** which you already downloaded
@@ -66,7 +60,7 @@ Set the properties like shown below.
 {% hint style="warning" %}
 There are some restrictions to the **SCEP Device Certificate** settings:
 
-**Important**: You must add the AAD Device ID to the subject. **Add 'CN={{AAD\_Device\_ID}} ' in the field Subject name format**. This ensures that SCEPman can link certificates to device objects in AAD.
+**Important**: You must add the AAD Device ID to the subject. **Add 'CN={{AAD_Device_ID}} ' in the field Subject name format**. This ensures that SCEPman can link certificates to device objects in AAD.
 
 SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the setting here unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_.
 
@@ -74,12 +68,12 @@ SCEPman caps the certificate validity to the configured maximum in setting _AppC
 {% endhint %}
 
 * **Certificate type**: Device
-* **Subject name format:** CN={{AAD\_Device\_ID}}
+* **Subject name format: **CN={{AAD_Device_ID}}
 
-![](../../.gitbook/assets/2021-06-29-14_10_34-.png)
+![](../../.gitbook/assets/2021-06-29-14\_10\_34-.png)
 
 {% hint style="warning" %}
-The setting Key Storage Provider \(KSP\) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
+The setting Key Storage Provider (KSP) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
 
 * STMicroelectronics: 71.12, 73.4.17568.4452
 * Intel: 11.8.50.3399, 2.0.0.2060
@@ -101,9 +95,9 @@ When all is finished, you have the following two certificate configurations:
 
 ## Deploy User Authentication Certificates
 
-The following section will show you how you can deploy user certificates via Intune Certificate profile on Windows 10 \(or later\) devices.
+The following section will show you how you can deploy user certificates via Intune Certificate profile on Windows 10 (or later) devices.
 
-First, we need to trust the public root certificate from SCEPman.  
+First, we need to trust the public root certificate from SCEPman.\
 Therefore follow the instructions [here](windows-10.md#deploy-root-ca-certificate).
 
 Now, you must create a SCEP certificate profile to deploy the user certificates. Important for this step is the SCEP Server URL, you can find it [here](windows-10.md#how-to-find-scep-url-for-intune)
@@ -125,24 +119,24 @@ Set the properties like shown below.
 {% hint style="warning" %}
 There are some restrictions to the **SCEP User Certificate** settings:
 
-You must add the User principal name as Subject alternative name. **Add '{{UserPrincipalName}}' as Subject Alternative Name of type User principal name \(UPN\).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.  
-You should **add 'L={{AAD\_Device\_ID}}'** as part of the Subject. This ensures the user certificate can be linked to the device where it resides on. This may improve revocation and compliance checks.   
-SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the settings configured here unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_.   
+You must add the User principal name as Subject alternative name. **Add '{{UserPrincipalName}}' as Subject Alternative Name of type User principal name (UPN).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.\
+You should **add 'L={{AAD_Device_ID}}' **as part of the Subject. This ensures the user certificate can be linked to the device where it resides on. This may improve revocation and compliance checks. \
+SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the settings configured here unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_. \
 For SCEPman version before 1.5, the validity period is set to a fixed 6 month. For SCEPman 1.5 and above, SCEPman caps the certificate validity to the configured maximum in setting _AppConfig:ValidityPeriodDays_, but otherwise uses the validity configured in the request.
 {% endhint %}
 
 * **Certificate type**: User
-* **Subject name format:** CN={{UserName}},L={{AAD\_Device\_ID}}
+* **Subject name format: **CN={{UserName}},L={{AAD_Device_ID}}
 * **Subject alternative name:**
 
-| Attribute | Value |
-| :--- | :--- |
-| User principal name \(UPN\) | {{UserPrincipalName}} |
+| Attribute                 | Value                 |
+| ------------------------- | --------------------- |
+| User principal name (UPN) | {{UserPrincipalName}} |
 
-![](../../.gitbook/assets/2021-06-29-14_27_06-.png)
+![](../../.gitbook/assets/2021-06-29-14\_27\_06-.png)
 
 {% hint style="warning" %}
-The setting Key Storage Provider \(KSP\) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
+The setting Key Storage Provider (KSP) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
 
 * STMicroelectronics: 71.12
 * Intel: 11.8.50.3399, 2.0.0.2060
@@ -167,14 +161,14 @@ Deploying user certificates used for **Digital Signatures** can be achieved by f
 {% hint style="warning" %}
 **You may** use SCEPman for transnational **digital signatures** i.e. for S/MIME signing in Microsoft Outlook. If you plan to use the certificates for message signing you need to add the corresponding extended key usages in the Intune profile configuration.
 
-**Do not** use SCEPman **for email-encryption** i.e. for S/MIME mail encryption in Microsoft Outlook \(without a separate technology for key management\). The nature of **the SCEP protocol does not include a mechanism to backup or archive private key material.** If you would use SCEP for email-encryption you may lose the keys to decrypt the messages later.
+**Do not** use SCEPman **for email-encryption** i.e. for S/MIME mail encryption in Microsoft Outlook (without a separate technology for key management). The nature of **the SCEP protocol does not include a mechanism to backup or archive private key material.** If you would use SCEP for email-encryption you may lose the keys to decrypt the messages later.
 {% endhint %}
 
 You must set these configuration variables otherwise the requested key usage and extended validity period in the SCEP profile is not honored by SCEPman:
 
 {% hint style="warning" %}
-_AppConfig:UseRequestedKeyUsages_ set to _true  
-AppConfig:ValidityPeriodDays set to 365 \(a maximum value of 1825 - 5 years is possible\)_
+_AppConfig:UseRequestedKeyUsages_ set to _true_\
+_AppConfig:ValidityPeriodDays set to 365 (a maximum value of 1825 - 5 years is possible)_
 {% endhint %}
 
 Another requirement is trusted root certificate of SCEPman, it must be deployed like described in the user or device certificate deployment section above to be referenced in this new digital signature profile.
@@ -196,17 +190,17 @@ Now the Go to Intune to create a SCEP certificate profile:
 Set the properties like shown below. Have special attention for the Key Usage select _only_ '**Digital Signature**' and for the Extended key usage '**Secure Email**'.
 
 * **Certificate type**: User
-* **Subject name format:** CN={{UserName}},E={{EmailAddress}},L={{AAD\_Device\_ID}}
+* **Subject name format: **CN={{UserName}},E={{EmailAddress}},L={{AAD_Device_ID}}
 * **Subject alternative name:**
 
-| Attribute | Value |
-| :--- | :--- |
-| User principal name \(UPN\) | {{UserPrincipalName}} |
-| Email address | {{EmailAddress}} |
+| Attribute                 | Value                 |
+| ------------------------- | --------------------- |
+| User principal name (UPN) | {{UserPrincipalName}} |
+| Email address             | {{EmailAddress}}      |
 
-![](../../.gitbook/assets/2021-07-07-10_02_35-christoph-hannebauer-_-microsoft-teams.png)
+![](../../.gitbook/assets/2021-07-07-10\_02\_35-christoph-hannebauer-\_-microsoft-teams.png)
 
-We recommend to set Renewal Threshold \(%\) to a value that ensures certificates are renewed at least 6 months before expiration when issuing S/MIME signature certificates. This is because emails signed with expired certificates are shown to have invalid signatures in Outlook, which confuses users. Having a new certificate long before the old one expires ensures that only older emails show this behavior, which users are more unlikely to look at. For example, if your signature certificates are valid for one year, you should set the Renewal Threshold to at least 50 %.
+We recommend to set Renewal Threshold (%) to a value that ensures certificates are renewed at least 6 months before expiration when issuing S/MIME signature certificates. This is because emails signed with expired certificates are shown to have invalid signatures in Outlook, which confuses users. Having a new certificate long before the old one expires ensures that only older emails show this behavior, which users are more unlikely to look at. For example, if your signature certificates are valid for one year, you should set the Renewal Threshold to at least 50 %.
 
 * Scroll down and enter the URL you have noted, Click **Next**
 * Assign users and groups, click **Next**
@@ -214,27 +208,24 @@ We recommend to set Renewal Threshold \(%\) to a value that ensures certificates
 
 Assign the profile to your user group and wait for the device to synchronize. After successful sync you should see the user certificate for Intended Purposes **Secure Email**
 
-![](../../.gitbook/assets/image%20%2816%29.png)
+![](<../../.gitbook/assets/image (16).png>)
 
 The certificate will be available for Digital Signature usage in e.g. Outlook. Below an example of the usage:
 
-![](../../.gitbook/assets/image%20%2814%29.png)
+![](<../../.gitbook/assets/image (14).png>)
 
 ## How to find SCEP-URL for Intune
 
 This URL can be found in the **Overview** sub-menu of the app service of SCEPman:
 
-![](../../.gitbook/assets/scepman27%20%282%29%20%281%29%20%2812%29.png)
+![](<../../.gitbook/assets/scepman27 (2) (1) (28).png>)
 
 Now click on the URL, you will be redirected to the SCEPman instance website:
 
-![](../../.gitbook/assets/2021-07-02-16_19_49-scepman-server-node-and-4-more-pages-c4a8-ehamed-microsoft-edge.png)
+![](../../.gitbook/assets/2021-07-02-16\_19\_49-scepman-server-node-and-4-more-pages-c4a8-ehamed-microsoft-edge.png)
 
-Copy the path URL \(you can copy it by clicking on the copy symbol at the end\) and note it, you will need it later on.
+Copy the path URL (you can copy it by clicking on the copy symbol at the end) and note it, you will need it later on.
 
 | ​[Back to Trial Guide​](../../scepman-deployment/trial-guide.md#step-4-configure-intune-deployment-profiles) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-9-configure-intune-deployment-profiles) | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-11-configure-intune-deployment-profiles) |
-| :--- | :--- | :--- |
-
-
-
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
 

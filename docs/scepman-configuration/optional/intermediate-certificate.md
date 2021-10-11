@@ -14,22 +14,22 @@ You need to grant and Azure AD App and your user account access to the Azure Key
 2. Click on **Access policies** in the left navigation pane.
 3. Click on **Add Access Policy** 
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.23.16.png)
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-15.23.16 (1).png>)
 
-1. Click **Configure from template \(optional\)** and choose **Certificate Management**.
+1. Click **Configure from template (optional)** and choose **Certificate Management**.
 2. Now you must select a principal by clicking on **None selected** and search for your Azure AD App Registration.
 3. To close the dialog press **Select** and then press **Add**.
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.34.16.png)
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-15.34.16 (1).png>)
 
 Now repeat this for your own user account:
 
 1. Click on **Add Access Policy** again.
-2. Again, click **Configure from template \(optional\)** and choose **Certificate Management**.
+2. Again, click **Configure from template (optional)** and choose **Certificate Management**.
 3. Select a principal by clicking on **None selected**. But this time, search for your own administrative user account.
 4. Close the dialog with **Select** and **Add**.
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28 (2) (2) (2) (2) (2).png>)
 
 1. To save your new access policies you must click on **Save** in the upper left corner of the window.
 
@@ -39,7 +39,7 @@ After saving this access policies successfully, your Azure AD app is permitted t
 
 You must create the certificate via the Key Vault API. This is because not all flags and features are available via UI and native PowerShell CMDlets. Add values for the six parameters TenantID, ApplicationID, ApplicationKey, KeyVaultName, NewCertName, and CompanyName to the following PowerShell script. [Create a new Application Secret](../azure-app-registration.md#azure-app-registration-client-secret) to use as ApplicationKey in your Azure AD App registration with minimum lifetime.
 
-```text
+```
 ###################################################################################
 #                                                                                 #
 # PowerShell Script to generate a CSR for a SCEPman Intermediate CA certificate   #
@@ -137,14 +137,14 @@ CN=$($config.NewCertName), OU=$($config.TenantID), O=$($config.CompanyName) in A
 
 ## Issue the Intermediate CA Certificate
 
-Now, submit your CSR to your Root CA and retrieve your issued Intermediate CA Certificate. Save the certificate on disk \(\(.cer\)\), we will upload it and merge with the private key in Azure Key Vault later.
+Now, submit your CSR to your Root CA and retrieve your issued Intermediate CA Certificate. Save the certificate on disk ((.cer)), we will upload it and merge with the private key in Azure Key Vault later.
 
 ## Upload the Intermediate CA Certificate
 
 1. In Azure Key Vault, click on your certificate and press **Certificate Operation**  
 2. **\*\*Now you can see the options** Download CSR **and** Merge Signed Request\*\*
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18%20%281%29%20%282%29%20%283%29.png)
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18 (1) (2) (5).png>)
 
 1. Click on **Merge Signed Request** and upload your Intermediate CA Certificate. After you have uploaded the signed request, you can see the valid certificate in your Azure Key Vault in the area **Completed**
 
@@ -161,11 +161,9 @@ AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName AppConfig:KeyVaul
 1. As value you must insert your new certificate name and the new subject name.  
 2. To complete this step, you must click on **Save** in the upper left part.
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40.png)
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40 (1).png>)
 
 Please restart the Azure App Service and then navigate to your SCEPman URL. On the SCEPman Status page you can see the new configuration and download the new intermediate certificate to deploy this via Endpoint Manager.
 
 | Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-6-configure-log-collection) |
-| :--- | :--- | :--- |
-
-
+| ------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------- |

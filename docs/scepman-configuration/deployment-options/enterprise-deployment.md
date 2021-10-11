@@ -1,7 +1,4 @@
 ---
-category: Deployment (Optional)
-title: GitHub Deployment
-order: 1
 description: GitHub Deployment
 ---
 
@@ -15,7 +12,7 @@ SCEPman Enterprise Edition only
 Recommended for production
 {% endhint %}
 
-This article will show you how you can deploy SCEPman via GitHub. But why should you do this?  
+This article will show you how you can deploy SCEPman via GitHub. But why should you do this?\
 Via the GitHub deployment you have full control of the resource naming.
 
 ## Start the Deployment
@@ -30,17 +27,15 @@ Click the following deploy button to start the deployment via GitHub:
 
 Next, you will see the following configuration menu:
 
-![](../../.gitbook/assets/scepman_optional1%20%281%29%20%282%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%282%29%20%281%29%20%282%29.png)
+![](<../../.gitbook/assets/scepman_optional1 (1) (2) (3) (3) (3) (3) (3) (3) (2) (1) (3).png>)
 
-1. Select an existing resource group or create a new one \(SCEPman resources will be deployed in this group\)
+1. Select an existing resource group or create a new one (SCEPman resources will be deployed in this group)
 2. Set the location according to your location
-3. Enter your **App Registration Guid** \(App client ID\)
-4. Enter your **App Registration Key** \(Client secret\)
+3. Enter your **App Registration Guid** (App client ID)
+4. Enter your **App Registration Key** (Client secret)
 5. Define a **Key Vault Name**, **App Service Plan Name** and **App Service Name**
 6. Then, click **I agree to the terms...**
 7. Finally, click **Purchase**
 
 | Back to Trial Guide | Back to Community Guide | [Back to Enterprise Guide](../../scepman-deployment/enterprise-guide.md#step-2-deploy-scepman-base-services) |
-| :--- | :--- | :--- |
-
-
+| ------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------ |

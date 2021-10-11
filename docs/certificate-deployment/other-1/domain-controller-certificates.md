@@ -10,13 +10,13 @@ This feature requires version **1.6** or above.
 
 You can use SCEPman to issue Kerberos authentication certificates to your domain controllers. This allows your AAD or hybrid-joined devices to authenticate seamlessly when accessing on-premises resources. This can be used to implement the **Hybrid Key trust for Windows Hello for Business**. The SCEPman will replace the requirement of a **Public key infrastructure**. Details can be found [here](https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-key-trust-prereqs)
 
-## Root CA without Enhanced Key Usage \(EKU\) Extension
+## Root CA without Enhanced Key Usage (EKU) Extension
 
-**This feature has new requirements to the Root CA.**  
-If you are updating from an earlier version as **1.6** you must generate a **new** Root CA.  
-To support Kerberos authentication certificates the CA certificate must contain either no Enchanced Key Usage \(EKU\) extension or it must include Kerberos Authentication and Smart Card Logon.
+**This feature has new requirements to the Root CA.**\
+If you are updating from an earlier version as **1.6** you must generate a **new** Root CA.\
+To support Kerberos authentication certificates the CA certificate must contain either no Enchanced Key Usage (EKU) extension or it must include Kerberos Authentication and Smart Card Logon.
 
-If you are starting with SCEPman **1.6** and generate the Root CA with our SCEPman, you can skip the following steps.  
+If you are starting with SCEPman **1.6** and generate the Root CA with our SCEPman, you can skip the following steps.\
 Otherwise please follow this guide to generate a new Root CA.
 
 CA Suitability on SCEPman Dashboard:
@@ -31,7 +31,7 @@ If you generate a new CA certificate you must update your Intune policies and de
 2. Check if your User Account is added to the **Access policies** with all certificate permissions
 3. Go to **Certificates**, select your CA certificate and click on **Delete**
 4. After you have successful deleted the CA certificate you must click on **Manage deleted certificates**
-5. Select your CA certificate, that you have deleted in Step 3 and click on **Purge** \(Keep in mind that after you have purged the certificate you cannot restore it!\)
+5. Select your CA certificate, that you have deleted in Step 3 and click on **Purge** (Keep in mind that after you have purged the certificate you cannot restore it!)
 6. Now restart your SCEPman App Services
 7. Once your App Services are restarted open the SCEPman Dashboard by navigating to your SCEPman URL
 8. You can see the section **Config issues**, please follow the steps in this section.
@@ -39,12 +39,12 @@ If you generate a new CA certificate you must update your Intune policies and de
 
 CA Suitability on SCEPman Dashboard:
 
-![](../../.gitbook/assets/screenshot-2020-11-04-at-11.30.23%20%281%29%20%281%29%20%281%29.png)
+![](<../../.gitbook/assets/screenshot-2020-11-04-at-11.30.23 (1) (1) (1) (1).png>)
 
 ## Configuration Changes to the SCEPman Service
 
-To enable the feature, you must add two application settings in your SCEPman service. In the current implementation we use a pre-shared key \(password\) for DC requests.  
-**Please generate a new key/password and store it somewhere safe.** \(you will need it in the following steps and later, on the domain Controllers\)
+To enable the feature, you must add two application settings in your SCEPman service. In the current implementation we use a pre-shared key (password) for DC requests.\
+**Please generate a new key/password and store it somewhere safe.** (you will need it in the following steps and later, on the domain Controllers)
 
 1. Navigate to **App Services**
 2. Then choose your SCEPman app
@@ -63,17 +63,17 @@ To enable the feature, you must add two application settings in your SCEPman ser
 
 Certificates used for Kerberos authentication need to be trusted within the AD domain as authentication CA certificates. Please download the CA certificate from the SCEPman Dashboard. If you stored the file as `scepman-root.cer`, you can publish the root CA certificate with the following command with an account that has Enterprise Administrator rights:
 
-```text
+```
 certutil -f -dsPublish scepman-root.cer NTAuthCA
 ```
 
 Analogously, execute the following command to push the SCEPman CA certificate to the Trusted Root certificate store for all machines in the AD Forest:
 
-```text
+```
 certutil -f -dsPublish scepman-root.cer RootCA
 ```
 
-Afterwards, the CA certificate is generally trusted in AD and especially trusted for Kerberos Authentication. However, it takes some time \(in default configuration up to 8 hours\) until all devices receive this configuration. You may speedup this process on any machine by executing `gpupdate /force`, e.g. on the domain controllers.
+Afterwards, the CA certificate is generally trusted in AD and especially trusted for Kerberos Authentication. However, it takes some time (in default configuration up to 8 hours) until all devices receive this configuration. You may speedup this process on any machine by executing `gpupdate /force`, e.g. on the domain controllers.
 
 ## Installation on the Client
 
@@ -81,7 +81,7 @@ Then you must download our Open Source SCEP client software [SCEPClient](https:/
 
 Execute the following command in an elevated command prompt on a domain controller to receive a Domain Controller certificate from SCEPman:
 
-```text
+```
 ScepClient.exe newdccert https://your-scepman-domain/dc RequestPassword
 ```
 
@@ -95,17 +95,16 @@ The above command requests a new DC certificate whether or not there already is 
 
 ### Automated Certificate Renewal
 
-For a fully automated renewal of certificates, you should distribute ScepClient to **all** your domain controllers, together with the PowerShell script [enroll-dc-certificate.ps1](https://github.com/scepman/scepclient/blob/master/enroll-dc-certificate.ps1). Add a Scheduled task that executes the following command in a SYSTEM context \(adapt the URL and request password\):
+For a fully automated renewal of certificates, you should distribute ScepClient to **all** your domain controllers, together with the PowerShell script [enroll-dc-certificate.ps1](https://github.com/scepman/scepclient/blob/master/enroll-dc-certificate.ps1). Add a Scheduled task that executes the following command in a SYSTEM context (adapt the URL and request password):
 
-```text
+```
 powershell -ExecutionPolicy RemoteSigned c:\scepman\enroll-dc-certificate.ps1 -SCEPURL https://your-scepman-domain/dc -SCEPChallenge RequestPassword -ValidityThreshold (New-TimeSpan -Days 30)
 ```
 
 Please make sure that the PowerShell script resides in the same directory as SCEPClient.exe and its additional dependencies. Furthermore, ensure that the working directory is the same as the one where SCEPClient.exe is stored:
 
-![Configuring the execution action in the Scheduled Task](../../.gitbook/assets/image%20%2817%29.png)
+![Configuring the execution action in the Scheduled Task](<../../.gitbook/assets/image (17).png>)
 
 This checks for existing DC certificates in the machine store. Only if there are no suitable certificates with at least 30 days validity, it uses ScepClient.exe to request a new DC certificate from SCEPman.
 
 For WHfB, all DCs running version 2016 or newer need a Kerberos Authentication certificate. Older DCs forward authentication requests to newer DCs, thus they do not necessarily require a Kerberos Authentication certificate. It is a best practice, though, to supply them with certificates, too.
-
