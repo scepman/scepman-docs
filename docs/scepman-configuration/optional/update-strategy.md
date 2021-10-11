@@ -46,31 +46,31 @@ Now your production App Service is running with a custom artifacts location and 
 1. In your **App Service** navigate to **Deployment Slots**
 2. You can see your current slot marked as **PRODUCTION** with the status **Running**, this is your primary App slot
 
-![](../../.gitbook/assets/screen-shot-2021-01-25-at-17.35.39.png)
+![](../../../.gitbook/assets/screen-shot-2021-01-25-at-17.35.39.png)
 
 3\. With the button **Add Slot** you get a new wizard to enter a **Name** and choose which existing slot you want to **clone settings from**
 
-![](../../.gitbook/assets/screen-shot-2021-01-25-at-17.38.38.png)
+![](../../../.gitbook/assets/screen-shot-2021-01-25-at-17.38.38.png)
 
 4\. Then click on **Add** and wait until you geht the message that the slot is created successfully and **Close** the wizard\
 5\. navigate to **Identity** in your SCEPman **App Service** and  and turn it **on**, then **Save**\
 ****6. Go to the **Key Vault** of your SCEPman instance, navigate to **Access polices **and add a new **Access Policy** for the new pre-release slot you deployed (your cloned instance). 
 
-![](../../.gitbook/assets/2021-07-09-15\_57\_46-gkscep02-keyvault-microsoft-azure-and-4-more-pages-c4a8-ehamed-microsoft-.png)
+![](../../../.gitbook/assets/2021-07-09-15\_57\_46-gkscep02-keyvault-microsoft-azure-and-4-more-pages-c4a8-ehamed-microsoft-.png)
 
 Now add for **Key, Secret and Certificate permissions** all permissions except the **Privileged Certificate Operations** "**Purge"** let it unchecked like in the picture:
 
-![](../../.gitbook/assets/2021-07-09-15\_59\_46-add-access-policy-microsoft-azure-and-4-more-pages-c4a8-ehamed-microsoft-.png)
+![](../../../.gitbook/assets/2021-07-09-15\_59\_46-add-access-policy-microsoft-azure-and-4-more-pages-c4a8-ehamed-microsoft-.png)
 
 **Select principal**: by default it has the same name of the original instance with **/slots/Pre-release **at the end , **Select **it, **Add** and **Save**\
 7\. Now you can see the new **Deployment Slot** that is in status **Running** but have a **Traffic %** of zero\
 8\. You can now click on the **NAME** of your new deployment Slot (Hyperlink) to jump directly to the App Service settings of this slot
 
-![](../../.gitbook/assets/screen-shot-2021-01-25-at-17.41.23.png)
+![](../../../.gitbook/assets/screen-shot-2021-01-25-at-17.41.23.png)
 
 9\. Ensure that you are on your new Deployment Slot and following the steps described in **Application Artifacts** under **Change Artifacts** to point the **WEBSITE_RUN_FROM_PACKAGE** to the GitHub of SCEPman
 
-![](../../.gitbook/assets/screen-shot-2021-01-25-at-17.42.45.png)
+![](../../../.gitbook/assets/screen-shot-2021-01-25-at-17.42.45.png)
 
 {% content-ref url="application-artifacts.md" %}
 [application-artifacts.md](application-artifacts.md)

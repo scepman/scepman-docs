@@ -12,7 +12,7 @@ On your **App Service** navigate to **Configuration** and then you find this und
 
 We recommend defining settings in the App Service Configuration except for passwords.
 
-![](../../../.gitbook/assets/2021-08-02-10_14_03-posteingang-eyad.hamed-glueckkanja-gab.com-outlook.png)
+![](../../../../.gitbook/assets/2021-08-02-10\_14\_03-posteingang-eyad.hamed-glueckkanja-gab.com-outlook.png)
 
 ## Secure Configuration in Azure Key Vault
 
@@ -28,19 +28,34 @@ We recommend using this type of configuration only for sensitive information.
 
 ## List of Settings
 
-{% page-ref page="basics.md" %}
+{% content-ref url="basics.md" %}
+[basics.md](basics.md)
+{% endcontent-ref %}
 
-{% page-ref page="certificates.md" %}
+{% content-ref url="certificates.md" %}
+[certificates.md](certificates.md)
+{% endcontent-ref %}
 
-{% page-ref page="intune-validation.md" %}
+{% content-ref url="intune-validation.md" %}
+[intune-validation.md](intune-validation.md)
+{% endcontent-ref %}
 
-{% page-ref page="dc-validation.md" %}
+{% content-ref url="dc-validation.md" %}
+[dc-validation.md](dc-validation.md)
+{% endcontent-ref %}
 
-{% page-ref page="static-validation.md" %}
+{% content-ref url="static-validation.md" %}
+[static-validation.md](static-validation.md)
+{% endcontent-ref %}
 
-{% page-ref page="jamf-validation.md" %}
+{% content-ref url="jamf-validation.md" %}
+[jamf-validation.md](jamf-validation.md)
+{% endcontent-ref %}
 
-{% page-ref page="azure-ad.md" %}
+{% content-ref url="azure-ad.md" %}
+[azure-ad.md](azure-ad.md)
+{% endcontent-ref %}
 
-{% page-ref page="azure-keyvault.md" %}
-
+{% content-ref url="azure-keyvault.md" %}
+[azure-keyvault.md](azure-keyvault.md)
+{% endcontent-ref %}

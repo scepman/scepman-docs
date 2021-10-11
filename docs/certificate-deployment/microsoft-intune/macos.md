@@ -10,11 +10,11 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](<../../.gitbook/assets/scepman24 (1) (7) (8) (8) (8) (4) (5).png>)
+![](<../../../.gitbook/assets/scepman24 (1) (7) (8) (8) (8) (4) (13).png>)
 
 Then, create a profile in Microsoft Intune:
 
-![](<../../.gitbook/assets/scepman_macos1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1).png>)
+![](<../../../.gitbook/assets/scepman_macos1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2).png>)
 
 1. Enter a **Name**
 2. As **Platform** select **macOS**
@@ -27,7 +27,7 @@ When you are done with it, you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
 
-![](<../../.gitbook/assets/scepman27 (2) (1) (7).png>)
+![](<../../../.gitbook/assets/scepman27 (2) (1) (15).png>)
 
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)\
 ('xxx' is a placeholder)
@@ -42,7 +42,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 6. Select **SCEP certificate** as **Profile type**
 7. Click **Settings**
 
-![](<../../.gitbook/assets/scepman_macos1\_1 (1) (1).png>)
+![](<../../../.gitbook/assets/scepman_macos1\_1 (1).png>)
 
 1. Configure the **SCEP Certificate**
 
@@ -52,7 +52,7 @@ You can not configure all **SCEP Certificate** settings. This is because some se
 With our automatically set settings, we fulfill Apple's certificate requirements. For more details click [here](https://support.apple.com/en-us/HT210176).
 {% endhint %}
 
-![](<../../.gitbook/assets/scepman_macos2 (1) (1).png>)
+![](<../../../.gitbook/assets/scepman_macos2 (1).png>)
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**
@@ -71,11 +71,11 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](<../../.gitbook/assets/scepman24 (1) (7) (8) (8) (8) (4) (5).png>)
+![](<../../../.gitbook/assets/scepman24 (1) (7) (8) (8) (8) (4) (13).png>)
 
 Then, create a profile in Microsoft Intune:
 
-![](<../../.gitbook/assets/scepman_macos1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2).png>)
+![](<../../../.gitbook/assets/scepman_macos1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1).png>)
 
 1. Enter a **Name**
 2. As **Platform** select **macOS**
@@ -88,7 +88,7 @@ When you are done with it you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
 
-![](<../../.gitbook/assets/scepman27 (2) (1) (7).png>)
+![](<../../../.gitbook/assets/scepman27 (2) (1) (15).png>)
 
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)\
 _\*\*_('xxx' is a placeholder)
@@ -103,7 +103,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 6. Select **SCEP certificate** as **Profile type**
 7. Click **Settings**
 
-![](<../../.gitbook/assets/scepman_user_mac\_1 (1) (1).png>)
+![](<../../../.gitbook/assets/scepman_user_mac\_1 (1) (1).png>)
 
 1. Configure the **SCEP Certificate**
 
@@ -113,7 +113,7 @@ You can not configure all **SCEP Certificate** settings. This is because some se
 With our automatically set settings, we fulfill Apple's certificate requirements. For more details click [here](https://support.apple.com/en-us/HT210176).
 {% endhint %}
 
-![](<../../.gitbook/assets/scepman_user_mac\_2 (1).png>)
+![](../../../.gitbook/assets/scepman_user_mac\_2.png)
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**
