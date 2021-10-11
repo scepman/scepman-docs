@@ -69,8 +69,9 @@ SCEPman caps the certificate validity to the configured maximum in setting _AppC
 
 * **Certificate type**: Device
 * **Subject name format: **CN={{AAD_Device_ID}}
+* **Subject alternative name: Attribute: **URI, **Value:** IntuneDeviceId://{{DeviceID}}
 
-![](../../.gitbook/assets/2021-06-29-14\_10\_34-.png)
+![](<../../.gitbook/assets/2021-10-11 16\_26\_21-SCEP certificate - Microsoft Endpoint Manager admin center and 12 more pages - C.png>)
 
 {% hint style="warning" %}
 The setting Key Storage Provider (KSP) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
@@ -114,12 +115,12 @@ Next, to deploy the user certificates you must create a SCEP certificate profile
 8. Click **Create**
 9. Provide a **Name** e.g. _\*\*Win10 - SCEP certificate - User certificate_
 
-Set the properties like shown below.
+Set the properties as shown below.
 
 {% hint style="warning" %}
 There are some restrictions to the **SCEP User Certificate** settings:
 
-You must add the User principal name as Subject alternative name. **Add '{{UserPrincipalName}}' as Subject Alternative Name of type User principal name (UPN).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.\
+You must add the User principal name as the Subject alternative name. **Add '{{UserPrincipalName}}' as Subject Alternative Name of type User principal name (UPN).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.\
 You should **add 'L={{AAD_Device_ID}}' **as part of the Subject. This ensures the user certificate can be linked to the device where it resides on. This may improve revocation and compliance checks. \
 SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the settings configured here unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_. \
 For SCEPman version before 1.5, the validity period is set to a fixed 6 month. For SCEPman 1.5 and above, SCEPman caps the certificate validity to the configured maximum in setting _AppConfig:ValidityPeriodDays_, but otherwise uses the validity configured in the request.
@@ -129,11 +130,12 @@ For SCEPman version before 1.5, the validity period is set to a fixed 6 month. F
 * **Subject name format: **CN={{UserName}},L={{AAD_Device_ID}}
 * **Subject alternative name:**
 
-| Attribute                 | Value                 |
-| ------------------------- | --------------------- |
-| User principal name (UPN) | {{UserPrincipalName}} |
+| Attribute                         | Value                         |
+| --------------------------------- | ----------------------------- |
+| User principal name (UPN)         | {{UserPrincipalName}}         |
+| Uniform Resource Identifier (URI) | IntuneDeviceId://{{DeviceID}} |
 
-![](../../.gitbook/assets/2021-06-29-14\_27\_06-.png)
+![](<../../.gitbook/assets/2021-10-11 16\_30\_57-SCEP certificate - Microsoft Endpoint Manager admin center and 12 more pages - C.png>)
 
 {% hint style="warning" %}
 The setting Key Storage Provider (KSP) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
@@ -142,14 +144,14 @@ The setting Key Storage Provider (KSP) determines the storage location of the pr
 * Intel: 11.8.50.3399, 2.0.0.2060
 * Infineon: 7.63.3353.0
 
-If you use TPMs with this firmware, either update your firmware to a newer version or select "Software KSP" as key storage provider.
+If you use TPMs with this firmware, either update your firmware to a newer version or select "Software KSP" as a key storage provider.
 {% endhint %}
 
 * Scroll down and enter the URL you have noted, Click **Next**
 * Assign users and groups, click **Next**
 * Finally click **Create**
 
-When all its done, you have the following two certificate configurations:
+When all is done, you have the following two certificate configurations:
 
 * SCEPman - SCEP Device certificate
 * SCEPman - Trusted root certificate
@@ -193,14 +195,15 @@ Set the properties like shown below. Have special attention for the Key Usage se
 * **Subject name format: **CN={{UserName}},E={{EmailAddress}},L={{AAD_Device_ID}}
 * **Subject alternative name:**
 
-| Attribute                 | Value                 |
-| ------------------------- | --------------------- |
-| User principal name (UPN) | {{UserPrincipalName}} |
-| Email address             | {{EmailAddress}}      |
+| Attribute                 | Value                         |
+| ------------------------- | ----------------------------- |
+| User principal name (UPN) | {{UserPrincipalName}}         |
+| Email address             | {{EmailAddress}}              |
+| URI                       | IntuneDeviceId://{{DeviceID}} |
 
-![](../../.gitbook/assets/2021-07-07-10\_02\_35-christoph-hannebauer-\_-microsoft-teams.png)
+![](<../../.gitbook/assets/2021-10-11 16\_37\_34-SCEP certificate - Microsoft Endpoint Manager admin center and 12 more pages - C.png>)
 
-We recommend to set Renewal Threshold (%) to a value that ensures certificates are renewed at least 6 months before expiration when issuing S/MIME signature certificates. This is because emails signed with expired certificates are shown to have invalid signatures in Outlook, which confuses users. Having a new certificate long before the old one expires ensures that only older emails show this behavior, which users are more unlikely to look at. For example, if your signature certificates are valid for one year, you should set the Renewal Threshold to at least 50 %.
+We recommend setting Renewal Threshold (%) to a value that ensures certificates are renewed at least 6 months before expiration when issuing S/MIME signature certificates. This is because emails signed with expired certificates are shown to have invalid signatures in Outlook, which confuses users. Having a new certificate long before the old one expires ensures that only older emails show this behavior, which users are more unlikely to look at. For example, if your signature certificates are valid for one year, you should set the Renewal Threshold to at least 50 %.
 
 * Scroll down and enter the URL you have noted, Click **Next**
 * Assign users and groups, click **Next**
