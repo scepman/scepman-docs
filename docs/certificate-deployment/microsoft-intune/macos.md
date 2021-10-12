@@ -82,7 +82,7 @@ Next, to finally deploy the user certificates you have to create a SCEP certific
 10. Configuration settings as in the picture below
 
 {% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to fixed a 6 month currently. The red rectangle is a settings that is free to modify. Long term all settings will be supported for configuration. **The setting for 'Subject name format' is freely selectable. For Subject alternative name we recommend to set 'User principal name (UPN)'.**
+You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the green rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the green rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to fixed a 6 month currently. The red rectangle is a settings that is free to modify. Long term all settings will be supported for configuration. **The setting for 'Subject name format' is freely selectable. For Subject alternative name we recommend to set 'User principal name (UPN)'.**
 
 With our automatically set settings, we fulfill Apple's certificate requirements. For more details click [here](https://support.apple.com/en-us/HT210176).
 {% endhint %}
