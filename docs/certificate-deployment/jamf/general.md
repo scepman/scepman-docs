@@ -12,9 +12,9 @@ Jamf integration of SCEPman can be easily enabled via the following app configur
 
 | Setting                                                                                                                                                                            | Description                                                                      | Example                                |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------- |
-| [AppConfig:JamfValidation:Enabled](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-enabled)                                  | Do you want to use SCEPman with JAMF?                                            | true                                   |
-| [AppConfig:JamfValidation:RequestPassword](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-requestpassword)                  | JAMF authenticates its certificate requests at SCEPman with this secure password | _auto generated 32 character password_ |
-| [AppConfig:JamfValidation:ValidityPeriodDays](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-validityperioddays) (optional) | How many days shall certificates issued via JAMF be valid at most?               | 365                                    |
+| [AppConfig:JamfValidation:Enabled](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-enabled)                                  | Do you want to use SCEPman with Jamf?                                            | true                                   |
+| [AppConfig:JamfValidation:RequestPassword](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-requestpassword)                  | Jamf authenticates its certificate requests at SCEPman with this secure password | _auto generated 32 character password_ |
+| [AppConfig:JamfValidation:ValidityPeriodDays](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-validityperioddays) (optional) | How many days shall certificates issued via Jamf be valid at most?               | 365                                    |
 
 ## API Connection
 
@@ -22,7 +22,7 @@ SCEPman needs to be connected to the Jamf API to check the status of onboarded c
 
 | Setting                                                                                                                                                   | Description                           | Example                         |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------------- |
-| [AppConfig:JamfValidation:URL](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-url)                 | The URL of your JAMF instance         | `https://contoso.jamfcloud.com` |
+| [AppConfig:JamfValidation:URL](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-url)                 | The URL of your Jamf instance         | `https://contoso.jamfcloud.com` |
 | [AppConfig:JamfValidation:APIUsername](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-apiusername) | The user name of Jamf service account | svc-scepman (see screenshot)    |
 | [AppConfig:JamfValidation:APIPassword](../../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-apipassword) | The password for the above account    | password123 (see screenshot)    |
 

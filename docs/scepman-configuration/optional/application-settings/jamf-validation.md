@@ -8,9 +8,9 @@ Applicable to version 1.7 and above
 
 **Value:** _true_ or _false_
 
-**Description:** This setting helps you to request certificates via the [JAMF](https://github.com/scepman/scepman-docs/tree/6358a93fe3c35dd51ae9501a385049ad1c8feb0b/docs/certificate-deployment/jamf/general.md) MDM system.
+**Description:** This setting helps you to request certificates via the [Jamf](https://github.com/scepman/scepman-docs/tree/6358a93fe3c35dd51ae9501a385049ad1c8feb0b/docs/certificate-deployment/jamf/general.md) MDM system.
 
-**True**: SCEPman listens at the additional SCEP server endpoint with the path `/jamf`. Use in conjunction with AppConfig:JamfValidation:RequestPassword. **False** \(default\): SCEPman does not issue certificates for Jamf.
+**True**: SCEPman listens at the additional SCEP server endpoint with the path `/jamf`. Use in conjunction with AppConfig:JamfValidation:RequestPassword. **False** (default): SCEPman does not issue certificates for Jamf.
 
 ## AppConfig:JamfValidation:RequestPassword
 
@@ -42,7 +42,7 @@ Applicable to version 1.7 and above
 
 **Value:** _String_
 
-**Description:** The root URL of your JAMF instance. If you use JAMF Cloud, this will probably look like `https://your-instance.jamfcloud.com/`.
+**Description:** The root URL of your Jamf instance. If you use Jamf Cloud, this will probably look like `https://your-instance.jamfcloud.com/`.
 
 
 
@@ -54,11 +54,11 @@ Applicable to version 1.7 and above
 
 **Value:** _String_
 
-**Description:** The name of a service account in JAMF that SCEPman uses to authenticate on your JAMF instance. SCEPman needs the following permissions to query for computers, devices, and users:
+**Description:** The name of a service account in Jamf that SCEPman uses to authenticate on your Jamf instance. SCEPman needs the following permissions to query for computers, devices, and users:
 
-* Computers -&gt; Read
-* Mobile Devices -&gt; Read
-* Users -&gt; Read
+* Computers -> Read
+* Mobile Devices -> Read
+* Users -> Read
 
 ## AppConfig:JamfValidation:APIPassword
 
@@ -71,6 +71,4 @@ Applicable to version 1.7 and above
 **Description:** The password of the service account configured in AppConfig:JamfValidation:APIUsername.
 
 We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--JamfValidation--APIPassword_.
-
-
 
