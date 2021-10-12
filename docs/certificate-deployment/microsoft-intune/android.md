@@ -16,24 +16,23 @@ Download the CA certificate:
 
 Then, create a profile in Microsoft Intune:
 
-![](<../../../.gitbook/assets/scepman_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1) (4).png>)
+1. Navigate to **Microsoft Intune**
+2. Click **Devices**
+3. Click **Configuration profiles**
+4. Click + **Create profile**
+5. Platform: **Android Enterprise**
+6. Profile type: **Trusted certificate**
+7. **Create**
+8. Set profile **Name **and **Description**(optional)
+9. Upload your root CA certificate
+10. Assign users and/or groups
+11. Finally, click **Create**
 
-1. Download the CA Certificate
-2. Then, create a profile in Microsoft Intune
-3. Select **Android Enterprise** as **Platform**
-4. As **Profile type** select **Trusted certificate** (under **Work Profile Only**)
-5. Click **Settings** and **select a valid .cer file**
-6. Then click **OK**
-7. Finally click **Create**
+![](<../../.gitbook/assets/2021-10-12 15\_28\_15-.png>)
 
 When you are finished with it, you can deploy this profile to your devices.
 
-Now, you have to create a SCEP certificate profile to deploy the device certificates. Make note of the SCEP server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman
-
-![](<../../../.gitbook/assets/scepman27 (2) (1) (4).png>)
-
-Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)\
-('xxx' is a placeholder)
+Now, you must create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server, you can find it from [here](windows-10.md#how-to-find-scep-url-for-intune)
 
 Next, to finally deploy the device certificates, you have to create a SCEP certificate profile in Intune:
 
@@ -42,15 +41,12 @@ Next, to finally deploy the device certificates, you have to create a SCEP certi
 3. Choose **Profile** and click **Create profile**
 4. Then, enter a **Name**
 5. Select **Android Enterprise** as **Platform**
-6. Select **SCEP certificate**, under **Work Profile Only**, as **Profile type**
-7. Click **Settings**
-
-![](<../../../.gitbook/assets/scepman_android1\_1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1).png>)
-
-1. Configure the **SCEP Certificate**
+6. Select **SCEP certificate**, under **Fully Managed, Dedicated, and Work Profile**, as **Profile type**
+7. **Create, **then choose **Name** and description (optional) for the profile, **Next**
+8. Set the **Configuration settings** as in the picture below
 
 {% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **There is a dependency on the {{AAD_Device_ID} in the subject name, which is used as a seed for the certificate serial number generation. Therefore, the subject name must include**.
+You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the green rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the green rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **There is a dependency on the {{AAD_Device_ID} in the subject name, which is used as a seed for the certificate serial number generation. Therefore, the subject name must include**.
 {% endhint %}
 
 ![](<../../../.gitbook/assets/scepman_android2 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1).png>)
