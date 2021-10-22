@@ -88,9 +88,11 @@ Other settings can be chosen according to your requirements, but we **recommend 
 With our automatically set settings, we fulfill Apple's certificate requirements. For more details click [here](https://support.apple.com/en-us/HT210176).
 {% endhint %}
 
-1. Scroll down and enter the URL you have noted
-2. Then, click **Add**
-3. Next click **OK** and finally click **Create**
+![](<../../.gitbook/assets/2021-10-22 12\_32\_39-Window.png>)
+
+* Scroll down and enter the SCEPman URL you have noted
+* Click **Next, **Assign users and groups
+* **Next** and finally click **Create**
 
 When all is done, you have the following two certificate configurations:
 
