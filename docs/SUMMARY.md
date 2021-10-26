@@ -21,7 +21,6 @@
   * [Add a License Key](scepman-configuration/optional/add-a-license-key.md)
   * [Application Artifacts](scepman-configuration/optional/application-artifacts.md)
   * [Application Insights](scepman-configuration/optional/application-insights.md)
-  * [Autoscaling](scepman-configuration/optional/autoscaling.md)
   * [Application Settings](scepman-configuration/optional/application-settings/README.md)
     * [Basics](scepman-configuration/optional/application-settings/basics.md)
     * [Certificates](scepman-configuration/optional/application-settings/certificates.md)
@@ -31,6 +30,7 @@
     * [Jamf Validation](scepman-configuration/optional/application-settings/jamf-validation.md)
     * [Azure AD](scepman-configuration/optional/application-settings/azure-ad.md)
     * [Azure KeyVault](scepman-configuration/optional/application-settings/azure-keyvault.md)
+  * [Autoscaling](scepman-configuration/optional/autoscaling.md)
   * [Custom Domain](scepman-configuration/optional/custom-domain.md)
   * [Geo-redundancy](scepman-configuration/optional/geo-redundancy.md)
   * [Health Check](scepman-configuration/optional/health-check.md)
@@ -68,7 +68,6 @@
 * [Changelog](other/changelog.md)
 * [Licensing](other/licensing.md)
 
----
+***
 
-* [SCEPman Website](https://scepman.com/)
-
+* [SCEPman Website](https://scepman.com)
