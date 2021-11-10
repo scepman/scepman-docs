@@ -2,7 +2,11 @@
 
 ## AppConfig:AuthConfig:ApplicationId
 
-The Application ID from your Azure AD App registration. This setting is configured during the setup.
+The [Application (client) ID](../../azure-app-registration.md#basic-app-registration-application-id) from your Azure AD App registration. This setting is configured during the setup.
+
+{% hint style="warning" %}
+Please do not mix this up with the "Client Secret ID**"**. We need the "Application (client) ID", here.
+{% endhint %}
 
 {% hint style="danger" %}
 Changes can harm your service!
@@ -10,7 +14,11 @@ Changes can harm your service!
 
 ## AppConfig:AuthConfig:ApplicationKey
 
-The Application Key \(Client secret\) from your Azure AD App registration. This setting is configured during the setup.
+The [Application Key (client secret **value**)](../../azure-app-registration.md#azure-app-registration-client-secret) from your Azure AD App registration. This setting is configured during the setup.
+
+{% hint style="warning" %}
+Please do not mix this up with the "Client Secret **ID"**. We need the "Client Secret **Value"**, here.
+{% endhint %}
 
 {% hint style="danger" %}
 Changes can harm your service!
@@ -26,9 +34,8 @@ Changes can harm your service!
 
 ## AppConfig:SCEPResponseEncryptionAlgorithm
 
-The algorithm used to encrypt SCEP responses. Reasonable values include "2.16.840.1.101.3.4.1.42" for AES-256-CBC \(the default\) and "2.16.840.1.101.3.4.1.2" for AES-128-CBC.
+The algorithm used to encrypt SCEP responses. Reasonable values include "2.16.840.1.101.3.4.1.42" for AES-256-CBC (the default) and "2.16.840.1.101.3.4.1.2" for AES-128-CBC.
 
 {% hint style="danger" %}
 Changes can harm your service!
 {% endhint %}
-

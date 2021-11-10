@@ -2,7 +2,7 @@
 
 SCEPman needs to interact with your Azure Active Directory and Intune endpoints to provide the certificate and OCSP validation of users and devices. To provide the necessary permissions to SCEPman you need to create an App Registration within your tenant.
 
-## Basic App Registration
+## Generate App Registration (get Application ID)
 
 1. Login in to [Azure Portal](https://portal.azure.com)
 2. Navigate to **Azure Active Directory**
@@ -14,11 +14,11 @@ SCEPman needs to interact with your Azure Active Directory and Intune endpoints 
 
 ![](../../.gitbook/assets/2021-07-23-08\_49\_37-register-an-application-microsoft-azure-and-2-more-pages-c4a8-ehamed-micro.png)
 
-5\. You may copy the **Application (client) ID** now. The ID is important and will be needed later by SCEPman deployment. 
+5\. You may copy the **Application (client) ID** now. The ID is important and will be needed later by SCEPman deployment.&#x20;
 
 ![](../../.gitbook/assets/2021-07-23-08\_50\_59-scepmanreg-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-edge.png)
 
-## Azure App Registration / Client Secret
+## Generate Secret (get Client Secret Value)
 
 1\. Stay within **App registrations** and click on **Certificates & secrets**
 
@@ -28,15 +28,19 @@ SCEPman needs to interact with your Azure Active Directory and Intune endpoints 
 
 ![](../../.gitbook/assets/2021-07-23-09\_06\_11-azure-app-registration-scepman-docs-and-1-more-page-work-microsoft-edge.png)
 
-3\. **Copy the secret value** and write it down in a secure place
+3\. **Copy the secret value** and copy it down in a secure place.
 
 {% hint style="warning" %}
-Copy the client secret **value**. You will not be able to retrieve it after you leave this submenu
+Please do not mix it up with the "Client Secret **ID**". We need the "Client Secret **Value**", here.
 {% endhint %}
 
-![](../../.gitbook/assets/2021-07-23-09\_16\_32-scepmanreg-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-edge.png)
+{% hint style="warning" %}
+Copy the client secret value** **immediately. You will not be able to retrieve it after you leave this submenu.
+{% endhint %}
 
-## Azure App Registration / API permissions
+![](../.gitbook/assets/image.png)
+
+## Configure Permissions
 
 Stay within **App Registrations** and click on **API permissions**
 
@@ -52,7 +56,7 @@ Stay within **App Registrations** and click on **API permissions**
 
 ![](<../../.gitbook/assets/app-permission-directory-read (1) (1) (1) (1).png>)
 
-3\. Now click on **Add a permission** and choose **Intune**. When chosen, select **Application permissions** and search for scep. Add **secp_challenge_provider** as a permission
+3\. Now click on **Add a permission** and choose **Intune**. When chosen, select **Application permissions** and search for scep. Add **secp\_challenge\_provider** as a permission
 
 ![](<../../.gitbook/assets/app-permission-intune (1) (1) (1).png>)
 
