@@ -171,5 +171,7 @@ AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName AppConfig:KeyVaul
 
 Please restart the Azure App Service and then navigate to your SCEPman URL. On the SCEPman Status page you can see the new configuration and download the new intermediate certificate to deploy this via Endpoint Manager.
 
+Please check whether the CA certificate fulfills all requirement by visiting your SCEPman Homepage. Check what the homepage says next to "CA Suitability". If, for example, it says *CA Certificate is missing Key Usage "Key Encipherment".*, you should go back to step [Issue the Intermediate CA Certificate](#Issue_the_Intermediate_CA_Certificate) and correct the certificate issuance.
+
 | Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-6-configure-log-collection) |
 | ------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------- |
