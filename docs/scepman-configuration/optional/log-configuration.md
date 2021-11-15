@@ -30,7 +30,7 @@ We recommend storing your data in Log Analytics
 ### Log Analytics workspace
 
 1. Create a Log Analytics workspace (Microsoft Guide [Create a Log Analytics workspace](https://docs.microsoft.com/en-us/azure/azure-monitor/learn/quick-create-workspace#create-a-workspace)) You can also use an existing one.
-2. Go to your **App Service** and click on **Diagnostic settings (preview)**
+2. Go to your **App Service** and click on **Diagnostic settings**
 3. In the filed **Diagnostic setting name** you need to put in a name to identify your configuration
 4. Please select **Send to Log Analytics** under the **Destination details** and select your **Subscription** and **Log Analytics workspace**
 5. The last step is to select the needed data. We recommend **all Categories.**
