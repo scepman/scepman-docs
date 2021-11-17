@@ -140,7 +140,7 @@ CN=$($config.NewCertName), OU=$($config.TenantID), O=$($config.CompanyName) in A
 Now, submit your CSR to your Root CA and retrieve your issued Intermediate CA Certificate. Save the certificate on disk ((.cer)), we will upload it and merge with the private key in Azure Key Vault later.
 
 {% hint style="warning" %}
-If you are using Active Directory Certificate Services as an AD-integrated Root CA and hence must choose a Certificate Template, make sure that it includes the following Key Usages: "CRLSign", "DigitalSignature", "KeyEncipherment", and "KeyCertSign". KeyEncipherment is missing in the default template "Subordinate Certificate Authority", so you have to create a new Template with the required Key Usages.
+If you are using Active Directory Certificate Services as an AD-integrated Root CA and hence must choose a Certificate Template, it must include the following Key Usages: "CRLSign", "DigitalSignature", "KeyEncipherment", and "KeyCertSign". KeyEncipherment is missing in the default template "Subordinate Certificate Authority", and furthermore cannot be selected on new templates. Please contact our support to find a solution if you run into this problem.
 
 This warning does not apply to Stand-alone Root CAs, aka Offline Root CAs, as they take the Key Usages correctly from the CSR.
 {% endhint %}
