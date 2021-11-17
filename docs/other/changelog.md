@@ -2,6 +2,13 @@
 
 ## Versions
 
+### 2.0 - Soon in preview
+
+* Issuance and management of Web Server Certificates
+* Improved Perfomance with .NET 5.0
+* Compatibility with GCC High, GCC DoD, and 21Vianet environments
+* More to be announced
+
 ### 1.9 - July 2021
 
 * [JAMF User Certificates](../certificate-deployment/jamf/users.md)
