@@ -4,10 +4,19 @@
 
 ### 2.0 - Soon in preview
 
-* Issuance and management of Web Server Certificates
-* Improved Perfomance with .NET 5.0
+* Certificate Management
+  * Manually issue TLS Server certificates
+  * Revoke manually issued certificates
+  * Search for manual certificates
+* Library and Framework updates
+  * Improved Perfomance with .NET 5.0
+  * Azure Key Vault
+  * Other library updates
+* New UI
+  * So beautiful and with new logo
+  * Detailed information on activated SCEP endpoints
 * Compatibility with GCC High, GCC DoD, and 21Vianet environments
-* More to be announced
+* Various minor improvements
 
 ### 1.9 - July 2021
 
