@@ -58,7 +58,7 @@ Follow this instruction to create a storage account:
 
 ![](../../../.gitbook/assets/screenshot-2020-07-09-at-17.20.42.png)
 
-8\. You need to reload the **Storage Explorer (Preview)** and then you can see your container under **BLOB CONTAINERS**. Now you can download the Artifacts from our GithHub (See [Application Artifacts](application-artifacts.md#available-channels)) and upload the artifacts here.  
+8\. You need to reload the **Storage Explorer (Preview)** and then you can see your container under **BLOB CONTAINERS**. Now you can download the Artifacts from our GitHub (See [Application Artifacts](application-artifacts.md#available-channels)) and upload the artifacts here.  
 
 9\. After the successful upload you can select your blob and click on **Copy URL.** You need this URL in the Part **Change Artifacts (**[**Application Artifacts**](application-artifacts.md#change-artifacts)**)**
 
