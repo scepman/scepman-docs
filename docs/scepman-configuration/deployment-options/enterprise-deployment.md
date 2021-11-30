@@ -36,7 +36,7 @@ Next, you will see the following configuration menu:
 5. Enter your **App Registration Guid** (App client ID, you already copied before)
 6. Enter your **App Registration Key** (Client secret, you already copied before)
 7. Define a **Key Vault Name**, **App Service Plan Name** and **App Service Name**
-8. Finally, click **Review + Create, **then **Create**
+8. Finally, click **Review + Create,** then **Create**
 9. After the deployment is done, go to [create root certificate](../first-run-root-cert.md)
 
 | Back to Trial Guide | Back to Community Guide | [Back to Enterprise Guide](../../scepman-deployment/enterprise-guide.md#step-2-deploy-scepman-base-services) |

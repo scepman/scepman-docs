@@ -24,9 +24,9 @@ If you have a license key, you can paste it into the field **License Key**. Leav
 2. Set the location according to your location
 3. Set an Organization Name
 4. **Next, Review + Create**
-5. Azure AD **App Registration** Choose **Select Existing, **then click on **Make selection**
+5. Azure AD **App Registration** Choose **Select Existing,** then click on **Make selection**
 6. now search for the App Registration you already did, then click on **Select**
-7. Paste the value of **Client secret** you already copied in **App Registration Secret **(See picture below)
+7. Paste the value of **Client secret** you already copied in **App Registration Secret** (See picture below)
 8. **Create**
 
 ![](<../../.gitbook/assets/2021-10-11 14\_25\_40-Create SCEPman \_ Intune SCEP-as-a-Service - Microsoft Azure and 13 more pages - .png>)

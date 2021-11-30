@@ -23,7 +23,7 @@ Then, create a profile in Microsoft Intune:
 5. Platform: **Android Enterprise**
 6. Profile type: **Trusted certificate**
 7. **Create**
-8. Set profile **Name **and **Description**(optional)
+8. Set profile **Name** and **Description**(optional)
 9. Upload your root CA certificate
 10. Assign users and/or groups
 11. Finally, click **Create**
@@ -42,14 +42,14 @@ Next, to finally deploy the device certificates, you have to create a SCEP certi
 4. Then, enter a **Name**
 5. Select **Android Enterprise** as **Platform**
 6. Select **SCEP certificate**, under **Fully Managed, Dedicated, and Work Profile**, as **Profile type**
-7. **Create, **then choose **Name** and description (optional) for the profile, **Next**
+7. **Create,** then choose **Name** and description (optional) for the profile, **Next**
 8. Set the **Configuration settings** as in the picture below
 
 {% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the green rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the green rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **There is a dependency on the {{AAD_Device_ID} in the subject name, which is used as a seed for the certificate serial number generation. Therefore, the subject name must include**.
+You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the green rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the green rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **There is a dependency on the {{AAD\_Device\_ID} in the subject name, which is used as a seed for the certificate serial number generation. Therefore, the subject name must include**.
 {% endhint %}
 
-![](<../../../.gitbook/assets/scepman_android2 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1).png>)
+![](<../../../.gitbook/assets/scepman\_android2 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1).png>)
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**
@@ -70,7 +70,7 @@ Download the CA certificate:
 
 Then, create a profile in Microsoft Intune:
 
-![](<../../../.gitbook/assets/scepman_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1) (1).png>)
+![](<../../../.gitbook/assets/scepman\_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1) (1).png>)
 
 1. Download the CA Certificate
 2. Then, create a profile in Microsoft Intune
@@ -99,15 +99,15 @@ Next, to finally deploy the device certificates, you have to create a SCEP certi
 6. As **Profile type** select **SCEP certificate** (under **Device Owner Only**)
 7. Click **Settings**
 
-![](<../../../.gitbook/assets/scepman_android1\_1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2).png>)
+![](<../../../.gitbook/assets/scepman\_android1\_1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2).png>)
 
 1. Configure the **SCEP Certificate**
 
 {% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **There is a dependency on the {{AAD_Device_ID} in the subject name, which is used as a seed for the certificate serial number generation. Therefore, the subject name must include**.
+You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **There is a dependency on the {{AAD\_Device\_ID} in the subject name, which is used as a seed for the certificate serial number generation. Therefore, the subject name must include**.
 {% endhint %}
 
-![](<../../../.gitbook/assets/scepman_android2 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2).png>)
+![](<../../../.gitbook/assets/scepman\_android2 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2).png>)
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**
@@ -149,7 +149,7 @@ Download the CA certificate:
 
 Then, create a profile in Microsoft Intune:
 
-![](<../../../.gitbook/assets/scepman_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1) (3).png>)
+![](<../../../.gitbook/assets/scepman\_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1) (3).png>)
 
 1. Download the CA Certificate
 2. Then, create a profile in Microsoft Intune
@@ -178,7 +178,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 6. As **Profile type** select **SCEP certificate** (under **Device Owner Only**)
 7. Click **Settings**
 
-![](<../../../.gitbook/assets/scepman_user_android\_1 (2) (2) (2) (2) (2) (2) (2).png>)
+![](<../../../.gitbook/assets/scepman\_user\_android\_1 (2) (2) (2) (2) (2) (2) (2).png>)
 
 1. Configure the **SCEP Certificate**
 
@@ -186,7 +186,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **The setting for 'Subject name format' is freely selectable. For Subject alternative name we recommend to set 'User principial name (UPN)'.**
 {% endhint %}
 
-![](<../../../.gitbook/assets/scepman_user_android\_2 (2) (2) (2) (2) (2) (2) (2) (1).png>)
+![](<../../../.gitbook/assets/scepman\_user\_android\_2 (2) (2) (2) (2) (2) (2) (2) (1).png>)
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**
@@ -207,7 +207,7 @@ Download the CA certificate:
 
 Then, create a profile in Microsoft Intune:
 
-![](<../../../.gitbook/assets/scepman_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1).png>)
+![](<../../../.gitbook/assets/scepman\_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1).png>)
 
 1. Download the CA Certificate
 2. Then, create a profile in Microsoft Intune
@@ -236,7 +236,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 6. As **Profile type** select **SCEP certificate** (under **Device Owner Only**)
 7. Click **Settings**
 
-![](<../../../.gitbook/assets/scepman_user_android\_1 (2) (2) (2) (2) (2) (2) (1).png>)
+![](<../../../.gitbook/assets/scepman\_user\_android\_1 (2) (2) (2) (2) (2) (2) (1).png>)
 
 1. Configure the **SCEP Certificate**
 
@@ -244,7 +244,7 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **The setting for 'Subject name format' is freely selectable. For Subject alternative name we recommend to set 'User principial name (UPN)'.**
 {% endhint %}
 
-![](<../../../.gitbook/assets/scepman_user_android\_2 (2) (2) (2) (2) (2) (2) (2) (1) (2).png>)
+![](<../../../.gitbook/assets/scepman\_user\_android\_2 (2) (2) (2) (2) (2) (2) (2) (1) (2).png>)
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**

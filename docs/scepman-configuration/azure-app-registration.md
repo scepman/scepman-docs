@@ -35,7 +35,7 @@ Please do not mix it up with the "Client Secret **ID**". We need the "Client Sec
 {% endhint %}
 
 {% hint style="warning" %}
-Copy the client secret value** **immediately. You will not be able to retrieve it after you leave this submenu.
+Copy the client secret value **** immediately. You will not be able to retrieve it after you leave this submenu.
 {% endhint %}
 
 ![](../.gitbook/assets/image.png)
@@ -50,7 +50,7 @@ Stay within **App Registrations** and click on **API permissions**
 
 ![](<../../.gitbook/assets/screenshot-2020-02-03-at-10.54.48 (1) (1).png>)
 
-2\. Click on **Add a permission** and choose **Microsoft Graph**. When chosen, select **Application permissions **and search for directory. Add **Directory.ReadAll** as permission.
+2\. Click on **Add a permission** and choose **Microsoft Graph**. When chosen, select **Application permissions** and search for directory. Add **Directory.ReadAll** as permission.
 
 ![](<../../.gitbook/assets/app-permission-graph (1).png>)
 

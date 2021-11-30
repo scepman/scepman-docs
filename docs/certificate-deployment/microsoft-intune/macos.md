@@ -19,7 +19,7 @@ Then, create a profile in Microsoft Intune:
 1. Platform: macOS
 2. Profile type: Templates
 3. Search for **trusted certificate**, create
-4. Set profile **Name **and **Description**(optional)
+4. Set profile **Name** and **Description**(optional)
 5. Upload your root certificate
 6. Assign users and/or groups
 7. Finally, click **Create**
@@ -39,10 +39,10 @@ Next, to finally deploy the device certificates you have to create a SCEP certif
 7. Search and select **SCEP certificate**
 8. **Create**
 9. Choose **Name** and Description (optional) for this profile
-10. Set the** Configuration settings** as in the picture below
+10. Set the **Configuration settings** as in the picture below
 
 {% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the green rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the green rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term all settings will be supported for configuration. **There is a dependency on the {{AAD_Device_ID} in the subject name, which is used as a seed for the certificate serial number generation. Therefore the subject name must include**.
+You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the green rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the green rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term all settings will be supported for configuration. **There is a dependency on the {{AAD\_Device\_ID} in the subject name, which is used as a seed for the certificate serial number generation. Therefore the subject name must include**.
 
 With our automatically set settings, we fulfill Apple's certificate requirements. For more details click [here](https://support.apple.com/en-us/HT210176).
 {% endhint %}
@@ -51,7 +51,7 @@ With our automatically set settings, we fulfill Apple's certificate requirements
 
 11\. Scroll down and enter the URL you have noted under SCEP Server URLs
 
-12\. Click **Next, **Assign users and groups
+12\. Click **Next,** Assign users and groups
 
 13\.  **Next** and finally click **Create**
 
