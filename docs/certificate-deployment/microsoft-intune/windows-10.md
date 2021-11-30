@@ -33,7 +33,7 @@ Now you will get the following window:
 1. Choose a profile name and **Next**
 2. Select **A valid .cer file** which you already downloaded
 3. As **Destination store** select **Computer certificate store - Root** and **Next**
-4. Assign devices and users you for the profile, **Next**
+4. In **Assignments,** assign the profile to **devices and users,** **Next**
 5. Applying **Applicability Rules** is optional, **Next**
 6. Finally, click **Create**
 
@@ -68,8 +68,8 @@ SCEPman caps the certificate validity to the configured maximum in setting _AppC
 {% endhint %}
 
 * **Certificate type**: Device
-* **Subject name format: **CN={{AAD\_Device\_ID}}
-* **Subject alternative name: Attribute: **URI, **Value:** IntuneDeviceId://{{DeviceID}}
+* **Subject name format:** CN={{AAD\_Device\_ID}}
+* **Subject alternative name: Attribute:** URI, **Value:** IntuneDeviceId://{{DeviceID}}
 
 ![](<../../.gitbook/assets/2021-10-27 09\_49\_08-SCEP certificate - Microsoft Endpoint Manager admin center and 20 more pages - C.png>)
 
@@ -121,13 +121,13 @@ Set the properties as shown below.
 There are some restrictions to the **SCEP User Certificate** settings:
 
 You must add the User principal name as the Subject alternative name. **Add '{{UserPrincipalName}}' as Subject Alternative Name of type User principal name (UPN).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.\
-You should **add 'L={{AAD\_Device\_ID}}' **as part of the Subject. This ensures the user certificate can be linked to the device where it resides on. This may improve revocation and compliance checks. \
+You should **add 'L={{AAD\_Device\_ID}}'** as part of the Subject. This ensures the user certificate can be linked to the device where it resides on. This may improve revocation and compliance checks. \
 SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the settings configured here unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_. \
 For SCEPman version before 1.5, the validity period is set to a fixed 6 month. For SCEPman 1.5 and above, SCEPman caps the certificate validity to the configured maximum in setting _AppConfig:ValidityPeriodDays_, but otherwise uses the validity configured in the request.
 {% endhint %}
 
 * **Certificate type**: User
-* **Subject name format: **CN={{UserName}},L={{AAD\_Device\_ID}}
+* **Subject name format:** CN={{UserName}},L={{AAD\_Device\_ID}}
 * **Subject alternative name:**
 
 | Attribute                         | Value                         |
@@ -192,7 +192,7 @@ Now the Go to Intune to create a SCEP certificate profile:
 Set the properties like shown below. Have special attention for the Key Usage select _only_ '**Digital Signature**' and for the Extended key usage '**Secure Email**'.
 
 * **Certificate type**: User
-* **Subject name format: **CN={{UserName}},E={{EmailAddress}},L={{AAD\_Device\_ID}}
+* **Subject name format:** CN={{UserName}},E={{EmailAddress}},L={{AAD\_Device\_ID}}
 * **Subject alternative name:**
 
 | Attribute                 | Value                         |
