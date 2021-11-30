@@ -1,5 +1,5 @@
 ---
-description: The easy way to deploy certificates with Intune.
+description: The easy way to deploy certificates with Intune
 ---
 
 # Welcome
