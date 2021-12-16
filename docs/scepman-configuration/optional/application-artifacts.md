@@ -46,19 +46,19 @@ Follow this instruction to create a storage account:
 
 3\. Your Subscription and resource group are pre-selected and you can start with defining **Storage account name, Location Performance, Account kind, Replication and Access tier** (Use settings as shown in the screenshot)
 
-![](../../../.gitbook/assets/image.png)
+![](../../.gitbook/assets/image.png)
 
-4\. Go to the **Advanced** tab and set the **Blob public access** to **Enabled**  
+4\. Go to the **Advanced** tab and set the **Blob public access** to **Enabled**
 
-5\. Click on **Review + create** and then on **Create**  
+5\. Click on **Review + create** and then on **Create**
 
-6\. After the successful creation of your storage account you can open the Storage account overview and open the **Storage Explorer (preview)**  
+6\. After the successful creation of your storage account you can open the Storage account overview and open the **Storage Explorer (preview)**
 
 7\. In the **Storage Explorer (preview)** you can right click on the **BLOB CONTAINERS** and select **Create blob container.** Specify a **Name** and set the **Public access level** to **Blob.** After this you can click on **Create**
 
-![](../../../.gitbook/assets/screenshot-2020-07-09-at-17.20.42.png)
+![](../../.gitbook/assets/screenshot-2020-07-09-at-17.20.42.png)
 
-8\. You need to reload the **Storage Explorer (Preview)** and then you can see your container under **BLOB CONTAINERS**. Now you can download the Artifacts from our GitHub (See [Application Artifacts](application-artifacts.md#available-channels)) and upload the artifacts here.  
+8\. You need to reload the **Storage Explorer (Preview)** and then you can see your container under **BLOB CONTAINERS**. Now you can download the Artifacts from our GitHub (See [Application Artifacts](application-artifacts.md#available-channels)) and upload the artifacts here.
 
 9\. After the successful upload you can select your blob and click on **Copy URL.** You need this URL in the Part **Change Artifacts (**[**Application Artifacts**](application-artifacts.md#change-artifacts)**)**
 
@@ -77,13 +77,13 @@ To configure this, do the following:
 2. Navigate to **App Service**
 3. Choose your SCEPman app
 4. Then, click **Configuration** (submenu **Setting**)
-5. Look for **WEBSITE_RUN_FROM_PACKAGE** and click on it
+5. Look for **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
 
-![](<../../../.gitbook/assets/scepman_optional2 (3) (3) (3) (3) (3) (3) (3) (2).png>)
+![](<../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (4).png>)
 
-6\. Then replace the URL in **Value **with the SCEPman GitHub URL or your Storage account blob URL you already copied:
+6\. Then replace the URL in \*\*Value \*\*with the SCEPman GitHub URL or your Storage account blob URL you already copied:
 
-![](../../../.gitbook/assets/2021-10-08-16\_40\_54-scepman02testservicename-microsoft-azure-and-10-more-pages-c4a8-ehamed-mic.png)
+![](<../../.gitbook/assets/2021-10-08 16\_40\_54-Scepman02testServiceName - Microsoft Azure and 10 more pages - C4A8 EHamed - Mic.png>)
 
 | Back to Trial Guide | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-5-deploy-storage-account-and-change-artifacts) | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-5-deploy-storage-account-and-change-artifacts) |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |

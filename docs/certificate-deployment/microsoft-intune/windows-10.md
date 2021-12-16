@@ -8,7 +8,7 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](<../../../.gitbook/assets/scepman24 (1) (7) (8) (8) (8) (4) (21).png>)
+![](<../../.gitbook/assets/scepman24 (1) (7) (8) (8) (8) (4) (28).png>)
 
 Then, create a profile in Microsoft Intune:
 
@@ -24,11 +24,11 @@ Choose the following profile setting:
 3. As **Profile type** select **Templates** then select **Trusted certificate**
 4. Click **Create**
 
-![](../../../.gitbook/assets/2021-07-02-13\_46\_41-.png)
+![](../../.gitbook/assets/2021-07-02-13\_46\_41-.png)
 
 Now you will get the following window:
 
-![](../../../.gitbook/assets/2021-06-29-10\_41\_25-trusted-certificate-microsoft-endpoint-manager-admin-center-and-4-more-pages-.png)
+![](../../.gitbook/assets/2021-06-29-10\_41\_25-trusted-certificate-microsoft-endpoint-manager-admin-center-and-4-more-pages-.png)
 
 1. Choose a profile name and **Next**
 2. Select **A valid .cer file** which you already downloaded
@@ -211,21 +211,21 @@ We recommend setting Renewal Threshold (%) to a value that ensures certificates 
 
 Assign the profile to your user group and wait for the device to synchronize. After successful sync you should see the user certificate for Intended Purposes **Secure Email**
 
-![](<../../../.gitbook/assets/image (16).png>)
+![](<../../.gitbook/assets/image (16).png>)
 
 The certificate will be available for Digital Signature usage in e.g. Outlook. Below an example of the usage:
 
-![](<../../../.gitbook/assets/image (14).png>)
+![](<../../.gitbook/assets/image (14).png>)
 
 ## How to find SCEP-URL for Intune
 
 This URL can be found in the **Overview** sub-menu of the app service of SCEPman:
 
-![](<../../../.gitbook/assets/scepman27 (2) (1) (12).png>)
+![](<../../.gitbook/assets/scepman27 (2) (1) (28).png>)
 
 Now click on the URL, you will be redirected to the SCEPman instance website:
 
-![](../../../.gitbook/assets/2021-07-02-16\_19\_49-scepman-server-node-and-4-more-pages-c4a8-ehamed-microsoft-edge.png)
+![](../../.gitbook/assets/2021-07-02-16\_19\_49-scepman-server-node-and-4-more-pages-c4a8-ehamed-microsoft-edge.png)
 
 Copy the path URL (you can copy it by clicking on the copy symbol at the end) and note it, you will need it later on.
 

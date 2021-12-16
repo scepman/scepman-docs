@@ -12,15 +12,15 @@ You need to grant and Azure AD App and your user account access to the Azure Key
 
 1. Navigate to your Azure Key Vault in the Azure Portal
 2. Click on **Access policies** in the left navigation pane.
-3. Click on **Add Access Policy** 
+3. Click on **Add Access Policy**
 
-![](../../../.gitbook/assets/screenshot-2020-10-19-at-15.23.16.png)
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-15.23.16 (1).png>)
 
 1. Click **Configure from template (optional)** and choose **Certificate Management**.
 2. Now you must select a principal by clicking on **None selected** and search for your Azure AD App Registration.
 3. To close the dialog press **Select** and then press **Add**.
 
-![](../../../.gitbook/assets/screenshot-2020-10-19-at-15.34.16.png)
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-15.34.16 (1).png>)
 
 Now repeat this for your own user account:
 
@@ -29,7 +29,7 @@ Now repeat this for your own user account:
 3. Select a principal by clicking on **None selected**. But this time, search for your own administrative user account.
 4. Close the dialog with **Select** and **Add**.
 
-![](<../../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28 (2) (2) (2) (2).png>)
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28 (2) (2) (2) (2) (2).png>)
 
 1. To save your new access policies you must click on **Save** in the upper left corner of the window.
 
@@ -147,10 +147,10 @@ This warning does not apply to Stand-alone Root CAs, aka Offline Root CAs, as th
 
 ## Upload the Intermediate CA Certificate
 
-1. In Azure Key Vault, click on your certificate and press **Certificate Operation**  
+1. In Azure Key Vault, click on your certificate and press **Certificate Operation**
 2. **\*\*Now you can see the options** Download CSR **and** Merge Signed Request\*\*
 
-![](<../../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18 (1) (2) (3).png>)
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18 (1) (2) (5).png>)
 
 1. Click on **Merge Signed Request** and upload your Intermediate CA Certificate. After you have uploaded the signed request, you can see the valid certificate in your Azure Key Vault in the area **Completed**
 
@@ -164,14 +164,14 @@ The last step is to update the Azure App Service which runs the SCEPman with the
 
 AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName AppConfig:KeyVaultConfig:RootCertificateConfig:Subject
 
-1. As value you must insert your new certificate name and the new subject name.  
+1. As value you must insert your new certificate name and the new subject name.
 2. To complete this step, you must click on **Save** in the upper left part.
 
-![](../../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40.png)
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40 (1).png>)
 
 Please restart the Azure App Service and then navigate to your SCEPman URL. On the SCEPman Status page you can see the new configuration and download the new intermediate certificate to deploy this via Endpoint Manager.
 
-Please check whether the CA certificate fulfills all requirement by visiting your SCEPman Homepage. Check what the homepage says next to "CA Suitability". If, for example, it says *CA Certificate is missing Key Usage "Key Encipherment".*, you should go back to step [Issue the Intermediate CA Certificate](#issue-the-intermediate-ca-certificate) and correct the certificate issuance.
+Please check whether the CA certificate fulfills all requirement by visiting your SCEPman Homepage. Check what the homepage says next to "CA Suitability". If, for example, it says _CA Certificate is missing Key Usage "Key Encipherment"._, you should go back to step [Issue the Intermediate CA Certificate](intermediate-certificate.md#issue-the-intermediate-ca-certificate) and correct the certificate issuance.
 
 | Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-6-configure-log-collection) |
 | ------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------- |

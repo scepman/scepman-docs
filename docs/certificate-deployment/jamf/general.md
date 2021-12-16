@@ -28,7 +28,7 @@ SCEPman needs to be connected to the Jamf API to check the status of onboarded c
 
 Therefore, please add an appropriate service account under "Jamf Pro User Accounts & Groups":
 
-![](<../../../.gitbook/assets/image (33).png>)
+![](<../../.gitbook/assets/image (33).png>)
 
 This account needs the following three **read** permissions under "Privileges" (section "Jamf Pro Server Objects"):
 
@@ -40,17 +40,17 @@ This account needs the following three **read** permissions under "Privileges" (
 
 Open Jamf settings and choose "PKI Certificates" under "Global Management":
 
-![](<../../../.gitbook/assets/image (23).png>)
+![](<../../.gitbook/assets/image (23).png>)
 
 Switch to tab "Management Certificate Template", "External CA" and activate edit mode. Please enable Jamf as "SCEP Proxy for configuration profiles":
 
-![](<../../../.gitbook/assets/image (26).png>)
+![](<../../.gitbook/assets/image (26).png>)
 
 Please fill out the following fields and save the configuration:
 
 | Field                    | Description                                                                                      | Example/Value                                                                                                                                                       |
 | ------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **URL**                  | <p>URL to SCEPman</p><p>Do <strong>NOT</strong> Forget the <strong>/jamf </strong>at the end</p> | [https://scepman.contoso.com/jamf](https://scepman.contoso.com/jamf)                                                                                                |
+| **URL**                  | <p>URL to SCEPman</p><p>Do <strong>NOT</strong> Forget the <strong>/jamf</strong> at the end</p> | [https://scepman.contoso.com/jamf](https://scepman.contoso.com/jamf)                                                                                                |
 | **Name**                 | name of instance                                                                                 | SCEPman Contoso                                                                                                                                                     |
 | **Subject**              | entities following X.500 standard                                                                | O=Contoso                                                                                                                                                           |
 | **Challenge Type**       | challenge type for verification of certificate issuing                                           | Static                                                                                                                                                              |
@@ -76,6 +76,6 @@ $pfxBytes = $cert.Export([System.Security.Cryptography.X509Certificates.X509Cont
 
 Then click on "Change Signing and CA Certificates" in the External CA configuration of Jamf
 
-![](../../../.gitbook/assets/jamfsigningcertificate.png)
+![](../../.gitbook/assets/jamfsigningcertificate.png)
 
 In the wizard, upload the PFX file with the signing certificate to Jamf when it asks for it (Note: Pkcs#12 and PFX are synonyms). In the next steps, enter the password for the PFX file and confirm the selection of the signing certificate. In the tab "Upload CA Certificate", you must upload the SCEPman CA certificate. You can obtain the SCEPman CA certificate by clicking on the link "Get CACert" on the top left of the homepage of your SCEPman instance. Finally, confirm your changes.

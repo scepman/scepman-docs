@@ -4,12 +4,12 @@
 
 If you want to create your own custom domain for your **App Service** URL, follow these steps:
 
-1. Choose your **App Service,** on the left select **Custom domain**. 
-2. Click **Add custom domain.** 
-3. Enter your custom domain (**1**) and click **Validate\***. 
+1. Choose your **App Service,** on the left select **Custom domain**.&#x20;
+2. Click **Add custom domain.**&#x20;
+3. Enter your custom domain (**1**) and click **Validate\***.&#x20;
 4. If **CNAME** is set correct (**2**) domain ownership is validated (**3**).
 
-![](<../../../.gitbook/assets/scepman_cname1 (1) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/scepman\_cname1 (1) (1) (1) (1) (1) (1) (1).png>)
 
 \*if you don't have a custom domain yet follow the steps:
 
@@ -17,7 +17,7 @@ If you want to create your own custom domain for your **App Service** URL, follo
 2. Click on Private Key Certificates (.pfx)
 3. Create App Service Managed Certificate
 
-![](<../../../.gitbook/assets/image (35).png>)
+![](<../../.gitbook/assets/image (35).png>)
 
 More information about configure SSL Certificate [click here](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate)
 
@@ -27,20 +27,20 @@ More information about configure SSL Certificate [click here](https://docs.micro
 2. When the domain is added, create a SSL binding.
 3. Click **Add binding** on the custom domain screen.
 
-![](<../../../.gitbook/assets/scepman_cname2 (1) (1).png>)
+![](<../../.gitbook/assets/scepman\_cname2 (1) (1) (1).png>)
 
 1. On the TLS/SSL Binding submenu click **Upload PFX Certificate.**
 2. After uploading select your certificate and the binding type.
 3. Next click **Add binding.**
 
-![](<../../../.gitbook/assets/scepman_cname3 (1) (2) (2) (2) (2) (2) (4) (4) (4) (4) (4) (3).png>)
+![](<../../.gitbook/assets/scepman\_cname3 (1) (2) (2) (2) (2) (2) (4) (4) (4) (4) (4) (4).png>)
 
 1. After completing these steps, **Application settings** needs to be updated
 2. Choose app service and click **Configuration**
 3. Then click **Application Settings** and edit the setting **AppConfig:BaseUrl**
 4. Enter your custom domain and click **OK**.
 
-![](../../../.gitbook/assets/scepman_cname4\_1.png)
+![](../../.gitbook/assets/scepman\_cname4\_1.png)
 
 1. Finally click **Save**.
 

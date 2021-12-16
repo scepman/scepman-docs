@@ -21,7 +21,7 @@ Otherwise please follow this guide to generate a new Root CA.
 
 CA Suitability on SCEPman Dashboard:
 
-![](../../../.gitbook/assets/screenshot-2020-11-04-at-11.18.44.png)
+![](../../.gitbook/assets/screenshot-2020-11-04-at-11.18.44.png)
 
 {% hint style="warning" %}
 If you generate a new CA certificate you must update your Intune policies and deploy the new Root CA and new User and Device certificates!
@@ -39,7 +39,7 @@ If you generate a new CA certificate you must update your Intune policies and de
 
 CA Suitability on SCEPman Dashboard:
 
-![](<../../../.gitbook/assets/screenshot-2020-11-04-at-11.30.23 (1) (1) (1).png>)
+![](<../../.gitbook/assets/screenshot-2020-11-04-at-11.30.23 (1) (1) (1) (1).png>)
 
 ## Configuration Changes to the SCEPman Service
 
@@ -103,7 +103,7 @@ powershell -ExecutionPolicy RemoteSigned -File c:\scepman\enroll-dc-certificate.
 
 Please make sure that the PowerShell script resides in the same directory as SCEPClient.exe and its additional dependencies. Furthermore, ensure that the working directory is the same as the one where SCEPClient.exe is stored:
 
-![Configuring the execution action in the Scheduled Task](<../../../.gitbook/assets/image (17).png>)
+![Configuring the execution action in the Scheduled Task](<../../.gitbook/assets/image (17).png>)
 
 This checks for existing DC certificates in the machine store. Only if there are no suitable certificates with at least 30 days validity, it uses ScepClient.exe to request a new DC certificate from SCEPman.
 
