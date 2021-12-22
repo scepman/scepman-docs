@@ -30,6 +30,7 @@
     * [Jamf Validation](scepman-configuration/optional/application-settings/jamf-validation.md)
     * [Azure AD](scepman-configuration/optional/application-settings/azure-ad.md)
     * [Azure KeyVault](scepman-configuration/optional/application-settings/azure-keyvault.md)
+    * [National Cloud Plattforms](scepman-configuration/optional/application-settings/national-cloud-plattforms.md)
   * [Autoscaling](scepman-configuration/optional/autoscaling.md)
   * [Custom Domain](scepman-configuration/optional/custom-domain.md)
   * [Geo-redundancy](scepman-configuration/optional/geo-redundancy.md)
