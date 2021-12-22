@@ -59,3 +59,7 @@ We recommend using this type of configuration only for sensitive information.
 {% content-ref url="azure-keyvault.md" %}
 [azure-keyvault.md](azure-keyvault.md)
 {% endcontent-ref %}
+
+{% content-ref url="local-cloud-plattforms.md" %}
+[local-cloud-plattforms.md](local-cloud-plattforms.md)
+{% endcontent-ref %}
