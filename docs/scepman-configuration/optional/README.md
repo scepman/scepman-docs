@@ -45,4 +45,3 @@ In addition to the required resources you can configure different optional parts
 {% content-ref url="update-strategy.md" %}
 [update-strategy.md](update-strategy.md)
 {% endcontent-ref %}
-
