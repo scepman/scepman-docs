@@ -2,7 +2,7 @@
 
 ## Versions
 
-### 2.0 - Soon in preview
+### 2.0 - In Internal Channel
 
 * Certificate Management
   * Manually issue TLS Server certificates
@@ -15,7 +15,7 @@
 * New UI
   * So beautiful and with new logo
   * Detailed information on activated SCEP endpoints
-* Compatibility with GCC High, GCC DoD, and 21Vianet environments
+* [Compatibility with GCC High, GCC DoD, and 21Vianet environments](../scepman-configuratoin/optional/application-settings/national-cloud-plattforms.md)
 * Various minor improvements
 
 ### 1.9 - July 2021
