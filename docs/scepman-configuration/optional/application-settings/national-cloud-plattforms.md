@@ -13,7 +13,7 @@ If you want to run SCEPman in a cloud environment like GCC High, GCC DoD, or 21V
 **Description:**\
 This is the AAD logon URL. It defaults to `https://login.microsoftonline.com`.
 
-For GCC High use `https://login.microsoftonline.us`.
+For GCC High, use `https://login.microsoftonline.us`.
 
 ## AppConfig:AzureCloudConfig:AzureADGraphEndpoint
 
@@ -38,7 +38,7 @@ The version of AAD Graph to use. It defaults to `1.6`.
 **Description:**\
 The URL of Microsoft Graph. It defaults to `https://graph.microsoft.com`.
 
-For GCC High use `https://graph.microsoft.us`. For GCC DoD use `https://dod-graph.microsoft.us`. For 21Vianet, use `https://microsoftgraph.chinacloudapi.cn`.
+For GCC High, use `https://graph.microsoft.us`. For GCC DoD, use `https://dod-graph.microsoft.us`. For 21Vianet, use `https://microsoftgraph.chinacloudapi.cn`.
 
 ## AppConfig:AzureCloudConfig:KeyVaultEndpoint
 
@@ -47,7 +47,7 @@ For GCC High use `https://graph.microsoft.us`. For GCC DoD use `https://dod-grap
 **Description:**\
 The URL of Azure Key Vaults. It defaults to `https://vault.azure.net`.
 
-For GCC High use `https://vault.usgovcloudapi.net`.
+For GCC High, use `https://vault.usgovcloudapi.net`.
 
 ## AppConfig:AzureCloudConfig:ManagementEndpoint
 
@@ -55,6 +55,8 @@ For GCC High use `https://vault.usgovcloudapi.net`.
 
 **Description:**\
 The URL of the Intune API. It defaults to `https://api.manage.microsoft.com`.
+
+For GCC High, use `https://api.manage.microsoft.us`.
 
 ## AppConfig:AzureCloudConfig:IntuneAppId
 
