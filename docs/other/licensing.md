@@ -182,7 +182,7 @@ To get started with your SCEPman subscription,
 ![](<../.gitbook/assets/image (1).png>)
 
 {% hint style="info" %}
-Please not be confused by the random order of the add-ons. This is currently investigated by Microsoft. Later during the the enrolment process, we will provide you with transparent information on the expected licensing fees.
+The random order of **Base Fees** und **Additional Users** under the **Price** information is attributed to limitations of the Azure Marketplace. Later during the the enrolment process, we will provide you with transparent information on the expected licensing costs.
 {% endhint %}
 
 * Once you have successfully deployed the SaaS subscription into your Azure SaaS portal, please navigate to our subscription landing page by clicking "Configure account now"
