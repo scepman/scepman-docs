@@ -10,6 +10,16 @@ description: for SCEPman Enterprise
 In general, the subscription for SCEPman Enterprise is **user-based**.&#x20;
 {% endhint %}
 
+User subscriptions are required but not limited to the following main use-cases, which are defined in detail in the following paragraphs:
+
+* User & device certificates
+* DC certificates
+* Server certificates
+
+The minimum amount of users that can be subscribed for one organization is 50.
+
+A user subscription is bound to a single user for at least one calendar month and cannot be shared with other users.
+
 ### User & device certificates
 
 The subscription of a "user" is required for each user, who or whose device is&#x20;
@@ -32,14 +42,14 @@ The subscription of a "user" is required for each user, who is enabled to access
 In many cases the required number of user subscriptions for server certificates equals the number of users, who have the SCEPman root certificate deployed on one or more of their client devices.
 {% endhint %}
 
-### Device limits per user
+## Device limits per user
 
 A single user may have up to 10 personal devices:
 
 * up to 5 desktop devices (Windows or MacOS) and
 * up to 5 handheld devices (Android or iOS).
 
-### Subscription scope
+## Subscription scope
 
 A SCEPman subscription may be used for the clients & users of one organization.&#x20;
 
@@ -48,7 +58,7 @@ It is **not** allowed to&#x20;
 * use one SCEPman subscription for multiple organizations,
 * split one SCEPman subscription and/or re-sell it to multiple organizations.
 
-### Examples
+## Examples
 
 {% hint style="info" %}
 In many Microsoft365-based scenarios the required number of users for the SCEPman Enterprise subscription equals the amount of Microsoft Intune subscriptions.
