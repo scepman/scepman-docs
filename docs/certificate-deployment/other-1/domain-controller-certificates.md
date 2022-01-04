@@ -98,13 +98,15 @@ The above command requests a new DC certificate whether or not there already is 
 For a fully automated renewal of certificates, you should distribute ScepClient to **all** your domain controllers, together with the PowerShell script [enroll-dc-certificate.ps1](https://github.com/scepman/scepclient/blob/Core31/enroll-dc-certificate.ps1). Add a Scheduled task that executes the following command in a SYSTEM context (adapt the URL and request password):
 
 ```
-powershell -ExecutionPolicy RemoteSigned -File c:\scepman\enroll-dc-certificate.ps1 -SCEPURL https://your-scepman-domain/dc -SCEPChallenge RequestPassword
+powershell -ExecutionPolicy RemoteSigned -File c:\scepman\enroll-dc-certificate.ps1 -SCEPURL https://your-scepman-domain/dc -SCEPChallenge RequestPassword -LogToFile
 ```
 
-Please make sure that the PowerShell script resides in the same directory as SCEPClient.exe and its additional dependencies. Furthermore, ensure that the working directory is the same as the one where SCEPClient.exe is stored:
+Please make sure that the PowerShell script resides in the same directory as SCEPClient.exe and its additional dependencies.
 
 ![Configuring the execution action in the Scheduled Task](<../../../.gitbook/assets/image (17).png>)
 
-This checks for existing DC certificates in the machine store. Only if there are no suitable certificates with at least 30 days validity, it uses ScepClient.exe to request a new DC certificate from SCEPman.
+This checks for existing DC certificates in the machine store. Only if there are no suitable certificates with at least 30 days validity, it uses ScepClient.exe to request a new DC certificate from SCEPman. If you want to modify the 30-day-threshold, use the -ValidityThresholdDays parameter of the PowerShell script.
+
+The script writes a continuous log file to the directory where it is stored. If you do not want this log file, leave out the `-LogToFile` parameter. You can instead redirect the Information, Error, and/or Debug streams into files (e.g. `6>logfile.txt 2>&1`).
 
 For WHfB, all DCs running version 2016 or newer need a Kerberos Authentication certificate. Older DCs forward authentication requests to newer DCs, thus they do not necessarily require a Kerberos Authentication certificate. It is a best practice, though, to supply them with certificates, too.
