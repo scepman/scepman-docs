@@ -12,6 +12,7 @@
   * Improved Perfomance with .NET 5.0
   * Azure Key Vault
   * Other library updates
+* Select whether to use AAD or Intune directory for device validity checks
 * New UI
   * So beautiful and with new logo
   * Detailed information on activated SCEP endpoints
