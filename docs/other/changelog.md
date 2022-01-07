@@ -2,7 +2,7 @@
 
 ## Versions
 
-### 2.0 - In Internal Channel
+### 2.0 - In Beta and Internal Channel
 
 * Certificate Management
   * Manually issue TLS Server certificates
