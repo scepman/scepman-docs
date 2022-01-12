@@ -6,6 +6,8 @@ This feature requires version **1.9** or above.
 
 Please follow this guide to distribute certificates to users. User certificates are possible on computers (macOS) as well as devices (e.g.: iOS, iPadOS). Before deploying the first certificates via Jamf, follow the [general steps for Jamf](general.md) first.
 
+Note that the "User and Location" data of your computers or mobile devices need to be properly populated, so certificate can be issued. Especially, the user must have an email address, as this is used as unique identifier for the assigned user.
+
 ## SCEPman Root Certificate
 
 As first step you need to deploy SCEPman root certficate if you haven't done this already for the target plattform. Download this CA certificate via SCEPman dashboard:
@@ -44,4 +46,3 @@ Under Devices -> Configuration Profiles, please add another "Mobile Device Confi
 
 Distribute the profile to your clients as desired.
 
-Note that the "User and Location" data of your mobile devices need to be properly populated, so certificate can be issued.
