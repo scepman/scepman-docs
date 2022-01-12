@@ -64,12 +64,12 @@
 * [Troubleshooting](other/troubleshooting/README.md)
   * [Common Problems](other/troubleshooting/general.md)
   * [Cisco ISE Host Header Limitation](other/troubleshooting/cisco-ise-host-header-limitation.md)
-* [Changelog](other/changelog.md)
-* [Licensing](other/licensing.md)
 * [FAQ](https://glueckkanja.zendesk.com/hc/en-us/sections/360002363340-FAQ)
 * [Important Links](other/important-links.md)
 
 ***
 
+* [Changelog](changelog.md)
+* [Licensing](licensing.md)
 * [Support](support.md)
 * [SCEPman Website](https://scepman.com)

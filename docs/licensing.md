@@ -153,7 +153,7 @@ For prices in Euro (EUR), please check out our <mark style="color:green;"></mark
 * Our landing page will inform you about the new fees for a **complete** subscription cycle.
 * After confirming your choice and once we have updated the license in our backend, you will receive a confirmation email from us.
 
-![](../.gitbook/assets/sample\_subscription\_azure\_saas\_publisher\_link.png)
+![](.gitbook/assets/sample\_subscription\_azure\_saas\_publisher\_link.png)
 
 #### Downgrades
 
@@ -161,7 +161,7 @@ For prices in Euro (EUR), please check out our <mark style="color:green;"></mark
 * If you want to perform a downgrade, please cancel your current subscription from the <mark style="color:green;"></mark> [Azure SaaS portal](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.SaaS%2Fresources) towards the end of the current cycle by clicking "Cancel subscription" (see screenshot below) and re-subscribe to your desired plan with the desired user amount once the cancellation becomes effective.
 * Please do not forget to update the license key in your SCEPman instance afterwards as described in [here](https://docs.scepman.com/scepman-configuration/optional/add-a-license-key).
 
-![](<../.gitbook/assets/sample\_subscription\_azure\_saas\_cancel (3).png>)
+![](<.gitbook/assets/sample\_subscription\_azure\_saas\_cancel (3).png>)
 
 #### Change of Renewal Cycle
 
@@ -185,11 +185,11 @@ To get started with your SCEPman subscription,
 
 * Locate SCEPman on the **Marketplace** in your [**Azure Portal**](https://portal.azure.com/#create/glueckkanja-gabag.radiusaas-transactable-prod/preview).&#x20;
 
-![](<../.gitbook/assets/Screenshot 2021-12-06 at 16.25.44.png>)
+![](<.gitbook/assets/Screenshot 2021-12-06 at 16.25.44.png>)
 
 * Click "Set up + subscribe" and select your preferred plan based on the desired **renewal interval** (monthly or annual). We recommend to keep **Recurring billing** **on** so that you do not have to worry about a manual renewal of your subscription. Click "Review + subscribe" to deploy the subscription to your Azure SaaS.
 
-![](<../.gitbook/assets/image (1).png>)
+![](<.gitbook/assets/image (1).png>)
 
 {% hint style="info" %}
 The random order of **Base Fees** und **Additional Users** under the **Price** information is attributed to limitations of the Azure Marketplace. Later during the the enrolment process, we will provide you with transparent information on the expected licensing costs.
@@ -207,6 +207,6 @@ You will only be charged by Microsoft, once you have completed the enrolment on 
 * If you are happy with it, please complete the enrolment, which triggers us to generate a **SCEPman license key**. You will receive this key as part of our welcome email including all relevant information on the next steps regarding the deployment of SCEPman. This won't take any longer than one business day.
 
 {% hint style="warning" %}
-In case you have already deployed SCEPman and are only seeking to update the license key, please follow [this guide](../scepman-configuration/optional/add-a-license-key.md).
+In case you have already deployed SCEPman and are only seeking to update the license key, please follow [this guide](scepman-configuration/optional/add-a-license-key.md).
 {% endhint %}
 

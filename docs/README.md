@@ -52,6 +52,6 @@ If you want to have a detailed look at specific documentation steps you can manu
 
 News from our development and our roadmap can be found under the **Changelog**.
 
-{% content-ref url="other/changelog.md" %}
-[changelog.md](other/changelog.md)
+{% content-ref url="changelog.md" %}
+[changelog.md](changelog.md)
 {% endcontent-ref %}
