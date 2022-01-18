@@ -137,13 +137,32 @@ CN=$($config.NewCertName), OU=$($config.TenantID), O=$($config.CompanyName) in A
 
 ## Issue the Intermediate CA Certificate
 
-Now, submit your CSR to your Root CA and retrieve your issued Intermediate CA Certificate. Save the certificate on disk ((.cer)), we will upload it and merge with the private key in Azure Key Vault later.
+Now, submit your CSR to your Root CA and retrieve your issued Intermediate CA Certificate. Save the certificate on disk ((.cer)), so in the next step, you can upload and merge it with the private key in Azure Key Vault.
 
-{% hint style="warning" %}
-If you are using Active Directory Certificate Services as an AD-integrated Root CA and hence must choose a Certificate Template, it must include the following Key Usages: "CRLSign", "DigitalSignature", "KeyEncipherment", and "KeyCertSign". KeyEncipherment is missing in the default template "Subordinate Certificate Authority", and furthermore cannot be selected on new templates. Please contact our support to find a solution if you run into this problem.
+### Special Steps for an ADCS Enterprise Root CA
 
-This warning does not apply to Stand-alone Root CAs, aka Offline Root CAs, as they take the Key Usages correctly from the CSR.
-{% endhint %}
+If you are using Active Directory Certificate Services as an AD-integrated Root CA and hence must choose a Certificate Template, it must include the following Key Usages: "CRLSign", "DigitalSignature", "KeyEncipherment", and "KeyCertSign". KeyEncipherment is missing in the default template "Subordinate Certificate Authority", and furthermore cannot be selected on new templates. Please see below for a solution if you run into this problem. **This does not apply to Stand-alone Root CAs**, aka Offline Root CAs, as they take the Key Usages correctly from the CSR.
+
+#### Outline
+
+You can Duplicate the SubCA Template or use as it is as required. Then you just issue a certificate with the template based on the CSR. This certificate will have *the wrong Key Usage* (0x86). Afterwards, you re-sign the certificate with an adapted Key Usage extension using `certutil -sign`.
+
+#### Step by step
+
+1. Request and issue a SubCA certificate.
+2. Export the new SubCA certificate to a file (e.g. c:\temp\SubCA.cer) on the Enterprise CA.
+3. Create a file "extfile.txt" with the contents shown below to the Enterprise CA (e.g. c:\temp\extfile.txt).
+4. Start command line and excecute: `certutil -sign "c:\temp\SubCA.cer" "c:\temp\SubCAwithKeyEncipher.cer" @c:\temp\extfile.txt`
+5. The certificate SubCAwithKeyEncipher.cer now contains the requested key usage (0xA6). The thumbprint (signature) has changed, but the serial number hasn't.
+6. The list of issued certificates in ADCS contains the old certificate. Since the serial number hasn't changed, you can manage the new certificate using the old handle, e.g. revoking the old certificate will revoke the new certificate. If you dislike this, you can delete the old certificate entry using `certutil -deleterow` and then import the new certificate using `certutil -importcert`.
+
+#### extfile.txt
+
+```
+[Extensions]
+2.5.29.15=AwIBpg==
+Critical=2.5.29.15
+```
 
 ## Upload the Intermediate CA Certificate
 
