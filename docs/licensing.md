@@ -171,13 +171,7 @@ For prices in Euro (EUR), please check out our <mark style="color:green;"></mark
 
 ### **Trials**
 
-By default, when you purchase a plan from the Azure Marketplace, we will apply a 30-day trial period, for which we will not charge any subscription fees.&#x20;
-
-This applies only to those customers who have never had a trial period before.
-
-#### **Custom Trials**
-
-In case you have special requirements or constraints that require more than 30 days of testing period, please [get in contact with us](https://glueckkanja.zendesk.com/hc/en-us/categories/360001671880-SCEPman) directly or send us an email to [sales@radiusaas.com](mailto:sales@scepman.com) for an individual trial offer.
+In case you would like to test SCEPman, please [get in contact with us](https://glueckkanja.zendesk.com/hc/en-us/requests/new) or send us an email to [sales@scepman.com](mailto:sales@scepman.com).
 
 ### How to Get Started
 
