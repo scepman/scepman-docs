@@ -56,7 +56,7 @@ Stay within **App Registrations** and click on **API permissions**
 
 ![](<../../.gitbook/assets/app-permission-directory-read (1) (1) (1) (1).png>)
 
-3\. Now click on **Add a permission** and choose **Intune**. When chosen, select **Application permissions** and search for scep. Add **secp\_challenge\_provider** as a permission
+3\. Now click on **Add a permission** and choose **Intune**. When chosen, select **Application permissions** and search for scep. Add **scep\_challenge\_provider** as a permission
 
 ![](<../../.gitbook/assets/app-permission-intune (1) (1) (1).png>)
 
