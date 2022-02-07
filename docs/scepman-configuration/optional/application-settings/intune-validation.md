@@ -18,6 +18,20 @@ With version 1.9 and above, clients receive an "Ephemeral Bootstrap Certificate"
 
 Settting this to **Never** will disable the compliance check.
 
+## AppConfig:IntuneValidation:DeviceDirectory
+
+{% hint style="info" %}
+Applicable to version 2.0 and above
+{% endhint %}
+
+**Value:** _AAD_ (default), _AADAndIntune_, or _Intune_
+
+Determines where to look up devices on OCSP requests for device certificates. The corresponding directory is queried for a device matching the device ID written to the certificate's subject CN field. The certificate is valid only if the device exists. For AAD, it must also be enabled (Intune doesn't support disabling devices). If the ComplianceCheck is activated, the device must also be compliant. If nothing is configured and for SCEPman 1.9 and before, AAD is used.
+
+Hence, you must configure the Intune configuration profile for devices accordingly. \{\{AAD_Device_ID\}\} is the AAD device ID, while \{\{DeviceID\}\} is the Intune device ID.
+
+For AADAndIntune, both directories are queried in parallel. In this case, it is sufficient that the device exists in one of the two directories. This setting enables migrating from one setting to the other when there are still valid certificates for both types of directories. It also supports cases where you configure platforms differently. It can also be used as a workaround for iOS or Android devices that receive an Intune ID instead of an AAD ID, because they are not fully AAD-joined at the time of certificate enrollment.
+
 ## AppConfig:IntuneValidation:WaitForSuccessNotificationResponse
 
 {% hint style="info" %}
