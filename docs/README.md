@@ -5,7 +5,7 @@ description: SCEPman - Certificates Simplified
 # Welcome
 
 {% hint style="success" %}
-## **log4j**
+### **log4j**
 
 SCEPman is **not** affected by the **log4j** vulnerability ([CVE-2021-44228](https://www.cve.org/CVERecord?id=CVE-2021-44228)).
 {% endhint %}
@@ -28,7 +28,7 @@ The following documentation will show you a straightforward way to deploy certif
 
 ## SCEPman Guides
 
-We offer three guides to deploy the SCEPman environment. The codebase between these guides is the same, so you have no limitations from this point of view.&#x20;
+We offer three guides to deploy the SCEPman environment. The codebase between these guides is the same, so you have no limitations from this point of view.
 
 The Trial Guide is made for those who wants to get the first experience and test the SCEPman functionalities. This is the smallest Azure setup, and you can test all features.
 
