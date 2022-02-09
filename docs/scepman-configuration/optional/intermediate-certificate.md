@@ -192,5 +192,10 @@ Please restart the Azure App Service and then navigate to your SCEPman URL. On t
 
 Please check whether the CA certificate fulfills all requirement by visiting your SCEPman Homepage. Check what the homepage says next to "CA Suitability". If, for example, it says _CA Certificate is missing Key Usage "Key Encipherment"._, you should go back to step [Issue the Intermediate CA Certificate](intermediate-certificate.md#issue-the-intermediate-ca-certificate) and correct the certificate issuance.
 
+## Intermediate CAs and Intune SCEP Profiles
+
+The SCEP Configuration Profiles in Intune must reference the Root CA, not the Intermediate CA. Otherwise, the configuration profile fails on some plattforms.
+
+
 | Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-6-configure-log-collection) |
 | ------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------- |
