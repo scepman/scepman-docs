@@ -1,0 +1,13 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://customcname.domain.com$"
+    }
+  ],
+  "replacementPatterns": [
+    {
+      "pattern": "\\_",
+      "replacement": "_"
+    }
+  ]
+}
