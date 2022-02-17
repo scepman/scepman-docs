@@ -227,7 +227,7 @@ Now, you have to create a SCEP certificate profile to deploy the device certific
 
 ![](<../../../.gitbook/assets/scepman27 (2) (1) (15).png>)
 
-Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)\
+Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)\
 ('xxx' is a placeholder)
 
 Next, to finally deploy the device certificates you have to create a SCEP certificate profile in Intune:
@@ -254,7 +254,7 @@ You can not configure all **SCEP Certificate** settings. This is because some se
 2. Then, click **Add**
 3. Next click **OK** and finally click **Create**
 
-When all its done, you have the following two certificate configurations:
+When all is done, you have the following two certificate configurations:
 
 * SCEPman - SCEP Android user certificate
 * SCEPman - Trusted root Android certificate
