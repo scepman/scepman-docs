@@ -8,7 +8,7 @@ SCEP is originally developed by Cisco. The core mission of SCEP is the deploymen
 
 ## What is SCEPman?
 
-If you use SCEP in a 'traditional way' you need an number of on-premises components. Microsoft Intune [allows third-party certificate authorities (CA)](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview) to issue and validate certificates using SCEP.
+If you use SCEP in a 'traditional way' you need a number of on-premises components. Microsoft Intune [allows third-party certificate authorities (CA)](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview) to issue and validate certificates using SCEP.
 
 To get rid of the on-premises components we developed SCEPman.
 
@@ -45,7 +45,7 @@ SCEPman is an Azure Web App with the following features:
 
 SCEPman creates the CA root certificate during the initial installation. However, if for whatever reason an alternative CA key material shall be used it is possible to replace this CA key and certificate with your own in Azure Key Vault. For example, if you want to use a Sub CA certificate signed by an existing internal Root CA.
 
-SCEPman issues device and user certificates that are compatible with Intune's internally used authentication certificates. They contain Intune's extensions determining the tenant and the machine. Additionally, when using device certificates, the tenant ID and machine ID is stored in the certificate subject alternative names to allow a RADIUS server, like [RADIUS-as-a-Service](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/gluckkanja.radius-aas?tab=Overview), to use these certificates for authentication.
+SCEPman issues device and user certificates that are compatible with Intune's internally used authentication certificates. They contain Intune's extensions determining the tenant and the machine. Additionally, when using device certificates, the tenant ID and machine ID are stored in the certificate subject alternative names to allow a RADIUS server, like [RADIUS-as-a-Service](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.radiusaas-transactable-prod), to use these certificates for authentication.
 
 ### SCEPman OCSP (Online Certificate Status Protocol)
 

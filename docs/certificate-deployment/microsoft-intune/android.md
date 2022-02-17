@@ -90,8 +90,7 @@ Now, you have to create a SCEP certificate profile to deploy the device certific
 
 ![](<../../../.gitbook/assets/scepman27 (2) (1) (2).png>)
 
-Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)\
-('xxx' is a placeholder)
+Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll)
 
 Next, to finally deploy the device certificates, you have to create a SCEP certificate profile in Intune:
 
@@ -169,8 +168,7 @@ Now, you have to create a SCEP certificate profile to deploy the device certific
 
 ![](<../../../.gitbook/assets/scepman27 (2) (1) (20).png>)
 
-Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)\
-('xxx' is a placeholder)
+Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll)
 
 Next, to finally deploy the device certificates you have to create a SCEP certificate profile in Intune:
 
@@ -227,8 +225,7 @@ Now, you have to create a SCEP certificate profile to deploy the device certific
 
 ![](<../../../.gitbook/assets/scepman27 (2) (1) (15).png>)
 
-Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman-xxx.azurewebsites.net/certsrv/mscep/mscep.dll)\
-('xxx' is a placeholder)
+Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll)
 
 Next, to finally deploy the device certificates you have to create a SCEP certificate profile in Intune:
 
