@@ -14,12 +14,12 @@ In addition to the required resources you can configure different optional parts
 [application-insights.md](application-insights.md)
 {% endcontent-ref %}
 
-{% content-ref url="autoscaling.md" %}
-[autoscaling.md](autoscaling.md)
-{% endcontent-ref %}
-
 {% content-ref url="application-settings/" %}
 [application-settings](application-settings/)
+{% endcontent-ref %}
+
+{% content-ref url="autoscaling.md" %}
+[autoscaling.md](autoscaling.md)
 {% endcontent-ref %}
 
 {% content-ref url="custom-domain.md" %}
