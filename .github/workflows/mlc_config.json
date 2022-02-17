@@ -6,7 +6,23 @@
   ],
   "replacementPatterns": [
     {
-      "pattern": /\\_/g,
+      "pattern": "\\\\_",
+      "replacement": "_"
+    },
+    {
+      "pattern": "\\\\_",
+      "replacement": "_"
+    },
+    {
+      "pattern": "\\\\_",
+      "replacement": "_"
+    },
+    {
+      "pattern": "\\\\_",
+      "replacement": "_"
+    },
+    {
+      "pattern": "\\\\_",
       "replacement": "_"
     }
   ]
