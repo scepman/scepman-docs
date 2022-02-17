@@ -9,14 +9,14 @@
   * Revoke manually issued certificates
   * Search for manual certificates
 * Library and Framework updates
-  * Improved Performance with .NET 5.0
+  * Improved Perfomance with .NET 5.0
   * Azure Key Vault
   * Other library updates
 * Select whether to use AAD or Intune directory for device validity checks
 * New UI
-  * So beautiful and with a new logo
+  * So beautiful and with new logo
   * Detailed information on activated SCEP endpoints
-* [Compatibility with GCC High, GCC DoD, and 21Vianet environments](scepman-configuration/optional/application-settings/national-cloud-plattforms.md)
+* [Compatibility with GCC High, GCC DoD, and 21Vianet environments](scepman-configuratoin/optional/application-settings/national-cloud-plattforms.md)
 * Various minor improvements
 
 ### 1.9 - July 2021
@@ -48,7 +48,7 @@
 * Moved the release path to [https://github.com/scepman/install](https://github.com/scepman/install). Please update your setting WEBSITE\_RUN\_FROM\_PACKAGE as described in Section [Application Artifacts](scepman-configuration/optional/application-artifacts.md).
 * Preview of [Compliance Checks](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-compliancecheck)
 * Minor advancements
-  * Workaround a bug on some Android versions to gain correct validity periods
+  * Work around a bug on some Android versions to gain correct validity periods
   * SCEPman CA certificates receive an Extended Key Usage to improve compatibility with some versions of Cisco ISE
   * Further improvements to error messages
   * Updated some dependencies
