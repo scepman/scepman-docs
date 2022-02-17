@@ -12,9 +12,8 @@ order: 2
 
 ## SCEPman on Azure Marketplace
 
-[https://azuremarketplace.microsoft.com/en-us/marketplace/apps/gluckkanja.scepman](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/gluckkanja.scepman)
+[https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman-transactable-prod](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman-transactable-prod)
 
 ## SCEPman on GitHub
 
 [https://github.com/glueckkanja/gk-scepman](https://github.com/scepman/install)
-
