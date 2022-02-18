@@ -14,7 +14,7 @@ SCEPman needs to interact with your Azure Active Directory and Intune endpoints 
 
 ![](../../.gitbook/assets/2021-07-23-08\_49\_37-register-an-application-microsoft-azure-and-2-more-pages-c4a8-ehamed-micro.png)
 
-5\. You may copy the **Application (client) ID** now. The ID is important and will be needed later by SCEPman deployment.&#x20;
+5\. You may copy the **Application (client) ID** now. The ID is important and will be needed later by SCEPman deployment.
 
 ![](../../.gitbook/assets/2021-07-23-08\_50\_59-scepmanreg-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-edge.png)
 
@@ -35,10 +35,10 @@ Please do not mix it up with the "Client Secret **ID**". We need the "Client Sec
 {% endhint %}
 
 {% hint style="warning" %}
-Copy the client secret value **** immediately. You will not be able to retrieve it after you leave this submenu.
+Copy the client secret value \*\*\*\* immediately. You will not be able to retrieve it after you leave this submenu.
 {% endhint %}
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (1).png>)
 
 ## Configure Permissions
 

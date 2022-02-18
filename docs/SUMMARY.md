@@ -70,6 +70,7 @@
 ***
 
 * [Changelog](changelog.md)
-* [Licensing](licensing.md)
+* [Licensing](licensing/README.md)
+  * [Azure Marketplace](licensing/azure-marketplace.md)
 * [Support](support.md)
 * [SCEPman Website](https://scepman.com)
