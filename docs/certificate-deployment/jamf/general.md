@@ -36,6 +36,10 @@ This account needs the following three **read** permissions under "Privileges" (
 * Mobile Devices
 * Users
 
+{% hint style="warning" %}
+Jamf Pro's Classic API supports Bearer Authentication since version 10.35.0. There is a setting to disable the previous authentication method, Basic Authentication, since version 10.36.0. All current versions of SCEPman support only Basic Authentication for the Classic API. Thus, do not disable Basic Authentication if you are using JAMF and SCEPman together.
+{% endhint %}
+
 ## External CA Connection
 
 Open Jamf settings and choose "PKI Certificates" under "Global Management":
