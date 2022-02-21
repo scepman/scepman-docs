@@ -1,4 +1,4 @@
-# SCEPman Post-Installation Configuration
+# SCEPman 2 Post-Installation Configuration
 
 {% hint style="info" %}
 This feature requires version **2.0** or above.
