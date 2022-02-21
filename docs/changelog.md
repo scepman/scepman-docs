@@ -12,7 +12,8 @@
   * Improved Performance with .NET 5.0
   * Azure Key Vault
   * Other library updates
-* Select whether to use AAD or Intune directory for device validity checks
+* [Easier deployment, no manual app registraton required anymore](scepman-configuration/post-installation-config.md)
+* [Select whether to use AAD or Intune directory for device validity checks](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory)
 * New UI
   * So beautiful and with a new logo
   * Detailed information on activated SCEP endpoints
