@@ -13,6 +13,7 @@
 ## SCEPman Configuration
 
 * [Azure App Registration](scepman-configuration/azure-app-registration.md)
+* [SCEPman 2 Post-Installation Configuration](scepman-configuration/post-installation-config.md)
 * [Deployment Options](scepman-configuration/deployment-options/README.md)
   * [Marketplace deployment](scepman-configuration/deployment-options/marketplace-deployment.md)
   * [Enterprise deployment](scepman-configuration/deployment-options/enterprise-deployment.md)
