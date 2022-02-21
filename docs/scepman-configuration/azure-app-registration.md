@@ -1,5 +1,9 @@
 # Azure App Registration
 
+{% hint style="info" %}
+Only the **1.x** versions require an Azure App Registration. SCEPman 2.x still supports it, but we recommend using the [SCEPman PowerShell Module](post-installation-config.md).
+{% endhint %}
+
 SCEPman needs to interact with your Azure Active Directory and Intune endpoints to provide the certificate and OCSP validation of users and devices. To provide the necessary permissions to SCEPman you need to create an App Registration within your tenant.
 
 ## Generate App Registration (get Application ID)
