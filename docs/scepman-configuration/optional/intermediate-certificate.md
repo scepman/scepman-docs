@@ -1,10 +1,10 @@
-# Intermediate Certificate
+# Intermediate CA Certificate
 
 {% hint style="warning" %}
 SCEPman Enterprise Edition only
 {% endhint %}
 
-If you want to use another Root CA as primary authority, you can create an intermediate certificate. You can create the correct certificate direct in Azure Key Vault and download the CSR for signing with your Root CA. The signed request can be uploaded and merged into the Azure Key Vault.
+If you want to use another Root CA as primary authority, you can create an intermediate CA certificate. You can create the correct certificate direct in Azure Key Vault and download the CSR for signing with your Root CA. The signed request can be uploaded and merged into the Azure Key Vault.
 
 ## Key Vault Access Policy
 
@@ -35,7 +35,7 @@ Now repeat this for your own user account:
 
 After saving this access policies successfully, your Azure AD app is permitted to create a CSR and your user account is permitted to upload the certificate.
 
-## Creating Intermediate Certificate via API
+## Creating Intermediate CA Certificate via API
 
 You must create the certificate via the Key Vault API. This is because not all flags and features are available via UI and native PowerShell CMDlets. Add values for the six parameters TenantID, ApplicationID, ApplicationKey, KeyVaultName, NewCertName, and CompanyName to the following PowerShell script. [Create a new Application Secret](../azure-app-registration.md#azure-app-registration-client-secret) to use as ApplicationKey in your Azure AD App registration with minimum lifetime.
 
@@ -56,7 +56,7 @@ $config = @{
     ApplicationID = "" # <GUID> -> the Application (Client) ID of your Azure App Registration
     ApplicationKey = "" # Client secret from you Azure App Registration
     KeyVaultName = "" # Name of your Azure Key Vault ressource
-    NewCertName =  "" # Name of your new Intermediate certificate. Use Letters, Numbers, and/or spaces.
+    NewCertName =  "" # Name of your new Intermediate CA certificate. Use Letters, Numbers, and/or spaces.
     CompanyName = "" # Your Company Name. Use Letters, Numbers, and/or spaces.
 }
 
@@ -188,7 +188,7 @@ AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName AppConfig:KeyVaul
 
 ![](../../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40.png)
 
-Please restart the Azure App Service and then navigate to your SCEPman URL. On the SCEPman Status page you can see the new configuration and download the new intermediate certificate to deploy this via Endpoint Manager.
+Please restart the Azure App Service and then navigate to your SCEPman URL. On the SCEPman Status page you can see the new configuration and download the new intermediate CA certificate to deploy this via Endpoint Manager.
 
 Please check whether the CA certificate fulfills all requirement by visiting your SCEPman Homepage. Check what the homepage says next to "CA Suitability". If, for example, it says _CA Certificate is missing Key Usage "Key Encipherment"._, you should go back to step [Issue the Intermediate CA Certificate](intermediate-certificate.md#issue-the-intermediate-ca-certificate) and correct the certificate issuance.
 
