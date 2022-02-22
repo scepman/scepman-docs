@@ -9,14 +9,15 @@
 * [Trial Guide](scepman-deployment/trial-guide.md)
 * [Community Guide](scepman-deployment/community-guide.md)
 * [Enterprise Guide](scepman-deployment/enterprise-guide.md)
+* [SCEPman 2.x Deployment](scepman-deployment/scepman-2.x-deployment.md)
 
 ## SCEPman Configuration
 
 * [Azure App Registration](scepman-configuration/azure-app-registration.md)
-* [SCEPman 2 Post-Installation Configuration](scepman-configuration/post-installation-config.md)
 * [Deployment Options](scepman-configuration/deployment-options/README.md)
   * [Marketplace deployment](scepman-configuration/deployment-options/marketplace-deployment.md)
   * [Enterprise deployment](scepman-configuration/deployment-options/enterprise-deployment.md)
+* [SCEPman 2 Post-Installation Configuration](scepman-configuration/post-installation-config.md)
 * [Root Certificate](scepman-configuration/first-run-root-cert.md)
 * [Advanced Configuration](scepman-configuration/optional/README.md)
   * [Add a License Key](scepman-configuration/optional/add-a-license-key.md)
