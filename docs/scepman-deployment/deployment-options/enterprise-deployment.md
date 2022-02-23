@@ -18,7 +18,7 @@ Via the GitHub deployment you have full control of the resource naming.
 ## Start the Deployment
 
 {% hint style="info" %}
-You need your Client ID and your Client Secret before you can start the deployment. Please check [App Registration](../azure-app-registration.md).
+You need your Client ID and your Client Secret before you can start the deployment. Please check [App Registration](../permissions/azure-app-registration.md).
 {% endhint %}
 
 Click the following deploy button to start the deployment via GitHub:
@@ -39,5 +39,5 @@ Next, you will see the following configuration menu:
 8. Finally, click **Review + Create,** then **Create**
 9. After the deployment is done, go to [create root certificate](../first-run-root-cert.md)
 
-| Back to Trial Guide | Back to Community Guide | [Back to Enterprise Guide](../../scepman-deployment/enterprise-guide.md#step-2-deploy-scepman-base-services) |
-| ------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Back to Trial Guide | Back to Community Guide | [Back to Enterprise Guide](../deployment-guides/enterprise-guide.md#step-2-deploy-scepman-base-services) |
+| ------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------- |

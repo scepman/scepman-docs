@@ -5,7 +5,7 @@ description: Azure Marketplace Deployment
 # Marketplace deployment
 
 {% hint style="info" %}
-You need your Client ID and your Client Secret before you can start the deployment. Please check [App Registration](../azure-app-registration.md).
+You need your Client ID and your Client Secret before you can start the deployment. Please check [App Registration](../permissions/azure-app-registration.md).
 {% endhint %}
 
 When the registration of the application is done, SCEPman can be deployed to the Azure subscription.
@@ -33,5 +33,5 @@ If you have a license key, you can paste it into the field **License Key**. Leav
 
 Congratulation! The deployment is done. Now go to [create root certificate](../first-run-root-cert.md)
 
-| [Back to Trial Guide](../../scepman-deployment/trial-guide.md#step-2-deploy-scepman-base-services) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-2-deploy-scepman-base-services) | [Back to Enterprise Guide](../../scepman-deployment/enterprise-guide.md#step-1-azure-app-registration) |
-| -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| [Back to Trial Guide](../deployment-guides/trial-guide.md#step-2-deploy-scepman-base-services) | [Back to Community Guide](../deployment-guides/community-guide.md#step-2-deploy-scepman-base-services) | [Back to Enterprise Guide](../deployment-guides/enterprise-guide.md#step-1-azure-app-registration) |
+| ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |

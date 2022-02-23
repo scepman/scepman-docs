@@ -2,7 +2,7 @@
 
 ## AppConfig:AuthConfig:ApplicationId
 
-The [Application (client) ID](../../azure-app-registration.md#basic-app-registration-application-id) from your Azure AD App registration. This setting is configured during the setup.
+The [Application (client) ID](../../scepman-deployment/permissions/azure-app-registration.md#basic-app-registration-application-id) from your Azure AD App registration. This setting is configured during the setup.
 
 {% hint style="warning" %}
 Please do not mix this up with the "Client Secret ID**"**. We need the "Application (client) ID", here.
@@ -14,7 +14,7 @@ Changes can harm your service!
 
 ## AppConfig:AuthConfig:ApplicationKey
 
-The [Application Key (client secret **value**)](../../azure-app-registration.md#azure-app-registration-client-secret) from your Azure AD App registration. This setting is configured during the setup.
+The [Application Key (client secret **value**)](../../scepman-deployment/permissions/azure-app-registration.md#azure-app-registration-client-secret) from your Azure AD App registration. This setting is configured during the setup.
 
 {% hint style="warning" %}
 Please do not mix this up with the "Client Secret **ID"**. We need the "Client Secret **Value"**, here.

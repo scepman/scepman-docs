@@ -60,7 +60,7 @@ Set the properties like shown below.
 {% hint style="warning" %}
 There are some restrictions to the **SCEP Device Certificate** settings:
 
-**Important**: You must add the AAD Device ID to the subject. **Add 'CN={{AAD\_Device\_ID}} ' in the field Subject name format**. This ensures that SCEPman can link certificates to device objects in AAD.
+**Important**: You must add the AAD Device ID to the subject. **Add 'CN=\{{AAD\_Device\_ID\}} ' in the field Subject name format**. This ensures that SCEPman can link certificates to device objects in AAD.
 
 SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the setting here unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_.
 
@@ -68,8 +68,8 @@ SCEPman caps the certificate validity to the configured maximum in setting _AppC
 {% endhint %}
 
 * **Certificate type**: Device
-* **Subject name format:** CN={{AAD\_Device\_ID}}
-* **Subject alternative name: Attribute:** URI, **Value:** IntuneDeviceId://{{DeviceID}}
+* **Subject name format:** CN=\{{AAD\_Device\_ID\}}
+* **Subject alternative name: Attribute:** URI, **Value:** IntuneDeviceId://\{{DeviceID\}}
 
 ![](<../../.gitbook/assets/2021-10-27 09\_49\_08-SCEP certificate - Microsoft Endpoint Manager admin center and 20 more pages - C.png>)
 
@@ -120,20 +120,20 @@ Set the properties as shown below.
 {% hint style="warning" %}
 There are some restrictions to the **SCEP User Certificate** settings:
 
-You must add the User principal name as the Subject alternative name. **Add '{{UserPrincipalName}}' as Subject Alternative Name of type User principal name (UPN).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.\
-You should **add 'L={{AAD\_Device\_ID}}'** as part of the Subject. This ensures the user certificate can be linked to the device where it resides on. This may improve revocation and compliance checks. \
+You must add the User principal name as the Subject alternative name. **Add '\{{UserPrincipalName\}}' as Subject Alternative Name of type User principal name (UPN).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.\
+You should **add 'L=\{{AAD\_Device\_ID\}}'** as part of the Subject. This ensures the user certificate can be linked to the device where it resides on. This may improve revocation and compliance checks. \
 SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the settings configured here unless the setting _AppConfig:UseRequestedKeyUsages_ is set to _true_. \
 For SCEPman version before 1.5, the validity period is set to a fixed 6 month. For SCEPman 1.5 and above, SCEPman caps the certificate validity to the configured maximum in setting _AppConfig:ValidityPeriodDays_, but otherwise uses the validity configured in the request.
 {% endhint %}
 
 * **Certificate type**: User
-* **Subject name format:** CN={{UserName}},L={{AAD\_Device\_ID}}
+* **Subject name format:** CN=\{{UserName\}},L=\{{AAD\_Device\_ID\}}
 * **Subject alternative name:**
 
-| Attribute                         | Value                         |
-| --------------------------------- | ----------------------------- |
-| User principal name (UPN)         | {{UserPrincipalName}}         |
-| Uniform Resource Identifier (URI) | IntuneDeviceId://{{DeviceID}} |
+| Attribute                         | Value                           |
+| --------------------------------- | ------------------------------- |
+| User principal name (UPN)         | \{{UserPrincipalName\}}         |
+| Uniform Resource Identifier (URI) | IntuneDeviceId://\{{DeviceID\}} |
 
 ![](<../../.gitbook/assets/2021-10-27 09\_46\_16-SCEP certificate - Microsoft Endpoint Manager admin center and 20 more pages - C.png>)
 
@@ -192,14 +192,14 @@ Now the Go to Intune to create a SCEP certificate profile:
 Set the properties like shown below. Have special attention for the Key Usage select _only_ '**Digital Signature**' and for the Extended key usage '**Secure Email**'.
 
 * **Certificate type**: User
-* **Subject name format:** CN={{UserName}},E={{EmailAddress}},L={{AAD\_Device\_ID}}
+* **Subject name format:** CN=\{{UserName\}},E=\{{EmailAddress\}},L=\{{AAD\_Device\_ID\}}
 * **Subject alternative name:**
 
-| Attribute                 | Value                         |
-| ------------------------- | ----------------------------- |
-| User principal name (UPN) | {{UserPrincipalName}}         |
-| Email address             | {{EmailAddress}}              |
-| URI                       | IntuneDeviceId://{{DeviceID}} |
+| Attribute                 | Value                           |
+| ------------------------- | ------------------------------- |
+| User principal name (UPN) | \{{UserPrincipalName\}}         |
+| Email address             | \{{EmailAddress\}}              |
+| URI                       | IntuneDeviceId://\{{DeviceID\}} |
 
 ![](<../../.gitbook/assets/2021-10-27 09\_54\_08-SCEP certificate - Microsoft Endpoint Manager admin center and 20 more pages - C.png>)
 
@@ -229,6 +229,6 @@ Now click on the URL, you will be redirected to the SCEPman instance website:
 
 Copy the path URL (you can copy it by clicking on the copy symbol at the end) and note it, you will need it later on.
 
-| ​[Back to Trial Guide​](../../scepman-deployment/trial-guide.md#step-4-configure-intune-deployment-profiles) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-9-configure-intune-deployment-profiles) | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-11-configure-intune-deployment-profiles) |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| ​[Back to Trial Guide​](../../scepman-deployment/deployment-guides/trial-guide.md#step-4-configure-intune-deployment-profiles) | [Back to Community Guide](../../scepman-deployment/deployment-guides/community-guide.md#step-9-configure-intune-deployment-profiles) | ​[Back to Enterprise Guide​](../../scepman-deployment/deployment-guides/enterprise-guide.md#step-11-configure-intune-deployment-profiles) |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
 

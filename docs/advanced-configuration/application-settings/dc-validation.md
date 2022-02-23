@@ -10,9 +10,9 @@ SCEPman Enterprise Edition only
 
 **Value:** _true_ or _false_
 
-**Description:** This setting helps you to request Kerberos server certificates for your on-premises Domain Controllers. See [Domain Controller Certificates](../../../certificate-deployment/other-1/domain-controller-certificates.md) for details.
+**Description:** This setting helps you to request Kerberos server certificates for your on-premises Domain Controllers. See [Domain Controller Certificates](../../certificate-deployment/other-1/domain-controller-certificates.md) for details.
 
-**True**: SCEPman listens at the additional SCEP server endpoint with the path `/dc`. Use in conjunction with AppConfig:DCValidation:RequestPassword. **False** \(default\): SCEPman does not issue certificates for Domain Controllers.
+**True**: SCEPman listens at the additional SCEP server endpoint with the path `/dc`. Use in conjunction with AppConfig:DCValidation:RequestPassword. **False** (default): SCEPman does not issue certificates for Domain Controllers.
 
 ## AppConfig:DCValidation:RequestPassword
 
@@ -39,6 +39,4 @@ SCEPman Enterprise Edition only
 **Value:** Positive _Integer_
 
 **Description:** This setting further reduces the global ValidityPeriodDays for the Domain Controller endpoint. For example, you may define a low value like 10 days here and reduce the validity of Domain Controller certificates, while still having a long validity for your client certificates.
-
-
 
