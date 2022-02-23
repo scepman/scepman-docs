@@ -10,7 +10,7 @@ If you want to deploy:
 {% endhint %}
 
 {% hint style="info" %}
-For V2.0 enterprise edition deployment please follow [SCEPman 2.x Deployment](../deployment-options/v2.x-beta-enterprise-deployment.md)&#x20;
+For V2.0 enterprise edition deployment please follow [SCEPman 2.x Deployment](scepman-2.x-deployment.md)&#x20;
 {% endhint %}
 
 ## Azure Deployment
@@ -46,40 +46,40 @@ All these resources are recommended for a production environment.
 
 Before we can start the resource deployment, we need to create an "Azure App Registration".
 
-{% content-ref url="../permissions/azure-app-registration.md" %}
-[azure-app-registration.md](../permissions/azure-app-registration.md)
+{% content-ref url="../scepman-configuration/azure-app-registration.md" %}
+[azure-app-registration.md](../scepman-configuration/azure-app-registration.md)
 {% endcontent-ref %}
 
 ### Step 2: Deploy SCEPman base services
 
 To start with the deployment, you need to follow our Setup instruction:
 
-{% content-ref url="../deployment-options/enterprise-deployment.md" %}
-[enterprise-deployment.md](../deployment-options/enterprise-deployment.md)
+{% content-ref url="../scepman-configuration/deployment-options/enterprise-deployment.md" %}
+[enterprise-deployment.md](../scepman-configuration/deployment-options/enterprise-deployment.md)
 {% endcontent-ref %}
 
 ### Step 3: Create Root certificate
 
 After the deployment completed you need to create the root certificate for SCEPman:
 
-{% content-ref url="../first-run-root-cert.md" %}
-[first-run-root-cert.md](../first-run-root-cert.md)
+{% content-ref url="../scepman-configuration/first-run-root-cert.md" %}
+[first-run-root-cert.md](../scepman-configuration/first-run-root-cert.md)
 {% endcontent-ref %}
 
 ### Step 4: Configure a Custom Domain and SSL certificate
 
 To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.**
 
-{% content-ref url="../../advanced-configuration/custom-domain.md" %}
-[custom-domain.md](../../advanced-configuration/custom-domain.md)
+{% content-ref url="../scepman-configuration/optional/custom-domain.md" %}
+[custom-domain.md](../scepman-configuration/optional/custom-domain.md)
 {% endcontent-ref %}
 
 ### Step 5: Deploy Storage Account and change Artifacts
 
 The next step is to configure the Storage account and change the Artifact location in your App Service.
 
-{% content-ref url="../../advanced-configuration/application-artifacts.md" %}
-[application-artifacts.md](../../advanced-configuration/application-artifacts.md)
+{% content-ref url="../scepman-configuration/optional/application-artifacts.md" %}
+[application-artifacts.md](../scepman-configuration/optional/application-artifacts.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}
@@ -90,8 +90,8 @@ We recommend the production channel.
 
 You can configure two different logging parts in your App Service, to retain your log data. The one part is the **App Service Logs**, which will save all application and IIS server-based log data. The other part is the **Diagnostic settings**, this contains platform logs and metrics data.
 
-{% content-ref url="../../advanced-configuration/log-configuration.md" %}
-[log-configuration.md](../../advanced-configuration/log-configuration.md)
+{% content-ref url="../scepman-configuration/optional/log-configuration.md" %}
+[log-configuration.md](../scepman-configuration/optional/log-configuration.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}
@@ -102,16 +102,16 @@ Use the storage account we created in **Step 4** and create two new blob contain
 
 The Application Insights can be used to get an overview of the App Service performance and to get deeper insights of the request processing of SCEPman. We recommend to always configure Application Insights to monitor, maintain and optimize the App Service.
 
-{% content-ref url="../../advanced-configuration/application-insights.md" %}
-[application-insights.md](../../advanced-configuration/application-insights.md)
+{% content-ref url="../scepman-configuration/optional/application-insights.md" %}
+[application-insights.md](../scepman-configuration/optional/application-insights.md)
 {% endcontent-ref %}
 
 ### Step 8: Configure Health check
 
 We can configure a Health check for the App Service to get direct notifications in case that the SCEPman stops working.
 
-{% content-ref url="../../advanced-configuration/health-check.md" %}
-[health-check.md](../../advanced-configuration/health-check.md)
+{% content-ref url="../scepman-configuration/optional/health-check.md" %}
+[health-check.md](../scepman-configuration/optional/health-check.md)
 {% endcontent-ref %}
 
 ### Step 9: Configure Autoscaling
@@ -122,14 +122,14 @@ The second task is the certificate validation: After we deployed certificates to
 
 To have an optimized performance and take care of the costs we recommend to setup the Autoscaling functionality of the App Service. With this feature your application can scale-out and scale-in based on metrics.
 
-{% content-ref url="../../advanced-configuration/autoscaling.md" %}
-[autoscaling.md](../../advanced-configuration/autoscaling.md)
+{% content-ref url="../scepman-configuration/optional/autoscaling.md" %}
+[autoscaling.md](../scepman-configuration/optional/autoscaling.md)
 {% endcontent-ref %}
 
 ### Step 10: Configure Geo-redundancy (Optional)
 
-{% content-ref url="../../advanced-configuration/geo-redundancy.md" %}
-[geo-redundancy.md](../../advanced-configuration/geo-redundancy.md)
+{% content-ref url="../scepman-configuration/optional/geo-redundancy.md" %}
+[geo-redundancy.md](../scepman-configuration/optional/geo-redundancy.md)
 {% endcontent-ref %}
 
 ### Step 11: Configure Intune deployment profiles
@@ -138,20 +138,20 @@ With the completion of the above steps, we have a working SCEPman implementation
 
 In the Endpoint Manager (Intune) you can create Configuration profiles for various platforms. Choose your OS platform from the below links:
 
-{% content-ref url="../../certificate-deployment/microsoft-intune/windows-10.md" %}
-[windows-10.md](../../certificate-deployment/microsoft-intune/windows-10.md)
+{% content-ref url="../certificate-deployment/microsoft-intune/windows-10.md" %}
+[windows-10.md](../certificate-deployment/microsoft-intune/windows-10.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../certificate-deployment/microsoft-intune/macos.md" %}
-[macos.md](../../certificate-deployment/microsoft-intune/macos.md)
+{% content-ref url="../certificate-deployment/microsoft-intune/macos.md" %}
+[macos.md](../certificate-deployment/microsoft-intune/macos.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../certificate-deployment/microsoft-intune/ios.md" %}
-[ios.md](../../certificate-deployment/microsoft-intune/ios.md)
+{% content-ref url="../certificate-deployment/microsoft-intune/ios.md" %}
+[ios.md](../certificate-deployment/microsoft-intune/ios.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../certificate-deployment/microsoft-intune/android.md" %}
-[android.md](../../certificate-deployment/microsoft-intune/android.md)
+{% content-ref url="../certificate-deployment/microsoft-intune/android.md" %}
+[android.md](../certificate-deployment/microsoft-intune/android.md)
 {% endcontent-ref %}
 
 ### Step 12: Enjoy the ease of SCEPman certificate deployment

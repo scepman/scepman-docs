@@ -36,24 +36,24 @@ All these resources are deployed for a trial environment.
 
 Before we can start the resource deployment, we need to create an "Azure App Registration".
 
-{% content-ref url="../permissions/azure-app-registration.md" %}
-[azure-app-registration.md](../permissions/azure-app-registration.md)
+{% content-ref url="../scepman-configuration/azure-app-registration.md" %}
+[azure-app-registration.md](../scepman-configuration/azure-app-registration.md)
 {% endcontent-ref %}
 
 ### Step 2: Deploy SCEPman base services
 
 To start with the deployment, you need to follow our Setup instruction:
 
-{% content-ref url="../deployment-options/marketplace-deployment.md" %}
-[marketplace-deployment.md](../deployment-options/marketplace-deployment.md)
+{% content-ref url="../scepman-configuration/deployment-options/marketplace-deployment.md" %}
+[marketplace-deployment.md](../scepman-configuration/deployment-options/marketplace-deployment.md)
 {% endcontent-ref %}
 
 ### Step 3: Create Root certificate
 
 After the deployment completed you need to create the root certificate:
 
-{% content-ref url="../first-run-root-cert.md" %}
-[first-run-root-cert.md](../first-run-root-cert.md)
+{% content-ref url="../scepman-configuration/first-run-root-cert.md" %}
+[first-run-root-cert.md](../scepman-configuration/first-run-root-cert.md)
 {% endcontent-ref %}
 
 ### Step 4: Configure Intune deployment profiles
@@ -62,20 +62,20 @@ With the completion of the first steps, we have a working SCEPman implementation
 
 In the Endpoint Manager (Intune) you can create Configuration profiles for various platforms. Choose your OS platform from the below links:
 
-{% content-ref url="../../certificate-deployment/microsoft-intune/windows-10.md" %}
-[windows-10.md](../../certificate-deployment/microsoft-intune/windows-10.md)
+{% content-ref url="../certificate-deployment/microsoft-intune/windows-10.md" %}
+[windows-10.md](../certificate-deployment/microsoft-intune/windows-10.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../certificate-deployment/microsoft-intune/macos.md" %}
-[macos.md](../../certificate-deployment/microsoft-intune/macos.md)
+{% content-ref url="../certificate-deployment/microsoft-intune/macos.md" %}
+[macos.md](../certificate-deployment/microsoft-intune/macos.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../certificate-deployment/microsoft-intune/ios.md" %}
-[ios.md](../../certificate-deployment/microsoft-intune/ios.md)
+{% content-ref url="../certificate-deployment/microsoft-intune/ios.md" %}
+[ios.md](../certificate-deployment/microsoft-intune/ios.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../certificate-deployment/microsoft-intune/android.md" %}
-[android.md](../../certificate-deployment/microsoft-intune/android.md)
+{% content-ref url="../certificate-deployment/microsoft-intune/android.md" %}
+[android.md](../certificate-deployment/microsoft-intune/android.md)
 {% endcontent-ref %}
 
 ### Step 5: Enjoy the ease of SCEPman certificate deployment

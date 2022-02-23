@@ -10,9 +10,9 @@ Applicable to version 1.8 and above
 
 **Description:** This setting determines whether SCEPman generates its CA certificates with an Extended Key Usage extension. The extension is not required by the standards, but Cisco ISE sometimes requires it to make OCSP work.
 
-**True** \(default for 1.9 and above\): SCEPman adds an Extended Key Usage extension to newly generated CA certificates.
+**True** (default for 1.9 and above): SCEPman adds an Extended Key Usage extension to newly generated CA certificates.
 
-**False** \(default for 1.8 and before\): SCEPman generates a CA certificate without Extended Key Usage extension.
+**False** (default for 1.8 and before): SCEPman generates a CA certificate without Extended Key Usage extension.
 
 ## AppConfig:KeyVaultConfig:KeyVaultURL
 
@@ -39,4 +39,3 @@ The Root Certificate Subject. This setting is automatically configured during th
 {% hint style="danger" %}
 Changes can harm your service!
 {% endhint %}
-
