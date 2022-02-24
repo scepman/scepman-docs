@@ -89,6 +89,10 @@ You must add the SCEPman URL in the previous command, but keep the path `/dc`. R
 
 The request password is encrypted with SCEPman's CA certificate, so only SCEPman can read it. Domain Controller certificates are only issued with the correct request password.
 
+{% hint style="info" %}
+Please ensure that Internal PKIs do not enroll DC certificates (Certificate Templates "Domain Controller", "Domain Controller Authentication", and "Kerberos Authentication") in parallel with SCEPman. Otherwise, the DCs might use the DC certificate from the Internal PKI, which is considered untrusted if e.g. the CDP is unreachable. The SCEPman DC certificate can be used for all purposes for which the certificates of the above-mentioned templates can be used for, e.g. Kerberos authentication and LDAPS.
+{% endhint %}
+
 {% hint style="warning" %}
 The above command requests a new DC certificate whether or not there already is a valid certificate. See the following Section to learn how to renew certificates only if the existing certificate is about to expire.
 {% endhint %}
