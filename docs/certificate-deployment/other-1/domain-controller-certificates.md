@@ -75,6 +75,8 @@ certutil -f -dsPublish scepman-root.cer RootCA
 
 Afterwards, the CA certificate is generally trusted in AD and especially trusted for Kerberos Authentication. However, it takes some time (in default configuration up to 8 hours) until all devices receive this configuration. You may speedup this process on any machine by executing `gpupdate /force`, e.g. on the domain controllers.
 
+This ensures that the DC certificates are trusted within the domain. They are also trusted on all Intune-managed devices in the scope of a Trusted Certificate profile distributing the Root CA certificate. It can be necessary to distribute the Root CA manually to other services like appliances or cloud services to make the DC certificates trusted for all systems.
+
 ## Installation on the Client
 
 Then you must download our Open Source SCEP client software [SCEPClient](https://github.com/scepman/scepclient/releases/latest). Releases with the suffix _-framework_ use .NET Framework 4.6.2, which is pre-installed on Windows Server 2016 and compatible with newer versions. Other releases require the [.NET Core 3.1 Runtime](https://download.visualstudio.microsoft.com/download/pr/9845b4b0-fb52-48b6-83cf-4c431558c29b/41025de7a76639eeff102410e7015214/dotnet-runtime-3.1.10-win-x64.exe) to be installed on the target systems.
@@ -89,15 +91,11 @@ You must add the SCEPman URL in the previous command, but keep the path `/dc`. R
 
 The request password is encrypted with SCEPman's CA certificate, so only SCEPman can read it. Domain Controller certificates are only issued with the correct request password.
 
-{% hint style="info" %}
-Please ensure that Internal PKIs do not enroll DC certificates (Certificate Templates "Domain Controller", "Domain Controller Authentication", and "Kerberos Authentication") in parallel with SCEPman. Otherwise, the DCs might use the DC certificate from the Internal PKI, which is considered untrusted if e.g. the CDP is unreachable. The SCEPman DC certificate can be used for all purposes for which the certificates of the above-mentioned templates can be used for, e.g. Kerberos authentication and LDAPS.
-{% endhint %}
+### Automated Certificate Renewal
 
 {% hint style="warning" %}
 The above command requests a new DC certificate whether or not there already is a valid certificate. See the following Section to learn how to renew certificates only if the existing certificate is about to expire.
 {% endhint %}
-
-### Automated Certificate Renewal
 
 For a fully automated renewal of certificates, you should distribute ScepClient to **all** your domain controllers, together with the PowerShell script [enroll-dc-certificate.ps1](https://github.com/scepman/scepclient/blob/Core31/enroll-dc-certificate.ps1). Add a Scheduled task that executes the following command in a SYSTEM context (adapt the URL and request password):
 
@@ -114,3 +112,9 @@ This checks for existing DC certificates in the machine store. Only if there are
 The script writes a continuous log file to the directory where it is stored. If you do not want this log file, leave out the `-LogToFile` parameter. You can instead redirect the Information, Error, and/or Debug streams into files (e.g. `6>logfile.txt 2>&1`).
 
 For WHfB, all DCs running version 2016 or newer need a Kerberos Authentication certificate. Older DCs forward authentication requests to newer DCs, thus they do not necessarily require a Kerberos Authentication certificate. It is a best practice, though, to supply them with certificates, too.
+
+### Phase-out of an Existing Internal PKI
+
+Please ensure that Internal PKIs do not enroll DC certificates (Certificate Templates "Domain Controller", "Domain Controller Authentication", and "Kerberos Authentication") in parallel with SCEPman. Otherwise, the DCs might use the DC certificate from the Internal PKI, which is considered untrusted if e.g. the CDP is unreachable. The SCEPman DC certificate can be used for all purposes for which the certificates of the above-mentioned templates can be used for, e.g. Kerberos authentication and LDAPS.
+
+The easiest way to accomplish this, is to stop the internal CAs issuing certificates for the templates "Domain Controller", "Domain Controller Authentication", and "Kerberos Authentication". In the Certification Authority MMC Snap-In, delete these templates from the list of issued templates of each Internal CA. Then, delete already issued certificates from the Internal CA from your Domain Controllers' "MY" Stores (`certlm.msc` and navigate to Personal). Even after a `gpupdate /force`, no new DC certificate from the Internal PKI should appear in the DC's Personal store.
