@@ -6,7 +6,7 @@
 
 ## SCEPMAN Deployment
 
-* [Deployment Guides](scepman-deployment/deployment-guides/README.md)
+* [Getting started](scepman-deployment/deployment-guides/README.md)
   * [Trial Guide](scepman-deployment/trial-guide.md)
   * [Community Guide](scepman-deployment/community-guide.md)
   * [Enterprise Guide](scepman-deployment/enterprise-guide.md)
