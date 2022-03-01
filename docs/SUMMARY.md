@@ -20,9 +20,25 @@
   * [V2.X Beta: Enterprise deployment](scepman-deployment/scepman-2.x-deployment.md)
 * [Root Certificate](scepman-configuration/first-run-root-cert.md)
 
+## Certificate Deployment
+
+* [Microsoft Intune](certificate-deployment/microsoft-intune/README.md)
+  * [Windows 10](certificate-deployment/microsoft-intune/windows-10.md)
+  * [MacOS](certificate-deployment/microsoft-intune/macos.md)
+  * [Android](certificate-deployment/microsoft-intune/android.md)
+  * [iOS](certificate-deployment/microsoft-intune/ios.md)
+* [Jamf](certificate-deployment/jamf/README.md)
+  * [General Configuration](certificate-deployment/jamf/general.md)
+  * [Computers](certificate-deployment/jamf/computers.md)
+  * [Devices](certificate-deployment/jamf/devices.md)
+  * [Users](certificate-deployment/jamf/users.md)
+* [Other](certificate-deployment/other-1/README.md)
+  * [3rd-party MDM Solutions](certificate-deployment/other-1/static-certificates.md)
+  * [Domain Controller Certificates](certificate-deployment/other-1/domain-controller-certificates.md)
+
 ## Advanced Configuration
 
-* [Add a License Key](scepman-configuration/optional/add-a-license-key.md)
+* [License Key](scepman-configuration/optional/add-a-license-key.md)
 * [Application Artifacts](scepman-configuration/optional/application-artifacts.md)
 * [Application Insights](scepman-configuration/optional/application-insights.md)
 * [Application Settings](scepman-configuration/optional/application-settings/README.md)
@@ -42,22 +58,6 @@
 * [Intermediate Certificate](scepman-configuration/optional/intermediate-certificate.md)
 * [Log configuration](scepman-configuration/optional/log-configuration.md)
 * [Update Strategy](scepman-configuration/optional/update-strategy.md)
-
-## Certificate Deployment
-
-* [Microsoft Intune](certificate-deployment/microsoft-intune/README.md)
-  * [Windows 10](certificate-deployment/microsoft-intune/windows-10.md)
-  * [MacOS](certificate-deployment/microsoft-intune/macos.md)
-  * [Android](certificate-deployment/microsoft-intune/android.md)
-  * [iOS](certificate-deployment/microsoft-intune/ios.md)
-* [Jamf](certificate-deployment/jamf/README.md)
-  * [General Configuration](certificate-deployment/jamf/general.md)
-  * [Computers](certificate-deployment/jamf/computers.md)
-  * [Devices](certificate-deployment/jamf/devices.md)
-  * [Users](certificate-deployment/jamf/users.md)
-* [Other](certificate-deployment/other-1/README.md)
-  * [3rd-party MDM Solutions](certificate-deployment/other-1/static-certificates.md)
-  * [Domain Controller Certificates](certificate-deployment/other-1/domain-controller-certificates.md)
 
 ## NAC Configuration
 
