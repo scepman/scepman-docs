@@ -1,103 +1,167 @@
-# iOS
+# iOS/iPadOS
 
-The following article describes how to deploy a device certificate or a user certificate for iOS.
+The following article describes how to deploy a device or/and user certificates for iOS and iPadOS devices. The deployment of the SCEPman Root Certificate is mandatory. Afterwards you can choose between deploying only device, user or even both certificate types.
 
-## Deploying Device Certificates
+## Root Certificate
 
-iOS certificate deployment is very similar to Windows 10 certificate deployment.
+The basis for deploying SCEP certificates is to trust the public root certificate of SCEPman. Therefore, you have to download the CA Root certificate and deploy it as a **Trusted certificate** profile via Microsoft Intune:
 
-First, we need to trust the public root certificate from SCEPman. Therefore, you have to download the CA certificate (from SCEPman) and deploy it via a trusted certificate profile in Microsoft Intune:
+* [ ] Download the CA Certificate from SCEPman portal:
 
-Download the CA certificate:
+![](<../../.gitbook/assets/image (4).png>)
 
-![](<../../../.gitbook/assets/scepman24 (1) (7) (8) (8) (8) (4) (22).png>)
+* [ ] Create a profile for iOS/iPadOS with type **Trusted certificate** in Microsoft Intune:
 
-Then, create a profile in Microsoft Intune:
+![](../../.gitbook/assets/image.png)
 
-![](<../../.gitbook/assets/2021-10-22 11\_48\_06-Window.png>)
+* [ ] Upload your previously downloaded **.cer file**.
+* [ ] Now you can deploy this profile to your devices. Please choose All Users and/or All Devices or a dedicated group for assignment.
 
-1. Download the CA Certificate
-2. Then, create a profile in Microsoft Intune
-3. Select **iOS/iPadOS** as **Platform**
-4. Select **Trusted Certificate** as **Profile type**
-5. Click **Settings**, select **A valid .cer file**
-6. Then, click **OK**
-7. Finally, click **Create**
-
-When you are done with it you can deploy this profile to your devices.
-
-Now, you must create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server, you can find it from [here](windows-10.md#how-to-find-scep-url-for-intune)
-
-Next, to finally deploy the device certificates you have to create a SCEP certificate profile in Intune:
-
-1. Navigate to **Microsoft Intune**
-2. Click on **Devices**
-3. Click on **Configuration profiles**
-4. Click **+ Create profile**
-5. Select iOS/IPadOS as **Platform**
-6. Select **SCEP certificates** as **Profile type**
-7. **Create**
-8. Choose **Name** and Description (optional) for this profile
-9. Set the **Configuration settings** as in the picture below
-10. Configure the **SCEP Certificate**
-
-{% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory to set by SCEPman, the green rectangle is automatically set by SCEPman (for better visibility I recommend setting the settings in the green rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 months currently. The red rectangle is a setting that is free to modify. Long term all settings will be supported for configuration. **There is a dependency on the \{{AAD\_Device\_ID} in the subject name, which is used as a seed for the certificate serial number generation. Therefore the subject name must include**.
-
-With our automatically set settings, we fulfill Apple's certificate requirements. For more details click [here](https://support.apple.com/en-us/HT210176).
+{% hint style="info" %}
+Note, that you have to use the **same group for assigning** the **Trusted certificate** and **SCEP profile**. Otherwise, the Intune deployment might fail.
 {% endhint %}
 
-![](<../../.gitbook/assets/2021-10-22 12\_14\_11-Window.png>)
+## Device certificates
 
-1. Scroll down and enter the SCEPman URL you have noted
-2. Click **Next,** Assign users and groups
-3. **Next** and finally click **Create**
+* [ ] Open the SCEPman portal and copy the URL under **Intune MDM**:
 
-When all is done, you have the following two certificate configurations:
+![](<../../.gitbook/assets/image (2).png>)
 
-* SCEPman - SCEP iOS device certificate
-* SCEPman - Trusted root iOS certificate
+* [ ] Then, create a profile for iOS/iPadOS with type **SCEP certificate** in Microsoft Intune:
 
-## Deploying User Certificates
+![](<../../.gitbook/assets/image (1).png>)
 
-iOS certificate deployment is very similar to Windows 10 and macOS deployments.
+* [ ] Configure the profile as described:
 
-First, we need to trust the public root certificate from SCEPman. Therefore, This step we did it already by deploying device certificates. Check [Deploying device certificates](ios.md#deploying-device-certificates).
+<details>
 
-Now, you must create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server, you can find it from [here](windows-10.md#how-to-find-scep-url-for-intune)
+<summary>Certificate type: <code>Device</code></summary>
 
-Next, to finally deploy the device certificates you have to create a SCEP certificate profile in Intune:
+In this section we are setting up a device certificate.
 
-1. Navigate to **Microsoft Intune**
-2. Click on **Devices**
-3. Click on **Configuration profiles**
-4. Click **+ Create profile**
-5. Select iOS/IPadOS as **Platform**
-6. Select Templates as **Profile type**
-7. Search and select **SCEP certificate**
-8. **Create**
-9. Choose **Name** and Description (optional) for this profile
-10. Set the **Configuration settings** as in the picture below
+</details>
 
-{% hint style="warning" %}
-You cannot configure all SCEP Certificate settings. Specifically, SCEPman requires that user certificates contain the user's **UPN** in the **Subject alternative name** extension. All iOS versions we tested **ignore** the configured **validity period**. Thus, the [default validity period ](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-validityperioddays)configured in SCEPman applies.\
-Other settings can be chosen according to your requirements, but we **recommend** the settings shown in the below screenshot for the most common use cases: Leave **Subject name format** as is. Set Key usage to **Digital signature** and **Key encipherment**. Have **2048 bits** as Key size. Select the configuration profile of your SCEPman **Root certificate**. Add **Client Authentication** as Extended key usage from the list of predefined values. Leave the Renewal threshold at **20 %**.
+<details>
+
+<summary>Subject name format: <code>CN={{DeviceId}}</code> or <code>CN={{AAD_Device_ID}}</code></summary>
+
+The subject name format is used by SCEPman to identify the device and as a seed for the certificate serial number generation. Azure AD and Intune offer two different IDs:
+
+* \{{DeviceId\}}: This ID is generated and used by Intune **(Recommended)**\
+  \
+  (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be configured)
+
+<!---->
+
+* \{{AAD\_Device\_ID\}}: This ID is generated and used by Azure AD.\
+  \
+  (Note: When using Automated Device Enrollment via Apple Business Manager, this ID might change during device setup. If so, SCEPman might not be able to identify the device afterwards. The certificate would become invalid in that case.)
+
+</details>
+
+<details>
+
+<summary>Subject alternative name: <code>IntuneDeviceId://{{DeviceId}}</code> (URI)</summary>
+
+This field is sometimes used by NAC solutions to identify the device.
+
+</details>
+
+<details>
+
+<summary>Certificate validity period: <code>2 years</code></summary>
+
+iOS/iPadOS devices ignore the configuration of the validity period via Intune. Please make sure, to configure [#appconfig-validityperioddays](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays "mention") to a fixed value. So in this example with 2 years, we have to set this variable in SCEPman configuration to 730 days.\
+\
+Also note, that **certificates on iOS/iPadOS are only renewed** by Intune when the device is **unlocked, online, syncing and in scope of the renewal threshold**. If certificates are expired (e.g.: device was offline and/or locked for a long time), they won't be renewed any more. Therefore, we recommend to choose an higher value here.
+
+</details>
+
+<details>
+
+<summary>Key usage: <code>Digital signature</code> and <code>key enciphermen</code>t</summary>
+
+Please activate both cryptographic actions.
+
+</details>
+
+<details>
+
+<summary>Key size (bits): <code>2048</code></summary>
+
+SCEPman supports 2048 bits.
+
+</details>
+
+<details>
+
+<summary>Root Certificate: <code>Profile from previous step</code></summary>
+
+Please select the Intune profile from [#deploying-scepman-root-certificate](ios.md#deploying-scepman-root-certificate "mention").
+
+</details>
+
+<details>
+
+<summary>Extended key usage: <code>Client Authentication, 1.3.6.1.5.5.7.3.2</code></summary>
+
+Please choose **Client Authentication (1.3.6.1.5.5.7.3.2)** under **Predefined values**. The other fields will be filled out automatically.
+
+</details>
+
+<details>
+
+<summary>Renewal threshold (%): <code>20</code></summary>
+
+This value defines when the device is allowed to renew its certificate (based on remaining lifetime of existing certificate). Please read the note under **Certificate validity period** and select a suitable value that allows the device the renew the certificate over a long period. A value of 20% would allow the device with a 2 years valid certificate to start renewal 146 days before expiration.
+
+</details>
+
+{% hint style="info" %}
+With our the stated settings, we fulfil [Apples certificate requirements](https://support.apple.com/en-us/HT210176).
 {% endhint %}
 
-{% hint style="warning" %}
-With our automatically set settings, we fulfill Apple's certificate requirements. For more details click [here](https://support.apple.com/en-us/HT210176).
+### Example
+
+![Example configuration for SCEP device certificate](<../../.gitbook/assets/image (6).png>)
+
+* [ ] Now you can deploy this profile to your devices. Please choose the same group/s for assignment as for the Trusted certificate profile.
+
+## User Certificates
+
+Please follow the instructions of [#scepman-device-certificates](ios.md#scepman-device-certificates "mention") and take care of the following differences:
+
+<details>
+
+<summary>Certificate type: <code>User</code></summary>
+
+In this section we are setting up a user certificate.
+
+</details>
+
+<details>
+
+<summary>Subject name format: <code>CN={{UserName}},E={{EmailAddress}}</code></summary>
+
+The subject name format is used by SCEPman to identify the user and as a seed for the certificate serial number generation. We are including the username (e.g.: janedoe) and email address (e.g.: janedoe@contoso.com).
+
+</details>
+
+<details>
+
+<summary>Subject alternative name: <code>{{UserPrincipalName}}</code> (UPN)</summary>
+
+This field is also used to identify the user based on his UPN (e.g.: janedoe@contoso.com).
+
+</details>
+
+{% hint style="info" %}
+With our the stated settings, we fulfil [Apples certificate requirements](https://support.apple.com/en-us/HT210176)
 {% endhint %}
 
-![](<../../.gitbook/assets/2021-10-22 12\_32\_39-Window.png>)
+### Example
 
-* Scroll down and enter the SCEPman URL you have noted
-* Click **Next,** Assign users and groups
-* **Next** and finally click **Create**
-
-When all is done, you have the following two certificate configurations:
-
-* SCEPman - SCEP iOS user certificate
-* SCEPman - Trusted root iOS certificate
+![Example configuration for SCEP user certificate](<../../.gitbook/assets/image (5).png>)
 
 | ​[Back to Trial Guide​](../../scepman-deployment/trial-guide.md#step-4-configure-intune-deployment-profiles) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-9-configure-intune-deployment-profiles) | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-11-configure-intune-deployment-profiles) |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
