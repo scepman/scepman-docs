@@ -27,7 +27,7 @@ Note, that you have to use the **same group for assigning** the **Trusted certif
 
 ![](<../../.gitbook/assets/image (2).png>)
 
-* [ ] Then, create a profile for iOS/iPadOS with type **SCEP certificate** in Microsoft Intune:
+* [ ] Create a profile for iOS/iPadOS with type **SCEP certificate** in Microsoft Intune:
 
 ![](<../../.gitbook/assets/image (1).png>)
 
@@ -97,7 +97,7 @@ SCEPman supports 2048 bits.
 
 <summary>Root Certificate: <code>Profile from previous step</code></summary>
 
-Please select the Intune profile from [#deploying-scepman-root-certificate](ios.md#deploying-scepman-root-certificate "mention").
+Please select the Intune profile from [#root-certificate](ios.md#root-certificate "mention").
 
 </details>
 
@@ -129,7 +129,7 @@ With our the stated settings, we fulfil [Apples certificate requirements](https:
 
 ## User Certificates
 
-Please follow the instructions of [#scepman-device-certificates](ios.md#scepman-device-certificates "mention") and take care of the following differences:
+Please follow the instructions of [#device-certificates](ios.md#device-certificates "mention") and take care of the following differences:
 
 <details>
 
