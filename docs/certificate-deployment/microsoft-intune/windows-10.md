@@ -76,7 +76,7 @@ SCEPman caps the certificate validity to the configured maximum in setting _AppC
 {% hint style="warning" %}
 The setting Key Storage Provider (KSP) determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage, because the TPM provides an additional layer of security to prevent key theft. However, there is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
 
-* STMicroelectronics: 71.12, 73.4.17568.4452
+* STMicroelectronics: 71.12, 73.4.17568.4452, 71.12.17568.4100
 * Intel: 11.8.50.3399, 2.0.0.2060
 * Infineon: 7.63.3353.0
 
