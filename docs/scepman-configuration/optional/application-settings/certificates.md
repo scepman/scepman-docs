@@ -61,5 +61,5 @@ Applicable to version 1.5 and above
 **False:** Key Usage is always Key Encipherment + Digital Signature. Extended Key Usage is always _Client Authentication_.
 
 {% hint style="warning" %}
-iOS devices do not support customized Extended Key Usages. Their certificates will always have _Client Authentication_ as Extended Key Usage.
+iOS/iPadOS devices do not support customized Extended Key Usages (even if configured in the Intune profile and [#appconfig-userequestedkeyusages](certificates.md#appconfig-userequestedkeyusages "mention") set to **True**). So, their certificates will always have _Client Authentication_ as Extended Key Usage.
 {% endhint %}

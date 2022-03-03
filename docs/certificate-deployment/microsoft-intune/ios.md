@@ -45,11 +45,11 @@ In this section we are setting up a device certificate.
 
 <summary>Subject name format: <code>CN={{DeviceId}}</code> or <code>CN={{AAD_Device_ID}}</code></summary>
 
-SCEPman uses the CN field of the subject to identify the device and as a seed for the certificate serial number generation. Azure AD and Intune offer two different IDs:
+The subject name format is used by SCEPman to identify the device and as a seed for the certificate serial number generation. Azure AD and Intune offer two different IDs:
 
 * \{{DeviceId\}}: This ID is generated and used by Intune **(Recommended)**\
   \
-  (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
+  (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be configured)
 
 <!---->
 
@@ -57,17 +57,13 @@ SCEPman uses the CN field of the subject to identify the device and as a seed fo
   \
   (Note: When using Automated Device Enrollment via Apple Business Manager, this ID might change during device setup. If so, SCEPman might not be able to identify the device afterwards. The certificate would become invalid in that case.)
 
-You can add other RDNs if needed (e.g.: `CN={{DeviceId}}, O=Contoso, CN={{WiFiMacAddress}}`). Supported variables are listed in the [Microsoft docs](https://docs.microsoft.com/en-us/mem/intune/protect/certificates-profile-scep#create-a-scep-certificate-profile).
-
 </details>
 
 <details>
 
 <summary>Subject alternative name: <code>IntuneDeviceId://{{DeviceId}}</code> (URI)</summary>
 
-The URI field is [recommended by Microsoft](https://techcommunity.microsoft.com/t5/intune-customer-success/new-microsoft-intune-service-for-network-access-control/ba-p/2544696) for NAC solutions to identify the devices based on their Intune Device ID.
-
-Other SAN values like DNS can be added if needed.
+This field is sometimes used by NAC solutions to identify the device.
 
 </details>
 
@@ -111,8 +107,6 @@ Please select the Intune profile from [#root-certificate](ios.md#root-certificat
 
 Please choose **Client Authentication (1.3.6.1.5.5.7.3.2)** under **Predefined values**. The other fields will be filled out automatically.
 
-Currently, iOS/iPadOS devices do not support customized Extended Key Usages. So, certificates will always only have Client Authentication as Extended Key Usage.
-
 </details>
 
 <details>
@@ -149,7 +143,7 @@ In this section we are setting up a user certificate.
 
 <summary>Subject name format: <code>CN={{UserName}},E={{EmailAddress}}</code></summary>
 
-You can define RDNs based on your needs. Supported variables are listed in the [Microsoft docs](https://docs.microsoft.com/en-us/mem/intune/protect/certificates-profile-scep#create-a-scep-certificate-profile). We recommend to include the username (e.g.: janedoe) and email address (e.g.: janedoe@contoso.com) as baseline setting.
+The subject name format is used by SCEPman to identify the user and as a seed for the certificate serial number generation. We are including the username (e.g.: janedoe) and email address (e.g.: janedoe@contoso.com).
 
 </details>
 
@@ -157,9 +151,7 @@ You can define RDNs based on your needs. Supported variables are listed in the [
 
 <summary>Subject alternative name: <code>{{UserPrincipalName}}</code> (UPN)</summary>
 
-SCEPman uses the UPN in the SAN to identify the user and as a seed for the certificate serial number generation (e.g.: janedoe@contoso.com).\
-\
-Other SAN values like Email address can be added if needed.
+This field is also used to identify the user based on his UPN (e.g.: janedoe@contoso.com).
 
 </details>
 
