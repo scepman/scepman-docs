@@ -52,7 +52,7 @@ In the Azure Portal, visit [Enterprise applications](https://portal.azure.com/#b
 
 ## Background Details of the SCEPman PowerShell Module
 
-This section describes the inner workings of the PowerShell Module. This may help if you have a special configuration that requires altering the script, if you need to grant some special permission, if you are troubleshooting issues with a SCEPman installation, or if you want to understand the inner workings to write an installation script for your own project. Note that the PowerShell Module is Open Source Software. You can review the source code in its [GitHub Repository](https://github.com/scepman/install/tree/master/setup). Pull Requests are welcome!
+This section describes the inner workings of the PowerShell Module. This may help if you have a special configuration that requires altering the script, if you need to grant some special permission, if you are troubleshooting issues with a SCEPman installation, or if you want to understand the inner workings to write an installation script for your own project. Note that the PowerShell Module is Open Source Software. You can review the source code in its [GitHub Repository](https://github.com/scepman/scepman-psmodule). Pull Requests are welcome!
 
 ### How the CMDlet Configues SCEPman
 
