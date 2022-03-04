@@ -1,4 +1,4 @@
-# V2.X Beta: Enterprise deployment
+# V2.x Beta: Enterprise Deployment
 
 The deployment of SCEPman 2.x is different from a SCEPman 1.x deployment. If you want to install a new SCEPman 2.x instance or upgrade your existing 1.x instance keep reading. If you want to install a new SCEPman 1.x instance, please follow the original guide [here](trial-guide.md).
 
@@ -28,13 +28,21 @@ After a successful deployment of SCEPman 2.x please follow the [Post-Installatio
 
 ## Upgrade from 1.x to 2.x
 
-SCEPman 2.0 comprises two additional Azure resources, an Azure Storage account and an App Service called "Certificate Master". These are used to issue and manage the server certificates. But you can run SCEPman 2.0 also without them if you just go for the client certificates as before.
+{% hint style="info" %}
+Currently, SCEPman 2.x is only available in our Beta Channel.
+{% endhint %}
 
-This means you can just [switch between channels in the main component as was possible before](../scepman-configuration/optional/application-artifacts.md)
+SCEPman 2.0 comprises two additional Azure resources, an Azure Storage account and an App Service called "Cert Master". These are used to issue and manage the server certificates. But you can run SCEPman 2.0 also without them if you just go for the client certificates as before.
 
-### Add SCEPman Certificate Master
+Since **SCEPman 2.x is currently only available as beta**, you have to switch the artifact source channel of your existing deployment from **Production** to **Beta** by setting the \`WEBSITE\_RUN\_FROM\_PACKAGE\` parameter as described here: [Application Artifacts](../scepman-configuration/optional/application-artifacts.md). Please restart your AppService afterwards.
 
-If you want to use the new SCEPman Certificate Master component to issue server certificates, you need to add the additional Azure resources and configure them. This will enable authentication as Managed Identity, one advantage of it is you do not require any application secrets anymore. Thus, you also don't need to worry about the expiration of application secrets! This is how you do it:
+### Add SCEPman Cert Master
+
+{% hint style="warning" %}
+**Before** adding the Cert Master component through the PowerShell script mentioned below, the existing SCEPman base service must be updated to version >= 2.0 as described in the previous paragrapgh.
+{% endhint %}
+
+If you want to use the new SCEPman Cert Master component to issue server certificates, you need to add the additional Azure resources and configure them. This will enable authentication as Managed Identity, one advantage of it is you do not require any application secrets anymore. Thus, you also don't need to worry about the expiration of application secrets! This is how you do it:
 
 After upgrading the main component, you need to follow the guide of [Post-Installation Configuration](../scepman-configuration/post-installation-config.md). In contrast to a new installation, this will also create the two new Azure resources.
 

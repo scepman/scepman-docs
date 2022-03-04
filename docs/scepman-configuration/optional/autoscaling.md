@@ -12,7 +12,7 @@ Please ensure that your App Service plan uses at least the **S1** pricing tier. 
 
 To scale the instance count based on the current load of the service there must be two scaling rule conditions added. One rule to increase the instance count on heavy load and one rule to decrease the instance count after the load is reduced again.
 
-![](<../../../.gitbook/assets/image (8).png>)
+![](<../../.gitbook/assets/image (8).png>)
 
 * Select **Custom autoscale**
 * Type in an appropriate name in **Autoscale setting name**
@@ -38,7 +38,7 @@ But please keep in mind that this can depend on your workload and needs to be mo
 6. Set the **Cool down (minutes)** to **15** (minutes)
 7. Check the **Instance count (1)** that will be added to the current instances
 
-![](../../../.gitbook/assets/screen-shot-2021-01-19-at-10.02.50.png)
+![](../../.gitbook/assets/screen-shot-2021-01-19-at-10.02.50.png)
 
 #### Decrease Instance Count Rule
 
@@ -50,7 +50,7 @@ But please keep in mind that this can depend on your workload and needs to be mo
 6. Set the **Cool down (minutes)** to **30** (minutes)
 7. Check the **Instance count (1)** that will be removed from the current instances
 
-![](../../../.gitbook/assets/screen-shot-2021-01-19-at-10.08.38.png)
+![](../../.gitbook/assets/screen-shot-2021-01-19-at-10.08.38.png)
 
 | Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-9-configure-autoscaling) |
 | :-----------------: | :---------------------: | :-----------------------------------------------------------------------------------------------------: |

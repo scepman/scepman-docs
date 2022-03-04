@@ -14,11 +14,11 @@ Note that the "User and Location" data of your computers or mobile devices need 
 
 As first step you need to deploy SCEPman root certficate if you haven't done this already for the target plattform. Download this CA certificate via SCEPman dashboard:
 
-![](<../../../.gitbook/assets/image (22).png>)
+![](<../../.gitbook/assets/image (22).png>)
 
 Add a new "Mobile Device Configuration Profile" and/or "macOS Configuration Profile", depending on your target plattform, and choose "Certificate" as payload. Enter a meaningful name and upload the certificate (for "Select Certificate Option" select "Upload):
 
-![](<../../../.gitbook/assets/image (25).png>)
+![](<../../.gitbook/assets/image (25).png>)
 
 ## User Certificates on Computers
 
@@ -47,4 +47,3 @@ Under Devices -> Configuration Profiles, please add another "Mobile Device Confi
 | Subject Alternative Name Value |                                                 | $EMAIL                                                |
 
 Distribute the profile to your clients as desired.
-

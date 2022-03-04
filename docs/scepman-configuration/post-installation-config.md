@@ -1,4 +1,4 @@
-# V2.X: Managed Identities
+# V2.x: Managed Identities
 
 {% hint style="info" %}
 This feature requires version **2.0** or above.
@@ -8,11 +8,11 @@ SCEPman needs to interact with your Azure Active Directory and Intune endpoints 
 
 Additionally, the PowerShell Module adds the required background wiring for the SCEPman Certificate Master component introduced with SCEPman 2.0. In case you upgraded from SCEPman 1.x to SCEPman 2.x, the PowerShell Module even adds two new Azure Resources for the SCEPman Certificate Master component.
 
-## Acquire and Run the SCEPman Installation PowerShell Module
+## Acquire and run the SCEPman Installation PowerShell Module
 
 Whether you have just installed a fresh SCEPman 2.x installation or if you have just upgraded from SCEPman 1.x to SCEPman 2.x, and in some cases after deployment architecture changes, the installation steps are the same. You download and run the SCEPman PowerShell Module, which detects what needs to be done and completes the installation. You can can run the SCEPman Module as often as you want, it will only add what is yet missing.
 
-### Prerequistes
+### Prerequisites
 
 * A Global Admin Account for the tenant to which you want to install SCEPman
 * A workstation with [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (also known as _az_) installed. Azure CLI is pre-installed in the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), the preferred way to run the module.
