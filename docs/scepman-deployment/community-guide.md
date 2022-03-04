@@ -15,7 +15,7 @@ For V2.0 community edition deployment please follow [SCEPman 2.x Deployment](sce
 
 ## Azure Deployment
 
-Let´s start with the requirements and a resource overview.\
+Let's start with the requirements and a resource overview.\
 Keep in mind that you need to plan a useful Azure resource design.
 
 ### Checklist pre-requirements
