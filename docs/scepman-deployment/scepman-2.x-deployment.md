@@ -34,7 +34,9 @@ Currently, SCEPman 2.x is only available in our Beta Channel.
 
 SCEPman 2.0 comprises two additional Azure resources, an Azure Storage account and an App Service called "Cert Master". These are used to issue and manage the server certificates. But you can run SCEPman 2.0 also without them if you just go for the client certificates as before.
 
-Since **SCEPman 2.x is currently only available as beta**, you have to switch the artifact source channel of your existing deployment from **Production** to **Beta** by setting the \`WEBSITE\_RUN\_FROM\_PACKAGE\` parameter as described here: [Application Artifacts](../scepman-configuration/optional/application-artifacts.md). Please restart your AppService afterwards.
+Since **SCEPman 2.x is currently only available as beta**, you have to switch the artifact source channel of your existing deployment from **Production** to **Beta** by setting the `WEBSITE_RUN_FROM_PACKAGE` parameter as described here: [Application Artifacts](../scepman-configuration/optional/application-artifacts.md).&#x20;
+
+**Please restart your AppService afterwards.**
 
 ### Add SCEPman Cert Master
 
