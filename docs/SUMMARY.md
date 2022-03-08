@@ -68,6 +68,7 @@
 * [Troubleshooting](other/troubleshooting/README.md)
   * [Common Problems](other/troubleshooting/general.md)
   * [Cisco ISE Host Header Limitation](other/troubleshooting/cisco-ise-host-header-limitation.md)
+  * [Re-enrollment trigger](other/troubleshooting/re-enrollment-trigger.md)
 * [FAQ](https://glueckkanja.zendesk.com/hc/en-us/sections/360002363340-FAQ)
 * [Important Links](other/important-links.md)
 
