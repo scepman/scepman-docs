@@ -46,9 +46,9 @@ SCEPman Enterprise Edition only
 
 ### Granting the Rights to Request Certificates via the Certificate Master Website
 
-Create an AAD Group, possibly a Priviledged Access Group, for the people that shall be able to create web server certificates via SCEPman Certificate Master.
+Create an AAD Group, possibly a Privileged Access Group, for the people that shall be able to create web server certificates via SCEPman Certificate Master.
 
-In the Azure Portal, visit [Enterprise applications](https://portal.azure.com/#blade/Microsoft\_AAD\_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/). Select "All Applications" as Application type, search for _SCEPman-CertMaster_, and select the displayed application. Navigate to _Users and groups_ and click _Add user/group_ on the top menu. Select the group you have previously created. The role will automatically be chosen as _Full Admin_. After you hit _Assign_, direct members of the group can visit the Certificate Master website and request certificates. Note that using Certificate Master is an Enterprise feature. After assignment, the setting should look like this:
+In the Azure Portal, visit [Enterprise applications](https://portal.azure.com/#blade/Microsoft\_AAD\_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/). Remove the filter for "Application type == **Enterprise Applications**", search for _SCEPman-CertMaster_, and select the displayed application. Navigate to _Users and groups_ and click _Add user/group_ on the top menu. Select the group you have previously created. The role will automatically be chosen as _Full Admin_. After you hit _Assign_, direct members of the group can visit the Certificate Master website and request certificates. Note that using Certificate Master is an Enterprise feature. After assignment, the setting should look like this:
 
 ## Background Details of the SCEPman PowerShell Module
 
