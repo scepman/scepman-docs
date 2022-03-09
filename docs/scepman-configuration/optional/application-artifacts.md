@@ -79,7 +79,7 @@ To configure this, do the following:
 4. Then, click **Configuration** (submenu **Setting**)
 5. Look for **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
 
-![](<../../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (3).png>)
+![](<../../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (3) (1).png>)
 
 6\. Then replace the URL in \*\*Value \*\*with the SCEPman GitHub URL or your Storage account blob URL you already copied:
 

@@ -38,7 +38,6 @@
 
 ## Advanced Configuration
 
-* [License Key](scepman-configuration/optional/add-a-license-key.md)
 * [Application Artifacts](scepman-configuration/optional/application-artifacts.md)
 * [Application Insights](scepman-configuration/optional/application-insights.md)
 * [Application Settings](scepman-configuration/optional/application-settings/README.md)
@@ -56,6 +55,7 @@
 * [Geo-redundancy](scepman-configuration/optional/geo-redundancy.md)
 * [Health Check](scepman-configuration/optional/health-check.md)
 * [Intermediate Certificate](scepman-configuration/optional/intermediate-certificate.md)
+* [License Key](scepman-configuration/optional/add-a-license-key.md)
 * [Log configuration](scepman-configuration/optional/log-configuration.md)
 * [Update Strategy](scepman-configuration/optional/update-strategy.md)
 

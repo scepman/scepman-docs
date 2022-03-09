@@ -28,13 +28,13 @@ The following instructions outline the steps required to create an Azure Applica
 
 ![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.36 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1).png>)
 
-![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.56 (1) (1) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1).png>)
+![](../../.gitbook/assets/Replace5.png)
 
 ## 5b) Add a new HTTP Setting with Host Header (your SCEPman public FQDN)
 
-![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.21 (1) (1) (2) (4) (3) (1) (1) (6).png>)
+![](../../.gitbook/assets/Replace5b.png)
 
-![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.34 (1) (2) (2) (2) (2) (2) (2) (2) (2) (1).png>)
+![](../../.gitbook/assets/Replace5b2.png)
 
 ## 6) Optional: Add a routing rule for HTTPS
 
@@ -46,15 +46,15 @@ This step requires an HTTPS web server certificate.
 The use of HTTP without TLS is not a security vulnerability; PKI-based resources are commonly published via HTTP without TLS, as the TLS handshake may require access to these resources. Using TLS would create a chicken-and-egg problem where the TLS handshake requires access to the PKI resources and access to the PKI resources requires a TLS handshake. Therefore, these PKI resources including the protocols SCEP and OCSP employ their own encryption and/or signatures where it is required.
 {% endhint %}
 
-![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.17.34 (1) (2) (4) (4) (1) (1) (6).png>)
+![](../../.gitbook/assets/Replace61.png)
 
 ![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.17.44 (2) (4) (3) (1) (6).png>)
 
 ## 6b) Add a new HTTPS Setting with Host Header (your SCEPman public FQDN)
 
-![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.18.37 (1) (2) (4) (5) (2) (1) (6).png>)
+![](../../.gitbook/assets/Replace6b.png)
 
-![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.18.47 (1) (1) (1) (3) (5) (3) (1) (5).png>)
+![](../../.gitbook/assets/Replace62.png)
 
 ## 7) Confirm Routing Rules
 

@@ -89,7 +89,7 @@ Cloning an app service has some restrictions such as **auto scale** settings, **
 2. After your Traffic Manager is deployed, go to it and click **Configuration** under settings.
 3. Change the settings as follows:
 
-![](<../../../.gitbook/assets/scepman\_trafficmanager2 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (6) (7) (6) (1) (1) (6).png>)
+![](../../.gitbook/assets/ReplaceTrafficManagerSS.png)
 
 1. Save changes.
 2. Then under **Settings** choose **Endpoints**
