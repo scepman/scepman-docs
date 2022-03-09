@@ -24,7 +24,7 @@ https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts.zip
 https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Beta.zip
 ```
 
-### Intern
+### Internal
 
 * ongoing development
 * limited function tested and no load-test
