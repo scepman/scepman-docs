@@ -25,7 +25,7 @@ If you have disabled the SCEPman Homepage or need to execute the CMDlet again, y
 
 ```
 Install-Module SCEPman -Scope CurrentUser -Force
-Complete-SCEPmanInstallation
+Complete-SCEPmanInstallation 6>&1
 ```
 
 You will be asked for all required information, including:
@@ -53,6 +53,8 @@ In the Azure Portal, visit [Enterprise applications](https://portal.azure.com/#b
 ## Background Details of the SCEPman PowerShell Module
 
 This section describes the inner workings of the PowerShell Module. This may help if you have a special configuration that requires altering the script, if you need to grant some special permission, if you are troubleshooting issues with a SCEPman installation, or if you want to understand the inner workings to write an installation script for your own project. Note that the PowerShell Module is Open Source Software. You can review the source code in its [GitHub Repository](https://github.com/scepman/scepman-psmodule). Pull Requests are welcome!
+
+We recommend to execute the commandlet with `6>&1`, which redirects the information stream and prints it on the screen, which gives more information about the state of the program than if you leave out the redirection. If you add `-Verbose`, there will be even more information about what the script does.
 
 ### How the CMDlet Configues SCEPman
 
