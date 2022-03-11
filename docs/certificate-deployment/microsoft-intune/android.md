@@ -132,7 +132,7 @@ A [Subject alternative name](https://tools.ietf.org/html/rfc5280#section-4.2.1.6
    * Search for certifications and profiles, based on your company domain
    * Deploy Wi-Fi profile on your device
 
-It is much important to enter a **Subject alternative name** into the **SCEP Certificate**. Without a SAN you have no access to your company WLAN.
+It is very important to enter a **Subject alternative name** into the **SCEP Certificate**. Without a SAN you have no access to your company WLAN.
 
 ### My Certificates
 

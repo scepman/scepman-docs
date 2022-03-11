@@ -1,6 +1,6 @@
 # iOS/iPadOS
 
-The following article describes how to deploy a device or/and user certificates for iOS and iPadOS devices. The deployment of the SCEPman Root Certificate is mandatory. Afterwards you can choose between deploying only device, user or even both certificate types.
+The following article describes how to deploy a device or/and user certificates for iOS and iPadOS devices. The deployment of the SCEPman Root Certificate is mandatory. Afterward you can choose between deploying only device, user or even both certificate types.
 
 ## Root Certificate
 
@@ -73,9 +73,9 @@ Other SAN values like DNS can be added if needed.
 
 <details>
 
-<summary>Certificate validity period: <code>2 years</code></summary>
+<summary>Certificate validity period: <code>1 years</code></summary>
 
-iOS/iPadOS devices ignore the configuration of the validity period via Intune. Please make sure, to configure [#appconfig-validityperioddays](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays "mention") to a fixed value. So in this example with 2 years, we have to set this variable in SCEPman configuration to 730 days.\
+iOS/iPadOS devices ignore the configuration of the validity period via Intune. Please make sure, to configure [#appconfig-validityperioddays](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays "mention") to a fixed value. We recommend 2 years, so you have to set this variable in SCEPman configuration to 730 days. But you can leave the certificate validity period setting to 1 year because Intune ignores it anyway.\
 \
 Also note, that **certificates on iOS/iPadOS are only renewed** by Intune when the device is **unlocked, online, syncing and in scope of the renewal threshold**. If certificates are expired (e.g.: device was offline and/or locked for a long time), they won't be renewed any more. Therefore, we recommend to choose an higher value here.
 
@@ -117,19 +117,19 @@ Currently, iOS/iPadOS devices do not support customized Extended Key Usages. So,
 
 <details>
 
-<summary>Renewal threshold (%): <code>20</code></summary>
+<summary>Renewal threshold (%): <code>50</code></summary>
 
-This value defines when the device is allowed to renew its certificate (based on remaining lifetime of existing certificate). Please read the note under **Certificate validity period** and select a suitable value that allows the device the renew the certificate over a long period. A value of 20% would allow the device with a 2 years valid certificate to start renewal 146 days before expiration.
+This value defines when the device is allowed to renew its certificate (based on remaining lifetime of existing certificate). Please read the note under **Certificate validity period** and select a suitable value that allows the device the renew the certificate over a long period. A value of 50% would allow the device with a 1 years valid certificate to start renewal 182 days before expiration.
 
 </details>
 
 {% hint style="info" %}
-With our the stated settings, we fulfil [Apples certificate requirements](https://support.apple.com/en-us/HT210176).
+With our stated settings, we fulfill [Apples certificate requirements](https://support.apple.com/en-us/HT210176).
 {% endhint %}
 
 ### Example
 
-![Example configuration for SCEP device certificate](<../../.gitbook/assets/image (6).png>)
+![](../../.gitbook/assets/ReplaceDeviOS.png)
 
 * [ ] Now you can deploy this profile to your devices. Please choose the same group/s for assignment as for the Trusted certificate profile.
 
@@ -164,12 +164,12 @@ Other SAN values like Email address can be added if needed.
 </details>
 
 {% hint style="info" %}
-With our the stated settings, we fulfil [Apples certificate requirements](https://support.apple.com/en-us/HT210176)
+With our stated settings, we fulfill [Apples certificate requirements](https://support.apple.com/en-us/HT210176)
 {% endhint %}
 
 ### Example
 
-![Example configuration for SCEP user certificate](<../../.gitbook/assets/image (5).png>)
+![](../../.gitbook/assets/ReplaceUsriOS.png)
 
 | ​[Back to Trial Guide​](../../scepman-deployment/trial-guide.md#step-4-configure-intune-deployment-profiles) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-9-configure-intune-deployment-profiles) | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-11-configure-intune-deployment-profiles) |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
