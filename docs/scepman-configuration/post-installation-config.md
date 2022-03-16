@@ -69,6 +69,12 @@ In addition to granting the rights to SCEPman, the Module adds two new Azure Res
 
 Even for the Community Edition, which does not use the SCEPman Certificate Master component, the two new resources are added. This enables switching to the Enterprise Edition more easily if you want, and does not add any extra cost -- the Storage Account will be empty and Microsoft bills this by the amount of storage, and the Certificate Master App Service shares an App Service Plan with SCEPman, which also adds no extra cost.
 
+SCEPman 1.x used an App Registration to authenticate against Microsoft Graph and Intune, while SCEPman 2.x can use its Managed Identity. The CMDlet switches to the Managed Identity by changing these settings:
+
+- [AppConfig:AuthConfig:ApplicationId](../scepman-configuration/optional/application-settings/azure-ad.md#appconfigauthconfigapplicationid) is set to a a newly created app registration without any permissions. It is used to authenticate *against* SCEPman, not for SCEPman authenticating somewhere else. The old value is backed up as `Backup:AppConfig:AuthConfig:ApplicationId`.
+- [AppConfig:AuthConfig:ApplicationKey](../scepman-configuration/optional/application-settings/azure-ad.md#appconfigauthconfigapplicationkey) is deleted, the old value is backed up as `Backup:AppConfig:AuthConfig:ApplicationKey`. It is not needed anymore, because SCEPman does not authenticate as the Application.
+- [AppConfig:AuthConfig:ManagedIdentityEnabledOnUnixTime](../scepman-configuration/optional/application-settings/azure-ad.md#appconfigauthconfigmanagedidentityenabledonunixtime) contains the time when the CMDlet was run. SCEPman acquires a token using the Managed Identity only after a short delay after the CMDlet was run, because only then do the roles in the token reflect the correct permissions added by the CMDlet.
+
 ### How the CMDlet Configures SCEPman Certificate Master
 
 The SCEPman App Service allows anonymous access to its homepage, as it only display non-sensitive read-only information. In contrast, the SCEPman Certificate Master component allows users to issue certificates. Hence, it allows only authenticated access and only if you have the right permissions. This requires an Azure App Registration with Delegated Permissions to see who is logged in and with the right log-in URL configuration. The module registers this App Registration as `SCEPman-CertMaster` in your Azure tenant.
