@@ -57,8 +57,10 @@ Applicable to version 1.5 and above
 
 **Value:** _true_ or _false_
 
-**Description:** **True:** The Key Usage and Extended Key Usage extensions in the certificates are defined by the MDM solution.\
-**False:** Key Usage is always Key Encipherment + Digital Signature. Extended Key Usage is always _Client Authentication_.
+**Description:** Shall certificates have the Key Usage and Extended Key Usage (EKU) extensions filled as requested or shall SCEPman define them?
+
+**True:** The Key Usage and Extended Key Usage extensions in the certificates are defined by the MDM solution.\
+**False:** Key Usage is always _Key Encipherment_ + _Digital Signature_. Extended Key Usage is always _Client Authentication_.
 
 {% hint style="warning" %}
 iOS/iPadOS devices do not support customized Extended Key Usages (even if configured in the Intune profile and [#appconfig-userequestedkeyusages](certificates.md#appconfig-userequestedkeyusages "mention") set to **True**). So, their certificates will always have _Client Authentication_ as Extended Key Usage.
