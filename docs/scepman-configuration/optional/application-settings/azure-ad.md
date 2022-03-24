@@ -12,18 +12,6 @@ Please do not mix this up with the "Client Secret ID**"**. We need the "Applicat
 Changes can harm your service!
 {% endhint %}
 
-## AppConfig:AuthConfig:SCEPmanAPIScope
-
-{% hint style="info" %}
-Applicable to version 2.0 and above
-{% endhint %}
-
-This value comes from the AAD app registration. It is used to let clients like Certificate Master authenticate against SCEPman and authorize their CSR submissions.
-
-{% hint style="danger" %}
-Changes can harm your service!
-{% endhint %}
-
 ## AppConfig:AuthConfig:ApplicationKey
 
 The [Application Key (client secret **value**)](../../azure-app-registration.md#azure-app-registration-client-secret) from your Azure AD App registration. This setting is configured during the setup of a SCEPman 1.x version. SCEPman 2.x usually does not use this setting and instead relies on [Managed Identity authentication](../../../scepman-configuration/post-installation-config.md).
@@ -36,7 +24,7 @@ Please do not mix this up with the "Client Secret **ID"**. We need the "Client S
 Changes can harm your service!
 {% endhint %}
 
-## AppConfig:AuthConfig:TenantName
+## AppConfig:AuthConfig:TenantId
 
 The Azure AD Tenant ID. This setting is automatically configured during the setup.
 
