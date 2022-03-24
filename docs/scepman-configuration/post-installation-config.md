@@ -17,7 +17,7 @@ Whether you have just installed a fresh SCEPman 2.x installation or if you have 
 * A Global Admin Account for the tenant to which you want to install SCEPman
 * A workstation with [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (also known as _az_) installed. Azure CLI is pre-installed in the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), the preferred way to run the module.
 
-### Running the SCEPman Installation
+### Running the SCEPman Installation CMDlet
 
 Once this prerequisites are met, you can install the SCEPman installation module from PowerShell Gallery and then run the CMDlet to complete the SCEPman and Certificate Master installation. The homepage of your SCEPman instance shows the specific PowerShell commands to run if you haven't already run it. This includes a parameter to identify your SCEPman instance, so the code can run ideally without any user interaction.
 
@@ -37,6 +37,16 @@ For SCEPman upgrades, you need two extra confirmations:
 
 * The name of the new SCEPman Certificate Master App Service (you can confirm the suggestion by hitting enter or type a new name for the resource)
 * The name of the new Storage Account resource (again, you can confirm the suggestion by hitting enter or type a new name for the resource)
+
+### Considerations when using Deployment Slots
+
+The SCEPman module updates the configuration in all deployment slots unless you tell it to use just one specific deployment slot with the parameter `-DeploymentSlotName` (which cannot be the main one, because technically it is no deployment slot). The configuration update changes the SCEPman settings to use Managed Identity authentication instead of Enterprise App authentication. SCEPman 1.x does not support Managed Identity authentication and therefore the CMDlet renders deployment slots unusable that still run a 1.x version.
+
+Thus, if you have multiple deployment slots and do not want to upgrade all of them at once, you should update the production slot last -- its upgrade also affects all other deployment slots. For other deployment slots, use the `-DeploymentSlotName` parameter to target only these individual deployment slots. This is what the the PowerShell commands displayed on the deployment slot's SCEPman homepage displays, so you can just copy the commands.
+
+If you accidentially updated a deployment slot to Managed Identity authentication that still runs SCEPman 1.x, please look at the [downgrade guide](../scepman-deployment/scepman-2.x-deployment.md#v2x-beta-enterprise-deployment) to make it work again.
+
+Once all your deployment slots are running on 2.x, just execute the Complete-SCEPmanInstallation CMDlet once more and then all of them use Managed Identities.
 
 ## Configure SCEPman Certificate Master
 
