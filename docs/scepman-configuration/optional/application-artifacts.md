@@ -79,11 +79,11 @@ To configure this, do the following:
 4. Then, click **Configuration** (submenu **Setting**)
 5. Look for **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
 
-![](<../../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (2) (1).png>)
+![](<../../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (1) (4).png>)
 
 6\. Then replace the URL in \*\*Value \*\*with the SCEPman GitHub URL or your Storage account blob URL you already copied:
 
-![](<../../.gitbook/assets/2021-10-08 16\_40\_54-Scepman02testServiceName - Microsoft Azure and 10 more pages - C4A8 EHamed - Mic.png>)
+![](../../.gitbook/assets/2021-10-08-16\_40\_54-scepman02testservicename-microsoft-azure-and-10-more-pages-c4a8-ehamed-mic.png)
 
 | Back to Trial Guide | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-5-deploy-storage-account-and-change-artifacts) | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-5-deploy-storage-account-and-change-artifacts) |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |

@@ -16,7 +16,7 @@ If you want to use an intermediate certifacte (Enterprise Edition only) you can 
 2. Choose the SCEPman application and click on **Browse** to see the SCEPman website.&#x20;
 3. When everything works as intended **Vault**, **Intune** and **Graph** are set as **connected**.
 
-![](<../../.gitbook/assets/image (14) (1) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (14) (1) (1) (1) (1) (1).png>)
 
 4\. The option **click here to start** creates the Azure Key Vault RootCA certificate. The initial root certificate should be created only once on a farm. \
 5\. Select **I have read the documentation\[...]** and click **Create First Node**.\

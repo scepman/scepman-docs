@@ -13,5 +13,4 @@ You can send Debug log information to a cloud-based monitoring solution of our c
 
 ## WEBSITE\_RUN\_FROM\_PACKAGE
 
-This setting points to the Application Artifacts that will be loaded by starting the App Service.\
-Please have a look at these instructions: [Application Artifacts](../application-artifacts.md#change-artifacts).
+This setting points to the Application Artifacts that will be loaded by starting the App Service.

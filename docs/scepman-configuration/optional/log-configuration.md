@@ -16,7 +16,7 @@ To retain or archive the log files, we recommend configuring the following setti
 
 Your **App Service logs** settings should be **(in our example)** like:
 
-![](<../../.gitbook/assets/2021-09-04 06\_40\_56-scepman-apppnf42avv2wmis - Microsoft Azure and 4 more pages - C4A8 EHamed - Micr.png>)
+![](../../.gitbook/assets/2021-09-04-06\_40\_56-scepman-apppnf42avv2wmis-microsoft-azure-and-4-more-pages-c4a8-ehamed-micr.png)
 
 ## Diagnostic settings (Optional settings)
 
@@ -36,7 +36,7 @@ We recommend storing your data in Log Analytics
 5. The last step is to select the needed data. We recommend **all Categories.**
 6. Finally, click on the **Save** button
 
-![](<../../.gitbook/assets/2021-09-04 06\_49\_06-Diagnostic setting - Microsoft Azure and 4 more pages - C4A8 EHamed - Microsoft​.png>)
+![](../../.gitbook/assets/2021-09-04-06\_49\_06-diagnostic-setting-microsoft-azure-and-4-more-pages-c4a8-ehamed-microsoft-.png)
 
 ### Archive to storage account (optional)
 
@@ -52,7 +52,7 @@ If you have created a storage account to store your SCEPman artifacts, or for Ap
 6. Select the needed data and type in your retention time in days. We recommend **all Categories** and a retention time of **30** days.
 7. Finally, click on the **Save** button.
 
-![](<../../.gitbook/assets/2021-09-04 06\_50\_51-Diagnostic setting - Microsoft Azure and 4 more pages - C4A8 EHamed - Microsoft​.png>)
+![](../../.gitbook/assets/2021-09-04-06\_50\_51-diagnostic-setting-microsoft-azure-and-4-more-pages-c4a8-ehamed-microsoft-.png)
 
 
 

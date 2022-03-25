@@ -21,7 +21,7 @@ Otherwise please follow this guide to generate a new Root CA.
 
 CA Suitability on SCEPman Dashboard:
 
-![](<../../../.gitbook/assets/screenshot-2020-11-04-at-11.18.44 (1).png>)
+![](../../../.gitbook/assets/screenshot-2020-11-04-at-11.18.44.png)
 
 {% hint style="warning" %}
 If you generate a new CA certificate you must update your Intune policies and deploy the new Root CA and new User and Device certificates!
@@ -39,7 +39,7 @@ If you generate a new CA certificate you must update your Intune policies and de
 
 CA Suitability on SCEPman Dashboard:
 
-![](<../../../.gitbook/assets/screenshot-2020-11-04-at-11.30.23 (1) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/screenshot-2020-11-04-at-11.30.23 (1) (1) (1).png>)
 
 ## Configuration Changes to the SCEPman Service
 
