@@ -8,6 +8,9 @@
     },
     {
       "pattern": ".*scepman.contoso.*"
+    },
+    {
+      "pattern": "^https://nvlpubs.nist.gov/.*"
     }
   ],
   "replacementPatterns": [
