@@ -2,7 +2,7 @@
 
 ## Versions
 
-### 2.0 - In Beta and Internal Channel
+### 2.0 - March 2022
 
 * Certificate Management
   * Manually issue TLS Server certificates
