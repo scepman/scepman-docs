@@ -4,7 +4,7 @@
 
 ### 2.0 - March 2022
 
-* Certificate Management
+* [Certificate Management](certificate-deployment/certificate-master)
   * Manually issue TLS Server certificates
   * Revoke manually issued certificates
   * Search for manual certificates
