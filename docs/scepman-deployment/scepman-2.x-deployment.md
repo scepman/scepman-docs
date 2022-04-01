@@ -6,10 +6,10 @@ The deployment of SCEPman 2.x is different from a SCEPman 1.x deployment. If you
 
 **Deploy Azure Resources**
 
-Log in with an AAD administrator account and visit this site, click on the following beta channel deployment link:
+Log in with an AAD administrator account and visit this site, click on the following deployment link:
 
-* Production channel is still on SCEPman 1.x
-* [Beta Channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fmaster%2Fazuredeploy-beta.json)&#x20;
+* [Production channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fmaster%2Fazuredeploy-prod.json)
+* [Beta Channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fmaster%2Fazuredeploy-beta.json)
 * [Internal Channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fmaster%2Fazuredeploy-internal.json)
 
 Fill out the values in the form, similar to the screenshot below
