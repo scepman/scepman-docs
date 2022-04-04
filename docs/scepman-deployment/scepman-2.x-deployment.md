@@ -1,30 +1,39 @@
 # V2.x Enterprise Deployment
 
+
+
 The deployment of SCEPman 2.x is different from a SCEPman 1.x deployment. If you want to install a new SCEPman 2.x instance or upgrade your existing 1.x instance keep reading.
 
 ## New SCEPman 2.0 Instance
 
 **Deploy Azure Resources**
 
-Log in with an AAD administrator account and visit this site, click on the following deployment link:
+Log in with an AAD administrator account and visit this site, choose and click one of the following deployment links:
 
 * [Production channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fmaster%2Fazuredeploy-prod.json)
-* [Beta Channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fmaster%2Fazuredeploy-beta.json)
-* [Internal Channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fmaster%2Fazuredeploy-internal.json)
+* [Beta channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fmaster%2Fazuredeploy-beta.json)
+* [Internal channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fmaster%2Fazuredeploy-internal.json)
 
 Fill out the values in the form, similar to the screenshot below
 
-![](../.gitbook/assets/SCEPmanV2.0Deployment.png)
+![](<../.gitbook/assets/2022-04-04CustomDeploymentV2 .png>)
 
 * **Subscription:** Select your subscription, where you have permissions to create app services, storage account, app service plan, and key vault
 * **Resource group:** Select an existing resource group or create a new one. The SCEPman resources will be deployed to this resource group.
-* **Region:** Select the region according to your location
+* **Region:** Select the region according to your location.
+* **Org Name:** Name of your company or organization for the certificate subject
 * **License:** leave it "trial" to deploy a community edition, or paste your license key -if you already have one- for an enterprise edition.
-* Define a unique name for the **Key Vault Name, App Service Name,** and **App Service Cert Master Name,** you need just to replace it with the placeholder \<uniquename>
-* By **Storage Account Name** please notice that the name **must** be between 3 and 24 characters in length and may contain **numbers and lowercase letters only,** otherwise
+* Define a unique name for the **Key Vault Name, App Service Name,** and **App Service Cert Master Name,** you need just to replace it with the placeholder _UNIQUENAME_
+* By **Storage Account Name** please notice that the name **must** be between 3 and 24 characters in length and may contain **numbers and lowercase letters only.**
+* **Existing App Service Plan ID:** Provide the AppServicePlan ID of an existing App Service Plan or keep the default value 'none' if you want to create a new one.
+
+To find your **existing App Service Plan ID:** navigate to your existing App Service Plan -> JSON View -> copy the Resource ID (see screenshots)
+
+![](<../.gitbook/assets/2022-04-04 12\_51\_33AppServicePlan.png>) ![](<../.gitbook/assets/2022-04-04 12\_54\_04-Resource JSON.png>)
+
 * **Review + create**, then **Create**
 
-After a successful deployment of SCEPman 2.x please follow the [Post-Installation Configuration](../scepman-configuration/post-installation-config.md) article.
+After a successful deployment of SCEPman 2.x please follow the [V2.x Managed Identities ](../scepman-configuration/post-installation-config.md)article.
 
 ## Upgrade from 1.x to 2.x
 
