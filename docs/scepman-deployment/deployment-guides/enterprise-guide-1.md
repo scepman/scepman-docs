@@ -1,6 +1,6 @@
-# Enterprise Guide V2.x Beta
+# Enterprise Guide V2.x
 
-This will guide you through all steps to deploy the **Beta** of SCEPman 2.x into an enterprise-grade environment.
+This will guide you through all steps to deploy SCEPman 2.x into an enterprise-grade environment.
 
 ## Azure Deployment
 

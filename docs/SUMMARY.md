@@ -10,14 +10,14 @@
   * [Trial Guide](scepman-deployment/trial-guide.md)
   * [Community Guide](scepman-deployment/community-guide.md)
   * [Enterprise Guide](scepman-deployment/enterprise-guide.md)
-  * [Enterprise Guide V2.x Beta](scepman-deployment/deployment-guides/enterprise-guide-1.md)
+  * [Enterprise Guide V2.x](scepman-deployment/deployment-guides/enterprise-guide-1.md)
 * [Permissions](scepman-deployment/permissions/README.md)
   * [V1.x: Azure App Registration](scepman-configuration/azure-app-registration.md)
   * [V2.x: Managed Identities](scepman-configuration/post-installation-config.md)
 * [Deployment Options](scepman-configuration/deployment-options/README.md)
   * [Marketplace deployment](scepman-configuration/deployment-options/marketplace-deployment.md)
   * [Enterprise deployment](scepman-configuration/deployment-options/enterprise-deployment.md)
-  * [V2.x Beta: Enterprise Deployment](scepman-deployment/scepman-2.x-deployment.md)
+  * [V2.x Enterprise Deployment](scepman-deployment/scepman-2.x-deployment.md)
 * [Root Certificate](scepman-configuration/first-run-root-cert.md)
 
 ## Certificate Deployment
