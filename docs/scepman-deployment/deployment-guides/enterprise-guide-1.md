@@ -20,14 +20,14 @@ Keep in mind that you need to plan a useful Azure resource design.
 
 All these resources are recommended for a production environment.
 
-| Type                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| App Service(s)          | <p>A virtual Azure environment to run the SCEPman Core and Cert Master applications and provides a UI to configure different<br>application specific settings like CNAME, SSL certificate and App Settings.</p>                                                                                                                                                                                                                            |
-| App Service Plan        | <p>A virtual set of compute resources and configurations for the "App Service(s)".</p><p>Here you can configure the pricing tier and resource scaling.</p>                                                                                                                                                                                                                                                                                 |
-| Key Vault               | <p>Tool to securely store secrets and certificates. The SCEPman application</p><p>will generate and save the root certificate in your Key Vault.</p>                                                                                                                                                                                                                                                                                       |
-| Application Insights    | <p>Application Performance Management (APM) tool to get insights of the</p><p>SCEPman applications and requests. Needed to measure performance</p><p>and good for service optimization.</p>                                                                                                                                                                                                                                                |
-| Storage account         | <p>Storage platform used by SCEPman's Cert Master component to store certain attributes of the manually issued TLS server certificates for revocation purposes.<br><em></em><br><em>Optional:</em></p><p>Storage platform to upload the SCEPman artifacts and save log files.</p><p>The "App Service" will load the artifacts from a public blob store URI and</p><p>save all the application and web server logs in a blob container.</p> |
-| Log Analytics workspace | <p>A centralized and cloud-based log storage. The "App Service" will save all</p><p>platform logs and metrics into this workspace.</p>                                                                                                                                                                                                                                                                                                     |
+| Type                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| App Service(s)          | <p>A virtual Azure environment to run the SCEPman Core and Cert Master applications and provides a UI to configure different<br>application specific settings like CNAME, SSL certificate and App Settings.</p>                                                                                                                                                                                                                   |
+| App Service Plan        | <p>A virtual set of compute resources and configurations for the "App Service(s)".</p><p>Here you can configure the pricing tier and resource scaling.</p>                                                                                                                                                                                                                                                                        |
+| Key Vault               | <p>Tool to securely store secrets and certificates. The SCEPman application</p><p>will generate and save the root certificate in your Key Vault.</p>                                                                                                                                                                                                                                                                              |
+| Application Insights    | <p>Application Performance Management (APM) tool to get insights of the</p><p>SCEPman applications and requests. Needed to measure performance</p><p>and good for service optimization.</p>                                                                                                                                                                                                                                       |
+| Storage account         | <p>Storage platform used by SCEPman's Cert Master component to store certain attributes of the manually issued TLS server certificates for revocation purposes.<br><br><em>Optional:</em></p><p>Storage platform to upload the SCEPman artifacts and save log files.</p><p>The "App Service" will load the artifacts from a public blob store URI and</p><p>save all the application and web server logs in a blob container.</p> |
+| Log Analytics workspace | <p>A centralized and cloud-based log storage. The "App Service" will save all</p><p>platform logs and metrics into this workspace.</p>                                                                                                                                                                                                                                                                                            |
 
 ## Configuration Steps
 
@@ -39,8 +39,8 @@ This is a **mandatory** step.
 
 To start with the deployment, you need to follow our Setup instruction:
 
-{% content-ref url="../scepman-2.x-deployment.md" %}
-[scepman-2.x-deployment.md](../scepman-2.x-deployment.md)
+{% content-ref url="../../scepman-configuration/deployment-options/enterprise-deployment.md" %}
+[enterprise-deployment.md](../../scepman-configuration/deployment-options/enterprise-deployment.md)
 {% endcontent-ref %}
 
 ### Step 2: Perform Post-Deployment Steps (Permission Assignments)
@@ -185,10 +185,10 @@ In the Endpoint Manager (Intune) you can create Configuration profiles for vario
 
 ### Step 12: Enjoy the ease of SCEPman Certificate Deployment
 
-After configuration of the Intune profiles, we will get your certificates to your devices and can start using them. Now enjoy SCEPman and if you have any questions please contact us. \
+After configuration of the Intune profiles, we will get your certificates to your devices and can start using them. Now enjoy SCEPman and if you have any questions please contact us.\
 Further details can be found on [https://scepman.com](https://scepman.com)
 
-After configuration of the Intune profiles, we will get your certificates to your devices and can start using them. Now enjoy SCEPman and if you have any questions please contact us. \
+After configuration of the Intune profiles, we will get your certificates to your devices and can start using them. Now enjoy SCEPman and if you have any questions please contact us.\
 Further details can be found on [https://scepman.com](https://scepman.com)
 
 ### Step 13: Issue TLS Server Certificates using Cert Master

@@ -4,40 +4,62 @@ description: GitHub Deployment
 
 # Enterprise deployment
 
+The deployment of SCEPman 2.x is different from a SCEPman 1.x deployment. If you want to install a new SCEPman 2.x instance or upgrade your existing 1.x instance keep reading.
+
+## New SCEPman 2.0 Instance
+
+**Deploy Azure Resources**
+
+Log in with an AAD administrator account and visit this site, choose and click one of the following deployment links:
+
+* [Production channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fmaster%2Fazuredeploy-prod.json)
+* [Beta channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fmaster%2Fazuredeploy-beta.json)
+* [Internal channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fmaster%2Fazuredeploy-internal.json)
+
+Fill out the values in the form
+
+![](<../../.gitbook/assets/2022-04-04CustomDeploymentV2 .png>)
+
+* **Subscription:** Select your subscription, where you have permissions to create app services, storage account, app service plan, and key vault
+* **Resource group:** Select an existing resource group or create a new one. The SCEPman resources will be deployed to this resource group.
+* **Region:** Select the region according to your location.
+* **Org Name:** Name of your company or organization for the certificate subject
+* **License:** leave it "trial" to deploy a community edition, or paste your license key -if you already have one- for an enterprise edition.
+* Define a unique name for the **Key Vault Name, App Service Name,** and **App Service Cert Master Name,** you need just to replace it with the placeholder _UNIQUENAME_
+* By **Storage Account Name** please notice that the name **must** be between 3 and 24 characters in length and may contain **numbers and lowercase letters only.**
+* **Existing App Service Plan ID:** Provide the AppServicePlan ID of an existing App Service Plan or keep the default value 'none' if you want to create a new one.
+
+To find your **existing App Service Plan ID:** navigate to your existing App Service Plan -> JSON View -> copy the Resource ID (see screenshots)
+
+![](<../../.gitbook/assets/2022-04-04 12\_51\_33AppServicePlan.png>) ![](<../../.gitbook/assets/2022-04-04 12\_54\_04-Resource JSON.png>)
+
+* **Review + create**, then **Create**
+
+After a successful deployment of SCEPman 2.x please follow the [V2.x Managed Identities ](../post-installation-config.md)article.
+
+## Upgrade from 1.x to 2.x
+
+SCEPman 2.0 comprises two additional Azure resources, an Azure Storage account and an App Service called "Cert Master". These are used to issue and manage the server certificates. But you can run SCEPman 2.0 also without them if you just go for the client certificates as before.
+
+If you are still running SCEPman 1.x, ensure that your instance uses 2.x application artifacts as described here: [Application Artifacts](../optional/application-artifacts.md).
+
+**Please restart your AppService afterwards.**
+
+### Add SCEPman Cert Master
+
 {% hint style="warning" %}
-SCEPman Enterprise Edition only
+**Before** adding the Cert Master component through the PowerShell script mentioned below, the existing SCEPman base service must be updated to version >= 2.0 as described in the previous paragrapgh.
 {% endhint %}
 
-{% hint style="success" %}
-Recommended for production
-{% endhint %}
+If you want to use the new SCEPman Cert Master component to issue server certificates, you need to add the additional Azure resources and configure them. This will enable authentication as Managed Identity, one advantage of it is you do not require any application secrets anymore. Thus, you also don't need to worry about the expiration of application secrets! This is how you do it:
 
-This article will show you how you can deploy SCEPman via GitHub. But why should you do this?\
-Via the GitHub deployment you have full control of the resource naming.
+After upgrading the main component, you need to follow the guide of [Post-Installation Configuration](../post-installation-config.md). In contrast to a new installation, this will also create the two new Azure resources.
 
-## Start the Deployment
+## Downgrade from 2.x to 1.x
 
-{% hint style="info" %}
-You need your Client ID and your Client Secret before you can start the deployment. Please check [App Registration](../azure-app-registration.md).
-{% endhint %}
+You can downgrade to any older SCEPman version by downloading the older artifcats, host them in your location, e.g. Azure Blob storage and then reference the binaries using the [WEBSITE\_RUN\_FROM\_PACKAGE](../optional/application-artifacts.md#change-artifacts) setting.
 
-Click the following deploy button to start the deployment via GitHub:
-
-[![](https://camo.githubusercontent.com/decd8b19034344bb486631a9d3501b663b199bf367c8a9eb2c43ad0df9be10b2/687474703a2f2f617a7572656465706c6f792e6e65742f6465706c6f79627574746f6e2e706e67)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fmaster%2Fazuredeploy-prod.json)
-
-Next, you will see the following configuration menu:
-
-![](<../../.gitbook/assets/2021-10-11 13\_34\_23-Custom deployment - Microsoft Azure and 11 more pages - C4A8 EHamed - Microsoft​.png>)
-
-1. Select an existing resource group or create a new one (SCEPman resources will be deployed in this group)
-2. Set the location according to your location
-3. Enter Organisation name for your SCEPman Instance
-4. Enter your License key
-5. Enter your **App Registration Guid** (App client ID, you already copied before)
-6. Enter your **App Registration Key** (Client secret, you already copied before)
-7. Define a **Key Vault Name**, **App Service Plan Name** and **App Service Name**
-8. Finally, click **Review + Create,** then **Create**
-9. After the deployment is done, go to [create root certificate](../first-run-root-cert.md)
+However, if you also used the SCEPman PowerShell module to upgrade the internal wiring, there is one caveat: 2.x supports a different way of authentication to Graph and Intune using Managed Identities, which is also the new default and which is enabled by the script. If you downgrade your main component, it won't be able to use the new way of authentication and is missing one setting for the old one, so it won't work anymore. Thus, after a downgrade, you must manually change the application settings [AppConfig:AuthConfig:ApplicationId](../optional/application-settings/azure-ad.md#appconfig-authconfig-applicationid) and [AppConfig:AuthConfig:ApplicationKey](../optional/application-settings/azure-ad.md#appconfig-authconfig-applicationkey). The script creates backups of the settings by prefixing `Backup:`. Thus, you need to rename `Backup:AppConfig:AuthConfig:ApplicationKey` back to `AppConfig:AuthConfig:ApplicationKey` and copy the old value from `Backup:AppConfig:AuthConfig:ApplicationId` to `AppConfig:AuthConfig:ApplicationId`. Then the 1.x will work again using authentication based on App Registrations.
 
 | Back to Trial Guide | Back to Community Guide | [Back to Enterprise Guide](../../scepman-deployment/enterprise-guide.md#step-2-deploy-scepman-base-services) |
 | ------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------ |

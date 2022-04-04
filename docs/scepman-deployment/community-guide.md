@@ -10,7 +10,7 @@ If you want to deploy:
 {% endhint %}
 
 {% hint style="info" %}
-For V2.0 community edition deployment please follow [SCEPman 2.x Deployment](scepman-2.x-deployment.md)&#x20;
+For V2.0 community edition deployment please follow [SCEPman 2.x Deployment](../scepman-configuration/deployment-options/enterprise-deployment.md)&#x20;
 {% endhint %}
 
 ## Azure Deployment

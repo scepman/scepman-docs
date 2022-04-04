@@ -44,7 +44,7 @@ The SCEPman module updates the configuration in all deployment slots unless you 
 
 Thus, if you have multiple deployment slots and do not want to upgrade all of them at once, you should update the production slot last -- its upgrade also affects all other deployment slots. For other deployment slots, use the `-DeploymentSlotName` parameter to target only these individual deployment slots. This is what the the PowerShell commands displayed on the deployment slot's SCEPman homepage displays, so you can just copy the commands.
 
-If you accidentially updated a deployment slot to Managed Identity authentication that still runs SCEPman 1.x, please look at the [downgrade guide](../scepman-deployment/scepman-2.x-deployment.md#downgrade-from-2.x-to-1.x) to make it work again.
+If you accidentially updated a deployment slot to Managed Identity authentication that still runs SCEPman 1.x, please look at the [downgrade guide](deployment-options/enterprise-deployment.md#downgrade-from-2.x-to-1.x) to make it work again.
 
 Once all your deployment slots are running on 2.x, just execute the Complete-SCEPmanInstallation CMDlet once more and then all of them use Managed Identities.
 
@@ -81,9 +81,9 @@ Even for the Community Edition, which does not use the SCEPman Certificate Maste
 
 SCEPman 1.x used an App Registration to authenticate against Microsoft Graph and Intune, while SCEPman 2.x can use its Managed Identity. The CMDlet switches to the Managed Identity by changing these settings:
 
-- [AppConfig:AuthConfig:ApplicationId](../scepman-configuration/optional/application-settings/azure-ad.md#appconfigauthconfigapplicationid) is set to a a newly created app registration without any permissions. It is used to authenticate *against* SCEPman, not for SCEPman authenticating somewhere else. The old value is backed up as `Backup:AppConfig:AuthConfig:ApplicationId`.
-- [AppConfig:AuthConfig:ApplicationKey](../scepman-configuration/optional/application-settings/azure-ad.md#appconfigauthconfigapplicationkey) is deleted, the old value is backed up as `Backup:AppConfig:AuthConfig:ApplicationKey`. It is not needed anymore, because SCEPman does not authenticate as the Application.
-- [AppConfig:AuthConfig:ManagedIdentityEnabledOnUnixTime](../scepman-configuration/optional/application-settings/azure-ad.md#appconfigauthconfigmanagedidentityenabledonunixtime) contains the time when the CMDlet was run. SCEPman acquires a token using the Managed Identity only after a short delay after the CMDlet was run, because only then do the roles in the token reflect the correct permissions added by the CMDlet.
+* [AppConfig:AuthConfig:ApplicationId](optional/application-settings/azure-ad.md#appconfigauthconfigapplicationid) is set to a a newly created app registration without any permissions. It is used to authenticate _against_ SCEPman, not for SCEPman authenticating somewhere else. The old value is backed up as `Backup:AppConfig:AuthConfig:ApplicationId`.
+* [AppConfig:AuthConfig:ApplicationKey](optional/application-settings/azure-ad.md#appconfigauthconfigapplicationkey) is deleted, the old value is backed up as `Backup:AppConfig:AuthConfig:ApplicationKey`. It is not needed anymore, because SCEPman does not authenticate as the Application.
+* [AppConfig:AuthConfig:ManagedIdentityEnabledOnUnixTime](optional/application-settings/azure-ad.md#appconfigauthconfigmanagedidentityenabledonunixtime) contains the time when the CMDlet was run. SCEPman acquires a token using the Managed Identity only after a short delay after the CMDlet was run, because only then do the roles in the token reflect the correct permissions added by the CMDlet.
 
 ### How the CMDlet Configures SCEPman Certificate Master
 

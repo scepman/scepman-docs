@@ -17,7 +17,6 @@
 * [Deployment Options](scepman-configuration/deployment-options/README.md)
   * [Marketplace deployment](scepman-configuration/deployment-options/marketplace-deployment.md)
   * [Enterprise deployment](scepman-configuration/deployment-options/enterprise-deployment.md)
-  * [V2.x Enterprise Deployment](scepman-deployment/scepman-2.x-deployment.md)
 * [Root Certificate](scepman-configuration/first-run-root-cert.md)
 
 ## Certificate Deployment
