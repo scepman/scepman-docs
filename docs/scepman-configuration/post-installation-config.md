@@ -44,7 +44,7 @@ The SCEPman module updates the configuration in all deployment slots unless you 
 
 Thus, if you have multiple deployment slots and do not want to upgrade all of them at once, you should update the production slot last -- its upgrade also affects all other deployment slots. For other deployment slots, use the `-DeploymentSlotName` parameter to target only these individual deployment slots. This is what the the PowerShell commands displayed on the deployment slot's SCEPman homepage displays, so you can just copy the commands.
 
-If you accidentially updated a deployment slot to Managed Identity authentication that still runs SCEPman 1.x, please look at the [downgrade guide](../scepman-deployment/scepman-2.x-deployment.md#v2x-beta-enterprise-deployment) to make it work again.
+If you accidentially updated a deployment slot to Managed Identity authentication that still runs SCEPman 1.x, please look at the [downgrade guide](../scepman-deployment/scepman-2.x-deployment.md#downgrade-from-2.x-to-1.x) to make it work again.
 
 Once all your deployment slots are running on 2.x, just execute the Complete-SCEPmanInstallation CMDlet once more and then all of them use Managed Identities.
 
