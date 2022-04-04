@@ -31,7 +31,7 @@ All these resources are recommended for a production environment.
 
 ## Configuration Steps
 
-### Step 1: Deploy SCEPman V2.x Beta Base Services
+### Step 1: Deploy SCEPman V2.x Base Services
 
 {% hint style="warning" %}
 This is a **mandatory** step.
@@ -49,7 +49,7 @@ To start with the deployment, you need to follow our Setup instruction:
 This is a **mandatory** step.
 {% endhint %}
 
-To properly link all components of SCEPman 2.X Beta, several permissions need to be assigned. Please follow these steps to establish the relevant connections:
+To properly link all components of SCEPman 2.X, several permissions need to be assigned. Please follow these steps to establish the relevant connections:
 
 {% content-ref url="../../scepman-configuration/post-installation-config.md" %}
 [post-installation-config.md](../../scepman-configuration/post-installation-config.md)
@@ -90,10 +90,6 @@ The next step is to configure the Storage account and change the Artifact locati
 {% content-ref url="../../scepman-configuration/optional/application-artifacts.md" %}
 [application-artifacts.md](../../scepman-configuration/optional/application-artifacts.md)
 {% endcontent-ref %}
-
-{% hint style="warning" %}
-SCEPman V2.x is currently only available in our Beta-Channel. Hence, the Beta-Channel has to be chosen for the application artifcats in this step.
-{% endhint %}
 
 ### Step 6: Configure Log Collection
 
