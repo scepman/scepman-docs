@@ -63,7 +63,7 @@ You can add other RDNs if needed (e.g.: `CN={{DeviceId}}, O=Contoso, CN={{WiFiMa
 
 <details>
 
-<summary>Subject alternative name: <code>IntuneDeviceId://{{DeviceId}}</code> (URI)</summary>
+<summary>Subject alternative name: <code>URI</code> Value:<code>IntuneDeviceId://{{DeviceId}}</code></summary>
 
 The URI field is [recommended by Microsoft](https://techcommunity.microsoft.com/t5/intune-customer-success/new-microsoft-intune-service-for-network-access-control/ba-p/2544696) for NAC solutions to identify the devices based on their Intune Device ID.
 
@@ -121,13 +121,25 @@ This value defines when the device is allowed to renew its certificate (based on
 
 </details>
 
+<details>
+
+<summary>SCEP Server URLs: Open the SCEPman portal and copy the URL of <a href="macos.md#device-certificates"><strong>Intune MDM</strong></a><strong></strong></summary>
+
+**Example**
+
+```
+https://scepman.contoso.com/certsrv/mscep/mscep.dll
+```
+
+</details>
+
 {% hint style="info" %}
 With our stated settings, we fulfill [Apples certificate requirements](https://support.apple.com/en-us/HT210176).
 {% endhint %}
 
 ### Example
 
-![](../../.gitbook/assets/macOSDev.png)
+![](../../.gitbook/assets/2022-04-05macOSDevice.png)
 
 * [ ] Now you can deploy this profile to your devices. Please choose the same group/s for assignment as for the Trusted certificate profile.
 
@@ -155,7 +167,7 @@ You can define RDNs based on your needs. Supported variables are listed in the [
 
 <details>
 
-<summary>Subject alternative name: <code>{{UserPrincipalName}}</code> (UPN)</summary>
+<summary>Subject alternative name: <code>UPN</code> Value:<code>{{UserPrincipalName}}</code></summary>
 
 SCEPman uses the UPN in the SAN to identify the user and as a seed for the certificate serial number generation (e.g.: janedoe@contoso.com).\
 \
@@ -169,7 +181,7 @@ With our stated settings, we fulfill [Apples certificate requirements](https://s
 
 ### Example
 
-![](../../.gitbook/assets/macOSUsr.png)
+![](<../../.gitbook/assets/2022-04-05 18macOSUserCert.png>)
 
 | ​[Back to Trial Guide​](../../scepman-deployment/trial-guide.md#step-4-configure-intune-deployment-profiles) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-9-configure-intune-deployment-profiles) | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-11-configure-intune-deployment-profiles) |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |

@@ -62,7 +62,7 @@ You can add other RDNs if needed (e.g.: `CN={{DeviceId}}, O=Contoso, CN={{WiFiMa
 
 <details>
 
-<summary>Subject alternative name: <code>IntuneDeviceId://{{DeviceId}}</code> (URI)</summary>
+<summary>Subject alternative name: <code>(URI)</code>Value:<code>IntuneDeviceId://{{DeviceId}}</code></summary>
 
 The URI field is [recommended by Microsoft](https://techcommunity.microsoft.com/t5/intune-customer-success/new-microsoft-intune-service-for-network-access-control/ba-p/2544696) for NAC solutions to identify the devices based on their Intune Device ID.
 
@@ -146,7 +146,7 @@ This value defines when the device is allowed to renew its certificate (based on
 
 <details>
 
-<summary>SCEP Server URLs: Open the SCEPman portal and copy the URL under <a href="windows-10.md#device-certificates">Intune MDM</a></summary>
+<summary>SCEP Server URLs: Open the SCEPman portal and copy the URL of <a href="windows-10.md#device-certificates">Intune MDM</a></summary>
 
 **Example**
 
@@ -184,7 +184,7 @@ You can define RDNs based on your needs. Supported variables are listed in the [
 
 <details>
 
-<summary>Subject alternative name: <em><code>{{UserPrincipalName}} (UPN), IntuneDeviceId://{{DeviceID}} (URI)</code></em></summary>
+<summary>Subject alternative name: <em><code>(UPN)</code></em> Value: <em><code>{{UserPrincipalName}}, (URI)</code></em>Value: <em><code>IntuneDeviceId://{{DeviceID}}</code></em></summary>
 
 You must add the User principal name as the Subject alternative name. **Add '\{{UserPrincipalName\}}' as Subject Alternative Name of type User principal name (UPN).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.
 

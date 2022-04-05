@@ -1,4 +1,4 @@
-# V2.x: Managed Identities
+# 🆕 V2.x: Managed Identities
 
 {% hint style="info" %}
 This feature requires version **2.0** or above.
