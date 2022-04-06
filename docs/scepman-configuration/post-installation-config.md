@@ -14,7 +14,7 @@ Whether you have just installed a fresh SCEPman 2.x installation or if you have 
 
 ### Prerequisites
 
-* A Global Admin Account for the tenant to which you want to install SCEPman
+* A Global Admin Account for the tenant to which you want to install SCEPman (or another AAD role like *Privileged Role Administrator* and write permissions to the Azure Subscription)
 * A workstation with [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (also known as _az_) installed. Azure CLI is pre-installed in the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), the preferred way to run the module.
 
 ### Running the SCEPman Installation CMDlet
