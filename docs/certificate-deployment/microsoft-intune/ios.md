@@ -8,7 +8,7 @@ The basis for deploying SCEP certificates is to trust the public root certificat
 
 * [ ] Download the CA Certificate from SCEPman portal:
 
-![](<../../.gitbook/assets/SCEPmanHomePage (1) (1).png>)
+![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1).png>)
 
 * [ ] Create a profile for iOS/iPadOS with type **Trusted certificate** in Microsoft Intune:
 
@@ -183,5 +183,5 @@ With our stated settings, we fulfill [Apples certificate requirements](https://s
 
 ![](../../.gitbook/assets/ReplaceUsriOS.png)
 
-| ​[Back to Trial Guide​](../../scepman-deployment/trial-guide.md#step-4-configure-intune-deployment-profiles) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-9-configure-intune-deployment-profiles) | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-11-configure-intune-deployment-profiles) |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| ​[Back to Trial Guide​](broken-reference) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-9-configure-intune-deployment-profiles) | ​[Back to Enterprise Guide​](broken-reference) |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- |

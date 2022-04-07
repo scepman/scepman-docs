@@ -268,6 +268,6 @@ The certificate will be available for Digital Signature usage in e.g. Outlook. B
 
 
 
-| ​[Back to Trial Guide​](../../scepman-deployment/trial-guide.md#step-4-configure-intune-deployment-profiles) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-9-configure-intune-deployment-profiles) | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-11-configure-intune-deployment-profiles) |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| ​[Back to Trial Guide​](broken-reference) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-9-configure-intune-deployment-profiles) | ​[Back to Enterprise Guide​](broken-reference) |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- |
 

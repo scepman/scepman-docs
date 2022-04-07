@@ -33,7 +33,7 @@ More information about configure SSL Certificate [click here](https://docs.micro
 2. After uploading select your certificate and the binding type.
 3. Next click **Add binding.**
 
-![](<../../../.gitbook/assets/scepman\_cname3 (1) (2) (2) (2) (2) (2) (4) (4) (4) (4) (4) (1) (1) (1) (3).png>)
+![](<../../../.gitbook/assets/scepman\_cname3 (1) (2) (2) (2) (2) (2) (4) (4) (4) (4) (4) (1) (1) (1) (2) (3).png>)
 
 1. After completing these steps, **Application settings** needs to be updated
 2. Choose app service and click **Configuration**
@@ -55,5 +55,5 @@ Add and manage TLS/SSL certificates in App Service:\
 Create a free certificate:\
 [https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)
 
-| Back to Trial Guide | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-4-configure-a-custom-domain-and-ssl-certificate) | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-4-configure-a-custom-domain-and-ssl-certificate) |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Back to Trial Guide | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-4-configure-a-custom-domain-and-ssl-certificate) | ​[Back to Enterprise Guide​](broken-reference) |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |

@@ -78,5 +78,5 @@ Stay within **App Registrations** and click on **API permissions**
 
 The app registration is done.
 
-| [Back to Trial Guide](../scepman-deployment/trial-guide.md#step-1-azure-app-registration) | [Back to Community Guide](../scepman-deployment/community-guide.md#step-1-azure-app-registration) | [Back to Enterprise Guide](../scepman-deployment/enterprise-guide.md#step-1-azure-app-registration) |
-| ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| [Back to Trial Guide](broken-reference) | [Back to Community Guide](../scepman-deployment/community-guide.md#step-1-azure-app-registration) | [Back to Enterprise Guide](broken-reference) |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------- |
