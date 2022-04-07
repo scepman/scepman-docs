@@ -13,7 +13,7 @@ If you use SCEP in a 'traditional way' you need a number of on-premises componen
 To get rid of the on-premises components we developed SCEPman.
 
 {% hint style="warning" %}
-SCEPman is **intended to use for authentication and transport encryption** certificates. That said, you can deploy user and device certificates used for network authentication, WiFi, VPN, RADIUS and similar services.
+SCEPman issues certificates that are **intended for authentication and transport encryption**. That said, you can deploy user and device certificates used for network authentication, WiFi, VPN, RADIUS and similar services.
 
 **You may** use SCEPman for transactional **digital signatures** i.e. for S/MIME signing in Microsoft Outlook. If you plan to use the certificates for message signing you need to add the corresponding extended key usages in the Intune profile configuration. Please keep in mind, that SCEPman certificates are trusted in your organization only. SCEPman does not issue publicly trusted certificates.
 
