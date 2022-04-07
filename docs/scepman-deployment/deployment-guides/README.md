@@ -10,11 +10,11 @@ In order to get started with SCEPman, we have prepared two guides that address d
 SCEPman 2.0 is currently only available via the **Extended Guide**.
 {% endhint %}
 
-| Requirement / Scope                           | Standard Guide                 | Extended Guide |
-| --------------------------------------------- | ------------------------------ | -------------- |
-| I am using SCEPman Community Edition          | X (not all features available) |                |
-| Trial or PoC                                  | X (only **mandatory** steps)   |                |
-| Standard production deployment                | X                              |                |
-| I must obey Azure resource naming conventions |                                | X              |
-| High-availability / redundancy                |                                | X              |
-| Auto-scaling                                  |                                | X              |
+| Requirement / Scope                           |                                                        Standard Guide                                                        |       Extended Guide       |
+| --------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------: | :------------------------: |
+| I am using SCEPman Community Edition          |       <p><span data-gb-custom-inline data-tag="emoji" data-code="2611">☑</span></p><p> (not all features available)</p>      |                            |
+| Trial or PoC                                  | <p><span data-gb-custom-inline data-tag="emoji" data-code="2611">☑</span> </p><p>(only <strong>mandatory</strong> steps)</p> |                            |
+| Standard production deployment                |                                                  :ballot\_box\_with\_check:                                                  |                            |
+| I must obey Azure resource naming conventions |                                                                                                                              | :ballot\_box\_with\_check: |
+| High-availability / redundancy                |                                                                                                                              | :ballot\_box\_with\_check: |
+| Auto-scaling                                  |                                                                                                                              | :ballot\_box\_with\_check: |

@@ -14,7 +14,7 @@ Whether you have just installed a fresh SCEPman 2.x installation or if you have 
 
 ### Prerequisites
 
-* A Global Admin Account for the tenant to which you want to install SCEPman (or another AAD role like _Privileged Role Administrator_ and write permissions to the Azure Subscription)
+* A Global Admin Account for the tenant to which you want to install SCEPman (or another AAD role like *Privileged Role Administrator* and write permissions to the Azure Subscription)
 * A workstation with [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (also known as _az_) installed. Azure CLI is pre-installed in the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), the preferred way to run the module.
 
 ### Running the SCEPman Installation CMDlet
@@ -91,5 +91,5 @@ The SCEPman App Service allows anonymous access to its homepage, as it only disp
 
 Additionally, the SCEPman Certificate Master App Service needs the permission to submit Certificate Signing Requests (CSRs) to the core SCEPman App Service to issue certificates. The authentication mechanism behind this founds on another App Registration: `SCEPman-api`. SCEPman uses _SCEPman-api_ to manage CSR submission permissions. The script registers SCEPman-api and adds the submission permission to the SCEPman Certificate Master Managed Identity.
 
-| [Back to Trial Guide](broken-reference) | [Back to Community Guide](../scepman-deployment/community-guide.md#step-1-azure-app-registration) | [Back to Enterprise Guide](broken-reference) |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| [Back to Trial Guide](../scepman-deployment/trial-guide.md#step-1-azure-app-registration) | [Back to Community Guide](../scepman-deployment/community-guide.md#step-1-azure-app-registration) | [Back to Enterprise Guide](../scepman-deployment/enterprise-guide.md#step-1-azure-app-registration) |
+| ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |

@@ -29,11 +29,8 @@ We recommend SCEPman CE for:
 * Small businesses
 * Easy testing of SCEPman
 
-If you want to test SCEPman in your own environment, you can follow the **mandatory** steps in our [Standard Guide](scepman-deployment/community-guide.md) and install SCEPman directly into your lab. If you later decide to purchase SCEPman EE, you should review our Getting Started guide [decision matrix](scepman-deployment/deployment-guides/#decision-matrix) and revisit all **recommended** and **optional** steps.
-
-{% hint style="info" %}
-If your organization has Azure resource naming conventions in place and you intend to re-use the Community Edition deployment after a successful trial, please directly start with our [Extended Guide](scepman-deployment/deployment-guides/enterprise-guide-1.md) (**mandatory** steps only). For the basic steps, no license key is required.
-{% endhint %}
+If you want to test SCEPman in your own environment, you can use the [Trial Guide](scepman-deployment/trial-guide.md) and install SCEPman directly into your lab.\
+When you later decide to buy SCEPman EE you should follow our [Enterprise Guide](scepman-deployment/enterprise-guide.md) to get a recommended production environment.
 
 ## Version Comparison
 

@@ -33,5 +33,5 @@ If you have a license key, you can paste it into the field **License Key**. Leav
 
 Congratulation! The deployment is done. Now go to [create root certificate](../first-run-root-cert.md)
 
-| [Back to Trial Guide](broken-reference) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-2-deploy-scepman-base-services) | [Back to Enterprise Guide](broken-reference) |
-| --------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| [Back to Trial Guide](../../scepman-deployment/trial-guide.md#step-2-deploy-scepman-base-services) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-2-deploy-scepman-base-services) | [Back to Enterprise Guide](../../scepman-deployment/enterprise-guide.md#step-1-azure-app-registration) |
+| -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |

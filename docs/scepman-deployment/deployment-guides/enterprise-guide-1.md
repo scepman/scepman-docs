@@ -1,10 +1,6 @@
-# Extended Guide
+# Enterprise Guide V2.x
 
-{% hint style="warning" %}
-SCEPman Enterprise Edition only
-{% endhint %}
-
-This will guide you through all steps to deploy SCEPman for an enterprise-grade environment with advanced requirements, e.g. naming conventions, redundancy or auto-scaling.&#x20;
+This will guide you through all steps to deploy SCEPman 2.x into an enterprise-grade environment.
 
 ## Azure Deployment
 
@@ -19,7 +15,6 @@ Keep in mind that you need to plan a useful Azure resource design.
 * [ ] Azure AD "Global administrator" (Consent to access Graph API)
 * [ ] Public Domain CNAME (_scepman.yourdomain.com_)
 * [ ] SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview))
-* [ ] SCEPman Enterprise Edition License Key
 
 ### Overview Azure Resource
 
@@ -36,7 +31,7 @@ All these resources are recommended for a production environment.
 
 ## Configuration Steps
 
-### Step 1: Deploy SCEPman Base Services
+### Step 1: Deploy SCEPman V2.x Base Services
 
 {% hint style="warning" %}
 This is a **mandatory** step.
@@ -74,8 +69,8 @@ After the deployment and persmission assignment is complete, you need to create 
 
 ### Step 4: Configure a Custom Domain and SSL Certificate
 
-{% hint style="success" %}
-This is a **recommended** step.
+{% hint style="info" %}
+This is an **optional** step.
 {% endhint %}
 
 To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.**
@@ -158,10 +153,6 @@ To have an optimized performance and take care of the costs we recommend to setu
 This is an **optional** step.
 {% endhint %}
 
-{% hint style="warning" %}
-A [custom domain](enterprise-guide-1.md#step-4-configure-a-custom-domain-and-ssl-certificate) is required for this step.
-{% endhint %}
-
 {% content-ref url="../../scepman-configuration/optional/geo-redundancy.md" %}
 [geo-redundancy.md](../../scepman-configuration/optional/geo-redundancy.md)
 {% endcontent-ref %}
@@ -192,14 +183,14 @@ In the Endpoint Manager (Intune) you can create Configuration profiles for vario
 [android.md](../../certificate-deployment/microsoft-intune/android.md)
 {% endcontent-ref %}
 
-### Step 12: Issue TLS Server Certificates or sign CSRs using Cert Master
+### Step 12: Enjoy the ease of SCEPman Certificate Deployment
 
-{% hint style="info" %}
-This is an **optional** step.
-{% endhint %}
+After configuration of the Intune profiles, we will get your certificates to your devices and can start using them. Now enjoy SCEPman and if you have any questions please contact us.\
+Further details can be found on [https://scepman.com](https://scepman.com)
 
-Please follow below link, to learn how to issue TLS server certificates based on a list of FQDNs or sign any CSR using the Cert Master component.
+After configuration of the Intune profiles, we will get your certificates to your devices and can start using them. Now enjoy SCEPman and if you have any questions please contact us.\
+Further details can be found on [https://scepman.com](https://scepman.com)
 
-{% content-ref url="../../certificate-deployment/certificate-master/" %}
-[certificate-master](../../certificate-deployment/certificate-master/)
-{% endcontent-ref %}
+### Step 13: Issue TLS Server Certificates using Cert Master
+
+While the Cert Master interface was designed to be self-explanatory, we will publish a guide soon.

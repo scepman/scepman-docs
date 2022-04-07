@@ -8,7 +8,7 @@ SCEPman Enterprise Edition only
 
 This section describes a high availability architecture for production use.
 
-![](<../../../.gitbook/assets/scepman\_loadbalancer1 (7) (7) (7) (1) (1) (1) (2) (6).png>)
+![](<../../../.gitbook/assets/scepman\_loadbalancer1 (7) (7) (7) (1) (1) (1) (6).png>)
 
 ## Clone App
 
@@ -31,7 +31,7 @@ Now you can set up a load balancer for higher availability. Start cloning the ap
 1. Then click **Create new** to create a new service plan.
 2. Enter an **App Service plan** and select a **Location** (different from the first app location) and a **Pricing tier.**
 
-![](<../../../.gitbook/assets/scepman\_cloneapp3 (7) (7) (1) (1) (1) (2) (6).png>)
+![](<../../../.gitbook/assets/scepman\_cloneapp3 (7) (7) (1) (1) (1) (6).png>)
 
 5\. Click **OK**\
 ****6. Do not change the **Clone Settings**\
@@ -41,18 +41,18 @@ Next, you need a managed identity for the cloned app:\
 \
 1\. Go to your cloned web app and click on **Identity**
 
-![](<../../../.gitbook/assets/scepman\_identity1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1) (1) (1) (1) (2) (6).png>)
+![](<../../../.gitbook/assets/scepman\_identity1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1) (1) (1) (1) (6).png>)
 
 2\. Under System assigned to switch the **Status** to **On**
 
-![](<../../../.gitbook/assets/scepman\_identity2 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (3) (1) (1) (1) (1) (2) (6).png>)
+![](<../../../.gitbook/assets/scepman\_identity2 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (3) (1) (1) (1) (1) (6).png>)
 
 3\. Click **Save**\
 ****4. This will register your web app into Azure AD
 
 Your **Identity** should look like this:
 
-![](<../../../.gitbook/assets/scepman\_identity3 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (4) (1) (1) (1) (2) (6).png>)
+![](<../../../.gitbook/assets/scepman\_identity3 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (4) (1) (1) (1) (6).png>)
 
 {% hint style="warning" %}
 Cloning an app service has some restrictions such as **auto scale** settings, **backup schedule** settings, **app Insights**, etc.. so you have to configure them again (if needed) for the new cloned app service. For more info visit [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions)
@@ -64,7 +64,7 @@ Cloning an app service has some restrictions such as **auto scale** settings, **
 ****2. open your first SCEPman **KeyVault**\
 ****3. Click on **Access policies** under **Settings, Add new**
 
-![](<../../../.gitbook/assets/scepman\_keyvault1 (7) (7) (7) (7) (4) (1) (1) (1) (2) (6).png>)
+![](<../../../.gitbook/assets/scepman\_keyvault1 (7) (7) (7) (7) (4) (1) (1) (1) (6).png>)
 
 4\. Then click on **Add Access policy,** to add permissions to your new cloned SCEPman instance.
 
@@ -72,18 +72,18 @@ Cloning an app service has some restrictions such as **auto scale** settings, **
 
 5\. Now add for **Key, Secret and Certificate permissions** all permissions except the **Privileged Certificate Operations** "**Purge"** leave it unchecked, your access policy should look like this:
 
-![](<../../../.gitbook/assets/scepman\_keyvault3 (7) (7) (7) (7) (6) (1) (1) (1) (2) (6).png>)
+![](<../../../.gitbook/assets/scepman\_keyvault3 (7) (7) (7) (7) (6) (1) (1) (1) (6).png>)
 
 6\. now **Select principal**: select the **new cloned** instance of SCEPman, **Add** and **Save**
 
-![](<../../../.gitbook/assets/scepman\_keyvault2 (7) (7) (7) (7) (5) (1) (1) (1) (2) (6).png>)
+![](<../../../.gitbook/assets/scepman\_keyvault2 (7) (7) (7) (7) (5) (1) (1) (1) (6).png>)
 
 ## Setup Traffic Manager
 
 1. Search **Traffic Manager profile** and click **Create.**&#x20;
 2. Fill in the fields.
 
-![](<../../../.gitbook/assets/scepman\_trafficmanager1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (6) (7) (5) (1) (1) (1) (2) (6).png>)
+![](<../../../.gitbook/assets/scepman\_trafficmanager1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (6) (7) (5) (1) (1) (1) (6).png>)
 
 1. Then click **Create**.
 2. After your Traffic Manager is deployed, go to it and click **Configuration** under settings.
@@ -101,7 +101,7 @@ Repeat these steps for your second web service.
 
 In the **Overview** your Traffic Manager should like this (here you find the Traffic Manager URL):
 
-![](<../../../.gitbook/assets/scepman\_trafficmanager4 (1) (1) (1) (2) (6).png>)
+![](<../../../.gitbook/assets/scepman\_trafficmanager4 (1) (1) (1) (6).png>)
 
 * Navigate to your **AppService** for the cloned SCEPman instance
 * Under **Custom Domains**, repeat the SSL certificate binding process as described [here](https://docs.scepman.com/scepman-configuration/optional/custom-domain#SSL-Binding)
@@ -113,5 +113,5 @@ In the **Overview** your Traffic Manager should like this (here you find the Tra
 In **Azure DNS Zone**, in order to modify a record, you first have to remove the DNS lock by navigating to **Locks**.
 {% endhint %}
 
-| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](broken-reference) |
-| ------------------- | ----------------------- | ---------------------------------------------- |
+| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](../../scepman-deployment/enterprise-guide.md#step-10-configure-geo-redundancy-optional) |
+| ------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------- |
