@@ -6,25 +6,27 @@ If you want to create your own custom domain for your **App Service** URL, follo
 
 1. Choose your **App Service,** on the left select **Custom domain**.&#x20;
 2. Click **Add custom domain.**&#x20;
-3. Enter your custom domain (**1**) and click **Validate\***.&#x20;
-4. If **CNAME** is set correct (**2**) domain ownership is validated (**3**).
+3. Enter your custom domain and click **Validate**
+4. If the domain is on your Azure, **CNAME** and **TXT** records will be generated automatically, otherwise, if the domain is not running on your Azure you need to add them manually (see [here](custom-domain.md#undefined)).
 
 ![](<../../../.gitbook/assets/scepman\_cname1 (1) (1) (1) (1) (1) (1) (1).png>)
 
-\*if you don't have a custom domain yet follow the steps:
+### Create App Service Managed Certificate <a href="#53264c4d-2e8e-482b-9522-b7023144f9f7" id="53264c4d-2e8e-482b-9522-b7023144f9f7"></a>
+
+To use it for HTTPS requests
 
 1. Go to TLS/SSL settings
 2. Click on Private Key Certificates (.pfx)
-3. Create App Service Managed Certificate
+3. Create App Service Managed Certificate for your custom domain
 
 ![](<../../.gitbook/assets/image (35).png>)
 
-More information about configure SSL Certificate [click here](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate)
+For more information about configuring an SSL Certificate [click here](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate)
 
 ### SSL Binding
 
 1. Click **Add custom domain** to finish this configuration.
-2. When the domain is added, create a SSL binding.
+2. When the domain is added, create an SSL binding.
 3. Click **Add binding** on the custom domain screen.
 
 ![](<../../../.gitbook/assets/scepman\_cname2 (1) (1) (1).png>)
@@ -35,7 +37,7 @@ More information about configure SSL Certificate [click here](https://docs.micro
 
 ![](<../../../.gitbook/assets/scepman\_cname3 (1) (2) (2) (2) (2) (2) (4) (4) (4) (4) (4) (1) (1) (1) (2) (3).png>)
 
-1. After completing these steps, **Application settings** needs to be updated
+1. After completing these steps, **Application settings** need to be updated
 2. Choose app service and click **Configuration**
 3. Then click **Application Settings** and edit the setting **AppConfig:BaseUrl**
 4. Enter your custom domain and click **OK**.
@@ -44,9 +46,15 @@ More information about configure SSL Certificate [click here](https://docs.micro
 
 1. Finally click **Save**.
 
+### Add CNAME and TXT manually to the DNS
+
+If you try to add a custom domain for a domain outside azure (or your permissions), you need to add the CNAME and TXT records manually
+
+![](<../../.gitbook/assets/2022-04-13 16\_51\_49-Add custom domain.png>)
+
 ### Microsoft Documentation and Managed Certificates
 
-Add custom domain to an App Service:\
+Add a custom domain to an App Service:\
 [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain)
 
 Add and manage TLS/SSL certificates in App Service:\
