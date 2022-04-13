@@ -7,21 +7,19 @@ If you want to create your own custom domain for your **App Service** URL, follo
 1. Choose your **App Service,** on the left select **Custom domain**.&#x20;
 2. Click **Add custom domain.**&#x20;
 3. Enter your custom domain and click **Validate**
-4. If the domain is on your Azure, **CNAME** and **TXT** records will be generated automatically, otherwise, if the domain is not running on your Azure you need to add them manually (see [here](custom-domain.md#undefined)).
+4. If the domain is on your Azure, **CNAME** and **TXT** records will be generated automatically, otherwise, if the domain is not running on Azure DNS you need to add them manually (see [here](custom-domain.md#undefined)).
 
-![](<../../../.gitbook/assets/scepman\_cname1 (1) (1) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/2022-04-13 17\_09\_38-Add custom domain0.png>)
 
 ### Create App Service Managed Certificate <a href="#53264c4d-2e8e-482b-9522-b7023144f9f7" id="53264c4d-2e8e-482b-9522-b7023144f9f7"></a>
 
-To use it for HTTPS requests
+To use it for HTTPS
 
 1. Go to TLS/SSL settings
 2. Click on Private Key Certificates (.pfx)
 3. Create App Service Managed Certificate for your custom domain
 
 ![](<../../.gitbook/assets/image (35).png>)
-
-For more information about configuring an SSL Certificate [click here](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate)
 
 ### SSL Binding
 
@@ -48,7 +46,7 @@ For more information about configuring an SSL Certificate [click here](https://d
 
 ### Add CNAME and TXT manually to the DNS
 
-If you try to add a custom domain for a domain outside azure (or your permissions), you need to add the CNAME and TXT records manually
+If you want to add a custom domain for a domain outside Azure DNS (or your permissions), you need to add the CNAME and TXT records manually
 
 ![](<../../.gitbook/assets/2022-04-13 16\_51\_49-Add custom domain.png>)
 
