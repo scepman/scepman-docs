@@ -7,7 +7,7 @@ If you want to create your own custom domain for your **App Service** URL, follo
 1. Choose your **App Service,** on the left select **Custom domain**.&#x20;
 2. Click **Add custom domain.**&#x20;
 3. Enter your custom domain and click **Validate**
-4. If the domain is on your Azure, **CNAME** and **TXT** records will be generated automatically, otherwise, if the domain is not running on Azure DNS you need to add them manually (see [here](custom-domain.md#undefined)).
+4. If the domain is on your Azure, **CNAME** and **TXT** records will be generated automatically, otherwise, if the domain is not running on Azure DNS you need to add them manually (see [here](custom-domain.md#add-cname-and-txt-manually-to-the-dns)).
 
 ![](<../../.gitbook/assets/2022-04-13 17\_09\_38-Add custom domain0.png>)
 
