@@ -46,7 +46,7 @@ To use it for HTTPS
 
 ### Add CNAME and TXT manually to the DNS
 
-If you want to add a custom domain for a domain outside Azure DNS (or your permissions), you need to add the CNAME and TXT records manually
+If you want to add a custom domain for a domain outside Azure DNS (or your permissions), you need to add the CNAME and TXT records manually. Please use the values which azure provides in the domain ownership part
 
 ![](<../../.gitbook/assets/2022-04-13 16\_51\_49-Add custom domain.png>)
 
