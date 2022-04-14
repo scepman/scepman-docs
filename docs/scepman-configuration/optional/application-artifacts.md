@@ -2,7 +2,7 @@
 
 ## Available Channels
 
-We offer three channels for our SCEPman application.
+We offer three channels for our SCEPman and Certificate Master web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster)
 
 ### Production
 
