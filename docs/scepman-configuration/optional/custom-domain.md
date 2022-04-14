@@ -33,7 +33,7 @@ To use it for HTTPS
 2. After uploading select your certificate and the binding type.
 3. Next click **Add binding.**
 
-![](<../../../.gitbook/assets/scepman\_cname3 (1) (2) (2) (2) (2) (2) (4) (4) (4) (4) (4) (1) (1) (1) (2) (3).png>)
+![](<../../.gitbook/assets/2022-04-14 12\_10\_46-TLS\_SSL Binding.png>)
 
 1. After completing these steps, **Application settings** need to be updated
 2. Choose app service and click **Configuration**
