@@ -27,7 +27,7 @@ To use it for HTTPS
 2. When the domain is added, create an SSL binding.
 3. Click **Add binding** on the custom domain screen.
 
-![](<../../../.gitbook/assets/scepman\_cname2 (1) (1) (1).png>)
+![](<../../.gitbook/assets/2022-04-14 12\_14\_21-as-scepman-testSSL.png>)
 
 1. On the TLS/SSL Binding submenu click **Upload PFX Certificate.**
 2. After uploading select your certificate and the binding type.
