@@ -4,6 +4,13 @@
 This area is under construction!
 {% endhint %}
 
+## AppConfig:SCEPman:URL
+
+**Value:** String (URL)
+
+**Description:**\
+This is the URL of the SCEPman instance that belongs to this Certificate Master. If you have a geo-redundant setup, this should be the URL of the SCEPman App Service nearest to Certificate Master. Certificate Master will submit certificate requests to this SCEPman instance for sigining.
+
 ## AppConfig:RemoteDebug
 
 **Value:** _true_ or _false_
