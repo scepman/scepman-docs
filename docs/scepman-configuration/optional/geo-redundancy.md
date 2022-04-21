@@ -16,67 +16,58 @@ After a successful deployment of SCEPman, Set up a custom domain for this SCEPma
 
 Now you can set up a load balancer for higher availability. Start cloning the app:
 
-* Navigate to **App Service.**&#x20;
-* Scroll down to **Development Tools** and click **Clone App.**&#x20;
+* Navigate to SCEPman **App Service.**&#x20;
+* Scroll down to **Development Tools** and click on **Clone App.**&#x20;
 * Fill in the required fields as follows:
 
-1. **App name:** name for the cloned instance
-2. **Resource Group:** create a new Resource Group for the cloned instance of SCEPman
-3. **App Service plan/Location:**&#x20;
+![Example of SCEPman cloned App Service](<../../.gitbook/assets/2022-04-21 11\_22\_30-SCEPmanGeoRed01.png>)
 
-![](../../.gitbook/assets/2021-07-07-10\_22\_28-scepman02testservicename-microsoft-azure-and-3-more-pages-c4a8-ehamed-micr.png)
+* **Resource Group:** create a new Resource Group for the cloned instance of SCEPman
+* **Name:** choose a unique name for the new app service
+* **Region:** choose a secondary location for the new cloned App Service, this will automatically create a new App Service Plan in this region.
 
-4\. Click **App Service plan/Location**
+Next, after the deployment succeeds, you need to do 3 more steps:
 
-1. Then click **Create new** to create a new service plan.
-2. Enter an **App Service plan** and select a **Location** (different from the first app location) and a **Pricing tier.**
+<details>
 
-![](<../../../.gitbook/assets/scepman\_cloneapp3 (7) (7) (1) (1) (1) (2) (1) (6).png>)
+<summary>Delete the <code>ManagedIdentityEnabledOnUnixTime</code> setting</summary>
 
-5\. Click **OK**\
-****6. Do not change the **Clone Settings**\
-****7. Finally click **Create**
+Navigate in your cloned app service to **Configuration** and delete the setting `AppConfig:AuthConfig:ManagedIdentityEnabledOnUnixTime` then save settings (see screenshot)
 
-Next, you need a managed identity for the cloned app:\
-\
-1\. Go to your cloned web app and click on **Identity**
+</details>
 
-![](<../../../.gitbook/assets/scepman\_identity1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1) (1) (1) (1) (2) (1) (6).png>)
+![](<../../.gitbook/assets/2022-04-21 11\_39\_55-ClonedSCEPman.png>)
 
-2\. Under System assigned to switch the **Status** to **On**
+<details>
 
-![](<../../../.gitbook/assets/scepman\_identity2 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (3) (1) (1) (1) (1) (2) (1) (6).png>)
+<summary>Enable Identity option</summary>
 
-3\. Click **Save**\
-****4. This will register your web app into Azure AD
+Navigate to **Identity** turn it on and save
 
-Your **Identity** should look like this:
+</details>
 
-![](<../../../.gitbook/assets/scepman\_identity3 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (4) (1) (1) (1) (2) (1) (6).png>)
+![](<../../.gitbook/assets/2022-04-21 11\_46\_35-ClonedSCEPman3.png>)
+
+<details>
+
+<summary>Setup Azure Key Vault Access Policy</summary>
+
+* Navigate to your **Key Vault** (in the primary resource group) and go to **Access policies** and add access policy for your new cloned app service (see screenshot below)
+* For **Key, Secret and Certificate permissions** add all permissions except the **Privileged Certificate Operations "Purge"** leave it unchecked (see screenshot)
+* By **Select principal** choose your cloned app service
+* Add and save
+
+</details>
+
+![Add Access Policy on Key vault](<../../.gitbook/assets/2022-04-21 11\_51\_24-kv-scepman-002ptest - Microsoft Azure and 2 more pages - C4A8 EHamed - Microsoft.png>)
+
+![Add Access Policy on Key vault](<../../.gitbook/assets/2022-04-21 12\_11\_00-Add access policy .png>)
+
+After you set all settings above, you need to restart your cloned app service and go to the last step, running the PowerShell script (same procedure you already did by the primary SCEPman) [Installation and run the PowerShell Module](../post-installation-config.md#acquire-and-run-the-scepman-installation-powershell-module)
 
 {% hint style="warning" %}
-Cloning an app service has some restrictions such as **auto scale** settings, **backup schedule** settings, **app Insights**, etc.. so you have to configure them again (if needed) for the new cloned app service. For more info visit [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions)
+Cloning an app service has some restrictions such as **autoscale** settings, **backup schedule** settings, **app Insights, logging**, etc.. so you have to configure them again (if needed) for the new cloned app service. For more info visit [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions)
 {% endhint %}
-
-## Setup Azure Key Vault Access Policy
-
-1\. Go to your **Key Vault**\
-****2. open your first SCEPman **KeyVault**\
-****3. Click on **Access policies** under **Settings, Add new**
-
-![](<../../../.gitbook/assets/scepman\_keyvault1 (7) (7) (7) (7) (4) (1) (1) (1) (2) (1) (6).png>)
-
-4\. Then click on **Add Access policy,** to add permissions to your new cloned SCEPman instance.
-
-![](../../.gitbook/assets/2021-07-09-15\_57\_46-gkscep02-keyvault-microsoft-azure-and-4-more-pages-c4a8-ehamed-microsoft-.png)
-
-5\. Now add for **Key, Secret and Certificate permissions** all permissions except the **Privileged Certificate Operations** "**Purge"** leave it unchecked, your access policy should look like this:
-
-![](<../../../.gitbook/assets/scepman\_keyvault3 (7) (7) (7) (7) (6) (1) (1) (1) (2) (1) (6).png>)
-
-6\. now **Select principal**: select the **new cloned** instance of SCEPman, **Add** and **Save**
-
-![](<../../../.gitbook/assets/scepman\_keyvault2 (7) (7) (7) (7) (5) (1) (1) (1) (2) (1) (6).png>)
 
 ## Setup Traffic Manager
 
