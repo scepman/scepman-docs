@@ -6,10 +6,6 @@ In order to get started with SCEPman, we have prepared two guides that address d
 
 ## Decision Matrix
 
-{% hint style="info" %}
-SCEPman 2.0 is currently only available via the **Extended Guide**.
-{% endhint %}
-
 | Requirement / Scope                           |                                                        Standard Guide                                                        |       Extended Guide       |
 | --------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------: | :------------------------: |
 | I am using SCEPman Community Edition          |       <p><span data-gb-custom-inline data-tag="emoji" data-code="2611">☑</span></p><p> (not all features available)</p>      |                            |
