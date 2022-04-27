@@ -2,6 +2,12 @@
 
 ## Versions
 
+### 2.1 - TBA
+
+* Robustness
+* Bearer Authentication for Jamf Classic API
+* Minor Improvements
+
 ### 2.0 - March 2022
 
 * [Certificate Management](certificate-deployment/certificate-master)
