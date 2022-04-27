@@ -131,7 +131,7 @@ We can configure a Health Check for the App Service to get direct notifications 
 [health-check.md](../scepman-configuration/optional/health-check.md)
 {% endcontent-ref %}
 
-### Step 9: Configure Intune Deployment Profiles
+### Step 9: Configure your MDM Deployment Profiles
 
 {% hint style="warning" %}
 This is a **mandatory** step.
@@ -139,22 +139,14 @@ This is a **mandatory** step.
 
 With the completion of the above steps, we have a working SCEPman implementation and can now deploy certificates to the devices.
 
-In the Endpoint Manager (Intune) you can create Configuration profiles for various platforms. Choose your OS platform from the below links:
+Please use one (or more) of the following articles, to deploy certificates with your preferred MDM solution:
 
-{% content-ref url="../certificate-deployment/microsoft-intune/windows-10.md" %}
-[windows-10.md](../certificate-deployment/microsoft-intune/windows-10.md)
+{% content-ref url="../certificate-deployment/microsoft-intune/" %}
+[microsoft-intune](../certificate-deployment/microsoft-intune/)
 {% endcontent-ref %}
 
-{% content-ref url="../certificate-deployment/microsoft-intune/macos.md" %}
-[macos.md](../certificate-deployment/microsoft-intune/macos.md)
-{% endcontent-ref %}
-
-{% content-ref url="../certificate-deployment/microsoft-intune/ios.md" %}
-[ios.md](../certificate-deployment/microsoft-intune/ios.md)
-{% endcontent-ref %}
-
-{% content-ref url="../certificate-deployment/microsoft-intune/android.md" %}
-[android.md](../certificate-deployment/microsoft-intune/android.md)
+{% content-ref url="../certificate-deployment/jamf/" %}
+[jamf](../certificate-deployment/jamf/)
 {% endcontent-ref %}
 
 ### Step 10: Issue TLS Server Certificates or sign CSRs using Cert Master
