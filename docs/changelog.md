@@ -2,7 +2,7 @@
 
 ## Versions
 
-### 2.1 - TBA
+### 2.1 - Currently in Internal Channel
 
 * Robustness
 * Bearer Authentication for Jamf Classic API
