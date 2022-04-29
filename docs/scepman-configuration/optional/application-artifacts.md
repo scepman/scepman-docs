@@ -2,7 +2,7 @@
 
 ## Available Channels
 
-We offer three channels for our SCEPman and Certificate Master web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster)
+We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster)
 
 ### Production
 
@@ -79,7 +79,7 @@ To configure this, do the following:
 4. Then, click **Configuration** (submenu **Setting**)
 5. Look for **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
 
-![](<../../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (2) (1) (4).png>)
+![](<../../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (2) (1) (1) (4).png>)
 
 6\. Then replace the URL in \*\*Value \*\*with the SCEPman GitHub URL or your Storage account blob URL you already copied:
 
