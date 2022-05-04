@@ -32,6 +32,7 @@
 * [🆕 Certificate Master](certificate-deployment/certificate-master/README.md)
   * [Certificate Signing Request (CSR)](certificate-deployment/certificate-master/certificate-signing-request-csr.md)
   * [TLS Server Certificate PKCS#12](certificate-deployment/certificate-master/tls-server-certificate-pkcs-12.md)
+  * [Manual Client Certificate PKCS#12](certificate-deployment/certificate-master/client-certificate-pkcs-12.md)
 * [Other](certificate-deployment/other-1/README.md)
   * [3rd-party MDM Solutions](certificate-deployment/other-1/static-certificates.md)
   * [Domain Controller Certificates](certificate-deployment/other-1/domain-controller-certificates.md)

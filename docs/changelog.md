@@ -6,6 +6,7 @@
 
 * Robustness
 * Bearer Authentication for Jamf Classic API
+* [Request Client Certificates manually through Certificate Master](certificate-deployment/certificate-master/client-certificate-pkcs-12.md)
 * Minor Improvements
 
 ### 2.0 - March 2022
