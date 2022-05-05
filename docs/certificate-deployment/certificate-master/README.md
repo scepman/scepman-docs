@@ -12,3 +12,8 @@ SCEPman Enterprise Edition only
 [tls-server-certificate-pkcs-12.md](tls-server-certificate-pkcs-12.md)
 {% endcontent-ref %}
 
+## Quick Overview
+
+{% embed url="https://youtu.be/kr8uBPlG4J8?t=122" %}
+SCEPman Certificate Master Quick Overview
+{% endembed %}
