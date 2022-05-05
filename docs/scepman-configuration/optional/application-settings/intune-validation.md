@@ -32,6 +32,10 @@ Hence, you must configure the Intune configuration profile for devices according
 
 For AADAndIntune, both directories are queried in parallel. In this case, it is sufficient that the device exists in one of the two directories. This setting enables migrating from one setting to the other when there are still valid certificates for both types of directories. It also supports cases where you configure platforms differently. It can also be used as a workaround for iOS or Android devices that receive an Intune ID instead of an AAD ID, because they are not fully AAD-joined at the time of certificate enrollment.
 
+{% embed url="https://www.youtube.com/watch?v=K0SK0BtoBUQ" %}
+SCEPman 2.0: Certificate Validation
+{% endembed %}
+
 ## AppConfig:IntuneValidation:WaitForSuccessNotificationResponse
 
 {% hint style="info" %}

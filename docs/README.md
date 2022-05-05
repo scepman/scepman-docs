@@ -10,6 +10,10 @@ SCEPman is a slim and resource-friendly solution to issue and validate certifica
 
 The following documentation will show you a straightforward way to deploy certificates to modern cloud managed clients. Without any on-premises PKI your users and devices will be able to get certificates.
 
+{% embed url="https://www.youtube.com/watch?v=kr8uBPlG4J8" %}
+SCEPman 2.0 - What's new?
+{% endembed %}
+
 ## Get more details about SCEPman
 
 {% content-ref url="details.md" %}
