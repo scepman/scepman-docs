@@ -2,11 +2,14 @@
 
 ## Versions
 
-### 2.1 - Currently in Internal Channel
+### 2.1 - Currently in Beta Channel
 
+* [Request Client Certificates manually through Certificate Master](certificate-deployment/certificate-master/client-certificate-pkcs-12.md)
+* Library and Framework updates
+  * Improved Performance with .NET 6
+  * Other library updates
 * Robustness
 * Bearer Authentication for Jamf Classic API
-* [Request Client Certificates manually through Certificate Master](certificate-deployment/certificate-master/client-certificate-pkcs-12.md)
 * Minor Improvements
 
 ### 2.0 - March 2022
@@ -16,7 +19,7 @@
   * Revoke manually issued certificates
   * Search for manual certificates
 * Library and Framework updates
-  * Improved Performance with .NET 5.0
+  * Improved Performance with .NET 5
   * Azure Key Vault
   * Other library updates
 * [Easier deployment, no manual app registraton required anymore](scepman-configuration/post-installation-config.md)
