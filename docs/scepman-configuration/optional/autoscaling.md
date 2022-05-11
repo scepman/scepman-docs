@@ -51,6 +51,3 @@ But please keep in mind that this can depend on your workload and needs to be mo
 7. Check the **Instance count (1)** that will be removed from the current instances
 
 ![](../../.gitbook/assets/screen-shot-2021-01-19-at-10.08.38.png)
-
-| Back to Trial Guide | Back to Community Guide | ​[Back to Enterprise Guide​](broken-reference) |
-| :-----------------: | :---------------------: | :--------------------------------------------: |

@@ -25,6 +25,3 @@ If you want to use an intermediate certificate (Enterprise Edition only) you can
 ![](../.gitbook/assets/2022-04-04AfterDep.png)
 
 Now you are ready to start! Check [Certificate Deployment via Microsoft Intune](../certificate-deployment/microsoft-intune/)
-
-| [Back to Trial Guide](broken-reference) | [Back to Community Guide](../scepman-deployment/community-guide.md#step-3-create-root-certificate) | ​[Back to Enterprise Guide​](broken-reference) |
-| --------------------------------------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------- |

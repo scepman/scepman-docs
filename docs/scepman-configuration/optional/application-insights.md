@@ -19,6 +19,3 @@ To activate the Application Insights for your App Service, please follow this in
 5. Finally, you can click on **Apply**
 
 ![](<../../.gitbook/assets/image (7).png>)
-
-| Back to Trial Guide | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-7-deploy-application-insights) | ​[Back to Enterprise Guide​](broken-reference) |
-| ------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |

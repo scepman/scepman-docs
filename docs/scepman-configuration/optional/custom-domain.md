@@ -40,7 +40,7 @@ To use it for HTTPS
 3. Then click **Application Settings** and edit the setting **AppConfig:BaseUrl**
 4. Enter your custom domain and click **OK**.
 
-![](../../../.gitbook/assets/scepman\_cname4\_1.png)
+![](<../../../.gitbook/assets/scepman\_cname4\_1 (1).png>)
 
 1. Finally click **Save**.
 
@@ -60,6 +60,3 @@ Add and manage TLS/SSL certificates in App Service:\
 
 Create a free certificate:\
 [https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)
-
-| Back to Trial Guide | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-4-configure-a-custom-domain-and-ssl-certificate) | ​[Back to Enterprise Guide​](broken-reference) |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |

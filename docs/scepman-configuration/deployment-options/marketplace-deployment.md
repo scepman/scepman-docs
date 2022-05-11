@@ -32,6 +32,3 @@ If you have a license key, you can paste it into the field **License Key**. Leav
 ![](<../../.gitbook/assets/2021-10-11 14\_25\_40-Create SCEPman \_ Intune SCEP-as-a-Service - Microsoft Azure and 13 more pages - .png>)
 
 Congratulation! The deployment is done. Now go to [create root certificate](../first-run-root-cert.md)
-
-| [Back to Trial Guide](broken-reference) | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-2-deploy-scepman-base-services) | [Back to Enterprise Guide](broken-reference) |
-| --------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------- |

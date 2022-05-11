@@ -59,6 +59,3 @@ To get an alert from our health check we need to configure alert rules in our Ap
 18\. Then click on **Create alert rule**
 
 ![](../../.gitbook/assets/screen-shot-2021-01-19-at-11.20.29.png)
-
-| Back to Trial Guide | [Back to Community Guide](../../scepman-deployment/community-guide.md#step-8-configure-health-check) | ​[Back to Enterprise Guide​](broken-reference) |
-| ------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
