@@ -7,9 +7,6 @@
       "pattern": ".*glueckkanja.zendesk.com\/hc\/en-us.*"
     },
     {
-      "pattern": ".*broken-reference.*"
-    },
-    {
       "pattern": ".*scepman.contoso.*"
     },
     {
