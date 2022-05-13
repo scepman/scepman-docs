@@ -9,6 +9,7 @@
 * [Getting Started](scepman-deployment/deployment-guides/README.md)
   * [Standard Guide](scepman-deployment/community-guide.md)
   * [Extended Guide](scepman-deployment/deployment-guides/enterprise-guide-1.md)
+* [Azure Sizing](scepman-deployment/azure-sizing.md)
 * [Permissions](scepman-deployment/permissions/README.md)
   * [V1.x: Azure App Registration](scepman-configuration/azure-app-registration.md)
   * [🆕 V2.x: Managed Identities](scepman-configuration/post-installation-config.md)
