@@ -44,11 +44,11 @@ The following user segments are available for both, monthly and annual plans.&#x
 | SCEPman EE (M/Y) 5000  | 5,000                          | 9,999                   |
 | SCEPman EE (M/Y) 10000 | 10,000                         | unlimited               |
 
-For prices in Euro (EUR), please check out our <mark style="color:green;"></mark> [website](https://www.scepman.com/pricing/). For prices in _your_ currency, please directly refer to the **Marketplace** in the [Azure Portal](https://portal.azure.com).
+For prices in Euro (EUR), please check out our <mark style="color:green;"></mark> [website](https://www.scepman.com/pricing/). For prices in _your_ currency, please directly refer to the **Marketplace** in the [Azure Portal](https://portal.azure.com/).
 
 ### RADIUSaaS & SCEPman Bundle
 
-We offer SCEPman as well as our cloud-NAC solution [RADIUSaaS](https://www.radius-as-a-service.com) in a subscription bundle that is discounted by 25% in comparison to the individual solutions. The bundle plans are available with monthly or annual renewal as well as the same [User Segments](azure-marketplace.md#user-segments).&#x20;
+We offer SCEPman as well as our cloud-NAC solution [RADIUSaaS](https://www.radius-as-a-service.com/) in a subscription bundle that is discounted by 25% in comparison to the individual solutions. The bundle plans are available with monthly or annual renewal as well as the same [User Segments](azure-marketplace.md#user-segments).&#x20;
 
 The information provided throughout this article is analogously applicable for RADIUSaaS & SCEPman Bundle subscriptions.
 
