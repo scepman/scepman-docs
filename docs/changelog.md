@@ -12,7 +12,7 @@
 * Bearer Authentication for Jamf Classic API
 * Minor Improvements
 
-### 2.0 - March 2022
+### 2.0.473 - March 2022
 
 * [Certificate Management](certificate-deployment/certificate-master)
   * Manually issue TLS Server certificates
@@ -30,7 +30,7 @@
 * [Compatibility with GCC High, GCC DoD, and 21Vianet environments](scepman-configuration/optional/application-settings/national-cloud-plattforms.md)
 * Various minor improvements
 
-### 1.9 - July 2021
+### 1.9.207 - July 2021
 
 * [JAMF User Certificates](certificate-deployment/jamf/users.md)
 * Update to the [Compliance Check Preview](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-compliancecheck)
@@ -40,7 +40,7 @@
   * Improved error messages
   * Improved Compatibility with ISE with [a new default setting](scepman-configuration/optional/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-addextendedkeyusage)
 
-### 1.8 - June 2021
+### 1.8.155 - June 2021
 
 * Improved robustness in exceptional situations
   * Correct answers to invalid OCSP requests, which may occur rarely for certificates issued by SCEPman 1.5 or earlier
@@ -51,7 +51,15 @@
 * Performance
   * Caching some repeated requests to Graph API
 
-### 1.7 - May 2021
+#### 1.7.140 - June 2021
+
+* Solution for [Microsoft's additional permission requirements preventing SCEPman from issuing certificates via Intune](https://glueckkanja.zendesk.com/hc/en-us/articles/4402360224530-SCEPman-does-not-issue-certificates)
+
+#### 1.7.122 - June 2021
+
+* Bugfix regarding OCSP checks for certificates issued via JAMF
+
+### 1.7.101 - May 2021
 
 * Support for [Computer and Device Certificates via JAMF](certificate-deployment/jamf/general.md)
 * Separate Certificate Lifetimes for each endpoint, e.g. for [Domain Controller Certificates](scepman-configuration/optional/application-settings/dc-validation.md#appconfig-dcvalidation-validityperioddays)
@@ -65,25 +73,17 @@
   * Updated some dependencies
   * Improved Homepage
 
-#### 1.7.122 - June 2021
+### 1.6.465 - January 2021
 
-* Bugfix regarding OCSP checks for certificates issued via JAMF
+* Bugfix where some OCSP requests were unanswered
+* Bugfix impacting local logging
 
-#### 1.7.140 - June 2021
-
-* Solution for [Microsoft's additional permission requirements preventing SCEPman from issuing certificates via Intune](https://glueckkanja.zendesk.com/hc/en-us/articles/4402360224530-SCEPman-does-not-issue-certificates)
-
-### 1.6 - November 2020
+### 1.6.455 - November 2020
 
 * Support for certificates for [Domain Controllers](certificate-deployment/other-1/domain-controller-certificates.md), especially for use in Windows Hello for Business (Enterprise Edition only)
 * Generic support for [3rd-party MDM systems via endpoint static](certificate-deployment/other-1/static-certificates.md)
 * Improved error logging
 * Bug fixing
-
-#### 1.6.465 - January 2021
-
-* Bugfix where some OCSP requests were unanswered
-* Bugfix impacting local logging
 
 ### 1.5 - July 2020
 
