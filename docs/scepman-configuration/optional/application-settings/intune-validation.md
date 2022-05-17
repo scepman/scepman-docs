@@ -24,13 +24,15 @@ Settting this to **Never** will disable the compliance check.
 Applicable to version 2.0 and above
 {% endhint %}
 
-**Value:** _AAD_ (default), _AADAndIntune_, or _Intune_
+**Value:** _AAD_ (default for SCEPman 2.0), _Intune_, _AADAndIntune_, or _ADDAndIntuneOpportunistic_ (default for SCEPman 2.1)
 
-Determines where to look up devices on OCSP requests for device certificates. The corresponding directory is queried for a device matching the device ID written to the certificate's subject CN field. The certificate is valid only if the device exists. For AAD, it must also be enabled (Intune doesn't support disabling devices). If the ComplianceCheck is activated, the device must also be compliant. If nothing is configured and for SCEPman 1.9 and before, AAD is used.
+Determines where to look up devices on OCSP requests for device certificates. The corresponding directory is queried for a device matching the device ID written to the certificate's subject CN field. The certificate is valid only if the device exists. For _AAD_, it must also be enabled (Intune doesn't support disabling devices). If the ComplianceCheck is activated, the device must also be compliant. If nothing is configured and for SCEPman 1.9 and before, _AAD_ is used.
 
 Hence, you must configure the Intune configuration profile for devices accordingly. \{{AAD\_Device\_ID\}} is the AAD device ID, while \{{DeviceID\}} is the Intune device ID.
 
-For AADAndIntune, both directories are queried in parallel. In this case, it is sufficient that the device exists in one of the two directories. This setting enables migrating from one setting to the other when there are still valid certificates for both types of directories. It also supports cases where you configure platforms differently. It can also be used as a workaround for iOS or Android devices that receive an Intune ID instead of an AAD ID, because they are not fully AAD-joined at the time of certificate enrollment.
+For _AADAndIntune_, both directories are queried in parallel. In this case, it is sufficient that the device exists in one of the two directories. This setting enables migrating from one setting to the other when there are still valid certificates for both types of directories. It also supports cases where you configure platforms differently. It can also be used as a workaround for iOS or Android devices that receive an Intune ID instead of an AAD ID, because they are not fully AAD-joined at the time of certificate enrollment.
+
+If you have upgraded from SCEPman 1.x to SCEPman 2.x and you are still using [an App Registration for SCEPman permissions](../../azure-app-registration.md), SCEPman lacks the permissions to query Intune for devices. Thus, you are limited to the _AAD_ option. The option _ADDAndIntuneOpportunistic_ checks whether the permissions to query Intune have been granted to SCEPman. If they are there, this works like _AADAndIntune_. If they are not there, this behaves like _AAD_.
 
 {% embed url="https://www.youtube.com/watch?v=K0SK0BtoBUQ" %}
 SCEPman 2.0: Certificate Validation
