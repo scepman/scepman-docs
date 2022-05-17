@@ -8,7 +8,7 @@ SCEPman Enterprise Edition only
 
 This section describes a high availability architecture for production use.
 
-![](<../../../.gitbook/assets/scepman\_loadbalancer1 (7) (7) (7) (1) (1) (1) (1) (1) (6).png>)
+![](<../../../.gitbook/assets/scepman\_loadbalancer1 (7) (7) (7) (1) (1) (1) (1) (1) (2) (6).png>)
 
 ## Clone App
 
@@ -74,7 +74,7 @@ Cloning an app service has some restrictions such as **autoscale** settings, **b
 1. Search **Traffic Manager profile** and click **Create.**&#x20;
 2. Fill in the fields.
 
-![](<../../../.gitbook/assets/scepman\_trafficmanager1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (6) (7) (5) (1) (1) (1) (1) (1) (6).png>)
+![](<../../../.gitbook/assets/scepman\_trafficmanager1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (6) (7) (5) (1) (1) (1) (1) (1) (2) (6).png>)
 
 1. Then click **Create**.
 2. After your Traffic Manager is deployed, go to it and click **Configuration** under settings.
@@ -92,7 +92,7 @@ Repeat these steps for your second web service.
 
 In the **Overview** your Traffic Manager should like this (here you find the Traffic Manager URL):
 
-![](<../../../.gitbook/assets/scepman\_trafficmanager4 (1) (1) (1) (1) (1) (6).png>)
+![](<../../../.gitbook/assets/scepman\_trafficmanager4 (1) (1) (1) (1) (1) (2) (6).png>)
 
 * Navigate to your **AppService** for the cloned SCEPman instance
 * Under **Custom Domains**, repeat the SSL certificate binding process as described [here](https://docs.scepman.com/scepman-configuration/optional/custom-domain#SSL-Binding)
