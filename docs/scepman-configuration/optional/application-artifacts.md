@@ -41,19 +41,19 @@ We offer three channels for our SCEPman web applications, you can find the actua
 ### Production
 
 ```
-https://github.com/scepman/install/raw/master/dist-certmaster/CertMaster-Artifacts.zip
+https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts.zip
 ```
 
 ### Beta
 
 ```
-https://github.com/scepman/install/raw/master/dist-certmaster/CertMaster-Artifacts-Beta.zip
+https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts-Beta.zip
 ```
 
 ### Internal
 
 ```
-https://github.com/scepman/install/raw/master/dist-certmaster/CertMaster-Artifacts-Intern.zip
+https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts-Intern.zip
 ```
 
 ## Custom Artifact location
@@ -101,7 +101,7 @@ To configure this, do the following:
 4. Then, click **Configuration** (submenu **Setting**)
 5. Look for **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
 
-![](<../../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (4).png>)
+![](<../../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (2) (4).png>)
 
 6\. Then replace the URL in \*\*Value \*\*with the SCEPman GitHub URL or your Storage account blob URL you already copied:
 
