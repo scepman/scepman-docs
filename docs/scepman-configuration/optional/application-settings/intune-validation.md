@@ -40,7 +40,7 @@ SCEPman 2.0: Certificate Validation
 
 ## AppConfig:IntuneValidation:RevokeCertificatesOnWipe
 
-{% hint style="warning" %}
+{% hint style="info" %}
 Applicable to version 2.1 and above.
 {% endhint %}
 
