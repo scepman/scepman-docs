@@ -20,5 +20,7 @@ When submitting a CSR via SCEPman Certificate Master, the Subject is carried ove
 
 SCEPman discards any other extensions from the CSR. Some extensions are added to every certificate like Basic Constraints (denoting that it is a leaf certificate), Authority Information Access (AIA), Authority Key Identifier, and Subject Key Identifier.
 
-If you have a CSR at hand, navigate to _New CSR_ in the SCEPman Certificate Master top menu. You can copy and paste the CSR in PEM format (i.e. text) into the text box, or drag and drop the CSR file in binary or PEM format into the grey area at the bottom. You may use the Browse link as well to select a CSR file in binary and PEM format. When using the text box, you have to hit the Submit button afterwards to issue the certificate, while uploading a CSR file immediately issues the certificate. Your browser will download the certificate in DER-encoded format.
+If you have a CSR at hand, navigate to _New CSR_ in the SCEPman Certificate Master top menu. You can copy and paste the CSR in PEM format (i.e. text) into the text box, or drag and drop the CSR file in binary or PEM format into the grey area at the bottom. You may use the Browse link as well to select a CSR file in binary and PEM format. When using the text box, you have to hit the Submit button afterward to issue the certificate, while uploading a CSR file immediately issues the certificate. Your browser will download the certificate in DER-encoded format.
+
+![](<../../.gitbook/assets/2022-05-16 10\_19\_45-SCEPman Certificate Master.png>)
 

@@ -1,8 +1,8 @@
 # Application Artifacts
 
-## Available Channels
+## Available SCEPman Channels
 
-We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster)
+We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist)
 
 ### Production
 
@@ -34,9 +34,31 @@ https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Beta.zip
 https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Intern.zip
 ```
 
+## Available Certificate Master Channels
+
+We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster)
+
+### Production
+
+```
+https://github.com/scepman/install/raw/master/dist-certmaster/CertMaster-Artifacts.zip
+```
+
+### Beta
+
+```
+https://github.com/scepman/install/raw/master/dist-certmaster/CertMaster-Artifacts-Beta.zip
+```
+
+### Internal
+
+```
+https://github.com/scepman/install/raw/master/dist-certmaster/CertMaster-Artifacts-Intern.zip
+```
+
 ## Custom Artifact location
 
-To have full control about the update process and what artifacts loaded by your App Service you can deploy your own Azure Storage Account.
+To have full control over the update process and what artifacts are loaded by your App Service you can deploy your own Azure Storage Account.
 
 Follow this instruction to create a storage account:
 
