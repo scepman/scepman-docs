@@ -10,6 +10,7 @@
   * Other library updates
 * Robustness
 * Bearer Authentication for Jamf Classic API
+* [Invalidate certificates for Intune devices with pending wipes or otherwise unhealthy management states](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-revokecertificatesonwipe)
 * Minor Improvements
 
 ### 2.0.473 - March 2022

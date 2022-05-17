@@ -38,6 +38,27 @@ If you have upgraded from SCEPman 1.x to SCEPman 2.x and you are still using [an
 SCEPman 2.0: Certificate Validation
 {% endembed %}
 
+## AppConfig:IntuneValidation:RevokeCertificatesOnWipe
+
+{% hint style="warning" %}
+Applicable to version 2.1 and above.
+{% endhint %}
+
+**Value:** _true_ (default) or _false_
+
+**Description:** This setting extends validation of devices when using the Intune Device ID. If it is enabled, SCEPman evaluates the Management State property of an Intune Device when its device certificate is validated. If the state indicates one of the following values, the certificate is revoked:
+
+- RetirePending
+- RetireFailed
+- WipePending
+- WipeFailed
+- Unhealthy
+- DeletePending
+- RetireIssued
+- WipeIssued
+
+Especially, this means that when an administrator triggers a Wipe or Retire for a device, the certificate will be revoked immediately. Even if the device is shutdown or offline and therefore the action cannot be performed on the device, the certificate is not valid anymore.
+
 ## AppConfig:IntuneValidation:WaitForSuccessNotificationResponse
 
 {% hint style="info" %}
