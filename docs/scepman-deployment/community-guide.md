@@ -37,10 +37,10 @@ All these resources are recommended for a production environment.
 This is a **mandatory** step.
 {% endhint %}
 
-To start with the deployment, you need to follow our Setup instruction:
+To start with the deployment, please follow our deployment instructions:
 
-{% content-ref url="../scepman-configuration/deployment-options/enterprise-deployment.md" %}
-[enterprise-deployment.md](../scepman-configuration/deployment-options/enterprise-deployment.md)
+{% content-ref url="../scepman-configuration/deployment-options/marketplace-deployment.md" %}
+[marketplace-deployment.md](../scepman-configuration/deployment-options/marketplace-deployment.md)
 {% endcontent-ref %}
 
 ### Step 2: Perform Post-Deployment Steps (Permission Assignments)

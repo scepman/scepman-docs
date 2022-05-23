@@ -4,31 +4,24 @@ description: Azure Marketplace Deployment
 
 # Marketplace deployment
 
-{% hint style="info" %}
-You need your Client ID and your Client Secret before you can start the deployment. Please check [App Registration](../azure-app-registration.md).
-{% endhint %}
+* To deploy SCEPman from Azure Marketplace, please visit this [**link**](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman?tab=Overview).&#x20;
+* Click "**Get it now**" and afterwards "**Continue**". You will be re-directed to the marketplace item on Azure Portal.
 
-When the registration of the application is done, SCEPman can be deployed to the Azure subscription.
+![](<../../.gitbook/assets/image (1).png>)
 
-To get SCEPman go to the [SCEPMAN page in **Azure Marketplace**](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman?tab=Overview). Click on **GET IT NOW**, select the software plan **SCEPman Community Edition** and click **CONTINUE**. Then click on **CREATE**.
+* Click "**Create**"
+* Now follow these steps to deploy SCEPman in your Azure tenant:
 
-Now follow these steps to create a SCEPman Intune SCEP-as-a-Service instance:
-
-![](<../../.gitbook/assets/2021-10-11 13\_49\_06-Create SCEPman \_ Intune SCEP-as-a-Service - Microsoft Azure and 11 more pages - .png>)
+![](<../../.gitbook/assets/image (2).png>)
 
 {% hint style="info" %}
-If you have a license key, you can paste it into the field **License Key**. Leave it empty to use the free community edition of SCEPman.
+If you have a license key, you can paste it into the field **License Key**. Leave it empty to use the free Community Ddition of SCEPman.
 {% endhint %}
 
 1. Select an existing resource group or create a new one (SCEPman resources will be deployed in this group)
-2. Set the location according to your location
-3. Set an Organization Name
-4. **Next, Review + Create**
-5. Azure AD **App Registration** Choose **Select Existing,** then click on **Make selection**
-6. now search for the App Registration you already did, then click on **Select**
-7. Paste the value of **Client secret** you already copied in **App Registration Secret** (See picture below)
-8. **Create**
+2. Set the location according to your preferred data center location. It **must** match the region of the resource group - in case you have selected an existing one. It will be assigned to the resource group otherwise.
+3. Set an Organization Name. This field is **important** as the organization provided here will manifest itself in the O= field of the Root CA that is going to be created later on.&#x20;
+4. Click "**Review + Create**"
+5. Click "**Create**"
 
-![](<../../.gitbook/assets/2021-10-11 14\_25\_40-Create SCEPman \_ Intune SCEP-as-a-Service - Microsoft Azure and 13 more pages - .png>)
-
-Congratulation! The deployment is done. Now go to [create root certificate](../first-run-root-cert.md)
+Congratulations! The deployment of SCEPman is done. Please continue with the [next step](../../scepman-deployment/community-guide.md#step-2-perform-post-deployment-steps-permission-assignments) of the [Standard Guide](../../scepman-deployment/community-guide.md) to complete the installation of SCEPman.
