@@ -2,7 +2,16 @@
 
 ## Versions
 
-### 2.1 - Currently in Beta Channel
+### 2.2 - Upcoming
+
+* Revoke Intune certificates on some MEM events
+* Intune-enrolled user certificates become invalid when user risk exceeds a configured threshold
+* Additional integration features for [RADIUS-as-a-Service](https://www.radius-as-a-service.com/)
+* Issuance of SubCA certificates through Certificate Master, e.g. for proxy servers or firewalls
+* Additional certificate file formats for Certificate Master
+* Certificate Master lists issued client certificates for manual revocation
+
+### 2.1.522 - May 2022
 
 * [Request Client Certificates manually through Certificate Master](certificate-deployment/certificate-master/client-certificate-pkcs-12.md)
 * Library and Framework updates
