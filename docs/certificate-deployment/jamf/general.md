@@ -37,7 +37,7 @@ This account needs the following three **read** permissions under "Privileges" (
 * Users
 
 {% hint style="warning" %}
-Jamf Pro's Classic API supports Bearer Authentication since version 10.35.0. There is a setting to disable the previous authentication method, Basic Authentication, since version 10.36.0. All current versions of SCEPman support only Basic Authentication for the Classic API. Thus, do not disable Basic Authentication if you are using JAMF and SCEPman together.
+Jamf Pro's Classic API supports Bearer Authentication since version 10.35.0. There is a setting to disable the previous authentication method, Basic Authentication, since version 10.36.0. A future Jamf version scheduled for August-December 2022 will remove support for Basic Authentication. SCEPman 2.0 and lower support only Basic Authentication for the Classic API, while SCEPman 2.1 and higher uses Bearer Authentication. In order to use Bearer Authentication, you must upgrade to SCEPman 2.1 or higher.
 {% endhint %}
 
 ## External CA Connection
