@@ -29,6 +29,8 @@ Analogously to Cisco ISE, Aruba ClearPass uses HTTP 1.0 for OCSP requests and th
 
 NPS maps certificates to device or user entities in AD (not AAD). As there is no device synchronization out-of-the-box between AAD and AD, it is usually not possible to use NPS with device certificates distributed via Intune with SCEPman or any other PKI. User certificates can work for users synchronized between AAD and AD. The certificates must contain the users' UPNs, which NPS uses to map to AD user objects with the same UPN.
 
+Chris Beattie (not affiliated to us) wrote a [nice article on how you can make NPS work with modern devices](https://techbeatblog.azurewebsites.net/microsoft-nps-radius-for-aadj-devices/).
+
 ## Others
 
 Generally, you have to add the SCEPman Root CA certificate as a trusted CA in the NAC.
