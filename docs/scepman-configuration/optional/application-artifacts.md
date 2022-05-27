@@ -58,9 +58,9 @@ https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMas
 
 ## Custom Artifact location
 
-To have full control over the update process and what artifacts are loaded by your App Service you can deploy your own Azure Storage Account.
+To have full control over the update process and what artifacts are loaded by your App Service you can deploy your own Azure Storage Account. If this is not required, skip this section.
 
-Follow this instruction to create a storage account:
+Follow these instruction to create a storage account:
 
 1\. Start at your **Resource group** where you have deployed SCEPman and click **+ Add**
 
@@ -86,23 +86,25 @@ Follow this instruction to create a storage account:
 
 ## Change Artifacts
 
-To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/scepman/install) of SCEPman. During every restart, the Azure Web App will do a check and a copy deployment if necessary.
+To get continuous updates for SCEPman you can point a configuration variable to the [maintained GitHub repository](https://github.com/scepman/install) of SCEPman (**Evergreen Approach)**. During every restart, the Azure Web App will do a check and a copy deployment if necessary.
 
 {% hint style="info" %}
 If you want to have more control over the updates you can use your own location.\
-(See [Application Resources](application-artifacts.md#custom-artifact-location))
+(See [Custom Artifact Location](application-artifacts.md#custom-artifact-location))
 {% endhint %}
 
 To configure this, do the following:
 
-1. Go to your Azure AD
-2. Navigate to **App Service**
-3. Choose your SCEPman app
-4. Then, click **Configuration** (submenu **Setting**)
-5. Look for **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
+1. Go to your Azure portal
+2. Navigate to **App Services**
+3. Choose your SCEPman AppService
+4. Then, click **Configuration** (submenu **Settings**)
+5. Locate the parameter **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
 
-![](<../../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (4).png>)
+![](<../../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (2) (4).png>)
 
-6\. Then replace the URL in \*\*Value \*\*with the SCEPman GitHub URL or your Storage account blob URL you already copied:
+6\. Then replace the URL in \*\*Value\*\* with the [SCEPman GitHub URL](application-artifacts.md#available-scepman-channels) (Evergreen Approach) or your Storage account blob URL you already copied:
 
 ![](../../.gitbook/assets/2021-10-08-16\_40\_54-scepman02testservicename-microsoft-azure-and-10-more-pages-c4a8-ehamed-mic.png)
+
+7\. Repeat the steps 1. - 6. for the Certificate Master AppService, that provides the same **WEBSITE\_RUN\_FROM\_PACKAGE** parameter under **Configuration**.&#x20;

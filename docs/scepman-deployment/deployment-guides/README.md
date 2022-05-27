@@ -15,6 +15,14 @@ In order to get started with SCEPman, we have prepared two guides that address d
 | High-availability / redundancy                |                                                                                                                              | :ballot\_box\_with\_check: |
 | Auto-scaling                                  |                                                                                                                              | :ballot\_box\_with\_check: |
 
+{% content-ref url="../community-guide.md" %}
+[community-guide.md](../community-guide.md)
+{% endcontent-ref %}
+
+{% content-ref url="enterprise-guide-1.md" %}
+[enterprise-guide-1.md](enterprise-guide-1.md)
+{% endcontent-ref %}
+
 ## Videos
 
 ### New deployment

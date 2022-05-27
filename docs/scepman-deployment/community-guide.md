@@ -79,16 +79,18 @@ To have your SCEPman available under your specific domain you need to create a *
 [custom-domain.md](../scepman-configuration/optional/custom-domain.md)
 {% endcontent-ref %}
 
-### Step 5: Deploy Storage Account and change Artifacts
+### Step 5: Configure an Update Strategy
 
-{% hint style="info" %}
-This is an **optional** step.
+{% hint style="success" %}
+This is a **recommended** step.
 {% endhint %}
 
-The next step is to configure the Storage account and change the Artifact location in your App Service. This is only relevant if you would like to have full control over the update cycle of SCEPman.
+{% hint style="warning" %}
+By default, when you deploy SCEPman from Azure Marketplace, SCEPman will not update automatically. To always stay up to date, we recommend to re-configure SCEPman to adapt our [evergreen update strategy](../scepman-configuration/optional/update-strategy.md#evergreen-approach). In case you need full control over your updates, configure a [custom artifact location](../scepman-configuration/optional/application-artifacts.md#custom-artifact-location).
+{% endhint %}
 
-{% content-ref url="../scepman-configuration/optional/application-artifacts.md" %}
-[application-artifacts.md](../scepman-configuration/optional/application-artifacts.md)
+{% content-ref url="../scepman-configuration/optional/update-strategy.md" %}
+[update-strategy.md](../scepman-configuration/optional/update-strategy.md)
 {% endcontent-ref %}
 
 ### Step 6: Configure Log Collection
