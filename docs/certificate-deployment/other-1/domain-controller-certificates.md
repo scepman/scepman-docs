@@ -16,12 +16,8 @@ You can use SCEPman to issue Kerberos authentication certificates to your domain
 If you are updating from an earlier version as **1.6** you must generate a **new** Root CA.\
 To support Kerberos authentication certificates the CA certificate must contain either no Enchanced Key Usage (EKU) extension or it must include Kerberos Authentication and Smart Card Logon.
 
-If you are starting with SCEPman **1.6** and generate the Root CA with our SCEPman, you can skip the following steps.\
+If you are starting with SCEPman **1.6** and generating the Root CA with our SCEPman, you can skip the following steps.\
 Otherwise please follow this guide to generate a new Root CA.
-
-CA Suitability on SCEPman Dashboard:
-
-![](../../../.gitbook/assets/screenshot-2020-11-04-at-11.18.44.png)
 
 {% hint style="warning" %}
 If you generate a new CA certificate you must update your Intune policies and deploy the new Root CA and new User and Device certificates!
@@ -39,7 +35,7 @@ If you generate a new CA certificate you must update your Intune policies and de
 
 CA Suitability on SCEPman Dashboard:
 
-![](<../../../.gitbook/assets/screenshot-2020-11-04-at-11.30.23 (1) (1) (1).png>)
+![](<../../.gitbook/assets/2022-05-27 11\_09\_46-Window.png>)
 
 ## Configuration Changes to the SCEPman Service
 
