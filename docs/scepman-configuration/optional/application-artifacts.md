@@ -107,4 +107,4 @@ To configure this, do the following:
 
 ![](../../.gitbook/assets/2021-10-08-16\_40\_54-scepman02testservicename-microsoft-azure-and-10-more-pages-c4a8-ehamed-mic.png)
 
-7\. Repeat the steps 1. - 6. for the Certificate Master AppService, that provides the same **WEBSITE\_RUN\_FROM\_PACKAGE** parameter under **Configuration**.&#x20;
+7\. Repeat the steps 1. - 6. for the Certificate Master AppService, that provides the same **WEBSITE\_RUN\_FROM\_PACKAGE** parameter under **Configuration**. Remember to provide the [CertMaster GitHub URL](application-artifacts.md#available-certificate-master-channels) in case you are following our Evergreen Approach.
