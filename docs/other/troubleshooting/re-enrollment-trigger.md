@@ -9,4 +9,5 @@ In some cases, admins want to trigger a re-enrollment for SCEP certificates, in 
 |     Subject name format     |           Yes           |
 |   Subject alternative name  |           Yes           |
 | Certificate validity period |           Yes           |
+|  Extended Key Usages (EKU)  |           Yes           |
 |      Renewal threshold      |            No           |
