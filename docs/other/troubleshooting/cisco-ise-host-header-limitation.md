@@ -32,7 +32,11 @@ The following instructions outline the steps required to create an Azure Applica
 
 ## 5b) Add a new HTTP Setting with Host Header (your SCEPman public FQDN)
 
-![](../../.gitbook/assets/Replace5b.png)
+{% hint style="warning" %}
+Around the beginning of June, Microsoft introduced a bug in Azure Application Gateway that prevents adding a host header to host-header-free requests when "Pick host name from backend target" is selected. We recommended "Pick host name from backend target" in a previous version of this documentation, but this does not work anymore until Microsoft has fixed this bug. Instead, choose "Override with specific domain name" as depicted below and insert the name of your SCEPman App Service, e.g. *contoso-scepman.azurewebsites.net*.
+{% endhint %}
+
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.21 (1) (1) (2) (4) (3) (1).png)
 
 ![](../../.gitbook/assets/Replace5b2.png)
 
