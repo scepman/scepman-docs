@@ -33,10 +33,10 @@ The following instructions outline the steps required to create an Azure Applica
 ## 5b) Add a new HTTP Setting with Host Header (your SCEPman public FQDN)
 
 {% hint style="warning" %}
-Around the beginning of June, Microsoft introduced a bug in Azure Application Gateway that prevents adding a host header to host-header-free requests when "Pick host name from backend target" is selected. We recommended "Pick host name from backend target" in a previous version of this documentation, but this does not work anymore until Microsoft has fixed this bug. Instead, choose "Override with specific domain name" as depicted below and insert the name of your SCEPman App Service, e.g. *contoso-scepman.azurewebsites.net*.
+Around the beginning of June, Microsoft introduced a bug in Azure Application Gateway that prevents adding a host header to host-header-free requests when "Pick host name from backend target" is selected. We recommended "Pick host name from backend target" in a previous version of this documentation, but this does no longer work. As a workaround, choose "Override with specific domain name" as depicted below and insert the name of your SCEPman App Service, e.g. _contoso-scepman.azurewebsites.net_.
 {% endhint %}
 
-![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.21 (1) (1) (2) (4) (3) (1).png)
+![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.21 (1) (1) (2) (4) (3) (1) (1) (1) (1) (1) (1) (1) (2) (1).png>)
 
 ![](../../.gitbook/assets/Replace5b2.png)
 
@@ -89,7 +89,7 @@ Eventually, configure the new name in the SCEPman settings:
 
 ![](../../../.gitbook/assets/appconfig-baseurl-2-.png)
 
-3\. Enter the DNS name for the IP address prefixed with "http://". If you have configured a TLS certificate in the Azure Application Gateway, you may also use HTTPS.&#x20;
+3\. Enter the DNS name for the IP address prefixed with "http://". If you have configured a TLS certificate in the Azure Application Gateway, you may also use HTTPS.
 
 ![](../../../.gitbook/assets/appconfig-baseurl-gateway-1-.png)
 
