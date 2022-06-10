@@ -18,6 +18,10 @@
   * [Enterprise deployment](scepman-configuration/deployment-options/enterprise-deployment.md)
 * [Root Certificate](scepman-configuration/first-run-root-cert.md)
 
+## Architecture
+
+* [Device Directories](architecture/device-directories.md)
+
 ## Certificate Deployment
 
 * [Microsoft Intune](certificate-deployment/microsoft-intune/README.md)

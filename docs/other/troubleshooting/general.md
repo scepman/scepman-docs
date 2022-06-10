@@ -94,12 +94,17 @@ If you want to revoke a **user** certificate, you have two options:‌
 1. Deleting the user from Azure AD or
 2. Block sign-in for the user
 
-If you want to revoke a **device** certificate, you have two options:
+If you want to revoke a **device** certificate, you have multiple options depending on [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention"):
 
-1. Deleting the device from Azure AD or
-2. Disabling a device
+1. **Azure AD**: Delete or disable the device ([AAD Portal](https://aad.portal.azure.com/): "Devices" - "All devices").
+2. **Intune**: Delete the device or trigger a remote action (several managements states like "WipePending" automatically revoke certificates as stated under [#appconfig-intunevalidation-revokecertificatesonwipe](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-revokecertificatesonwipe "mention")).
+3. **Both directories**: Execute actions for Azure AD **and** Intune as described.
 
-The following example shows the second option 'Disabling a device'(the result for user certificates will be the same):
+{% hint style="info" %}
+For more details on device directories, please read the article [device-directories.md](../../architecture/device-directories.md "mention").
+{% endhint %}
+
+The following example revokes a device certificate via Azure AD:
 
 1. Navigate to **Devices - All devices** in your Azure AD
 2. Choose a device
