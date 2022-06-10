@@ -38,6 +38,11 @@
   * [3rd-party MDM Solutions](certificate-deployment/other-1/static-certificates.md)
   * [Domain Controller Certificates](certificate-deployment/other-1/domain-controller-certificates.md)
 
+***
+
+* [Architecture](architecture/README.md)
+  * [Device Directories](architecture/device-directories.md)
+
 ## Advanced Configuration
 
 * [Application Artifacts](scepman-configuration/optional/application-artifacts.md)
