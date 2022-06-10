@@ -18,6 +18,10 @@
   * [Enterprise deployment](scepman-configuration/deployment-options/enterprise-deployment.md)
 * [Root Certificate](scepman-configuration/first-run-root-cert.md)
 
+## Architecture
+
+* [Device Directories](architecture/device-directories.md)
+
 ## Certificate Deployment
 
 * [Microsoft Intune](certificate-deployment/microsoft-intune/README.md)
@@ -37,11 +41,6 @@
 * [Other](certificate-deployment/other-1/README.md)
   * [3rd-party MDM Solutions](certificate-deployment/other-1/static-certificates.md)
   * [Domain Controller Certificates](certificate-deployment/other-1/domain-controller-certificates.md)
-
-***
-
-* [Architecture](architecture/README.md)
-  * [Device Directories](architecture/device-directories.md)
 
 ## Advanced Configuration
 
