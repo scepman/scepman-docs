@@ -9,7 +9,7 @@ Those IDs are visible in Intune per device under tab "Hardware":
 
 ![](<../.gitbook/assets/image (4).png>)
 
-For recognizing the device behind an issued certificate, SCEPman requires the corresponding ID in the subject name:
+For recognizing the device behind an issued certificate, SCEPman requires the corresponding **ID in the subject name**:
 
 * Azure AD: `CN={{AAD_Device_ID}}`
 * Intune: `CN={{DeviceId}}`
@@ -20,7 +20,7 @@ When setting up SCEPman and certificate profiles in Intune, it is important to *
 
 Both directories have their pros and cons. In general, we **recommend Intune** as inventory since SCEPman 2.0:
 
-* **Azure AD device ID can change during enrollment** (seen on iOS/iPad/macOS):\
+* **Azure AD device ID can change during enrollment** (seen on iOS/iPadOS/macOS):\
   The AAD device ID is set to the Intune device ID until the device is finally AAD registered. Intune already issues the certificate before the device gets its final ID. As a result, SCEPman cannot find the device in the AAD after this ID change.
 * **Intune is often maintained better than the AAD**:\
   In theory, the AAD and Intune device objects are independent of each other. Deleting a device in Intune, does not delete the corresponding AAD object. In addition, Autopilot devices can only be deleted in Intune and not in Azure AD. So, the certificates would still be valid.
