@@ -6,7 +6,7 @@ In May 2022, [Oliver Lyak described a Privilege Escalation vulnerability](https:
 
 - SCEPman certificates cannot be used for Certifried attacks in most cases
 - Using SCEPman helps to mitigate Certifried attacks, because contrary to Microsoft CA certificates, SCEPman CA certificates usually need not to be in the NTAuth store
-- Microsoft's patch will not affect SCEPman installations in most cases. 
+- Microsoft's patch will not affect SCEPman installations in most cases. In these cases, enabling Full Enforcement mode is a good idea.
 
 ## Consequences of Microsoft's Patch
 
@@ -42,7 +42,9 @@ If you configured the EKU Smart Card Logon, the certificate can be used for auth
 
 ### Intune Device Certificates
 
-TBD
+Following our basic recommendations, device certificates have the EKU Client Authentication. Their SAN contains an URI entry in the SAN, which cannot be used for the exploit. However, you may add a DNS name to the SAN in addition, for example DeviceName.contoso.com. If you did also import the SCEPman CA certificate into the NTAuth Store, these certificates can be used to authenticate on-prem as a device with the same DNS name. Because users may define their device names as they want, they could name their device "PrimaryDomainController" and authenticate on-prem as PrimaryDomainController.contoso.com, even if such a computer exists in the AD already. This is not SCEPman-specific, by the way, and would affect other SCEP implemenations like NDES as well.
+
+Therefore, you should not add DNS name entries based on user-controlled data like the device name with domain names that are also used for on-prem domains if you use the same SCEPman instance also for DC certificates! If you still need this, you must enable Full Enforcement mode to prevent the elevation attack. You might also run two separate SCEPman instances, one for DC certificates, and one for Intune enrollment.
 
 ### Certificate Master Certificates
 
