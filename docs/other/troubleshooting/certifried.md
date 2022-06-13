@@ -48,4 +48,13 @@ Therefore, you should not add DNS name entries based on user-controlled data lik
 
 ### Certificate Master Certificates
 
-TBD
+There are three ways to issue certificates via the Certificate Master component as of SCEPman version 2.1.
+
+[**TLS Server Certificates**](../../certificate-deployment/certificate-master/tls-server-certificate-pkcs-12.md) are unaffected, as they contain neither Smart Card Logon nor Client Authentication as EKU.
+
+[**Manual Client Certificates**](../../certificate-deployment/certificate-master/client-certificate-pkcs-12.md) are also unaffected. They contain the Client Authentication EKU, but no DNS SAN entry.
+
+[**Custom CSR Requests**](../../certificate-deployment/certificate-master/certificate-signing-request-csr.md) are freely configurable and include authentication certificates. As anybody having access to the Certificate Master application may issue such a certificate you should take at least one of the following precautions:
+- Make sure that only priviledged accounts can access Certificate Master. You could, for example, [grant access to the Certificate Master component](../../scepman-deployment/permissions/post-installation-config#granting-the-rights-to-request-certificates-via-the-certificate-master-website) only to a single AAD Group that you design as [Priviledged Access group](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/groups-features).
+- Use separate SCEPman instances and CA certificates for DC Certificates (whose CA certificate is in the NTAuth Store) and Certificate Master.
+- Enable Full Enforcement mode in your AD domain.
