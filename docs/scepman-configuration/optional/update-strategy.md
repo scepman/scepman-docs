@@ -16,26 +16,26 @@ With this approach you always get the newest features and security updates.
 Keep in mind that **an update only occurs, when the App Service is stopped and started again**. This is the event when the ZIP-Deployment is triggered. The App Service does not stop and start automatically in case new application artifacts are available, so **you have to perform it manually**.
 {% endhint %}
 
-In a production enterprise environment, you want to have more control about the update process and for this we can use the Microsoft feature **Deployment Slots**.
+In a production enterprise environment, if you want to have more control over the update process you can use the Microsoft feature **Deployment Slots**.
 
 ## Deployment Slot configuration
 
-In case that you want to have full control about the update process of SCEPman you can use the **Deployment Slots** within the Azure App Service.
+In case you want to have full control over the update process of SCEPman you can use the **Deployment Slots** within the Azure App Service.
 
 {% hint style="success" %}
 To get more details about the **Deployment Slots** you can visit the Microsoft docs: \
 [https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots](https://docs.microsoft.com/en-us/azure/app-service/deploy-staging-slots)
 {% endhint %}
 
-The following steps gives you our recommended setup for a pre-release management
+The following steps give you our recommended setup for a pre-release management
 
 {% hint style="info" %}
-Please keep in mind that each deployment Slot running on the same App Service Plan of your production App and use the same resources.
+Please keep in mind that each Deployment Slot is running on the same App Service Plan of your production App and use the same resources.
 {% endhint %}
 
 ### pre-release slot
 
-The idea behind the pre-release slot is to have your production App Service running with artifacts stored on your own Storage account and creating a new Deployment Slot pointing to our GitHub artifacts. You can find the steps for setting up your custom artifact's location in the following article:&#x20;
+The idea behind the pre-release slot is to have your production App Service running with artifacts stored on your own Storage account and create a new Deployment Slot pointing to our GitHub artifacts. You can find the steps for setting up your custom artifact's location in the following article:&#x20;
 
 {% content-ref url="application-artifacts.md" %}
 [application-artifacts.md](application-artifacts.md)
@@ -43,42 +43,32 @@ The idea behind the pre-release slot is to have your production App Service runn
 
 Now your production App Service is running with a custom artifacts location and we proceed with the configuration of the new Deployment Slot.
 
-1. In your **App Service** navigate to **Deployment Slots**
-2. You can see your current slot marked as **PRODUCTION** with the status **Running**, this is your primary App slot
+{% hint style="info" %}
+Deployment Slot requirements **** (via PS. SCEPman Module):
 
-![](../../.gitbook/assets/screen-shot-2021-01-25-at-17.35.39.png)
+* SCEPman **2.2** or above
+* PS. SCEPman-Module **1.5.1.0** or above&#x20;
+{% endhint %}
 
-3\. With the button **Add Slot** you get a new wizard to enter a **Name** and choose which existing slot you want to **clone settings from**
+The following CMDlet command will create a Deployment Slot and configure all required permissions for you.
 
-![](../../.gitbook/assets/screen-shot-2021-01-25-at-17.38.38.png)
+```
+New-SCEPmanDeploymentSlot -SCEPmanAppServiceName <Your SCEPman App Service Name> -DeploymentSlotName <Name For The Deploymentslot> 6>&1
+```
 
-4\. Then click on **Add** and wait until you geht the message that the slot is created successfully and **Close** the wizard\
-5\. navigate to **Identity** in your SCEPman **App Service** and  and turn it **on**, then **Save**\
-****6. Go to the **Key Vault** of your SCEPman instance, navigate to **Access polices** and add a new **Access Policy** for the new pre-release slot you deployed (your cloned instance).&#x20;
+**Example**
 
-![](../../.gitbook/assets/2021-07-09-15\_57\_46-gkscep02-keyvault-microsoft-azure-and-4-more-pages-c4a8-ehamed-microsoft-.png)
+![](<../../.gitbook/assets/2022-06-13 17\_36\_44-DeploymentSlotCommand.png>)
 
-Now add for **Key, Secret and Certificate permissions** all permissions except the **Privileged Certificate Operations** "**Purge"** let it unchecked like in the picture:
+After the deployment is finished successfully, you can check the deployment slot in your SCEPman App Service -> **Deployment slots**
 
-![](../../.gitbook/assets/2021-07-09-15\_59\_46-add-access-policy-microsoft-azure-and-4-more-pages-c4a8-ehamed-microsoft-.png)
+![](<../../.gitbook/assets/2022-06-13 11\_53\_59-DeploymentSlot.png>)
 
-**Select principal**: by default it has the same name of the original instance with **/slots/Pre-release** at the end , **Select** it, **Add** and **Save**\
-7\. Now you can see the new **Deployment Slot** that is in status **Running** but have a **Traffic %** of zero\
-8\. You can now click on the **NAME** of your new deployment Slot (Hyperlink) to jump directly to the App Service settings of this slot
+Now ensure that your deployment slot points to SCEPman **** Production channel on GitHub:
 
-![](../../.gitbook/assets/screen-shot-2021-01-25-at-17.41.23.png)
+Navigate to the **Deployment Slot** -> **Configuration** and look for the setting **WEBSITE\_RUN\_FROM\_PACKAGE** and past the [production channel artifacts](application-artifacts.md#production) to the value.
 
-9\. Ensure that you are on your new Deployment Slot and following the steps described in **Application Artifacts** under **Change Artifacts** to point the **WEBSITE\_RUN\_FROM\_PACKAGE** to the GitHub of SCEPman
+![](<../../.gitbook/assets/2022-06-13 12\_01\_16-DeploymentSlotTest.png>)
 
-![](../../.gitbook/assets/screen-shot-2021-01-25-at-17.42.45.png)
-
-{% content-ref url="application-artifacts.md" %}
-[application-artifacts.md](application-artifacts.md)
-{% endcontent-ref %}
-
-10\. If you now go back to your primary **App Service** and navigate to **Deployment Slots**\
-****11. You can see your two slots and can manage the **Traffic %** to root the defined among of request to the new **pre-release** slot.\
-Important that this traffic rooting is completely transparent for the application and handled by the App Service. We recommend setting the **Traffic %** to **20**. After that, you can compare the two slots in **Application Insights**. In case that we are releasing an updated version to our GitHub, you only must restart the **pre-release** slot and after that you can compare the two different versions in **Application Insights**. After one week or your choice of time, you can upload the new GitHub artifacts to your custom artifacts location and have updated the SCEPman solution.
-
-| Back to Trial Guide | Back to Community Guide | ​Back to Enterprise Guide​ |
-| ------------------- | ----------------------- | -------------------------- |
+If you now go back to your primary **App Service** and navigate to **Deployment Slots y**ou can see your two slots and can manage the **Traffic %** to root the defined among of request to the new **pre-release** slot.\
+Important that this traffic rooting is completely transparent for the application and handled by the App Service. We recommend setting the **Traffic %** to **20**. After that, you can compare the two slots in **Application Insights**. In case we are releasing an updated version to our GitHub, you only must restart the **pre-release** slot and after that, you can compare the two different versions in **Application Insights**. After one week or your choice of time, you can upload the new GitHub artifacts to your custom artifacts location and have updated the SCEPman solution.
