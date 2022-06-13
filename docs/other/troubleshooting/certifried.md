@@ -46,6 +46,10 @@ Following our basic recommendations, device certificates have the EKU Client Aut
 
 Therefore, you should not add DNS name entries based on user-controlled data like the device name with domain names that are also used for on-prem domains if you use the same SCEPman instance also for DC certificates! If you still need this, you must enable Full Enforcement mode to prevent the elevation attack. You might also run two separate SCEPman instances, one for DC certificates, and one for Intune enrollment.
 
+### Jamf User and Device Certificates
+
+Certificates issued via Jamf will have the EKU Client Authentication. If you follow our documentation, no type of certificate will have a DNS name in the SAN. Hence, these certificates are unusable for a Certifried attack. If you do have the SCEPman CA in your AD's NTAuthStore, for example because you issue DC certificates, you should not add DNS names to the SAN or make sure that you enable Full Enforcement mode in your AD domain.
+
 ### Certificate Master Certificates
 
 There are three ways to issue certificates via the Certificate Master component as of SCEPman version 2.1.
@@ -58,3 +62,7 @@ There are three ways to issue certificates via the Certificate Master component 
 - Make sure that only priviledged accounts can access Certificate Master. You could, for example, [grant access to the Certificate Master component](../../scepman-deployment/permissions/post-installation-config#granting-the-rights-to-request-certificates-via-the-certificate-master-website) only to a single AAD Group that you design as [Priviledged Access group](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/groups-features).
 - Use separate SCEPman instances and CA certificates for DC Certificates (whose CA certificate is in the NTAuth Store) and Certificate Master.
 - Enable Full Enforcement mode in your AD domain.
+
+### Domain Controller Certificates
+
+If an attacker has the required access rights to issue Domain Controller certificates, this attacker likely has control over a Domain Controller and owns the domain already. The attacker does not need the Certifried attack.
