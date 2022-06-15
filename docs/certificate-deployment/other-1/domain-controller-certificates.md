@@ -57,13 +57,13 @@ To enable the feature, you must add two application settings in your SCEPman ser
 
 ## Trust the CA certificate in the Domain for Kerberos Authentication
 
-Certificates used for Kerberos authentication need to be trusted within the AD domain as authentication CA certificates. Please download the CA certificate from the SCEPman Dashboard. If you stored the file as `scepman-root.cer`, you can publish the root CA certificate with the following command with an account that has Enterprise Administrator rights:
+Certificates used for Kerberos authentication need to be trusted within the AD domain as authentication CA certificates. Please download the CA certificate from the SCEPman Dashboard. If you stored the file as `scepman-root.cer`, you can publish the SCEPman CA certificate (be it a Root CA or an Intermediate CA) with the following command with an account that has Enterprise Administrator rights:
 
 ```
 certutil -f -dsPublish scepman-root.cer NTAuthCA
 ```
 
-Analogously, execute the following command to push the SCEPman CA certificate to the Trusted Root certificate store for all machines in the AD Forest:
+Analogously, execute the following command to push the Root CA certificate (i.e. the SCEPman CA certificate or in case SCEPman is an Intermediate CA, the Root CA for the SCEPman CA certificate chain) to the Trusted Root certificate store for all machines in the AD Forest:
 
 ```
 certutil -f -dsPublish scepman-root.cer RootCA
