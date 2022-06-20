@@ -35,7 +35,7 @@ Note, that this requires version 2.0 or newer. SCEPman 1.x only supports Azure A
 
 ### Certificate Profiles
 
-Please also adjust the subject name on your needs as stated under [Broken link](broken-reference "mention").
+Please also adjust the subject name on your needs as stated under [Intune Certificate Deployment](../certificate-deployment/microsoft-intune/README.md "mention").
 
 Please note, that `CN={{DeviceId}}` is currently not supported for Android Enterprise Fully Managed, Dedicated and Corporate-Owned Work Profile as stated in [Microsoft docs](https://docs.microsoft.com/en-us/mem/intune/protect/certificates-profile-scep#create-a-scep-certificate-profile). If those device types are in use, think about checking both directories or only Azure AD.
 
