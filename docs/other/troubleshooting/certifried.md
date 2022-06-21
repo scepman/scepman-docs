@@ -16,7 +16,7 @@ Generally speaking, this has an effect on AD authentications only. It required a
 
 ### Intune Device Certificates
 
-Device Certificates might be usable for [Windows Hello for Business Certificate Trust](https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust). If you added the AD DNS name to device certificates to use them for Certificate Trust, you might be affected. This requires a device object in both AAD and AD. For this seldom use case, we recommend switching to [WHfB Key Trust](https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-key-trust).
+Device Certificates might be usable for [Windows Hello for Business Certificate Trust](https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust). If you added the AD DNS name to device certificates to use them for Certificate Trust, you might be affected. This requires a device object in both AAD and AD. For this seldom use case, we recommend switching to [WHfB Cloud Trust](https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-trust).
 
 ### Intune User Certificates
 
