@@ -24,6 +24,15 @@ Fill out the values in the form
 * **Resource group:** Select an existing resource group or create a new one. The SCEPman resources will be deployed to this resource group
 * **Region:** Select the region according to your location
 * **Location:** of all resources, the default value `[resourceGroup().location]` is Microsoft recommendation, you can just leave it as it is
+
+{% hint style="warning" %}
+To maximize compatibility, for the **Org Name** we recommend to omit
+
+* language-specific special characters (e.g. ö, ø, é, ...)
+* a leading space (spaces between words can be used)
+* quotation marks
+{% endhint %}
+
 * **Org Name:** Name of your company or organization for the certificate subject
 * **License:** leave it "trial" to deploy a community edition, or paste your license key -if you already have one- for an enterprise edition
 * Define a unique name for the **Key Vault Name, App Service Name,** and **App Service Cert Master Name,** you need just to replace it with the placeholder _UNIQUENAME_

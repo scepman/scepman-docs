@@ -10,12 +10,20 @@ description: Azure Marketplace Deployment
 ![](<../../.gitbook/assets/image (1).png>)
 
 * Click "**Create**"
-* Now follow these steps to deploy SCEPman in your Azure tenant:
+* Now, follow these steps to deploy SCEPman in your Azure tenant:
 
 ![](<../../.gitbook/assets/image (2).png>)
 
 {% hint style="info" %}
-If you have a license key, you can paste it into the field **License Key**. Leave it empty to use the free Community Ddition of SCEPman.
+If you have a license key, you can paste it into the field **License Key**. Leave it empty to use the free Community Edition of SCEPman.
+{% endhint %}
+
+{% hint style="warning" %}
+To maximize compatibility, for the **Organization Name** we recommend to omit
+
+* language-specific special characters (e.g. ö, ø, é, ...)
+* a leading space (spaces between words can be used)
+* quotation marks
 {% endhint %}
 
 1. Select an existing resource group or create a new one (SCEPman resources will be deployed in this group)
