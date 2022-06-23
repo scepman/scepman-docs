@@ -40,7 +40,7 @@ To use it for HTTPS
 3. Then click **Application Settings** and edit the setting **AppConfig:BaseUrl**
 4. Enter your custom domain and click **OK**.
 
-![](<../../../.gitbook/assets/scepman\_cname4\_1 (1).png>)
+![](../../../.gitbook/assets/scepman\_cname4\_1.png)
 
 1. Finally click **Save**.
 

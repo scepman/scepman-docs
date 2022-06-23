@@ -8,7 +8,7 @@ The basis for deploying SCEP certificates is to trust the public root certificat
 
 * [ ] Download the CA Certificate from SCEPman portal:
 
-![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
 
 * [ ] Create a profile for **Windows 10 and later** with type **Trusted certificate** in Microsoft Intune:
 
@@ -25,7 +25,7 @@ Note that you have to use the same group for assigning the Trusted certificate a
 
 * [ ] Open the SCEPman portal and copy the URL under Intune MDM
 
-![](../../.gitbook/assets/SCEPmanMDMURL.png)
+![](<../../.gitbook/assets/image (2) (2).png>)
 
 * [ ] Create a profile for **Windows 10 and later** with type **SCEP certificate** in Microsoft Intune
 
@@ -196,7 +196,7 @@ Other SAN values like an Email address can be added if needed.
 
 ### Example
 
-![Example configuration for SCEP user certificate](<../../.gitbook/assets/2021-10-27 09\_46\_16-SCEP certificate - Microsoft Endpoint Manager admin center and 20 more pages - C.png>)
+![](<../../.gitbook/assets/2022-06-23 16\_33\_42-SCEP User certificate .png>)
 
 ## User Digital Signature Certificate
 
@@ -206,7 +206,7 @@ You may use SCEPman for transnational **digital signatures** i.e. for S/MIME sig
 **Do not** use SCEPman **for email-encryption** i.e. for S/MIME mail encryption in Microsoft Outlook (without a separate technology for key management). The nature of **the SCEP protocol does not include a mechanism to backup or archive private key material.** If you would use SCEP for email-encryption you may lose the keys to decrypt the messages later.
 {% endhint %}
 
-* [ ] You must set these configuration variables otherwise the requested key usage and extended validity period in the SCEP profile is not honored by SCEPman:\
+* [ ] You must set these configuration variables otherwise the requested key usage and extended validity period in the SCEP profile are not honored by SCEPman:\
 
 
 <!---->

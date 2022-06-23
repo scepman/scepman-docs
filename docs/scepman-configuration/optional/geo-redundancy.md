@@ -56,7 +56,7 @@ New-SCEPmanClone -SourceAppServiceName <Your SCEPman App Service Name> -TargetAp
 
 **SearchAllSubscriptions:** (Optional) Set this flag to search all subscriptions for the SCEPman App Service. Otherwise, pre-select the right subscription in az or pass in the correct SubscriptionId.
 
-**Example**
+### **Example**
 
 Clone an existing SCEPman App Service "as-scepman-nrg5reuov63vk"
 
