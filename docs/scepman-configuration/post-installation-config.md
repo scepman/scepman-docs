@@ -93,7 +93,7 @@ SCEPman 1.x used an App Registration to authenticate against Microsoft Graph and
 
 The SCEPman App Service allows anonymous access to its homepage, as it only displays non-sensitive read-only information. In contrast, the SCEPman Certificate Master component allows users to issue certificates. Hence, it allows only authenticated access and only if you have the right permissions. This requires an Azure App Registration with Delegated Permissions to see who is logged in and with the right log-in URL configuration. The module registers this App Registration as `SCEPman-CertMaster` in your Azure tenant.
 
-Additionally, the SCEPman Certificate Master App Service needs the permission to submit Certificate Signing Requests (CSRs) to the core SCEPman App Service to issue certificates. The authentication mechanism behind this founds on another App Registration: `SCEPman-api`. SCEPman uses _SCEPman-api_ to manage CSR submission permissions. The script registers SCEPman-api and adds the submission permission to the SCEPman Certificate Master Managed Identity.
+Additionally, the SCEPman Certificate Master App Service needs permission to submit Certificate Signing Requests (CSRs) to the core SCEPman App Service to issue certificates. The authentication mechanism behind this founds on another App Registration: `SCEPman-api`. SCEPman uses _SCEPman-api_ to manage CSR submission permissions. The script registers SCEPman-api and adds the submission permission to the SCEPman Certificate Master Managed Identity.
 
 {% hint style="info" %}
 In case of upgrading SCEPman from 1.x to 2.x and after successfully running the PS script, you can remove the App Registration that was used in SCEPman 1.x

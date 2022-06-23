@@ -14,7 +14,7 @@ The following instructions outline the steps required to create an Azure Applica
 
 ## 2) Provide the necessary basic information
 
-![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.13.55 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.13.55 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (1) (1).png>)
 
 ## 3) Create a new static public IP address
 
@@ -26,7 +26,7 @@ The following instructions outline the steps required to create an Azure Applica
 
 ## 5) Add a routing rule for HTTP
 
-![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.36 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.36 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (1) (1).png>)
 
 ![](../../.gitbook/assets/Replace5.png)
 

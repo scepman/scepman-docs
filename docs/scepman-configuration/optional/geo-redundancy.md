@@ -4,72 +4,79 @@
 SCEPman Enterprise Edition only
 {% endhint %}
 
-## Geo-redundant Deployment (optional)
+This reference architecture shows how to run an Azure App Service application in multiple regions to achieve high availability.
 
-This section describes a high availability architecture for production use.
+## Architecture
 
-![](<../../../.gitbook/assets/scepman\_loadbalancer1 (7) (7) (7) (1) (1) (1) (1) (1) (1) (1) (6).png>)
+![](<../../.gitbook/assets/2022-06-23 12\_32\_59-GeoRedundancy.png>)
 
-## Clone App
+As you can see in this diagram it will utilize an Azure Traffic Manager instance globally, and then we have duplicated SCEPman App Service for each region, which are communicating with the existing Key Vault, Storage Account and AAD of the main SCEPman instance deployment.
 
-After a successful deployment of SCEPman, Set up a custom domain for this SCEPman instance as described [here](custom-domain.md).
+Microsoft discusses in [this article](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/app-service-web-app/multi-region) three different Geo-Redundancy strategies that can be used to manage this type of architecture. However, In our case we will use the **Active/Active** approache. Which means both regions are active, and requests are load balanced between them. If one region becomes unavailable or has some latency for any reason, the Traffic Manager will route the traffic to the secound App Service.
 
-Now you can set up a load balancer for higher availability. Start cloning the app:
+## Workflow
 
-* Navigate to SCEPman **App Service.**&#x20;
-* Scroll down to **Development Tools** and click on **Clone App.**&#x20;
-* Fill in the required fields as follows:
+* First we will start with cloning the App Service
+* Then configuring the custome domains for both App Services
+* Finally create and configure the Traffic Manager and its Endpoints
 
-![Example of SCEPman cloned App Service](<../../.gitbook/assets/2022-04-21 11\_22\_30-SCEPmanGeoRed01.png>)
+### Clone App
 
-* **Resource Group:** create a new Resource Group for the cloned instance of SCEPman
-* **Name:** choose a unique name for the new app service
-* **Region:** choose a secondary location for the new cloned App Service, this will automatically create a new App Service Plan in this region.
+To clone an App Service, first you need to create a new **App Service Plan** in a second Geo location, this is where the cloned App will be deployed. You can create it in the same SCEPman Resource group or in a new one. See screenshot below
 
-Next, after the deployment succeeds, you need to do 3 more steps:
+![  No you can use the new CMDlet command to create ](<../../.gitbook/assets/2022-06-15 13\_29\_57-Create App Service Plan.png>)
 
-<details>
+{% hint style="info" %}
+App Service Clone requirements (via [SCEPman PowerShell Module](../post-installation-config.md#acquire-and-run-the-scepman-installation-powershell-module)):
 
-<summary>Delete the <code>ManagedIdentityEnabledOnUnixTime</code> setting</summary>
+* SCEPman **2.2** or above
+* SCEPman PowerShell Module **1.6.3.0** or above
+* Global Admin permissions
+{% endhint %}
 
-Navigate in your cloned app service to **Configuration** and delete the setting `AppConfig:AuthConfig:ManagedIdentityEnabledOnUnixTime` then save settings (see screenshot)
+The following CMDlet command will clone your SCEPman App Service and configure all required permissions
 
-</details>
+```
+New-SCEPmanClone -SourceAppServiceName <Your SCEPman App Service Name> -TargetAppServiceName <Your cloned App Service Name> -TargetAppServicePlan <Your second App Service Plan in the second Geo Location> -SearchAllSubscriptions 6>&1
+```
 
-![](<../../.gitbook/assets/2022-04-21 11\_39\_55-ClonedSCEPman.png>)
+**SourceAppServiceName:** The name of the existing SCEPman App Service.
 
-<details>
+**TargetAppServiceName:** The name of the new cloned SCEPman App Service.
 
-<summary>Enable Identity option</summary>
+**TargetAppServicePlan:** The name of the App Service Plan for the cloned SCEPman instance. The App Service Plan must exist already in the TargetResourceGroup
 
-Navigate to **Identity** turn it on and save
+**SourceResourceGroup:** The Azure resource group hosting the existing SCEPman App Service. Leave empty for auto-detection.
 
-</details>
+**SourceSubscriptionId:** The ID of the Subscription where SCEPman is installed. Can be omitted if it is pre-selected in az already or use the SearchAllSubscriptions flag to search all accessible subscriptions
 
-![](<../../.gitbook/assets/2022-04-21 11\_46\_35-ClonedSCEPman3.png>)
+**SearchAllSubscriptions:** Set this flag to search all subscriptions for the SCEPman App Service. Otherwise, pre-select the right subscription in az or pass in the correct SubscriptionId.
 
-<details>
+**Example**
 
-<summary>Setup Azure Key Vault Access Policy</summary>
+Clone an existing SCEPman App Service "as-scepman-nrg5reuov63vk"
 
-* Navigate to your **Key Vault** (in the primary resource group) and go to **Access policies** and add access policy for your new cloned app service (see screenshot below)
-* For **Key, Secret and Certificate permissions** add all permissions except the **Privileged Certificate Operations "Purge"** leave it unchecked (see screenshot)
-* By **Select principal** choose your cloned app service
-* Add and save
+```
+New-SCEPmanClone -SourceAppServiceName as-scepman-nrg5reuov63vk -TargetAppServiceName as-scepman-clone -TargetAppServicePlan asp-scepman-geo2 -SearchAllSubscriptions 6>&1
+```
 
-</details>
+![](<../../.gitbook/assets/2022-06-15 14\_29\_28-SCEPmanCloneApp.png>)
 
-![Add Access Policy on Key vault](<../../.gitbook/assets/2022-04-21 11\_51\_24-kv-scepman-002ptest - Microsoft Azure and 2 more pages - C4A8 EHamed - Microsoft.png>)
+After the deployment is finished successfully, navigate to the cloned app and check the SCEPman homepage that all permissions are set correctly and everything is green and connected (this could take \~ 3 minutes after the deployment is done)
 
-![Add Access Policy on Key vault](<../../.gitbook/assets/2022-04-21 12\_11\_00-Add access policy .png>)
-
-After you set all settings above, you need to restart your cloned app service and go to the last step, running the PowerShell script (same procedure you already did by the primary SCEPman) [Installation and run the PowerShell Module](../post-installation-config.md#acquire-and-run-the-scepman-installation-powershell-module)
+![](<../../.gitbook/assets/2022-06-21 10\_32\_37.png>)
 
 {% hint style="warning" %}
 Cloning an app service has some restrictions such as **autoscale** settings, **backup schedule** settings, **app Insights, logging**, etc.. so you have to configure them again (if needed) for the new cloned app service. For more info visit [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions)
 {% endhint %}
 
-## Setup Traffic Manager
+### Custom Domain configuration
+
+After a successful deployment of the cloned SCEPman App Service, you need to set up a custom domain for this SCEPman instance as described [here](custom-domain.md).
+
+### Setup Traffic Manager
+
+Follow the steps below to create and configure the Traffic Manager and balance the traffic between both SCEPman instanses:
 
 1. Search **Traffic Manager profile** and click **Create.**&#x20;
 2. Fill in the fields.
