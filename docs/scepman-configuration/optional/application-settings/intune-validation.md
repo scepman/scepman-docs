@@ -69,7 +69,7 @@ SCEPman Enterprise Edition only
 
 **Value:** Comma-separated list of User Risk Levels, e.g. _Low_, _Medium_, _High_.
 
-**Description:** This setting only has an effect if you set [UserRiskCheck](#appconfigintunevalidationuserriskcheck) to _Always_. Certificates of users with risk levels in this list will be considered invalid.
+**Description:** This setting only has an effect if you set [UserRiskCheck](#appconfig-intunevalidation-userriskcheck) to _Always_. Certificates of users with risk levels in this list will be considered invalid.
 
 Example: You define `Medium,High` for this setting. A user has Risk Level _Low_. The user's certificate is valid and the certificate can be used to connect to the corporate VPN. Then, a risk event increases the User Risk Level to _Medium_. The user tries to connect to the VPN, but does not succeed, because the VPN Gateway checks the validity of the certificate in real-time and SCEPman responds that it is revoked.
 
@@ -83,7 +83,7 @@ SCEPman Enterprise Edition only
 
 **Value:** _Always_ or _Never_
 
-**Description:** When SCEPman receives an OCSP request for a certificate issued to an Intune user, SCEPman can optionally check the [user risk level](https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks#user-linked-detections). When set to **Always** SCEPman will query the user risk state and the OCSP result can only be GOOD if the user's risk is not in the list of [UntoleratedUserRisks](#appconfigintunevalidationuntolerateduserrisks).
+**Description:** When SCEPman receives an OCSP request for a certificate issued to an Intune user, SCEPman can optionally check the [user risk level](https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks#user-linked-detections). When set to **Always** SCEPman will query the user risk state and the OCSP result can only be GOOD if the user's risk is not in the list of [UntoleratedUserRisks](#appconfig-intunevalidation-untolerateduserrisks).
 
 Settting this to **Never** will disable the user risk check.
 

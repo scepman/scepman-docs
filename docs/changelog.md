@@ -6,7 +6,7 @@
 
 #### SCEPman (currently in Internal Channel)
 * Revoke Intune certificates on some MEM events
-* [Intune-enrolled user certificates become invalid when user risk exceeds a configured threshold](./scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationuserriskcheck)
+* [Intune-enrolled user certificates become invalid when user risk exceeds a configured threshold](./scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck)
 <!--* Additional integration features for [RADIUS-as-a-Service](https://www.radius-as-a-service.com/)-->
 
 #### SCEPman Certificate Master
