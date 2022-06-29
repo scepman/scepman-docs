@@ -2,7 +2,7 @@
 
 ## Available SCEPman Channels
 
-We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist). In order to receive updates from the one of the update channels, copy the respective URL from below into the [WEBSITE_RUN_FROM_PACKAGE](application-settings/basics#website_run_from_package) setting of your SCEPman App Service.
+We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist). In order to receive updates from the one of the update channels, copy the respective URL from below into the [WEBSITE_RUN_FROM_PACKAGE](application-settings/basics.md#website_run_from_package) setting of your SCEPman App Service.
 
 ### Production
 
@@ -36,7 +36,7 @@ https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Intern.z
 
 ## Available Certificate Master Channels
 
-We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster). In order to receive updates from the one of the update channels, copy the respective URL from below into the [WEBSITE_RUN_FROM_PACKAGE](application-settings-1/basics#website_run_from_package) setting of your Certificate Master App Service.
+We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster). In order to receive updates from the one of the update channels, copy the respective URL from below into the [WEBSITE_RUN_FROM_PACKAGE](application-settings-1/basics.md#website_run_from_package) setting of your Certificate Master App Service.
 
 ### Production
 
