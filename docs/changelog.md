@@ -4,9 +4,12 @@
 
 ### 2.2 - Upcoming
 
+#### SCEPman (currently in Internal Channel)
 * Revoke Intune certificates on some MEM events
-* Intune-enrolled user certificates become invalid when user risk exceeds a configured threshold
-* Additional integration features for [RADIUS-as-a-Service](https://www.radius-as-a-service.com/)
+* [Intune-enrolled user certificates become invalid when user risk exceeds a configured threshold](./scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationuserriskcheck)
+<!--* Additional integration features for [RADIUS-as-a-Service](https://www.radius-as-a-service.com/)-->
+
+#### SCEPman Certificate Master
 * Issuance of SubCA certificates through Certificate Master, e.g. for proxy servers or firewalls
 * Additional certificate file formats for Certificate Master
 * Certificate Master lists issued client certificates for manual revocation
