@@ -8,7 +8,7 @@ In this article, we are recommending **App Service logs** settings, but you can 
 
 To retain or archive the log files, we recommend configuring the following settings under **Monitoring** -> **App Service logs** of your SCEPman instance:
 
-1. Activate **Application logging (Filesystem)** and set the **Level** to **Verbose:** this will allow you to see the **Application logs** under **Log steam**
+1. Activate **Application logging (Filesystem)** and set the **Level** to **Verbose:** this will allow you to see the **Application logs** under **Log stream**
 2. Activate **Application logging (Blob)** and set the **Level** to **Verbose,** then **Storage settings** to a **Storage account** (you can use the same **Storage account** you already created for your SCEPman artifacts), otherwise you can create a new [**Storage account**](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account) **** and save the **Application logging** in a Blob Container. This is very helpful to save the **application logging** for long term. We recommend 30 days for **Retention Period.**
 3. Activate **Web server logging** by selecting **Storage** and the **Storage account** you already have created. This will save the logs of the web server where SCEPman is running and not of the SCEPman application itself. This could be helpful in some special troubleshooting cases. We recommend 30 days for **Retention Period.**
 4. Turn on **Detailed error messages** and **Failed request tracing.**
