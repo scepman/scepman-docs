@@ -2,7 +2,7 @@
 
 ## Available SCEPman Channels
 
-We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist). In order to receive updates from the one of the update channels, copy the respective URL from below into the [WEBSITE_RUN_FROM_PACKAGE](application-settings/basics.md#website_run_from_package) setting of your SCEPman App Service.
+We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist). In order to receive updates from the one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](application-settings/basics.md#website\_run\_from\_package) setting of your SCEPman App Service.
 
 ### Production
 
@@ -36,7 +36,7 @@ https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Intern.z
 
 ## Available Certificate Master Channels
 
-We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster). In order to receive updates from the one of the update channels, copy the respective URL from below into the [WEBSITE_RUN_FROM_PACKAGE](../../certmaster-configuration/application-settings/basics.md#website_run_from_package) setting of your Certificate Master App Service.
+We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster). In order to receive updates from the one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](../../certmaster-configuration/application-settings/basics.md#website\_run\_from\_package) setting of your Certificate Master App Service.
 
 ### Production
 
@@ -101,7 +101,7 @@ To configure this, do the following:
 4. Then, click **Configuration** (submenu **Settings**)
 5. Locate the parameter **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
 
-![](<../../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (4).png>)
+![](<../../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (2) (8).png>)
 
 6\. Then replace the URL in \*\*Value\*\* with the [SCEPman GitHub URL](application-artifacts.md#available-scepman-channels) (Evergreen Approach) or your Storage account blob URL you already copied:
 

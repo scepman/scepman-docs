@@ -1,0 +1,7 @@
+curl --location --request POST 'https://login.microsoftonline.com/{TenantID}/oauth2/v2.0/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Cookie: stsservicecookie=ests; x-ms-gateway-slice=estsfd; fpc=AoCLD8T8y4pCqKTyeXDaIptk-OLhAQAAAIs4H9cOAAAA' \
+--data-urlencode 'grant_type=client_credentials' \
+--data-urlencode 'client_id={YourApplicationID}' \
+--data-urlencode 'client_secret={YourApplicationKey}' \
+--data-urlencode 'scope=https://vault.azure.net/.default'

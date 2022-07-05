@@ -13,18 +13,18 @@ Check Azure Web App log files via **Advanced Tools**:
 
 Click on the download icon on the latest .txt file and review it
 
-![](<../../../.gitbook/assets/event32\_3 (2) (7) (4) (1) (1) (1) (1) (1) (1) (1) (1) (13).png>)
+![](<../../../.gitbook/assets/event32\_3 (2) (7) (4) (1) (1) (1) (1) (1) (1) (1) (1) (10) (14).png>)
 
-![](<../../../.gitbook/assets/event32\_3 (2) (7) (4) (1) (1) (1) (1) (1) (1) (1) (1) (14).png>)
+![](<../../../.gitbook/assets/event32\_3 (2) (7) (4) (1) (1) (1) (1) (1) (1) (1) (1) (10) (15).png>)
 
 ### Additional way of logging
 
 1. Configure the **App Services Logs**
 2. Check the **Log Stream** of the **App Service**.
 
-![](<../../../.gitbook/assets/event32\_5 (2) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3).png>)
+![](<../../../.gitbook/assets/event32\_5 (2) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (4).png>)
 
-![](<../../../.gitbook/assets/event32\_6 (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2).png>)
+![](<../../../.gitbook/assets/event32\_6 (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (3).png>)
 
 1. Monitor the log stream
 2. Reproduce the error

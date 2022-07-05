@@ -19,9 +19,19 @@ Whether you have just installed a fresh SCEPman 2.x installation or if you have 
 
 ### Running the SCEPman Installation CMDlet
 
-Once this prerequisites are met, you can install the SCEPman installation module from PowerShell Gallery and then run the CMDlet to complete the SCEPman and Certificate Master installation. The homepage of your SCEPman instance shows the specific PowerShell commands to run if you haven't already run it (see screenshot below). This includes a parameter to identify your SCEPman instance, so the code can run ideally without any user interaction.
+Once this prerequisites are met, you can install the SCEPman installation module from PowerShell Gallery and then run the CMDlet to complete the SCEPman and Certificate Master installation.&#x20;
+
+First you need to navigate to SCEPman App Service and click on the URL (see screenshot below), this will navigate you to SCEPman homepage.
+
+![](<../.gitbook/assets/2022-07-05 10\_22\_14-Window.png>)
+
+The homepage of your SCEPman instance shows the specific PowerShell commands to run if you haven't already run it (see screenshot below). This includes a parameter to identify your SCEPman instance, so the code can run ideally without any user interaction.
 
 ![](../.gitbook/assets/2022-04-07SCEPmanV2.0AfterNewInstallation.png)
+
+{% hint style="info" %}
+After running the CMDlet, you may get "Service not available" or "502 Server Error" on SCEPman homepage, please wait 2-3 minutes and refresh the page again.
+{% endhint %}
 
 If you have disabled the SCEPman Homepage or need to execute the CMDlet again, you can paste this code in your PowerShell Shell:
 
@@ -37,8 +47,8 @@ You will be asked for all required information, including:
 
 For SCEPman upgrades, you need two extra confirmations:
 
-* The name of the new SCEPman Certificate Master App Service (you can confirm the suggestion by hitting enter or type a new name for the resource)
-* The name of the new Storage Account resource (again, you can confirm the suggestion by hitting enter or type a new name for the resource)
+* The name of the new SCEPman Certificate Master App Service (you can confirm the suggestion by hitting enter or typing a new name for the resource)
+* The name of the new Storage Account resource (again, you can confirm the suggestion by hitting enter or typing a new name for the resource)
 
 ### Considerations when using Deployment Slots
 
