@@ -1,5 +1,15 @@
 # Certificates
 
+## AppConfig:AddMicrosoftAADExtensions
+
+{% hint style="info" %}
+Applicable to version 2.0 and above
+{% endhint %}
+
+**Value:** _true_ (default) or _false_
+
+**Description:** Shall certificates have the extensions 1.2.840.113556.5.14 (AAD Tenant ID) and 1.2.840.113556.1.5.284.2 (AAD Device ID)?
+
 ## AppConfig:ValidityPeriodDays
 
 {% hint style="info" %}
