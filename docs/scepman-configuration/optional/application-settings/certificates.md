@@ -29,6 +29,10 @@ iOS/iPadOS and macOS devices ignore the configuration of the validity period via
 
 You can also configure shorter validity periods for each SCEP endpoint. These can never exceed the validity defined in this global setting, though!
 
+Below image depicts how SCEPman limits the certificate validity period first on a per-endpoint level and afterwards globally.
+
+![](<../../../.gitbook/assets/SCEPman Certificate Validity (2).jpg>)
+
 ## AppConfig:ConcurrentSCEPRequestLimit
 
 {% hint style="info" %}
