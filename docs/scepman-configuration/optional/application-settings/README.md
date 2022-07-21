@@ -52,6 +52,10 @@ We recommend using this type of configuration only for sensitive information.
 [jamf-validation.md](jamf-validation.md)
 {% endcontent-ref %}
 
+{% content-ref url="csr-validation.md" %}
+[csr-validation.md](csr-validation.md)
+{% endcontent-ref %}
+
 {% content-ref url="azure-ad.md" %}
 [azure-ad.md](azure-ad.md)
 {% endcontent-ref %}
