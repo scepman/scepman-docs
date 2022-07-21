@@ -40,16 +40,16 @@ We recommend using this type of configuration only for sensitive information.
 [intune-validation.md](intune-validation.md)
 {% endcontent-ref %}
 
+{% content-ref url="jamf-validation.md" %}
+[jamf-validation.md](jamf-validation.md)
+{% endcontent-ref %}
+
 {% content-ref url="dc-validation.md" %}
 [dc-validation.md](dc-validation.md)
 {% endcontent-ref %}
 
 {% content-ref url="static-validation.md" %}
 [static-validation.md](static-validation.md)
-{% endcontent-ref %}
-
-{% content-ref url="jamf-validation.md" %}
-[jamf-validation.md](jamf-validation.md)
 {% endcontent-ref %}
 
 {% content-ref url="csr-validation.md" %}
