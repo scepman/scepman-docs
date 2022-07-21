@@ -31,7 +31,9 @@ You can also configure shorter validity periods for each SCEP endpoint. These ca
 
 Below image depicts how SCEPman limits the certificate validity period; first on a per-endpoint level and globally afterwards.
 
-![](<../../../.gitbook/assets/SCEPman Certificate Validity (3).jpg>)
+![](<../../../.gitbook/assets/SCEPman Certificate Validity (2).jpg>)
+
+
 
 ## AppConfig:ConcurrentSCEPRequestLimit
 
