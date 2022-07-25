@@ -34,6 +34,7 @@
   * [Computers](certificate-deployment/jamf/computers.md)
   * [Devices](certificate-deployment/jamf/devices.md)
   * [Users](certificate-deployment/jamf/users.md)
+* [Mosyle](certificate-deployment/mosyle.md)
 * [🆕 Certificate Master](certificate-deployment/certificate-master/README.md)
   * [Certificate Signing Request (CSR)](certificate-deployment/certificate-master/certificate-signing-request-csr.md)
   * [TLS Server Certificate PKCS#12](certificate-deployment/certificate-master/tls-server-certificate-pkcs-12.md)
