@@ -12,10 +12,11 @@ For more general information about 3rd-party MDM solutions and SCEPman integrati
 
 Mosyle integration of SCEPman can be easily enabled via the following app configurations:
 
-|                     Setting                    |                                        Description                                        |                      Value                      |
-| :--------------------------------------------: | :---------------------------------------------------------------------------------------: | :---------------------------------------------: |
-|     **AppConfig:StaticValidation:Enabled**     |                             To enable the 3rd-party validation                            | _**true** _ to enable, _ **false** _ to disable |
-| **AppConfig:StaticValidation:RequestPassword** | Mosyle authenticates its certificate requests at SCEPman with this secure static password |        _generate a 32 character password_       |
+|                                                                                                                                     Setting                                                                                                                                    |                                        Description                                        |                      Value                      |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: | :---------------------------------------------: |
+|                                                        ****[**AppConfig:StaticValidation:Enabled**](../scepman-configuration/optional/application-settings/static-validation.md#appconfig-staticvalidation-enabled)****                                                        |                             To enable the 3rd-party validation                            | _**true** _ to enable, _ **false** _ to disable |
+|                                                ****[**AppConfig:StaticValidation:RequestPassword**](../scepman-configuration/optional/application-settings/static-validation.md#appconfig-staticvalidation-requestpassword)****                                                | Mosyle authenticates its certificate requests at SCEPman with this secure static password |        _generate a 32 character password_       |
+| <p><strong></strong><a href="../scepman-configuration/optional/application-settings/static-validation.md#appconfig-staticvalidation-validityperioddays"><strong>AppConfig:StaticValidation:ValidityPeriodDays</strong></a><strong></strong><br><strong>(optional)</strong></p> |                How many days shall certificates issued via Mosyle be valid                |                       365                       |
 
 {% hint style="info" %}
 After adding or editing SCEPman configuration, you need to restart the app service.&#x20;
