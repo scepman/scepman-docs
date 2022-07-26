@@ -28,11 +28,11 @@ Here's an overview about the SCEPman workflow. The first figure shows the certif
 
 Process of certificate issuance:
 
-![](<../.gitbook/assets/Overview1 (1).png>)
+![](../.gitbook/assets/Overview1.png)
 
 Process of certificate validation during certificate-based authentication:
 
-![](<../.gitbook/assets/Overview2 (1).png>)
+![](../.gitbook/assets/Overview2.png)
 
 ### SCEPman Features
 
@@ -49,6 +49,6 @@ SCEPman issues device and user certificates that are compatible with Intune's in
 
 ### SCEPman OCSP (Online Certificate Status Protocol)
 
-The [Online Certificate Status Protocol (OCSP)](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol) is an Internet protocol which is in use to determine the state of a certificate.
+The [Online Certificate Status Protocol (OCSP)](https://en.wikipedia.org/wiki/Online\_Certificate\_Status\_Protocol) is an Internet protocol which is in use to determine the state of a certificate.
 
 Usually, an OCSP client sends a status request to an OCSP responder. An OCSP responder verifies the validity of a certificate based on revocation state or other mechanisms. In comparison to a certificate revocation list (CRL), an OCSP is always up-to-date and the response is available within seconds. A CRL has the disadvantage that it is based on a database that must refresh manually and may weight a lot of data.

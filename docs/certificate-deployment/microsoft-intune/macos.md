@@ -8,7 +8,7 @@ The basis for deploying SCEP certificates is to trust the public root certificat
 
 * [ ] Download the CA Certificate from SCEPman portal:
 
-![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (1).png>)
 
 * [ ] Create a profile for macOS with type **Trusted certificate** in Microsoft Intune:
 
@@ -25,7 +25,7 @@ Note, that you have to use the **same group for assigning** the **Trusted certif
 
 * [ ] Open the SCEPman portal and copy the URL under **Intune MDM**:
 
-![](<../../.gitbook/assets/image (2) (2).png>)
+![](../../.gitbook/assets/SCEPmanMDMURL.png)
 
 * [ ] Create a profile for macOS with type **SCEP certificate** in Microsoft Intune:
 

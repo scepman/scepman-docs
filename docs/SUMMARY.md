@@ -81,6 +81,7 @@
   * [Certifried Security Vulnerability](other/troubleshooting/certifried.md)
   * [Cisco ISE Host Header Limitation](other/troubleshooting/cisco-ise-host-header-limitation.md)
   * [Re-enrollment trigger](other/troubleshooting/re-enrollment-trigger.md)
+  * [View SCEPman issued certificates](other/troubleshooting/view-scepman-issued-certificates.md)
 * [Important Links](other/important-links.md)
 
 ***
