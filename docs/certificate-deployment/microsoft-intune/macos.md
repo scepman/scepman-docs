@@ -1,4 +1,4 @@
-# MacOS
+# macOS
 
 The following article describes how to deploy a device or/and user certificates for macOS devices. The deployment of the SCEPman Root Certificate is mandatory. Afterward, you can choose between deploying only device, user or even both certificate types.
 
@@ -146,6 +146,12 @@ With our stated settings, we fulfill [Apples certificate requirements](https://s
 ## User Certificates
 
 The following section will show you how you can deploy user certificates via Intune Certificate profile on macOS X 10.12 (or later) devices.
+
+{% hint style="warning" %}
+Please note: Certificates provisioned through the SCEP protocol - regardless of the type (user or device) - are always placed in the system keychain (System store) of the device.
+
+In case a 3rd party application requires access to such a certificate (e.g. 3rd party VPN client), the slider to **Allow all apps access to private key** in the keychain must be set to **enabled**.
+{% endhint %}
 
 Please follow the instructions of [#Device certificates](macos.md#device-certificates) and take care of the following differences:
 

@@ -26,7 +26,7 @@
 
 * [Microsoft Intune](certificate-deployment/microsoft-intune/README.md)
   * [Windows 10](certificate-deployment/microsoft-intune/windows-10.md)
-  * [MacOS](certificate-deployment/microsoft-intune/macos.md)
+  * [macOS](certificate-deployment/microsoft-intune/macos.md)
   * [Android](certificate-deployment/microsoft-intune/android.md)
   * [iOS/iPadOS](certificate-deployment/microsoft-intune/ios.md)
 * [Jamf](certificate-deployment/jamf/README.md)
