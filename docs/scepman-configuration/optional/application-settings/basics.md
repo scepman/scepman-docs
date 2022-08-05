@@ -21,6 +21,10 @@ If you are using a trial deployment or the community edition this field leaves e
 **Description:**\
 You can send Debug log information to a cloud-based monitoring solution of our company for support reasons. This can speed up support cases. You can activate and deactivate this feature by changing the value to **true** or **false**.
 
+{% hint style="info" %}
+Do not forget to restart SCEPman App Service after enabling and saving the setting.
+{% endhint %}
+
 ## WEBSITE\_RUN\_FROM\_PACKAGE
 
 This setting points to the Application Artifacts that will be loaded by starting the App Service.\
