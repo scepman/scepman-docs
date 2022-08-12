@@ -25,16 +25,16 @@ Please do not assign SCEP profiles to a large number of users devices at once, s
 
 ## Recommendation
 
-We recommend the following sizing for the Azure App Service Plans as a starting point:
+We recommend the following sizing in Azure Compute Units (ACU) for the Azure App Service Plans as a starting point:
 
-| Amount of users/clients |                Singular design                |                      Redundant design                     |
-| :---------------------: | :-------------------------------------------: | :-------------------------------------------------------: |
-|      < 2000 clients     |                     1 x S1                    |                         2 x 1 x S1                        |
-|      < 5000 clients     |         <p>1 x S2<br>or<br>2 x S1</p>         |           <p>2 x 1 x S2<br>or<br>2 x 2 x S1</p>           |
-|     < 10.000 clients    | <p>1 x S3<br>or<br>2 x S2<br>or<br>4 x S1</p> | <p>2 x 1 x S3<br>or<br>2 x 2 x S2<br>or<br>2 x 4 x S1</p> |
-|     < 25.000 clients    |         <p>2 x S3<br>or<br>4 x S2</p>         |           <p>2 x 2 x S3<br>or<br>2 x 4 x S2</p>           |
-|     < 50.000 clients    |                     4 x S3                    |                         2 x 4 x S3                        |
-|    < 100.000 clients    |                     8 x S3                    |                         2 x 8 x S3                        |
+| Amount of users/clients |             Singular design            |                Redundant design                |
+| :---------------------: | :------------------------------------: | :--------------------------------------------: |
+|      < 2000 clients     |    <p>100 ACUs<br>(e.g. 1 x S1)</p>    |     <p>2 x 100 ACUs</p><p>(e.g. 2 x S1)</p>    |
+|      < 5000 clients     |  <p>200 ACUs</p><p>(e.g. 1 x P1V2)</p> |    <p>2 x 200 ACUs</p><p>(e.g. 2 x P1V2)</p>   |
+|     < 10.000 clients    |  <p>400 ACUs</p><p>(e.g. 1 x P1V3)</p> |     <p>2 x 400 ACUs<br>(e.g. 2 x P1V3)</p>     |
+|     < 25.000 clients    |  <p>800 ACUs</p><p>(e.g. 1 x P2V3)</p> |     <p>2 x 800 ACUs<br>(e.g. 2 x P2V3)</p>     |
+|     < 50.000 clients    | <p>1600 ACUs</p><p>(e.g. 1 x P3V3)</p> |   <p>2 x 1600 ACUs</p><p>(e.g. 2 x P3V3)</p>   |
+|    < 100.000 clients    | <p>3200 ACUs</p><p>(e.g. 2 x P3V3)</p> | <p>2 x 3200 ACUs</p><p>(e.g. 2 x 2 x P3V3)</p> |
 
 ## Fine tuning
 
