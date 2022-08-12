@@ -42,6 +42,14 @@ The subscription of a "user" is required for each user, who is enabled to access
 In many cases the required number of user subscriptions for server certificates equals the number of users, who have the SCEPman root certificate deployed on one or more of their client devices.
 {% endhint %}
 
+### Code Signing Certificates (SCEPman V2.3)
+
+The subscription of a "user" is required for each user, who is using & validating apps, scripts and other digital data, that were signed with code signing certificates issued by SCEPman.
+
+{% hint style="info" %}
+In many cases the required number of user subscriptions for code signing certificates equals the number of users, who have the SCEPman root certificate deployed on one or more of their client devices.
+{% endhint %}
+
 ## Device limits per user
 
 A single user may have up to 10 personal devices:
