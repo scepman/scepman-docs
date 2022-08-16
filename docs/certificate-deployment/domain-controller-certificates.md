@@ -35,7 +35,7 @@ If you generate a new CA certificate you must update your Intune policies and de
 
 CA Suitability on SCEPman Dashboard:
 
-![](<../../.gitbook/assets/2022-05-27 11\_09\_46-Window.png>)
+![](<../.gitbook/assets/2022-05-27 11\_09\_46-Window.png>)
 
 ## Configuration Changes to the SCEPman Service
 
@@ -101,7 +101,7 @@ powershell -ExecutionPolicy RemoteSigned -File c:\scepman\enroll-dc-certificate.
 
 Please make sure that the PowerShell script resides in the same directory as SCEPClient.exe and its additional dependencies.
 
-![Configuring the execution action in the Scheduled Task](<../../.gitbook/assets/image (17).png>)
+![Configuring the execution action in the Scheduled Task](<../.gitbook/assets/image (17).png>)
 
 This checks for existing DC certificates in the machine store. Only if there are no suitable certificates with at least 30 days validity, it uses ScepClient.exe to request a new DC certificate from SCEPman. If you want to modify the 30-day-threshold, use the -ValidityThresholdDays parameter of the PowerShell script.
 

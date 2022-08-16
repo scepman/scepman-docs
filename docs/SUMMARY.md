@@ -34,14 +34,13 @@
   * [Computers](certificate-deployment/jamf/computers.md)
   * [Devices](certificate-deployment/jamf/devices.md)
   * [Users](certificate-deployment/jamf/users.md)
-* [Mosyle](certificate-deployment/mosyle.md)
 * [🆕 Certificate Master](certificate-deployment/certificate-master/README.md)
   * [Certificate Signing Request (CSR)](certificate-deployment/certificate-master/certificate-signing-request-csr.md)
   * [TLS Server Certificate PKCS#12](certificate-deployment/certificate-master/tls-server-certificate-pkcs-12.md)
   * [Manual Client Certificate PKCS#12](certificate-deployment/certificate-master/client-certificate-pkcs-12.md)
-* [Other](certificate-deployment/other-1/README.md)
-  * [3rd-party MDM Solutions](certificate-deployment/other-1/static-certificates.md)
-  * [Domain Controller Certificates](certificate-deployment/other-1/domain-controller-certificates.md)
+* [3rd-party MDM Solutions](certificate-deployment/static-certificates/README.md)
+  * [Mosyle](certificate-deployment/static-certificates/mosyle.md)
+* [Domain Controller Certificates](certificate-deployment/domain-controller-certificates.md)
 
 ## Advanced Configuration
 

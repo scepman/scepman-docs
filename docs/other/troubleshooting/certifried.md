@@ -1,18 +1,18 @@
-# The Certifried Security Vulnerability
+# Certifried Security Vulnerability
 
-In May 2022, [Oliver Lyak described a Privilege Escalation vulnerability](https://research.ifcr.dk/certifried-active-directory-domain-privilege-escalation-cve-2022-26923-9e098fe298f4) he had discovered using certificate authentication. He describes that an attacker might enroll a certificate which lets him authenticate as Domain Controller computer account and thereby take over an AD domain (and an AAD tenant, if connected). There are [CVE-2022-26921](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26921) and [CVE-2022-26923](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26923) describing the vulnerabilities and Microsoft tackled them with [a patch in KB5014754](https://support.microsoft.com/en-us/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16#bkmk_certmap). This article describes how this affects organizations running SCEPman, and how SCEPman can help to mitigate the security problem.
+In May 2022, [Oliver Lyak described a Privilege Escalation vulnerability](https://research.ifcr.dk/certifried-active-directory-domain-privilege-escalation-cve-2022-26923-9e098fe298f4) he had discovered using certificate authentication. He describes that an attacker might enroll a certificate which lets him authenticate as Domain Controller computer account and thereby take over an AD domain (and an AAD tenant, if connected). There are [CVE-2022-26921](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26921) and [CVE-2022-26923](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26923) describing the vulnerabilities and Microsoft tackled them with [a patch in KB5014754](https://support.microsoft.com/en-us/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16#bkmk\_certmap). This article describes how this affects organizations running SCEPman, and how SCEPman can help to mitigate the security problem.
 
 ## Executive Summary
 
-- SCEPman certificates cannot be used for Certifried attacks in most cases
-- Using SCEPman helps to mitigate Certifried attacks, because contrary to Microsoft CA certificates, SCEPman CA certificates usually need not to be in the NTAuth store
-- Microsoft's patch will not affect SCEPman installations in most cases. In these cases, enabling Full Enforcement mode is a good idea.
+* SCEPman certificates cannot be used for Certifried attacks in most cases
+* Using SCEPman helps to mitigate Certifried attacks, because contrary to Microsoft CA certificates, SCEPman CA certificates usually need not to be in the NTAuth store
+* Microsoft's patch will not affect SCEPman installations in most cases. In these cases, enabling Full Enforcement mode is a good idea.
 
 ## Consequences of Microsoft's Patch
 
-The patch in [KB5014754](https://support.microsoft.com/en-us/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16#bkmk_certmap) just adds some additional audit events by default. Full Enforcement mode starts on May 9, 2023 or sooner when manually enabling it. With Full Enforcement mode, certificates can be used for user and device authentication only if they either contain the SID of an account or, in the case of user certificates, if the AD object of the user contains a reference to the specific certificate. The former requires a new proprietary X.509 extension, the latter is called Certificate Mapping and uses the altSecurityIdentities attribute.
+The patch in [KB5014754](https://support.microsoft.com/en-us/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16#bkmk\_certmap) just adds some additional audit events by default. Full Enforcement mode starts on May 9, 2023 or sooner when manually enabling it. With Full Enforcement mode, certificates can be used for user and device authentication only if they either contain the SID of an account or, in the case of user certificates, if the AD object of the user contains a reference to the specific certificate. The former requires a new proprietary X.509 extension, the latter is called Certificate Mapping and uses the altSecurityIdentities attribute.
 
-Generally speaking, this has an effect on AD authentications only. It required adding the CA certificate to the Forest's NTAuth Store. By default, SCEPman is not added to the NTAuth Store if you do not do this explicitely and manually. If you have not done this yet and do not plan to do it, the patch has no effect on your SCEPman instance. There is one use case where the SCEPman Docs recommend adding the SCEPman CA certificate to the NTAuth Store, which is when you want to [let SCEPman issue Domain Controller certificates for Kerberos Authentication](../../certificate-deployment/other-1/domain-controller-certificates.md#trust-the-ca-certificate-in-the-domain-for-kerberos-authentication).
+Generally speaking, this has an effect on AD authentications only. It required adding the CA certificate to the Forest's NTAuth Store. By default, SCEPman is not added to the NTAuth Store if you do not do this explicitely and manually. If you have not done this yet and do not plan to do it, the patch has no effect on your SCEPman instance. There is one use case where the SCEPman Docs recommend adding the SCEPman CA certificate to the NTAuth Store, which is when you want to [let SCEPman issue Domain Controller certificates for Kerberos Authentication](../../certificate-deployment/domain-controller-certificates.md#trust-the-ca-certificate-in-the-domain-for-kerberos-authentication).
 
 ### Intune Device Certificates
 
@@ -24,7 +24,7 @@ User Certificates can be used for Windows Hello for Business Certificate Trust. 
 
 ### DC Certificates
 
-Domain Controller certificates are not affected by the vulnerability and therefore generally also aren't affected by the patch. It might happen that DC certificates are used for Client Authentication, for which they were permitted previously. This will not work anymore once Full Enforcement is activated. Look for [Audit events](https://support.microsoft.com/en-us/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16#bkmk_auditevents) after patching to find out whether this might affect you. In most cases, this shouldn't be a problem.
+Domain Controller certificates are not affected by the vulnerability and therefore generally also aren't affected by the patch. It might happen that DC certificates are used for Client Authentication, for which they were permitted previously. This will not work anymore once Full Enforcement is activated. Look for [Audit events](https://support.microsoft.com/en-us/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16#bkmk\_auditevents) after patching to find out whether this might affect you. In most cases, this shouldn't be a problem.
 
 ## Attacks using SCEPman Certificates
 
@@ -59,9 +59,10 @@ There are three ways to issue certificates via the Certificate Master component 
 [**Manual Client Certificates**](../../certificate-deployment/certificate-master/client-certificate-pkcs-12.md) are also unaffected. They contain the Client Authentication EKU, but no DNS SAN entry.
 
 [**Custom CSR Requests**](../../certificate-deployment/certificate-master/certificate-signing-request-csr.md) are freely configurable and include authentication certificates. As anybody having access to the Certificate Master application may issue such a certificate you should take at least one of the following precautions:
-- Make sure that only priviledged accounts can access Certificate Master. You could, for example, [grant access to the Certificate Master component](../../scepman-configuration/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website) only to a single AAD Group that you design as [Priviledged Access group](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/groups-features).
-- Use separate SCEPman instances and CA certificates for DC Certificates (whose CA certificate is in the NTAuth Store) and Certificate Master.
-- Enable Full Enforcement mode in your AD domain.
+
+* Make sure that only priviledged accounts can access Certificate Master. You could, for example, [grant access to the Certificate Master component](../../scepman-configuration/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website) only to a single AAD Group that you design as [Priviledged Access group](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/groups-features).
+* Use separate SCEPman instances and CA certificates for DC Certificates (whose CA certificate is in the NTAuth Store) and Certificate Master.
+* Enable Full Enforcement mode in your AD domain.
 
 ### Domain Controller Certificates
 

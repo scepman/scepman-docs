@@ -5,12 +5,12 @@
 ### 2.2 - Upcoming
 
 #### SCEPman (currently in Beta Channel)
+
 * Revoke Intune certificates on some MEM events
-* [Intune-enrolled user certificates become invalid when user risk exceeds a configured threshold](./scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck)
-<!--* Additional integration features for [RADIUS-as-a-Service](https://www.radius-as-a-service.com/)-->
+* [Intune-enrolled user certificates become invalid when user risk exceeds a configured threshold](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck)
 
 #### SCEPman Certificate Master (currently in Internal Channel)
-<!--* Issuance of SubCA certificates through Certificate Master, e.g. for proxy servers or firewalls-->
+
 * Additional certificate file formats for Certificate Master
 * Certificate Master lists issued client certificates for manual revocation
 
@@ -27,7 +27,7 @@
 
 ### 2.0.473 - March 2022
 
-* [Certificate Management](certificate-deployment/certificate-master)
+* [Certificate Management](certificate-deployment/certificate-master/)
   * Manually issue TLS Server certificates
   * Revoke manually issued certificates
   * Search for manual certificates
@@ -93,8 +93,8 @@
 
 ### 1.6.455 - November 2020
 
-* Support for certificates for [Domain Controllers](certificate-deployment/other-1/domain-controller-certificates.md), especially for use in Windows Hello for Business (Enterprise Edition only)
-* Generic support for [3rd-party MDM systems via endpoint static](certificate-deployment/other-1/static-certificates.md)
+* Support for certificates for [Domain Controllers](certificate-deployment/domain-controller-certificates.md), especially for use in Windows Hello for Business (Enterprise Edition only)
+* Generic support for [3rd-party MDM systems via endpoint static](certificate-deployment/static-certificates/)
 * Improved error logging
 * Bug fixing
 
