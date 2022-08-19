@@ -2,7 +2,7 @@
 
 ## Available SCEPman Channels
 
-We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist). In order to receive updates from the one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](application-settings/basics.md#website\_run\_from\_package) setting of your SCEPman App Service.
+We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](application-settings/basics.md#website\_run\_from\_package) setting of your SCEPman App Service.
 
 ### Production
 
@@ -36,7 +36,7 @@ https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Intern.z
 
 ## Available Certificate Master Channels
 
-We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster). In order to receive updates from the one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](../../certmaster-configuration/application-settings/basics.md#website\_run\_from\_package) setting of your Certificate Master App Service.
+We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](../../certmaster-configuration/application-settings/basics.md#website\_run\_from\_package) setting of your Certificate Master App Service.
 
 ### Production
 
@@ -60,7 +60,7 @@ https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMas
 
 To have full control over the update process and what artifacts are loaded by your App Service you can deploy your own Azure Storage Account. If this is not required, skip this section.
 
-Follow these instruction to create a storage account:
+Follow these instructions to create a storage account:
 
 1\. Start at your **Resource group** where you have deployed SCEPman and click **+ Add**
 
@@ -107,4 +107,4 @@ To configure this, do the following:
 
 ![](../../.gitbook/assets/2021-10-08-16\_40\_54-scepman02testservicename-microsoft-azure-and-10-more-pages-c4a8-ehamed-mic.png)
 
-7\. Repeat the steps 1. - 6. for the Certificate Master AppService, that provides the same **WEBSITE\_RUN\_FROM\_PACKAGE** parameter under **Configuration**. Remember to provide the [CertMaster GitHub URL](application-artifacts.md#available-certificate-master-channels) in case you are following our Evergreen Approach.
+7\. Repeat the steps 1. - 6. for the Certificate Master AppService, which provides the same **WEBSITE\_RUN\_FROM\_PACKAGE** parameter under **Configuration**. Remember to provide the [CertMaster GitHub URL](application-artifacts.md#available-certificate-master-channels) in case you are following our Evergreen Approach.
