@@ -150,8 +150,8 @@ You can Duplicate the SubCA Template or use as it is as required. Then you just 
 #### Step by step
 
 1. Request and issue a SubCA certificate.
-2. Export the new SubCA certificate to a file (e.g. c:\temp\SubCA.cer) on the Enterprise CA.
-3. Create a file "extfile.txt" with the contents shown below to the Enterprise CA (e.g. c:\temp\extfile.txt).
+2. Export the new SubCA certificate to a file (e.g. c:\temp\SubCA.cer) on the Root CA.
+3. Create a file "extfile.txt" with the contents shown below to the Root CA (e.g. c:\temp\extfile.txt).
 4. Start command line and excecute: `certutil -sign "c:\temp\SubCA.cer" "c:\temp\SubCAwithKeyEncipher.cer" @c:\temp\extfile.txt`
 5. The certificate SubCAwithKeyEncipher.cer now contains the requested key usage (0xA6). The thumbprint (signature) has changed, but the serial number hasn't.
 6. The list of issued certificates in ADCS contains the old certificate. Since the serial number hasn't changed, you can manage the new certificate using the old handle, e.g. revoking the old certificate will revoke the new certificate. If you dislike this, you can delete the old certificate entry using `certutil -deleterow` and then import the new certificate using `certutil -importcert`.
