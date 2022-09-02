@@ -73,6 +73,6 @@ Applicable to version 1.7 and above
 We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--JamfValidation--APIPassword_.
 
 {% hint style="info" %}
-If you set this setting as a Secret in the Key Vault, you do not need to the **AppConfig:JamfValidation:APIPassword** to SCEPman configuration anymore.
+If you set this setting as a Secret in the Key Vault, you do not need to add the **AppConfig:JamfValidation:APIPassword** to SCEPman configuration anymore.
 {% endhint %}
 
