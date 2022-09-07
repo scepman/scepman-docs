@@ -36,6 +36,11 @@ To maximize compatibility, for the **Org Name** we recommend to omit
 * **Org Name:** Name of your company or organization for the certificate subject
 * **License:** leave it "trial" to deploy a community edition, or paste your license key -if you already have one- for an enterprise edition
 * Define a unique name for the **Key Vault Name, App Service Name,** and **App Service Cert Master Name,** you need just to replace it with the placeholder _UNIQUENAME_
+
+{% hint style="warning" %}
+In case you have previously deployed SCEPman with the same **Key Vault Name**, and deleted all resources of the previous deployment, make sure to [purge](https://docs.microsoft.com/en-us/azure/key-vault/general/key-vault-recovery?tabs=azure-cli#key-vault-cli) the previously deleted Key Vault. By default, upon deletion, the Key Vault will remain in [soft-delete](https://docs.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview) state for 90 days, essentially blocking the creation of a new Key Vault with the same name..&#x20;
+{% endhint %}
+
 * By **Storage Account Name** please notice that the name **must** be between 3 and 24 characters in length and may contain **numbers and lowercase letters only**
 * **Existing App Service Plan ID:** Provide the AppServicePlan ID of an existing App Service Plan or keep the default value 'none' if you want to create a new one
 

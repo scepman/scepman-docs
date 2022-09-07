@@ -6,6 +6,10 @@ In order to get started with SCEPman, we have prepared two guides that address d
 
 ## Decision Matrix
 
+{% hint style="info" %}
+In case you have Azure resource naming conventions, high availability or auto-scaling requirements that you'd also like to trial, please directly start with **Extended Guide** -  even for your Trial/PoC. This will allow you to re-use the deployment in production later on.
+{% endhint %}
+
 | Requirement / Scope                           |                                                        Standard Guide                                                        |       Extended Guide       |
 | --------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------: | :------------------------: |
 | I am using SCEPman Community Edition          |       <p><span data-gb-custom-inline data-tag="emoji" data-code="2611">☑</span></p><p> (not all features available)</p>      |                            |
