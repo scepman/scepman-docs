@@ -69,7 +69,7 @@ You may proceed with the enrollment and once this is finished, the device will g
 
 ## Problems with the Validity of Certificates
 
-### Revocation of a Certificate
+### Check local certificate on a Windows machine
 
 First, you need to check the validity of the device certificate. Therefore, open a command prompt as administrator and type the following command:
 
@@ -88,6 +88,18 @@ certutil -urlcache OCSP
 ```
 
 ![](<../../../.gitbook/assets/scepman\_revocation2 (2) (3) (3) (3) (3) (3) (3) (3) (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
+
+### Check certificates from other machines
+
+As an alternate you can export the device certificate and use `certutil` on a Windows machine to display a small certutil UI for the OSCP check:
+
+```
+certutil -url <path-to-exported-device-certificate>
+```
+
+![](<../../../.gitbook/assets/scepman\_revocation4 (3) (3) (3) (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3).png>)
+
+### Revoke a user
 
 If you want to revoke a **user** certificate, you have two options:‌
 
@@ -125,14 +137,6 @@ When you enable the device in Azure AD again and you type in the command from ab
 {% hint style="info" %}
 It can take up to 5 minutes before the prompt 'Marked as valid' appears.
 {% endhint %}
-
-As an alternate you can export the device certificate and use `certutil` to display a small certutil UI for the OSCP check:
-
-```
-certutil -url <path-to-exported-device-certificate>
-```
-
-![](<../../../.gitbook/assets/scepman\_revocation4 (3) (3) (3) (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3).png>)
 
 ### Access Point cannot verify an authentication certificate that SCEPman has issued
 
