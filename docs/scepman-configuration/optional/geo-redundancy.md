@@ -10,7 +10,7 @@ This reference architecture shows how to run an Azure App Service application in
 
 ![](<../../.gitbook/assets/2022-06-23 12\_32\_59-GeoRedundancy.png>)
 
-As you can see in this diagram it will utilize an Azure Traffic Manager instance globally, and then we have duplicated SCEPman App Service for each region, which are communicating with the existing Key Vault, Storage Account and AAD of the main SCEPman instance deployment.
+As illustrated above, the geo-redundant deployment leverages an Azure Traffic Manager profile, that routes (DNS-based) requests to the SCEPman CA to a pair of SCEPman instances that are deployed in different geolocations. The individual SCEPman instances communicate with the same KeyVault, Storage Account and AAD and thus share the same Root CA. Besides load-balancing traffic based on a set of routing algorithms that you can choose from, Traffic Manager also constantly probes both instances of SCEPman. In case an instance becomes unavailable, all traffic will automatically be routed to the available instance.
 
 Microsoft discusses in [this article](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/app-service-web-app/multi-region) three different Geo-Redundancy strategies that can be used to manage this type of architecture. However, In our case we will use the **Active/Active** approach. This means both regions are active, and requests are load-balanced between them. If one region becomes unavailable or has some latency for any reason, Traffic Manager will route the traffic to the second App Service.
 
@@ -71,12 +71,8 @@ After the deployment is finished successfully, navigate to the cloned app and ch
 ![](<../../.gitbook/assets/2022-06-21 10\_32\_37.png>)
 
 {% hint style="warning" %}
-Cloning an app service has some restrictions such as **autoscale** settings, **backup schedule** settings, **App Insights, logging**, etc.. so you have to configure them again (if needed) for the new cloned app service. For more info visit [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions)
+Cloning an app service has some restrictions such as **autoscale** settings, **backup schedule** settings, **App Insights, logging**, etc.. so you have to configure them again (if needed) for the new cloned app service. Additionally, changes to the settings of one AppService will not be automatically synchronized to the second AppService if performed after the cloning operation. For more info visit [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions)
 {% endhint %}
-
-### Custom Domain configuration
-
-After a successful deployment of the cloned SCEPman App Service, you need to set up a custom domain for this SCEPman instance as described [here](custom-domain.md).
 
 ### Setup Traffic Manager
 
@@ -114,3 +110,10 @@ In the **Overview** your Traffic Manager should like this (here you find the Tra
 {% hint style="info" %}
 In **Azure DNS Zone**, in order to modify a record, you first have to remove the DNS lock by navigating to **Locks**.
 {% endhint %}
+
+### Custom Domain Configuration
+
+After successful deployment and configuration of the Traffic Manager profile, you need to set up custom domains for **both** SCEPman instances as described [here](custom-domain.md). The custom domains have the following requirements attached to them:
+
+* The custom domains of both instances of SCEPman have to be **the same**.
+* The custom domains have to be equal to the custom domain mapped to the Traffic Manager endpoint from above.

@@ -75,7 +75,7 @@ After the deployment and persmission assignment is complete, you need to create 
 ### Step 4: Configure a Custom Domain and SSL Certificate
 
 {% hint style="success" %}
-This is a **recommended** step.
+This is a **recommended** step. However, **skip** this step if you are implementing geo-redundancy / high-availability.
 {% endhint %}
 
 To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.**
@@ -156,10 +156,6 @@ To have an optimized performance and take care of the costs we recommend to setu
 
 {% hint style="info" %}
 This is an **optional** step.
-{% endhint %}
-
-{% hint style="warning" %}
-A [custom domain](enterprise-guide-1.md#step-4-configure-a-custom-domain-and-ssl-certificate) is required for this step.
 {% endhint %}
 
 {% content-ref url="../../scepman-configuration/optional/geo-redundancy.md" %}
