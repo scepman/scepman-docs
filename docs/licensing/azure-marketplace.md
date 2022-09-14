@@ -97,7 +97,7 @@ The random order of **Base Fees** und **Additional Users** under the **Price** i
 
 * Once the deployment is complete, please navigate to our platform by clicking "Configure account now"
 
-![](<../.gitbook/assets/image (4) (1).png>)
+![](<../.gitbook/assets/image (4) (1) (1).png>)
 
 * After authenticating on our platform using your Microsoft credentials, you will be prompted for additional information, such as the desired **total user amount** and a **technical admin contact**.
 

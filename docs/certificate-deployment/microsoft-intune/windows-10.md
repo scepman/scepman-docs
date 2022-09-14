@@ -1,6 +1,6 @@
-# Windows 10
+# Windows
 
-The following article describes how to deploy a device or/and user certificates for Windows 10 devices. The deployment of the SCEPman Root Certificate is mandatory. Afterward, you can choose between deploying only device, user or even both certificate types.
+The following article describes how to deploy a device or/and user certificates for Windows devices. The deployment of the SCEPman Root Certificate is mandatory. Afterward, you can choose between deploying only device, user or even both certificate types.
 
 ## Root Certificate
 
@@ -62,7 +62,7 @@ You can add other RDNs if needed (e.g.: `CN={{DeviceId}}, O=Contoso, CN={{WiFiMa
 
 <details>
 
-<summary>Subject alternative name: <code>(URI)</code>Value:<code>IntuneDeviceId://{{DeviceId}}</code></summary>
+<summary>Subject alternative name: <code>(URI)</code>Value: <code>IntuneDeviceId://{{DeviceId}}</code></summary>
 
 The URI field is [recommended by Microsoft](https://techcommunity.microsoft.com/t5/intune-customer-success/new-microsoft-intune-service-for-network-access-control/ba-p/2544696) for NAC solutions to identify the devices based on their Intune Device ID.
 
@@ -82,9 +82,13 @@ SCEPman caps the certificate validity to the configured maximum in setting [_**A
 
 <details>
 
-<summary>Key storage provider (KSP): <code>Enroll to Software KSP</code></summary>
+<summary>Key storage provider (KSP): <code>Enroll to Trusted Platform Module (TPM) KSP, otherwise fail</code></summary>
 
-This setting determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage because the TPM provides an additional layer of security to prevent key theft. However, there is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. Affected TPM firmware versions include:
+This setting determines the storage location of the private key for the end-user certificates. Storage in the TPM is more secure than software storage because the TPM provides an additional layer of security to prevent key theft.
+
+Note: There is **a bug in some older TPM firmware versions** that invalidates some signatures created with a TPM-backed private key. In such cases, the certificate cannot be used for EAP authentication as it is common for Wi-Fi and VPN connections. In addition, this might break your Autopilot onboarding process.
+
+Affected TPM firmware versions include:
 
 * STMicroelectronics: 71.12, 73.4.17568.4452, 71.12.17568.4100
 * Intel: 11.8.50.3399, 2.0.0.2060
@@ -158,7 +162,7 @@ https://scepman.contoso.com/certsrv/mscep/mscep.dll
 
 ### Example
 
-![Example configuration for SCEP device certificate](<../../.gitbook/assets/2021-10-27 09\_49\_08-SCEP certificate - Microsoft Endpoint Manager admin center and 20 more pages - C.png>)
+<figure><img src="../../.gitbook/assets/Screenshot 2022-09-13 at 19.05.15 1.png" alt=""><figcaption></figcaption></figure>
 
 * [ ] Now you can deploy this profile to your devices. Please choose the same group/s for assignment as for the Trusted certificate profile.
 
@@ -184,11 +188,9 @@ You can define RDNs based on your needs. Supported variables are listed in the [
 
 <details>
 
-<summary>Subject alternative name: <em><code>(UPN)</code></em> Value: <em><code>{{UserPrincipalName}}, (URI)</code></em>Value: <em><code>IntuneDeviceId://{{DeviceID}}</code></em></summary>
+<summary>Subject alternative name:  <code>(UPN)</code>Value:  <code>{{UserPrincipalName}}</code></summary>
 
 You must add the User principal name as the Subject alternative name. **Add '\{{UserPrincipalName\}}' as Subject Alternative Name of type User principal name (UPN).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.
-
-The URI field is [recommended by Microsoft](https://techcommunity.microsoft.com/t5/intune-customer-success/new-microsoft-intune-service-for-network-access-control/ba-p/2544696) for NAC solutions to identify the devices based on their Intune Device ID.
 
 Other SAN values like an Email address can be added if needed.
 
@@ -196,7 +198,7 @@ Other SAN values like an Email address can be added if needed.
 
 ### Example
 
-![](<../../.gitbook/assets/2022-06-23 16\_33\_42-SCEP User certificate .png>)
+<figure><img src="../../.gitbook/assets/Screenshot 2022-09-14 at 09.55.05.png" alt=""><figcaption></figcaption></figure>
 
 ## User Digital Signature Certificate
 
@@ -206,8 +208,7 @@ You may use SCEPman for transnational **digital signatures** i.e. for S/MIME sig
 **Do not** use SCEPman **for email-encryption** i.e. for S/MIME mail encryption in Microsoft Outlook (without a separate technology for key management). The nature of **the SCEP protocol does not include a mechanism to backup or archive private key material.** If you would use SCEP for email-encryption you may lose the keys to decrypt the messages later.
 {% endhint %}
 
-* [ ] You must set these configuration variables otherwise the requested key usage and extended validity period in the SCEP profile are not honored by SCEPman:\
-
+* [ ] You must set these configuration variables otherwise the requested key usage and extended validity period in the SCEP profile are not honored by SCEPman:
 
 <!---->
 
@@ -222,23 +223,22 @@ To deploy user certificates used for **Digital Signatures** please follow the in
 
 * **(required) User principal name (UPN):** _`{{UserPrincipalName}}`_
 * **(required) Email address:** _`{{EmailAddress}}`_
-* **(optional) URI:** _`IntuneDeviceId://{{DeviceID}}`_
 
-By deploying a digital signature certificate, you must add the UPN and the email address, URI DeviceID is optional.
-
-</details>
-
-<details>
-
-<summary>Key usage: only <em><code>Digital signature</code></em></summary>
-
-
+By deploying a digital signature certificate, you must add the UPN and the email address.
 
 </details>
 
 <details>
 
-<summary>Extended key usage: <em><code>Secure Email (1.3.6.1.5.5.7.3.4)</code></em></summary>
+<summary>Key usage: only <code>Digital signature</code></summary>
+
+
+
+</details>
+
+<details>
+
+<summary>Extended key usage: <code>Secure Email (1.3.6.1.5.5.7.3.4)</code></summary>
 
 Please choose **Secure Email (1.3.6.1.5.5.7.3.4)** under **Predefined values**. The other fields will be filled out automatically.
 
@@ -246,7 +246,7 @@ Please choose **Secure Email (1.3.6.1.5.5.7.3.4)** under **Predefined values**. 
 
 <details>
 
-<summary>Renewal Threshold (%): <em><code>50</code></em></summary>
+<summary>Renewal Threshold (%): <code>50</code></summary>
 
 We recommend setting Renewal Threshold (%) to a value that ensures certificates are renewed at least 6 months before expiration when issuing S/MIME signature certificates. This is because emails signed with expired certificates are shown to have invalid signatures in Outlook, which confuses users. Having a new certificate long before the old one expires ensures that only older emails show this behavior, which users are more unlikely to look at. For example, if your signature certificates are valid for one year, you should set the Renewal Threshold to at least 50 %.
 
@@ -254,9 +254,7 @@ We recommend setting Renewal Threshold (%) to a value that ensures certificates 
 
 ### **Example**
 
-![Example configuration for user digital signature certificate](../../.gitbook/assets/DigitalCertReplace.png)
-
-****
+<figure><img src="../../.gitbook/assets/Screenshot 2022-09-14 at 09.57.20.png" alt=""><figcaption></figcaption></figure>
 
 After a successful profile sync, you should see the user certificate for Intended Purposes **Secure Email**
 
