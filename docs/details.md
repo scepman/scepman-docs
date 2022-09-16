@@ -2,7 +2,7 @@
 
 ## What is SCEP?
 
-Usually when it is necessary to deploy certificates to (mobile) devices [Simple Certificate Enrollment Protocol](https://tools.ietf.org/id/draft-gutmann-scep-09.html) (SCEP) is the first choice. But what is SCEP? SCEP is an [Internet draft](https://en.wikipedia.org/wiki/Internet\_Draft) standard protocol. An Internet draft contains technical specifications and technical information. Internet drafts are often published as a [Request for Comments](https://en.wikipedia.org/wiki/Request\_for\_Comments).
+Usually when it is necessary to deploy certificates to (mobile) devices [Simple Certificate Enrollment Protocol](https://www.rfc-editor.org/rfc/rfc8894.html) (SCEP) is the first choice. But what is SCEP? SCEP is an [Internet draft](https://en.wikipedia.org/wiki/Internet\_Draft) standard protocol. An Internet draft contains technical specifications and technical information. Internet drafts are often published as a [Request for Comments](https://en.wikipedia.org/wiki/Request\_for\_Comments).
 
 SCEP is originally developed by Cisco. The core mission of SCEP is the deployment of certificates to network devices without any user interactions. With the help of SCEP, network devices can request certificates on their own.
 
