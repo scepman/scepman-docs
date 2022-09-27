@@ -1,4 +1,4 @@
-# National Cloud Plattforms
+# National Cloud platforms
 
 {% hint style="info" %}
 Applicable to version 2.0 and above

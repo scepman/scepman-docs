@@ -40,7 +40,7 @@
 * New UI
   * So beautiful and with a new logo
   * Detailed information on activated SCEP endpoints
-* [Compatibility with GCC High, GCC DoD, and 21Vianet environments](scepman-configuration/optional/application-settings/national-cloud-plattforms.md)
+* [Compatibility with GCC High, GCC DoD, and 21Vianet environments](scepman-configuration/optional/application-settings/national-cloud-platforms.md)
 * Various minor improvements
 
 ### 1.9.207 - July 2021

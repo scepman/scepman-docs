@@ -194,4 +194,4 @@ Please check whether the CA certificate fulfills all requirement by visiting you
 
 ## Intermediate CAs and Intune SCEP Profiles
 
-On the Android plattform, the SCEP Configuration Profiles in Intune must reference the Root CA, not the Intermediate CA. Otherwise, the configuration profile fails. For Windows, it is the other way around: The SCEP Configuration Profiles in Intune must reference the Intermediate CA, not the Root CA. For iOS and macOS, we have no conclusive information wheter one or the other way is better.
+On the Android platform, the SCEP Configuration Profiles in Intune must reference the Root CA, not the Intermediate CA. Otherwise, the configuration profile fails. For Windows, it is the other way around: The SCEP Configuration Profiles in Intune must reference the Intermediate CA, not the Root CA. For iOS and macOS, we have no conclusive information wheter one or the other way is better.

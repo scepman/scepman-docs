@@ -56,7 +56,7 @@
   * [CSR Validation](scepman-configuration/optional/application-settings/csr-validation.md)
   * [Azure AD](scepman-configuration/optional/application-settings/azure-ad.md)
   * [Azure KeyVault](scepman-configuration/optional/application-settings/azure-keyvault.md)
-  * [National Cloud Plattforms](scepman-configuration/optional/application-settings/national-cloud-plattforms.md)
+  * [National Cloud platforms](scepman-configuration/optional/application-settings/national-cloud-platforms.md)
 * [Autoscaling](scepman-configuration/optional/autoscaling.md)
 * [Certificate Master Settings](certmaster-configuration/application-settings/README.md)
   * [Basics](certmaster-configuration/application-settings/basics.md)

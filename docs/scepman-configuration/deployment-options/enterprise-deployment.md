@@ -15,7 +15,7 @@ Log in with an AAD administrator account and visit this site, choose and click o
 * [Production channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fprod%2Fazuredeploy.json)
 * [Beta channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fbeta%2Fazuredeploy.json)
 * [Internal channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Finternal%2Fazuredeploy.json)
-* [Production channel in GCC High national cloud](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fprod%2Fazuredeploy.json) - you still have to [manually add the URLs for your cloud environment after installation](../optional/application-settings/national-cloud-plattforms.md)
+* [Production channel in GCC High national cloud](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fprod%2Fazuredeploy.json) - you still have to [manually add the URLs for your cloud environment after installation](../optional/application-settings/national-cloud-platforms.md)
 
 Fill out the values in the form
 

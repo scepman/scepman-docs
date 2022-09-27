@@ -64,6 +64,6 @@ We recommend using this type of configuration only for sensitive information.
 [azure-keyvault.md](azure-keyvault.md)
 {% endcontent-ref %}
 
-{% content-ref url="national-cloud-plattforms.md" %}
-[national-cloud-plattforms.md](national-cloud-plattforms.md)
+{% content-ref url="national-cloud-platforms.md" %}
+[national-cloud-platforms.md](national-cloud-platforms.md)
 {% endcontent-ref %}
