@@ -62,7 +62,7 @@ Especially, this means that when an administrator triggers a Wipe or Retire for 
 ## AppConfig:IntuneValidation:UntoleratedUserRisks
 
 {% hint style="warning" %}
-**Experimental Setting** - Applicable to version 2.2 and above.
+**Experimental Setting** - Applicable to version 2.2 and above. Requires permission *IdentityRiskyUser.Read.All* assigned by SCEPman PS module version 1.7 and above.
 
 SCEPman Enterprise Edition only
 {% endhint %}
@@ -76,12 +76,12 @@ Example: You define `Medium,High` for this setting. A user has Risk Level _Low_.
 ## AppConfig:IntuneValidation:UserRiskCheck
 
 {% hint style="warning" %}
-**Experimental Setting** - Applicable to version 2.2 and above.
+**Experimental Setting** - Applicable to version 2.2 and above. Requires permission *IdentityRiskyUser.Read.All* assigned by SCEPman PS module version 1.7 and above.
 
 SCEPman Enterprise Edition only
 {% endhint %}
 
-**Value:** _Always_ or _Never_
+**Value:** _Always_ or _Never_ (default)
 
 **Description:** When SCEPman receives an OCSP request for a certificate issued to an Intune user, SCEPman can optionally check the [user risk level](https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks#user-linked-detections). When set to **Always** SCEPman will query the user risk state and the OCSP result can only be GOOD if the user's risk is not in the list of [UntoleratedUserRisks](#appconfig-intunevalidation-untolerateduserrisks).
 
