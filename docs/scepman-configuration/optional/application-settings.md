@@ -1,5 +1,9 @@
 # Application Settings
 
+{% hint style="info" %}
+This page is deprecated. Please proceed to [the current application settings page](application-settings).
+{% endhint %}
+
 The section describes additional settings for the behavior of SCEPman. All of these are optional, though, and we recommend to just start with the defaults.
 
 Settings can be added or changed manually if needed. Some changes can harm your service. Please carefully read all information about a setting before changing.
