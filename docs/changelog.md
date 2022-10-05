@@ -4,15 +4,21 @@
 
 ### 2.2 - Upcoming
 
+* Improved installation experience
+
 #### SCEPman (currently in Beta Channel)
 
 * Revoke Intune certificates on some MEM events
 * [Intune-enrolled user certificates become invalid when user risk exceeds a configured threshold](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck)
+* Additional static SCEP endpoint with AAD-bound certificates
+* Libary updates
 
-#### SCEPman Certificate Master (currently in Internal Channel)
+#### SCEPman Certificate Master (currently in Beta Channel)
 
+* UI improvements
 * Additional certificate file formats for Certificate Master
 * Certificate Master lists issued client certificates for manual revocation
+* Libary updates
 
 ### 2.1.522 - May 2022
 
