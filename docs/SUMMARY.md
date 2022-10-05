@@ -53,6 +53,7 @@
   * [Jamf Validation](scepman-configuration/optional/application-settings/jamf-validation.md)
   * [DC Validation](scepman-configuration/optional/application-settings/dc-validation.md)
   * [Static Validation](scepman-configuration/optional/application-settings/static-validation.md)
+  * [Static-AAD Validation](scepman-configuration/optional/application-settings/staticaad-validation.md)
   * [CSR Validation](scepman-configuration/optional/application-settings/csr-validation.md)
   * [Azure AD](scepman-configuration/optional/application-settings/azure-ad.md)
   * [Azure KeyVault](scepman-configuration/optional/application-settings/azure-keyvault.md)

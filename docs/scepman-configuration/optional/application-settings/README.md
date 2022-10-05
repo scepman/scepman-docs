@@ -52,6 +52,10 @@ We recommend using this type of configuration only for sensitive information.
 [static-validation.md](static-validation.md)
 {% endcontent-ref %}
 
+{% content-ref url="static-validation.md" %}
+[static-validation.md](staticaad-validation.md)
+{% endcontent-ref %}
+
 {% content-ref url="csr-validation.md" %}
 [csr-validation.md](csr-validation.md)
 {% endcontent-ref %}
