@@ -17,7 +17,7 @@
 
 * UI improvements
 * Additional certificate file formats for Certificate Master
-* Certificate Master lists issued client certificates for manual revocation (requires an additional permission for which you must [re-run the SCEPman configuration script](scepman-deployment/permissions/post-installation-config.md#running-the-scepman-installation-cmdlet))
+* Certificate Master lists issued client certificates for manual revocation (requires an additional permission for which you must [re-run the SCEPman configuration script](scepman-configuration/post-installation-config.md#running-the-scepman-installation-cmdlet))
 * Libary updates
 
 ### 2.1.522 - May 2022
