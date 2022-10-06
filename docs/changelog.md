@@ -13,11 +13,11 @@
 * [Additional static SCEP endpoint with AAD-bound certificates](scepman-configuration/optional/application-settings/staticaad-validation.md)
 * Libary updates
 
-#### SCEPman Certificate Master 2.2.249
+#### SCEPman Certificate Master 2.2.251
 
 * UI improvements
 * Additional certificate file formats for Certificate Master
-* Certificate Master lists issued client certificates for manual revocation (requires an additional permission for which you must [re-run the SCEPman configuration script](scepman-deployment/permissions/post-installation-config#running-the-scepman-installation-cmdlet))
+* Certificate Master lists issued client certificates for manual revocation (requires an additional permission for which you must [re-run the SCEPman configuration script](scepman-deployment/permissions/post-installation-config.md#running-the-scepman-installation-cmdlet))
 * Libary updates
 
 ### 2.1.522 - May 2022
