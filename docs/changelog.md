@@ -8,7 +8,7 @@
 
 #### SCEPman 2.2.631
 
-* Revoke Intune certificates on some MEM events
+* [Revoke Intune certificates on some MEM events](https://docs.scepman.com/advanced-configuration/application-settings/intune-validation#appconfig-intunevalidation-revokecertificatesonwipe)
 * [Intune-enrolled user certificates become invalid when user risk exceeds a configured threshold](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck)
 * [Additional static SCEP endpoint with AAD-bound certificates](scepman-configuration/optional/application-settings/staticaad-validation.md)
 * Library updates

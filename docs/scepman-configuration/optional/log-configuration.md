@@ -11,9 +11,8 @@ To retain or archive the log files, we recommend configuring the following setti
 1. Activate **Application logging (Filesystem)** and set the **Level** to **Verbose:** this will allow you to see the **Application logs** under **Log stream**
 2. Activate **Application logging (Blob)**. This is very helpful to save the **application logging** for long term.
    1. Set the **Level** to **Verbose**.
-   2. Set the **Storage settings** to a **Storage account**. You can use the same **Storage account** you already created for Certificate Master, otherwise you can create a new [**Storage account**](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account).
-   If you are configuring this for a [geo-redundant app service](./geo-redundancy.md), you must create a new Storage Account, because App Services can log only into Blob Storage Accounts in the same region.
-   3. Create a **new Blob Container** for the logs, e.g. *scepman-logs*.
+   2. Set the **Storage settings** to a **Storage account**. You can use the same **Storage account** you already created for Certificate Master, otherwise you can create a new [**Storage account**](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account). If you are configuring this for a [geo-redundant app service](geo-redundancy.md), you must create a new Storage Account, because App Services can log only into Blob Storage Accounts in the same region.
+   3. Create a **new Blob Container** for the logs, e.g. _scepman-logs_.
    4. Save the **Application logging** in the Blob Container you have just created.
    5. We recommend 30 days for **Retention Period**.
 3. Activate **Web server logging** by selecting **Storage** and the **Storage account** you already have created. This will save the logs of the web server where SCEPman is running and not of the SCEPman application itself. This could be helpful in some special troubleshooting cases. We recommend 30 days for **Retention Period.**
@@ -22,7 +21,7 @@ To retain or archive the log files, we recommend configuring the following setti
 
 Your **App Service logs** settings should be **(in our example)** like:
 
-![](../../.gitbook/assets/2021-09-04-06\_40\_56-scepman-apppnf42avv2wmis-microsoft-azure-and-4-more-pages-c4a8-ehamed-micr.png)
+![](<../../.gitbook/assets/2021-09-04 06\_40\_56-scepman-apppnf42avv2wmis - Microsoft Azure and 4 more pages - C4A8 EHamed - Micr.png>)
 
 ## Diagnostic settings (Optional settings)
 
@@ -42,7 +41,7 @@ We recommend storing your data in Log Analytics
 5. The last step is to select the needed data. We recommend **all Categories.**
 6. Finally, click on the **Save** button
 
-![](../../.gitbook/assets/2021-09-04-06\_49\_06-diagnostic-setting-microsoft-azure-and-4-more-pages-c4a8-ehamed-microsoft-.png)
+![](<../../.gitbook/assets/2021-09-04 06\_49\_06-Diagnostic setting - Microsoft Azure and 4 more pages - C4A8 EHamed - Microsoft​.png>)
 
 ### Archive to storage account (optional)
 
@@ -58,4 +57,4 @@ If you have created a storage account to store your SCEPman artifacts, or for Ap
 6. Select the needed data and type in your retention time in days. We recommend **all Categories** and a retention time of **30** days.
 7. Finally, click on the **Save** button.
 
-![](../../.gitbook/assets/2021-09-04-06\_50\_51-diagnostic-setting-microsoft-azure-and-4-more-pages-c4a8-ehamed-microsoft-.png)
+![](<../../.gitbook/assets/2021-09-04 06\_50\_51-Diagnostic setting - Microsoft Azure and 4 more pages - C4A8 EHamed - Microsoft​.png>)
