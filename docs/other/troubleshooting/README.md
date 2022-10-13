@@ -13,9 +13,9 @@ Check Azure Web App log files via **Advanced Tools**:
 
 Click on the download icon on the latest .txt file and review it
 
-![](<../../../.gitbook/assets/event32\_3 (2) (7) (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (10) (9).png>)
+![](<../../../.gitbook/assets/event32\_3 (2) (7) (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (10) (1) (2).png>)
 
-![](<../../../.gitbook/assets/event32\_3 (2) (7) (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (10) (14).png>)
+![](<../../../.gitbook/assets/event32\_3 (2) (7) (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (10) (1) (6).png>)
 
 ### Additional way of logging
 

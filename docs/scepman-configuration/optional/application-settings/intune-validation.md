@@ -16,7 +16,7 @@ With version 1.9 and above, clients receive an "Ephemeral Bootstrap Certificate"
 
 **Description:** When SCEPman receives an OCSP request, SCEPman can optionally check the device compliance state. When set to **Always** SCEPman will query the device compliance state and the OCSP result can only be GOOD if the device is also marked as compliant in Azure AD.
 
-Settting this to **Never** will disable the compliance check.
+Setting this to **Never** will disable the compliance check.
 
 ## AppConfig:IntuneValidation:DeviceDirectory
 
@@ -48,42 +48,42 @@ Applicable to version 2.1 and above.
 
 **Description:** This setting extends validation of devices when using the Intune Device ID. If it is enabled, SCEPman evaluates the Management State property of an Intune Device when its device certificate is validated. If the state indicates one of the following values, the certificate is revoked:
 
-- RetirePending
-- RetireFailed
-- WipePending
-- WipeFailed
-- Unhealthy
-- DeletePending
-- RetireIssued
-- WipeIssued
+* RetirePending
+* RetireFailed
+* WipePending
+* WipeFailed
+* Unhealthy
+* DeletePending
+* RetireIssued
+* WipeIssued
 
 Especially, this means that when an administrator triggers a Wipe or Retire for a device, the certificate will be revoked immediately. Even if the device is shutdown or offline and therefore the action cannot be performed on the device, the certificate is not valid anymore.
 
 ## AppConfig:IntuneValidation:UntoleratedUserRisks
 
 {% hint style="warning" %}
-**Experimental Setting** - Applicable to version 2.2 and above. Requires permission *IdentityRiskyUser.Read.All* assigned by SCEPman PS module version 1.7 and above.
+**Experimental Setting** - Applicable to version 2.2 and above. Requires permission _IdentityRiskyUser.Read.All_ assigned by SCEPman PS module version 1.7 and above.
 
 SCEPman Enterprise Edition only
 {% endhint %}
 
 **Value:** Comma-separated list of User Risk Levels, e.g. _Low_, _Medium_, _High_.
 
-**Description:** This setting only has an effect if you set [UserRiskCheck](#appconfig-intunevalidation-userriskcheck) to _Always_. Certificates of users with risk levels in this list will be considered invalid.
+**Description:** This setting only has an effect if you set [UserRiskCheck](intune-validation.md#appconfig-intunevalidation-userriskcheck) to _Always_. Certificates of users with risk levels in this list will be considered invalid.
 
 Example: You define `Medium,High` for this setting. A user has Risk Level _Low_. The user's certificate is valid and the certificate can be used to connect to the corporate VPN. Then, a risk event increases the User Risk Level to _Medium_. The user tries to connect to the VPN, but does not succeed, because the VPN Gateway checks the validity of the certificate in real-time and SCEPman responds that it is revoked.
 
 ## AppConfig:IntuneValidation:UserRiskCheck
 
 {% hint style="warning" %}
-**Experimental Setting** - Applicable to version 2.2 and above. Requires permission *IdentityRiskyUser.Read.All* assigned by SCEPman PS module version 1.7 and above.
+**Experimental Setting** - Applicable to version 2.2 and above. Requires permission _IdentityRiskyUser.Read.All_ assigned by SCEPman PS module version 1.7 and above.
 
 SCEPman Enterprise Edition only
 {% endhint %}
 
 **Value:** _Always_ or _Never_ (default)
 
-**Description:** When SCEPman receives an OCSP request for a certificate issued to an Intune user, SCEPman can optionally check the [user risk level](https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks#user-linked-detections). When set to **Always** SCEPman will query the user risk state and the OCSP result can only be GOOD if the user's risk is not in the list of [UntoleratedUserRisks](#appconfig-intunevalidation-untolerateduserrisks).
+**Description:** When SCEPman receives an OCSP request for a certificate issued to an Intune user, SCEPman can optionally check the [user risk level](https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks#user-linked-detections). When set to **Always** SCEPman will query the user risk state and the OCSP result can only be GOOD if the user's risk is not in the list of [UntoleratedUserRisks](intune-validation.md#appconfig-intunevalidation-untolerateduserrisks).
 
 Settting this to **Never** will disable the user risk check.
 
