@@ -5,7 +5,7 @@
 The [Application (client) ID](../../azure-app-registration.md#basic-app-registration-application-id) from your Azure AD App registration. This setting is configured during the setup.
 
 {% hint style="warning" %}
-Please do not mix this up with the "Client Secret ID**"**. We need the "Application (client) ID", here.
+Please do not mix this up with the "Client Secret ID". We need the "Application (client) ID", here.
 {% endhint %}
 
 {% hint style="danger" %}
@@ -17,7 +17,7 @@ Changes can harm your service!
 The [Application Key (client secret **value**)](../../azure-app-registration.md#azure-app-registration-client-secret) from your Azure AD App registration. This setting is configured during the setup of a SCEPman 1.x version. SCEPman 2.x usually does not use this setting and instead relies on [Managed Identity authentication](../../../scepman-configuration/post-installation-config.md).
 
 {% hint style="warning" %}
-Please do not mix this up with the "Client Secret **ID"**. We need the "Client Secret **Value"**, here.
+Please do not mix this up with the "Client Secret **ID**". We need the "Client Secret **Value**", here.
 {% endhint %}
 
 {% hint style="danger" %}
