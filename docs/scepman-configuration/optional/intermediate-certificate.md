@@ -14,13 +14,13 @@ You need to grant and Azure AD App and your user account access to the Azure Key
 2. Click on **Access policies** in the left navigation pane.
 3. Click on **Add Access Policy**
 
-![](<../../../.gitbook/assets/screenshot-2020-10-19-at-15.23.16 (1).png>)
+![](../../../.gitbook/assets/screenshot-2020-10-19-at-15.23.16.png)
 
 1. Click **Configure from template (optional)** and choose **Certificate Management**.
 2. Now you must select a principal by clicking on **None selected** and search for your Azure AD App Registration.
 3. To close the dialog press **Select** and then press **Add**.
 
-![](<../../../.gitbook/assets/screenshot-2020-10-19-at-15.34.16 (1).png>)
+![](../../../.gitbook/assets/screenshot-2020-10-19-at-15.34.16.png)
 
 Now repeat this for your own user account:
 
@@ -29,7 +29,7 @@ Now repeat this for your own user account:
 3. Select a principal by clicking on **None selected**. But this time, search for your own administrative user account.
 4. Close the dialog with **Select** and **Add**.
 
-![](<../../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28 (2) (2) (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/screenshot-2020-10-19-at-15.35.28 (2) (2) (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2).png>)
 
 1. To save your new access policies you must click on **Save** in the upper left corner of the window.
 
@@ -169,7 +169,7 @@ Critical=2.5.29.15
 1. In Azure Key Vault, click on your certificate and press **Certificate Operation**
 2. **\*\*Now you can see the options** Download CSR **and** Merge Signed Request\*\*
 
-![](<../../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18 (1) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3).png>)
+![](<../../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18 (1) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
 
 1. Click on **Merge Signed Request** and upload your Intermediate CA Certificate. After you have uploaded the signed request, you can see the valid certificate in your Azure Key Vault in the area **Completed**
 
@@ -186,7 +186,7 @@ AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName AppConfig:KeyVaul
 1. As value you must insert your new certificate name and the new subject name.
 2. To complete this step, you must click on **Save** in the upper left part.
 
-![](<../../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40 (1).png>)
+![](../../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40.png)
 
 Please restart the Azure App Service and then navigate to your SCEPman URL. On the SCEPman Status page you can see the new configuration and download the new intermediate CA certificate to deploy this via Endpoint Manager.
 
