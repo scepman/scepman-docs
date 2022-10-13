@@ -82,4 +82,4 @@ Then click on "Change Signing and CA Certificates" in the External CA configurat
 
 ![](../../.gitbook/assets/jamfsigningcertificate.png)
 
-In the wizard, upload the PFX file with the signing certificate to Jamf when it asks for it (Note: Pkcs#12 and PFX are synonyms). In the next steps, enter the password for the PFX file and confirm the selection of the signing certificate. In the tab "Upload CA Certificate", you must upload the SCEPman CA certificate. You can obtain the SCEPman CA certificate by clicking on the link "Get CACert" on the top left of the homepage of your SCEPman instance. Finally, confirm your changes.
+In the wizard, upload the PFX file with the signing certificate to Jamf when it asks for it (Note: Pkcs#12 and PFX are synonyms). In the next steps, enter the password for the PFX file and confirm the selection of the signing certificate. In the tab "Upload CA Certificate", you must upload the SCEPman CA certificate. You can obtain the SCEPman CA certificate by clicking on the link "Get CACert" on the top right of the homepage of your SCEPman instance. Finally, confirm your changes.
