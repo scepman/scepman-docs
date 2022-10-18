@@ -7,7 +7,7 @@ This feature requires version **1.9** or above.
 Please follow this guide to distribute certificates to users. User certificates are possible on computers (macOS) as well as devices (e.g.: iOS, iPadOS). Before deploying the first certificates via Jamf, follow the [general steps for Jamf](general.md) first.
 
 {% hint style="info" %}
-Note that the "User and Location" data of your computers or mobile devices need to be properly populated for user certificate to be issued. Especially, the user must have an email address, as this is used as unique identifier.
+Note that the "User and Location" data of your computers or mobile devices need to be properly populated for user certificates to be issued. Especially, the user must have an email address, as this is used as unique identifier.
 {% endhint %}
 
 ## SCEPman Root Certificate
@@ -21,6 +21,10 @@ Add a new "Mobile Device Configuration Profile" and/or "macOS Configuration Prof
 ![](<../../.gitbook/assets/image (25).png>)
 
 ## User Certificates on Computers
+
+{% hint style="info" %}
+Jamf can only deploy user certificates to **MDM-enabled users**. There are some provisioning/pre-stage scenarios in which such user accounts are not created. For further information, please refer to the [Jamf documentation](https://docs.jamf.com/10.33.0/jamf-pro/administrator-guide/MDM-Enabled\_Local\_User\_Accounts.html).&#x20;
+{% endhint %}
 
 Under Computers -> Configuration Profiles, please add another "macOS Configuration Profile". Under the General Tab, change the Level to "User Level". On the left side, switch to the "SCEP" tab and configure a new SCEP payload. Activate "Use the External Certificate Authority settings to enable Jamf Pro as SCEP proxy for this configuration profile" and enter the following information:
 
