@@ -8,7 +8,7 @@ If you want to use another Root CA as primary authority, you can create an inter
 
 ## Key Vault Access Policy
 
-You need to grant and Azure AD App and your user account access to the Azure Key Vault. Note that the Azure AD App is different to the Azure App Service! In a SCEPman installation without Intermediate CA, you usually do not have to grant permission to the Azure AD App, but here it is required!
+You need to grant an Azure AD App and your user account access to the Azure Key Vault. Note that the Azure AD App is different to the Azure App Service! In a SCEPman installation without Intermediate CA, you usually do not have to grant permission to the Azure AD App, but here it is required!
 
 1. Navigate to your Azure Key Vault in the Azure Portal
 2. Click on **Access policies** in the left navigation pane.
