@@ -264,5 +264,6 @@ The certificate will be available for Digital Signature usage in e.g. Outlook. B
 
 ![](<../../.gitbook/assets/digital Sign2.png>)
 
+### Activate S/MIME Signatures in Microsoft Outlook
 
-
+Once you have deployed S/MIME signature certificates to your client machines, you must configure Outlook to use these certificates before sending signed emails. You can do this manually or use our [PowerShell Script to configure Outlook](https://github.com/glueckkanja-pki/PKI-Configuration-Tools/blob/master/ActivateSignatures.ps1).
