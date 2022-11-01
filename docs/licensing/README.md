@@ -4,6 +4,10 @@ description: for SCEPman Enterprise
 
 # Licensing
 
+{% hint style="info" %}
+SCEPman does not display your license consumption. Please ensure compliance with the licensing terms below by reviewing the [Example](./#examples) section and by monitoring the profile assignments in your MDM solution on a regular basis.
+{% endhint %}
+
 ## User-based licensing
 
 {% hint style="success" %}

@@ -8,7 +8,7 @@ The basis for deploying SCEP certificates is to trust the public root certificat
 
 * [ ] Download the CA Certificate from SCEPman portal:
 
-![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (1) (2).png>)
+![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
 
 * [ ] Create a profile for **Windows 10 and later** with type **Trusted certificate** in Microsoft Intune:
 
@@ -25,7 +25,7 @@ Note that you have to use the same group for assigning the Trusted certificate a
 
 * [ ] Open the SCEPman portal and copy the URL under Intune MDM
 
-![](../../.gitbook/assets/SCEPmanMDMURL.png)
+![](<../../.gitbook/assets/image (2) (2).png>)
 
 * [ ] Create a profile for **Windows 10 and later** with type **SCEP certificate** in Microsoft Intune
 
@@ -53,8 +53,7 @@ SCEPman uses the CN field of the subject to identify the device and as a seed fo
 
 <!---->
 
-* \{{AAD\_Device\_ID\}}: This ID is generated and used by Azure AD.\
-
+* \{{AAD\_Device\_ID\}}: This ID is generated and used by Azure AD.\\
 
 You can add other RDNs if needed (e.g.: `CN={{DeviceId}}, O=Contoso, CN={{WiFiMacAddress}}`). Supported variables are listed in the [Microsoft docs](https://docs.microsoft.com/en-us/mem/intune/protect/certificates-profile-scep#create-a-scep-certificate-profile).
 
@@ -188,7 +187,7 @@ You can define RDNs based on your needs. Supported variables are listed in the [
 
 <details>
 
-<summary>Subject alternative name:  <code>(UPN)</code>Value:  <code>{{UserPrincipalName}}</code></summary>
+<summary>Subject alternative name: <code>(UPN)</code>Value: <code>{{UserPrincipalName}}</code></summary>
 
 You must add the User principal name as the Subject alternative name. **Add '\{{UserPrincipalName\}}' as Subject Alternative Name of type User principal name (UPN).** This ensures that SCEPman can link certificates to user objects in AAD. The setting for 'Subject name format' is freely selectable.
 
