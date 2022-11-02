@@ -14,7 +14,7 @@ Keep in mind that you need to plan a useful Azure resource design.
 ### Checklist: Prerequisites
 
 * [ ] Azure resource naming convention
-* [ ] Azure subscription
+* [ ] Azure subscription (at least Contributor rights on that subscription)
 * [ ] Azure owner rights (at least on Resource Group level)
 * [ ] Azure AD "Global administrator" (Consent to access Graph API)
 * [ ] Public Domain CNAME (_scepman.yourdomain.com_)

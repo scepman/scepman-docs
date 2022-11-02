@@ -3,6 +3,7 @@
 * [Welcome](README.md)
 * [Details](details.md)
 * [Editions](editions.md)
+* [Use Cases](use-cases.md)
 
 ## SCEPMAN Deployment
 
