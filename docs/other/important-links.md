@@ -1,5 +1,5 @@
 ---
-category: Troubleshooting
+category: Other
 title: Important Links
 order: 2
 ---
