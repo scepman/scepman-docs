@@ -84,37 +84,34 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
 #### Intune
   1. Intune `scep_challenge_provider`: 
 
-    With this permission SCEPman may forward the certificate request to Intune and verify that the certificate 
-    request originates from Intune, where the latter adds an additional layer of security.
+With this permission SCEPman may forward the certificate request to Intune and verify that the certificate request originates from Intune, where the latter adds an additional layer of security.
 
   2. Microsoft Graph `Directory.Read.All`:
 
-    With this permission, SCEPman may consult with AAD in order to check if the user or device certificate is originating from an authorized user or device.
-
-    For details, refer to [SCEPman Docs](https://docs.scepman.com/scepman-configuration/azure-app-registration#azure-app-registration-api-permissions)
+With this permission, SCEPman may consult with AAD in order to check if the user or device certificate is originating from an authorized user or device. For details, refer to [SCEPman Docs](../scepman-configuration/azure-app-registration#azure-app-registration-api-permissions).
 
   3. Micrsoft Graph `DeviceManagementManagedDevices.Read.All` and `DeviceManagementConfiguration.Read.All`:
 
-    With these permissions, SCEPman requests the list of issued certificates via Intune when using the [EndpointList revocation feature](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory).
+With these permissions, SCEPman requests the list of issued certificates via Intune when using the [EndpointList revocation feature](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory).
 
   4. Microsoft Graph `IdentityRiskyUser.Read.All`:
 
-    This permission allows SCEPman to automatically [revoke user certificates if the AAD User Risk exceeds a configured threshold](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck).
+This permission allows SCEPman to automatically [revoke user certificates if the AAD User Risk exceeds a configured threshold](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck).
 
 #### JAMF
 
   1. Read permissions on users, computers and devices
 
-     With these permissions, SCEPman may consult with JAMF in order to check if the user or device certificate is originating from an authorized user or device.
+With these permissions, SCEPman may consult with JAMF in order to check if the user or device certificate is originating from an authorized user or device.
 
 #### Certificate Master
   1. Microsoft Graph `User.Read` (per App Registration):
 
-     With this permission, Certificate Master determines who manually requests or revokes a certificate.
+  With this permission, Certificate Master determines who manually requests or revokes a certificate.
 
   2. Micrsoft Graph `DeviceManagementManagedDevices.Read.All` and `DeviceManagementConfiguration.Read.All` (as Managed Identity):
 
-    With these permissions, Certificate Master requests the list of issued certificates via Intune. Administrators can review and manually revoke these certificates.
+  With these permissions, Certificate Master requests the list of issued certificates via Intune. Administrators can review and manually revoke these certificates.
 
 ### 5. What data is made available by granting the consent(s) from 4.?
 
@@ -143,40 +140,41 @@ While the below consents make data available to SCEPman, SCEPman does not proces
 
   1. SCEP-endpoint(s)
 
-    - Invoked for SCEP-requests 
-    - Based on the configuration, SCEPman may expose several SCEP-endpoints for Intune, JAMF, DCs, generic 3rd-party MDMs 
+  - Invoked for SCEP-requests 
+  - Based on the configuration, SCEPman may expose several SCEP-endpoints for Intune, JAMF, DCs, generic 3rd-party MDMs 
 
   2. OCSP-endpoint
 
-    - Invoked for OCSP-requests
+  - Invoked for OCSP-requests
 
   3. SCEPman homepage
 
-    - Displays SCEPman's basic status information publicly (no secrets)
-    - Read-only
-    - Can be disabled via configuration
+  - Displays SCEPman's basic status information publicly (no secrets)
+  - Read-only
+  - Can be disabled via configuration
 
   4. SCEPman probe-endpoint
 
-    - Health Checks: Integrated App Service Health Check, Traffic Manager probing, Application Gateway probing
+  - Health Checks: Integrated App Service Health Check, Traffic Manager probing, Application Gateway probing
 
   5. Certificate Master web portal
-    - Manually issue server certificates and sign CSRs
-    - Manually revoke certificates issued via the Certificate Master
-    - View list of manually issued certificates
+
+  - Manually issue server certificates and sign CSRs
+  - Manually revoke certificates issued via the Certificate Master
+  - View list of manually issued certificates
 
   6. Certificate Master probe-endpoint
 
-    - Health Checks: Integrated App Service Health Check 
+  - Health Checks: Integrated App Service Health Check 
 
   7. SCEPman API
 
-    - Allows Certificate Master to request certificates from SCEPman's core service.
+  - Allows Certificate Master to request certificates from SCEPman's core service.
 
 ### 7. How are the endpoints from 6. protected?
 
    1. SCEP-endpoint(s)
-     
+
       - Intune: Protected via Intune Challenge API ([Microsoft Docs](https://docs.microsoft.com/en-us/mem/intune/protect/scep-libraries-apis))
 
       - JAMF, DCs, generic 3rd party MDMs: Protected with a static SCEP-challenge. Configurable by the customer. May be stored in Azure Key Vault.
@@ -190,7 +188,7 @@ While the below consents make data available to SCEPman, SCEPman does not proces
       - No protection but can be disabled
 
    4. SCEPman probe-endpoint
-     
+
       - No protection
 
    5. Certificate Master web portal
@@ -314,5 +312,5 @@ No
 
 ### 19. What cloud-providers does SCEPman rely on?
 
-Microsoft Azure
-GitHub (for automatic updates)
+- Microsoft Azure
+- GitHub (for automatic updates)
