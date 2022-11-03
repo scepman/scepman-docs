@@ -49,7 +49,7 @@ logging verbosity settings, the logs may contain any data that SCEPman processes
 
     By default, SCEPman does **not send any personal data** to our PaperTrail account. 
 
-    Depending on the logging settings, debug and other information is forwarded to glueckkanja-gab AG's PaperTrail account. Our support engineers may request to [activate](https://docs.scepman.com/scepman-configuration/optional/application-settings#appconfig-remotedebug) `(AppConfig:RemoteDebug -> true)` the remote debugging feature from the customer admin in support of troubleshooting inquiries. In such cases, information on the certificate request may be sent to our PaperTrail account, possibly (the customer decides what information is part of the certificate) containing personal data such as:
+    Depending on the logging settings, debug and other information is forwarded to glueckkanja-gab AG's PaperTrail account. Our support engineers may request to [activate](../scepman-configuration/optional/application-settings.md#appconfig-remotedebug) `(AppConfig:RemoteDebug -> true)` the remote debugging feature from the customer admin in support of troubleshooting inquiries. In such cases, information on the certificate request may be sent to our PaperTrail account, possibly (the customer decides what information is part of the certificate) containing personal data such as:
 
     - Username
     - Email
@@ -88,15 +88,15 @@ With this permission SCEPman may forward the certificate request to Intune and v
 
   2. Microsoft Graph `Directory.Read.All`:
 
-With this permission, SCEPman may consult with AAD in order to check if the user or device certificate is originating from an authorized user or device. For details, refer to [SCEPman Docs](../scepman-configuration/azure-app-registration#azure-app-registration-api-permissions).
+With this permission, SCEPman may consult with AAD in order to check if the user or device certificate is originating from an authorized user or device. For details, refer to [SCEPman Docs](../scepman-configuration/azure-app-registration.md#azure-app-registration-api-permissions).
 
   3. Micrsoft Graph `DeviceManagementManagedDevices.Read.All` and `DeviceManagementConfiguration.Read.All`:
 
-With these permissions, SCEPman requests the list of issued certificates via Intune when using the [EndpointList revocation feature](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory).
+With these permissions, SCEPman requests the list of issued certificates via Intune when using the [EndpointList revocation feature](../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory).
 
   4. Microsoft Graph `IdentityRiskyUser.Read.All`:
 
-This permission allows SCEPman to automatically [revoke user certificates if the AAD User Risk exceeds a configured threshold](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck).
+This permission allows SCEPman to automatically [revoke user certificates if the AAD User Risk exceeds a configured threshold](../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck).
 
 #### JAMF
 
@@ -120,21 +120,21 @@ While the below consents make data available to SCEPman, SCEPman does not proces
 #### Intune
   1. Intune `scep_challenge_provider`:
 
-    - None
+  - None
 
   2. Microsoft Graph `Directory.Read.All`:  
 
-    - Allows SCEPman to read data in your organization's directory, such as users, groups and apps, without a signed-in user (see [Microsoft Docs](https://docs.microsoft.com/en-us/graph/permissions-reference#directory-permissions)).
+  - Allows SCEPman to read data in your organization's directory, such as users, groups and apps, without a signed-in user (see [Microsoft Docs](https://docs.microsoft.com/en-us/graph/permissions-reference#directory-permissions)).
 
 #### JAMF
   1. Read permissions on users, computers and devices
-  
-    - Allows SCEPman to read data about users and devices managed in JAMF.
+
+  - Allows SCEPman to read data about users and devices managed in JAMF.
 
 #### Certificate Master
   1. Microsoft Graph `User.Read`:
 
-     - Allows Certificate Master to read the basic user profile of the logged-in identity (see [Microsoft Docs](https://docs.microsoft.com/en-us/graph/permissions-reference#user-permissions)).
+  - Allows Certificate Master to read the basic user profile of the logged-in identity (see [Microsoft Docs](https://docs.microsoft.com/en-us/graph/permissions-reference#user-permissions)).
 
 ### 6. Which externally accessible endpoints does SCEPman expose?
 
@@ -209,7 +209,7 @@ While the below consents make data available to SCEPman, SCEPman does not proces
 
   - Administrative access is realized through AAD authentication via the Azure Portal. 
   - Limited read-access may be configured to be publicly available (see [7.](https://dev.azure.com/c4a8/GKGAB%20All/_wiki/wikis/Wiki?wikiVersion=GBwikiMaster&pagePath=%2FProducts%2FSCEPman%2FSecurity%20%26%20Privacy&pageId=1240&_a=edit&anchor=7.-how-are-the-endpoints-from-6.-protected%3F))
-  - Access to the Certificate Master web portal uses AAD authentication and AAD Role Assignments for authorization as [described in the SCEPman documentation](https://docs.scepman.com/scepman-deployment/permissions/post-installation-config#granting-the-rights-to-request-certificates-via-the-certificate-master-website).
+  - Access to the Certificate Master web portal uses AAD authentication and AAD Role Assignments for authorization as [described in the SCEPman documentation](../scepman-configuration/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website).
   - The SCEPman API uses AAD Role Assignments. In the recommended default configuration, only Certificate Master has access to the API.
 
 ### 9. Are there conditional access / role-based access controls in place to protect SCEPman?
@@ -280,7 +280,7 @@ For the keys of issued certificates, Certificate Master has no restrictions when
 
 For SCEP-enrolled certificates, Intune supports only RSA 2048 on most platforms, but some support RSA 4096, which SCEPman also supports. When using the static SCEP endpoint, all common algorithms and key sizes are supported (specifically those which [the Bouncy Castle cryptographic library for C# supports](https://www.bouncycastle.org/csharp/)).
 
-For the CA key, SCEPman supports RSA only. 2048 bit key size is the default, but you can use a larger key size by specifying a larger value for [AppConfig:KeyVaultConfig:RootCertificateConfig:KeySize](../application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-keysize) before generating the Root CA certificate. 4096 bit is currently the maximum supported by Azure Key Vault. If you use an Intermediate CA certificate, you can also use any key size supported by Key Vault, but it must be an RSA key.
+For the CA key, SCEPman supports RSA only. 2048 bit key size is the default, but you can use a larger key size by specifying a larger value for [AppConfig:KeyVaultConfig:RootCertificateConfig:KeySize](../scepman-configuration/optional/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-keysize) before generating the Root CA certificate. 4096 bit is currently the maximum supported by Azure Key Vault. If you use an Intermediate CA certificate, you can also use any key size supported by Key Vault, but it must be an RSA key.
 
 ### 16. Is the CA created by SCEPman unique?
 
