@@ -208,7 +208,7 @@ While the below consents make data available to SCEPman, SCEPman does not proces
 ### 8. What authorization schemes are used to gain access to SCEPman? 
 
   - Administrative access is realized through AAD authentication via the Azure Portal. 
-  - Limited read-access may be configured to be publicly available (see [7.](https://dev.azure.com/c4a8/GKGAB%20All/_wiki/wikis/Wiki?wikiVersion=GBwikiMaster&pagePath=%2FProducts%2FSCEPman%2FSecurity%20%26%20Privacy&pageId=1240&_a=edit&anchor=7.-how-are-the-endpoints-from-6.-protected%3F))
+  - Limited read-access may be configured to be publicly available (see [7.](#7-how-are-the-endpoints-from-6-protected))
   - Access to the Certificate Master web portal uses AAD authentication and AAD Role Assignments for authorization as [described in the SCEPman documentation](../scepman-configuration/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website).
   - The SCEPman API uses AAD Role Assignments. In the recommended default configuration, only Certificate Master has access to the API.
 
@@ -257,6 +257,8 @@ While the below consents make data available to SCEPman, SCEPman does not proces
 ## Security by design
 
 ### 13. Does SCEPman employ a defense in depth strategy?
+
+#### Azure Components
 
 SCEPman's design philosophy follows the approach to minimize its exposure to external security threats by reducing external interfaces to the required minimum. Besides this, the following technologies are used to recognize and mitigate internal and external threats on different layers:
 
