@@ -269,6 +269,16 @@ SCEPman's design philosophy follows the approach to minimize its exposure to ext
 
 Since SCEPman founds on Azure components, you may use Microsoft Defender for Cloud tools like for MD for App Service, MD for Storage, or MD for Key Vault.
 
+#### Certificate Validity
+
+As a cloud PKI, SCEPman is responsible for the issuance and revocation of digital certificates. These certificates in conjunction with their private keys authenticate devices or users and grant access to other resources. Hence, the security of certificate issuance and revocation processes is a very important design goal. A high level of security requires a high level of user convenience, too, because complicated and intransparent processes have a larger attack surface and higher potential for human error. Although SCEPman offers many configuration options if needed, we strived to use reasonable and secure defaults wherever possible.
+
+Thus, if a private key is compromised, SCEPman can revoke the corresponding certificate in real-time. For certificates enrolled via Intune and Jamf, SCEPman does this automatically as soon as common countermeasures not specific to SCEPman are taken against the attack. You just have to [delete the corresponding Intune](../architecture/device-directories.md) or Jamf object.
+
+Depending on your device retirement processes, you can additionally configure to [revoke certificates when a wipe is triggered](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationrevokecertificatesonwipe), when [Intune requests revocation](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationdevicedirectory), depending on [device compliance](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationcompliancecheck) or [user risk level](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationuserriskcheck) or you can manually revoke single certificates via the Certificate Master component.
+
+[Manually created certificates](../certificate-deployment/certificate-master) always require a manual revocation.
+
 ### 14. What technologies, stacks, platforms were used to design SCEPman?
 
  - `C#`
