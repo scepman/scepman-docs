@@ -13,6 +13,19 @@ Certificates issued by SCEPman are widely used for the purpose of certificate-ba
 * Fortinet FortiGate
 * Palo Alto GlobalProtect
 
+## Certificate-based Authentication
+
+You can enroll user authentication certificates with SCEPman for TLS client authentication. This allows authentication to web sites or services such as
+
+* Internal web applications
+* Microsoft 365
+  * Exchange Online
+  * Azure Active Directory (AAD)
+* Other cloud services
+* Remote Desktop connections
+  * AVD
+  * Windows server administration
+
 ## MDM Solutions
 
 To automate the deployment of relevant configuration profiles and to keep certificates up to date (auto-renewal), we recommend to use SCEPman along with an MDM solution. While SCEPman natively integrates with Microsoft Endpoint Manager/Intune and Jamf Pro, our customers have successfully deployed SCEPman along with other MDM solutions.&#x20;
