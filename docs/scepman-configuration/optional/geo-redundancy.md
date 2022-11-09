@@ -89,13 +89,20 @@ Follow the steps below to create and configure the Traffic Manager and balance t
 
 ![](../../.gitbook/assets/ReplaceTrafficManagerSS.png)
 
-1. Save changes.
-2. Then under **Settings** choose **Endpoints**
-3. Click **Add** and choose the primary App Service.
+4. Save changes.
+
+#### First Endpoint
+
+1. Then under **Settings** choose **Endpoints**
+2. Click **Add** and choose the primary App Service.
 
 ![](../../../.gitbook/assets/scepman\_trafficmanager3.png)
 
+#### Second Endpoint
+
 Repeat these steps for your second App Service.
+
+#### DNS Configuration
 
 In the **Overview** your Traffic Manager should like this (here you find the Traffic Manager URL):
 
