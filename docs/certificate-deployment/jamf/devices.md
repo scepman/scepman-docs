@@ -6,7 +6,7 @@ Please follow this guide to distribute certificates to devices (e.g.: iOS, iPadO
 
 As first step you need to deploy SCEPman root certificate. Download this CA certificate via SCEPman dashboard:
 
-![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (2).png>)
+![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3).png>)
 
 Add a new "Mobile Device Configuration Profile" and choose "Certificate" as payload. Enter a meaningful name and upload the certificate (for "Select Certificate Option" select "Upload):
 
