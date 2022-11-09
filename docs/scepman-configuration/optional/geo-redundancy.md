@@ -125,6 +125,6 @@ After successful deployment and configuration of the Traffic Manager profile, yo
 * The custom domains of both instances of SCEPman have to be **the same**.
 * The custom domains have to be equal to the custom domain mapped to the Traffic Manager endpoint from above.
 
-## Storage Account Geo-Redundancy
+### Storage Account Geo-Redundancy
 
 The Storage Account used for SCEPman should also be configured for redundancy. The default SCEPman setup uses Locally Redundant Storage (LRS), which uses only a single region. For example, configure Geo-redundant storage (GRS).
