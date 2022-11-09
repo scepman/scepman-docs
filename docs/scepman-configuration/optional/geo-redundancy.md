@@ -112,7 +112,7 @@ In the **Overview** your Traffic Manager should like this (here you find the Tra
 * Under **Custom Domains**, repeat the SSL certificate binding process as described [here](https://docs.scepman.com/scepman-configuration/optional/custom-domain#SSL-Binding)
 * Both instances of SCEPman must have the same custom domain
 * Navigate to your DNS management service (e.g. **Azure DNS Zones**)
-* There shall be a CNAME entry for the custom SCEPman domain that maps to the Traffic Manager endpoint. This entry may exist already if you are using Azure DNS and Traffic Manager created the entry for you. If it does not exist, remove any possibly existing wrong CNAME entry and add a CNAME that maps the custom SCEPman domain to the Traffic Manager endpoint now.
+* There shall be a CNAME entry for the custom SCEPman domain that maps to the Traffic Manager endpoint. Remove any possibly existing wrong CNAME entry pointing to one of the Azure App Service instances and add a CNAME that maps the custom SCEPman domain to the Traffic Manager endpoint now, e.g. your entry scepman.customer.com should point to something like scepman-tf-profile.trafficmanager.net
 
 {% hint style="info" %}
 In **Azure DNS Zone**, in order to modify a record, you first have to remove the DNS lock by navigating to **Locks**.
@@ -124,3 +124,7 @@ After successful deployment and configuration of the Traffic Manager profile, yo
 
 * The custom domains of both instances of SCEPman have to be **the same**.
 * The custom domains have to be equal to the custom domain mapped to the Traffic Manager endpoint from above.
+
+## Storage Account Geo-Redundancy
+
+The Storage Account used for SCEPman should also be configured for redundancy. The default SCEPman setup uses Locally Redundant Storage (LRS), which uses only a single region. For example, configure Geo-redundant storage (GRS).
