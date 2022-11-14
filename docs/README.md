@@ -5,9 +5,9 @@ description: SCEPman - Certificates Simplified
 # Welcome
 
 {% hint style="warning" %}
-[Intune service discovery API endpoint will require specific permissions starting January 1st 2023](https://aka.ms/mem-servicediscovery-api-blog).&#x20;
+Intune service discovery API endpoint will require specific permissions starting January 1st 2023. You can find more details on this on the [Microsoft site](https://aka.ms/mem-servicediscovery-api-blog).
 
-SCEPman instances running versions prior to version 2.0 may have issues with this change.&#x20;
+**SCEPman instances running versions prior to version 2.0 may have issues with this change.**&#x20;
 
 Please ensure that you are using the [latest version of SCEPman](scepman-configuration/optional/update-strategy.md).
 {% endhint %}
