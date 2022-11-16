@@ -4,6 +4,8 @@
 
 We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](application-settings/basics.md#website\_run\_from\_package) setting of your SCEPman App Service.
 
+There are two independent artifact hosts, GitHub and Azure (install.scepman.com). If one of the two should fail, you can switch to the other. Thus, there are two download URLs for each channel. Detecting the used channel when using install.scepman.com requires SCEPman 2.3, but apart from that also works with SCEPman 2.2.
+
 ### Production
 
 * full released version
@@ -12,6 +14,9 @@ We offer three channels for our SCEPman web applications, you can find the actua
 
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts.zip
+```
+```
+https://install.scepman.com/dist/Artifacts.zip
 ```
 
 ### Beta
@@ -23,6 +28,9 @@ https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts.zip
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Beta.zip
 ```
+```
+https://install.scepman.com/dist/Artifacts-Beta.zip
+```
 
 ### Internal
 
@@ -32,6 +40,9 @@ https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Beta.zip
 
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Intern.zip
+```
+```
+https://install.scepman.com/dist/Artifacts-Intern.zip
 ```
 
 ## Available Certificate Master Channels
@@ -43,11 +54,17 @@ We offer three channels for our SCEPman web applications, you can find the actua
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts.zip
 ```
+```
+https://install.scepman.com/dist-certmaster/CertMaster-Artifacts.zip
+```
 
 ### Beta
 
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts-Beta.zip
+```
+```
+https://install.scepman.com/dist-certmaster/CertMaster-Artifacts-Beta.zip
 ```
 
 ### Internal
@@ -55,10 +72,13 @@ https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMas
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts-Intern.zip
 ```
+```
+https://install.scepman.com/dist-certmaster/CertMaster-Artifacts-Intern.zip
+```
 
 ## Custom Artifact location
 
-To have full control over the update process and what artifacts are loaded by your App Service you can deploy your own Azure Storage Account. If this is not required, skip this section.
+To have full control over the update process and what artifacts are loaded by your App Service you can deploy your own Azure Storage Account. We recommend to use one of the update channels, so if this is not required, skip this section.
 
 Follow these instructions to create a storage account:
 
