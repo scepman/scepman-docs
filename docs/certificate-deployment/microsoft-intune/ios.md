@@ -8,7 +8,7 @@ The basis for deploying SCEP certificates is to trust the public root certificat
 
 * [ ] Download the CA Certificate from SCEPman portal:
 
-![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (6).png>)
 
 * [ ] Create a profile for iOS/iPadOS with type **Trusted certificate** in Microsoft Intune:
 
@@ -125,7 +125,7 @@ This value defines when the device is allowed to renew its certificate (based on
 
 <details>
 
-<summary>SCEP Server URLs: Open the SCEPman portal and copy the URL of <a href="ios.md#device-certificates"><strong>Intune MDM</strong></a><strong></strong></summary>
+<summary>SCEP Server URLs: Open the SCEPman portal and copy the URL of <a href="ios.md#device-certificates"><strong>Intune MDM</strong></a></summary>
 
 **Example**
 

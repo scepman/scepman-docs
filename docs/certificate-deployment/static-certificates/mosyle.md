@@ -4,7 +4,7 @@
 This feature requires version 1.6 or above.
 {% endhint %}
 
-SCEPman can be connected to Mosyle as External CA. Via SCEPman's static interface and a challenge password enrolled devices will be able to obtain certificates.&#x20;
+SCEPman can be connected to Mosyle as External CA. Via SCEPman's static interface and a challenge password enrolled devices will be able to obtain certificates.
 
 For more general information about 3rd-party MDM solutions and SCEPman integration please check [here](./).
 
@@ -12,14 +12,14 @@ For more general information about 3rd-party MDM solutions and SCEPman integrati
 
 Mosyle integration of SCEPman can be easily enabled via the following app configurations:
 
-|                                                                                                                                      Setting                                                                                                                                      |                                        Description                                        |                      Value                      |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: | :---------------------------------------------: |
-|                                                        ****[**AppConfig:StaticValidation:Enabled**](../../scepman-configuration/optional/application-settings/static-validation.md#appconfig-staticvalidation-enabled)****                                                        |                             To enable the 3rd-party validation                            | _**true** _ to enable, _ **false** _ to disable |
-|                                                ****[**AppConfig:StaticValidation:RequestPassword**](../../scepman-configuration/optional/application-settings/static-validation.md#appconfig-staticvalidation-requestpassword)****                                                | Mosyle authenticates its certificate requests at SCEPman with this secure static password |        _generate a 32 character password_       |
-| <p><strong></strong><a href="../../scepman-configuration/optional/application-settings/static-validation.md#appconfig-staticvalidation-validityperioddays"><strong>AppConfig:StaticValidation:ValidityPeriodDays</strong></a><strong></strong><br><strong>(optional)</strong></p> |                How many days shall certificates issued via Mosyle be valid                |                       365                       |
+|                                                                                                                     Setting                                                                                                                     |                                        Description                                        |                        Value                        |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: | :-------------------------------------------------: |
+|                                           [**AppConfig:StaticValidation:Enabled**](../../scepman-configuration/optional/application-settings/static-validation.md#appconfig-staticvalidation-enabled)                                           |                             To enable the 3rd-party validation                            | \_**true** \_ to enable, \_ **false** \_ to disable |
+|                                   [**AppConfig:StaticValidation:RequestPassword**](../../scepman-configuration/optional/application-settings/static-validation.md#appconfig-staticvalidation-requestpassword)                                   | Mosyle authenticates its certificate requests at SCEPman with this secure static password |          _generate a 32 character password_         |
+| <p><a href="../../scepman-configuration/optional/application-settings/static-validation.md#appconfig-staticvalidation-validityperioddays"><strong>AppConfig:StaticValidation:ValidityPeriodDays</strong></a><br><strong>(optional)</strong></p> |                How many days shall certificates issued via Mosyle be valid                |                         365                         |
 
 {% hint style="info" %}
-After adding or editing SCEPman configuration, you need to restart the app service.&#x20;
+After adding or editing SCEPman configuration, you need to restart the app service.
 {% endhint %}
 
 ## Mosyle Configuration
@@ -28,7 +28,7 @@ After adding or editing SCEPman configuration, you need to restart the app servi
 
 As first step you need to deploy SCEPman root certificate. Download this CA certificate via SCEPman dashboard:
 
-![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (4).png>)
+![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (8).png>)
 
 In Mosyle, navigate to Management and add "**Multi-Cert Profile**" as a new profile type (if it does not already exist).
 
@@ -70,7 +70,7 @@ Add a new profile, add profile name e.g. SCEPman Device Certificate, **+ADD PROF
 
 **Key Size:** 2048
 
-Enable the two options "**Use for signing**" and "**Use for encryption**", and leave all other settings as default (like shown on the screenshot) then **Save**&#x20;
+Enable the two options "**Use for signing**" and "**Use for encryption**", and leave all other settings as default (like shown on the screenshot) then **Save**
 
 Now you need to assign this profile to your devices/users, then **Save**.
 

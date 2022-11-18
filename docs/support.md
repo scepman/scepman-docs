@@ -32,6 +32,6 @@ Our engineers are happy to support you in these languages:
 
 ## Support response time
 
-Typical < 4 hours
+Typical < 4 hours for incidents
 
 Response time is defined as the duration between the report of the incident and the start of incident or problem handling through one of our support engineers. The response time is to be calculated within the support hours.
