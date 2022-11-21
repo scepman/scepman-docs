@@ -73,46 +73,51 @@ $AuthHeader = @{Authorization = $TokenResponse.token_type + " " + $TokenResponse
 
 $CertBody = @"
 {
-    "policy": {
-      "key_props": {
-        "exportable": true,
-        "kty": "RSA",
-        "key_size": 2048,
-        "reuse_key": false
-      },
-      "secret_props": {
-        "contentType": "application/x-pkcs12"
-      },
-      "x509_props": {
-        "subject": "O=$($config.CompanyName), OU=$($config.TenantID), CN=$($config.NewCertName)",
-        "ekus": [],
-          "key_usage": [
-                  "cRLSign",
-                  "digitalSignature",
-                  "keyCertSign",
-                  "keyEncipherment"
-              ],
-              "validity_months": 120,
-              "basic_constraints": {
-                  "ca": true
-              }
-      },
-      "lifetime_actions": [
-              {
-                  "trigger": {
-                      "lifetime_percentage": 80
-                  },
-                  "action": {
-                      "action_type": "EmailContacts"
-                  }
-              }
-          ],
-      "issuer": {
-              "name": "Unknown",
-              "cert_transparency": false
-          }
+  "policy": {
+    "key_props": {
+      "exportable": true,
+      "kty": "RSA",
+      "key_size": 2048,
+      "reuse_key": false
+    },
+    "secret_props": {
+      "contentType": "application/x-pkcs12"
+    },
+    "x509_props": {
+      "subject": "O=$($config.CompanyName), OU=$($config.TenantID), CN=$($config.NewCertName)",
+      "ekus": [
+        "2.5.29.37.0",
+        "1.3.6.1.5.5.7.3.2",
+        "1.3.6.1.5.5.7.3.1",
+        "1.3.6.1.5.5.7.3.9"
+      ],
+      "key_usage": [
+        "cRLSign",
+        "digitalSignature",
+        "keyCertSign",
+        "keyEncipherment"
+      ],
+      "validity_months": 120,
+      "basic_constraints": {
+          "ca": true
+      }
+    },
+    "lifetime_actions": [
+      {
+        "trigger": {
+          "lifetime_percentage": 80
+        },
+        "action": {
+          "action_type": "EmailContacts"
+        }
+      }
+    ],
+    "issuer": {
+      "name": "Unknown",
+      "cert_transparency": false
     }
   }
+}
 "@
 
 # https://docs.microsoft.com/en-us/rest/api/keyvault/create-certificate/create-certificate#uri-parameters
