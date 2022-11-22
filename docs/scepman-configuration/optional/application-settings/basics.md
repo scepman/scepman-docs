@@ -1,5 +1,12 @@
 # Basics
 
+## AppConfig:AnonymousHomePageAccess
+
+**Value:** _true_ or _false_
+
+**Description:**\
+When not configured or set to **true**, anyone on the internet knowing the app service's URL can access the SCEPman Homepage and see status information like the SCEPman version and whether SCEPman is up and running (except if you prevent this with a firewall). We consider this non-sensitive information, but if you want to hide it, set this to **false**. Then, the homepage is deactivated for browser access and this information is not visible anymore.
+
 ## AppConfig:BaseUrl
 
 **Value:** _App Service Name_ or [https://customcname.domain.com](https://customcname.domain.com)
@@ -30,9 +37,3 @@ Do not forget to restart SCEPman App Service after enabling and saving the setti
 This setting points to the Application Artifacts that will be loaded by starting the App Service.\
 Please have a look at these instructions: [Application Artifacts](../application-artifacts.md#change-artifacts).
 
-## AppConfig:AnonymousHomePageAccess
-
-**Value:** _true_ or _false_
-
-**Description:**\
-When not configured or set to **true**, anyone on the internet knowing the app service's URL can access the SCEPman Homepage and see status information like the SCEPman version and whether SCEPman is up and running (except if you prevent this with a firewall). We consider this non-sensitive information, but if you want to hide it, set this to **false**. Then, the homepage is deactivated for browser access and this information is not visible anymore.
