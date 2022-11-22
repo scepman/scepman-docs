@@ -6,6 +6,20 @@ Applicable to version 2.0 and above
 SCEPman Enterprise Edition only
 {% endhint %}
 
+## AppConfig:AzureStorage:TableStorageEndpoint
+
+This defines which Table Storage Endpoint to use for checking manual certificate revocations. If you remove this setting, SCEPman will not use the database for revocation checks.
+
+{% hint style="danger" %}
+Changes can harm your service!
+{% endhint %}
+
+## AppConfig:CertMaster:URL
+
+**Value:** The URL of your SCEPman Certificate Master App Service
+
+**Description:** Your Certificate Master service is linked to on the SCEPman Homepage using the URL configured here. The SCEPman PowerShell module also uses this value during updates or re-configurations to link together SCEPman and its corresponding Certificate Master instance.
+
 ## AppConfig:DirectCSRValidation:Enabled
 
 **Value:** _true_ or _false_
