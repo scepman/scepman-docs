@@ -1,4 +1,4 @@
-# CSR Validation
+# Certificate Master Connection
 
 {% hint style="info" %}
 Applicable to version 2.0 and above
