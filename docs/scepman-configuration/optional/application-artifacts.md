@@ -15,6 +15,7 @@ There are two independent artifact hosts, GitHub and Azure (install.scepman.com)
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts.zip
 ```
+
 ```
 https://install.scepman.com/dist/Artifacts.zip
 ```
@@ -28,6 +29,7 @@ https://install.scepman.com/dist/Artifacts.zip
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Beta.zip
 ```
+
 ```
 https://install.scepman.com/dist/Artifacts-Beta.zip
 ```
@@ -41,6 +43,7 @@ https://install.scepman.com/dist/Artifacts-Beta.zip
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Intern.zip
 ```
+
 ```
 https://install.scepman.com/dist/Artifacts-Intern.zip
 ```
@@ -54,6 +57,7 @@ We offer three channels for our SCEPman web applications, you can find the actua
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts.zip
 ```
+
 ```
 https://install.scepman.com/dist-certmaster/CertMaster-Artifacts.zip
 ```
@@ -63,6 +67,7 @@ https://install.scepman.com/dist-certmaster/CertMaster-Artifacts.zip
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts-Beta.zip
 ```
+
 ```
 https://install.scepman.com/dist-certmaster/CertMaster-Artifacts-Beta.zip
 ```
@@ -72,6 +77,7 @@ https://install.scepman.com/dist-certmaster/CertMaster-Artifacts-Beta.zip
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts-Intern.zip
 ```
+
 ```
 https://install.scepman.com/dist-certmaster/CertMaster-Artifacts-Intern.zip
 ```
@@ -121,10 +127,10 @@ To configure this, do the following:
 4. Then, click **Configuration** (submenu **Settings**)
 5. Locate the parameter **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
 
-![](<../../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (3).png>)
+![](<../../../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (5).png>)
 
 6\. Then replace the URL in \*\*Value\*\* with the [SCEPman GitHub URL](application-artifacts.md#available-scepman-channels) (Evergreen Approach) or your Storage account blob URL you already copied:
 
-![](<../../.gitbook/assets/2021-10-08 16\_40\_54-Scepman02testServiceName - Microsoft Azure and 10 more pages - C4A8 EHamed - Mic.png>)
+![](../../.gitbook/assets/2021-10-08-16\_40\_54-scepman02testservicename-microsoft-azure-and-10-more-pages-c4a8-ehamed-mic.png)
 
 7\. Repeat the steps 1. - 6. for the Certificate Master AppService, which provides the same **WEBSITE\_RUN\_FROM\_PACKAGE** parameter under **Configuration**. Remember to provide the [CertMaster GitHub URL](application-artifacts.md#available-certificate-master-channels) in case you are following our Evergreen Approach.

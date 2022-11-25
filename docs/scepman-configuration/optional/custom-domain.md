@@ -4,8 +4,8 @@
 
 If you want to create your own custom domain for your **App Service** URL, follow these steps:
 
-1. Choose your **App Service,** on the left select **Custom domain**.&#x20;
-2. Click **Add custom domain.**&#x20;
+1. Choose your **App Service,** on the left select **Custom domain**.
+2. Click **Add custom domain.**
 3. Enter your custom domain and click **Validate**
 4. If the domain is on your Azure, **CNAME** and **TXT** records will be generated automatically, otherwise, if the domain is not running on Azure DNS you need to add them manually (see [here](custom-domain.md#add-cname-and-txt-manually-to-the-dns)).
 
@@ -40,7 +40,7 @@ To use it for HTTPS
 3. Then click **Application Settings** and edit the setting **AppConfig:BaseUrl**
 4. Enter your custom domain and click **OK**.
 
-![](../../../.gitbook/assets/scepman\_cname4\_1.png)
+![](<../../../.gitbook/assets/scepman\_cname4\_1 (1).png>)
 
 1. Finally click **Save**.
 
