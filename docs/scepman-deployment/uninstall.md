@@ -1,4 +1,4 @@
-# Uninstall SCEPman
+# SCEPman Deinstallation
 
 How you uninstall SCEPman depends on whether there is only one SCEPman instance in your tenant and whether the SCEPman instance has been used productively or not, e.g., as a PoC. If productive certificates were enrolled, you must plan whether you want to softly fade out of this SCEPman instance's usage, and keep some parts of SCEPman running for some time, or whether you want to shut down hard.
 
@@ -29,6 +29,10 @@ SCEPman configures [soft-delete](https://learn.microsoft.com/en-us/azure/key-vau
 Deleting the Storage Account results in information about manually created SCEPman Certificate Master certificates being lost, especially revocation information. Since deleting you SCEPman instances invalidates all issued certificates due to the failing OCSP responses anyway, this might not be an issue.
 
 Your Storage Account might also [contain SCEPman's log files](../scepman-configuration/optional/log-configuration.md#app-service-logs-recommended-settings). If you want to keep them, either keep the Storage Account and only delete the other Azure Resources or copy the log files to another location before deleting the Storage Account.
+
+## Custom Domain
+
+You may have registered a custom domain for SCEPman like scepman.contoso.de. Remove this entry from DNS to make it clear that it is not required for any service anymore.
 
 ## App Registrations
 
