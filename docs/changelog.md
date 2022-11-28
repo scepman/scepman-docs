@@ -13,7 +13,7 @@
 * [Additional static SCEP endpoint with AAD-bound certificates](scepman-configuration/optional/application-settings/staticaad-validation.md)
 * Library updates
 
-#### SCEPman Certificate Master 2.2.251
+#### SCEPman Certificate Master 2.2.282
 
 * UI improvements
 * Additional certificate file formats for Certificate Master
