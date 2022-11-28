@@ -18,7 +18,7 @@
   * [Marketplace deployment](scepman-configuration/deployment-options/marketplace-deployment.md)
   * [Enterprise deployment](scepman-configuration/deployment-options/enterprise-deployment.md)
 * [Root Certificate](scepman-configuration/first-run-root-cert.md)
-* [Uninstall SCEPman](scepman-deployment/uninstall.md)
+* [Deinstallation](scepman-deployment/uninstall.md)
 
 ## Architecture
 
