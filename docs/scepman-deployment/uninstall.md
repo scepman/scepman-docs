@@ -22,7 +22,14 @@ Note that [Intune will remove the enrolled certificates from the client as soon 
 
 In many cases, there is a single dedicated Azure Resource Group for all SCEPman-related resources. Thus, you can just delete the whole Resource Group to get rid of all SCEPman resources. In case of a [geo-redundant SCEPman installation](../scepman-configuration/optional/geo-redundancy.md), there might be additional resource groups for the extra App Services and App Services plans. In this case, you also have a Traffic Manager somewhere.
 
-In order to delete the resource groups, it might be necessary to remove Delete Locks from the Azure Key Vault and/or Storage Account.
+In order to delete the resource groups, it might be necessary to remove Delete Locks from the Azure Key Vault and/or Storage Account. There are cases where deleting the whole resource group does not work because of the inter-resource dependencies. In this case, we recommend to delete the resources individually in the following order:
+
+1. App Insights
+2. App Services
+3. Storage Accounts
+4. Key Vault
+5. App Service Plan
+6. the Resource Group itself
 
 SCEPman configures [soft-delete](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview) and Purge Protection for 90 days by default for its Azure Key Vault. Thus, even if you delete the whole Resource Group, the CA key SCEPman used will be recoverable for the configured time frame. Afterwards, the CA key is gone and you cannot recover it. This means that there is no way to restore this SCEPman instance and since there is no instance to create valid OCSP responses, all issued certificates are invariably considered invalid.
 
