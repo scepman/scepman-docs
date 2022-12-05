@@ -81,7 +81,7 @@ Follow the steps below to create and configure the Traffic Manager and balance t
 1. Search **Traffic Manager profile** and click **Create**.
 2. Fill in the fields.
 
-![](<../../../.gitbook/assets/scepman\_trafficmanager1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (6) (7) (5) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (7).png>)
+![](<../../../.gitbook/assets/scepman\_trafficmanager1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (6) (7) (5) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (1) (6).png>)
 
 1. Then click **Create**.
 2. After your Traffic Manager is deployed, go to it and click **Configuration** under settings.
@@ -96,7 +96,7 @@ Follow the steps below to create and configure the Traffic Manager and balance t
 1. Then under **Settings** choose **Endpoints**
 2. Click **Add** and choose the primary App Service.
 
-![](../../../.gitbook/assets/scepman\_trafficmanager3.png)
+![](<../../../.gitbook/assets/scepman\_trafficmanager3 (1).png>)
 
 #### Second Endpoint
 
@@ -106,7 +106,7 @@ Repeat these steps for your second App Service.
 
 In the **Overview** your Traffic Manager should like this (here you find the Traffic Manager URL):
 
-![](<../../../.gitbook/assets/scepman\_trafficmanager4 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (7).png>)
+![](<../../../.gitbook/assets/scepman\_trafficmanager4 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (1) (8).png>)
 
 * Navigate to your **App Service** for the cloned SCEPman instance
 * Under **Custom Domains**, repeat the SSL certificate binding process as described [here](https://docs.scepman.com/scepman-configuration/optional/custom-domain#SSL-Binding)
@@ -129,4 +129,4 @@ After successful deployment and configuration of the Traffic Manager profile, yo
 
 The Storage Account used for SCEPman should also be configured for redundancy. The default SCEPman setup uses Locally Redundant Storage (LRS), which uses only a single region. For example, configure Geo-redundant storage (GRS).
 
-<figure><img src="../../.gitbook/assets/storage-account-redundancy (1).png" alt=""><figcaption><p>Redundancy dialog in the Azure Portal</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/storage-account-redundancy.png" alt=""><figcaption><p>Redundancy dialog in the Azure Portal</p></figcaption></figure>
