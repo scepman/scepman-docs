@@ -36,7 +36,7 @@
   * [Computers](certificate-deployment/jamf/computers.md)
   * [Devices](certificate-deployment/jamf/devices.md)
   * [Users](certificate-deployment/jamf/users.md)
-* [🆕 Certificate Master](certificate-deployment/certificate-master/README.md)
+* [Certificate Master](certificate-deployment/certificate-master/README.md)
   * [Certificate Signing Request (CSR)](certificate-deployment/certificate-master/certificate-signing-request-csr.md)
   * [TLS Server Certificate PKCS#12](certificate-deployment/certificate-master/tls-server-certificate-pkcs-12.md)
   * [Manual Client Certificate PKCS#12](certificate-deployment/certificate-master/client-certificate-pkcs-12.md)
@@ -78,13 +78,15 @@
 
 ## Other
 
+* [FAQs](other/faqs/README.md)
+  * [Security & Privacy](other/faqs/security-faq.md)
+  * [Certificate Connector](other/faqs/certificate-connector.md)
 * [Troubleshooting](other/troubleshooting/README.md)
   * [Common Problems](other/troubleshooting/general.md)
   * [Certifried Security Vulnerability](other/troubleshooting/certifried.md)
   * [Cisco ISE Host Header Limitation](other/troubleshooting/cisco-ise-host-header-limitation.md)
   * [Re-enrollment trigger](other/troubleshooting/re-enrollment-trigger.md)
   * [View SCEPman issued certificates](other/troubleshooting/view-scepman-issued-certificates.md)
-* [Security & Privacy FAQ](other/security-faq.md)
 * [Important Links](other/important-links.md)
 
 ***

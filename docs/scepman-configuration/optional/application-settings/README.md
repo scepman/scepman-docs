@@ -12,7 +12,7 @@ On your **App Service** navigate to **Configuration** and then you find this und
 
 We recommend defining settings in the App Service Configuration except for passwords.
 
-![](<../../../../.gitbook/assets/2021-08-02-10\_14\_03-posteingang-eyad.hamed-glueckkanja-gab.com-outlook (1) (1) (1) (1) (2) (2).png>)
+![](<../../../../.gitbook/assets/2021-08-02-10\_14\_03-posteingang-eyad.hamed-glueckkanja-gab.com-outlook (1) (1) (1) (1) (1) (1) (2).png>)
 
 ## Secure Configuration in Azure Key Vault
 
@@ -57,7 +57,7 @@ We recommend using this type of configuration only for sensitive information.
 {% endcontent-ref %}
 
 {% content-ref url="csr-validation.md" %}
-[Certificate Master Connection](csr-validation.md)
+[csr-validation.md](csr-validation.md)
 {% endcontent-ref %}
 
 {% content-ref url="azure-ad.md" %}

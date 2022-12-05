@@ -1,4 +1,4 @@
-# 🆕 Certificate Master
+# Certificate Master
 
 {% hint style="warning" %}
 SCEPman Enterprise Edition only

@@ -4,7 +4,7 @@ title: Security FAQ
 order: 2
 ---
 
-# Security & Privacy FAQ
+# Security & Privacy
 
 This chapter shall provide a brief overview of the data that SCEPman is processing and how this data is protected against unauthorized access. It applies to SCEPman 2.2.
 
@@ -46,7 +46,7 @@ SCEPman's core services are provided by a stateless web application that does no
 
     By default, SCEPman does **not send any personal data** to our PaperTrail account.
 
-    Depending on the logging settings, debug and other information is forwarded to glueckkanja-gab AG's PaperTrail account. Our support engineers may request to [activate](../scepman-configuration/optional/application-settings.md#appconfig-remotedebug) `(AppConfig:RemoteDebug -> true)` the remote debugging feature from the customer admin in support of troubleshooting inquiries. In such cases, information on the certificate request may be sent to our PaperTrail account, possibly (the customer decides what information is part of the certificate) containing personal data such as:
+    Depending on the logging settings, debug and other information is forwarded to glueckkanja-gab AG's PaperTrail account. Our support engineers may request to [activate](../../scepman-configuration/optional/application-settings.md#appconfig-remotedebug) `(AppConfig:RemoteDebug -> true)` the remote debugging feature from the customer admin in support of troubleshooting inquiries. In such cases, information on the certificate request may be sent to our PaperTrail account, possibly (the customer decides what information is part of the certificate) containing personal data such as:
 
     * Username
     * Email
@@ -83,19 +83,16 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
 
 1. Intune `scep_challenge_provider`:\
    \
-   With this permission SCEPman may forward the certificate request to Intune and verify that the certificate request originates from Intune, where the latter adds an additional layer of security.\
-
+   With this permission SCEPman may forward the certificate request to Intune and verify that the certificate request originates from Intune, where the latter adds an additional layer of security.\\
 2. Microsoft Graph `Directory.Read.All`:\
    \
-   With this permission, SCEPman may consult with AAD in order to check if the user or device certificate is originating from an authorized user or device. For details, refer to [SCEPman Docs](../scepman-configuration/azure-app-registration.md#azure-app-registration-api-permissions).\
-
+   With this permission, SCEPman may consult with AAD in order to check if the user or device certificate is originating from an authorized user or device. For details, refer to [SCEPman Docs](../../scepman-configuration/azure-app-registration.md#azure-app-registration-api-permissions).\\
 3. Microsoft Graph `DeviceManagementManagedDevices.Read.All` and `DeviceManagementConfiguration.Read.All`:\
    \
-   With these permissions, SCEPman requests the list of issued certificates via Intune when using the [EndpointList revocation feature](../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory).\
-
+   With these permissions, SCEPman requests the list of issued certificates via Intune when using the [EndpointList revocation feature](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory).\\
 4. Microsoft Graph `IdentityRiskyUser.Read.All`:\
    \
-   This permission allows SCEPman to automatically [revoke user certificates if the AAD User Risk exceeds a configured threshold](../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck).
+   This permission allows SCEPman to automatically [revoke user certificates if the AAD User Risk exceeds a configured threshold](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck).
 
 #### JAMF
 
@@ -107,8 +104,7 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
 
 1. Microsoft Graph `User.Read` (per App Registration):\
    \
-   With this permission, Certificate Master determines who manually requests or revokes a certificate.\
-
+   With this permission, Certificate Master determines who manually requests or revokes a certificate.\\
 2. Micrsoft Graph `DeviceManagementManagedDevices.Read.All` and `DeviceManagementConfiguration.Read.All` (as Managed Identity):\
    \
    With these permissions, Certificate Master requests the list of issued certificates via Intune. Administrators can review and manually revoke these certificates.
@@ -180,7 +176,7 @@ While the below consents make data available to SCEPman, SCEPman does not proces
 
 * Administrative access is realized through AAD authentication via the Azure Portal.
 * Limited read-access may be configured to be publicly available (see [7.](security-faq.md#7-how-are-the-endpoints-from-6-protected))
-* Access to the Certificate Master web portal uses AAD authentication and AAD Role Assignments for authorization as [described in the SCEPman documentation](../scepman-configuration/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website).
+* Access to the Certificate Master web portal uses AAD authentication and AAD Role Assignments for authorization as [described in the SCEPman documentation](../../scepman-configuration/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website).
 * The SCEPman API uses AAD Role Assignments. In the recommended default configuration, only Certificate Master has access to the API.
 
 ### 9. Are there conditional access / role-based access controls in place to protect SCEPman?
@@ -247,11 +243,11 @@ Since SCEPman founds on Azure components, you may use Microsoft Defender for Clo
 
 As a cloud PKI, SCEPman is responsible for the issuance and revocation of digital certificates. These certificates in conjunction with their private keys authenticate devices or users and grant access to other resources. Hence, the security of certificate issuance and revocation processes is a very important design goal. A high level of security requires a high level of user convenience, too, because complicated and intransparent processes have a larger attack surface and higher potential for human error. Although SCEPman offers many configuration options if needed, we strived to use reasonable and secure defaults wherever possible.
 
-Thus, if a private key is compromised, SCEPman can revoke the corresponding certificate in real-time. For certificates enrolled via Intune and Jamf, SCEPman does this automatically as soon as common countermeasures not specific to SCEPman are taken against the attack. You just have to [delete the corresponding Intune](../architecture/device-directories.md) or Jamf object.
+Thus, if a private key is compromised, SCEPman can revoke the corresponding certificate in real-time. For certificates enrolled via Intune and Jamf, SCEPman does this automatically as soon as common countermeasures not specific to SCEPman are taken against the attack. You just have to [delete the corresponding Intune](../../architecture/device-directories.md) or Jamf object.
 
-Depending on your device retirement processes, you can additionally configure to [revoke certificates when a wipe is triggered](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationrevokecertificatesonwipe), when [Intune requests revocation](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationdevicedirectory), depending on [device compliance](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationcompliancecheck) or [user risk level](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationuserriskcheck), or you can manually revoke single certificates via the Certificate Master component.
+Depending on your device retirement processes, you can additionally configure to [revoke certificates when a wipe is triggered](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationrevokecertificatesonwipe), when [Intune requests revocation](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationdevicedirectory), depending on [device compliance](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationcompliancecheck) or [user risk level](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationuserriskcheck), or you can manually revoke single certificates via the Certificate Master component.
 
-[Manually created certificates](../certificate-deployment/certificate-master/) always require a manual revocation.
+[Manually created certificates](../../certificate-deployment/certificate-master/) always require a manual revocation.
 
 ### 14. What technologies, stacks, platforms were used to design SCEPman?
 
@@ -266,7 +262,7 @@ For the keys of issued certificates, Certificate Master has no restrictions when
 
 For SCEP-enrolled certificates, Intune supports only RSA 2048 on most platforms, but some support RSA 4096, which SCEPman also supports. When using the static SCEP endpoint, all common algorithms and key sizes are supported (specifically those which [the Bouncy Castle cryptographic library for C# supports](https://www.bouncycastle.org/csharp/)).
 
-For the CA key, SCEPman supports RSA only. 2048 bit key size is the default, but you can use a larger key size by specifying a larger value for [AppConfig:KeyVaultConfig:RootCertificateConfig:KeySize](../scepman-configuration/optional/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-keysize) before generating the Root CA certificate. 4096 bit is currently the maximum supported by Azure Key Vault. If you use an Intermediate CA certificate, you can also use any key size supported by Key Vault, but it must be an RSA key.
+For the CA key, SCEPman supports RSA only. 2048 bit key size is the default, but you can use a larger key size by specifying a larger value for [AppConfig:KeyVaultConfig:RootCertificateConfig:KeySize](../../scepman-configuration/optional/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-keysize) before generating the Root CA certificate. 4096 bit is currently the maximum supported by Azure Key Vault. If you use an Intermediate CA certificate, you can also use any key size supported by Key Vault, but it must be an RSA key.
 
 ### 16. Is the CA created by SCEPman unique?
 
