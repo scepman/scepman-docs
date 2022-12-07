@@ -16,13 +16,13 @@ Microsoft discusses in [this article](https://docs.microsoft.com/en-us/azure/arc
 
 ## Workflow
 
-* First we will start with cloning the App Service
-* Then configuring the custom domains for both App Services
-* Finally create and configure the Traffic Manager and its Endpoints
+* First, we will start with cloning the App Service
+* Then create and configure the Traffic Manager and its Endpoints
+* Finally, configuring the custom domains for both App Services
 
 ### Clone App
 
-To clone an App Service, first you need to create a new **App Service Plan** in a second Geo location, this is where the cloned App will be deployed. You can create it in the same SCEPman Resource group or in a new one. See screenshot below
+To clone an App Service, first you need to create a new **App Service Plan** in a second Geolocation, this is where the cloned App will be deployed. You can create it in the same SCEPman Resource group or in a new one. See screenshot below
 
 ![Creation of a new App Service Plan with Windows](<../../.gitbook/assets/2022-06-15 13\_29\_57-Create App Service Plan.png>)
 
@@ -42,7 +42,7 @@ New-SCEPmanClone -SourceAppServiceName <Your SCEPman App Service Name> -TargetAp
 
 **SourceAppServiceName:** The name of the existing SCEPman App Service.
 
-**TargetAppServiceName:** The name of the new cloned SCEPman App Service.
+**TargetAppServiceName:** The name of the newly cloned SCEPman App Service.
 
 **TargetAppServicePlan:** The name of the App Service Plan for the cloned SCEPman instance. The App Service Plan must exist already in the TargetResourceGroup.
 
@@ -69,6 +69,18 @@ New-SCEPmanClone -SourceAppServiceName as-scepman-nrg5reuov63vk -TargetAppServic
 After the deployment is finished successfully, navigate to the cloned app and check the SCEPman homepage that all permissions are set correctly and everything is green and connected (this could take \~ 3 minutes after the deployment is done).
 
 ![](<../../.gitbook/assets/2022-06-21 10\_32\_37.png>)
+
+{% hint style="info" %}
+To avoid a single point of failure, we recommend setting the [WEBSITE\_RUN\_FROM\_PACKAGE](application-artifacts.md) of the cloned App Service to the second independent artifact host in Azure.
+
+Production channel:
+
+`https://install.scepman.com/dist/Artifacts.zip`
+
+
+
+The origin App Service should have the first artifact host by default, which points to a GitHub repository. For more information please check [Application Artifacts](application-artifacts.md)
+{% endhint %}
 
 {% hint style="warning" %}
 Cloning an app service has some restrictions such as **autoscale** settings, **backup schedule** settings, **App Insights, logging**, etc.. so you have to configure them again (if needed) for the new cloned app service. Additionally, changes to the settings of one AppService will not be automatically synchronized to the second AppService if performed after the cloning operation. For more info visit [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions)
@@ -104,12 +116,12 @@ Repeat these steps for your second App Service.
 
 #### DNS Configuration
 
-In the **Overview** your Traffic Manager should like this (here you find the Traffic Manager URL):
+In the **Overview** your Traffic Manager should be like this (here you find the Traffic Manager URL):
 
 ![](<../../../.gitbook/assets/scepman\_trafficmanager4 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (1) (10).png>)
 
 * Navigate to your **App Service** for the cloned SCEPman instance
-* Under **Custom Domains**, repeat the SSL certificate binding process as described [here](https://docs.scepman.com/scepman-configuration/optional/custom-domain#SSL-Binding)
+* Under **Custom Domains**, create an SSL certificate and set the binding process as described [here](https://docs.scepman.com/scepman-configuration/optional/custom-domain#SSL-Binding)
 * Both instances of SCEPman must have the same custom domain
 * Navigate to your DNS management service (e.g. **Azure DNS Zones**)
 * There shall be a CNAME entry for the custom SCEPman domain that maps to the Traffic Manager endpoint. Remove any possibly existing wrong CNAME entry pointing to one of the Azure App Service instances and add a CNAME that maps the custom SCEPman domain to the Traffic Manager endpoint now, e.g. your entry scepman.customer.com should point to something like scepman-tf-profile.trafficmanager.net
@@ -120,10 +132,13 @@ In **Azure DNS Zone**, in order to modify a record, you first have to remove the
 
 ### Custom Domain Configuration
 
-After successful deployment and configuration of the Traffic Manager profile, you need to set up custom domains for **both** SCEPman instances as described [here](custom-domain.md). The custom domains have the following requirements attached to them:
+After successful deployment and configuration of the Traffic Manager profile, we highly recommend setting up custom domains for **both** SCEPman instances as described [here](custom-domain.md). The custom domains have the following requirements attached to them:
 
 * The custom domains of both instances of SCEPman have to be **the same**.
+* Both custom domains should point to the Traffic Manager (see screenshot below)
 * The custom domains have to be equal to the custom domain mapped to the Traffic Manager endpoint from above.
+
+<figure><img src="../../.gitbook/assets/2022-12-07 10_35_10-Add custom domain2.png" alt=""><figcaption></figcaption></figure>
 
 ### Storage Account Geo-Redundancy
 
