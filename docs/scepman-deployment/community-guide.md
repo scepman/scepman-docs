@@ -78,15 +78,13 @@ To have your SCEPman available under your specific domain you need to create a *
 [custom-domain.md](../scepman-configuration/optional/custom-domain.md)
 {% endcontent-ref %}
 
-### Step 5: Configure an Update Strategy
+### Step 5: Manual Updates
 
-{% hint style="success" %}
-This is a **recommended** step.
+{% hint style="info" %}
+This is an **optional** step.
 {% endhint %}
 
-{% hint style="warning" %}
-By default, when you deploy SCEPman from Azure Marketplace, SCEPman will not update automatically. To always stay up to date, we recommend to re-configure SCEPman to adapt our [evergreen update strategy](../scepman-configuration/optional/update-strategy.md#evergreen-approach). In case you need full control over your updates, configure a [custom artifact location](../scepman-configuration/optional/application-artifacts.md#custom-artifact-location).
-{% endhint %}
+By default, SCEPman's update strategy is configured to the [Evergreen approach](../scepman-configuration/optional/update-strategy.md#evergreen-approach) / auto-updates. In case you require full control over your SCEPman updates, please configure a deployment slot as described in the following guide under section **Deployment Slot Configuration**.
 
 {% content-ref url="../scepman-configuration/optional/update-strategy.md" %}
 [update-strategy.md](../scepman-configuration/optional/update-strategy.md)

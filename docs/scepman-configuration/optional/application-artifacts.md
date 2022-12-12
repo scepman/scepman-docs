@@ -82,7 +82,7 @@ https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMas
 https://install.scepman.com/dist-certmaster/CertMaster-Artifacts-Intern.zip
 ```
 
-## Custom Artifact location
+## Custom Artifact Location
 
 To have full control over the update process and what artifacts are loaded by your App Service you can deploy your own Azure Storage Account. We recommend to use one of the update channels, so if this is not required, skip this section.
 
