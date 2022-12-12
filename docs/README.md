@@ -20,11 +20,19 @@ SCEPman is a slim and resource-friendly solution to issue and validate certifica
 
 The following documentation will show you a straightforward way to deploy certificates to modern cloud managed clients. Without any on-premises PKI your users and devices will be able to get certificates.
 
+## SCEPman vs. Legacy PKI
+
+If you are interested in learning more about the effort involved in installing and operating a legacy/on-premises PKI such as the Certificate Connector for Intune / Active Directory Certificate Services (ADCS) in comparison to SCEPman, please refer to below article.&#x20;
+
+{% content-ref url="other/faqs/certificate-connector.md" %}
+[certificate-connector.md](other/faqs/certificate-connector.md)
+{% endcontent-ref %}
+
+## Get more details about SCEPman
+
 {% embed url="https://www.youtube.com/watch?v=kr8uBPlG4J8" %}
 SCEPman 2.0 - What's new?
 {% endembed %}
-
-## Get more details about SCEPman
 
 {% content-ref url="details.md" %}
 [details.md](details.md)
