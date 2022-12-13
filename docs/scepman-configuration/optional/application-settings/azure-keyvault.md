@@ -52,6 +52,8 @@ Changes can harm your service!
 
 The Root Certificate Name. This setting is automatically configured during the Root CA creation.
 
+The name does not appear in the certificate itself and is only a reference to the CA certificate within Azure Key Vault. As it is part of the URL, there are name restrictions, like limitations to alphanumeric characters, numbers, and dashes.
+
 {% hint style="danger" %}
 Changes can harm your service!
 {% endhint %}
