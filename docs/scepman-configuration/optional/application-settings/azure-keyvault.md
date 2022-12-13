@@ -42,7 +42,7 @@ Changes can harm your service!
 
 The Azure Key Vault URL. This setting is automatically configured during the setup.
 
-You must define this setting in the configuration of your App Service. It is NOT possible to define this setting as a Secret in Azure Key Vault!
+This setting MUST be in the configuration of your App Service. It is NOT possible to define this setting as a Secret in Azure Key Vault!
 
 {% hint style="danger" %}
 Changes can harm your service!
@@ -50,7 +50,7 @@ Changes can harm your service!
 
 ## AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName
 
-The Root Certificate Name. This setting is automatically configured during the Root CA creation.
+The Root Certificate Name. This setting is automatically configured during the setup.
 
 The name does not appear in the certificate itself and is only a reference to the CA certificate within Azure Key Vault. As it is part of the URL, there are name restrictions, like limitations to alphanumeric characters, numbers, and dashes.
 
@@ -60,7 +60,7 @@ Changes can harm your service!
 
 ## AppConfig:KeyVaultConfig:RootCertificateConfig:Subject
 
-The Root Certificate Subject. This setting is automatically configured during the Root CA creation.
+The Root Certificate Subject. This setting is automatically configured during the setup. It is used only as input at the time of CA certificate creation and will not be used anyomre once a CA certificate exists.
 
 {% hint style="danger" %}
 Changes can harm your service!
