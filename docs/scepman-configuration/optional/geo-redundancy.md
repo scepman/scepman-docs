@@ -121,7 +121,7 @@ In the **Overview** your Traffic Manager should be like this (here you find the 
 ![](<../../../.gitbook/assets/scepman\_trafficmanager4 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (1) (10).png>)
 
 * Navigate to your **App Service** for the cloned SCEPman instance
-* Under **Custom Domains**, create an SSL certificate and set the binding process as described [here](https://docs.scepman.com/scepman-configuration/optional/custom-domain#SSL-Binding)
+* Under **Custom Domains**, create an SSL certificate and set the binding process as described [here](custom-domain.md#SSL-Binding)
 * Both instances of SCEPman must have the same custom domain
 * Navigate to your DNS management service (e.g. **Azure DNS Zones**)
 * There shall be a CNAME entry for the custom SCEPman domain that maps to the Traffic Manager endpoint. Remove any possibly existing wrong CNAME entry pointing to one of the Azure App Service instances and add a CNAME that maps the custom SCEPman domain to the Traffic Manager endpoint now, e.g. your entry scepman.customer.com should point to something like scepman-tf-profile.trafficmanager.net
