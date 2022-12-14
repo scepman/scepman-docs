@@ -75,7 +75,7 @@ This ensures that the DC certificates are trusted within the domain. They are al
 
 ## Installation on the Client
 
-Then you must download our Open Source SCEP client software [SCEPClient](https://github.com/scepman/scepclient/releases/tag/20211029-0857-framework). Releases with the suffix _-framework_ use .NET Framework 4.6.2, which is pre-installed on Windows Server 2016 and compatible with newer versions. Other releases require the [.NET Core 3.1 Runtime](https://download.visualstudio.microsoft.com/download/pr/9845b4b0-fb52-48b6-83cf-4c431558c29b/41025de7a76639eeff102410e7015214/dotnet-runtime-3.1.10-win-x64.exe) to be installed on the target systems.
+Then you must download our Open Source SCEP client software [SCEPClient](https://github.com/scepman/scepclient/releases/tag/20211029-0857-framework). Releases with the suffix _-framework_ use .NET Framework 4.6.2, which is pre-installed on Windows Server 2016 and compatible with newer versions. Other releases require the .NET Core Runtime to be installed on the target systems.
 
 Execute the following command in an elevated command prompt on a domain controller to receive a Domain Controller certificate from SCEPman:
 
