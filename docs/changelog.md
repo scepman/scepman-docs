@@ -6,7 +6,7 @@
 
 #### SCEPman
 
-* CSR submission API
+* [CSR submission REST API](certificate-deployment/api-certificates.md)
 * Store certificates issued via Jamf, Static, Static-AAD, and DC endpoints in Storage Account (and allow manual revocation in Certificate Master)
 * Partial support of ECC CAs
 * Better error messages on some faults

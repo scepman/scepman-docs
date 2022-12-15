@@ -43,6 +43,7 @@
 * [3rd-party MDM Solutions](certificate-deployment/static-certificates/README.md)
   * [Mosyle](certificate-deployment/static-certificates/mosyle.md)
 * [Domain Controller Certificates](certificate-deployment/domain-controller-certificates.md)
+* [Enrollment REST API](certificate-deployment/api-certificates.md)
 
 ## Advanced Configuration
 
@@ -57,6 +58,7 @@
   * [Static Validation](scepman-configuration/optional/application-settings/static-validation.md)
   * [Static-AAD Validation](scepman-configuration/optional/application-settings/staticaad-validation.md)
   * [Certificate Master](scepman-configuration/optional/application-settings/csr-validation.md)
+  * [REST API](scepman-configuration/optional/application-settings/dbcsr-validation.md)
   * [Azure AD](scepman-configuration/optional/application-settings/azure-ad.md)
   * [Azure KeyVault](scepman-configuration/optional/application-settings/azure-keyvault.md)
   * [National Cloud platforms](scepman-configuration/optional/application-settings/national-cloud-platforms.md)
