@@ -2,6 +2,24 @@
 
 ## Versions
 
+### 2.3 - Currently in Beta and Internal Channels
+
+#### SCEPman
+
+* CSR submission API
+* Store certificates issued via Jamf, Static, Static-AAD, and DC endpoints in Storage Account (and allow manual revocation in Certificate Master)
+* Partial support of ECC CAs
+* Better error messages on some faults
+* Improvements to compliance checks
+  * An additional extension better suppresses usage of ephemeral certificates on Windows
+  * An additional SCEP endpoint for Apple devices prevents issuance of ephemeral certificates
+* Minor bugfixes/improvements
+
+#### Certificate Master
+
+* Better compatibility with Microsoft's API changes to list certificate issued via Intune
+* Minor improvements
+
 ### 2.2 - October 2022
 
 * Improved installation experience
