@@ -13,6 +13,7 @@
 * Improvements to compliance checks
   * An additional extension better suppresses usage of ephemeral certificates on Windows
   * An additional SCEP endpoint for Apple devices prevents issuance of ephemeral certificates
+* [Fake CDP endpoint](scepman-configuration/optional/application-settings/crl.md) for cases where a CRL is technically required (the CRL contains no entries yet, though)
 * Minor bugfixes/improvements
 
 #### Certificate Master
