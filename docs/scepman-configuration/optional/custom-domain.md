@@ -2,55 +2,31 @@
 
 ## Custom Domain Configuration
 
-If you want to create your own custom domain for your **App Service** URL, follow these steps:
+If you want to create your own custom domain for your **App Service** URL, there are two options depending on your domain provider:
 
-1. Choose your **App Service,** on the left select **Custom domain**.
-2. Click **Add custom domain.**
-3. Enter your custom domain and click **Validate**
-4. If the domain is on your Azure, **CNAME** and **TXT** records will be generated automatically, otherwise, if the domain is not running on Azure DNS you need to add them manually (see [here](custom-domain.md#add-cname-and-txt-manually-to-the-dns)).
+**The first option** is to go with Azure Domain (existing one or creating a new one)
 
-![](<../../.gitbook/assets/2022-04-13 17\_09\_38-Add custom domain0.png>)
+* Domain provider: in this case App Service Domain
+* TLS/SSL certificate: select App Service Managed Certificate if you want to create and bind the certificate to your custom domain automatically, this certificate is managed by Azure and will be automatically renewed at no cost
+* TLS/SSL type: SNI SSL Binding is free of cost and supported by most modern browsers
+* App Service Domain: Choose an existing Azure Domain or create a new one
+* Domain type: in the example below we choose a Subdomain
 
-### Create App Service Managed Certificate <a href="#53264c4d-2e8e-482b-9522-b7023144f9f7" id="53264c4d-2e8e-482b-9522-b7023144f9f7"></a>
+By clicking on add, the custom domain and the SSL Managed Certificate will be created and bound automatically
 
-To use it for HTTPS
+<figure><img src="../../.gitbook/assets/2022-12-23 15_12_15-Window.png" alt=""><figcaption></figcaption></figure>
 
-1. Go to TLS/SSL settings
-2. Click on Private Key Certificates (.pfx)
-3. Create App Service Managed Certificate for your custom domain
+**The second option** is to go with your non-Azure domain and add the validation records to your domain provider
 
-![](<../../.gitbook/assets/image (35).png>)
+* Domain provider: All other domain services
 
-### SSL Binding
+<figure><img src="../../.gitbook/assets/2022-12-23 17_01_35-Window.png" alt=""><figcaption></figcaption></figure>
 
-1. Click **Add custom domain** to finish this configuration.
-2. When the domain is added, create an SSL binding.
-3. Click **Add binding** on the custom domain screen.
-
-![](<../../.gitbook/assets/2022-04-14 12\_14\_21-as-scepman-testSSL.png>)
-
-1. On the TLS/SSL Binding submenu click **Upload PFX Certificate.**
-2. After uploading select your certificate and the binding type.
-3. Next click **Add binding.**
-
-![](<../../.gitbook/assets/2022-04-14 12\_10\_46-TLS\_SSL Binding.png>)
-
-1. After completing these steps, **Application settings** need to be updated
-2. Choose app service and click **Configuration**
-3. Then click **Application Settings** and edit the setting **AppConfig:BaseUrl**
-4. Enter your custom domain and click **OK**.
+After configuring the custom domain, make sure to update  SCEPman App Service Setting [**AppConfig:BaseUrl**](application-settings/basics.md#appconfig-baseurl) **** to the new URL, save and restart the App Service
 
 ![](<../../../.gitbook/assets/scepman\_cname4\_1 (1).png>)
 
-1. Finally click **Save**.
-
-### Add CNAME and TXT manually to the DNS
-
-If you want to add a custom domain for a domain outside Azure DNS (or your permissions), you need to add the CNAME and TXT records manually. Please use the values which azure provides in the domain ownership part
-
-![](<../../.gitbook/assets/2022-04-13 16\_51\_49-Add custom domain.png>)
-
-### Microsoft Documentation and Managed Certificates
+### More Information about Microsoft Documentation and Managed Certificates
 
 Add a custom domain to an App Service:\
 [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain)

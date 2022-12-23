@@ -28,7 +28,7 @@ After adding or editing SCEPman configuration, you need to restart the app servi
 
 As first step you need to deploy SCEPman root certificate. Download this CA certificate via SCEPman dashboard:
 
-![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (5).png>)
+![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (3).png>)
 
 In Mosyle, navigate to Management and add "**Multi-Cert Profile**" as a new profile type (if it does not already exist).
 

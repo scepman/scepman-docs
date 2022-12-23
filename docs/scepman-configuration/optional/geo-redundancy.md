@@ -77,8 +77,6 @@ Production channel:
 
 `https://install.scepman.com/dist/Artifacts.zip`
 
-
-
 The origin App Service should have the first artifact host by default, which points to a GitHub repository. For more information please check [Application Artifacts](application-artifacts.md)
 {% endhint %}
 
@@ -93,7 +91,7 @@ Follow the steps below to create and configure the Traffic Manager and balance t
 1. Search **Traffic Manager profile** and click **Create**.
 2. Fill in the fields.
 
-![](<../../../.gitbook/assets/scepman\_trafficmanager1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (6) (7) (5) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (1) (5).png>)
+![](<../../../.gitbook/assets/scepman\_trafficmanager1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (6) (7) (5) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (1) (10) (3).png>)
 
 1. Then click **Create**.
 2. After your Traffic Manager is deployed, go to it and click **Configuration** under settings.
@@ -118,7 +116,7 @@ Repeat these steps for your second App Service.
 
 In the **Overview** your Traffic Manager should be like this (here you find the Traffic Manager URL):
 
-![](<../../../.gitbook/assets/scepman\_trafficmanager4 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (1) (10).png>)
+![](<../../../.gitbook/assets/scepman\_trafficmanager4 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (1) (10) (10).png>)
 
 * Navigate to your **App Service** for the cloned SCEPman instance
 * Under **Custom Domains**, create an SSL certificate and set the binding process as described [here](custom-domain.md#SSL-Binding)

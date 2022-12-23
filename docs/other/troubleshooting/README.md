@@ -10,7 +10,7 @@ You can use the [log archive in blob storage](../../scepman-configuration/option
 
 Configure the **App Services Logs**
 
-![](<../../../.gitbook/assets/event32\_5 (2) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3).png>)
+![](<../../../.gitbook/assets/event32\_5 (2) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (4).png>)
 
 Check Azure Web App log files via **Advanced Tools**:
 
@@ -21,13 +21,13 @@ Check Azure Web App log files via **Advanced Tools**:
 
 Click on the download icon on the latest .txt file and review it
 
-![](<../../../.gitbook/assets/event32\_3 (2) (7) (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (11) (1) (1) (1) (1) (1) (4).png>)
+![](<../../../.gitbook/assets/event32\_3 (2) (7) (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (11) (1) (1) (1) (1) (1) (10) (5).png>)
 
 ### Live Log Monitor
 
 Check the **Log Stream** of the **App Service**:
 
-![](<../../../.gitbook/assets/event32\_6 (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/event32\_6 (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (1).png>)
 
 1. Monitor the log stream.
 2. Reproduce the error.
