@@ -12,7 +12,7 @@ After you have configured the health check and Alerting correctly it takes some 
 2. Now you can **Enable** the Health check, as probing **path** enter the following: **/probe**
 3. Now you can click on **Save**, but keep in mind that **this will restart your App Service**
 
-![](../../.gitbook/assets/screen-shot-2021-01-19-at-10.29.15.png)
+<figure><img src="../../.gitbook/assets/2022-12-27 13_04_05.png" alt=""><figcaption><p>Enable Health check</p></figcaption></figure>
 
 ## Configure Alerting
 
@@ -29,7 +29,7 @@ To get an alert from our health check we need to configure alert rules in our Ap
 ****6. Set **Aggregation type** to **Average**\
 ****7. Set **Operator** to **Greater or Less than**\
 ****8. Change the **Threshold Sensitivity** to **High**\
-****9. Select **5 minutes** for **Check every**\
+****9. Select **5 minutes** to **Check every**\
 ****10. And **15 minutes** as the **Lookback period**\
 ****11. **** Click on **Next: Actions**
 
@@ -49,7 +49,7 @@ To get an alert from our health check we need to configure alert rules in our Ap
 ![Set notifications to action group](../../.gitbook/assets/screen-shot-2021-01-19-at-11.11.40.png)
 
 16\. After that you can click on **Review + create** and then on **Create** to be redirected back to **Actions** in creating the alert rule, Next to **Details**\
-****17. Now you must enter an **Alert rule name**, define the **Severity** and **Enable alter rule upon creation,** and **Automatically resolve alerts.**\
+****17. Now you must enter an **Alert rule name**, define the **Severity, Enable alter rule upon creation,** and **Automatically resolve alerts.**\
 18\. Click on **Review + Create,** then **Create**
 
 <figure><img src="../../.gitbook/assets/2022-12-27 12_41_27.png" alt=""><figcaption><p>Create alert rule</p></figcaption></figure>
