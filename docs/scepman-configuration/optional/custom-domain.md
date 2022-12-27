@@ -26,7 +26,7 @@ After configuring the custom domain, make sure to update  SCEPman App Service Se
 
 ![](<../../../.gitbook/assets/scepman\_cname4\_1 (1).png>)
 
-### More Information about Microsoft Documentation and Managed Certificates
+### Microsoft Documentation and Managed Certificates
 
 Add a custom domain to an App Service:\
 [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain)

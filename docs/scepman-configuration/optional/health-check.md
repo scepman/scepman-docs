@@ -19,43 +19,42 @@ After you have configured the health check and Alerting correctly it takes some 
 To get an alert from our health check we need to configure alert rules in our App Service.
 
 1. Navigate to your **App Service** and on the left side scroll down to **Alerts**
-2. Click on **New alert rule**
-3. In your new alert rule you can now click on **Add condition**
+2. Click on **Create alert rule**
+3. In your new alert rule, you will be automatically redirected to **Add condition**
+4. Select a signal logic. Search for **Health check status**
 
-![](../../.gitbook/assets/screen-shot-2021-01-19-at-10.50.32.png)
+<figure><img src="../../.gitbook/assets/2022-12-27 12_13_22.png" alt=""><figcaption><p>Create alert rule</p></figcaption></figure>
 
-4\. **** You must select a signal logic. Search for **Health check status**
+5\. Now switch the **Threshold** to **Dynamic**\
+****6. Set **Aggregation type** to **Average**\
+****7. Set **Operator** to **Greater or Less than**\
+****8. Change the **Threshold Sensitivity** to **High**\
+****9. Select **5 minutes** for **Check every**\
+****10. And **15 minutes** as the **Lookback period**\
+****11. **** Click on **Next: Actions**
 
-![](../../.gitbook/assets/screen-shot-2021-01-19-at-10.50.39.png)
+<figure><img src="../../.gitbook/assets/2022-12-27 10_34_32.png" alt=""><figcaption><p>Alert rule condition</p></figcaption></figure>
 
-5\. Now you can switch the **Threshold** to **Dynamic**\
-****6. Change the **Threshold Sensitivity** to **High**\
-****7. Select **15 minutes** as the **Aggregation granularity (Period)**\
-****8. **** After that click on **Done**
+12\. Now you need to **Select action groups,** If you do not have any action groups available, you can click on **Create action group**
 
-![](../../.gitbook/assets/screen-shot-2021-01-19-at-10.52.54.png)
+13\. Define an **Action group name** and **Display name**
 
-&#x20;9\. Now we need to click on **Add action groups**
+<figure><img src="../../.gitbook/assets/2022-12-27 12_29_38.png" alt=""><figcaption><p>Create action group</p></figcaption></figure>
 
-![](../../.gitbook/assets/screen-shot-2021-01-19-at-11.00.18.png)
-
-10\. If you do not have any action groups available, you can click on **Create action group**
-
-![](../../.gitbook/assets/screen-shot-2021-01-19-at-11.01.15.png)
-
-11\. Define an **Action group name** and **Display name**
-
-![](../../.gitbook/assets/screen-shot-2021-01-19-at-11.09.40.png)
-
-12\. Go to **Notifications** and add **Notification type**\
+12\. Next to **Notifications** and add **Notification type**\
 13\. In the windows select **Email** and enter your email address that you want to get the notifications\
 14\. Then click on **OK**\
 15\. Enter a **Name** for the Notification type
 
-![](../../.gitbook/assets/screen-shot-2021-01-19-at-11.11.40.png)
+![Set notifications to action group](../../.gitbook/assets/screen-shot-2021-01-19-at-11.11.40.png)
 
-16\. After that you can click on **Review + create** and then on **Create**\
-****17. At least you must enter an **Alert rule name**, define the **Severity** and **Enable alter rule upon creation**\
-18\. Then click on **Create alert rule**
+16\. After that you can click on **Review + create** and then on **Create** to be redirected back to **Actions** in creating the alert rule, Next to **Details**\
+****17. Now you must enter an **Alert rule name**, define the **Severity** and **Enable alter rule upon creation,** and **Automatically resolve alerts.**\
+18\. Click on **Review + Create,** then **Create**
 
-![](../../.gitbook/assets/screen-shot-2021-01-19-at-11.20.29.png)
+<figure><img src="../../.gitbook/assets/2022-12-27 12_41_27.png" alt=""><figcaption><p>Create alert rule</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/2022-12-27 12_43_31.png" alt=""><figcaption><p>Create alert rule</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/2022-12-27 12_46_42.png" alt=""><figcaption><p>Veiw existing alert rules</p></figcaption></figure>
+
