@@ -41,16 +41,16 @@ To get an alert from our health check we need to configure alert rules in our Ap
 
 <figure><img src="../../.gitbook/assets/2022-12-27 12_29_38.png" alt=""><figcaption><p>Create action group</p></figcaption></figure>
 
-12\. Next to **Notifications** and add **Notification type**\
-13\. In the windows select **Email** and enter your email address that you want to get the notifications\
-14\. Then click on **OK**\
-15\. Enter a **Name** for the Notification type
+14\. Next to **Notifications** and add **Notification type**\
+15\. In the windows select **Email** and enter your email address that you want to get the notifications\
+16\. Then click on **OK**\
+17\. Enter a **Name** for the Notification type
 
 ![Set notifications to action group](../../.gitbook/assets/screen-shot-2021-01-19-at-11.11.40.png)
 
-16\. After that you can click on **Review + create** and then on **Create** to be redirected back to **Actions** in creating the alert rule, Next to **Details**\
-****17. Now you must enter an **Alert rule name**, define the **Severity, Enable alter rule upon creation,** and **Automatically resolve alerts.**\
-18\. Click on **Review + Create,** then **Create**
+18\. After that you can click on **Review + create** and then on **Create** to be redirected back to **Actions** in creating the alert rule, Next to **Details**\
+****19. Now you must enter an **Alert rule name**, define the **Severity, Enable alter rule upon creation,** and **Automatically resolve alerts.**\
+20\. Click on **Review + Create,** then **Create**
 
 <figure><img src="../../.gitbook/assets/2022-12-27 12_41_27.png" alt=""><figcaption><p>Create alert rule</p></figcaption></figure>
 
