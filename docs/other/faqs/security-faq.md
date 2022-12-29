@@ -190,7 +190,7 @@ While the below consents make data available to SCEPman, SCEPman does not proces
 * Login Credentials: Depends on the configured AAD policies in the customer tenant.
 * Static SCEP challenge: Authorized users may review the challenge.
 
-## Data protection
+## Data Protection
 
 ### 11. How is _data at-rest_ protected against unauthorized access?
 
@@ -226,7 +226,7 @@ While the below consents make data available to SCEPman, SCEPman does not proces
 * Communication between SCEPman Azure components:
   * TLS
 
-## Security by design
+## Security by Design
 
 ### 13. Does SCEPman employ a defense in depth strategy?
 
