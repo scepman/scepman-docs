@@ -2,11 +2,13 @@
 category: Other
 title: Security FAQ
 order: 2
+description: >-
+  This chapter shall provide a brief overview of the data that SCEPman is
+  processing and how this data is protected against unauthorized access. It
+  applies to SCEPman 2.2.
 ---
 
 # Security & Privacy
-
-This chapter shall provide a brief overview of the data that SCEPman is processing and how this data is protected against unauthorized access. It applies to SCEPman 2.2.
 
 ## Data Processing and Permissions
 
