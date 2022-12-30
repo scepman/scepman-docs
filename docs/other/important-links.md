@@ -10,7 +10,11 @@ order: 2
 
 [https://oliverkieselbach.com/2019/07/02/the-easy-way-to-deploy-device-certificates-with-intune/](https://oliverkieselbach.com/2019/07/02/the-easy-way-to-deploy-device-certificates-with-intune/)
 
-## SCEPman on Azure Marketplace
+## SCEPman on Azure Marketplace (Deployment)
+
+[https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman?tab=Overview](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman?tab=Overview)
+
+## SCEPman on Azure Marketplace (Subscription)
 
 [https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman-transactable-prod](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman-transactable-prod)
 

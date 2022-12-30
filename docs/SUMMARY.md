@@ -93,7 +93,7 @@
 
 ***
 
-* [Changelog](changelog.md)
+* [Change Log](changelog.md)
 * [Licensing](licensing/README.md)
   * [Azure Marketplace](licensing/azure-marketplace.md)
 * [Support](support.md)
