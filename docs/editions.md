@@ -35,7 +35,7 @@ If you want to test SCEPman in your own environment, you can follow the **mandat
 If your organization has Azure resource naming conventions in place and you intend to re-use the Community Edition deployment after a successful trial, please directly start with our [Extended Guide](scepman-deployment/deployment-guides/enterprise-guide-1.md) (**mandatory** steps only). For the basic steps, no license key is required.
 {% endhint %}
 
-## Version Comparison
+## Edition Comparison
 
 The following table shows the most important differences between the two editions:
 
