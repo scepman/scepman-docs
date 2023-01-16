@@ -32,6 +32,26 @@ The Azure AD Tenant ID. This setting is automatically configured during the setu
 Changes can harm your service!
 {% endhint %}
 
+## AppConfig:AuthConfig:HomeTenantId
+
+When running SCEPman in a different tenant than Intune, this specifies the Id of the tenant hosting the SCEPman Azure resource, while AppConfig:AuthConfig:TenantId specifies the tenant of Intune. In this case, you cannot use the more convenient [authentication based on Managed Identities](../../post-installation-config.md), but must use authentication using [an Azure App Registration and a Client Secret](../../azure-app-registration.md).
+
+{% hint style="danger" %}
+Changes can harm your service!
+{% endhint %}
+
+## AppConfig:AuthConfig:HomeApplicationId
+
+This setting is only used for situations where SCEPman runs in a different tenant than Intune. The HomeApplicationId specifies the application ID of your `scepman-api` app registration in the tenant where the SCEPman an Certificate Master App Services run. AppConfig:AuthConfig:ApplicationId and AppConfig:AuthConfig:ApplicationKey specify the application ID and Client Secret Value, respectively, of the app registration in the tenant where Intune runs.
+
+{% hint style="warning" %}
+Please do not mix this up with the "Client Secret ID". We need the "Application (client) ID", here.
+{% endhint %}
+
+{% hint style="danger" %}
+Changes can harm your service!
+{% endhint %}
+
 ## AppConfig:AuthConfig:ManagedIdentityEnabledOnUnixTime
 
 {% hint style="info" %}
