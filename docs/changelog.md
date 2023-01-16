@@ -18,6 +18,7 @@
 
 #### Certificate Master
 
+* New UI with customizable filters to find view different kinds of certificates
 * Better compatibility with Microsoft's API changes to list certificate issued via Intune
 * Minor improvements
 
