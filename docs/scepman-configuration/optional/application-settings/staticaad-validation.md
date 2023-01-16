@@ -34,3 +34,14 @@ Applicable to version 2.2 and above
 
 **Description:** This setting further reduces the global ValidityPeriodDays for the StaticAAD endpoint.
 
+## AppConfig:StaticAADValidation:EnableCertificateStorage
+
+{% hint style="info" %}
+Applicable to version 2.3 and above
+
+SCEPman Enterprise Edition only
+{% endhint %}
+
+**Value:** _true_ or _false_ (default)
+
+**Description:** When requesting certificates via the StaticAAD endpoint, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically if the corresponding AAD object is disabled or deleted. If set to _false_ or not set, SCEPman will not be store issued certificates and the certificates are visible only in the logs or if the SCEP client stores them somewhere.

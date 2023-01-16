@@ -40,3 +40,14 @@ SCEPman Enterprise Edition only
 
 **Description:** This setting further reduces the global ValidityPeriodDays for the Domain Controller endpoint. For example, you may define a low value like 10 days here and reduce the validity of Domain Controller certificates, while still having a long validity for your client certificates.
 
+## AppConfig:JamfValidation:EnableCertificateStorage
+
+{% hint style="info" %}
+Applicable to version 2.3 and above
+
+SCEPman Enterprise Edition only
+{% endhint %}
+
+**Value:** _true_ or _false_ (default)
+
+**Description:** When requesting certificates via the Jamf endpoint, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them. If set to _false_ or not set, SCEPman will not be store issued certificates and the certificates are visible only in the logs or if the SCEP client stores them somewhere.

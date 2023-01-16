@@ -44,8 +44,6 @@ Applicable to version 1.7 and above
 
 **Description:** The root URL of your Jamf instance. If you use Jamf Cloud, this will probably look like `https://your-instance.jamfcloud.com/`.
 
-
-
 ## AppConfig:JamfValidation:APIUsername
 
 {% hint style="info" %}
@@ -76,3 +74,14 @@ We recommend to define this setting as Secret in Azure Key Vault. The Secret mus
 If you set this setting as a Secret in the Key Vault, you do not need to add the **AppConfig:JamfValidation:APIPassword** to SCEPman configuration anymore.
 {% endhint %}
 
+## AppConfig:JamfValidation:EnableCertificateStorage
+
+{% hint style="info" %}
+Applicable to version 2.3 and above
+
+SCEPman Enterprise Edition only
+{% endhint %}
+
+**Value:** _true_ or _false_ (default)
+
+**Description:** When requesting certificates via the Jamf endpoint, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically if the corresponding Jamf object is deleted. If set to _false_ or not set, SCEPman will not be store issued certificates and the certificates are visible only in the logs or if the SCEP client stores them somewhere.

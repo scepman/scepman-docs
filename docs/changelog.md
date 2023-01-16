@@ -7,7 +7,7 @@
 #### SCEPman
 
 * [CSR submission REST API](certificate-deployment/api-certificates.md)
-* Store certificates issued via Jamf, Static, Static-AAD, and DC endpoints in Storage Account (and allow manual revocation in Certificate Master)
+* Store certificates issued via [Jamf](scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-enablecertificatestorage), [Static](scepman-configuration/optional/application-settings/static-validation.md-validation.md#appconfig-staticvalidation-enablecertificatestorage), [Static-AAD](scepman-configuration/optional/application-settings/staticaad-validation.md-validation.md#appconfig-staticaadvalidation-enablecertificatestorage), and [DC](scepman-configuration/optional/application-settings/dc-validation.md.md#appconfig-dcvalidation-enablecertificatestorage) endpoints in Storage Account (and allow manual revocation in Certificate Master)
 * Partial support of ECC CAs
 * Better error messages on some faults
 * Improvements to compliance checks
