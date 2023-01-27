@@ -4,20 +4,6 @@ description: SCEPman - Certificates Simplified
 
 # Welcome
 
-{% hint style="danger" %}
-Today, we were experiencing outages in Microsoft Azure in multiple regions, which were related to the network infrastructure. Several services were be impacted.
-
-See also Microsoft's statements
-
-* [status.azure.com](https://status.azure.com/)
-* [status.office.com](https://status.office.com/)
-* [Twitter](https://twitter.com/MSFT365Status/status/1618149579341369345)
-
-
-
-The issue seems to be resolved.
-{% endhint %}
-
 {% hint style="warning" %}
 Intune service discovery API endpoint will require specific permissions starting January 1st 2023. For more details, see the [Microsoft website](https://aka.ms/mem-servicediscovery-api-blog).
 
