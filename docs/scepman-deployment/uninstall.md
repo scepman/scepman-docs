@@ -1,4 +1,4 @@
-# SCEPman Deinstallation
+# SCEPman Uninstallation
 
 How you uninstall SCEPman depends on whether there is only one SCEPman instance in your tenant and whether the SCEPman instance has been used productively or not, e.g., as a PoC. If productive certificates were enrolled, you must plan whether you want to softly fade out of this SCEPman instance's usage, and keep some parts of SCEPman running for some time, or whether you want to shut down hard.
 
