@@ -45,6 +45,10 @@
 * [Domain Controller Certificates](certificate-deployment/domain-controller-certificates.md)
 * [Enrollment REST API](certificate-deployment/api-certificates.md)
 
+## Certificate Management
+
+* [Manage Certificates](certificate-management/certificate-view.md)
+
 ## Advanced Configuration
 
 * [Application Artifacts](scepman-configuration/optional/application-artifacts.md)
