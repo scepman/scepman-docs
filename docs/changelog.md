@@ -2,9 +2,9 @@
 
 ## Versions
 
-### 2.3 - Currently in Beta and Internal Channels
+### 2.3 - January 2023
 
-#### SCEPman
+#### SCEPman 2.3.723
 
 * [CSR submission REST API](certificate-deployment/api-certificates.md)
 * Store certificates issued via [Jamf](scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-enablecertificatestorage), [Static](scepman-configuration/optional/application-settings/static-validation.md#appconfig-staticvalidation-enablecertificatestorage), [Static-AAD](scepman-configuration/optional/application-settings/staticaad-validation.md#appconfig-staticaadvalidation-enablecertificatestorage), and [DC](scepman-configuration/optional/application-settings/dc-validation.md#appconfig-dcvalidation-enablecertificatestorage) endpoints in Storage Account (and allow manual revocation in Certificate Master)
@@ -16,9 +16,9 @@
 * [Fake CDP endpoint](scepman-configuration/optional/application-settings/crl.md) for cases where a CRL is technically required (the CRL contains no entries yet, though)
 * Minor bugfixes/improvements
 
-#### Certificate Master
+#### Certificate Master 2.3.327
 
-* New UI with customizable filters to find view different kinds of certificates
+* [New UI with customizable filters to find view different kinds of certificates](certificate-management/certificate-view.md)
 * Better compatibility with Microsoft's API changes to list certificate issued via Intune
 * Minor improvements
 
