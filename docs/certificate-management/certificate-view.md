@@ -18,10 +18,10 @@ Depending on whether you enrolled a certificate via the Intune MDM or through ot
 ## Storing Certificate Metadata in the Certificate Database
 
 SCEPman 2.3 and above allow storing certificates issued via one of the SCEP endpoints or via the REST endpoint in the Storage Account. This can be configured per endpoint:
-- [Jamf](scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-enablecertificatestorage)
-- [Static](scepman-configuration/optional/application-settings/static-validation.md#appconfig-staticvalidation-enablecertificatestorage)
-- [Static-AAD](scepman-configuration/optional/application-settings/staticaad-validation.md#appconfig-staticaadvalidation-enablecertificatestorage)
-- [DC](scepman-configuration/optional/application-settings/dc-validation.md#appconfig-dcvalidation-enablecertificatestorage) 
+- [Jamf](../scepman-configuration/optional/application-settings/jamf-validation.md#appconfig-jamfvalidation-enablecertificatestorage)
+- [Static](../scepman-configuration/optional/application-settings/static-validation.md#appconfig-staticvalidation-enablecertificatestorage)
+- [Static-AAD](../scepman-configuration/optional/application-settings/staticaad-validation.md#appconfig-staticaadvalidation-enablecertificatestorage)
+- [DC](../scepman-configuration/optional/application-settings/dc-validation.md#appconfig-dcvalidation-enablecertificatestorage) 
 
 Only certificates issued after enabling this setting will be stored in the database, and can be found and revoked manually! Manual revocation is an addition to the automatic revocation feature of SCEPman. For example, if you enable certificate storage for Jamf, a certificate will become invalid if either the corresponding object in Jamf is deleted or if you manually revoke the certificate in Certificate Master.
 
