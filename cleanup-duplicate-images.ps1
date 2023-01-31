@@ -27,6 +27,13 @@ function Test-Any {
   }
 }
 
+function Get-References($DocsPath, $AssetName) {
+  [Array]$assetReferences = Get-ChildItem -Path $DocsPath -Recurse -Filter "*.md" | Select-String -SimpleMatch -Pattern $AssetName
+  $assetReferences += Get-ChildItem -Path $DocsPath -Recurse -Filter "*.md" | Select-String -SimpleMatch -Pattern ($AssetName.Replace('_','\_'))
+
+  return $assetReferences
+}
+
 # Based on https://stackoverflow.com/a/72390923
 $FileGroups = Get-ChildItem -Path $AssetPath -File | Get-FileHash | Group-Object -Property Hash
 $Duplicates = $FileGroups | Where-Object Count -gt 1
@@ -55,6 +62,7 @@ If ($duplicates.count -lt 1) {
     }
     
     if (-not (Test-Path $targetFileName)) {
+      $assetReferences = Get-References -DocsPath $DocsPath -AssetName (Split-Path $representativePath -Leaf)
       Rename-Item -Path $representativePath -NewName $targetFileName  # Rename one of the files to the target file name
       Write-Information "Created $targetFilename as representative for this group of files"
     }
@@ -63,14 +71,17 @@ If ($duplicates.count -lt 1) {
     $deleteCounter = 0
     $referenceCounter = 0
     foreach ($duplicate in $d.Group) {
-      $assetReferences = Get-ChildItem -Path $DocsPath -Recurse -Filter "*.md" | Select-String -SimpleMatch -Pattern (Split-path $duplicate.Path -leaf)
+      $assetReferences = Get-References -DocsPath $DocsPath -AssetName (Split-Path $duplicate.Path -Leaf)
       $referenceCounter += $assetReferences.Count
-      foreach ($assetReference in $assetReferences) {
-        Write-Information "Asset $($duplicate.Path) usage: $assetReference"
-      }
       if ($duplicate.Path -ieq $targetFileName) { Continue } # skip the target File
-      elseif ($duplicate.Path -ieq $representativePath -and -not (Test-Path $representativePath)) { Continue } # we renamed this file, so skip
+      elseif ($duplicate.Path -ieq $representativePath -and -not (Test-Path $representativePath)) { Continue } # we renamed this file, so skip deletion, it is already gone
       else {
+        foreach ($assetReference in $assetReferences) {
+          (Get-Content $assetReference.Path) -replace $assetReference.Pattern,(Split-Path $targetFileName -Leaf) | Set-Content $assetReference.Path
+        }
+      
+        return $assetReferences.Count
+
         Remove-Item $duplicate.Path
         Write-Verbose "Deleted $($duplicate.Path)"
         ++$deleteCounter
@@ -89,7 +100,8 @@ If ($duplicates.count -lt 1) {
 Write-Information "Inspecting usage of single files"
 foreach ($singleFileGroup in $Singles) {
   $filePath = $singleFileGroup.Group[0].Path
-  $assetReferences = Get-ChildItem -Path $DocsPath -Recurse -Filter "*.md" | Select-String -SimpleMatch -Pattern (Split-path $filePath -leaf)
+  $assetReferences = Get-References -DocsPath $DocsPath -AssetName (Split-path $filePath -leaf)
+
   if ($assetReferences.Count -eq 0) {
     Remove-Item $filePath
     Write-Information "Deleted unreferenced file $filePath"
