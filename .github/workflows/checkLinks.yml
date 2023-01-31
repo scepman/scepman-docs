@@ -1,4 +1,4 @@
-name: Check Markdown links (errors with ✖)
+name: Check Markdown links
 
 on: push
 
@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+    - name: Check links (errors with ✖)
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
       with:
         config-file: '.github/workflows/mlc_config.json'
         use-verbose-mode: 'yes'
