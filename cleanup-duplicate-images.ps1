@@ -6,7 +6,8 @@ Searches a given directory for files that start with the same name, but have pre
 param
 ( 
 [Parameter(Position=0,Mandatory=$true,ValueFromPipeline=$false,HelpMessage='path to the directory with asset files, possibly containing duplicates')][string]$AssetPath,
-[Parameter(Position=0,Mandatory=$true,ValueFromPipeline=$false,HelpMessage='path to the directory with docs files containing references to assets')][string]$DocsPath
+[Parameter(Position=0,Mandatory=$true,ValueFromPipeline=$false,HelpMessage='path to the directory with docs files containing references to assets')][string]$DocsPath,
+[Parameter(Position=0,Mandatory=$false,ValueFromPipeline=$false,HelpMessage='regex that matches files that shall be excluded from automatic reference replacements in md files')][string]$ReplacementExclusion
 )
 
 # https://stackoverflow.com/a/22090065
@@ -42,10 +43,13 @@ $Singles =  $FileGroups | Where-Object Count -eq 1
 If ($duplicates.count -lt 1) {
   Write-Information "No duplicates found"
 } else {
+  Write-Information "Found $($duplicates.Count) groups of duplicates"
+
   foreach ($d in $duplicates) {
     $representativePath = $d.Group[0].Path
-    Write-Verbose "Working on duplicate group with representative $representativePath"
+    Write-Verbose "Working on duplicate group with representative $representativePath ($($d.Group.Count) duplicates in group)"
     $targetFileName = $representativePath -replace '^(?<filename>[^(]+)( \([1-9][0-9]*\))+(?<fileextension>\.[a-z]+)$', '${filename}${fileextension}'
+    $targetFileName = $targetFileName.Replace('_','-')  # Underscores need markdown escaping, which causes trouble down the line
     
     if (Test-Path $targetFileName) {
       # exists ... is it in the group?
@@ -55,11 +59,13 @@ If ($duplicates.count -lt 1) {
         $i = 1
         while(Test-Path "$targetFileNameWithoutExtension-$i$targetFileNameExtension") { 
           Write-Information "$targetFileNameWithoutExtension-$i$targetFileNameExtension exists already, searching for an unused file name"
-          ++$i
+          $null = ++$i
         }
         $targetFileName = "$targetFileNameWithoutExtension-$i$targetFileNameExtension" # does not exist yet
       }
     }
+
+    Write-Verbose "TargetFileName for this group is $targetFileName"
     
     if (-not (Test-Path $targetFileName)) {
       $assetReferences = Get-References -DocsPath $DocsPath -AssetName (Split-Path $representativePath -Leaf)
@@ -72,19 +78,28 @@ If ($duplicates.count -lt 1) {
     $referenceCounter = 0
     foreach ($duplicate in $d.Group) {
       $assetReferences = Get-References -DocsPath $DocsPath -AssetName (Split-Path $duplicate.Path -Leaf)
+      Write-Verbose "Found $($assetReferences.Count) references for $($duplicate.Path)"
       $referenceCounter += $assetReferences.Count
       if ($duplicate.Path -ieq $targetFileName) { Continue } # skip the target File
-      elseif ($duplicate.Path -ieq $representativePath -and -not (Test-Path $representativePath)) { Continue } # we renamed this file, so skip deletion, it is already gone
       else {
-        foreach ($assetReference in $assetReferences) {
-          (Get-Content $assetReference.Path) -replace $assetReference.Pattern,(Split-Path $targetFileName -Leaf) | Set-Content $assetReference.Path
+        if ($assetReferences.Count -ge 1) {
+          Write-Information "There are $($assetReferences.Count) occurances of $($assetReference.Pattern) (to be replaced by $targetFileName)"
         }
-      
-        return $assetReferences.Count
+
+        foreach ($assetReference in $assetReferences) {
+          if (-not [string]::IsNullOrWhiteSpace($ReplacementExclusion) -and $assetReference.Pattern -match $ReplacementExclusion) {
+            Write-Warning "Unreplaced reference for $targetFileName : $assetReference"
+          } else {
+            Write-Verbose "Replacing occurance of $($assetReference.Pattern) with $targetFileName in file $($assetReference.Path)"
+            (Get-Content $assetReference.Path).Replace($assetReference.Pattern,(Split-Path $targetFileName -Leaf)) | Set-Content $assetReference.Path
+          }
+        }
+
+        if ($duplicate.Path -ieq $representativePath -and -not (Test-Path $representativePath)) { Continue } # we renamed this file, so skip deletion, it is already gone
 
         Remove-Item $duplicate.Path
         Write-Verbose "Deleted $($duplicate.Path)"
-        ++$deleteCounter
+        $null = ++$deleteCounter
       }
     }
 
@@ -98,6 +113,7 @@ If ($duplicates.count -lt 1) {
 }
 
 Write-Information "Inspecting usage of single files"
+Write-Verbose "There are $($Singles.Count) single files"
 foreach ($singleFileGroup in $Singles) {
   $filePath = $singleFileGroup.Group[0].Path
   $assetReferences = Get-References -DocsPath $DocsPath -AssetName (Split-path $filePath -leaf)
