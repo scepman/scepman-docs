@@ -16,7 +16,7 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](<../../.gitbook/assets/SCEPmanHomePage (10).png>)
+![](../../.gitbook/assets/image-1.png)
 
 Then, create a profile in Microsoft Intune:
 
