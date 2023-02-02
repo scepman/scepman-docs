@@ -99,7 +99,8 @@ If ($duplicates.count -lt 1) {
 
         foreach ($assetReference in $assetReferences) {
           Write-Verbose "Replacing occurance of $($assetReference.Pattern) with $targetFileName in file $($assetReference.Path)"
-          (Get-Content $assetReference.Path).Replace($assetReference.Pattern,(Split-Path $targetFileName -Leaf)) | Set-Content $assetReference.Path
+          $lineWithNewReference = $assetReference.Line.Replace('![](<.','![](.').Replace('>)',')').Replace($assetReference.Pattern,(Split-Path $targetFileName -Leaf)) # the <> brackets are used in md only if the path contains spaces, but must not be used if there are no spaces (?)
+          (Get-Content $assetReference.Path).Replace($assetReference.Line,$lineWithNewReference) | Set-Content $assetReference.Path
         }
 
         if ($duplicate.Path -ieq $representativePath -and -not (Test-Path $representativePath)) { Continue } # we renamed this file, so skip deletion, it is already gone
