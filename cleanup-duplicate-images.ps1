@@ -42,7 +42,7 @@ function Get-References($DocsPath, $AssetPath, $AssetName) {
     }
     $relativePath2Dir = [System.IO.Path]::GetRelativePath((Split-Path -Parent $assetRef.Path), (Resolve-Path $AssetPath))
     $relativePath2File = $relativePath2Dir.Replace('\','/') + $assetRef.Pattern # On Windows systems, we need to replace backward slashes, as there is only forward slashes in md
-    return $assetRef.Line.Contains($relativePath2File)
+    return $assetRef.Line -match "(?<!\.\./)$([regex]::Escape($relativePath2File))" # match path, but there shall be no ../ before it
   }
 }
 
