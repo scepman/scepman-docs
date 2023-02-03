@@ -91,7 +91,7 @@ Follow the steps below to create and configure the Traffic Manager and balance t
 1. Search **Traffic Manager profile** and click **Create**.
 2. Fill in the fields.
 
-![](<../../../.gitbook/assets/scepman-trafficmanager1 (4).png>)
+![](../../../.gitbook/assets/scepman-trafficmanager1.png)
 
 1. Then click **Create**.
 2. After your Traffic Manager is deployed, go to it and click **Configuration** under settings.
@@ -116,7 +116,7 @@ Repeat these steps for your second App Service.
 
 In the **Overview** your Traffic Manager should be like this (here you find the Traffic Manager URL):
 
-![](<../../../.gitbook/assets/scepman-trafficmanager4 (4).png>)
+![](../../../.gitbook/assets/scepman-trafficmanager4.png)
 
 * Navigate to your **App Service** for the cloned SCEPman instance
 * Under **Custom Domains**, create an SSL certificate and set the binding process as described [here](custom-domain.md#SSL-Binding)
