@@ -26,14 +26,14 @@ To get an alert from our health check we need to configure alert rules in our Ap
 <figure><img src="../../.gitbook/assets/2022-12-27 12_13_22.png" alt=""><figcaption><p>Create alert rule</p></figcaption></figure>
 
 5\. Now switch the **Threshold** to **Dynamic**\
-****6. Set **Aggregation type** to **Average**\
-****7. Set **Operator** to **Greater or Less than**\
-****8. Change the **Threshold Sensitivity** to **High**\
-****9. Select **5 minutes** to **Check every**\
-****10. And **15 minutes** as the **Lookback period**\
-****11. **** Click on **Next: Actions**
+\*\*\*\*6. Set **Aggregation type** to **Average**\
+\*\*\*\*7. Set **Operator** to **Greater or Less than**\
+\*\*\*\*8. Change the **Threshold Sensitivity** to **High**\
+\*\*\*\*9. Select **5 minutes** to **Check every**\
+\*\*\*\*10. And **15 minutes** as the **Lookback period**\
+\*\*\*\*11. \*\*\*\* Click on **Next: Actions**
 
-<figure><img src="../../.gitbook/assets/2022-12-27 10-34-32.png" alt=""><figcaption><p>Alert rule condition</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2022-12-27 10-34-32 (1).png" alt=""><figcaption><p>Alert rule condition</p></figcaption></figure>
 
 12\. Now you need to **Select action groups,** If you do not have any action groups available, you can click on **Create action group**
 
@@ -49,7 +49,7 @@ To get an alert from our health check we need to configure alert rules in our Ap
 ![Set notifications to action group](../../.gitbook/assets/screen-shot-2021-01-19-at-11.11.40.png)
 
 18\. After that you can click on **Review + create** and then on **Create** to be redirected back to **Actions** in creating the alert rule, Next to **Details**\
-****19. Now you must enter an **Alert rule name**, define the **Severity, Enable alter rule upon creation,** and **Automatically resolve alerts.**\
+\*\*\*\*19. Now you must enter an **Alert rule name**, define the **Severity, Enable alter rule upon creation,** and **Automatically resolve alerts.**\
 20\. Click on **Review + Create,** then **Create**
 
 <figure><img src="../../.gitbook/assets/2022-12-27 12_41_27.png" alt=""><figcaption><p>Create alert rule</p></figcaption></figure>
@@ -57,4 +57,3 @@ To get an alert from our health check we need to configure alert rules in our Ap
 <figure><img src="../../.gitbook/assets/2022-12-27 12_43_31.png" alt=""><figcaption><p>Create alert rule</p></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/2022-12-27 12_46_42.png" alt=""><figcaption><p>Veiw existing alert rules</p></figcaption></figure>
-
