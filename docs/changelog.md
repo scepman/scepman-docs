@@ -1,6 +1,12 @@
-# Changelog
+# Change Log
 
 ## Versions
+
+### 2.4 - Upcoming
+
+* Form to request Code Signing certificates
+* Form to request Sub CA certificates, e.g. for Firewalls that inspect TLS traffic
+* More to be announced
 
 ### 2.3 - January 2023
 

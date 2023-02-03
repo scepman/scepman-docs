@@ -21,7 +21,7 @@ To retain or archive the log files, we recommend configuring the following setti
 
 Your **App Service logs** settings should be **(in our example)** like:
 
-![](<../../.gitbook/assets/2021-09-04 06-40-56-scepman-apppnf42avv2wmis - Microsoft Azure and 4 more pages - C4A8 EHamed - Micr.png>)
+![](<../../.gitbook/assets/2021-09-04 06-40-56-scepman-apppnf42avv2wmis - Microsoft Azure and 4 more pages - C4A8 EHamed - Micr (1).png>)
 
 ## Diagnostic settings (Optional settings)
 

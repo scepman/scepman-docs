@@ -22,9 +22,9 @@ By clicking on add, the custom domain and the SSL Managed Certificate will be cr
 
 <figure><img src="../../.gitbook/assets/2022-12-23 17_01_35-Window.png" alt=""><figcaption></figcaption></figure>
 
-After configuring the custom domain, make sure to update  SCEPman App Service Setting [**AppConfig:BaseUrl**](application-settings/basics.md#appconfig-baseurl) **** to the new URL, save and restart the App Service
+After configuring the custom domain, make sure to update SCEPman App Service Setting [**AppConfig:BaseUrl**](application-settings/basics.md#appconfig-baseurl) \*\*\*\* to the new URL, save and restart the App Service
 
-![](../../../.gitbook/assets/scepman-cname4-1.png)
+![](<../../../.gitbook/assets/scepman-cname4-1 (1).png>)
 
 ### Microsoft Documentation and Managed Certificates
 
