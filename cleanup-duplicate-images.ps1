@@ -28,14 +28,9 @@ function Test-Any {
 }
 
 function Get-References($DocsPath, $AssetPath, $AssetName) {
-  [Array]$assetReferences = Get-ChildItem -Path $DocsPath -Recurse -Filter "*.md" | Select-String -SimpleMatch -Pattern $AssetName
-  [Array]$escapedAssetReferences = Get-ChildItem -Path $DocsPath -Recurse -Filter "*.md" | Select-String -SimpleMatch -Pattern ($AssetName.Replace('_','\_'))
+  [Array]$assetReferences = Get-ChildItem -Path $DocsPath -Recurse -Filter "*.md" | Select-String -SimpleMatch -Pattern ($AssetName.Replace('_','\_'))
 
-  if ($escapedAssetReferences.Count -gt 0) {  # Required because of the many types of $null in PS: https://stackoverflow.com/questions/22343187/why-is-an-empty-powershell-pipeline-not-the-same-as-null/
-    $assetReferences += $escapedAssetReferences
-  }
-
-  return $assetReferences | Where-Object { # There may be assets in another directory with the same name. Filter out references with the wrong path
+   return $assetReferences | Where-Object { # There may be assets in another directory with the same name. Filter out references with the wrong path
     $assetRef = $_
     if ($null -eq $assetRef) {
       return $false # $nulls may come in when handling array in PS
