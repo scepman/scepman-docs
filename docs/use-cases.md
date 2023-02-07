@@ -20,7 +20,7 @@ You can enroll user authentication certificates with SCEPman for TLS client auth
 * Internal web applications
 * Microsoft 365
   * Exchange Online
-  * Azure Active Directory (AAD)
+  * Azure Active Directory (AAD) / Azure CBA (currently no CRL support)
 * Other cloud services
 * Remote Desktop connections
   * AVD
