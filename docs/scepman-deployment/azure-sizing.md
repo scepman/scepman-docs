@@ -46,7 +46,7 @@ You can adapt the computing power for your App Service to your individual daily 
 
 ### Auto Scale
 
-Alternatively you can use the Azure App Autoscaling feature to adapt to needed resources. Learn more about that in [Autoscaling](../scepman-configuration/optional/autoscaling.md).
+Alternatively you can use the Azure App Autoscaling feature to adapt to needed resources. Learn more about that in [Autoscaling](../advanced-configuration/autoscaling.md).
 
 ### Manual vs. Auto Scale
 

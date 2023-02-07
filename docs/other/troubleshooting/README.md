@@ -4,13 +4,13 @@ Please see the list of [Common Problems](general.md) if something is not working
 
 ## Access SCEPman Logs
 
-You can use the [log archive in blob storage](../../scepman-configuration/optional/log-configuration.md) to access SCEPman's logs. However, if you don't want to configure this or just want to have a quicker look into the logs, it might be easier to use one of the two methods described below: Downloading logs from the App Service's file system or monitoring the Log Stream.
+You can use the [log archive in blob storage](../../advanced-configuration/log-configuration.md) to access SCEPman's logs. However, if you don't want to configure this or just want to have a quicker look into the logs, it might be easier to use one of the two methods described below: Downloading logs from the App Service's file system or monitoring the Log Stream.
 
 ### Downloading the Logs
 
 Configure the **App Services Logs**
 
-![](../../../.gitbook/assets/event32-5.png)
+![](<../../.gitbook/assets/event32\_5 (2) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (4).png>)
 
 Check Azure Web App log files via **Advanced Tools**:
 
@@ -21,13 +21,13 @@ Check Azure Web App log files via **Advanced Tools**:
 
 Click on the download icon on the latest .txt file and review it
 
-![](../../../.gitbook/assets/event32-3.png)
+![](<../../.gitbook/assets/event32\_3 (2) (7) (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (11) (1) (1) (1) (1) (1) (1) (1) (15).png>)
 
 ### Live Log Monitor
 
 Check the **Log Stream** of the **App Service**:
 
-![](../../../.gitbook/assets/event32-6.png)
+![](<../../.gitbook/assets/event32\_6 (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3).png>)
 
 1. Monitor the log stream.
 2. Reproduce the error.

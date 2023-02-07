@@ -19,8 +19,8 @@ In case you have Azure resource naming conventions, high availability or auto-sc
 | High-availability / redundancy                |                                                                                                                              | :ballot\_box\_with\_check: |
 | Auto-scaling                                  |                                                                                                                              | :ballot\_box\_with\_check: |
 
-{% content-ref url="../community-guide.md" %}
-[community-guide.md](../community-guide.md)
+{% content-ref url="community-guide.md" %}
+[community-guide.md](community-guide.md)
 {% endcontent-ref %}
 
 {% content-ref url="enterprise-guide-1.md" %}

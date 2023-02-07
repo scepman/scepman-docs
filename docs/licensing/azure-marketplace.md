@@ -82,14 +82,14 @@ To get started with your SCEPman subscription,
 * Locate SCEPman (Subscription) on the **Marketplace** in your [**Azure Portal**](https://portal.azure.com/#create/glueckkanja-gabag.radiusaas-transactable-prod/preview)&#x20;
 * Select the SCEPman Enterprise Edition **Plan** based on your preferred renewal interval and click "Subscribe"
 
-![](<../.gitbook/assets/image (2) (1).png>)
+![](<../.gitbook/assets/image (10).png>)
 
 * Create or select the **Resource group** you would like to deploy the subscription to
 * Assign a **Name** to later identify your SCEPman subscription
 * We recommend to keep **Recurring billing** on **** so that you do not have to worry about a manual renewal of your subscription.
 * Click "Review + subscribe" and in the next blade "Subscribe" to deploy the subscription to your Azure SaaS portal.
 
-![](<../.gitbook/assets/image (3).png>)
+![](<../.gitbook/assets/image (7).png>)
 
 {% hint style="info" %}
 The random order of **Base Fees** und **Additional Users** under the **Price** information is attributed to limitations of the Azure Marketplace. Later during the the enrolment process, we will provide you with transparent information on the expected licensing costs.
@@ -97,7 +97,7 @@ The random order of **Base Fees** und **Additional Users** under the **Price** i
 
 * Once the deployment is complete, please navigate to our platform by clicking "Configure account now"
 
-![](<../.gitbook/assets/image (4) (1) (1).png>)
+![](<../.gitbook/assets/image (4).png>)
 
 * After authenticating on our platform using your Microsoft credentials, you will be prompted for additional information, such as the desired **total user amount** and a **technical admin contact**.
 
