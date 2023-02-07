@@ -6,6 +6,7 @@
 
 * Form to request Code Signing certificates
 * Form to request Sub CA certificates, e.g. for Firewalls that inspect TLS traffic
+* Form to manually request user certificates, e.g. for RDP or AVD SSO or import on smart cards like Yubikeys
 * More to be announced
 
 ### 2.3 - January 2023
