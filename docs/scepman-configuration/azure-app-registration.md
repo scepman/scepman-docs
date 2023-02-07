@@ -58,7 +58,7 @@ Stay within **App Registrations** and click on **API permissions**
 
 ![](../../.gitbook/assets/app-permission-graph.png)
 
-![](<../../.gitbook/assets/app-permission-directory-read (1).png>)
+![](../../.gitbook/assets/app-permission-directory-read.png)
 
 3\. Now click on **Add a permission** and choose **Intune**. When chosen, select **Application permissions** and search for scep. Add **scep\_challenge\_provider** as a permission
 
@@ -70,7 +70,7 @@ Stay within **App Registrations** and click on **API permissions**
 
 ![](../../.gitbook/assets/app-registration-consent.png)
 
-![](<../../.gitbook/assets/app-registration-consent-confirm (1).png>)
+![](../../.gitbook/assets/app-registration-consent-confirm.png)
 
 5\. After successfully granting the permissions you should see green status for each permission.
 

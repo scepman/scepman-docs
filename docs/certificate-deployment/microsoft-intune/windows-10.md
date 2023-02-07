@@ -8,7 +8,7 @@ The basis for deploying SCEP certificates is to trust the public root certificat
 
 * [ ] Download the CA Certificate from SCEPman portal:
 
-![](<../../.gitbook/assets/image-1 (10).png>)
+![](../../.gitbook/assets/image-1.png)
 
 * [ ] Create a profile for **Windows 10 and later** with type **Trusted certificate** in Microsoft Intune:
 
@@ -25,7 +25,7 @@ Note that you have to use the same group for assigning the Trusted certificate a
 
 * [ ] Open the SCEPman portal and copy the URL under Intune MDM
 
-![](<../../.gitbook/assets/image-2 (1).png>)
+![](../../.gitbook/assets/image-2.png)
 
 * [ ] Create a profile for **Windows 10 and later** with type **SCEP certificate** in Microsoft Intune
 
