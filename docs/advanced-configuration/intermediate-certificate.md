@@ -20,7 +20,7 @@ You need to grant an Azure AD App and your user account access to the Azure Key 
 2. Now you must select a principal by clicking on **None selected** and search for your Azure AD App Registration.
 3. To close the dialog press **Select** and then press **Add**.
 
-![](../.gitbook/assets/screenshot-2020-10-19-at-15.34.16.png)
+![](<../.gitbook/assets/screenshot-2020-10-19-at-15.34.16 (1).png>)
 
 Now repeat this for your own user account:
 

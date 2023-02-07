@@ -18,4 +18,4 @@ To activate the Application Insights for your App Service, please follow this in
 4. Turn on the **Profiler**, **Snapshot debugger** and **Show local variables \[...]** _(See frame **2** in Screenshot)_
 5. Finally, you can click on **Apply**
 
-![](<../.gitbook/assets/image (7).png>)
+![](<../.gitbook/assets/image (7) (1).png>)

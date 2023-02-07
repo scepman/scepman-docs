@@ -7,7 +7,7 @@ description: Azure Marketplace Deployment
 * To deploy SCEPman from Azure Marketplace, please visit this [**link**](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman?tab=Overview).&#x20;
 * Click "**Get it now**" and afterwards "**Continue**". You will be re-directed to the marketplace item on Azure Portal.
 
-![](<../../.gitbook/assets/image (6).png>)
+![](<../../.gitbook/assets/image (3).png>)
 
 * Click "**Create**"
 * Now, follow these steps to deploy SCEPman in your Azure tenant:
