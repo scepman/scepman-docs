@@ -89,7 +89,7 @@ To get started with your SCEPman subscription,
 * We recommend to keep **Recurring billing** on **** so that you do not have to worry about a manual renewal of your subscription.
 * Click "Review + subscribe" and in the next blade "Subscribe" to deploy the subscription to your Azure SaaS portal.
 
-![](<../.gitbook/assets/image (7).png>)
+![](../.gitbook/assets/image.png)
 
 {% hint style="info" %}
 The random order of **Base Fees** und **Additional Users** under the **Price** information is attributed to limitations of the Azure Marketplace. Later during the the enrolment process, we will provide you with transparent information on the expected licensing costs.
@@ -97,7 +97,7 @@ The random order of **Base Fees** und **Additional Users** under the **Price** i
 
 * Once the deployment is complete, please navigate to our platform by clicking "Configure account now"
 
-![](<../.gitbook/assets/image (4).png>)
+![](<../.gitbook/assets/image (5).png>)
 
 * After authenticating on our platform using your Microsoft credentials, you will be prompted for additional information, such as the desired **total user amount** and a **technical admin contact**.
 

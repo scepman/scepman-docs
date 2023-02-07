@@ -87,7 +87,7 @@ certutil -verifyStore MY
 
 Look at the certificate with the device ID issued by the SCEPman-Device-Root-CA-V1 and verify if the certificate is valid (see last line).
 
-![](<../../.gitbook/assets/scepman\_revocation1 (3) (3) (3) (3) (3) (3) (3) (3) (1).png>)
+![](<../../.gitbook/assets/scepman\_revocation1 (3) (3) (3) (3) (3) (3) (3) (3) (1) (1).png>)
 
 To verify that the OCSP responder is working, you can look at the OCSP url cache with the following command:
 

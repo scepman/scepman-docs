@@ -8,11 +8,11 @@ The basis for deploying SCEP certificates is to trust the public root certificat
 
 * [ ] Download the CA Certificate from SCEPman portal:
 
-![](<../../.gitbook/assets/SCEPmanHomePage (1).png>)
+![](<../../.gitbook/assets/SCEPmanHomePage (2).png>)
 
 * [ ] Create a profile for iOS/iPadOS with type **Trusted certificate** in Microsoft Intune:
 
-![](<../../.gitbook/assets/image (5).png>)
+![](<../../.gitbook/assets/image (3).png>)
 
 * [ ] Upload your previously downloaded **.cer file**.
 * [ ] Now you can deploy this profile to your devices. Please choose All Users and/or All Devices or a dedicated group for assignment.
@@ -25,11 +25,11 @@ Note, that you have to use the **same group for assigning** the **Trusted certif
 
 * [ ] Open the SCEPman portal and copy the URL under **Intune MDM**:
 
-![](<../../.gitbook/assets/image (1).png>)
+![](<../../.gitbook/assets/image (8).png>)
 
 * [ ] Create a profile for iOS/iPadOS with type **SCEP certificate** in Microsoft Intune:
 
-![](<../../.gitbook/assets/image (6).png>)
+![](<../../.gitbook/assets/image (1).png>)
 
 * [ ] Configure the profile as described:
 

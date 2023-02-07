@@ -94,7 +94,7 @@ Follow these instructions to create a storage account:
 
 3\. Your Subscription and resource group are pre-selected and you can start with defining **Storage account name, Location Performance, Account kind, Replication and Access tier** (Use settings as shown in the screenshot)
 
-![](<../.gitbook/assets/image (9).png>)
+![](<../.gitbook/assets/image (12).png>)
 
 4\. Go to the **Advanced** tab and set the **Blob public access** to **Enabled**
 

@@ -7,7 +7,7 @@ SCEPman offers two options for validating device certificates (e.g. for OCSP req
 
 Those IDs are visible in Intune per device under tab "Hardware":
 
-![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (4).png>)
 
 For recognizing the device behind an issued certificate, SCEPman requires the corresponding **ID in the subject name**:
 

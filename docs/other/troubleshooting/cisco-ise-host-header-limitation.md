@@ -22,11 +22,11 @@ The following instructions outline the steps required to create an Azure Applica
 
 ## 4) Create a new Backend Pool
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.55 (2) (4) (5) (2) (1).png>)
+![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.55 (2) (4) (5) (2) (3).png>)
 
 ## 5) Add a routing rule for HTTP
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.36 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2).png>)
+![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.36 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1).png>)
 
 ![](../../.gitbook/assets/Replace5.png)
 
@@ -62,7 +62,7 @@ The use of HTTP without TLS is not a security vulnerability; PKI-based resources
 
 ## 7) Confirm Routing Rules
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.18.56 (2) (2) (2) (2) (2) (2) (1).png>)
+![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.18.56 (2) (2) (2) (2) (2) (2) (1) (2).png>)
 
 ## 8) Finalize the Application Gateway configuration
 
