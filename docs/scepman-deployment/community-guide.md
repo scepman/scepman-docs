@@ -98,8 +98,8 @@ This is **recommended** step.
 
 You can configure two different logging parts in your App Service, to retain your log data. The one part is the **App Service Logs**, which will save all application and IIS server-based log data. The other part is the **Diagnostic settings**, this contains platform logs and metrics data.
 
-{% content-ref url="../scepman-configuration/optional/log-configuration.md" %}
-[log-configuration.md](../scepman-configuration/optional/log-configuration.md)
+{% content-ref url="../advanced-configuration/log-configuration.md" %}
+[log-configuration.md](../advanced-configuration/log-configuration.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}
@@ -126,8 +126,8 @@ This is **recommended** step.
 
 We can configure a Health Check for the App Service to get direct notifications in case that the SCEPman stops working.
 
-{% content-ref url="../scepman-configuration/optional/health-check.md" %}
-[health-check.md](../scepman-configuration/optional/health-check.md)
+{% content-ref url="../advanced-configuration/health-check.md" %}
+[health-check.md](../advanced-configuration/health-check.md)
 {% endcontent-ref %}
 
 ### Step 9: Configure your MDM Deployment Profiles

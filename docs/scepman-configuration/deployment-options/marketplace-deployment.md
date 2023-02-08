@@ -7,7 +7,7 @@ description: Azure Marketplace Deployment
 * To deploy SCEPman from Azure Marketplace, please visit this [**link**](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman?tab=Overview).&#x20;
 * Click "**Get it now**" and afterwards "**Continue**". You will be re-directed to the marketplace item on Azure Portal.
 
-![](<../../.gitbook/assets/image (1).png>)
+![](<../../.gitbook/assets/image (1) (2).png>)
 
 * Click "**Create**"
 * Now, follow these steps to deploy SCEPman in your Azure tenant:
@@ -29,7 +29,7 @@ To maximize compatibility, for the **Organization Name** we recommend to omit
 1. Select an existing **resource group** or create a new one (SCEPman resources will be deployed in this group)
 2. Set the **region** according to your preferred data center location. It **must** match the region of the resource group - in case you have selected an existing one. It will be assigned to the resource group otherwise.
 3. Set an **Organization Name**. This field is **important** as the organization provided here will manifest itself in the O= field of the Root CA that is going to be created later on.&#x20;
-4. Select your preferred **Update Channel**. By default, the [Evergreen approach](../optional/update-strategy.md#evergreen-approach) is configured as [update strategy](../optional/update-strategy.md). This parameter determines from which [channel](../optional/application-artifacts.md) the binaries for SCEPman will be loaded. For production environments, we recommend to use the **Production Channel** (default).
+4. Select your preferred **Update Channel**. By default, the [Evergreen approach](../optional/update-strategy.md#evergreen-approach) is configured as [update strategy](../optional/update-strategy.md). This parameter determines from which [channel](../../advanced-configuration/application-artifacts.md) the binaries for SCEPman will be loaded. For production environments, we recommend to use the **Production Channel** (default).
 5. Click "**Review + Create**"
 6. Click "**Create**"
 

@@ -6,7 +6,7 @@ Please follow this guide to distribute certificates to computers (macOS). Before
 
 As first step you need to deploy SCEPman root certificate. Download this CA certificate via SCEPman dashboard:
 
-![](<../../.gitbook/assets/SCEPmanHomePage (1).png>)
+![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (9).png>)
 
 Add a new "macOS Configuration Profile" and choose "Certificate" as payload. Enter a meaningful name, upload the certificate (for"Select Certificate Option" select "Upload)" and activate "Allow all apps access":
 
@@ -27,7 +27,7 @@ Please add another "macOS Configuration Profile" and choose "SCEP" as payload. A
 
 Please adjust other options on your needs.
 
-![](<../../.gitbook/assets/image (21).png>)
+![](<../../.gitbook/assets/image (21) (1).png>)
 
 ![](<../../.gitbook/assets/image (24).png>)
 

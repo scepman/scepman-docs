@@ -8,7 +8,7 @@ SCEPman Enterprise Edition only
 This feature requires version **2.0** or above.
 {% endhint %}
 
-You can generate an X.509 certificate including a private key via the SCEPman Certificate Master Web UI. Certificate Master is enabled for all new installations of SCEPman 2.0 or newer. If you upgrade from SCEPman 1.x, you must [complete the post-installation configuration](../../scepman-deployment/permissions/post-installation-config.md) before you can use Certificate Master. For both fresh installations and upgrades, before you can access SCEPman Certificate Master, you need to [assign the permissions](../../scepman-deployment/permissions/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website) to the AAD account used for certificate submission.
+You can generate an X.509 certificate including a private key via the SCEPman Certificate Master Web UI. Certificate Master is enabled for all new installations of SCEPman 2.0 or newer. If you upgrade from SCEPman 1.x, you must [complete the post-installation configuration](../../scepman-configuration/post-installation-config.md) before you can use Certificate Master. For both fresh installations and upgrades, before you can access SCEPman Certificate Master, you need to [assign the permissions](../../scepman-configuration/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website) to the AAD account used for certificate submission.
 
 This option allows you to easily generate a TLS Server Certificate for multiple domain names.
 

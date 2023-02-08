@@ -35,5 +35,4 @@ Do not forget to restart SCEPman App Service after enabling and saving the setti
 ## WEBSITE\_RUN\_FROM\_PACKAGE
 
 This setting points to the Application Artifacts that will be loaded by starting the App Service.\
-Please have a look at these instructions: [Application Artifacts](../application-artifacts.md#change-artifacts).
-
+Please have a look at these instructions: [Application Artifacts](../../../advanced-configuration/application-artifacts.md#change-artifacts).

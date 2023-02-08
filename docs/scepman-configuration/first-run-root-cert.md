@@ -4,8 +4,8 @@ After you have deployed your SCEPman environment you have to create a root certi
 
 If you want to use an intermediate certificate (Enterprise Edition only) you can have a look at this guide:&#x20;
 
-{% content-ref url="optional/intermediate-certificate.md" %}
-[intermediate-certificate.md](optional/intermediate-certificate.md)
+{% content-ref url="../advanced-configuration/intermediate-certificate.md" %}
+[intermediate-certificate.md](../advanced-configuration/intermediate-certificate.md)
 {% endcontent-ref %}
 
 **For a standard SCEPman setup we recommend generating a new root certificate with the following steps:**

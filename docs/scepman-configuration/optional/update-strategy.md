@@ -6,8 +6,8 @@ We recommend an Evergreen approach for our SCEPman solution. That means that you
 
 How to do that is mentioned in this article:&#x20;
 
-{% content-ref url="application-artifacts.md" %}
-[application-artifacts.md](application-artifacts.md)
+{% content-ref url="../../advanced-configuration/application-artifacts.md" %}
+[application-artifacts.md](../../advanced-configuration/application-artifacts.md)
 {% endcontent-ref %}
 
 With this approach you always get the newest features and security updates.
@@ -37,8 +37,8 @@ Please keep in mind that each Deployment Slot is running on the same App Service
 
 The idea behind the pre-release slot is to have your production App Service running with artifacts stored on your own Storage account and create a new Deployment Slot pointing to our GitHub artifacts. You can find the steps for setting up your custom artifact location in the following article:&#x20;
 
-{% content-ref url="application-artifacts.md" %}
-[application-artifacts.md](application-artifacts.md)
+{% content-ref url="../../advanced-configuration/application-artifacts.md" %}
+[application-artifacts.md](../../advanced-configuration/application-artifacts.md)
 {% endcontent-ref %}
 
 Now your production App Service is running with a custom artifacts location and we proceed with the configuration of the new Deployment Slot.
@@ -66,7 +66,7 @@ After the deployment is finished successfully, you can check the deployment slot
 
 Now ensure that your deployment slot points to SCEPman **** Production channel on GitHub:
 
-Navigate to the **Deployment Slot** -> **Configuration** and look for the setting **WEBSITE\_RUN\_FROM\_PACKAGE** and past the [production channel artifacts](application-artifacts.md#production) to the value.
+Navigate to the **Deployment Slot** -> **Configuration** and look for the setting **WEBSITE\_RUN\_FROM\_PACKAGE** and past the [production channel artifacts](../../advanced-configuration/application-artifacts.md#production) to the value.
 
 ![](<../../.gitbook/assets/2022-06-13 12\_01\_16-DeploymentSlotTest.png>)
 

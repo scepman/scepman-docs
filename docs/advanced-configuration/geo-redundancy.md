@@ -27,7 +27,7 @@ To clone an App Service, first you need to create a new **App Service Plan** in 
 ![Creation of a new App Service Plan with Windows](<../.gitbook/assets/2022-06-15 13\_29\_57-Create App Service Plan.png>)
 
 {% hint style="info" %}
-App Service Clone requirements (via [SCEPman PowerShell Module](../scepman-deployment/permissions/post-installation-config.md#acquire-and-run-the-scepman-installation-powershell-module)):
+App Service Clone requirements (via [SCEPman PowerShell Module](../scepman-configuration/post-installation-config.md#acquire-and-run-the-scepman-installation-powershell-module)):
 
 * SCEPman **2.2** or above
 * SCEPman PowerShell Module **1.6.3.0** or above
@@ -106,7 +106,7 @@ Follow the steps below to create and configure the Traffic Manager and balance t
 1. Then under **Settings** choose **Endpoints**
 2. Click **Add** and choose the primary App Service.
 
-![](<../.gitbook/assets/scepman\_trafficmanager3 (1).png>)
+![](../../.gitbook/assets/scepman\_trafficmanager3.png)
 
 #### Second Endpoint
 
@@ -116,10 +116,10 @@ Repeat these steps for your second App Service.
 
 In the **Overview** your Traffic Manager should be like this (here you find the Traffic Manager URL):
 
-![](<../.gitbook/assets/scepman\_trafficmanager4 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (4) (5) (3).png>)
+![](<../../.gitbook/assets/scepman\_trafficmanager4 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (1) (10) (7).png>)
 
 * Navigate to your **App Service** for the cloned SCEPman instance
-* Under **Custom Domains**, create an SSL certificate and set the binding process as described [here](custom-domain.md#SSL-Binding)
+* Under **Custom Domains**, create an SSL certificate and set the binding process as described [here](../scepman-configuration/optional/custom-domain.md#SSL-Binding)
 * Both instances of SCEPman must have the same custom domain
 * Navigate to your DNS management service (e.g. **Azure DNS Zones**)
 * There shall be a CNAME entry for the custom SCEPman domain that maps to the Traffic Manager endpoint. Remove any possibly existing wrong CNAME entry pointing to one of the Azure App Service instances and add a CNAME that maps the custom SCEPman domain to the Traffic Manager endpoint now, e.g. your entry scepman.customer.com should point to something like scepman-tf-profile.trafficmanager.net
@@ -130,7 +130,7 @@ In **Azure DNS Zone**, in order to modify a record, you first have to remove the
 
 ### Custom Domain Configuration
 
-After successful deployment and configuration of the Traffic Manager profile, we highly recommend setting up custom domains for **both** SCEPman instances as described [here](custom-domain.md). The custom domains have the following requirements attached to them:
+After successful deployment and configuration of the Traffic Manager profile, we highly recommend setting up custom domains for **both** SCEPman instances as described [here](../scepman-configuration/optional/custom-domain.md). The custom domains have the following requirements attached to them:
 
 * The custom domains of both instances of SCEPman have to be **the same**.
 * Both custom domains should point to the Traffic Manager (see screenshot below)
@@ -142,4 +142,4 @@ After successful deployment and configuration of the Traffic Manager profile, we
 
 The Storage Account used for SCEPman should also be configured for redundancy. The default SCEPman setup uses Locally Redundant Storage (LRS), which uses only a single region. For example, configure Geo-redundant storage (GRS).
 
-<figure><img src="../.gitbook/assets/storage-account-redundancy (1).png" alt=""><figcaption><p>Redundancy dialog in the Azure Portal</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/storage-account-redundancy.png" alt=""><figcaption><p>Redundancy dialog in the Azure Portal</p></figcaption></figure>

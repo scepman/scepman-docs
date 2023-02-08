@@ -15,7 +15,7 @@ Certificates issued by SCEPman are widely used for the purpose of certificate-ba
 
 ## Certificate-based Authentication
 
-You can enroll user authentication certificates with SCEPman for TLS client authentication. This allows authentication to web sites or services such as
+You can enrol user authentication certificates with SCEPman for TLS client authentication. This allows authentication to web sites or services such as
 
 * Internal web applications
 * Microsoft 365

@@ -35,8 +35,8 @@
 
 #### SCEPman 2.2.631
 
-* [Revoke Intune certificates on some MEM events](advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory)
-* [Intune-enrolled user certificates become invalid when user risk exceeds a configured threshold](advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck) (requires an additional permission for which you must [re-run the SCEPman configuration script](scepman-deployment/permissions/post-installation-config.md#running-the-scepman-installation-cmdlet))
+* [Revoke Intune certificates on some MEM events](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory)
+* [Intune-enrolled user certificates become invalid when user risk exceeds a configured threshold](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck) (requires an additional permission for which you must [re-run the SCEPman configuration script](scepman-configuration/post-installation-config.md#running-the-scepman-installation-cmdlet))
 * [Additional static SCEP endpoint with AAD-bound certificates](advanced-configuration/application-settings/staticaad-validation.md)
 * Library updates
 
@@ -44,7 +44,7 @@
 
 * UI improvements
 * Additional certificate file formats for Certificate Master
-* Certificate Master lists issued client certificates for manual revocation (requires an additional permission for which you must [re-run the SCEPman configuration script](scepman-deployment/permissions/post-installation-config.md#running-the-scepman-installation-cmdlet))
+* Certificate Master lists issued client certificates for manual revocation (requires an additional permission for which you must [re-run the SCEPman configuration script](scepman-configuration/post-installation-config.md#running-the-scepman-installation-cmdlet))
 * Library updates
 
 ### 2.1.522 - May 2022
@@ -55,7 +55,7 @@
   * Other library updates
 * Robustness
 * Bearer Authentication for Jamf Classic API
-* [Invalidate certificates for Intune devices with pending wipes or otherwise unhealthy management states](advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-revokecertificatesonwipe)
+* [Invalidate certificates for Intune devices with pending wipes or otherwise unhealthy management states](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-revokecertificatesonwipe)
 * Minor Improvements
 
 ### 2.0.473 - March 2022
@@ -68,29 +68,29 @@
   * Improved Performance with .NET 5
   * Azure Key Vault
   * Other library updates
-* [Easier deployment, no manual app registraton required anymore](scepman-deployment/permissions/post-installation-config.md)
-* [Select whether to use AAD or Intune directory for device validity checks](advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory)
+* [Easier deployment, no manual app registraton required anymore](scepman-configuration/post-installation-config.md)
+* [Select whether to use AAD or Intune directory for device validity checks](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory)
 * New UI
   * So beautiful and with a new logo
   * Detailed information on activated SCEP endpoints
-* [Compatibility with GCC High, GCC DoD, and 21Vianet environments](advanced-configuration/application-settings/national-cloud-platforms.md)
+* [Compatibility with GCC High, GCC DoD, and 21Vianet environments](scepman-configuration/optional/application-settings/national-cloud-platforms.md)
 * Various minor improvements
 
 ### 1.9.207 - July 2021
 
 * [JAMF User Certificates](certificate-deployment/jamf/users.md)
-* Update to the [Compliance Check Preview](advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-compliancecheck)
+* Update to the [Compliance Check Preview](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-compliancecheck)
   * Also working for Windows devices during enrollment
 * Improved [RADIUS-as-a-Service](https://www.radius-as-a-service.com) compatibility
 * Minor advancements
   * Improved error messages
-  * Improved Compatibility with ISE with [a new default setting](advanced-configuration/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-addextendedkeyusage)
+  * Improved Compatibility with ISE with [a new default setting](scepman-configuration/optional/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-addextendedkeyusage)
 
 ### 1.8.155 - June 2021
 
 * Improved robustness in exceptional situations
   * Correct answers to invalid OCSP requests, which may occur rarely for certificates issued by SCEPman 1.5 or earlier
-  * [Certificate issuance scheduling in overload situations](advanced-configuration/application-settings/certificates.md#appconfig-concurrentsceprequestlimit)
+  * [Certificate issuance scheduling in overload situations](scepman-configuration/optional/application-settings/certificates.md#appconfig-concurrentsceprequestlimit)
   * Option to configure a "Clock Skew" for clients with clocks running slow (> 10 minutes), which [happens in few tenants for Intune-managed Windows devices](other/troubleshooting/general.md#windows-10-devices-cannot-enroll-with-autopilot)
 * Logging
   * Less log clutter on Info level
@@ -111,7 +111,7 @@
 * Separate Certificate Lifetimes for each endpoint, e.g. for [Domain Controller Certificates](advanced-configuration/application-settings/dc-validation.md#appconfig-dcvalidation-validityperioddays)
 * [Secure application configuration in Key Vault](advanced-configuration/application-settings/#secure-configuration-in-azure-key-vault)
 * Moved the release path to [https://github.com/scepman/install](https://github.com/scepman/install). Please update your setting WEBSITE\_RUN\_FROM\_PACKAGE as described in Section [Application Artifacts](advanced-configuration/application-artifacts.md).
-* Preview of [Compliance Checks](advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-compliancecheck)
+* Preview of [Compliance Checks](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-compliancecheck)
 * Minor advancements
   * Workaround a bug on some Android versions to gain correct validity periods
   * SCEPman CA certificates receive an Extended Key Usage to improve compatibility with some versions of Cisco ISE

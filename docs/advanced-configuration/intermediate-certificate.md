@@ -14,13 +14,13 @@ You need to grant an Azure AD App and your user account access to the Azure Key 
 2. Click on **Access policies** in the left navigation pane.
 3. Click on **Add Access Policy**
 
-![](<../.gitbook/assets/screenshot-2020-10-19-at-15.23.16 (1).png>)
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-15.23.16 (1).png>)
 
 1. Click **Configure from template (optional)** and choose **Certificate Management**.
 2. Now you must select a principal by clicking on **None selected** and search for your Azure AD App Registration.
 3. To close the dialog press **Select** and then press **Add**.
 
-![](<../.gitbook/assets/screenshot-2020-10-19-at-15.34.16 (1).png>)
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-15.34.16 (1).png>)
 
 Now repeat this for your own user account:
 
@@ -191,7 +191,7 @@ AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName AppConfig:KeyVaul
 1. As value you must insert your new certificate name and the new subject name.
 2. To complete this step, you must click on **Save** in the upper left part.
 
-![](<../.gitbook/assets/screenshot-2020-10-19-at-16.06.40 (1).png>)
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40 (1).png>)
 
 Please restart the Azure App Service and then navigate to your SCEPman URL. On the SCEPman Status page you can see the new configuration and download the new intermediate CA certificate to deploy this via Endpoint Manager.
 

@@ -16,7 +16,7 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](<../../.gitbook/assets/SCEPmanHomePage (1).png>)
+![](<../../.gitbook/assets/SCEPmanHomePage (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (9).png>)
 
 Then, create a profile in Microsoft Intune:
 
@@ -74,7 +74,7 @@ Download the CA certificate:
 
 Then, create a profile in Microsoft Intune:
 
-![](<../../.gitbook/assets/scepman\_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1) (1).png>)
+![](<../../../.gitbook/assets/scepman\_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (1) (2) (7).png>)
 
 1. Download the CA Certificate
 2. Then, create a profile in Microsoft Intune
@@ -88,7 +88,7 @@ When you are finished with it, you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Make note of the SCEP server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman
 
-![](<../../.gitbook/assets/scepman27 (2) (1) (11).png>)
+![](<../../../.gitbook/assets/scepman27 (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (11) (1) (1) (1) (1) (10) (23).png>)
 
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll)
 
@@ -152,7 +152,7 @@ Download the CA certificate:
 
 Then, create a profile in Microsoft Intune:
 
-![](<../../.gitbook/assets/scepman\_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1) (1).png>)
+![](<../../../.gitbook/assets/scepman\_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (1) (2) (7).png>)
 
 1. Download the CA Certificate
 2. Then, create a profile in Microsoft Intune
@@ -166,7 +166,7 @@ When you are done with it, you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
 
-![](<../../.gitbook/assets/scepman27 (2) (1) (11).png>)
+![](<../../../.gitbook/assets/scepman27 (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (11) (1) (1) (1) (1) (10) (23).png>)
 
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll)
 
@@ -209,7 +209,7 @@ Download the CA certificate:
 
 Then, create a profile in Microsoft Intune:
 
-![](<../../.gitbook/assets/scepman\_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1) (1).png>)
+![](<../../../.gitbook/assets/scepman\_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (3) (1) (1) (1) (1) (2) (7).png>)
 
 1. Download the CA Certificate
 2. Then, create a profile in Microsoft Intune
@@ -223,7 +223,7 @@ When you are done with it, you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
 
-![](<../../.gitbook/assets/scepman27 (2) (1) (11).png>)
+![](<../../../.gitbook/assets/scepman27 (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (11) (1) (1) (1) (1) (10) (23).png>)
 
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll)
 

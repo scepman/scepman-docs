@@ -39,7 +39,7 @@ To maximize compatibility, for the **Org Name** we recommend to omit
 * Define a unique name for the **Key Vault Name, App Service Name,** and **App Service Cert Master Name,** you need just to replace it with the placeholder _UNIQUENAME_
 
 {% hint style="warning" %}
-In case you have previously deployed SCEPman with the same **Key Vault Name**, and deleted all resources of the previous deployment, make sure to [purge](https://docs.microsoft.com/en-us/azure/key-vault/general/key-vault-recovery?tabs=azure-cli#key-vault-cli) the previously deleted Key Vault. By default, upon deletion, the Key Vault will remain in [soft-delete](https://docs.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview) state for 90 days, essentially blocking the creation of a new Key Vault with the same name..&#x20;
+In case you have previously deployed SCEPman with the same **Key Vault Name**, and deleted all resources of the previous deployment, make sure to [purge](https://docs.microsoft.com/en-us/azure/key-vault/general/key-vault-recovery?tabs=azure-cli#key-vault-cli) the previously deleted Key Vault. By default, upon deletion, the Key Vault will remain in [soft-delete](https://docs.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview) state for 90 days, essentially blocking the creation of a new Key Vault with the same name..
 {% endhint %}
 
 * By **Storage Account Name** please notice that the name **must** be between 3 and 24 characters in length and may contain **numbers and lowercase letters only**
@@ -57,7 +57,7 @@ After a successful deployment of SCEPman 2.x please follow the [V2.x Managed Ide
 
 SCEPman 2.0 comprises two additional Azure resources, an Azure Storage account and an App Service called "Cert Master". These are used to issue and manage the server certificates. But you can run SCEPman 2.0 also without them if you just go for the client certificates as before.
 
-If you are still running SCEPman 1.x, ensure that your instance uses 2.x application artifacts as described here: [Application Artifacts](../optional/application-artifacts.md).
+If you are still running SCEPman 1.x, ensure that your instance uses 2.x application artifacts as described here: [Application Artifacts](../../advanced-configuration/application-artifacts.md).
 
 **Please restart your AppService afterward.**
 
@@ -73,6 +73,6 @@ After upgrading the main component, you need to follow the guide of [Post-Instal
 
 ## Downgrade from 2.x to 1.x
 
-You can downgrade to any older SCEPman version by downloading the older artifacts, host them in your location, e.g. Azure Blob storage and then reference the binaries using the [WEBSITE\_RUN\_FROM\_PACKAGE](../optional/application-artifacts.md#change-artifacts) setting.
+You can downgrade to any older SCEPman version by downloading the older artifacts, host them in your location, e.g. Azure Blob storage and then reference the binaries using the [WEBSITE\_RUN\_FROM\_PACKAGE](../../advanced-configuration/application-artifacts.md#change-artifacts) setting.
 
-However, if you also used the SCEPman PowerShell module to upgrade the internal wiring, there is one caveat: 2.x supports a different way of authentication to Graph and Intune using Managed Identities, which is also the new default and which is enabled by the script. If you downgrade your main component, it won't be able to use the new way of authentication and is missing one setting for the old one, so it won't work anymore. Thus, after a downgrade, you must manually change the application settings [AppConfig:AuthConfig:ApplicationId](../optional/application-settings/azure-ad.md#appconfig-authconfig-applicationid) and [AppConfig:AuthConfig:ApplicationKey](../optional/application-settings/azure-ad.md#appconfig-authconfig-applicationkey). The script creates backups of the settings by prefixing `Backup:`. Thus, you need to rename `Backup:AppConfig:AuthConfig:ApplicationKey` back to `AppConfig:AuthConfig:ApplicationKey` and copy the old value from `Backup:AppConfig:AuthConfig:ApplicationId` to `AppConfig:AuthConfig:ApplicationId`. Then the 1.x will work again using authentication based on App Registrations.
+However, if you also used the SCEPman PowerShell module to upgrade the internal wiring, there is one caveat: 2.x supports a different way of authentication to Graph and Intune using Managed Identities, which is also the new default and which is enabled by the script. If you downgrade your main component, it won't be able to use the new way of authentication and is missing one setting for the old one, so it won't work anymore. Thus, after a downgrade, you must manually change the application settings [AppConfig:AuthConfig:ApplicationId](../../advanced-configuration/application-settings/azure-ad.md#appconfig-authconfig-applicationid) and [AppConfig:AuthConfig:ApplicationKey](../../advanced-configuration/application-settings/azure-ad.md#appconfig-authconfig-applicationkey). The script creates backups of the settings by prefixing `Backup:`. Thus, you need to rename `Backup:AppConfig:AuthConfig:ApplicationKey` back to `AppConfig:AuthConfig:ApplicationKey` and copy the old value from `Backup:AppConfig:AuthConfig:ApplicationId` to `AppConfig:AuthConfig:ApplicationId`. Then the 1.x will work again using authentication based on App Registrations.

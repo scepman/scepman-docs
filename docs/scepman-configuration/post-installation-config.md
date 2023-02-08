@@ -95,9 +95,9 @@ Even for the Community Edition, which does not use the SCEPman Certificate Maste
 
 SCEPman 1.x used an App Registration to authenticate against Microsoft Graph and Intune, while SCEPman 2.x can use its Managed Identity. The CMDlet switches to the Managed Identity by changing these settings:
 
-* [AppConfig:AuthConfig:ApplicationId](optional/application-settings/azure-ad.md#appconfigauthconfigapplicationid) is set to a newly created app registration without any permissions. It is used to authenticate _against_ SCEPman, not for SCEPman authenticating somewhere else. The old value is backed up as `Backup:AppConfig:AuthConfig:ApplicationId`.
-* [AppConfig:AuthConfig:ApplicationKey](optional/application-settings/azure-ad.md#appconfigauthconfigapplicationkey) is deleted, the old value is backed up as `Backup:AppConfig:AuthConfig:ApplicationKey`. It is not needed anymore, because SCEPman does not authenticate as the Application.
-* [AppConfig:AuthConfig:ManagedIdentityEnabledOnUnixTime](optional/application-settings/azure-ad.md#appconfigauthconfigmanagedidentityenabledonunixtime) contains the time when the CMDlet was run. SCEPman acquires a token using the Managed Identity only after a short delay after the CMDlet was run, because only then do the roles in the token reflect the correct permissions added by the CMDlet.
+* [AppConfig:AuthConfig:ApplicationId](../advanced-configuration/application-settings/azure-ad.md#appconfigauthconfigapplicationid) is set to a newly created app registration without any permissions. It is used to authenticate _against_ SCEPman, not for SCEPman authenticating somewhere else. The old value is backed up as `Backup:AppConfig:AuthConfig:ApplicationId`.
+* [AppConfig:AuthConfig:ApplicationKey](../advanced-configuration/application-settings/azure-ad.md#appconfigauthconfigapplicationkey) is deleted, the old value is backed up as `Backup:AppConfig:AuthConfig:ApplicationKey`. It is not needed anymore, because SCEPman does not authenticate as the Application.
+* [AppConfig:AuthConfig:ManagedIdentityEnabledOnUnixTime](../advanced-configuration/application-settings/azure-ad.md#appconfigauthconfigmanagedidentityenabledonunixtime) contains the time when the CMDlet was run. SCEPman acquires a token using the Managed Identity only after a short delay after the CMDlet was run, because only then do the roles in the token reflect the correct permissions added by the CMDlet.
 
 ### How the CMDlet Configures SCEPman Certificate Master
 
