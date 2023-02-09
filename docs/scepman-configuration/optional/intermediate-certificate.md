@@ -178,6 +178,10 @@ Critical=2.5.29.15
 
 1. Click on **Merge Signed Request** and upload your Intermediate CA Certificate. After you have uploaded the signed request, you can see the valid certificate in your Azure Key Vault in the area **Completed**
 
+{% hint style="warning" %}
+The Intermediate CA Certificate must be in PEM format (Base64-encoded). If you use the binary DER format, you will see an error message that says "Property x5c has invalid value X5C must have at least one valid item" in the details.
+{% endhint %}
+
 ## Update Azure App Service Settings
 
 The last step is to update the Azure App Service which runs the SCEPman with the new certificate information.
