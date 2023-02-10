@@ -136,10 +136,10 @@ After successful deployment and configuration of the Traffic Manager profile, we
 * Both custom domains should point to the Traffic Manager (see screenshot below)
 * The custom domains have to be equal to the custom domain mapped to the Traffic Manager endpoint from above.
 
-<figure><img src="../../.gitbook/assets/2022-12-07 10_35_10-Add custom domain2.png" alt=""><figcaption></figcaption></figure>
+![](../../.gitbook/assets/2022-12-07 10_35_10-Add custom domain2.png)
 
 ### Storage Account Geo-Redundancy
 
 The Storage Account used for SCEPman should also be configured for redundancy. The default SCEPman setup uses Locally Redundant Storage (LRS), which uses only a single region. For example, configure Geo-redundant storage (GRS).
 
-<figure><img src="../../.gitbook/assets/storage-account-redundancy.png" alt=""><figcaption><p>Redundancy dialog in the Azure Portal</p></figcaption></figure>
+![Redundancy dialog in the Azure Portal](../../.gitbook/assets/storage-account-redundancy.png)

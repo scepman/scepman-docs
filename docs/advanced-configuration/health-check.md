@@ -12,7 +12,7 @@ After you have configured the health check and Alerting correctly it takes some 
 2. Now you can **Enable** the Health check, as probing **path** enter the following: **/probe**
 3. Now you can click on **Save**, but keep in mind that **this will restart your App Service**
 
-<figure><img src="../.gitbook/assets/2022-12-27 13_04_05.png" alt=""><figcaption><p>Enable Health check</p></figcaption></figure>
+![Enable Health check](../.gitbook/assets/2022-12-27 13_04_05.png)
 
 ## Configure Alerting
 
@@ -23,7 +23,7 @@ To get an alert from our health check we need to configure alert rules in our Ap
 3. In your new alert rule, you will be automatically redirected to **Add condition**
 4. Select a signal logic. Search for **Health check status**
 
-<figure><img src="../.gitbook/assets/2022-12-27 12_13_22.png" alt=""><figcaption><p>Create alert rule</p></figcaption></figure>
+![Create alert rule](../.gitbook/assets/2022-12-27 12_13_22.png)
 
 5\. Now switch the **Threshold** to **Dynamic**\
 \*\*\*\*6. Set **Aggregation type** to **Average**\
@@ -33,13 +33,13 @@ To get an alert from our health check we need to configure alert rules in our Ap
 \*\*\*\*10. And **15 minutes** as the **Lookback period**\
 \*\*\*\*11. \*\*\*\* Click on **Next: Actions**
 
-<figure><img src="../.gitbook/assets/2022-12-27 10_34_32.png" alt=""><figcaption><p>Alert rule condition</p></figcaption></figure>
+![Alert rule condition](../.gitbook/assets/2022-12-27 10_34_32.png)
 
 12\. Now you need to **Select action groups,** If you do not have any action groups available, you can click on **Create action group**
 
 13\. Define an **Action group name** and **Display name**
 
-<figure><img src="../.gitbook/assets/2022-12-27 12_29_38.png" alt=""><figcaption><p>Create action group</p></figcaption></figure>
+![Create action group](../.gitbook/assets/2022-12-27 12_29_38.png)
 
 14\. Next to **Notifications** and add **Notification type**\
 15\. In the windows select **Email** and enter your email address that you want to get the notifications\
@@ -52,8 +52,8 @@ To get an alert from our health check we need to configure alert rules in our Ap
 \*\*\*\*19. Now you must enter an **Alert rule name**, define the **Severity, Enable alter rule upon creation,** and **Automatically resolve alerts.**\
 20\. Click on **Review + Create,** then **Create**
 
-<figure><img src="../.gitbook/assets/2022-12-27 12_41_27.png" alt=""><figcaption><p>Create alert rule</p></figcaption></figure>
+![Create alert rule](../.gitbook/assets/2022-12-27 12_41_27.png)
 
-<figure><img src="../.gitbook/assets/2022-12-27 12_43_31.png" alt=""><figcaption><p>Create alert rule</p></figcaption></figure>
+![Create alert rule](../.gitbook/assets/2022-12-27 12_43_31.png)
 
-<figure><img src="../.gitbook/assets/2022-12-27 12_46_42.png" alt=""><figcaption><p>Veiw existing alert rules</p></figcaption></figure>
+![Veiw existing alert rules](../.gitbook/assets/2022-12-27 12_46_42.png)
