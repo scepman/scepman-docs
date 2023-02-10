@@ -21,7 +21,7 @@ To retain or archive the log files, we recommend configuring the following setti
 
 Your **App Service logs** settings should be **(in our example)** like:
 
-![](<../.gitbook/assets/2021-09-04 06-40-56-scepman-apppnf42avv2wmis - Microsoft Azure and 4 more pages - C4A8 EHamed - Micr.png>)
+![](<../.gitbook/assets/2021-09-04 06-40-56-scepman-apppnf42avv2wmis - Microsoft Azure and 4 more pages - C4A8 EHamed - Micr (1).png>)
 
 ## Diagnostic settings (Optional settings)
 
@@ -57,4 +57,4 @@ If you have created a storage account to store your SCEPman artifacts, or for Ap
 6. Select the needed data and type in your retention time in days. We recommend **all Categories** and a retention time of **30** days.
 7. Finally, click on the **Save** button.
 
-![](<../.gitbook/assets/2021-09-04 06-50-51-Diagnostic setting - Microsoft Azure and 4 more pages - C4A8 EHamed - Microsoft​.png>)
+![](<../.gitbook/assets/2021-09-04 06-50-51-Diagnostic setting - Microsoft Azure and 4 more pages - C4A8 EHamed - Microsoft​ (1).png>)

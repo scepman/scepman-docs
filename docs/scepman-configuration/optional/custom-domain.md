@@ -24,7 +24,7 @@ By clicking on add, the custom domain and the SSL Managed Certificate will be cr
 
 After configuring the custom domain, make sure to update SCEPman App Service Setting [**AppConfig:BaseUrl**](application-settings/basics.md#appconfig-baseurl) to the new URL, save and restart the App Service
 
-![](../../../.gitbook/assets/scepman-cname4-1.png)
+![](<../../../.gitbook/assets/scepman-cname4-1 (1).png>)
 
 {% hint style="info" %}
 It is not recommended to set a custom domain to Certificate Master. If you still want to set it up please make sure to:
