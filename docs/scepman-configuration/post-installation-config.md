@@ -1,4 +1,4 @@
-# 🆕 V2.x: Managed Identities
+# V2.x: Managed Identities
 
 {% hint style="info" %}
 This feature requires version **2.0** or above.
@@ -19,7 +19,7 @@ Whether you have just installed a fresh SCEPman 2.x installation or if you have 
 
 ### Running the SCEPman Installation CMDlet
 
-Once this prerequisites are met, you can install the SCEPman installation module from PowerShell Gallery and then run the CMDlet to complete the SCEPman and Certificate Master installation.&#x20;
+Once this prerequisites are met, you can install the SCEPman installation module from PowerShell Gallery and then run the CMDlet to complete the SCEPman and Certificate Master installation.
 
 First you need to navigate to SCEPman App Service and click on the URL (see screenshot below), this will navigate you to SCEPman homepage.
 

@@ -13,7 +13,7 @@
 * [Azure Sizing](scepman-deployment/azure-sizing.md)
 * [Permissions](scepman-deployment/permissions/README.md)
   * [V1.x: Azure App Registration](scepman-deployment/permissions/azure-app-registration.md)
-  * [🆕 V2.x: Managed Identities](scepman-configuration/post-installation-config.md)
+  * [V2.x: Managed Identities](scepman-configuration/post-installation-config.md)
 * [Deployment Options](scepman-configuration/deployment-options/README.md)
   * [Marketplace deployment](scepman-configuration/deployment-options/marketplace-deployment.md)
   * [Enterprise deployment](scepman-configuration/deployment-options/enterprise-deployment.md)
