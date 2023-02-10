@@ -131,6 +131,6 @@ To configure this, do the following:
 
 6\. Then replace the URL in \*\*Value\*\* with the [SCEPman GitHub URL](application-artifacts.md#available-scepman-channels) (Evergreen Approach) or your Storage account blob URL you already copied:
 
-!\[]\(../../.gitbook/assets/2021-10-08 16-40-54-Scepman02testServiceName - Microsoft Azure and 10 more pages - C4A8 EHamed - Mic.png)
+![](../../.gitbook/assets/2021-10-08 16-40-54-Scepman02testServiceName - Microsoft Azure and 10 more pages - C4A8 EHamed - Mic.png)
 
 7\. Repeat the steps 1. - 6. for the Certificate Master AppService, which provides the same **WEBSITE\_RUN\_FROM\_PACKAGE** parameter under **Configuration**. Remember to provide the [CertMaster GitHub URL](application-artifacts.md#available-certificate-master-channels) in case you are following our Evergreen Approach.
