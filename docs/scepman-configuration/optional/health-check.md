@@ -56,4 +56,4 @@ To get an alert from our health check we need to configure alert rules in our Ap
 
 <figure><img src="../../.gitbook/assets/2022-12-27 12_43_31.png" alt=""><figcaption><p>Create alert rule</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/2022-12-27 12_46_42.png" alt=""><figcaption><p>Veiw existing alert rules</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2022-12-27 12_46_42.png" alt=""><figcaption><p>View existing alert rules</p></figcaption></figure>
