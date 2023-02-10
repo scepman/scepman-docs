@@ -33,7 +33,7 @@ To get an alert from our health check we need to configure alert rules in our Ap
 \*\*\*\*10. And **15 minutes** as the **Lookback period**\
 \*\*\*\*11. \*\*\*\* Click on **Next: Actions**
 
-![Alert rule condition](../.gitbook/assets/2022-12-27%2010_34_32.png)
+![Alert rule condition](../.gitbook/assets/2022-12-27%2010-34-32.png)
 
 12\. Now you need to **Select action groups,** If you do not have any action groups available, you can click on **Create action group**
 
