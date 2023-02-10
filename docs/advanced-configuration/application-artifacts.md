@@ -127,7 +127,7 @@ To configure this, do the following:
 4. Then, click **Configuration** (submenu **Settings**)
 5. Locate the parameter **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
 
-![](<../.gitbook/assets/scepman-optional2 (1).png>)
+![](../.gitbook/assets/scepman-optional2.png)
 
 6\. Then replace the URL in \*\*Value\*\* with the [SCEPman GitHub URL](application-artifacts.md#available-scepman-channels) (Evergreen Approach) or your Storage account blob URL you already copied:
 
