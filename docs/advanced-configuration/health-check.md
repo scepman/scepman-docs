@@ -56,4 +56,4 @@ To get an alert from our health check we need to configure alert rules in our Ap
 
 ![Create alert rule](../.gitbook/assets/2022-12-27%2012_43_31.png)
 
-![Veiw existing alert rules](../.gitbook/assets/2022-12-27%2012_46_42.png)
+![View existing alert rules](../.gitbook/assets/2022-12-27%2012_46_42.png)
