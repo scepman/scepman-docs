@@ -44,9 +44,6 @@
   * [Mosyle](certificate-deployment/static-certificates/mosyle.md)
 * [Domain Controller Certificates](certificate-deployment/domain-controller-certificates.md)
 * [Enrollment REST API](certificate-deployment/api-certificates.md)
-
-## Certificate Management
-
 * [Manage Certificates](certificate-management/certificate-view.md)
 
 ## Advanced Configuration
@@ -78,6 +75,7 @@
 * [License Key](advanced-configuration/add-a-license-key.md)
 * [Log configuration](advanced-configuration/log-configuration.md)
 * [Update Strategy](scepman-configuration/optional/update-strategy.md)
+* [Multi-Tenancy](scepman-configuration/optional/multi-tenancy.md)
 
 ## NAC Configuration
 
