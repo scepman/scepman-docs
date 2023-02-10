@@ -29,8 +29,12 @@ function Test-Any {
 
 function Get-References($DocsPath, $AssetPath, $AssetName) {
   [Array]$assetReferences = Get-ChildItem -Path $DocsPath -Recurse -Filter "*.md" | Select-String -SimpleMatch -Pattern ($AssetName.Replace('_','\_'))
-
-   return $assetReferences | Where-Object { # There may be assets in another directory with the same name. Filter out references with the wrong path
+  if ($AssetName.Contains(' ')) {
+    [Array]$assetUrlReferences = Get-ChildItem -Path $DocsPath -Recurse -Filter "*.md" | Select-String -SimpleMatch -Pattern ($AssetName.Replace(' ','%20'))
+    $assetReferences += $assetUrlReferences
+  }
+  
+  return $assetReferences | Where-Object { # There may be assets in another directory with the same name. Filter out references with the wrong path
     $assetRef = $_
     if ($null -eq $assetRef) {
       return $false # $nulls may come in when handling array in PS
