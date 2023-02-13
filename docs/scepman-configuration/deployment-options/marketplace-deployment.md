@@ -12,7 +12,7 @@ description: Azure Marketplace Deployment
 * Click "**Create**"
 * Now, follow these steps to deploy SCEPman in your Azure tenant:
 
-<figure><img src="../../.gitbook/assets/Screenshot_2022-11-25_at_09_30_00.png" alt=""><figcaption></figcaption></figure>
+![](../../.gitbook/assets/Screenshot_2022-11-25_at_09_30_00.png)
 
 {% hint style="info" %}
 If you have a license key, you can paste it into the field **License Key**. Leave it empty to use the free Community Edition of SCEPman.
