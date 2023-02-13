@@ -49,7 +49,7 @@ You must create the certificate via the Key Vault API. This is because not all f
 # Version: 2021-07-09
 # Authors: Aaron Navratil and GKGAB contributors
 # License: Unlicense (https://unlicense.org/)
-# Source: https://docs.scepman.com/scepman-configuration/optional/intermediate-certificate
+# Source: https://docs.scepman.com/advanced-configuration/intermediate-certificate
 
 $config = @{
     TenantID = "" # <GUID> of your Azure AD Tenant
@@ -177,6 +177,10 @@ Critical=2.5.29.15
 ![](../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18.png)
 
 1. Click on **Merge Signed Request** and upload your Intermediate CA Certificate. After you have uploaded the signed request, you can see the valid certificate in your Azure Key Vault in the area **Completed**
+
+{% hint style="warning" %}
+The Intermediate CA Certificate must be in PEM format (Base64-encoded). If you use the binary DER format, you will see an error message that says "Property x5c has invalid value X5C must have at least one valid item" in the details.
+{% endhint %}
 
 ## Update Azure App Service Settings
 
