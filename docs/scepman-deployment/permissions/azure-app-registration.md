@@ -39,7 +39,7 @@ Please do not mix it up with the "Client Secret **ID**". We need the "Client Sec
 {% endhint %}
 
 {% hint style="warning" %}
-Copy the client secret value \*\*\*\* immediately. You will not be able to retrieve it after you leave this submenu.
+Copy the client secret value immediately. You will not be able to retrieve it after you leave this submenu.
 {% endhint %}
 
 ![](<../../.gitbook/assets/image (42).png>)
