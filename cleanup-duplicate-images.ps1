@@ -28,10 +28,18 @@ function Test-Any {
 }
 
 function Get-References($DocsPath, $AssetPath, $AssetName) {
-  [Array]$assetReferences = Get-ChildItem -Path $DocsPath -Recurse -Filter "*.md" | Select-String -SimpleMatch -Pattern ($AssetName.Replace('_','\_'))
+  [Array]$assetReferences = Get-ChildItem -Path $DocsPath -Recurse -Filter "*.md" | Select-String -SimpleMatch -Pattern $AssetName
   if ($AssetName.Contains(' ')) {
     [Array]$assetUrlReferences = Get-ChildItem -Path $DocsPath -Recurse -Filter "*.md" | Select-String -SimpleMatch -Pattern ($AssetName.Replace(' ','%20'))
     $assetReferences += $assetUrlReferences
+  }
+  if ($AssetName.Contains('_')) {
+    [Array]$assetUnderScoreReferences = Get-ChildItem -Path $DocsPath -Recurse -Filter "*.md" | Select-String -SimpleMatch -Pattern ($AssetName.Replace('_','\_'))
+    $assetReferences += $assetUnderScoreReferences
+  }
+  if ($AssetName.Contains('_') -and $AssetName.Contains(' ')) {
+    [Array]$assetUnderScoreSpaceReferences = Get-ChildItem -Path $DocsPath -Recurse -Filter "*.md" | Select-String -SimpleMatch -Pattern ($AssetName.Replace('_','\_').Replace(' ','%20'))
+    $assetReferences += $assetUnderScoreSpaceReferences
   }
   
   return $assetReferences | Where-Object { # There may be assets in another directory with the same name. Filter out references with the wrong path
