@@ -14,13 +14,13 @@ If you want to create your own custom domain for your **App Service** URL, there
 
 By clicking on add, the custom domain and the SSL Managed Certificate will be created and bound automatically
 
-<figure><img src="../../.gitbook/assets/2022-12-23 15_12_15-Window.png" alt=""><figcaption></figcaption></figure>
+![](../../.gitbook/assets/2022-12-23 15_12_15-Window.png)
 
 **The second option** is to go with your non-Azure domain and add the validation records to your domain provider
 
 * Domain provider: All other domain services
 
-<figure><img src="../../.gitbook/assets/2022-12-23 17_01_35-Window.png" alt=""><figcaption></figcaption></figure>
+![](../../.gitbook/assets/2022-12-23 17_01_35-Window.png)
 
 After configuring the custom domain, make sure to update SCEPman App Service Setting [**AppConfig:BaseUrl**](application-settings/basics.md#appconfig-baseurl) to the new URL, save and restart the App Service
 
