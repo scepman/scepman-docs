@@ -116,7 +116,7 @@ Repeat these steps for your second App Service.
 
 In the **Overview** your Traffic Manager should be like this (here you find the Traffic Manager URL):
 
-![](<../../.gitbook/assets/scepman-trafficmanager4 (8).png>)
+![](../../.gitbook/assets/scepman-trafficmanager4.png)
 
 * Navigate to your **App Service** for the cloned SCEPman instance
 * Under **Custom Domains**, create an SSL certificate and set the binding process as described [here](../scepman-configuration/optional/custom-domain.md#SSL-Binding)
