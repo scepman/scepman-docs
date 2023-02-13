@@ -53,7 +53,7 @@ The **client secret** generated as part of this **App registration** has an expi
         `Install-Module SCEPman -Scope CurrentUser -Force`\
         `Register-SCEPmanCertMaster -CertMasterBaseURL <url>`\
         ``\
-        ``Use the URL like 'https://your-scepman-cm.azurewebsite.net' for `<url>`.
+        ``Use the URL like 'https://certmaster.scepman.contoso.de/' for `<url>`.
       * The **CMDlet** will output an **Application Id** and a **Tenant Id** (that of the **target tenant**). Enter these two values as `AppConfig:AuthConfig:HomeApplicationId` and `AppConfig:AuthConfig:HomeTenantId` in your Certificate Master settings.
       * Now **create** the following new application settings, possibly overriding the existing ones, with the same values as in SCEPman:
 
