@@ -39,7 +39,7 @@ Please do not mix it up with the "Client Secret **ID**". We need the "Client Sec
 {% endhint %}
 
 {% hint style="warning" %}
-Copy the client secret value \*\*\*\* immediately. You will not be able to retrieve it after you leave this submenu.
+Copy the client secret value immediately. You will not be able to retrieve it after you leave this submenu.
 {% endhint %}
 
 ![](<../../.gitbook/assets/image (42).png>)
@@ -52,19 +52,19 @@ Stay within **App Registrations** and click on **API permissions**
 1. **Remove** the default **User Read** permission
 {% endhint %}
 
-![](<../../../.gitbook/assets/screenshot-2020-02-03-at-10.54.48 (1).png>)
+![](../../../.gitbook/assets/screenshot-2020-02-03-at-10.54.48.png)
 
 2\. Click on **Add a permission** and choose **Microsoft Graph**. When chosen, select **Application permissions** and search for directory. Add **Directory.ReadAll** as permission.
 
 ![](../../../.gitbook/assets/app-permission-graph.png)
 
-![](<../../../.gitbook/assets/app-permission-directory-read (1).png>)
+![](../../../.gitbook/assets/app-permission-directory-read.png)
 
 3\. Now click on **Add a permission** and choose **Intune**. When chosen, select **Application permissions** and search for scep. Add **scep\_challenge\_provider** as a permission
 
-![](<../../../.gitbook/assets/app-permission-intune (1).png>)
+![](../../../.gitbook/assets/app-permission-intune.png)
 
-![](<../../../.gitbook/assets/app-permission-scep (1).png>)
+![](../../../.gitbook/assets/app-permission-scep.png)
 
 4\. Finally click on **Grant admin** consent and **confirm** the consent for the given app registration.
 
