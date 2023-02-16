@@ -20,6 +20,6 @@ Then you can POST a PKCS#10/CMS to your SCEPman with the HTTP path _api/csr_. Th
 
 SCEPman will store all issued certificates automatically in its Storage Account, so you can conveniently list and revoke them via the Certificate Master component.
 
-## Example
+## Examples
 
-TBD
+See our [Open Source Sample Library on GitHub](https://github.com/scepman/csr-request) to find out how to use SCEPman's REST API.
