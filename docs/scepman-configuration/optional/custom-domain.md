@@ -27,9 +27,10 @@ After configuring the custom domain, make sure to update SCEPman App Service Set
 ![](../../../.gitbook/assets/scepman-cname4-1.png)
 
 {% hint style="info" %}
-It is not recommended to set a custom domain to Certificate Master. If you still want to set it up, you may also do the following:
+It is not recommended to set a custom domain to Certificate Master. If you still want to set it up, make sure to also do:
 
 * in SCEPman App Service Configuration, update **`AppConfig:CertMaster:URL`** to the new Certificate Master URL
+* add the new sign-in URL to the Certificate Master app registration "SCEPman-CertMaster".
 {% endhint %}
 
 #### Microsoft Documentation and Managed Certificates
