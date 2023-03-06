@@ -11,6 +11,17 @@ This area is under construction!
 **Description:**\
 This is the URL of the SCEPman instance that belongs to this Certificate Master. If you have a geo-redundant setup, this should be the URL of the SCEPman App Service nearest to Certificate Master. Certificate Master will submit certificate requests to this SCEPman instance for signing.
 
+## AppConfig:IntuneCertificateSearchStrategy
+
+**Value:** _Management_, _Reporting_, or _CombineManagementAndReporting_
+
+**Description:**\
+Defines which backend API to use when querying Intune for issued certificates.
+
+{% hint style="danger" %}
+Changes can harm your service!
+{% endhint %}
+
 ## AppConfig:AzureStorage:TableStorageEndpoint
 
 This defines which Table Storage Endpoint to use to store certificate information.
@@ -29,14 +40,3 @@ You can send Debug log information to a cloud-based monitoring solution of our c
 ## WEBSITE\_RUN\_FROM\_PACKAGE
 
 This setting points to the Application Artifacts that will be loaded by starting the App Service.
-
-## AppConfig:IntuneCertificateSearchStrategy
-
-**Value:** _Management_, _Reporting_, or _CombineManagementAndReporting_
-
-**Description:**\
-Defines which backend API to use when querying Intune for issued certificates.
-
-{% hint style="danger" %}
-Changes can harm your service!
-{% endhint %}
