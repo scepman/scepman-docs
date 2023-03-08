@@ -236,7 +236,7 @@ SCEPman's design philosophy follows the approach to minimize its exposure to ext
 
 * Key Vault
 * App Insights
-* Intune device enrolment verification
+* Intune device enrollment verification
 * Azure AD device check
 
 Since SCEPman founds on Azure components, you may use Microsoft Defender for Cloud tools like for MD for App Service, MD for Storage, or MD for Key Vault.
@@ -276,13 +276,37 @@ Details:
 * Access to this CA is controlled via Key Vault access policies that you may change if you want. By default, only your own SCEPman instance and nobody else (also no administrator) may use the certificate, but a subscription administrator may grant additional permissions.
 * Hence, other SCEPman customers will not be able to connect to your VPN, no matter how they configure their SCEPman. If they choose the same organization name, they will still have their own key pair and thus another CA certificate that your VPN Gateway will not trust.
 
+## Azure CIS
+
+### Storage Accounts
+
+#### 18. Can `Allow Blob public access` be disabled?
+
+_Yes_, that is actually already the default for new SCEPman installations.
+
+### App Services
+
+#### 19. TLS: Can `Client certificate mode` be set to `Require`?&#x20;
+
+_No_, as this would break SCEPman's functionality. This is because SCEPman enrolls client certificates, so the clients do not yet have client certificates to authenticate with (chicken-egg-problem). That is not a security issue, though, as the SCEP protocol uses its own authentication mechanisms through the SCEP challenge. Hence, SCEPman needs an exemption from policies enforcing mutual TLS. The `Client certificate mode` must be set to `Ignore`.
+
+#### 20. Can the `HTTP version` be set to `2.0`?
+
+While SCEPman should work with any of the available HTTP versions, as of today, we only support  the default `HTTP 1.1` - mainly due to lack of testing.&#x20;
+
+When changing this setting - on your own risk - please consider that it is not only SCEPman that needs to support the newer HTTP version. The different types of clients also need to support that version of HTTP, i.e. the OS-integrated SCEP clients of Window, MacOS, iOS, the ones in IoT devices, the OCSP clients on the same platforms, but also NACs of different vendors.
+
+#### 21. Can `HTTPS Only` be enabled?
+
+_No_, as this will break the OCSP-responder functionality of SCEPman in combination with many OCSP clients and vendor appliances. OCSP is a protocol that is more commonly provided over HTTP than HTTPS. One of the reasons is, if you used TLS for certificate revocation checking (downloading CRLs or OCSP), there could be a chicken-and-egg-problem, where the client or appliance cannot establish the TLS connection to the OCSP endpoint, because the server certificate needs to be verified over OCSP first. It also doesn't add a lot of security, because OCSP responses are cryptographically signed anyway and therefore cannot be spoofed. Hence, SCEPman needs an exemption from policies enforcing TLS.
+
 ## Miscellaneous
 
-### 17. Is SCEPman part of a bug-bounty program?
+### 22. Is SCEPman part of a bug-bounty program?
 
 No
 
-### 18. What QA measures are in place?
+### 23. What QA measures are in place?
 
 * We provide SCEPman on an internal-, beta-, and production channel
 * Each production release must go through the internal- and beta-channel first, passing the relevant QA hurdles as part of our CI process
@@ -293,7 +317,7 @@ No
   * Experience-based testing
   * 3rd-party code analysis, e.g. Sonar, Dependabot, and others
 
-### 19. What cloud-providers does SCEPman rely on?
+### 24. What cloud-providers does SCEPman rely on?
 
 * Microsoft Azure
 * GitHub (for automatic updates)
