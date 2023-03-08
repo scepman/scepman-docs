@@ -136,7 +136,7 @@ After successful deployment and configuration of the Traffic Manager profile, we
 * Both custom domains should point to the Traffic Manager (see screenshot below)
 * The custom domains have to be equal to the custom domain mapped to the Traffic Manager endpoint from above.
 
-![test](<../.gitbook/assets/2022-12-07 10\_35\_10-Add custom domain2.png>)
+![](<../.gitbook/assets/2022-12-07 10\_35\_10-Add custom domain2.png>)
 
 ### Storage Account Geo-Redundancy
 
