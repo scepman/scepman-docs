@@ -108,7 +108,7 @@ If ($duplicates.count -lt 1) {
           Write-Verbose "Replacing occurance of $($assetReference.Pattern) with $targetFileName in file $($assetReference.Path)"
           $lineWithNewReference = $assetReference.Line
           if (-not $targetFileName.Contains(' ')) { # the <> brackets are used in md only if the path contains spaces, but must not be used if there are no spaces (?)
-            $lineWithNewReference = $lineWithNewReference.Replace('![](<.','![](.').Replace('>)',')')
+            $lineWithNewReference = $lineWithNewReference.Replace('](<.','](.').Replace('>)',')')
           }
           $lineWithNewReference = $lineWithNewReference.Replace($assetReference.Pattern,(Split-Path $targetFileName -Leaf))
           (Get-Content $assetReference.Path).Replace($assetReference.Line,$lineWithNewReference) | Set-Content $assetReference.Path
