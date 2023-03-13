@@ -1,79 +1,75 @@
-# Mosyle
+# Kandji
 
 {% hint style="info" %}
 This feature requires version 1.6 or above.
 {% endhint %}
 
-SCEPman can be connected to Mosyle as External CA. Via SCEPman's static interface and a challenge password enrolled devices will be able to obtain certificates.
+SCEPman can be connected to [Kandji](https://www.kandji.io/) as External CA. Via SCEPman's static interface and a challenge password enrolled devices will be able to obtain certificates.
 
 For more general information about 3rd-party MDM solutions and SCEPman integration please check [here](./).
 
-## Enable Mosyle Integration
+## Enable Kandji Integration
 
-Mosyle integration of SCEPman can be easily enabled via the following app configurations:
+Kandji integration of SCEPman can be easily enabled via the following app configurations:
 
-|                                                                                                                 Setting                                                                                                                 |                                        Description                                        |                        Value                        |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: | :-------------------------------------------------: |
-|                                           [**AppConfig:StaticValidation:Enabled**](../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-enabled)                                           |                             To enable the 3rd-party validation                            | \_**true** \_ to enable, \_ **false** \_ to disable |
-|                                   [**AppConfig:StaticValidation:RequestPassword**](../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-requestpassword)                                   | Mosyle authenticates its certificate requests at SCEPman with this secure static password |          _generate a 32 character password_         |
-| <p><a href="../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-validityperioddays"><strong>AppConfig:StaticValidation:ValidityPeriodDays</strong></a><br><strong>(optional)</strong></p> |                How many days shall certificates issued via Mosyle be valid                |                         365                         |
+|                                                                                                                 Setting                                                                                                                 | Description                                                                                                                                                                                                                                                                                              |                     Value                    |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------: |
+|                                           [**AppConfig:StaticValidation:Enabled**](../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-enabled)                                           | [To enable the 3rd-party validation](#user-content-fn-1)[^1]                                                                                                                                                                                                                                             | _**true**_ to enable, _**false**_ to disable |
+|                                   [**AppConfig:StaticValidation:RequestPassword**](../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-requestpassword)                                   | <p>Certificate signing requests sent to SCEPman for signing are authenticated with this secure static password<br><br><strong>Recommendation</strong>: Store this secret in <a href="../../advanced-configuration/application-settings/#secure-configuration-in-azure-key-vault">Azure KeyVault</a>.</p> |      _generate a 32 character password_      |
+| <p><a href="../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-validityperioddays"><strong>AppConfig:StaticValidation:ValidityPeriodDays</strong></a><br><strong>(optional)</strong></p> | How many days shall certificates issued via Mosyle be valid                                                                                                                                                                                                                                              |                      365                     |
+|                 ****[**AppConfig:StaticValidation:EnableCertificateStorage**](../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-enablecertificatestorage) **(optional)**                | Store requested certificates in the Storage Account, in order to show them in SCEPman Certificate Master                                                                                                                                                                                                 | _**true**_ to enable, _**false** to disable_ |
 
 {% hint style="info" %}
-After adding or editing SCEPman configuration, you need to restart the app service.
+After adding or editing SCEPman configuration parameters, you need to restart the Aapp Service.
 {% endhint %}
 
-## Mosyle Configuration
+## Kandji Configuration
 
 ### SCEPman Root Certificate
 
-As first step you need to deploy SCEPman root certificate. Download this CA certificate via SCEPman dashboard:
+As a first step, you need to deploy SCEPman root certificate. Download this CA certificate via the SCEPman website:
 
-![](../../.gitbook/assets/image-1.png)
+![SCEPman Website](<../../.gitbook/assets/image-1 (5).png>)
 
-In Mosyle, navigate to Management and add "**Multi-Cert Profile**" as a new profile type (if it does not already exist).
+In Kandji, navigate to **Library** on the left navigation bar and add a **Certificate Library Item** to your Blueprint.
 
-Now **Add new profile,** choose a name for this profile, e.g. SCEPman Root CA, then click on **+ADD PROFILE** under Profile Name (see screenshot below)**,** and choose "Add Certificate profile" from the shown window. Next, select and upload the SCEPman root certificate you already download, add SCEPman Root CA as Profile Name and Save.
+<figure><img src="../../.gitbook/assets/2023-03-09 12_51_21-Window.png" alt=""><figcaption><p>Configure a Certificate Payload</p></figcaption></figure>
 
-![](<../../.gitbook/assets/2022-07-25 09\_56\_09-Glueckkanja GAB and 1 more page - Work - Microsoft​ Edge.png>)
+To upload the certificate, first select **PKCS #1-formatted certificate** under **Certificate type**, secondly provide an optional name, upload your SCEPman CA certificate and eventually save it.
 
-![](<../../.gitbook/assets/2022-07-25 10\_04\_49-Window.png>)
+<figure><img src="../../.gitbook/assets/2023-03-09 14_21_12-KandjiSCEPmanRootCA.png" alt=""><figcaption><p>Adding the SCEPman Root CA Certificate</p></figcaption></figure>
 
-Now you need to assign this profile to your devices/users, then Save
+### SCEP Profile
 
-![](<../../.gitbook/assets/2022-07-25 10\_07\_23-Window.png>)
+The second step is to add a **SCEP Profile** to your **Blueprint**. Therefore, add a new **SCEP Library Item** and configure it as below:
 
-After saving, you can check the compliance status by clicking on view details on the profile
+* **URL**: **** The static SCEP endpoint of SCEPman you configured [above](mosyle.md#enable-kandji-integration)
+* **Name:** An optional SAN attribute
+* **Challenge**: Is required to authenticate CSR requests sent to SCEPman's static SCEP interface. It must match the [value](../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-requestpassword) you have configured [above](mosyle.md#enable-kandji-integration).
+* **Fingerprint:** Optional CA fingerprint. It is highly recommended to configure this value as it provides an additional level of security. You can find it on your SCEPman website as **CA Thumbprint**.
+* **Subject:** Optional subject name. **CN=$PROFILE\_UUID** will be automatically added from Kandji as default common name. Kandji allows you to add multiple CNs.
 
-![](<../../.gitbook/assets/2022-07-25 10\_10\_27-Window.png>)
+{% hint style="warning" %}
+We have seen cases where macOS and iOS had problems in auto-selecting client certificates for network authentication purposes where more than two CNs were added.
+{% endhint %}
 
-### Device Certificate
+* **Key Size:** 2048
+* **Key Usage:** Both, signing and encryption
 
-Add a new profile, add profile name e.g. SCEPman Device Certificate, **+ADD PROFILE,** now choose **SCEP Profile** and fill out the values as shown below
+For more information please check [Kandji's documentation](https://support.kandji.io/support/solutions/articles/72000559782-scep-profile).
 
-![](<../../.gitbook/assets/2022-07-25 11\_41\_51.png>)
+<figure><img src="../../.gitbook/assets/2023-03-09 14_43_19-Kandji.png" alt=""><figcaption><p>Adding a SCEP Profile</p></figcaption></figure>
 
-![](<../../.gitbook/assets/2022-07-25 11\_29\_43.png>)
+<figure><img src="../../.gitbook/assets/2023-03-09 14_50_23-Kandji.png" alt=""><figcaption><p>SCEP Profile Configuration</p></figcaption></figure>
 
-**Profile Name:** choose a name for your profile
+<figure><img src="../../.gitbook/assets/2023-03-09 14_51_22-Kandji.png" alt=""><figcaption><p>SCEP Profile Configuration</p></figcaption></figure>
 
-**Server:** choose URL
+<figure><img src="../../.gitbook/assets/2023-03-09 14_52_52-Kandji.png" alt=""><figcaption><p>SCEP Profile Configuration</p></figcaption></figure>
 
-**URL:** past your SCEPman URL with **/static** at the end as shown on the screenshot. You can also copy this value from SCEPman homepage near **Static MDM**
+### Deployment Status
 
-**Subject:** It is up to you which variables you choose for the subject, you can choose one or multiple Relative Distinguished Name (RDN). NOTE that RDNs always start with **/** for example
+After saving the certificate or SCEP profile, switch to **Status** to check the deployment status on **Blueprints** assigned devices.
 
-`/CN=%DeviceName%` for device name. On our example on the screenshot, we have added 3 RDNs, multiple CNs is also allowed. You can check the variable list by clicking on **View available variables** above the field.
+<figure><img src="../../.gitbook/assets/2023-03-09 15_12_40-Kandji.png" alt=""><figcaption><p>Deployment Status</p></figcaption></figure>
 
-**Subject Alternative Name** is optional.
-
-**Challenge:** add your 32 character challenge password configured in SCEPman configuration, [see enable Mosyle integration](mosyle.md#enable-mosyle-integration)
-
-**Key Size:** 2048
-
-Enable the two options "**Use for signing**" and "**Use for encryption**", and leave all other settings as default (like shown on the screenshot) then **Save**
-
-Now you need to assign this profile to your devices/users, then **Save**.
-
-After saving, you can check the compliance status by clicking on view details on the profile
-
-![](<../../.gitbook/assets/2022-07-25 11\_55\_57-Window.png>)
+[^1]: 

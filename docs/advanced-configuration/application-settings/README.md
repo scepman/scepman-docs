@@ -12,7 +12,7 @@ On your **App Service** navigate to **Configuration** and then you find this und
 
 We recommend defining settings in the App Service Configuration except for passwords.
 
-![](../../.gitbook/assets/2021-08-02-10.png)
+![](<../../.gitbook/assets/2021-08-02-10 (4).png>)
 
 ## Secure Configuration in Azure Key Vault
 
