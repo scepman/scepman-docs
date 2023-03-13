@@ -21,7 +21,7 @@ To retain or archive the log files, we recommend configuring the following setti
 
 Your **App Service logs** settings should be **(in our example)** like:
 
-![](<../.gitbook/assets/2021-09-04 06-40-56-scepman-apppnf42avv2wmis - Microsoft Azure and 4 more pages - C4A8 EHamed - Micr (1).png>)
+![](<../.gitbook/assets/2021-09-04 06-40-56-scepman-apppnf42avv2wmis - Microsoft Azure and 4 more pages - C4A8 EHamed - Micr.png>)
 
 ## Diagnostic settings (Optional settings)
 
@@ -41,7 +41,7 @@ We recommend storing your data in Log Analytics
 5. The last step is to select the needed data. We recommend **all Categories.**
 6. Finally, click on the **Save** button
 
-![](<../.gitbook/assets/2021-09-04 06-49-06-Diagnostic setting - Microsoft Azure and 4 more pages - C4A8 EHamed - Microsoft​ (1).png>)
+![](<../.gitbook/assets/2021-09-04 06-49-06-Diagnostic setting - Microsoft Azure and 4 more pages - C4A8 EHamed - Microsoft​.png>)
 
 ### Archive to storage account (optional)
 
