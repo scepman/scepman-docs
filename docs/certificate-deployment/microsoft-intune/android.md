@@ -123,16 +123,16 @@ When all is finished, you have the following two certificate configurations:
 
 ### Subject Alternative Name
 
-A [Subject alternative name](https://tools.ietf.org/html/rfc5280#section-4.2.1.6) (SAN) is important for the whole android device login process into a Wi-Fi profile. It can be divided into three phases:
+A [Subject alternative name](https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.6) (SAN) is important for the whole android device login process into a Wi-Fi profile. It can be divided into three phases:
 
 1. During the enrollment phase, you have to login to your company portal with a company domain (like john.doe@companyname.com)
 2. When the synchronization starts the device gets a certificate and a Wi-Fi.
 3. The Wi-Fi profile will be deployed. In detail, the following steps working in background:
-   * SAN verification ([RFC 2818](https://tools.ietf.org/html/rfc2818))
+   * SAN verification ([RFC 2818](https://www.rfc-editor.org/rfc/rfc2818))
    * Search for certifications and profiles, based on your company domain
    * Deploy Wi-Fi profile on your device
 
-It is very important to enter a **Subject alternative name** into the **SCEP Certificate**. Without a SAN you have no access to your company WLAN.
+It is required to have a **Subject alternative name** in the **SCEP Certificate**. Without a SAN, you have no access to your company Wi-Fi.
 
 ### My Certificates
 
@@ -258,16 +258,16 @@ When all is done, you have the following two certificate configurations:
 
 ### Subject Alternative Name
 
-A [Subject alternative name](https://tools.ietf.org/html/rfc5280#section-4.2.1.6) (SAN) is important for the whole android device login process into a Wi-Fi profile. It can be divided into three phases:
+A [Subject alternative name](https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.6) (SAN) is important for the whole android device login process into a Wi-Fi profile. It can be divided into three phases:
 
 1. During the enrollment phase, you have to login to your company portal with a company domain (like john.doe@companyname.com)
 2. When the synchronization starts the device gets a certificate and a Wi-Fi.
 3. The Wi-Fi profile will be deployed. In detail, the following steps working in background:
-   * SAN verification ([RFC 2818](https://tools.ietf.org/html/rfc2818))
+   * SAN verification ([RFC 2818](https://www.rfc-editor.org/rfc/rfc2818))
    * Search for certifications and profiles, based on your company domain
    * Deploy Wi-Fi profile on your device
 
-It is much important to enter a **Subject alternative name** into the **SCEP Certificate**. Without a SAN you have no access to your company WLAN.
+It is required to have a **Subject alternative name** in the **SCEP Certificate**. Without a SAN, you have no access to your company Wi-Fi.
 
 ### My Certificates
 
