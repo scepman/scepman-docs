@@ -2,11 +2,11 @@
 
 ## Available SCEPman Channels
 
-We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](../scepman-configuration/optional/application-settings/basics.md#website\_run\_from\_package) setting of your SCEPman App Service.
+We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](application-settings/basics.md#website\_run\_from\_package) setting of your SCEPman App Service.
 
 There are two independent artifact hosts, GitHub and Azure (install.scepman.com). If one of the two should fail, you can switch to the other. Thus, there are two download URLs for each channel. Detecting the used channel when using install.scepman.com requires SCEPman 2.3, but apart from that also works with SCEPman 2.2.
 
-### Production
+### SCEPman Production Channel
 
 * full released version
 * function and load-tested
@@ -20,7 +20,7 @@ https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts.zip
 https://install.scepman.com/dist/Artifacts.zip
 ```
 
-### Beta
+### SCEPman Beta Channel
 
 * next production release
 * function tested, but no load-test
@@ -34,7 +34,7 @@ https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Beta.zip
 https://install.scepman.com/dist/Artifacts-Beta.zip
 ```
 
-### Internal
+### SCEPman Internal Channel
 
 * ongoing development
 * limited function tested and no load-test
@@ -48,11 +48,21 @@ https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Intern.z
 https://install.scepman.com/dist/Artifacts-Intern.zip
 ```
 
-## Available Certificate Master Channels
+### SCEPman Deferred Channel
+
+* second-to-latest version
+* function and load-tested
+* does not include the latest bugfixes and features
+
+```
+https://raw.githubusercontent.com/scepman/install/deferred/dist/Artifacts.zip
+```
+
+## Available SCEPman Certificate Master Channels
 
 We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](../certmaster-configuration/application-settings/basics.md#website\_run\_from\_package) setting of your Certificate Master App Service.
 
-### Production
+### Certificate Master Production Channel
 
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts.zip
@@ -62,7 +72,7 @@ https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMas
 https://install.scepman.com/dist-certmaster/CertMaster-Artifacts.zip
 ```
 
-### Beta
+### Certificate Master Beta Channel
 
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts-Beta.zip
@@ -72,7 +82,7 @@ https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMas
 https://install.scepman.com/dist-certmaster/CertMaster-Artifacts-Beta.zip
 ```
 
-### Internal
+### Certificate Master Internal Channel
 
 ```
 https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts-Intern.zip
@@ -80,6 +90,12 @@ https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMas
 
 ```
 https://install.scepman.com/dist-certmaster/CertMaster-Artifacts-Intern.zip
+```
+
+### Certificate Master Deferred Channel
+
+```
+https://raw.githubusercontent.com/scepman/install/deferred/dist-certmaster/CertMaster-Artifacts.zip
 ```
 
 ## Custom Artifact Location
