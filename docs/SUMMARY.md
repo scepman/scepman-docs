@@ -63,6 +63,7 @@
   * [REST API](scepman-configuration/optional/application-settings/dbcsr-validation.md)
   * [Azure AD](advanced-configuration/application-settings/azure-ad.md)
   * [Azure KeyVault](scepman-configuration/optional/application-settings/azure-keyvault.md)
+  * [CRL](scepman-configuration/optional/application-settings/crl.md)
   * [Logging](advanced-configuration/application-settings/logging.md)
   * [National Cloud platforms](scepman-configuration/optional/application-settings/national-cloud-platforms.md)
 * [Autoscaling](scepman-configuration/optional/autoscaling.md)

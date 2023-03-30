@@ -10,14 +10,14 @@
 
 ### 2.4 - Upcoming Release in April 2023
 
-#### SCEPman 2.4.761 (currently in Internal Channel)
+#### SCEPman 2.4.761 (currently in Beta Channel)
 
 * [Improved CDP endpoint containing manually revoked certificates](scepman-configuration/optional/application-settings/crl.md#appconfig-crl-source)
 * [Forward logs to Azure Monitor](advanced-configuration/application-settings/logging.md)
 * Library and Framework updates, including .NET 7
 * Minor bugfixes and improvements
 
-#### Certificate Master 2.4.440 (currently in Internal Channel)
+#### Certificate Master 2.4.440 (currently in Beta Channel)
 
 * Form to request Code Signing certificates
 * Form to request Sub CA certificates, e.g. for Firewalls that inspect TLS traffic
