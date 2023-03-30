@@ -13,7 +13,7 @@
 #### SCEPman 2.4.761 (currently in Beta Channel)
 
 * [Improved CDP endpoint containing manually revoked certificates](scepman-configuration/optional/application-settings/crl.md#appconfig-crl-source)
-* [Forward logs to Azure Monitor](advanced-configuration/application-settings/logging.md)
+* [Log to Azure Monitor](advanced-configuration/application-settings/logging.md)
 * Library and Framework updates, including .NET 7
 * Minor bugfixes and improvements
 
