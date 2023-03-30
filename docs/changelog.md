@@ -12,7 +12,7 @@
 
 #### SCEPman 2.4.761 (currently in Internal Channel)
 
-* Improved CDP endpoint containing manually revoked certificates
+* [Improved CDP endpoint containing manually revoked certificates](scepman-configuration/optional/application-settings/crl.md#appconfig-crl-source)
 * Forward logs to Azure Monitor
 * Library and Framework updates, including .NET 7
 * Minor bugfixes and improvements
