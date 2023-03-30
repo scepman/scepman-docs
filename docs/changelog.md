@@ -2,12 +2,32 @@
 
 ## Versions
 
-### 2.4 - Upcoming
+<!--
+### 2.5 - Upcoming
+
+- Form for user certificates allow Smart-Card-Logon, e.g. for RDP or AVD SSO or import on smart cards like Yubikeys
+-->
+
+### 2.4 - Upcoming Release in April 2023
+
+#### SCEPman 2.4.761 (currently in Internal Channel)
+
+* Improved CDP endpoint containing manually revoked certificates
+* Forward logs to Azure Monitor
+* Library and Framework updates, including .NET 7
+* Minor bugfixes and improvements
+
+#### Certificate Master 2.4.440 (currently in Internal Channel)
 
 * Form to request Code Signing certificates
 * Form to request Sub CA certificates, e.g. for Firewalls that inspect TLS traffic
-* Form to manually request user certificates, e.g. for RDP or AVD SSO or import on smart cards like Yubikeys
-* More to be announced
+* Form to manually request user certificates for Client Authentication, e.g. on websites
+* UI optimizations
+* Library and Framework updates, including .NET 7
+* Minor bugfixes and improvements, including:
+  * In some cases, revoked Intune certificates were still display in the list of Intune certificates
+  * Hide Intune certificates that are not issued by SCEPman
+  * Certificates for Jamf devices could show up as "Unknown" in the list of Jamf certificates
 
 ### 2.3 - January 2023
 
