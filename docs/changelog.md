@@ -8,16 +8,16 @@
 - Form for user certificates allow Smart-Card-Logon, e.g. for RDP or AVD SSO or import on smart cards like Yubikeys
 -->
 
-### 2.4 - Upcoming Release in April 2023
+### 2.4 - April 2023
 
-#### SCEPman 2.4.761 (currently in Beta Channel)
+#### SCEPman 2.4.772
 
 * [Improved CDP endpoint containing manually revoked certificates](scepman-configuration/optional/application-settings/crl.md#appconfig-crl-source)
 * [Log to Azure Monitor](advanced-configuration/application-settings/logging.md)
 * Library and Framework updates, including .NET 7
-* Minor bugfixes and improvements
+* Bugfixes and improvements
 
-#### Certificate Master 2.4.440 (currently in Beta Channel)
+#### Certificate Master 2.4.445
 
 * Form to request Code Signing certificates
 * Form to request Sub CA certificates, e.g. for Firewalls that inspect TLS traffic
