@@ -35,7 +35,7 @@ In Mosyle, navigate to Management and add "**Multi-Cert Profile**" as a new prof
 
 Now **Add new profile,** choose a name for this profile, e.g. SCEPman Root CA, then click on **+ADD PROFILE** under Profile Name (see screenshot below)**,** and choose "Add Certificate profile" from the shown window. Next, select and upload the SCEPman root certificate you already download, add SCEPman Root CA as Profile Name and Save.
 
-![Adding a Root CA Profile](<../../.gitbook/assets/2022-07-25 09\_56\_09-Glueckkanja GAB and 1 more page - Work - Microsoft​ Edge.png>)
+![Adding a Root CA Profile](<../../.gitbook/assets/2022-07-25 09\_56\_09-Glueckkanja GAB and 1 more page - Work - Microsoft Edge.png>)
 
 ![Upload Root CA](<../../.gitbook/assets/2022-07-25 10\_04\_49-Window.png>)
 
