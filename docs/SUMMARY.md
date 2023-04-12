@@ -71,7 +71,7 @@
 * [Certificate Master Settings](certmaster-configuration/application-settings/README.md)
   * [Basics](certmaster-configuration/application-settings/basics.md)
   * [Azure AD](certmaster-configuration/application-settings/azure-ad.md)
-  *
+  * [Logging](advanced-configuration/application-settings-1/logging.md)
   * [National Cloud Platforms](advanced-configuration/application-settings-1/national-cloud-platforms.md)
 * [Custom Domain](scepman-configuration/optional/custom-domain.md)
 * [Geo-redundancy](advanced-configuration/geo-redundancy.md)
