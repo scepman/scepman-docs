@@ -17,6 +17,7 @@
 * [Deployment Options](scepman-configuration/deployment-options/README.md)
   * [Marketplace deployment](scepman-configuration/deployment-options/marketplace-deployment.md)
   * [Enterprise deployment](scepman-configuration/deployment-options/enterprise-deployment.md)
+  * [Terraform deployment](scepman-configuration/deployment-options/terraform-deployment.md)
 * [Root Certificate](scepman-configuration/first-run-root-cert.md)
 * [Uninstallation](scepman-deployment/uninstall.md)
 
