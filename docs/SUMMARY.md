@@ -71,7 +71,7 @@
 * [Certificate Master Settings](certmaster-configuration/application-settings/README.md)
   * [Basics](certmaster-configuration/application-settings/basics.md)
   * [Azure AD](certmaster-configuration/application-settings/azure-ad.md)
-  * [Logging](advanced-configuration/application-settings/logging.md)
+  *
   * [National Cloud Platforms](advanced-configuration/application-settings-1/national-cloud-platforms.md)
 * [Custom Domain](scepman-configuration/optional/custom-domain.md)
 * [Geo-redundancy](advanced-configuration/geo-redundancy.md)
@@ -97,6 +97,7 @@
   * [Cisco ISE Host Header Limitation](other/troubleshooting/cisco-ise-host-header-limitation.md)
   * [Re-enrollment trigger](other/troubleshooting/re-enrollment-trigger.md)
   * [View SCEPman issued certificates](other/troubleshooting/view-scepman-issued-certificates.md)
+  * [Change CA Subject](other/troubleshooting/change-ca-subject.md)
 * [Important Links](other/important-links.md)
 
 ***
