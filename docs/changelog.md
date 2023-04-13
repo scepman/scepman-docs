@@ -2,8 +2,16 @@
 
 ## Versions
 
-<!--
 ### 2.5 - Upcoming
+
+#### SCEPman 2.5.783 - Currently in Internal Channel
+
+- Define an enrollment grace period, during which devices are allowed to be compliant
+- SCEPman can add extension 1.3.6.1.4.1.311.25.2 with the users' Security Identifiers (SIDs) to certificates, mitigating [Certifried attacks](other/troubleshooting/certifried.md)
+
+<!--
+
+#### Certificate Master 2.5.x
 
 - Form for user certificates allow Smart-Card-Logon, e.g. for RDP or AVD SSO or import on smart cards like Yubikeys
 -->
