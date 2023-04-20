@@ -3,13 +3,15 @@
 ## AppConfig:IntuneValidation:ComplianceCheck
 
 {% hint style="warning" %}
-**Experimental Setting** - Applicable to version 1.7 and above.
+**Experimental Setting** - Applicable to version 1.7 and above
 
 SCEPman Enterprise Edition only
 
-Before version 1.9, due to delayed compliance state evaluation during enrollment this feature breaks Windows Autopilot enrollment. After certificate deployment the immediate following OCSP check will return '**not valid**' during enrollment time and the Autopilot process will not succeed.
+Before version 1.9, due to delayed compliance state evaluation during enrollment this feature breaks Windows Autopilot enrollment. After certificate deployment the immediately following OCSP check will return '**not valid**' during enrollment time and the Autopilot process will not succeed.
 
 With version 1.9 and above, clients receive an "Ephemeral Bootstrap Certificate" during the enrollment phase that is later replaced with a regular client certificate, as soon as the client becomes compliant.
+
+With version 2.5 and above, you can alternatively configure a grace period during which the device  is always considered compliant with the setting ComplianceGracePeriodMinutes.
 {% endhint %}
 
 **Value:** _Always_ or _Never_
@@ -17,6 +19,21 @@ With version 1.9 and above, clients receive an "Ephemeral Bootstrap Certificate"
 **Description:** When SCEPman receives an OCSP request, SCEPman can optionally check the device compliance state. When set to **Always** SCEPman will query the device compliance state and the OCSP result can only be GOOD if the device is also marked as compliant in Azure AD.
 
 Setting this to **Never** will disable the compliance check.
+
+## AppConfig:IntuneValidation:ComplianceGracePeriodMinutes
+
+{% hint style="info" %}
+Applicable to version 2.5 and above
+SCEPman Enterprise Edition only
+{% endhint %}
+
+**Value:** _Integer_ (default: 0)
+
+**Description:** Immediately after enrollment, devices are often not yet compliant in Intune. This setting defines a grace period in minutes during which the device is considered compliant, even if it is not yet. If the device is not compliant after the grace period, the certificate is revoked. This prevents the problem of a Windows device that is just enrolling and needs to successfully complete the SCEP profile in order to finish Windows Autopilot enrollment, but will become compliant in Intune only some time later.
+
+It is an alternative to using Ephemeral Bootstrap Certificates. If you configure any value above 0, SCEPman will never issue Ephemeral Bootstrap Certificates.
+
+This setting is only effective if [ComplianceCheck](intune-validation.md#appconfig-intunevalidation-compliancecheck) is set to _Always_. 
 
 ## AppConfig:IntuneValidation:DeviceDirectory
 
