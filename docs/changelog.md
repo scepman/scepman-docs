@@ -4,10 +4,10 @@
 
 ### 2.5 - Upcoming
 
-#### SCEPman 2.5.783 - Currently in Internal Channel
+#### SCEPman 2.5.792 - Currently in Internal Channel
 
 - Define an [enrollment grace period](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-compliancegraceperiodminutes), during which devices are allowed to be incompliant.
-- SCEPman can add extension 1.3.6.1.4.1.311.25.2 with the users' Security Identifiers (SIDs) to certificates, mitigating [Certifried attacks](other/troubleshooting/certifried.md)
+- SCEPman can [add extension 1.3.6.1.4.1.311.25.2 with the users' Security Identifiers (SIDs)](scepman-configuration/optional/application-settings/certificates.md#appconfig-addsidextension) to certificates, mitigating [Certifried attacks](other/troubleshooting/certifried.md)
 
 <!--
 

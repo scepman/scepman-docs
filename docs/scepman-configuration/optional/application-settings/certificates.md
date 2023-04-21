@@ -10,6 +10,22 @@ Applicable to version 2.0 and above
 
 **Description:** Shall certificates have the extensions 1.2.840.113556.5.14 (AAD Tenant ID) and 1.2.840.113556.1.5.284.2 (AAD Device ID)?
 
+## AppConfig:AddSidExtension
+
+{% hint style="info" %}
+Applicable to version 2.5 and above
+{% endhint %}
+
+**Value:** _true_ or _false_ (default)
+
+**Description:** This setting determines whether certificates can have the extension 1.3.6.1.4.1.311.25.2 (user's Security Identifier (SID))? This extension is required to mitigate [Certifried attacks](other/troubleshooting/certifried.md) if certificates are used for on-prem AD user authentication.
+
+If this is set to false, SCEPman will never issue certificates with this extension. If this is set to true, SCEPman may issue certificates with this extension in two cases:
+
+First, when enrolling user certificates via Intune and the user's AAD object contains a SID in the attribute _OnPremisesSecurityIdentifier_. If the user's AAD object does not contain a SID, for example if it is a cloud-only user, SCEPman will not issue a certificate with this extension. The same applies to the [static-aad endpoint](../../../advanced-configuration/application-settings/staticaad-validation.md).
+
+Second, when enrolling user certificates through other SCEP endpoints and the CSR already contains the extension. Examples are the Static SCEP endpoint and manual certificate requests through Certificate Master.
+
 ## AppConfig:ValidityPeriodDays
 
 {% hint style="info" %}
