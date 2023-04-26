@@ -41,7 +41,7 @@ This setting is only effective if [ComplianceCheck](intune-validation.md#appconf
 Applicable to version 2.0 and above
 {% endhint %}
 
-**Value:** _AAD_ (default for SCEPman 2.0), _Intune_, _AADAndIntune_, _ADDAndIntuneOpportunistic_ (applies to version 2.1 and above and default for these versions), or _AADAndIntuneAndEndpointlist_ (SCEPman 2.2 and newer).
+**Value:** _AAD_ (default for SCEPman 2.0), _Intune_, _AADAndIntune_, _AADAndIntuneOpportunistic_ (applies to version 2.1 and above and default for these versions), or _AADAndIntuneAndEndpointlist_ (SCEPman 2.2 and newer).
 
 Determines where to look up devices on OCSP requests for device certificates. The corresponding directory is queried for a device matching the device ID written to the certificate's subject CN field. The certificate is valid only if the device exists. For _AAD_, it must also be enabled (Intune doesn't support disabling devices). If the ComplianceCheck is activated, the device must also be compliant. If nothing is configured and for SCEPman 1.9 and before, _AAD_ is used.
 
