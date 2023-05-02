@@ -28,4 +28,4 @@ Certificates that are automatically revoked via OCSP will not be included in the
 
 **Value:** _Floating Point Number_
 
-**Description:** The number of days that an issued CRL is valid. By default, this setting is set to **0.1 days** (=2.4 hours) or **30 days** (SCEPman 2.3).
+**Description:** The number of days that an issued CRL is valid. If nothing is configured, CRLs will be valid for **0.1 days** = 2.4 hours (SCEPman 2.4 and newer) or **30 days** (SCEPman 2.3).
