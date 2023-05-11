@@ -32,7 +32,7 @@ Changes can harm your service!
 
 ## AppConfig:KeyVaultConfig:RootCertificateConfig:KeyType
 
-The type of key created for the Root CA. *RSA* is a software-protected RSA key; *RSA-HSM* is HSM-protected. SCEPman does **NOT** support ECC keys.
+The type of key created for the Root CA. _RSA_ is a software-protected RSA key; _RSA-HSM_ is HSM-protected. If you want to use an ECC key, please contact the SCEPman support for further instructions.
 
 {% hint style="danger" %}
 Changes can harm your service!

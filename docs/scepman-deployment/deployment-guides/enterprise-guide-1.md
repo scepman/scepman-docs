@@ -4,7 +4,7 @@
 SCEPman Enterprise Edition only
 {% endhint %}
 
-This will guide you through all steps to deploy SCEPman for an enterprise-grade environment with advanced requirements, e.g. naming conventions, redundancy or auto-scaling.&#x20;
+This will guide you through all steps to deploy SCEPman for an enterprise-grade environment with advanced requirements, e.g. naming conventions, redundancy or auto-scaling.
 
 ## Azure Deployment
 
@@ -13,26 +13,26 @@ Keep in mind that you need to plan a useful Azure resource design.
 
 ### Checklist: Prerequisites
 
-* [ ] Azure resource naming convention
-* [ ] Azure subscription (at least Contributor rights on that subscription)
-* [ ] Azure owner rights (at least on Resource Group level)
-* [ ] Azure AD "Global administrator" (Consent to access Graph API)
-* [ ] Public Domain CNAME (_scepman.yourdomain.com_)
-* [ ] SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview))
-* [ ] SCEPman Enterprise Edition License Key
+* [ ] _Mandatory_ - Azure resource naming convention
+* [ ] _Mandatory_ - Azure subscription (at least Contributor rights on that subscription)
+* [ ] _Mandatory_ - Azure owner rights (at least on Resource Group level)
+* [ ] _Mandatory_ - Azure AD "Global administrator" (Consent to access Graph API)
+* [ ] _Optional_ - Public Domain CNAME (_scepman.yourdomain.com_)
+* [ ] _Optional_ - SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview))
+* [ ] _Mandatory_ - SCEPman Enterprise Edition License Key
 
 ### Overview Azure Resource
 
 All these resources are recommended for a production environment.
 
-| Type                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| App Service(s)          | <p>A virtual Azure environment to run the SCEPman Core and Cert Master applications and provides a UI to configure different<br>application specific settings like CNAME, SSL certificate and App Settings.</p>                                                                                                                                                                                                                   |
-| App Service Plan        | <p>A virtual set of compute resources and configurations for the "App Service(s)".</p><p>Here you can configure the pricing tier and resource scaling.</p>                                                                                                                                                                                                                                                                        |
-| Key Vault               | <p>Tool to securely store secrets and certificates. The SCEPman application</p><p>will generate and save the root certificate in your Key Vault.</p>                                                                                                                                                                                                                                                                              |
-| Application Insights    | <p>Application Performance Management (APM) tool to get insights of the</p><p>SCEPman applications and requests. Needed to measure performance</p><p>and good for service optimization.</p>                                                                                                                                                                                                                                       |
-| Storage account         | <p>Storage platform used by SCEPman's Cert Master component to store certain attributes of the manually issued TLS server certificates for revocation purposes.<br><br><em>Optional:</em></p><p>Storage platform to upload the SCEPman artifacts and save log files.</p><p>The "App Service" will load the artifacts from a public blob store URI and</p><p>save all the application and web server logs in a blob container.</p> |
-| Log Analytics workspace | <p>A centralized and cloud-based log storage. The "App Service" will save all</p><p>platform logs and metrics into this workspace.</p>                                                                                                                                                                                                                                                                                            |
+| Type                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| App Service(s)          | <p>A virtual Azure environment to run the SCEPman Core and Cert Master applications and provides a UI to configure different<br>application specific settings like CNAME, SSL certificate and App Settings.</p>                                                                                                                                                                                                                          |
+| App Service Plan        | <p>A virtual set of compute resources and configurations for the "App Service(s)".</p><p>Here you can configure the pricing tier and resource scaling.</p>                                                                                                                                                                                                                                                                               |
+| Key Vault               | <p>Tool to securely store secrets and certificates. The SCEPman application</p><p>will generate and save the root certificate in your Key Vault.</p>                                                                                                                                                                                                                                                                                     |
+| Application Insights    | <p>Application Performance Management (APM) tool to get insights of the</p><p>SCEPman applications and requests. Needed to measure performance</p><p>and good for service optimization.</p>                                                                                                                                                                                                                                              |
+| Storage account         | <p>Storage platform used by SCEPman's Certificate Master component to store certain attributes of the manually issued TLS server certificates for revocation purposes.<br><br><em>Optional:</em></p><p>Storage platform to upload the SCEPman artifacts and save log files.</p><p>The "App Service" will load the artifacts from a public blob store URI and</p><p>save all the application and web server logs in a blob container.</p> |
+| Log Analytics workspace | <p>A centralized and cloud-based log storage. The "App Service" will save all</p><p>platform logs and metrics into this workspace.</p>                                                                                                                                                                                                                                                                                                   |
 
 ## Configuration Steps
 
@@ -42,10 +42,16 @@ All these resources are recommended for a production environment.
 This is a **mandatory** step.
 {% endhint %}
 
-To start with the deployment, you need to follow our Setup instruction:
+To start with the deployment, you need to follow our setup instructions leveraging an **ARM Template**
 
 {% content-ref url="../../scepman-configuration/deployment-options/enterprise-deployment.md" %}
 [enterprise-deployment.md](../../scepman-configuration/deployment-options/enterprise-deployment.md)
+{% endcontent-ref %}
+
+or alternatively our **Terraform** script:
+
+{% content-ref url="../../scepman-configuration/deployment-options/terraform-deployment.md" %}
+[terraform-deployment.md](../../scepman-configuration/deployment-options/terraform-deployment.md)
 {% endcontent-ref %}
 
 ### Step 2: Perform Post-Deployment Steps (Permission Assignments)
