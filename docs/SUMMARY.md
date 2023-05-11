@@ -74,7 +74,7 @@
   * [Logging](advanced-configuration/application-settings-1/logging.md)
   * [National Cloud Platforms](advanced-configuration/application-settings-1/national-cloud-platforms.md)
 * [Custom Domain](scepman-configuration/optional/custom-domain.md)
-* [Geo-redundancy](advanced-configuration/geo-redundancy.md)
+* [Geo-Redundancy](advanced-configuration/geo-redundancy.md)
 * [Health Check](advanced-configuration/health-check.md)
 * [Intermediate Certificate](advanced-configuration/intermediate-certificate.md)
 * [License Key](advanced-configuration/add-a-license-key.md)
