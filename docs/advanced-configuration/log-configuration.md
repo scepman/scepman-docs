@@ -1,9 +1,5 @@
 # Log configuration
 
-{% hint style="info" %}
-In this article, we are recommending **App Service logs** settings, but you can always (depending on your use case) customize the settings to fit your environment.
-{% endhint %}
-
 ## App Service Logs (Recommended settings)
 
 To retain or archive the log files, we recommend configuring the following settings under **Monitoring** -> **App Service logs** of your SCEPman instance:
@@ -41,7 +37,7 @@ We recommend storing your data in Log Analytics
 5. The last step is to select the needed data. We recommend **all Categories.**
 6. Finally, click on the **Save** button
 
-![](<../.gitbook/assets/2021-09-04 06-49-06-Diagnostic setting - Microsoft Azure and 4 more pages - C4A8 EHamed - Microsoft.png>)
+![](<../.gitbook/assets/2021-09-04 06-49-06-Diagnostic setting - Microsoft Azure and 4 more pages - C4A8 EHamed - Microsoft (1).png>)
 
 ### Archive to storage account (optional)
 
@@ -57,4 +53,4 @@ If you have created a storage account to store your SCEPman artifacts, or for Ap
 6. Select the needed data and type in your retention time in days. We recommend **all Categories** and a retention time of **30** days.
 7. Finally, click on the **Save** button.
 
-![](<../.gitbook/assets/2021-09-04 06-50-51-Diagnostic setting - Microsoft Azure and 4 more pages - C4A8 EHamed - Microsoft.png>)
+![](<../.gitbook/assets/2021-09-04 06-50-51-Diagnostic setting - Microsoft Azure and 4 more pages - C4A8 EHamed - Microsoft (1).png>)
