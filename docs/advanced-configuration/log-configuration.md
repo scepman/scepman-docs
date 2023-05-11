@@ -11,7 +11,7 @@ The **default retention** period for data stored in a Log Analytics Table is **3
 {% endhint %}
 
 1. Create a Log Analytics workspace (Microsoft Guide [Create a Log Analytics workspace](https://docs.microsoft.com/en-us/azure/azure-monitor/learn/quick-create-workspace#create-a-workspace)). You can also use an existing one.
-2. Add the settings described in the [logging article](application-settings/logging.md).
+2. Add the settings AppConfig:LoggingConfig:WorkspaceId and AppConfig:LoggingConfig:SharedKey described in the [section on Logging settings](application-settings/logging.md).
 
 ## KQL Query Examples
 
