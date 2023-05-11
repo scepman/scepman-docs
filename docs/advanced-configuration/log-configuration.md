@@ -15,9 +15,18 @@ The **default retention** period for data stored in a Log Analytics Table is **3
 
 ## KQL Query Examples
 
-### See Issues with your SCEPman Instance
+### See Issues with Your SCEPman Instance
 
 ```kusto
 SCEPman_CL |
 where Level == "Warn" or Level == "Error" or Level == "Fatal"
+```
+
+### Number of Issued Certificates by Endpoint in the Selected Time Frame
+
+```kusto
+SCEPman_CL
+| where LogCategory_s == "Scepman.Core.CertificationAuthority.KeyVaultCA" and Level == "Info"
+| project Message, RequestBase = trim_end('/', replace_string(replace_regex(RequestUrl_s, "(/pkiclient\\.exe)?(\\?operation=PKIOperation(&message=.+)?)?", ""),"certsrv/mscep/mscep.dll","intune"))
+| summarize IssuanceCount = count() by Endpoint = extract("/([a-zA-Z]+)$", 1, RequestBase)
 ```
