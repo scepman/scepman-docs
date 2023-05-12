@@ -12,4 +12,4 @@ To upgrade a Community Edition to an Enterprise Edition you have to add the lice
 
 6. Then, Save the settings and under Overview, restart your App Service.
 7. After the restart, your SCEPman instance homepage shows that it is an Enterprise Edition.
-8. Pay special attention that your SCEPman instance homepage shows on the left side that the Storage Account is connected (green bubble). If there are connection issues, the bubble is red and your OCSP responder will not work.
+8. Ensure that your SCEPman instance homepage shows on the left side that the Storage Account is connected (green bubble). If there are connection issues, the bubble is red and your OCSP responder will not work.
