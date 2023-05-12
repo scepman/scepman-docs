@@ -4,10 +4,23 @@
 
 ### 2.5 - Upcoming
 
-#### SCEPman 2.5.792 - Currently in Internal Channel
+#### SCEPman 2.5.822 - Currently in Internal Channel
 
 - Define an [enrollment grace period](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-compliancegraceperiodminutes), during which devices are allowed to be incompliant.
 - SCEPman can [add extension 1.3.6.1.4.1.311.25.2 with the users' Security Identifiers (SIDs)](scepman-configuration/optional/application-settings/certificates.md#appconfig-addsidextension) to certificates, mitigating [Certifried attacks](other/troubleshooting/certifried.md)
+- Library Updates
+- Bugfixes and small improvements, including:
+  - streamlined GCC High installation experience
+  - Robustness for some special cases
+
+#### Certificate Master 2.5.483 - Currently in Internal Channel
+
+- Download certificates + private keys in PEM format
+- Revocation audit trail
+- Library Updates
+- Minor bugfixes and improvements, including
+  - UI search button bugfix
+  - Prevent double submissions of CSRs
 
 <!--
 
