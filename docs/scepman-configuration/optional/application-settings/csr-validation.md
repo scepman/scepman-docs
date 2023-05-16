@@ -6,7 +6,7 @@ Applicable to version 2.0 and above
 SCEPman Enterprise Edition only
 {% endhint %}
 
-## AppConfig:AzureStorage:TableStorageEndpoint
+## AppConfig:CertificateStorage:TableStorageEndpoint
 
 This defines which Table Storage Endpoint to use for checking manual certificate revocations. If you remove this setting, SCEPman will not use the database for revocation checks.
 
