@@ -79,7 +79,7 @@ In case you would like to test SCEPman, please [get in contact with us](https://
 
 To get started with your SCEPman subscription,
 
-* Locate SCEPman (Subscription) on the **Marketplace** in your [**Azure Portal**](https://portal.azure.com/#create/glueckkanja-gabag.radiusaas-transactable-prod/preview)&#x20;
+* Locate SCEPman (Subscription) on the **Marketplace** in your [**Azure Portal**](https://portal.azure.com/#create/glueckkanja-gabag.scepman-transactable-prod/preview)&#x20;
 * Select the SCEPman Enterprise Edition **Plan** based on your preferred renewal interval and click "Subscribe"
 
 ![](<../.gitbook/assets/image (2) (1) (1).png>)
