@@ -1,35 +1,7 @@
 # Troubleshooting
 
-Please see the list of [Common Problems](general.md) if something is not working as you expect it. This page describes how to create and access the logs if you need more information about what's happening behind the scenes.
+Please see the list of [Common Problems](general.md) if something is not working as you expect it.
 
 ## Access SCEPman Logs
 
-You can use the [log archive in blob storage](../../advanced-configuration/log-configuration.md) to access SCEPman's logs. However, if you don't want to configure this or just want to have a quicker look into the logs, it might be easier to use one of the two methods described below: Downloading logs from the App Service's file system or monitoring the Log Stream.
-
-### Downloading the Logs
-
-Configure the **App Services Logs**
-
-![](../../.gitbook/assets/event32-5.png)
-
-Check Azure Web App log files via **Advanced Tools**:
-
-1. Go to **Kudu**
-2. Use **CMD**
-3. Navigate to **LogFiles**
-4. Then, **Application**
-
-Click on the download icon on the latest .txt file and review it
-
-![](../../.gitbook/assets/event32-3.png)
-
-### Live Log Monitor
-
-Check the **Log Stream** of the **App Service**:
-
-![](../../.gitbook/assets/event32-6.png)
-
-1. Monitor the log stream.
-2. Reproduce the error.
-3. Look for the log starting with **Request validation unsuccessful, as Intune validation threw an exception**.
-4. These message should have more details.
+Additionally, check the SCEPman logs in your Log Analytics Workspace as described in the Article [Log Configuration](../../advanced-configuration/log-configuration.md).
