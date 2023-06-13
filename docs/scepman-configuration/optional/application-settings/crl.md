@@ -1,5 +1,7 @@
 # Certificates
 
+For a general comparison of techniques to control certificate validity, have a look into [our blog article](https://www.glueckkanja-gab.com/blog/security/certificates/scepman/2023/05/certificate-revocation-en/).
+
 ## AppConfig:CRL:RequestToken
 
 {% hint style="info" %}
