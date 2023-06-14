@@ -18,8 +18,8 @@ The **default retention** period for data stored in a Log Analytics Table is **3
 ### See Issues with Your SCEPman Instance
 
 ```kusto
-SCEPman_CL |
-where Level == "Warn" or Level == "Error" or Level == "Fatal"
+SCEPman_CL
+| where Level == "Warn" or Level == "Error" or Level == "Fatal"
 ```
 
 ### Number of Issued Certificates by Endpoint in the Selected Time Frame
