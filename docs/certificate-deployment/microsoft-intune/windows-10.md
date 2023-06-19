@@ -1,6 +1,6 @@
 # Windows
 
-The following article describes how to deploy a device or/and user certificates for Windows devices. The deployment of the SCEPman Root Certificate is mandatory. Afterward, you can choose between deploying only device, user or even both certificate types.
+The following article describes deploying a device or/and user certificates for Windows devices. The deployment of the SCEPman Root Certificate is mandatory. Afterward, you can choose between deploying only the device, user, or even both certificate types.
 
 ## Root Certificate
 
