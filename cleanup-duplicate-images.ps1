@@ -101,7 +101,7 @@ If ($duplicates.count -lt 1) {
       if ($duplicate.Path -ieq $targetFileName) { Continue } # skip the target File
       else {
         if ($assetReferences.Count -ge 1) {
-          Write-Information "There are $($assetReferences.Count) occurances of $($assetReference.Pattern) (to be replaced by $targetFileName)"
+          Write-Information "There are $($assetReferences.Count) occurances of $($assetReferences[0].Pattern) (to be replaced by $targetFileName)"
         }
 
         foreach ($assetReference in $assetReferences) {
