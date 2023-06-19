@@ -52,11 +52,11 @@ Stay within **App Registrations** and click on **API permissions**
 1. **Remove** the default **User Read** permission
 {% endhint %}
 
-![](../../../.gitbook/assets/screenshot-2020-02-03-at-10.54.48.png)
+![](<../../../.gitbook/assets/screenshot-2020-02-03-at-10.54.48 (1).png>)
 
 2\. Click on **Add a permission** and choose **Microsoft Graph**. When chosen, select **Application permissions** and search for directory. Add **Directory.ReadAll** as permission.
 
-![](../../../.gitbook/assets/app-permission-graph.png)
+![](<../../../.gitbook/assets/app-permission-graph (1).png>)
 
 ![](../../../.gitbook/assets/app-permission-directory-read.png)
 
@@ -64,7 +64,7 @@ Stay within **App Registrations** and click on **API permissions**
 
 ![](../../../.gitbook/assets/app-permission-intune.png)
 
-![](../../../.gitbook/assets/app-permission-scep.png)
+![](<../../../.gitbook/assets/app-permission-scep (1).png>)
 
 4\. Finally click on **Grant admin** consent and **confirm** the consent for the given app registration.
 
