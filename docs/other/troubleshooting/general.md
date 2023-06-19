@@ -34,7 +34,7 @@ This could happen when a wrong trusted root certificate was selected in the SCEP
 8. It contains a short error report
    * SCEP: Certificate enrollment failed. Result (The hash value is not correct.).
 
-![](<../../.gitbook/assets/event32-1 (7).png>)
+![](../../.gitbook/assets/event32-1.png)
 
 ### My Certificate does not have the correct OCSP URL Entry
 
@@ -44,7 +44,7 @@ This is just a problem before version 1.2
 
 If the device certificate has a localhost URL for the OCSP entry in the certificate like this:
 
-![](<../../.gitbook/assets/event32-7 (6).png>)
+![](../../.gitbook/assets/event32-7.png)
 
 The App Service is missing an important application setting with the name **AppConfig:BaseUrl** set to the azurewebsite URL. To fix this, add the variable and save the App Service config:
 
@@ -55,7 +55,7 @@ https://scepman-XXXXX.azurewebsites.net
 
 Delete this certificate from the device and do the MDM sync. If you did it you will see a proper URL for the OCSP entry:
 
-![](<../../.gitbook/assets/event32-8 (5).png>)
+![](../../.gitbook/assets/event32-8.png)
 
 ### My SCEP configuration profile shows pending and is not applied
 
@@ -138,7 +138,7 @@ certutil -verifyStore MY
 
 As you can see in the last line, the **Certificate is REVOKED**
 
-![](<../../.gitbook/assets/scepman-revocation3 (9).png>)
+![](../../.gitbook/assets/scepman-revocation3.png)
 
 When you enable the device in Azure AD again and you type in the command from above again, the certificate should be marked as valid.
 

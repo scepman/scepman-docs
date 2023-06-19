@@ -29,7 +29,7 @@ After adding or editing SCEPman configuration parameters, you need to restart th
 
 As a first step you need to deploy SCEPman root certificate. Download this CA certificate via SCEPman website:
 
-![SCEPman Website](<../../.gitbook/assets/image-1 (3).png>)
+![SCEPman Website](../../.gitbook/assets/image-1.png)
 
 In Mosyle, navigate to Management and add "**Multi-Cert Profile**" as a new profile type (if it does not already exist).
 

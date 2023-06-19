@@ -10,11 +10,11 @@ The following instructions outline the steps required to create an Azure Applica
 
 ## 1) Create a new Application Gateway
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.12.40 (1).png>)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.12.40.png)
 
 ## 2) Provide the necessary basic information
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.13.55 (3).png>)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.13.55.png)
 
 ## 3) Create a new static public IP address
 
@@ -36,7 +36,7 @@ The following instructions outline the steps required to create an Azure Applica
 Around the beginning of June, Microsoft introduced a bug in Azure Application Gateway that prevents adding a host header to host-header-free requests when "Pick host name from backend target" is selected. We recommended "Pick host name from backend target" in a previous version of this documentation, but this does no longer work. As a workaround, choose "Override with specific domain name" as depicted below and insert the name of your SCEPman App Service, e.g. _contoso-scepman.azurewebsites.net_.
 {% endhint %}
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.21 (4).png>)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.21.png)
 
 ![](../../.gitbook/assets/Replace5b2.png)
 
@@ -52,7 +52,7 @@ The use of HTTP without TLS is not a security vulnerability; PKI-based resources
 
 ![](../../.gitbook/assets/Replace61.png)
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.17.44 (5).png>)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.17.44.png)
 
 ## 6b) Add a new HTTPS Setting with Host Header (your SCEPman public FQDN)
 
@@ -66,7 +66,7 @@ The use of HTTP without TLS is not a security vulnerability; PKI-based resources
 
 ## 8) Finalize the Application Gateway configuration
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.19.13 (3).png>)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.19.13.png)
 
 ## 9) Configure the DNS name for the IP
 
