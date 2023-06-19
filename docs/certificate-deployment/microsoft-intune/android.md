@@ -1,10 +1,14 @@
 # Android
 
-The following article describes how to deploy a device certificate or a user certificate for Android. Android certificate deployment is similar to Windows 10, macOS and iOS certificate deployments.
+The following article describes how to deploy a device certificate or a user certificate for Android. Android certificate deployment is similar to Windows 10, macOS, and iOS certificate deployments.
 
 ## Deploying Device Certificate
 
 Android offers two different solution sets for using an Android device with a [work profile](https://developers.google.com/android/work/requirements/work-profile) solution set and a [fully managed device](https://developers.google.com/android/work/requirements/fully-managed-device) solution set.
+
+{% hint style="info" %}
+Android device administrator management was released in Android 2.2 as a way to manage Android devices. Then beginning with Android 5, the more modern management framework of Android Enterprise was released (for devices that can reliably connect to Google Mobile Services). **Google is encouraging movement off of device administrator management by decreasing its management support in new Android releases**. For more information please check [MS. Intune Decreasing support for Android device admin](https://techcommunity.microsoft.com/t5/intune-customer-success/decreasing-support-for-android-device-administrator/ba-p/1441935)
+{% endhint %}
 
 ### Certificate Deployment for Android Work Profiles
 
@@ -16,7 +20,7 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](<../../.gitbook/assets/image-1 (5).png>)
+![](<../../.gitbook/assets/image-1 (3).png>)
 
 Then, create a profile in Microsoft Intune:
 
@@ -34,9 +38,7 @@ Then, create a profile in Microsoft Intune:
 
 ![](<../../.gitbook/assets/2021-10-12 15\_28\_15-.png>)
 
-When you are finished with it, you can deploy this profile to your devices.
-
-Now, you must create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server, you can find it from [here](windows-10.md#how-to-find-scep-url-for-intune)
+Now, you must create a SCEP certificate profile to deploy the device certificates. Essential for this step is the SCEP Server, you can find it&#x20;
 
 Next, to finally deploy the device certificates, you have to create a SCEP certificate profile in Intune:
 
@@ -50,14 +52,14 @@ Next, to finally deploy the device certificates, you have to create a SCEP certi
 8. Set the **Configuration settings** as in the picture below
 
 {% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the green rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the green rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **There is a dependency on the \{{AAD\_Device\_ID\}} in the subject name, which is used as a seed for the certificate serial number generation. Therefore, the subject name must include CN=\{{AAD\_Device\_ID\}}**.
+You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the green rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the green rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 months currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **There is a dependency on the \{{AAD\_Device\_ID\}} in the subject name, which is used as a seed for the certificate serial number generation. Therefore, the subject name must include CN=\{{AAD\_Device\_ID\}}**.
 {% endhint %}
 
-![](<../../.gitbook/assets/scepman-android2 (5).png>)
+![](<../../.gitbook/assets/scepman-android2 (2).png>)
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**
-3. Next, click **OK** and finally click **Create**
+3. Next, click **OK,** and finally click **Create**
 
 When all is finished, you have the following two certificate configurations:
 
@@ -70,11 +72,13 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](<../../.gitbook/assets/scepman24 (11).png>)
+<figure><img src="../../.gitbook/assets/2023-06-15 14_02_30-Android - SCEPman.png" alt=""><figcaption></figcaption></figure>
+
+
 
 Then, create a profile in Microsoft Intune:
 
-![](<../../../.gitbook/assets/scepman-android1 (3).png>)
+![](<../../../.gitbook/assets/scepman-android1 (8).png>)
 
 1. Download the CA Certificate
 2. Then, create a profile in Microsoft Intune
@@ -88,7 +92,7 @@ When you are finished with it, you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Make note of the SCEP server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman
 
-![](<../../../.gitbook/assets/scepman27 (17).png>)
+![](<../../../.gitbook/assets/scepman27 (18).png>)
 
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll)
 
@@ -102,7 +106,7 @@ Next, to finally deploy the device certificates, you have to create a SCEP certi
 6. As **Profile type** select **SCEP certificate** (under **Device Owner Only**)
 7. Click **Settings**
 
-![](<../../.gitbook/assets/scepman-android1-1 (5).png>)
+![](<../../.gitbook/assets/scepman-android1-1 (2).png>)
 
 1. Configure the **SCEP Certificate**
 
@@ -110,7 +114,7 @@ Next, to finally deploy the device certificates, you have to create a SCEP certi
 You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **There is a dependency on the \{{AAD\_Device\_ID\}} in the subject name, which is used as a seed for the certificate serial number generation. Therefore, the subject name must include CN=\{{AAD\_Device\_ID\}}**.
 {% endhint %}
 
-![](<../../.gitbook/assets/scepman-android2 (5).png>)
+![](<../../.gitbook/assets/scepman-android2 (2).png>)
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**
@@ -123,16 +127,16 @@ When all is finished, you have the following two certificate configurations:
 
 ### Subject Alternative Name
 
-A [Subject alternative name](https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.6) (SAN) is important for the whole android device login process into a Wi-Fi profile. It can be divided into three phases:
+A [Subject alternative name](https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.6) (SAN) is important for the whole Android device login process into a Wi-Fi profile. It can be divided into three phases:
 
-1. During the enrollment phase, you have to login to your company portal with a company domain (like john.doe@companyname.com)
+1. During the enrollment phase, you have to log in to your company portal with a company domain (like john.doe@companyname.com)
 2. When the synchronization starts the device gets a certificate and a Wi-Fi.
-3. The Wi-Fi profile will be deployed. In detail, the following steps working in background:
+3. The Wi-Fi profile will be deployed. In detail, the following steps working in the background:
    * SAN verification ([RFC 2818](https://www.rfc-editor.org/rfc/rfc2818))
    * Search for certifications and profiles, based on your company domain
    * Deploy Wi-Fi profile on your device
 
-It is required to have a **Subject alternative name** in the **SCEP Certificate**. Without a SAN, you have no access to your company Wi-Fi.
+It is required to have a **Subject alternative name** in the **SCEP Certificate**. Without a SAN, you have no access to your company's Wi-Fi.
 
 ### My Certificates
 
@@ -148,11 +152,11 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](<../../.gitbook/assets/scepman24 (11).png>)
+<figure><img src="../../.gitbook/assets/2023-06-15 14_02_30-Android - SCEPman.png" alt=""><figcaption></figcaption></figure>
 
 Then, create a profile in Microsoft Intune:
 
-![](<../../../.gitbook/assets/scepman-android1 (3).png>)
+![](<../../../.gitbook/assets/scepman-android1 (8).png>)
 
 1. Download the CA Certificate
 2. Then, create a profile in Microsoft Intune
@@ -166,7 +170,7 @@ When you are done with it, you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
 
-![](<../../../.gitbook/assets/scepman27 (17).png>)
+![](<../../../.gitbook/assets/scepman27 (18).png>)
 
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll)
 
@@ -194,7 +198,7 @@ You can not configure all **SCEP Certificate** settings. This is because some se
 2. Then, click **Add**
 3. Next click **OK** and finally click **Create**
 
-When all its done, you have the following two certificate configurations:
+When all is done, you have the following two certificate configurations:
 
 * SCEPman - SCEP Android user certificate
 * SCEPman - Trusted root Android certificate
@@ -205,11 +209,11 @@ First, we need to trust the public root certificate from SCEPman. Therefore, you
 
 Download the CA certificate:
 
-![](<../../.gitbook/assets/scepman24 (11).png>)
+<figure><img src="../../.gitbook/assets/2023-06-15 14_02_30-Android - SCEPman.png" alt=""><figcaption></figcaption></figure>
 
 Then, create a profile in Microsoft Intune:
 
-![](<../../../.gitbook/assets/scepman-android1 (3).png>)
+![](<../../../.gitbook/assets/scepman-android1 (8).png>)
 
 1. Download the CA Certificate
 2. Then, create a profile in Microsoft Intune
@@ -223,7 +227,7 @@ When you are done with it, you can deploy this profile to your devices.
 
 Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
 
-![](<../../../.gitbook/assets/scepman27 (17).png>)
+![](<../../../.gitbook/assets/scepman27 (18).png>)
 
 Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll)
 
@@ -249,7 +253,7 @@ You can not configure all **SCEP Certificate** settings. This is because some se
 
 1. Scroll down and enter the URL you have noted
 2. Then, click **Add**
-3. Next click **OK** and finally click **Create**
+3. Next, click **OK** and finally click **Create**
 
 When all is done, you have the following two certificate configurations:
 
@@ -267,7 +271,7 @@ A [Subject alternative name](https://www.rfc-editor.org/rfc/rfc5280#section-4.2.
    * Search for certifications and profiles, based on your company domain
    * Deploy Wi-Fi profile on your device
 
-It is required to have a **Subject alternative name** in the **SCEP Certificate**. Without a SAN, you have no access to your company Wi-Fi.
+It is required to have a **Subject alternative name** in the **SCEP Certificate**. Without a SAN, you have no access to your company's Wi-Fi.
 
 ### My Certificates
 

@@ -2,7 +2,7 @@
 
 Both Cisco ISE as well as Aruba ClearPass do not support HTTP 1.1 when looking up OCSP and do not send a host header in their OCSP request. Therefore, they cannot connect to a general SCEPman instance running on Azure App Services. The error message may look like this:
 
-![](<../../../.gitbook/assets/cisco-ocsp-error (6).jpg>)
+![](<../../../.gitbook/assets/cisco-ocsp-error (8).jpg>)
 
 Cisco is currently investigating future enhancements but for the time being you can use an [Azure Application Gateway](https://azure.microsoft.com/en-us/services/application-gateway/) to provide an instance of SCEPman not requiring a Host Header.
 
@@ -10,7 +10,7 @@ The following instructions outline the steps required to create an Azure Applica
 
 ## 1) Create a new Application Gateway
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.12.40 (3).png>)
+![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.12.40 (1).png>)
 
 ## 2) Provide the necessary basic information
 
@@ -18,15 +18,15 @@ The following instructions outline the steps required to create an Azure Applica
 
 ## 3) Create a new static public IP address
 
-![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.19 (3).png>)
+![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.19 (6).png>)
 
 ## 4) Create a new Backend Pool
 
-![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.55 (5).png>)
+![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.55 (4).png>)
 
 ## 5) Add a routing rule for HTTP
 
-![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.36 (3).png>)
+![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.36 (2).png>)
 
 ![](../../.gitbook/assets/Replace5.png)
 
@@ -52,7 +52,7 @@ The use of HTTP without TLS is not a security vulnerability; PKI-based resources
 
 ![](../../.gitbook/assets/Replace61.png)
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.17.44 (2).png>)
+![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.17.44 (5).png>)
 
 ## 6b) Add a new HTTPS Setting with Host Header (your SCEPman public FQDN)
 
@@ -62,11 +62,11 @@ The use of HTTP without TLS is not a security vulnerability; PKI-based resources
 
 ## 7) Confirm Routing Rules
 
-![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.18.56 (1).png>)
+![](<../../../.gitbook/assets/screen-shot-2019-10-18-at-17.18.56 (3).png>)
 
 ## 8) Finalize the Application Gateway configuration
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.19.13 (7).png>)
+![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.19.13 (3).png>)
 
 ## 9) Configure the DNS name for the IP
 
@@ -87,11 +87,11 @@ Eventually, configure the new name in the SCEPman settings:
 
 2\. Edit the value AppConfig:BaseURL.
 
-![](../../../.gitbook/assets/appconfig-baseurl-2-.png)
+![](<../../../.gitbook/assets/appconfig-baseurl-2- (1).png>)
 
 3\. Enter the DNS name for the IP address prefixed with "http://". If you have configured a TLS certificate in the Azure Application Gateway, you may also use HTTPS.
 
-![](../../../.gitbook/assets/appconfig-baseurl-gateway-1-.png)
+![](<../../../.gitbook/assets/appconfig-baseurl-gateway-1- (1).png>)
 
 ## Intune/JAMF configuration
 
