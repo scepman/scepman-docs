@@ -12,7 +12,7 @@ The URL [https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip
 
 Check if the Azure resource is up and running.
 
-![](../../../.gitbook/assets/event32-2.png)
+![](<../../../.gitbook/assets/event32-2 (10).png>)
 
 ## Problems Issuing Certificates
 
@@ -34,7 +34,7 @@ This could happen when a wrong trusted root certificate was selected in the SCEP
 8. It contains a short error report
    * SCEP: Certificate enrollment failed. Result (The hash value is not correct.).
 
-![](../../.gitbook/assets/event32-1.png)
+![](<../../.gitbook/assets/event32-1 (15).png>)
 
 ### My Certificate does not have the correct OCSP URL Entry
 
@@ -44,7 +44,7 @@ This is just a problem before version 1.2
 
 If the device certificate has a localhost URL for the OCSP entry in the certificate like this:
 
-![](../../.gitbook/assets/event32-7.png)
+![](<../../.gitbook/assets/event32-7 (14).png>)
 
 The App Service is missing an important application setting with the name **AppConfig:BaseUrl** set to the azurewebsite URL. To fix this, add the variable and save the App Service config:
 
@@ -55,7 +55,7 @@ https://scepman-XXXXX.azurewebsites.net
 
 Delete this certificate from the device and do the MDM sync. If you did it you will see a proper URL for the OCSP entry:
 
-![](../../.gitbook/assets/event32-8.png)
+![](<../../.gitbook/assets/event32-8 (7).png>)
 
 ### My SCEP configuration profile shows pending and is not applied
 
@@ -87,7 +87,7 @@ certutil -verifyStore MY
 
 Look at the certificate with the device ID issued by the SCEPman-Device-Root-CA-V1 and verify if the certificate is valid (see last line).
 
-![](../../../.gitbook/assets/scepman-revocation1.png)
+![](<../../../.gitbook/assets/scepman-revocation1 (6).png>)
 
 To verify that the OCSP responder is working, you can look at the OCSP url cache with the following command:
 
@@ -95,7 +95,7 @@ To verify that the OCSP responder is working, you can look at the OCSP url cache
 certutil -urlcache OCSP
 ```
 
-![](../../../.gitbook/assets/scepman-revocation2.png)
+![](<../../../.gitbook/assets/scepman-revocation2 (6).png>)
 
 ### Check certificates from other machines
 
@@ -105,7 +105,7 @@ As an alternate you can export the device certificate and use `certutil` on a Wi
 certutil -url <path-to-exported-device-certificate>
 ```
 
-![](../../../.gitbook/assets/scepman-revocation4.png)
+![](<../../../.gitbook/assets/scepman-revocation4 (6).png>)
 
 ### Revoke a user
 
@@ -138,7 +138,7 @@ certutil -verifyStore MY
 
 As you can see in the last line, the **Certificate is REVOKED**
 
-![](../../.gitbook/assets/scepman-revocation3.png)
+![](<../../.gitbook/assets/scepman-revocation3 (15).png>)
 
 When you enable the device in Azure AD again and you type in the command from above again, the certificate should be marked as valid.
 
@@ -152,7 +152,7 @@ _Symptoms_: Cisco ISE shows an OCSP unreachable error. Aruba ClearPass also has 
 
 _Cause_: Both Cisco ISE as well as Aruba ClearPass do not support HTTP 1.1 when looking up OCSP and do not send a host header in their OCSP request. Therefore, they cannot connect to a general SCEPman instance running on Azure App Services. The error message may look like this:
 
-![](../../../.gitbook/assets/cisco-ocsp-error.jpg)
+![](<../../../.gitbook/assets/cisco-ocsp-error (18).jpg>)
 
 _Solution_: Please see [here](cisco-ise-host-header-limitation.md).
 
