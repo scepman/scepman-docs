@@ -14,7 +14,7 @@ Whether you have just installed a fresh SCEPman 2.x installation or if you have 
 
 ### Prerequisites
 
-* A Global Admin Account for the tenant to which you want to install SCEPman (or another AAD role like _Privileged Role Administrator_ and write permissions to the Azure Subscription)
+* A Global Admin Account for the tenant to which you want to install SCEPman (or another AAD role like _Privileged Role Administrator_ and write permissions to the Azure Subscription). There is an option to use an account with only the _Application Administrator_ role, and execute the commands requiring Global Administrator permissions later manually.
 * A workstation with [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (also known as _az_) installed. Azure CLI is pre-installed in the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), the preferred way to run the module.
 
 ### Running the SCEPman Installation CMDlet
@@ -49,6 +49,10 @@ For SCEPman upgrades, you need two extra confirmations:
 
 * The name of the new SCEPman Certificate Master App Service (you can confirm the suggestion by hitting enter or typing a new name for the resource)
 * The name of the new Storage Account resource (again, you can confirm the suggestion by hitting enter or typing a new name for the resource)
+
+### Running the SCEPman Installation CMDlet without Global Admin Role
+
+Use the *-SkipAppRoleAssignments* flag of Complete-SCEPmanInstallation to run the CMDlet without Global Admin permissions. This will skip the assignment of the required App Roles to the SCEPman and Certificate MasterApp Services' Managed Identities. You can then assign the App Roles manually as a Global Administrator. The CMDlet will print the required commands to the console.
 
 ### Considerations when using Deployment Slots
 
