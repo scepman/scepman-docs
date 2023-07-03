@@ -24,7 +24,7 @@ Changes can harm your service!
 
 ## AppConfig:KeyVaultConfig:RootCertificateConfig:KeySize
 
-The length of the Root CA key in bits. Defaults to 2048.
+The length of the Root CA key in bits. New installations set this to 4096. If you remove the setting, it will default to 2048. It only applies when generating a new Root CA certificate, though.
 
 {% hint style="danger" %}
 Changes can harm your service!
