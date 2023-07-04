@@ -8,6 +8,7 @@
 
 - Define an [enrollment grace period](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-compliancegraceperiodminutes), during which devices are allowed to be incompliant.
 - SCEPman can [add extension 1.3.6.1.4.1.311.25.2 with the users' Security Identifiers (SIDs)](scepman-configuration/optional/application-settings/certificates.md#appconfig-addsidextension) to certificates, mitigating [Certifried attacks](other/troubleshooting/certifried.md)
+- [Performance improved by around factor 4](scepman-deployment/azure-sizing.md)
 - Library Updates
 - Bugfixes and small improvements, including:
   - streamlined GCC High installation experience

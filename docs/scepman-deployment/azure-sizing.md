@@ -4,7 +4,7 @@
 
 SCEPman depends mainly on the CPU resources. Memory and disc are less important.&#x20;
 
-A SCEPman instance in one Azure S1 App Service Plan can serve up to 400 requests per minute. Requests are
+A SCEPman 2.5 instance in one Azure P1V2 App Service Plan (210 ACUs) can serve around 2000 requests per minute under usual conditions. SCEPman 2.4 and earlier served about 400 requests per minute on one S1 App Service Plan (100 ACUs). Requests are
 
 * SCEP issuing requests and
 * OCSP requests.
