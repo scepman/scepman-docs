@@ -2,9 +2,16 @@
 
 ## Versions
 
-### 2.5 - Upcoming
+<!--
 
-#### SCEPman 2.5.876 - Currently in Beta Channel
+#### Certificate Master 2.6.x
+
+- Form for user certificates allow Smart-Card-Logon, e.g. for RDP or AVD SSO or import on smart cards like Yubikeys
+-->
+
+### 2.5 - July 2023
+
+#### SCEPman 2.5.892
 
 - Define an [enrollment grace period](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-compliancegraceperiodminutes), during which devices are allowed to be incompliant.
 - SCEPman can [add extension 1.3.6.1.4.1.311.25.2 with the users' Security Identifiers (SIDs)](scepman-configuration/optional/application-settings/certificates.md#appconfig-addsidextension) to certificates, mitigating [Certifried attacks](other/troubleshooting/certifried.md)
@@ -15,7 +22,7 @@
   - UI improvements
   - Robustness for some special cases
 
-#### Certificate Master 2.5.512 - Currently in Beta Channel
+#### Certificate Master 2.5.516
 
 - Download certificates + private keys in PEM format
 - Revocation audit trail
@@ -25,13 +32,6 @@
   - UI search button bugfix
   - Prevent double submissions of CSRs
   - Algorithms with improved compatibility (e.g. AES and SHA-256 for PKCS#12 CertBags)
-
-<!--
-
-#### Certificate Master 2.5.x
-
-- Form for user certificates allow Smart-Card-Logon, e.g. for RDP or AVD SSO or import on smart cards like Yubikeys
--->
 
 ### 2.4 - April 2023
 
