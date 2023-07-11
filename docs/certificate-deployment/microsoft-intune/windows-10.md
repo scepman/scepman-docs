@@ -92,6 +92,7 @@ Affected TPM firmware versions include:
 * STMicroelectronics: 71.12, 73.4.17568.4452, 71.12.17568.4100
 * Intel: 11.8.50.3399, 2.0.0.2060
 * Infineon: 7.63.3353.0
+* IFX: Version 3.19 / Specification 1.2
 
 If you use TPM with this firmware, either update your firmware to a newer version or select "Software KSP" as a key storage provider.
 
