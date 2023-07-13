@@ -15,7 +15,7 @@ See also the [Logging configuration](../../../advanced-configuration/application
 **Description:**\
 This is the AAD logon URL. It defaults to `https://login.microsoftonline.com`.
 
-For GCC High, use `https://login.microsoftonline.us`.
+For GCC High, use `https://login.microsoftonline.us`. For 21Vianet, use `https://login.partner.microsoftonline.cn`.
 
 ## AppConfig:AzureCloudConfig:AzureADGraphEndpoint
 
@@ -49,7 +49,7 @@ For GCC High, use `https://graph.microsoft.us`. For GCC DoD, use `https://dod-gr
 **Description:**\
 The URL of Azure Key Vaults. It defaults to `https://vault.azure.net`.
 
-For GCC High, use `https://vault.usgovcloudapi.net`.
+For GCC High, use `https://vault.usgovcloudapi.net`. For 21Vianet, use `https://vault.azure.cn`.
 
 ## AppConfig:AzureCloudConfig:ManagementEndpoint
 
