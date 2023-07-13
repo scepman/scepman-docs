@@ -1,8 +1,10 @@
-# Multi-Tenancy
+# Split-Tenancy
 
 ## Overview <a href="#overview" id="overview"></a>
 
-SCEPman can be configured to be operated from an Azure tenant different to the Azure/Intune tenant to whose users and/or devices it issues certificates to. This approach is called **multi-tenancy** and is especially helpful for MSPs that would like to consolidate Azure infrastructure costs across their customers while maintaining a dedicated backend and unique CA for each of those customers.
+SCEPman can be configured to be operated from an Azure tenant different to the Azure/Intune tenant to whose users and/or devices it issues certificates to. This approach is called **split-tenancy** and is especially **helpful for MSPs** that would like to consolidate Azure infrastructure costs across their customers while maintaining a dedicated backend and unique CA for each of those customers.
+
+Split-tenancy comes along with a **major disadvantage**: [Managed Identities](../post-installation-config.md) can no longer be used. This means authentication against the Graph API (Azure AD and Intune) is again handled using an App registration and Client secret, which has to be managed (by the MSP) as it expires.
 
 In the following, we refer to the hosting tenant as **home tenant** and to the customer tenant as **target tenant**.
 
@@ -52,8 +54,7 @@ The **client secret** generated as part of this **App registration** has an expi
         \
         `Install-Module SCEPman -Scope CurrentUser -Force`\
         `Register-SCEPmanCertMaster -CertMasterBaseURL <url>`\
-        ``\
-        ``Use the URL like 'https://certmaster.scepman.contoso.de/' for `<url>`.
+        `\` Use the URL like 'https://certmaster.scepman.contoso.de/' for `<url>`.
       * The **CMDlet** will output an **Application Id** and a **Tenant Id** (that of the **target tenant**). Enter these two values as `AppConfig:AuthConfig:HomeApplicationId` and `AppConfig:AuthConfig:HomeTenantId` in your Certificate Master settings.
       * Now **create** the following new application settings, possibly overriding the existing ones, with the same values as in SCEPman:
 
