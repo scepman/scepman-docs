@@ -11,6 +11,10 @@
 
 ### 2.5 - July 2023
 
+#### SCEPman 2.5.895
+
+- Bugfix: OCSP Responses encoded GeneralizedTime with fraction of seconds, which is not compliant to RFC 5280, Section 4.1.2.5.2 and caused some clients to reject the OCSP response (we know about Checkpoint).
+
 #### SCEPman 2.5.892
 
 - Define an [enrollment grace period](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-compliancegraceperiodminutes), during which devices are allowed to be incompliant.
