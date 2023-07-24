@@ -13,6 +13,8 @@ Certificates issued by SCEPman are widely used for the purpose of certificate-ba
 * Fortinet FortiGate
 * Palo Alto GlobalProtect
 
+In addition to typical user-centric client devices such as laptops, PCs or Macs, **kiosk devices** such as point of sales or self-checkout systems, scanner/barcode guns or customer terminals are often equipped with certificates from SCEPman for secure network authentication.
+
 ## Certificate-based Authentication
 
 You can enrol user authentication certificates with SCEPman for TLS client authentication. This allows authentication to web sites or services such as
