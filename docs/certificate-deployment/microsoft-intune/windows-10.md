@@ -196,6 +196,10 @@ Other SAN values like an Email address can be added if needed.
 
 </details>
 
+{% hint style="info" %}
+Based on customer feedback, it appears that some VPN clients (e.g., Azure VPN Client for Virtual WAN) are unable to discover the user certificate when it is stored in the TPM. Try enrolling it to the software KSP instead.
+{% endhint %}
+
 ### Example
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-09-14 at 09.55.05.png" alt=""><figcaption></figcaption></figure>
