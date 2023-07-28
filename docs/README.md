@@ -5,7 +5,7 @@ description: SCEPman - Certificates Simplified
 # Welcome
 
 {% hint style="warning" %}
-SCEPman version 2.5.982 released in the Production Channel on 2023-07-11 has a introduced an extended timestamp format that makes some OCSP responses incompatible with some clients including OpenSSL and our [RADIUSaaS](https://www.radius-as-a-service.com/).&#x20;
+SCEPman version 2.5.982 released in the Production Channel on 2023-07-11 has introduced an extended timestamp format that makes some OCSP responses incompatible with some clients including OpenSSL and our [RADIUSaaS](https://www.radius-as-a-service.com/).&#x20;
 
 **This can result in valid certificates being rejected temporarily. In the case of WiFi authentications, clients may need multiple connection attempts.**
 
