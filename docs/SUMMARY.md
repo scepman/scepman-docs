@@ -98,6 +98,7 @@
   * [Re-enrollment trigger](other/troubleshooting/re-enrollment-trigger.md)
   * [View SCEPman issued certificates](other/troubleshooting/view-scepman-issued-certificates.md)
   * [Change CA Subject](other/troubleshooting/change-ca-subject.md)
+  * [Intune service discovery API permissions](other/troubleshooting/intune-service-discovery-api-permissions.md)
 * [Important Links](other/important-links.md)
 
 ***

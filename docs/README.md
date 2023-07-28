@@ -5,11 +5,11 @@ description: SCEPman - Certificates Simplified
 # Welcome
 
 {% hint style="warning" %}
-Intune service discovery API endpoint will require specific permissions starting January 1st 2023. For more details, see the [Microsoft website](https://aka.ms/mem-servicediscovery-api-blog).
+SCEPman version 2.5.982 released in the Production Channel on 2023-07-11 has a bug that makes some OCSP responses incompatible with some clients including OpenSSL and our [RADIUSaaS](https://www.radius-as-a-service.com/).&#x20;
 
-**SCEPman instances running versions prior to version 2.0 may have issues with this change.**
+**This can result in valid certificates being rejected temporarily. In the case of WiFi authentications, clients may need multiple connection attempts.**
 
-Please ensure that you are using the [latest version of SCEPman](scepman-configuration/optional/update-strategy.md).
+The bug is fixed in [SCEPman version 2.5.985](changelog.md#scepman-2.5.895). If you are still using SCEPman 2.5.982, please stop and start your App Service to enforce an update, preferably outside of peak usage.
 {% endhint %}
 
 ## Overview
