@@ -79,7 +79,7 @@
 * [Intermediate Certificate](advanced-configuration/intermediate-certificate.md)
 * [License Key](advanced-configuration/add-a-license-key.md)
 * [Log Configuration](advanced-configuration/log-configuration.md)
-* [Split-Tenancy](scepman-configuration/optional/multi-tenancy.md)
+* [Split-Tenancy](scepman-configuration/optional/split-tenancy.md)
 * [Update Strategy](scepman-configuration/optional/update-strategy.md)
 
 ## NAC Configuration
