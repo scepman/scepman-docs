@@ -6,6 +6,10 @@ This feature requires version **1.9** or above.
 
 Please follow this guide to distribute certificates to users. User certificates are possible on computers (macOS) as well as devices (e.g.: iOS, iPadOS). Before deploying the first certificates via Jamf, follow the [general steps for Jamf](general.md) first.
 
+{% hint style="success" %}
+We strongly recommend to configure all use-case relevant certificate payloads (trusted certificate / SCEP certificate) in a **single** Configuration Profile in Jamf.&#x20;
+{% endhint %}
+
 {% hint style="info" %}
 Note that the "User and Location" data of your computers or mobile devices need to be properly populated for user certificates to be issued. Especially, the user must have an email address, as this is used as unique identifier.
 {% endhint %}

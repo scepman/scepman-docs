@@ -2,6 +2,10 @@
 
 Please follow this guide to distribute certificates to computers (macOS). Before deploying the first certificates via Jamf, follow the [general steps for Jamf](general.md) first.
 
+{% hint style="success" %}
+We strongly recommend to configure all use-case relevant certificate payloads (trusted certificate / SCEP certificate) in a **single** Configuration Profile in Jamf.&#x20;
+{% endhint %}
+
 ## SCEPman Root Certificate
 
 As first step you need to deploy SCEPman root certificate. Download this CA certificate via SCEPman dashboard:

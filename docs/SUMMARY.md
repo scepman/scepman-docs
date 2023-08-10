@@ -32,7 +32,7 @@
   * [macOS](certificate-deployment/microsoft-intune/macos.md)
   * [Android](certificate-deployment/microsoft-intune/android.md)
   * [iOS/iPadOS](certificate-deployment/microsoft-intune/ios.md)
-* [Jamf](certificate-deployment/jamf/README.md)
+* [Jamf Pro](certificate-deployment/jamf/README.md)
   * [General Configuration](certificate-deployment/jamf/general.md)
   * [Computers](certificate-deployment/jamf/computers.md)
   * [Devices](certificate-deployment/jamf/devices.md)
