@@ -14,6 +14,9 @@ Keep in mind that you need to plan a useful Azure resource design.
 * [ ] _Mandatory -_ Azure AD "Global administrator" (Consent to access Graph API)
 * [ ] _Optional_ - Public Domain CNAME (_scepman.yourdomain.com_)
 * [ ] _Optional_ - SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview))
+*   [ ] _Mandatory_ - Make sure to define your Azure policies [according to SCEPman requirements](../other/faqs/security-faq.md#azure-cis) (e.g. do not enforce TLS)
+
+
 
 ### Overview Azure Resource
 
@@ -27,6 +30,10 @@ All these resources are recommended for a production environment.
 | Application Insights    | <p>Application Performance Management (APM) tool to get insights of the</p><p>SCEPman applications and requests. Needed to measure performance</p><p>and good for service optimization.</p>                                                                                                                    |
 | Storage account         | <p>Storage platform used by SCEPman's Certificate Master component to store certain attributes of the manually issued TLS server certificates for revocation purposes.<br><br><em>Optional:</em></p><p>The "App Service" will load the artifacts from a blob storage URI if manual updates are configured.</p> |
 | Log Analytics workspace | <p>A centralized and cloud-based log storage. The "App Service" will save all</p><p>platform logs and metrics into this workspace.</p>                                                                                                                                                                         |
+
+{% hint style="warning" %}
+
+{% endhint %}
 
 ## Configuration Steps
 

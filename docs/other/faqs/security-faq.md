@@ -278,6 +278,8 @@ Details:
 
 ## Azure CIS
 
+This section covers questions that arise when defining cyberdefense policies for your Azure environment or working with best practice frameworks such as the [CIS Microsoft Azure Foundations Benchmark](https://www.cisecurity.org/benchmark/azure/).
+
 ### Storage Accounts
 
 #### 18. Can `Allow Blob public access` be disabled?
