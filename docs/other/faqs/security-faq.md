@@ -39,16 +39,16 @@ SCEPman's core services are provided by a stateless web application that does no
 2.  Logging
 
     Based on the customer's configuration of SCEPman, logging may be activated. Dependent on the customer's logging verbosity settings, the logs may contain any data that SCEPman processes. The customer configures the log storage location.
-3.  PaperTrail
+3.  External Log Analytics Workspace
 
-    SCEPman always sends a limited amount of **non-personal** data to our PaperTrail account. This data is used for
+    SCEPman always sends a limited amount of **non-personal** data to our Log Analytics Workspace (LAW), which is located in a European Azure data center. This data is used for
 
     * Licensing purposes
     * Quality assurance (e.g. monitoring exceptions globally helps us to recognize general and widespread issues quickly, so that we can offer solutions to our clients fast, preventing expensive service outages).
 
-    By default, SCEPman does **not send any personal data** to our PaperTrail account.
+    By default, SCEPman does **not send any personal data** to our LAW.
 
-    Depending on the logging settings, debug and other information is forwarded to glueckkanja-gab AG's PaperTrail account. Our support engineers may request to [activate](../../scepman-configuration/optional/application-settings.md#appconfig-remotedebug) `(AppConfig:RemoteDebug -> true)` the remote debugging feature from the customer admin in support of troubleshooting inquiries. In such cases, information on the certificate request may be sent to our PaperTrail account, possibly (the customer decides what information is part of the certificate) containing personal data such as:
+    Depending on the logging settings, debug and other information is forwarded to glueckkanja-gab AG's LAW. Our support engineers may request to [activate](../../scepman-configuration/optional/application-settings.md#appconfig-remotedebug) `(AppConfig:RemoteDebug -> true)` the remote debugging feature from the customer admin in support of troubleshooting inquiries. In such cases, information on the certificate request may be sent to our PaperTrail account, possibly (the customer decides what information is part of the certificate) containing personal data such as:
 
     * Username
     * Email
@@ -57,7 +57,7 @@ SCEPman's core services are provided by a stateless web application that does no
 
     We periodically delete **all** logged data at an interval of
 
-    * 1 year (PaperTrail)
+    * 30 days
 
 #### SCEPman Certificate Master
 
