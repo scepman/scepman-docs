@@ -8,16 +8,20 @@ order: 2
 
 ## Blog Article about SCEPman
 
-[https://oliverkieselbach.com/2019/07/02/the-easy-way-to-deploy-device-certificates-with-intune/](https://oliverkieselbach.com/2019/07/02/the-easy-way-to-deploy-device-certificates-with-intune/)
+{% embed url="https://oliverkieselbach.com/2019/07/02/the-easy-way-to-deploy-device-certificates-with-intune/" %}
+
+## Deep dive of SCEP certificate request/renewal on Intune-managed Windows clients
+
+{% embed url="https://oliverkieselbach.com/2022/09/21/deep-dive-of-scep-certificate-request-renewal-on-intune-managed-windows-clients/" %}
 
 ## SCEPman on Azure Marketplace (Deployment)
 
-[https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman?tab=Overview](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman?tab=Overview)
+{% embed url="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman?tab=Overview" %}
 
 ## SCEPman on Azure Marketplace (Subscription)
 
-[https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman-transactable-prod](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman-transactable-prod)
+{% embed url="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman-transactable-prod" %}
 
 ## SCEPman on GitHub
 
-[https://github.com/glueckkanja/gk-scepman](https://github.com/scepman/install)
+{% embed url="https://github.com/glueckkanja/gk-scepman" %}
