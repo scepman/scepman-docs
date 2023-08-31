@@ -48,7 +48,7 @@ SCEPman's core services are provided by a stateless web application that does no
 
     By default, SCEPman does **not send any personal data** to our LAW.
 
-    Depending on the logging settings, debug and other information is forwarded to glueckkanja-gab AG's LAW. Our support engineers may request to [activate](../../scepman-configuration/optional/application-settings.md#appconfig-remotedebug) `(AppConfig:RemoteDebug -> true)` the remote debugging feature from the customer admin in support of troubleshooting inquiries. In such cases, information on the certificate request may be sent to our PaperTrail account, possibly (the customer decides what information is part of the certificate) containing personal data such as:
+    Depending on the logging settings, debug and other information is forwarded to glueckkanja-gab AG's LAW. Our support engineers may request to [activate](../../scepman-configuration/optional/application-settings.md#appconfig-remotedebug) `(AppConfig:RemoteDebug -> true)` the remote debugging feature from the customer admin in support of troubleshooting inquiries. In such cases, information on the certificate request may be sent to our LAW account, possibly (the customer decides what information is part of the certificate) containing personal data such as:
 
     * Username
     * Email
@@ -69,13 +69,9 @@ An Azure Storage Account stores all certificates that were issued via the Certif
 
 By design, SCEPman is realized as an Azure App (solution-template-based), i.e. it is deployed into the customer's Azure tenant. As such data sovereignty in terms of the data center's geo-location is within the customer's hands and preference.
 
-#### PaperTrail
+#### External Log Analytics Workspace
 
-PaperTrail is an external logging service of which the location cannot be configured by the customer.
-
-The entirety of Papertrail's systems are located inside the United States of America. Data is processed by Softlayer and stored in AWS.
-
-Softlayer in the US – region DAL08 AWS region us-east-1
+The external LAW we leverage to collect (by default **non-personal** and **non-secret**) telemetry information for license enforcement purposes is located in **Azure's West Europe** data center.
 
 ### 4. Which tenant permissions does the admin have to consent to?
 
