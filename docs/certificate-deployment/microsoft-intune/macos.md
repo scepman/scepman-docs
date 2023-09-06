@@ -2,6 +2,10 @@
 
 The following article describes how to deploy a device or/and user certificates for macOS devices. The deployment of the SCEPman Root Certificate is mandatory. Afterward, you can choose between deploying only device, user or even both certificate types.
 
+{% hint style="info" %}
+Please note that macOS enrols a separate client authentication certificate for each device configuration profile in which a SCEP profile is referenced, in addition to the actual SCEP certificate profile.
+{% endhint %}
+
 ## Root Certificate
 
 The basis for deploying SCEP certificates is to trust the public root certificate of SCEPman. Therefore, you have to download the CA Root certificate and deploy it as a **Trusted certificate** profile via Microsoft Intune:
