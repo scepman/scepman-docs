@@ -47,6 +47,12 @@ The **Type of certificate** filter is only visible when the advanced filter opti
 
 The **Validity status** filter lets you display only certificates whose ValidTo date lies in the past (_Expired_), that have been _revoked_ manually, or that are within its validity range and not manually revoked (_Valid_). Automatic revocation does not count for this filter, e.g. a device certificate whose device was deleted in AAD, but not manually revoked will show up only if you select Valid (or Any), although it is actually revoked and cannot be used.
 
+{% hint style="info" %}
+The _Revoked Intune Certificates_ table in Certificate Master is only relevant if you manually revoke Intune-issued certificates or if Intune has revoked the certificates, for example, due to a pending wipe or other conditions.
+
+This table does not display the automatic revocation status based on our object binding mechanism.
+{% endhint %}
+
 You can also filter for the channel the the certificate was enrolled over with the filter **Source of the certificate request**. The specific settings have the following meanings.
 
 * _Certificate Master_ comprised the certificates manually issued via the Certificate Master web UI.
@@ -59,11 +65,11 @@ You can also filter for the channel the the certificate was enrolled over with t
 
 SCEPman uses different sources of revocation information to determine whether a certificate is valid when an OCSP request arrives. The tables in Certificate Master only show the status of manual revocation and not other sources. Therefore, a certificate may be shown as valid in the table, although it is actually considered revoked, for example because the corresponding device was deleted in Intune. These are the revocation options by type:
 
-- **All** certificates can be revoked manually in Certificate Master.
-- **User** certificates enrolled through the **Intune** or **Static-AAD** SCEP endpoints are revoked automatically if the corresponding user object is deleted or disabled in AAD.
-- **User** certificates enrolled through the **Intune** or **Static-AAD** SCEP endpoints can be [revoked automatically if the sign-in risk of the user exceeds a configured threshold](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationuserriskcheck).
-- **Device** certificates with **AAD Device ID** enrolled through the **Intune** or **Static-AAD** SCEP endpoint are revoked automatically if the corresponding device object is deleted or disabled in AAD.
-- **Device** certificates with **Intune Device ID** enrolled through the **Intune** or **Static-AAD** SCEP endpoint are revoked automatically if the corresponding device object is deleted in Intune or if the device is wiped or retired unless this is [unconfigured](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationrevokecertificatesonwipe).
-- **Device** certificates of any kind enrolled through the **Intune** or **Static-AAD** SCEP endpoint [can be revoked automatically if the corresponding device object becomes incompliant](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationcompliancecheck).
-- **User** and **Device** certificates enrolled through the **Intune** or **Static-AAD** SCEP endpoint [can be revoked automatically](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationdevicedirectory) if [Intune decides to revoke](https://learn.microsoft.com/en-us/mem/intune/protect/remove-certificates) the certificate.
-- **User**, **Device**, and **Computer** certificates enrolled through the **Jamf** SCEP endpoint are revoked automatically if the corresponding object is deleted in Jamf.
+* **All** certificates can be revoked manually in Certificate Master.
+* **User** certificates enrolled through the **Intune** or **Static-AAD** SCEP endpoints are revoked automatically if the corresponding user object is deleted or disabled in AAD.
+* **User** certificates enrolled through the **Intune** or **Static-AAD** SCEP endpoints can be [revoked automatically if the sign-in risk of the user exceeds a configured threshold](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationuserriskcheck).
+* **Device** certificates with **AAD Device ID** enrolled through the **Intune** or **Static-AAD** SCEP endpoint are revoked automatically if the corresponding device object is deleted or disabled in AAD.
+* **Device** certificates with **Intune Device ID** enrolled through the **Intune** or **Static-AAD** SCEP endpoint are revoked automatically if the corresponding device object is deleted in Intune or if the device is wiped or retired unless this is [unconfigured](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationrevokecertificatesonwipe).
+* **Device** certificates of any kind enrolled through the **Intune** or **Static-AAD** SCEP endpoint [can be revoked automatically if the corresponding device object becomes incompliant](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationcompliancecheck).
+* **User** and **Device** certificates enrolled through the **Intune** or **Static-AAD** SCEP endpoint [can be revoked automatically](../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationdevicedirectory) if [Intune decides to revoke](https://learn.microsoft.com/en-us/mem/intune/protect/remove-certificates) the certificate.
+* **User**, **Device**, and **Computer** certificates enrolled through the **Jamf** SCEP endpoint are revoked automatically if the corresponding object is deleted in Jamf.
