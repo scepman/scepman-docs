@@ -14,11 +14,11 @@ This option allows you to easily generate a TLS Server Certificate for multiple 
 
 
 
-Navigate to _New Certificate_ in the SCEPman Certificate Master top menu. Enter all Fully Qualified Domain Names (FQDNs) that the certificate shall be valid for separated by commas, semicolons, or line breaks. These entries will be added as DNS entries to the Subject Alternative Names extension of the certificate. Hit _Submit_ once you have entered all domain names and the browser will automatically download the certificate with private key in PKCS#12/PFX format after the certificate was issued a few seconds later. The PKCS#12 file is encrypted with the password shown on the screen. You can import the PKCS#12 directly to the system where it is needed using the password.
+Navigate to _New Certificate_ in the SCEPman Certificate Master top menu. Enter all Fully Qualified Domain Names (FQDNs) that the certificate shall be valid for separated by commas, semicolons, or line breaks. These entries will be added as DNS entries to the Subject Alternative Names extension of the certificate. Hit _Submit_ once you have entered all domain names and the browser will automatically download the certificate with the private key in PKCS#12/PFX format after the certificate was issued a few seconds later. The PKCS#12 file is encrypted with the password shown on the screen. You can import the PKCS#12 directly to the system where it is needed using the password.
 
-<figure><img src="../../.gitbook/assets/2023-09-07 14_23_31-SCEPman Certificate Master.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2023-09-07 14_23_31-SCEPman Certificate Master.png" alt=""><figcaption><p>Certificate Master, New Server Certificate</p></figcaption></figure>
 
-Some systems can import a certificate with private key, but do not accept PKCS#12. You can convert the PKCS#12 file to other formats using standard tools like OpenSSL. For example, if your target system requires a PEM file with the certificate and private key, you may use this command:
+Some systems can import a certificate with the private key, but do not accept PKCS#12. You can convert the PKCS#12 file to other formats using standard tools like OpenSSL. For example, if your target system requires a PEM file with the certificate and private key, you may use this command:
 
 ```shell
 openssl pkcs12 -in INFILE.p12 -out OUTFILE.crt
