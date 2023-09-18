@@ -1,6 +1,6 @@
 # Standard Guide
 
-This will guide you through all steps necessary to set up SCEPman in your PoC or Production environemt based on our best practices.
+This will guide you through all steps necessary to set up SCEPman in your PoC or Production environment based on our best practices.
 
 ## Azure Deployment
 
