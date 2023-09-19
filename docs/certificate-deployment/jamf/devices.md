@@ -3,14 +3,14 @@
 Please follow this guide to distribute certificates to devices (e.g.: iOS, iPadOS). Before deploying the first certificates via Jamf, follow the [general steps for Jamf](general.md) first.
 
 {% hint style="success" %}
-We strongly recommend to configure all use-case relevant certificate payloads (trusted certificate / SCEP certificate) in a **single** Configuration Profile in Jamf.&#x20;
+We strongly recommend to configure all use-case relevant certificate payloads (trusted certificate / SCEP certificate) in a **single** Configuration Profile in Jamf.
 {% endhint %}
 
 ## SCEPman Root Certificate
 
 As first step you need to deploy SCEPman root certificate. Download this CA certificate via SCEPman dashboard:
 
-![](../../.gitbook/assets/image-1.png)
+![](<../../.gitbook/assets/image-1 (10).png>)
 
 Add a new "Mobile Device Configuration Profile" and choose "Certificate" as payload. Enter a meaningful name and upload the certificate (for "Select Certificate Option" select "Upload):
 

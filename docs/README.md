@@ -4,14 +4,6 @@ description: SCEPman - Certificates Simplified
 
 # Welcome
 
-{% hint style="warning" %}
-SCEPman version 2.5.982 released in the Production Channel on 2023-07-11 has introduced an extended timestamp format that makes some OCSP responses incompatible with some clients including OpenSSL and our [RADIUSaaS](https://www.radius-as-a-service.com/).&#x20;
-
-**This can result in valid certificates being rejected temporarily. In the case of WiFi authentications, clients may need multiple connection attempts.**
-
-The behavior is reverted in [SCEPman version 2.5.985](changelog.md#scepman-2.5.895). If you are still using SCEPman 2.5.982, please stop and start your App Service to enforce an update, preferably outside of peak usage.
-{% endhint %}
-
 ## Overview
 
 SCEPman is a slim and resource-friendly solution to issue and validate certificates using SCEP. **It is an Azure Web App providing the SCEP protocol and works directly with the Microsoft Graph and Intune API.** SCEPman uses an Azure Key Vault based Root CA and certificate creation. By default, no other component is involved, neither a database nor any other stateful storage except the Azure Key Vault itself. That said, SCEPman **will not need any backup procedures** or other operation level tasks. Only an Azure subscription is necessary to deploy it.
