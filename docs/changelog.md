@@ -23,7 +23,7 @@
 
 * Download certificates + private keys in PEM format
 * Revocation audit trail
-* RBAC roles
+* [RBAC roles](advanced-configuration/rbac.md)
 * Library Updates
 * Minor bugfixes and improvements, including
   * UI search button bugfix
