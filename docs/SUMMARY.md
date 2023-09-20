@@ -47,6 +47,7 @@
 * [Domain Controller Certificates](certificate-deployment/domain-controller-certificates.md)
 * [Enrollment REST API](certificate-deployment/api-certificates.md)
 * [Manage Certificates](certificate-management/certificate-view.md)
+* [Manage Certificates](certificate-deployment/manage-certificates.md)
 
 ## Advanced Configuration
 
@@ -61,7 +62,7 @@
   * [Static Validation](advanced-configuration/application-settings/static-validation.md)
   * [Static-AAD Validation](advanced-configuration/application-settings/staticaad-validation.md)
   * [Certificate Master](scepman-configuration/optional/application-settings/csr-validation.md)
-  * [REST API](scepman-configuration/optional/application-settings/dbcsr-validation.md)
+  * [Enrollment REST API](scepman-configuration/optional/application-settings/dbcsr-validation.md)
   * [Azure AD](advanced-configuration/application-settings/azure-ad.md)
   * [Azure KeyVault](scepman-configuration/optional/application-settings/azure-keyvault.md)
   * [CRL](scepman-configuration/optional/application-settings/crl.md)

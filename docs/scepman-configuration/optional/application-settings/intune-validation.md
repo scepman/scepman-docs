@@ -11,10 +11,10 @@ Before version 1.9, due to delayed compliance state evaluation during enrollment
 
 With version 1.9 and above, clients receive an "Ephemeral Bootstrap Certificate" during the enrollment phase that is later replaced with a regular client certificate, as soon as the client becomes compliant.
 
-With version 2.5 and above, you can alternatively configure a grace period during which the device  is always considered compliant with the setting ComplianceGracePeriodMinutes.
+With version 2.5 and above, you can alternatively configure a grace period during which the device is always considered compliant with the setting ComplianceGracePeriodMinutes.
 {% endhint %}
 
-**Value:** _Always_ or _Never_
+**Value:** _Always_ or _Never_ (default)
 
 **Description:** When SCEPman receives an OCSP request, SCEPman can optionally check the device compliance state. When set to **Always** SCEPman will query the device compliance state and the OCSP result can only be GOOD if the device is also marked as compliant in Azure AD.
 
@@ -23,8 +23,7 @@ Setting this to **Never** will disable the compliance check.
 ## AppConfig:IntuneValidation:ComplianceGracePeriodMinutes
 
 {% hint style="info" %}
-Applicable to version 2.5 and above
-SCEPman Enterprise Edition only
+Applicable to version 2.5 and above SCEPman Enterprise Edition only
 {% endhint %}
 
 **Value:** _Integer_ (default: 0)
@@ -33,7 +32,7 @@ SCEPman Enterprise Edition only
 
 It is an alternative to using Ephemeral Bootstrap Certificates. If you configure any value above 0, SCEPman will never issue Ephemeral Bootstrap Certificates.
 
-This setting is only effective if [ComplianceCheck](intune-validation.md#appconfig-intunevalidation-compliancecheck) is set to _Always_. 
+This setting is only effective if [ComplianceCheck](intune-validation.md#appconfig-intunevalidation-compliancecheck) is set to _Always_.
 
 ## AppConfig:IntuneValidation:DeviceDirectory
 
@@ -112,7 +111,7 @@ Settting this to **Never** will disable the user risk check.
 Applicable to version 1.6 and above
 {% endhint %}
 
-**Value:** _true_ or _false_
+**Value:** _true_ (default) or _false_
 
 **Description:** After a certificate was successfully issued, SCEPman sends a notification about the certificate to Intune. Microsoft recommends to wait for the response in its specification. However, some instances show long delays resulting in timeouts occasionally. Therefore **True** is the default.
 
