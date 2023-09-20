@@ -67,7 +67,7 @@
 
 #### Certificate Master 2.3.327
 
-* [New UI with customizable filters to find view different kinds of certificates](broken-reference)
+* [New UI with customizable filters to find view different kinds of certificates](certificate-deployment/manage-certificates.md#search-for-certificates-in-the-certificate-database)
 * Better compatibility with Microsoft's API changes to list certificate issued via Intune
 * Minor improvements
 
