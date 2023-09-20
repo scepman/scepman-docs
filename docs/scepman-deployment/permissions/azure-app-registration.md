@@ -56,13 +56,13 @@ Stay within **App Registrations** and click on **API permissions**
 
 2\. Click on **Add a permission** and choose **Microsoft Graph**. When chosen, select **Application permissions** and search for directory. Add **Directory.ReadAll** as permission.
 
-![](<../../../.gitbook/assets/app-permission-graph (1).png>)
+![](../../../.gitbook/assets/app-permission-graph.png)
 
-![](<../../../.gitbook/assets/app-permission-directory-read (1).png>)
+![](../../../.gitbook/assets/app-permission-directory-read.png)
 
 3\. Now click on **Add a permission** and choose **Intune**. When chosen, select **Application permissions** and search for scep. Add **scep\_challenge\_provider** as a permission
 
-![](<../../../.gitbook/assets/app-permission-intune (1).png>)
+![](../../../.gitbook/assets/app-permission-intune.png)
 
 ![](../../../.gitbook/assets/app-permission-scep.png)
 

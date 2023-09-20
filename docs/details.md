@@ -32,7 +32,7 @@ Process of certificate issuance:
 
 Process of certificate validation during certificate-based authentication:
 
-![](<../.gitbook/assets/Overview2 (1).png>)
+![](../.gitbook/assets/Overview2.png)
 
 ### SCEPman Features
 

@@ -89,7 +89,7 @@ Follow the steps below to create and configure the Traffic Manager and balance t
 1. Search in the Marketplace for **Traffic Manager profile** and click **Create**.
 2. Fill in the fields and choose your SCEPman resource group
 
-![](<../../.gitbook/assets/scepman-trafficmanager1 (8).png>)
+![](../../.gitbook/assets/scepman-trafficmanager1.png)
 
 1. Then click **Create**.
 2. After your Traffic Manager is deployed, open it and click on **Configuration**
@@ -105,7 +105,7 @@ Follow the steps below to create and configure the Traffic Manager and balance t
 2. Choose "Azure Endpoint" as **Type**, provide a name for the first Endpoint, and "App Service" as **Target resource type**
 3. Choose your primary SCEPman App Service as **Target resource**
 
-![Traffic Manager, Endpoint Configuration](<../../.gitbook/assets/scepman-trafficmanager3 (1).png>)
+![Traffic Manager, Endpoint Configuration](../../.gitbook/assets/scepman-trafficmanager3.png)
 
 #### Second Endpoint
 
