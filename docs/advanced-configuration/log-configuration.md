@@ -1,5 +1,9 @@
 # Log Configuration
 
+{% hint style="info" %}
+Applicable to SCEPman Certificate Master version 2.4 and above
+{% endhint %}
+
 ## Log configuration
 
 Newer SCEPman installations (version 2.4 and later) automatically create a Log Analytics Workspace during deployment and log into Azure Monitor. If you have an older installation, you can follow the steps below to enable this logging feature.
