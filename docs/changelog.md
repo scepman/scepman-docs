@@ -2,40 +2,33 @@
 
 ## Versions
 
-<!--
-
-#### Certificate Master 2.6.x
-
-- Form for user certificates allow Smart-Card-Logon, e.g. for RDP or AVD SSO or import on smart cards like Yubikeys
--->
-
 ### 2.5 - July 2023
 
 #### SCEPman 2.5.895
 
-- Bugfix: OCSP Responses encoded GeneralizedTime with fraction of seconds, which is not compliant to RFC 5280, Section 4.1.2.5.2 and caused some clients to reject the OCSP response (we know about Checkpoint).
+* Bugfix: OCSP Responses encoded GeneralizedTime with fraction of seconds, which is not compliant to RFC 5280, Section 4.1.2.5.2 and caused some clients to reject the OCSP response (we know about Checkpoint).
 
 #### SCEPman 2.5.892
 
-- Define an [enrollment grace period](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-compliancegraceperiodminutes), during which devices are allowed to be incompliant.
-- SCEPman can [add extension 1.3.6.1.4.1.311.25.2 with the users' Security Identifiers (SIDs)](scepman-configuration/optional/application-settings/certificates.md#appconfig-addsidextension) to certificates, mitigating [Certifried attacks](other/troubleshooting/certifried.md)
-- [Performance improved by around factor 4](scepman-deployment/azure-sizing.md)
-- Library Updates
-- Bugfixes and small improvements, including:
-  - streamlined GCC High installation experience
-  - UI improvements
-  - Robustness for some special cases
+* Define an [enrollment grace period](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-compliancegraceperiodminutes), during which devices are allowed to be incompliant.
+* SCEPman can [add extension 1.3.6.1.4.1.311.25.2 with the users' Security Identifiers (SIDs)](scepman-configuration/optional/application-settings/certificates.md#appconfig-addsidextension) to certificates, mitigating [Certifried attacks](other/troubleshooting/certifried.md)
+* [Performance improved by around factor 4](scepman-deployment/azure-sizing.md)
+* Library Updates
+* Bugfixes and small improvements, including:
+  * streamlined GCC High installation experience
+  * UI improvements
+  * Robustness for some special cases
 
 #### Certificate Master 2.5.516
 
-- Download certificates + private keys in PEM format
-- Revocation audit trail
-- RBAC roles
-- Library Updates
-- Minor bugfixes and improvements, including
-  - UI search button bugfix
-  - Prevent double submissions of CSRs
-  - Algorithms with improved compatibility (e.g. AES and SHA-256 for PKCS#12 CertBags)
+* Download certificates + private keys in PEM format
+* Revocation audit trail
+* RBAC roles
+* Library Updates
+* Minor bugfixes and improvements, including
+  * UI search button bugfix
+  * Prevent double submissions of CSRs
+  * Algorithms with improved compatibility (e.g. AES and SHA-256 for PKCS#12 CertBags)
 
 ### 2.4 - April 2023
 
@@ -74,7 +67,7 @@
 
 #### Certificate Master 2.3.327
 
-* [New UI with customizable filters to find view different kinds of certificates](certificate-management/certificate-view.md)
+* [New UI with customizable filters to find view different kinds of certificates](broken-reference)
 * Better compatibility with Microsoft's API changes to list certificate issued via Intune
 * Minor improvements
 

@@ -24,7 +24,7 @@ Automatic revocation is **always active** and enables convenient certificate lif
 
 The binding between directory object (user or device) and certificate is established by introducing appropriate variables in the SCEP profile for the Subject Name or Subject Alternative Name properties. Upon receiving a Certificate Signing Request (CSR) from an MDM-managed client, SCEPman identifies the bound object and encodes this information into the serial number of the certificate before returning it to the client. It is the serial number that is transmitted to SCEPman's OCSP responder during certificate validation, allowing SCEPman to decode the object information, perform a search of the appropriate directory, and finally make a revocation status decision.
 
-### Revocation Behaviour
+### Revocation Behavior
 
 {% hint style="success" %}
 In any of the below scenarios, revocation can be considered to be effective immediately, once the bound object's state has changed. Please note that local caching of OCSP responses on the client may suggest otherwise.

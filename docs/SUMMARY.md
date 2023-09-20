@@ -46,7 +46,6 @@
   * [Mosyle](certificate-deployment/static-certificates/mosyle.md)
 * [Domain Controller Certificates](certificate-deployment/domain-controller-certificates.md)
 * [Enrollment REST API](certificate-deployment/api-certificates.md)
-* [Manage Certificates](certificate-management/certificate-view.md)
 * [Manage Certificates](certificate-deployment/manage-certificates.md)
 
 ## Advanced Configuration
