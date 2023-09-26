@@ -56,11 +56,12 @@ Reset-IntermediateCaPolicy -Organization "My Organization"
 
 Configure the common name (CN) of your intermediate CA to match the one you have used above (optionally, you can modify some additional settings to control the CSR content):
 
-<pre><code><strong>$policy = Get-IntermediateCaPolicy
-</strong>$policy.policy.x509_props.subject = "CN=&#x3C;CN used above>,OU={{TenantId}},O=My Organization"
+```
+$policy = Get-IntermediateCaPolicy
+$policy.policy.x509_props.subject = "CN=<CN used above>,OU={{TenantId}},O=My Organization"
 # change some additional settings of $policy
-<strong>Set-IntermediateCaPolicy -Policy $policy
-</strong></code></pre>
+Set-IntermediateCaPolicy -Policy $policy
+```
 
 Finally, you can create the CSR with the following command (or a similar one according to your environment):
 
