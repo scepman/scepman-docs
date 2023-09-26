@@ -24,6 +24,22 @@ You need to grant access to the Azure Key Vault to your user account to create t
 
 After adding the permissions, your Azure AD account is permitted to create a CSR and upload the certificate.
 
+## Update Azure App Service Settings
+
+The next step is to update the Azure App Service configuration to match the subject name of the intermediate CA you will create in the next step.
+
+1. Navigate to your Azure App Service
+2. Click on **Configuration** in the left navigation pane
+3. In **Application settings,** you must edit the following settings:
+   1. `AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName` \
+      Change this to a preferred common name (CN) for your intermediate CA.
+   2. `AppConfig:KeyVaultConfig:RootCertificateConfig:Subject`\
+      Only change the CN value of the subject name to match the common name used above.
+4. Click on **Save** in the upper left toolbar.
+5. To complete this step, restart the Azure App Service and then navigate to your SCEPman URL.
+
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40 (1).png>)
+
 ## Creating Intermediate CA Certificate with the SCEPman PowerShell Module
 
 You can use the SCEPman PowerShell module version 1.9 and later to create a CSR for an Intermediate CA certificate. You can install the latest version of the module from PowerShell Gallery with the following command:
@@ -38,13 +54,13 @@ Then, you can tell the module the name of your organization to appear in the cer
 Reset-IntermediateCaPolicy -Organization "My Organization"
 ```
 
-Optionally, you can modify some advanced settings to control the CSR content:
+Configure the common name (CN) of your intermediate CA to match the one you have used above (optionally, you can modify some additional settings to control the CSR content):
 
-```PowerShell
-$policy = Get-IntermediateCaPolicy
-# change some settings of $policy
-Set-IntermediateCaPolicy -Policy $policy
-```
+<pre><code><strong>$policy = Get-IntermediateCaPolicy
+</strong>$policy.policy.x509_props.subject = "CN=&#x3C;CN used above>,OU={{TenantId}},O=My Organization"
+# change some additional settings of $policy
+<strong>Set-IntermediateCaPolicy -Policy $policy
+</strong></code></pre>
 
 Finally, you can create the CSR with the following command (or a similar one according to your environment):
 
@@ -88,7 +104,7 @@ Critical=2.5.29.15
 1. In Azure Key Vault, click on your certificate and press **Certificate Operation**
 2. Now you can see the options **Download CSR** and **Merge Signed Request**
 
-![](../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18.png)
+![](<../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18 (13).png>)
 
 1. Click on **Merge Signed Request** and upload your Intermediate CA Certificate. After you have uploaded the signed request, you can see the valid certificate in your Azure Key Vault in the area **Completed**
 
@@ -96,24 +112,11 @@ Critical=2.5.29.15
 The Intermediate CA Certificate must be in PEM format (Base64-encoded). If you use the binary DER format, you will see an error message that says "Property x5c has invalid value X5C must have at least one valid item" in the details.
 {% endhint %}
 
-## Update Azure App Service Settings
+## Verify CA Suitability
 
-The last step is to update the Azure App Service which runs the SCEPman with the new certificate information.
+On the SCEPman Status page, you can see the new configuration and download the new intermediate CA certificate to deploy this via Endpoint Manager.
 
-1. Navigate to your Azure App Service
-2. Click on **Configuration** in the left navigation pane
-3. In **Application settings,** you must edit the following settings:
-
-AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName AppConfig:KeyVaultConfig:RootCertificateConfig:Subject
-
-1. As value you must insert your new certificate name and the new subject name.
-2. To complete this step, you must click on **Save** in the upper left part.
-
-![](../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40.png)
-
-Please restart the Azure App Service and then navigate to your SCEPman URL. On the SCEPman Status page, you can see the new configuration and download the new intermediate CA certificate to deploy this via Endpoint Manager.
-
-Please check whether the CA certificate fulfills all requirements by visiting your SCEPman Homepage. Check what the homepage says next to "CA Suitability". If, for example, it says _CA Certificate is missing Key Usage "Key Encipherment"._, you should go back to step [Issue the Intermediate CA Certificate](intermediate-certificate.md#issue-the-intermediate-ca-certificate) and correct the certificate issuance.
+Please check whether the CA certificate fulfills all requirements by visiting your SCEPman Homepage. Check what the homepage says next to "CA Suitability". If, for example, it says _CA Certificate is missing Key Usage "Key Encipherment"_, you should go back to step [Issue the Intermediate CA Certificate](intermediate-certificate.md#issue-the-intermediate-ca-certificate) and correct the certificate issuance.
 
 ## Intermediate CAs and Intune SCEP Profiles
 
