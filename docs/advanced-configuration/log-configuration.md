@@ -34,3 +34,26 @@ SCEPman_CL
 | project Message, RequestBase = trim_end('/', replace_string(replace_regex(RequestUrl_s, "(/pkiclient\\.exe)?(\\?operation=PKIOperation(&message=.+)?)?", ""),"certsrv/mscep/mscep.dll","intune"))
 | summarize IssuanceCount = count() by Endpoint = extract("/([a-zA-Z]+)$", 1, RequestBase)
 ```
+
+### OCSP Requests by Type of Certificate
+
+```kusto
+let map_certtype = datatable(serial_start:string, readable:string)
+[
+  "40", "Intune Device",
+  "50", "Static",
+  "60", "Intune User",
+  "64", "Jamf User",
+  "54", "Jamf Computer",
+  "55", "Jamf Computer",
+  "44", "Jamf Device"
+];
+SCEPman_CL
+| where LogCategory_s == "Scepman.Server.Controllers.OcspController" and Level == "Info"
+| where Message startswith_cs "OCSP Response"
+| project serial = extract("Serial Number ([A-F0-9]+)", 1, Message)
+| distinct serial
+| extend serial_start = substring(serial,0,2)
+| summarize count() by (serial_start)
+| join kind=leftouter map_certtype on serial_start
+```
