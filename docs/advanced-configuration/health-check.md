@@ -52,8 +52,8 @@ To get an alert from our health check we need to configure alert rules in our Ap
 19\. Now you must enter an **Alert rule name**, define the **Severity, Enable alter rule upon creation,** and **Automatically resolve alerts.**\
 20\. Click on **Review + Create,** then **Create**
 
-![Create alert rule](<../.gitbook/assets/2022-12-27 12\_41\_27.png>)
+<figure><img src="../.gitbook/assets/2023-10-23 13_51_20-Create an alert rule.png" alt=""><figcaption></figcaption></figure>
 
-![Create alert rule](<../.gitbook/assets/2022-12-27 12\_43\_31.png>)
+<figure><img src="../.gitbook/assets/2023-10-23 13_55_02-Create an alert rule.png" alt=""><figcaption></figcaption></figure>
 
 ![View existing alert rules](<../.gitbook/assets/2022-12-27 12\_46\_42.png>)
