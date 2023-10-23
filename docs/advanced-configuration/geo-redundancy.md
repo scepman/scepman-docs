@@ -130,6 +130,12 @@ In the Traffic Manager **Overview,** you will find the DNS name, that needs to b
 In **Azure DNS Zone**, in order to modify a record, you first have to remove the DNS lock by navigating to **Locks**.
 {% endhint %}
 
+{% hint style="info" %}
+Upon completing the configuration, ensure to update the SCEP Server URL in your SCEP profile(s) in Intune. The new URL should be the custom domain you've created with "/certsrv/mscep/mscep.dll" at the end.
+
+Example: [https://scepman.contoso.com/certsrv/mscep/mscep.dll](https://scepman.contoso.com/certsrv/mscep/mscep.dll)
+{% endhint %}
+
 ### Storage Account Geo-Redundancy
 
 The Storage Account used for SCEPman should also be configured for redundancy. The default SCEPman setup uses Locally Redundant Storage (LRS), which uses only a single region. For example, configure Geo-redundant storage (GRS).
