@@ -116,17 +116,3 @@ These special use cases are:
 {% hint style="warning" %}
 For all device-based licensing cases, device certificates are allowed only.
 {% endhint %}
-
-## Optional: SCEPman Setup Support
-
-SCEPman Setup Support is an **optional** remote support package that helps customers to configure SCEPman ready for production.
-
-The packages covers the following topics:
-
-* An overview of SCEPman
-* Architecture and setup recommendations for SCEPman
-* Deep dive into Azure Application Insights and logging in Azure Log Analytics
-* Scaling and high availability
-* Manual certificate workloads with Certificate Master
-
-SCEPman Setup Support is charged as a **one-time purchase**. There are no recurring charges when subscribing to this option.
