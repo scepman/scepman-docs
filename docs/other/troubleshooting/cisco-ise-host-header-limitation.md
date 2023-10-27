@@ -1,6 +1,6 @@
 # Cisco ISE Host Header Limitation
 
-Both Cisco ISE as well as Aruba ClearPass do not support HTTP 1.1 when looking up OCSP and do not send a host header in their OCSP request. Therefore, they cannot connect to a general SCEPman instance running on Azure App Services. The error message may look like this:
+Both Cisco ISE as well as Aruba ClearPass do not support HTTP 1.1 when looking up OCSP and do not send a host header in their OCSP request. This is likely because OpenSSL up to version 1.0.2, which seems to be used in the backend, [required an extra parameter to send the host header for OCSP requests](https://github.com/openssl/openssl/issues/1986), while OpenSSL 1.1.0 released in August 2016 does that automatically. Therefore, they cannot connect to a general SCEPman instance running on Azure App Services. The error message may look like this:
 
 ![](<../../../.gitbook/assets/cisco-ocsp-error (18).jpg>)
 
