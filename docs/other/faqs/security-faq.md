@@ -3,9 +3,8 @@ category: Other
 title: Security FAQ
 order: 2
 description: >-
-  This chapter shall provide a brief overview of the data that SCEPman is
-  processing and how this data is protected against unauthorized access. It
-  applies to SCEPman 2.2.
+  This chapter provides an overview on frequently asked questions surrounding
+  information security, privacy and quality assurance.
 ---
 
 # Security & Privacy
@@ -14,14 +13,14 @@ description: >-
 
 ### 1. Which data is processed by SCEPman?
 
-SCEPman processes X.509 certificates using the SCEP and OCSP protocols. Each device certificate must contain a unique device identifier. Additionally, for user certificates, we recommend to configure the following values as part of the certificate:
+SCEPman processes X.509 certificates using the SCEP and EST protocols for issuing and OCSP and CRL protocols for validating those certificates. Each **device certificate** must contain a unique device identifier. Additionally, for **user certificates**, we recommend to configure the following values as part of the certificate:
 
 * Username
 * Email
 * UPN
 * Device identifier
 
-SCEP and OCSP rely on HTTP, e.g. the following data is visible to SCEPman:
+SCEP, EST, OCSP and CRL rely on HTTP(S), i.e. the following data is visible to SCEPman:
 
 * Client IP Address + Port
 * User agent (operating system & browser information)
@@ -34,17 +33,17 @@ SCEPman's core services are provided by a stateless web application that does no
 
 1. Configuration
    * Configuration data always contains the SCEPman CA public/private key pair and certificate, which is securely stored in Azure Key Vault.
-   * Additionally, configuration data may contain secrets such as static SCEP challenges or passwords dependent. The purpose of those parameters is explained in the SCEPman documentation.
-   * All configuration parameters can be stored in Azure Key Vault.
+   * Additionally, configuration data may contain secrets such as static SCEP challenges or passwords. The purpose of those parameters is explained in the SCEPman documentation.
+   * All configuration parameters can be stored in Azure Key Vault for enhanced security.
 2.  Logging
 
     Based on the customer's configuration of SCEPman, logging may be activated. Dependent on the customer's logging verbosity settings, the logs may contain any data that SCEPman processes. The customer configures the log storage location.
 3.  External Log Analytics Workspace
 
-    SCEPman always sends a limited amount of **non-personal** data to our Log Analytics Workspace (LAW), which is located in a European Azure data center. This data is used for
+    SCEPman always sends a limited amount of **non-secret** and **non-personal** data to our Log Analytics Workspace (LAW). This data is used for
 
     * Licensing purposes
-    * Quality assurance (e.g. monitoring exceptions globally helps us to recognize general and widespread issues quickly, so that we can offer solutions to our clients fast, preventing expensive service outages).
+    * Quality assurance (e.g. monitoring exceptions globally helps us to recognize general and widespread issues quickly, allowing us to provide remedy to our clients fast, thus preventing expensive service outages).
 
     By default, SCEPman does **not send any personal data** to our LAW.
 
@@ -61,13 +60,13 @@ SCEPman's core services are provided by a stateless web application that does no
 
 #### SCEPman Certificate Master
 
-If you are using Certificate Master additional data will be stored.
+If you are using Certificate Master, additional data will be stored.
 
-An Azure Storage Account stores all certificates that were issued via the Certificate Master component including the requester (Azure AD UPN), the certificate revocation status and reason. _We never store the private key_, which is only available as a one-time download.
+An Azure Storage Account stores all certificates that were issued via the Certificate Master component including the requester (Azure AD UPN), the certificate revocation status, the identity of the user who revoked it (Azure AD UPN) and a revocation reason. _We never store the private key_, which is only available as a one-time download.
 
 ### 3. Where (geographically) does SCEPman process and store data?
 
-By design, SCEPman is realized as an Azure App (solution-template-based), i.e. it is deployed into the customer's Azure tenant. As such data sovereignty in terms of the data center's geo-location is within the customer's hands and preference.
+By design, SCEPman is realized as an Azure App (solution-template-based), i.e. it is deployed into the customer's Azure tenant. As such, data sovereignty including the choice of the hosting data center's geo-location is within the customer's hands and preference.
 
 #### External Log Analytics Workspace
 
@@ -81,13 +80,13 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
 
 1. Intune `scep_challenge_provider`:\
    \
-   With this permission SCEPman may forward the certificate request to Intune and verify that the certificate request originates from Intune, where the latter adds an additional layer of security.\\
+   With this permission SCEPman may forward the certificate request to Intune and verify that the certificate request originates from Intune, where the latter adds an additional layer of security.
 2. Microsoft Graph `Directory.Read.All`:\
    \
-   With this permission, SCEPman may consult with AAD in order to check if the user or device certificate is originating from an authorized user or device. For details, refer to [SCEPman Docs](../../scepman-deployment/permissions/azure-app-registration.md#azure-app-registration-api-permissions).\\
+   With this permission, SCEPman may consult with AAD in order to check if the user or device certificate is originating from an authorized user or device. For details, refer to [SCEPman Docs](../../scepman-deployment/permissions/azure-app-registration.md#azure-app-registration-api-permissions).
 3. Microsoft Graph `DeviceManagementManagedDevices.Read.All` and `DeviceManagementConfiguration.Read.All`:\
    \
-   With these permissions, SCEPman requests the list of issued certificates via Intune when using the [EndpointList revocation feature](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory).\\
+   With these permissions, SCEPman requests the list of issued certificates via Intune when using the [EndpointList revocation feature](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory).
 4. Microsoft Graph `IdentityRiskyUser.Read.All`:\
    \
    This permission allows SCEPman to automatically [revoke user certificates if the AAD User Risk exceeds a configured threshold](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck).
@@ -102,7 +101,7 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
 
 1. Microsoft Graph `User.Read` (per App Registration):\
    \
-   With this permission, Certificate Master determines who manually requests or revokes a certificate.\\
+   With this permission, Certificate Master determines who manually requests or revokes a certificate.
 2. Micrsoft Graph `DeviceManagementManagedDevices.Read.All` and `DeviceManagementConfiguration.Read.All` (as Managed Identity):\
    \
    With these permissions, Certificate Master requests the list of issued certificates via Intune. Administrators can review and manually revoke these certificates.
