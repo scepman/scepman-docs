@@ -2,15 +2,15 @@
 
 ## Versions
 
-### 2.6 - Currently in Beta Channel
+### 2.6 - November 2023
 
-#### SCEPman
+#### SCEPman 2.6.945
 
 * Logging to Azure Event Hub
 * Library Updates, including the update to Azure.Identity 1.10.3, fixing [CVE-2023-36414](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36414). Currently, the exploit is not publicly disclosed, so the scope of the issue is unclear, but the published information indicates that SCEPman is likely not affected.
 * Robustness for various special cases
 
-#### Certificate Master
+#### Certificate Master 2.6.586
 
 * Select Extended Key Usages for each certificate
 * Library Updates, including the update to Azure.Identity 1.10.3, fixing [CVE-2023-36414](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36414). Currently, the exploit is not publicly disclosed, so the scope of the issue is unclear, but the published information indicates that Certificate Master is likely not affected.
