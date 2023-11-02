@@ -33,6 +33,10 @@
   * UI improvements
   * Robustness for some special cases
 
+#### Certificate Master 2.5.542
+
+* Improvement/fix for displaying Intune certificates
+
 #### Certificate Master 2.5.516
 
 * Download certificates + private keys in PEM format
