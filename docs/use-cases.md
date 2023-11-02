@@ -46,9 +46,9 @@ Below table provides an overview of the most commonly used MDM solutions and ind
 
 \*: Only works with user-type certificates if the user-objects are synced from Azure AD.
 
-## On-premise to Cloud Migration
+## On-premises to Cloud Migration
 
-Since SCEPman is a cloud-native general purpose CA, many of our clients who migrate their infrastructure into the cloud, use SCEPman to replace their on-premise Microsoft PKI/AD CS and NDES. Generally this is always possible, as long as the devices that shall receive certificates are **hybrid- or full-Azure-AD-joined**.
+Since SCEPman is a cloud-native general purpose CA, many of our clients who migrate their infrastructure into the cloud use SCEPman to replace their on-prem Microsoft PKI/AD CS and NDES. Generally, this is possible, as long as the devices that shall receive certificates are **hybrid- or full-Azure-AD-joined**.
 
 ## IoT Devices
 
