@@ -62,7 +62,7 @@
   * [Static-AAD Validation](advanced-configuration/application-settings/staticaad-validation.md)
   * [Certificate Master](scepman-configuration/optional/application-settings/csr-validation.md)
   * [Enrollment REST API](scepman-configuration/optional/application-settings/dbcsr-validation.md)
-  * [Azure AD](advanced-configuration/application-settings/azure-ad.md)
+  * [Microsoft Entra ID (Azure AD)](advanced-configuration/application-settings/azure-ad.md)
   * [Azure KeyVault](scepman-configuration/optional/application-settings/azure-keyvault.md)
   * [CRL](scepman-configuration/optional/application-settings/crl.md)
   * [Logging](advanced-configuration/application-settings/logging.md)

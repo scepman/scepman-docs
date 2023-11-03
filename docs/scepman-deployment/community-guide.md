@@ -11,7 +11,7 @@ Keep in mind that you need to plan a useful Azure resource design.
 
 * [ ] _Mandatory -_ Azure subscription (at least Contributor rights on that subscription)
 * [ ] _Mandatory -_ Azure owner rights (at least on Resource Group level)
-* [ ] _Mandatory -_ Azure AD "Global administrator" (Consent to access Graph API)
+* [ ] _Mandatory -_ Microsoft Entra ID (Azure AD) "Global administrator" (Consent to access Graph API)
 * [ ] _Mandatory_ - Make sure to define your Azure policies [according to SCEPman requirements](../other/faqs/security-faq.md#azure-cis) (e.g. do not enforce TLS)
 * [ ] _Optional_ - Public Domain CNAME (_scepman.yourdomain.com_)
 * [ ] _Optional_ - SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview))

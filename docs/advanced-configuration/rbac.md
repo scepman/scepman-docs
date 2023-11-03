@@ -6,7 +6,7 @@ Applicable to SCEPman Certificate Master version 2.5 and above
 SCEPman Enterprise Edition only
 {% endhint %}
 
-When users access SCEPman Certificate Master, their role determines the actions they can perform and the certificates they can see. The roles are determined through the Enterprise Application _SCEPman-CertMaster_ in Azure AD. If you have installed SCEPman before version 2.5, you need to execute the Complete-SCEPmanInstallation CMDlet from the SCEPman PS Module again to see the roles in the Microsoft Entra Portal. The following roles are available:
+When users access SCEPman Certificate Master, their role determines the actions they can perform and the certificates they can see. The roles are determined through the Enterprise Application _SCEPman-CertMaster_ in Microsoft Entra ID (Azure AD). If you have installed SCEPman before version 2.5, you need to execute the Complete-SCEPmanInstallation CMDlet from the SCEPman PS Module again to see the roles in the Microsoft Entra Portal. The following roles are available:
 
 <figure><img src="../.gitbook/assets/2023-10-23 14_50_14-Select a role.png" alt=""><figcaption></figcaption></figure>
 

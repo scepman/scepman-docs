@@ -49,7 +49,7 @@ In this section we are setting up a device certificate.
 
 <summary>Subject name format: <code>CN={{DeviceId}}</code> or <code>CN={{AAD_Device_ID}}</code></summary>
 
-SCEPman uses the CN field of the subject to identify the device and as a seed for the certificate serial number generation. Azure AD and Intune offer two different IDs:
+SCEPman uses the CN field of the subject to identify the device and as a seed for the certificate serial number generation. Microsoft Entra ID (Azure AD) and Intune offer two different IDs:
 
 * \{{DeviceId\}}: This ID is generated and used by Intune **(Recommended)**\
   \
@@ -57,7 +57,7 @@ SCEPman uses the CN field of the subject to identify the device and as a seed fo
 
 <!---->
 
-* \{{AAD\_Device\_ID\}}: This ID is generated and used by Azure AD.\
+* \{{AAD\_Device\_ID\}}: This ID is generated and used by Microsoft Entra ID (Azure AD).\
   \
   (Note: When using Automated Device Enrollment via Apple Business Manager, this ID might change during device setup. If so, SCEPman might not be able to identify the device afterwards. The certificate would become invalid in that case.)
 

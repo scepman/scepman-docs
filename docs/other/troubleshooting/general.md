@@ -111,22 +111,22 @@ certutil -url <path-to-exported-device-certificate>
 
 If you want to revoke a **user** certificate, you have two options:‌
 
-1. Deleting the user from Azure AD or
+1. Deleting the user from Microsoft Entra ID (Azure AD) or
 2. Block sign-in for the user
 
 If you want to revoke a **device** certificate, you have multiple options depending on [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention"):
 
-1. **Azure AD**: Delete or disable the device ([AAD Portal](https://aad.portal.azure.com/): "Devices" - "All devices").
+1. Microsoft Entra ID (Azure AD): Delete or disable the device ([Microsoft Entra ID (Azure AD) Portal](https://aad.portal.azure.com/): "Devices" - "All devices").
 2. **Intune**: Delete the device or trigger a remote action (several managements states like "WipePending" automatically revoke certificates as stated under [#appconfig-intunevalidation-revokecertificatesonwipe](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-revokecertificatesonwipe "mention")).
-3. **Both directories**: Execute actions for Azure AD **and** Intune as described.
+3. **Both directories**: Execute actions for Microsoft Entra ID (Azure AD) **and** Intune as described.
 
 {% hint style="info" %}
 For more details on device directories, please read the article [device-directories.md](../../architecture/device-directories.md "mention").
 {% endhint %}
 
-The following example revokes a device certificate via Azure AD:
+The following example revokes a device certificate via Microsoft Entra ID (Azure AD):
 
-1. Navigate to **Devices - All devices** in your Azure AD
+1. Navigate to **Devices - All devices** in your Microsoft Entra ID (Azure AD)
 2. Choose a device
 3. Click **Disable**
 
@@ -140,7 +140,7 @@ As you can see in the last line, the **Certificate is REVOKED**
 
 ![](<../../.gitbook/assets/scepman-revocation3 (15).png>)
 
-When you enable the device in Azure AD again and you type in the command from above again, the certificate should be marked as valid.
+When you enable the device in Microsoft Entra ID (Azure AD) again and you type in the command from above again, the certificate should be marked as valid.
 
 {% hint style="info" %}
 It can take up to 5 minutes before the prompt 'Marked as valid' appears.
@@ -160,7 +160,7 @@ _Solution_: Please see [here](cisco-ise-host-header-limitation.md).
 
 On Android (dedicated) systems, Intune or Android accidentally puts the Intune Device ID into the certificate instead of the AAD Device ID in random cases, although you configure the variable in the SCEP configuration profile. SCEPman then cannot find a device with this ID in AAD and therefore considers the certificate revoked.
 
-This happens only when you use the Azure AD shared mode for enrollment method for corporate-owned dedicated devices instead of the default mode. If you use the default mode for Token types `Corporate-owned dedicated device`, you will not be affected by the problem. Intune will still put the Intune Device ID into the certificate instead of the AAD Device ID, but they will be the same for the default mode, so it does not matter. To change the enrollment mode, go to the [Android enrollment settings of Microsoft Endpoint Manager admin center](https://endpoint.microsoft.com/#blade/Microsoft\_Intune\_DeviceSettings/DevicesAndroidMenu/androidEnrollment) and choose `Corporate-owned dedicated device (default)` instead of `Corporate-owned dedicated device with Azure AD shared mode`. Please refer to the [Microsoft documentation](https://docs.microsoft.com/en-us/mem/intune/enrollment/android-kiosk-enroll) for the implications of this selection.
+This happens only when you use the Microsoft Entra ID (Azure AD) shared mode for enrollment method for corporate-owned dedicated devices instead of the default mode. If you use the default mode for Token types `Corporate-owned dedicated device`, you will not be affected by the problem. Intune will still put the Intune Device ID into the certificate instead of the AAD Device ID, but they will be the same for the default mode, so it does not matter. To change the enrollment mode, go to the [Android enrollment settings of Microsoft Endpoint Manager admin center](https://endpoint.microsoft.com/#blade/Microsoft\_Intune\_DeviceSettings/DevicesAndroidMenu/androidEnrollment) and choose `Corporate-owned dedicated device (default)` instead of `Corporate-owned dedicated device with Azure AD shared mode`. Please refer to the [Microsoft documentation](https://docs.microsoft.com/en-us/mem/intune/enrollment/android-kiosk-enroll) for the implications of this selection.
 
 We are currently working with Microsoft to solve this issue in all configurations. Please contact our support if you are also affected.
 

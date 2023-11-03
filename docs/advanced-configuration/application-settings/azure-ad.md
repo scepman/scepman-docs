@@ -1,8 +1,8 @@
-# Azure AD
+# Microsoft Entra ID (Azure AD)
 
 ## AppConfig:AuthConfig:ApplicationId
 
-The [Application (client) ID](../../scepman-deployment/permissions/azure-app-registration.md#basic-app-registration-application-id) from your Azure AD App registration. This setting is configured during the setup.
+The [Application (client) ID](../../scepman-deployment/permissions/azure-app-registration.md#basic-app-registration-application-id) from your Microsoft Entra ID (Azure AD) App registration. This setting is configured during the setup.
 
 {% hint style="warning" %}
 Please do not mix this up with the "Client Secret ID". We need the "Application (client) ID", here.
@@ -14,7 +14,7 @@ Changes can harm your service!
 
 ## AppConfig:AuthConfig:ApplicationKey
 
-The [Application Key (client secret **value**)](../../scepman-deployment/permissions/azure-app-registration.md#azure-app-registration-client-secret) from your Azure AD App registration. This setting is configured during the setup of a SCEPman 1.x version. SCEPman 2.x usually does not use this setting and instead relies on [Managed Identity authentication](../../scepman-configuration/post-installation-config.md).
+The [Application Key (client secret **value**)](../../scepman-deployment/permissions/azure-app-registration.md#azure-app-registration-client-secret) from your Microsoft Entra ID (Azure AD) App registration. This setting is configured during the setup of a SCEPman 1.x version. SCEPman 2.x usually does not use this setting and instead relies on [Managed Identity authentication](../../scepman-configuration/post-installation-config.md).
 
 {% hint style="warning" %}
 Please do not mix this up with the "Client Secret **ID**". We need the "Client Secret **Value**", here.
@@ -26,7 +26,7 @@ Changes can harm your service!
 
 ## AppConfig:AuthConfig:TenantId
 
-The Azure AD Tenant ID. This setting is automatically configured during the setup.
+The Microsoft Entra ID (Azure AD) Tenant ID. This setting is automatically configured during the setup.
 
 {% hint style="danger" %}
 Changes can harm your service!
