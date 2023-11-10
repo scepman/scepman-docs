@@ -1,8 +1,8 @@
-# Azure AD
+# Microsoft Entra ID (Azure AD)
 
 ## AppConfig:AuthConfig:ApplicationId
 
-The Application (client) ID from your Azure AD App registration (SCEPman-CertMaster). This setting is configured during the setup.
+The Application (client) ID from your Microsoft Entra ID (Azure AD) App registration (SCEPman-CertMaster). This setting is configured during the setup.
 
 {% hint style="danger" %}
 Changes can harm your service!
@@ -10,7 +10,7 @@ Changes can harm your service!
 
 ## AppConfig:AuthConfig:SCEPmanAPIScope
 
-This value comes from the AAD app registration. It is used to authenticate against SCEPman and authorize the CSR submissions.
+This value comes from the Microsoft Entra ID (Azure AD) app registration. It is used to authenticate against SCEPman and authorize the CSR submissions.
 
 {% hint style="danger" %}
 Changes can harm your service!
@@ -18,7 +18,7 @@ Changes can harm your service!
 
 ## AppConfig:AuthConfig:TenantId
 
-The Azure AD Tenant ID. This setting is automatically configured during the setup.
+The Tenant ID in Microsoft Entra ID (Azure AD). This setting is automatically configured during the setup.
 
 {% hint style="danger" %}
 Changes can harm your service!
