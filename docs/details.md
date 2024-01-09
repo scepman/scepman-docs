@@ -2,7 +2,7 @@
 
 ## What is SCEP?
 
-Usually when it is necessary to deploy certificates to (mobile) devices [Simple Certificate Enrollment Protocol](https://www.rfc-editor.org/rfc/rfc8894.html) (SCEP) is the first choice. But what is SCEP? SCEP is an [Internet draft](https://en.wikipedia.org/wiki/Internet\_Draft) standard protocol. An Internet draft contains technical specifications and technical information. Internet drafts are often published as a [Request for Comments](https://en.wikipedia.org/wiki/Request\_for\_Comments).
+Usually when it is necessary to deploy certificates to (mobile) devices, [Simple Certificate Enrollment Protocol](https://www.rfc-editor.org/rfc/rfc8894.html) (SCEP) is the first choice. But what is SCEP? SCEP is an [Internet draft](https://en.wikipedia.org/wiki/Internet\_Draft) standard protocol. An Internet draft contains technical specifications and technical information. Internet drafts are often published as a [Request for Comments](https://en.wikipedia.org/wiki/Request\_for\_Comments).
 
 SCEP is originally developed by Cisco. The core mission of SCEP is the deployment of certificates to network devices without any user interactions. With the help of SCEP, network devices can request certificates on their own.
 
@@ -15,7 +15,7 @@ To get rid of the on-premises components we developed SCEPman.
 {% hint style="warning" %}
 SCEPman issues certificates that are **intended for authentication and transport encryption**. That said, you can deploy user and device certificates used for network authentication, WiFi, VPN, RADIUS and similar services.
 
-**You may** use SCEPman for transactional **digital signatures** i.e. for S/MIME signing in Microsoft Outlook. If you plan to use the certificates for message signing you need to add the corresponding extended key usages in the Intune profile configuration. Please keep in mind, that SCEPman certificates are trusted in your organization only. SCEPman does not issue publicly trusted certificates.
+**You may** use SCEPman for transactional **digital signatures** i.e. for S/MIME signing in Microsoft Outlook. If you plan to use the certificates for message signing you need to add the corresponding extended key usages in the Intune profile configuration. Please keep in mind that SCEPman certificates are trusted in your organization only. SCEPman does not issue publicly trusted certificates.
 
 **Do not** use SCEPman **for email-encryption** i.e. for S/MIME mail encryption in Microsoft Outlook (without a separate technology for key management). The nature of **the SCEP protocol does not include a mechanism to backup or archive private key material.** If you would use SCEP for email-encryption you may lose the keys to decrypt the messages at a later time.
 {% endhint %}
