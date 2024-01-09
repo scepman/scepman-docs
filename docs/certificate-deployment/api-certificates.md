@@ -10,7 +10,7 @@ SCEPman features a REST API to enroll certificates. This is an alternative to th
 
 You need to add a service identity to the Role _CSR.Request.Db_ of the Enterprise App _scepman-api_. If this role does not exist yet but only CSR.Request, you must run the CMDlet Complete-ScepmanInstallation from the [SCEPman Powershell Module (at least version 1.8.10)](https://www.powershellgallery.com/packages/SCEPman) once again to get it. The service identity is then permitted to use the SCEPman certificate enrollment REST API. The easiest way to add a service identity to this role is to call `Register-SCEPmanApiClient -ServicePrincipalId 00000000-0000-0000-0000-000000000000 6>&1` from the [SCEPman PowerShell module](https://www.powershellgallery.com/packages/SCEPman/) version 1.10 and above, where _00000000-0000-0000-0000-000000000000_ in the example is the Object Id of your service principal (e.g. Managed Identity or Enterprise Application).
 
-In SCEPman, you must enabling the feature by setting [AppConfig:DbCSRValidation:Enabled](../scepman-configuration/optional/application-settings/dbcsr-validation.md) to _true_.
+In SCEPman, you must enabling the feature by setting [AppConfig:DbCSRValidation:Enabled](../advanced-configuration/application-settings/dbcsr-validation.md) to _true_.
 
 Then you can POST a PKCS#10/CMS to your SCEPman with the HTTP path _api/csr_. The HTTP Response will be the freshly issued certificate in DER encoding.
 

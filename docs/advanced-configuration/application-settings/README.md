@@ -12,7 +12,7 @@ On your **App Service** navigate to **Configuration** and then you find this und
 
 We recommend defining settings in the App Service Configuration except for passwords.
 
-![](<../../.gitbook/assets/2021-08-02-10 (6).png>)
+![](<../../.gitbook/assets/2021-08-02-10 (2).png>)
 
 ## Secure Configuration in Azure Key Vault
 
@@ -28,16 +28,16 @@ We recommend using this type of configuration only for sensitive information.
 
 ## List of Settings
 
-{% content-ref url="../../scepman-configuration/optional/application-settings/basics.md" %}
-[basics.md](../../scepman-configuration/optional/application-settings/basics.md)
+{% content-ref url="basics.md" %}
+[basics.md](basics.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../scepman-configuration/optional/application-settings/certificates.md" %}
-[certificates.md](../../scepman-configuration/optional/application-settings/certificates.md)
+{% content-ref url="certificates.md" %}
+[certificates.md](certificates.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../scepman-configuration/optional/application-settings/intune-validation.md" %}
-[intune-validation.md](../../scepman-configuration/optional/application-settings/intune-validation.md)
+{% content-ref url="intune-validation.md" %}
+[intune-validation.md](intune-validation.md)
 {% endcontent-ref %}
 
 {% content-ref url="jamf-validation.md" %}
@@ -56,18 +56,18 @@ We recommend using this type of configuration only for sensitive information.
 [static-validation.md](static-validation.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../scepman-configuration/optional/application-settings/csr-validation.md" %}
-[csr-validation.md](../../scepman-configuration/optional/application-settings/csr-validation.md)
+{% content-ref url="csr-validation.md" %}
+[csr-validation.md](csr-validation.md)
 {% endcontent-ref %}
 
 {% content-ref url="azure-ad.md" %}
 [azure-ad.md](azure-ad.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../scepman-configuration/optional/application-settings/azure-keyvault.md" %}
-[azure-keyvault.md](../../scepman-configuration/optional/application-settings/azure-keyvault.md)
+{% content-ref url="azure-keyvault.md" %}
+[azure-keyvault.md](azure-keyvault.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../scepman-configuration/optional/application-settings/national-cloud-platforms.md" %}
-[national-cloud-platforms.md](../../scepman-configuration/optional/application-settings/national-cloud-platforms.md)
+{% content-ref url="national-cloud-platforms.md" %}
+[national-cloud-platforms.md](national-cloud-platforms.md)
 {% endcontent-ref %}

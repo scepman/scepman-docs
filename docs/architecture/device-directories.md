@@ -7,7 +7,7 @@ SCEPman offers two options for validating device certificates (e.g. for OCSP req
 
 Those IDs are visible in Intune per device under tab "Hardware":
 
-![](<../.gitbook/assets/image (4) (1).png>)
+![](<../.gitbook/assets/image (6).png>)
 
 For recognizing the device behind an issued certificate, SCEPman requires the corresponding **ID in the subject name**:
 
@@ -27,7 +27,7 @@ Both directories have their pros and cons. In general, we **recommend Intune** a
 
 ### SCEPman Configuration
 
-SCEPman needs to know which directory/directories should be used for validation. Therefore, we offer the configuration option[#appconfig-intunevalidation-devicedirectory](../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention"). Please adjust that value on your needs.
+SCEPman needs to know which directory/directories should be used for validation. Therefore, we offer the configuration option[#appconfig-intunevalidation-devicedirectory](../advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention"). Please adjust that value on your needs.
 
 {% hint style="warning" %}
 Note, that this requires version 2.0 or newer. SCEPman 1.x only supports Microsoft Entra ID (Azure AD) as directory.
@@ -39,4 +39,4 @@ Please also adjust the subject name on your needs as stated under [microsoft-int
 
 Please note, that `CN={{DeviceId}}` is currently not supported for Android Enterprise Fully Managed, Dedicated and Corporate-Owned Work Profile as stated in [Microsoft docs](https://docs.microsoft.com/en-us/mem/intune/protect/certificates-profile-scep#create-a-scep-certificate-profile). If those device types are in use, think about checking both directories or only Microsoft Entra ID (Azure AD).
 
-For **migrating** from Microsoft Entra ID (Azure AD) to Intune ID or vice versa, **certificates** need to be **re-issued on all clients**. During that change, please configure SCEPman via[#appconfig-intunevalidation-devicedirectory](../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to check both directories (so, that both IDs are valid). After migration, you can switch to Intune or AAD as only directory.
+For **migrating** from Microsoft Entra ID (Azure AD) to Intune ID or vice versa, **certificates** need to be **re-issued on all clients**. During that change, please configure SCEPman via[#appconfig-intunevalidation-devicedirectory](../advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to check both directories (so, that both IDs are valid). After migration, you can switch to Intune or AAD as only directory.
