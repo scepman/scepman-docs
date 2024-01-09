@@ -60,7 +60,7 @@ Changes can harm your service!
 
 ## AppConfig:KeyVaultConfig:RootCertificateConfig:Subject
 
-The Root Certificate Subject. This setting is automatically configured during the setup. It is used only as input at the time of CA certificate creation and will not be used anyomre once a CA certificate exists.
+The Root Certificate Subject. This setting is automatically configured during the setup. It is used only as input at the time of CA certificate creation and will not be used anymore once a CA certificate exists.
 
 {% hint style="danger" %}
 Changes can harm your service!
