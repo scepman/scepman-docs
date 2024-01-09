@@ -8,7 +8,7 @@ To upgrade a Community Edition to an Enterprise Edition you have to add the lice
 4. Select **AppConfig:LicenseKey**.
 5. Under **Value**, enter your license key.
 
-![](<../../.gitbook/assets/scepman-add-license-key (1).png>)
+![](<../.gitbook/assets/scepman\_add\_license\_key (1).png>)
 
 6. Then, Save the settings and under Overview, restart your App Service.
 7. After the restart, your SCEPman instance homepage shows that it is an Enterprise Edition.

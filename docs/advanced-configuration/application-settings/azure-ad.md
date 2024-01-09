@@ -14,7 +14,7 @@ Changes can harm your service!
 
 ## AppConfig:AuthConfig:ApplicationKey
 
-The [Application Key (client secret **value**)](../../scepman-deployment/permissions/azure-app-registration.md#azure-app-registration-client-secret) from your Microsoft Entra ID (Azure AD) App registration. This setting is configured during the setup of a SCEPman 1.x version. SCEPman 2.x usually does not use this setting and instead relies on [Managed Identity authentication](../../scepman-configuration/post-installation-config.md).
+The [Application Key (client secret **value**)](../../scepman-deployment/permissions/azure-app-registration.md#azure-app-registration-client-secret) from your Microsoft Entra ID (Azure AD) App registration. This setting is configured during the setup of a SCEPman 1.x version. SCEPman 2.x usually does not use this setting and instead relies on [Managed Identity authentication](../../scepman-deployment/permissions/post-installation-config.md).
 
 {% hint style="warning" %}
 Please do not mix this up with the "Client Secret **ID**". We need the "Client Secret **Value**", here.
@@ -34,7 +34,7 @@ Changes can harm your service!
 
 ## AppConfig:AuthConfig:HomeTenantId
 
-When running SCEPman in a different tenant than Intune, this specifies the Id of the tenant hosting the SCEPman Azure resource, while AppConfig:AuthConfig:TenantId specifies the tenant of Intune. In this case, you cannot use the more convenient [authentication based on Managed Identities](../../scepman-configuration/post-installation-config.md), but must use authentication using [an Azure App Registration and a Client Secret](../../scepman-deployment/permissions/azure-app-registration.md).
+When running SCEPman in a different tenant than Intune, this specifies the Id of the tenant hosting the SCEPman Azure resource, while AppConfig:AuthConfig:TenantId specifies the tenant of Intune. In this case, you cannot use the more convenient [authentication based on Managed Identities](../../scepman-deployment/permissions/post-installation-config.md), but must use authentication using [an Azure App Registration and a Client Secret](../../scepman-deployment/permissions/azure-app-registration.md).
 
 {% hint style="danger" %}
 Changes can harm your service!

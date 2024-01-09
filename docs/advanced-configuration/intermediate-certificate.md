@@ -38,7 +38,7 @@ The next step is to update the Azure App Service configuration to match the subj
 4. Click on **Save** in the upper left toolbar.
 5. To complete this step, restart the Azure App Service and then navigate to your SCEPman URL.
 
-![](<../../.gitbook/assets/screenshot-2020-10-19-at-16.06.40 (1).png>)
+![](<../.gitbook/assets/screenshot-2020-10-19-at-16.06.40 (1).png>)
 
 ## Creating Intermediate CA Certificate with the SCEPman PowerShell Module
 
@@ -105,7 +105,7 @@ Critical=2.5.29.15
 1. In Azure Key Vault, click on your certificate and press **Certificate Operation**
 2. Now you can see the options **Download CSR** and **Merge Signed Request**
 
-![](<../../.gitbook/assets/screenshot-2020-10-19-at-16.01.18 (13).png>)
+![](<../.gitbook/assets/screenshot-2020-10-19-at-16.01.18 (1) (2) (5).png>)
 
 1. Click on **Merge Signed Request** and upload your Intermediate CA Certificate. After you have uploaded the signed request, you can see the valid certificate in your Azure Key Vault in the area **Completed**
 

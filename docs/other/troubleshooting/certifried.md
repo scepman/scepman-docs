@@ -60,7 +60,7 @@ There are three ways to issue certificates via the Certificate Master component 
 
 [**Custom CSR Requests**](../../certificate-deployment/certificate-master/certificate-signing-request-csr.md) are freely configurable and include authentication certificates. As anybody having access to the Certificate Master application may issue such a certificate you should take at least one of the following precautions:
 
-* Make sure that only priviledged accounts can access Certificate Master. You could, for example, [grant access to the Certificate Master component](../../scepman-configuration/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website) only to a single AAD Group that you design as [Priviledged Access group](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/groups-features).
+* Make sure that only priviledged accounts can access Certificate Master. You could, for example, [grant access to the Certificate Master component](../../scepman-deployment/permissions/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website) only to a single AAD Group that you design as [Priviledged Access group](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/groups-features).
 * Use separate SCEPman instances and CA certificates for DC Certificates (whose CA certificate is in the NTAuth Store) and Certificate Master.
 * Enable Full Enforcement mode in your AD domain.
 

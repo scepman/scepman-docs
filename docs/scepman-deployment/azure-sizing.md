@@ -2,7 +2,7 @@
 
 ## Basics
 
-SCEPman depends mainly on the CPU resources. Memory and disc are less important.&#x20;
+SCEPman depends mainly on the CPU resources. Memory and disc are less important.
 
 A SCEPman 2.5 instance in one Azure P1V2 App Service Plan (210 ACUs) can serve around 2000 requests per minute under usual conditions. SCEPman 2.4 and earlier served about 400 requests per minute on one S1 App Service Plan (100 ACUs). Requests are
 
@@ -46,7 +46,7 @@ You can adapt the computing power for your App Service to your individual daily 
 
 ### Auto Scale
 
-Alternatively you can use the Azure App Autoscaling feature to adapt to needed resources. Learn more about that in [Autoscaling](../scepman-configuration/optional/autoscaling.md).
+Alternatively you can use the Azure App Autoscaling feature to adapt to needed resources. Learn more about that in [Autoscaling](../advanced-configuration/autoscaling.md).
 
 ### Manual vs. Auto Scale
 

@@ -64,7 +64,7 @@ Please fill out the following fields and save the configuration:
 | Use for key encipherment |                                                                                                  | Yes (if needed)                                                                                                                                             |
 | Fingerprint              | Thumbprint of SCEPman CA-Cert (SHA-1)                                                            | visible via SCEPman dashboard ("CA Thumbprint")                                                                                                             |
 
-![](<../../.gitbook/assets/2021-10-21 20\_37\_05-Edit PKI Certificates PKI Certificates\_ and 1 more page - Work - Microsoft Edge.png>)
+![](<../../.gitbook/assets/2021-10-21 20\_37\_05-Edit PKI Certificates PKI Certificates\_ and 1 more page - Work - Microsoft​ Edge.png>)
 
 ### Signing Certificate
 

@@ -86,10 +86,10 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
    With this permission, SCEPman may consult with AAD in order to check if the user or device certificate is originating from an authorized user or device. For details, refer to [SCEPman Docs](../../scepman-deployment/permissions/azure-app-registration.md#azure-app-registration-api-permissions).
 3. Microsoft Graph `DeviceManagementManagedDevices.Read.All` and `DeviceManagementConfiguration.Read.All`:\
    \
-   With these permissions, SCEPman requests the list of issued certificates via Intune when using the [EndpointList revocation feature](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory).
+   With these permissions, SCEPman requests the list of issued certificates via Intune when using the [EndpointList revocation feature](../../advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory).
 4. Microsoft Graph `IdentityRiskyUser.Read.All`:\
    \
-   This permission allows SCEPman to automatically [revoke user certificates if the AAD User Risk exceeds a configured threshold](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck).
+   This permission allows SCEPman to automatically [revoke user certificates if the AAD User Risk exceeds a configured threshold](../../advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck).
 
 #### JAMF
 
@@ -173,7 +173,7 @@ While the below consents make data available to SCEPman, SCEPman does not proces
 
 * Administrative access is realized through AAD authentication via the Azure Portal.
 * Limited read-access may be configured to be publicly available (see [7.](security-faq.md#7-how-are-the-endpoints-from-6-protected))
-* Access to the Certificate Master web portal uses AAD authentication and AAD Role Assignments for authorization as [described in the SCEPman documentation](../../scepman-configuration/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website).
+* Access to the Certificate Master web portal uses AAD authentication and AAD Role Assignments for authorization as [described in the SCEPman documentation](../../scepman-deployment/permissions/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website).
 * The SCEPman API uses AAD Role Assignments. In the recommended default configuration, only Certificate Master has access to the API.
 
 ### 9. Are there conditional access / role-based access controls in place to protect SCEPman?
@@ -242,7 +242,7 @@ As a cloud PKI, SCEPman is responsible for the issuance and revocation of digita
 
 Thus, if a private key is compromised, SCEPman can revoke the corresponding certificate in real-time. For certificates enrolled via Intune and Jamf, SCEPman does this automatically as soon as common countermeasures not specific to SCEPman are taken against the attack. You just have to [delete the corresponding Intune](../../architecture/device-directories.md) or Jamf object.
 
-Depending on your device retirement processes, you can additionally configure to [revoke certificates when a wipe is triggered](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationrevokecertificatesonwipe), when [Intune requests revocation](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationdevicedirectory), depending on [device compliance](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationcompliancecheck) or [user risk level](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationuserriskcheck), or you can manually revoke single certificates via the Certificate Master component.
+Depending on your device retirement processes, you can additionally configure to [revoke certificates when a wipe is triggered](../../advanced-configuration/application-settings/intune-validation.md#appconfigintunevalidationrevokecertificatesonwipe), when [Intune requests revocation](../../advanced-configuration/application-settings/intune-validation.md#appconfigintunevalidationdevicedirectory), depending on [device compliance](../../advanced-configuration/application-settings/intune-validation.md#appconfigintunevalidationcompliancecheck) or [user risk level](../../advanced-configuration/application-settings/intune-validation.md#appconfigintunevalidationuserriskcheck), or you can manually revoke single certificates via the Certificate Master component.
 
 [Manually created certificates](../../certificate-deployment/certificate-master/) always require a manual revocation.
 
@@ -259,7 +259,7 @@ For the keys of issued certificates, Certificate Master has no restrictions when
 
 For SCEP-enrolled certificates, Intune supports only RSA 2048 on most platforms, but some support RSA 4096, which SCEPman also supports. When using the static SCEP endpoint, all common algorithms and key sizes are supported (specifically those which [the Bouncy Castle cryptographic library for C# supports](https://www.bouncycastle.org/csharp/)).
 
-For the CA key, SCEPman supports RSA only. 2048 bit key size is the default, but you can use a larger key size by specifying a larger value for [AppConfig:KeyVaultConfig:RootCertificateConfig:KeySize](../../scepman-configuration/optional/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-keysize) before generating the Root CA certificate. 4096 bit is currently the maximum supported by Azure Key Vault. If you use an Intermediate CA certificate, you can also use any key size supported by Key Vault, but it must be an RSA key.
+For the CA key, SCEPman supports RSA only. 2048 bit key size is the default, but you can use a larger key size by specifying a larger value for [AppConfig:KeyVaultConfig:RootCertificateConfig:KeySize](../../advanced-configuration/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-keysize) before generating the Root CA certificate. 4096 bit is currently the maximum supported by Azure Key Vault. If you use an Intermediate CA certificate, you can also use any key size supported by Key Vault, but it must be an RSA key.
 
 ### 16. Is the CA created by SCEPman unique?
 
