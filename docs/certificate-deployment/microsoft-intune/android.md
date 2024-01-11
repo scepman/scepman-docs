@@ -124,7 +124,7 @@ This value defines when the device is allowed to renew its certificate (based on
 
 <details>
 
-<summary>SCEP Server URLs: Open the SCEPman portal and copy the URL of <a href="android.md#device-certificates">Intune MDM</a></summary>
+<summary>SCEP Server URLs: Open the SCEPman portal and copy the URL of <a href="android.md#device-certificates">#Intune MDM</a></summary>
 
 **Example**
 
