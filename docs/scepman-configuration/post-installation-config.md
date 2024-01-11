@@ -52,7 +52,7 @@ For SCEPman upgrades, you need two extra confirmations:
 
 ### Running the SCEPman Installation CMDlet without Global Admin Role
 
-Use the *-SkipAppRoleAssignments* flag of Complete-SCEPmanInstallation to run the CMDlet without Global Admin permissions. This will skip the assignment of the required App Roles to the SCEPman and Certificate MasterApp Services' Managed Identities. You can then assign the App Roles manually as a Global Administrator. The CMDlet will print the required commands to the console.
+Use the _-SkipAppRoleAssignments_ flag of Complete-SCEPmanInstallation to run the CMDlet without Global Admin permissions. This will skip the assignment of the required App Roles to the SCEPman and Certificate MasterApp Services' Managed Identities. You can then assign the App Roles manually as a Global Administrator. The CMDlet will print the required commands to the console.
 
 ### Considerations when using Deployment Slots
 
@@ -74,7 +74,7 @@ SCEPman Enterprise Edition only
 
 Create an AAD Group, possibly a Privileged Access Group, for the people that shall be able to create web server certificates via SCEPman Certificate Master.
 
-In the Azure Portal, visit [Enterprise applications](https://portal.azure.com/#blade/Microsoft\_AAD\_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/). Remove the filter for "Application type == **Enterprise Applications**", search for _SCEPman-CertMaster_, and select the displayed application. Navigate to _Users and groups_ and click _Add user/group_ on the top menu. Select the group you have previously created. The role will automatically be chosen as _Full Admin_. After you hit _Assign_, direct members of the group can visit the Certificate Master website and request certificates. Note that using Certificate Master is an Enterprise feature. After assignment, the setting should look like this:
+In the Azure Portal, visit [Enterprise applications](https://portal.azure.com/#blade/Microsoft\_AAD\_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/). Remove the filter for "Application type == **Enterprise Applications**", search for _SCEPman-CertMaster_, and select the displayed application. Navigate to _Users and groups_ and click _Add user/group_ on the top menu. Select the group you have previously created. Select the desired role(s) (more information on the available roles can be found under [Certificate Master RBAC](../advanced-configuration/rbac.md)). After you hit _Assign_, direct members of the group can visit the Certificate Master website and perform tasks according to the permission of the assigned role(s). Note that using Certificate Master is an Enterprise feature. After assignment, the setting should look like this:
 
 ![](<../.gitbook/assets/2022-04-07 16\_55\_05-SCEPman-CertMaster - Permissions .png>)
 

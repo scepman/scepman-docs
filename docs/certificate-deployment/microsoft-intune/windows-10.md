@@ -4,7 +4,7 @@ The following article describes deploying a device or/and user certificates for 
 
 ## Root Certificate
 
-The basis for deploying SCEP certificates is to trust the public root certificate of SCEPman. Therefore, you have to download the CA Root certificate and deploy it as a **Trusted certificate** profile via Microsoft Intune:
+The basis for deploying SCEP certificates is to trust the root certificate of SCEPman. Therefore, you have to download the CA Root certificate and deploy it as a **Trusted certificate** profile via Microsoft Intune:
 
 * [ ] Download the CA Certificate from SCEPman portal:
 
@@ -49,7 +49,7 @@ SCEPman uses the CN field of the subject to identify the device and as a seed fo
 
 * \{{DeviceId\}}: This ID is generated and used by Intune **(Recommended)**\
   \
-  (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
+  (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
 
 <!---->
 
@@ -75,7 +75,7 @@ Other SAN values like DNS can be added if needed.
 
 The amount of time remaining before the certificate expires. Default is set at one year.
 
-SCEPman caps the certificate validity to the configured maximum in setting [_**AppConfig:ValidityPeriodDays**_](../../advanced-configuration/application-settings/certificates.md#appconfig-validityperioddays), but otherwise uses the validity configured in the request.
+SCEPman caps the certificate validity to the configured maximum in setting [_**AppConfig:ValidityPeriodDays**_](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays), but otherwise uses the validity configured in the request.
 
 </details>
 
@@ -104,7 +104,7 @@ If you use TPM with this firmware, either update your firmware to a newer versio
 
 Please activate both cryptographic actions.
 
-SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the setting here unless the setting [_**AppConfig:UseRequestedKeyUsages**_](../../advanced-configuration/application-settings/certificates.md#appconfig-userequestedkeyusages) is set to _true_.
+SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the setting here unless the setting [_**AppConfig:UseRequestedKeyUsages**_](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-userequestedkeyusages) is set to _true_.
 
 </details>
 
@@ -216,8 +216,8 @@ You may use SCEPman for transnational **digital signatures** i.e. for S/MIME sig
 
 <!---->
 
-* [_`AppConfig:UseRequestedKeyUsages`_](../../advanced-configuration/application-settings/certificates.md#appconfig-userequestedkeyusages) set to _`true`_
-* [_`AppConfig:ValidityPeriodDays`_](../../advanced-configuration/application-settings/certificates.md#appconfig-validityperioddays) _set to `365` (a maximum value of 1825 - 5 years is possible)_
+* [_`AppConfig:UseRequestedKeyUsages`_](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-userequestedkeyusages) set to _`true`_
+* [_`AppConfig:ValidityPeriodDays`_](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays) _set to `365` (a maximum value of 1825 - 5 years is possible)_
 
 To deploy user certificates used for **Digital Signatures** please follow the instructions of [#User certificates](windows-10.md#user-certificates) and take care of the following differences and notes:
 

@@ -1,276 +1,187 @@
 # Android
 
-The following article describes how to deploy a device certificate or a user certificate for Android. Android certificate deployment is similar to Windows 10, macOS, and iOS certificate deployments.
-
-## Deploying Device Certificate
-
-Android offers two different solution sets for using an Android device with a [work profile](https://developers.google.com/android/work/requirements/work-profile) solution set and a [fully managed device](https://developers.google.com/android/work/requirements/fully-managed-device) solution set.
+The following article describes how to deploy a device or a user certificate for Android. Android certificate deployment is similar to Windows 10, macOS, and iOS certificate deployments.
 
 {% hint style="info" %}
-Android device administrator management was released in Android 2.2 as a way to manage Android devices. Then beginning with Android 5, the more modern management framework of Android Enterprise was released (for devices that can reliably connect to Google Mobile Services). **Google is encouraging movement off of device administrator management by decreasing its management support in new Android releases**. For more information please check [MS. Intune Decreasing support for Android device admin](https://techcommunity.microsoft.com/t5/intune-customer-success/decreasing-support-for-android-device-administrator/ba-p/1441935)
+Android provides two distinct solution sets: one is the [work profile](https://developers.google.com/android/work/requirements/work-profile) (known as _Personally-Owned Work Profile)_ and the other is the [fully managed device](https://developers.google.com/android/work/requirements/fully-managed-device) (known also as _Fully Managed, Dedicated, and Corporate-Owned Work Profile_). In both scenarios, the settings for certificate configuration profiles remain consistent.
 {% endhint %}
 
-### Certificate Deployment for Android Work Profiles
-
-{% hint style="warning" %}
-In case you are using an intermediate CA, use the root CA certificate instead of the CA certificate from SCEPman. This applies to the trusted root configuration profile as well as the SCEP configuration profiles.
+{% hint style="info" %}
+Android device administrator management was released in Android 2.2 as a way to manage Android devices. Then beginning with Android 5, the more modern management framework of Android Enterprise was released (for devices that can reliably connect to Google Mobile Services). **Google is encouraging movement from device administrator management by decreasing its management support in new Android releases**. For more information please check [MS. Intune Decreasing support for Android device admin](https://techcommunity.microsoft.com/t5/intune-customer-success/decreasing-support-for-android-device-administrator/ba-p/1441935)
 {% endhint %}
 
-First, we need to trust the public root certificate from SCEPman. Therefore, you have to download the CA certificate (from SCEPman) and deploy it via a trusted certificate profile in Microsoft Intune:
+## Root Certificate
 
-Download the CA certificate:
+The basis for deploying SCEP certificates (device or user)  is to trust the root certificate of SCEPman. Therefore, you have to download the CA Root certificate and deploy it as a **Trusted certificate** profile via Microsoft Intune:
+
+* [ ] Download the CA Certificate from SCEPman portal
 
 ![](<../../.gitbook/assets/SCEPmanHomePage (2).png>)
 
-Then, create a profile in Microsoft Intune:
+* [ ] Create a profile for Android Enterprise with the type **Trusted certificate** in Microsoft Intune (based on your enrollment option for Android devices)
 
-1. Navigate to **Microsoft Intune**
-2. Click **Devices**
-3. Click **Configuration profiles**
-4. Click + **Create profile**
-5. Platform: **Android Enterprise**
-6. Profile type: **Trusted certificate**
-7. **Create**
-8. Set profile **Name** and **Description**(optional)
-9. Upload your root CA certificate
-10. Assign users and/or groups
-11. Finally, click **Create**
+<figure><img src="../../.gitbook/assets/2024-01-09 15_24_48-Create a profile.png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/2021-10-12 15\_28\_15-.png>)
+* [ ] Upload your previously downloaded **.cer file**.
+* [ ] Now you can deploy this profile to your devices. Please choose All Users and/or All Devices or a dedicated group for the assignment.
 
-Now, you must create a SCEP certificate profile to deploy the device certificates. Essential for this step is the SCEP Server, you can find it
-
-Next, to finally deploy the device certificates, you have to create a SCEP certificate profile in Intune:
-
-1. Navigate to **Microsoft Intune**
-2. Click **Device Configuration**
-3. Choose **Profile** and click **Create profile**
-4. Then, enter a **Name**
-5. Select **Android Enterprise** as **Platform**
-6. Select **SCEP certificate**, under **Fully Managed, Dedicated, and Work Profile**, as **Profile type**
-7. **Create,** then choose **Name** and description (optional) for the profile, **Next**
-8. Set the **Configuration settings** as in the picture below
-
-{% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the green rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the green rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 months currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **There is a dependency on the \{{AAD\_Device\_ID\}} in the subject name, which is used as a seed for the certificate serial number generation. Therefore, the subject name must include CN=\{{AAD\_Device\_ID\}}**.
+{% hint style="info" %}
+Note, that you have to use the **same group for assigning** the **Trusted certificate** and **SCEP profile**. Otherwise, the Intune deployment might fail.
 {% endhint %}
 
-![](<../../.gitbook/assets/scepman\_android2 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
+## Device Certificates
 
-1. Scroll down and enter the URL you have noted
-2. Then, click **Add**
-3. Next, click **OK,** and finally click **Create**
+* [ ] Open the SCEPman portal and copy the URL under **Intune MDM**
 
-When all is finished, you have the following two certificate configurations:
+<figure><img src="../../.gitbook/assets/2024-01-09 15_10_27.png" alt=""><figcaption></figcaption></figure>
 
-* SCEPman - SCEP Android device certificate
-* SCEPman - Trusted root Android certificate
+* [ ] Create a profile for Android Enterprise with type **SCEP certificate** in Microsoft Intune (again, based on your enrollment option for the Android devices)
 
-### Certificate Deployment for Fully Managed Devices
+<figure><img src="../../.gitbook/assets/2024-01-09 16_09_19-Create a SCEP profile.png" alt=""><figcaption></figcaption></figure>
 
-First, we need to trust the public root certificate from SCEPman. Therefore, you have to download the CA certificate (from SCEPman) and deploy it via a trusted certificate profile in Microsoft Intune:
+* [ ] Configure the profile as described
 
-Download the CA certificate:
+<details>
 
-<figure><img src="../../.gitbook/assets/2023-06-15 14_02_30-Android - SCEPman.png" alt=""><figcaption></figcaption></figure>
+<summary>Certificate type: <code>Device</code></summary>
 
-Then, create a profile in Microsoft Intune:
+In this section, we are setting up a device certificate.
 
-![](<../../.gitbook/assets/scepman\_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1) (4).png>)
+</details>
 
-1. Download the CA Certificate
-2. Then, create a profile in Microsoft Intune
-3. Select **Android Enterprise** as **Platform**
-4. As **Profile type** select **Trusted certificate** (under **Device Owner Only**)
-5. Click **Settings** and select **A valid .cer file**
-6. Then click **OK**
-7. Finally click **Create**
+<details>
 
-When you are finished with it, you can deploy this profile to your devices.
+<summary>Subject name format: <code>CN={{DeviceId}}</code> or <code>CN={{AAD_Device_ID}}</code></summary>
 
-Now, you have to create a SCEP certificate profile to deploy the device certificates. Make note of the SCEP server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman
+SCEPman uses the CN field of the subject to identify the device and as a seed for the certificate serial number generation. Microsoft Entra ID (Azure AD) and Intune offer two different IDs:
 
-![](<../../.gitbook/assets/scepman27 (2) (1) (28).png>)
+* \{{DeviceId\}}: This ID is generated and used by Intune **(Recommended).** (Requires SCEPman 2.0 or higher and [#AppConfig:IntuneValidation:DeviceDirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory) to be set to **Intune** or **AADAndIntune**
+* \{{AAD\_Device\_ID\}}: This ID is generated and used by Microsoft Entra ID (Azure AD).
 
-Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll)
+You can add other RDNs if needed (e.g.: `CN={{DeviceId}}, O=Contoso, CN={{WiFiMacAddress}}`). Supported variables are listed in the [Microsoft docs](https://learn.microsoft.com/en-us/mem/intune/protect/certificates-profile-scep#create-a-scep-certificate-profile).
 
-Next, to finally deploy the device certificates, you have to create a SCEP certificate profile in Intune:
+</details>
 
-1. Navigate to **Microsoft Intune**
-2. Click **Device Configuration**
-3. Choose **Profile** and click **Create profile**
-4. Then, enter a **Name**
-5. Select **Android Enterprise** as **Platform**
-6. As **Profile type** select **SCEP certificate** (under **Device Owner Only**)
-7. Click **Settings**
+<details>
 
-![](<../../.gitbook/assets/scepman\_android1\_1 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2).png>)
+<summary>Subject alternative name: <code>URI</code> Value:<code>IntuneDeviceId://{{DeviceId}}</code></summary>
 
-1. Configure the **SCEP Certificate**
+The URI field is [recommended by Microsoft](https://techcommunity.microsoft.com/t5/intune-customer-success/new-microsoft-intune-service-for-network-access-control/ba-p/2544696) for NAC solutions to identify the devices based on their Intune Device ID.
 
-{% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **There is a dependency on the \{{AAD\_Device\_ID\}} in the subject name, which is used as a seed for the certificate serial number generation. Therefore, the subject name must include CN=\{{AAD\_Device\_ID\}}**.
+Other SAN values like DNS can be added if needed.
+
+</details>
+
+<details>
+
+<summary>Certificate validity period: <code>1 years</code></summary>
+
+The amount of time remaining before the certificate expires. Default is set at one year.
+
+SCEPman caps the certificate validity to the configured maximum in setting [_**AppConfig:ValidityPeriodDays**_](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays), but otherwise uses the validity configured in the request.
+
+</details>
+
+<details>
+
+<summary>Key usage: <code>Digital signature</code> and <code>key encipherment</code></summary>
+
+Please activate both cryptographic actions.
+
+</details>
+
+<details>
+
+<summary>Key size (bits): <code>4096</code></summary>
+
+SCEPman supports 4096 bits.
+
+</details>
+
+<details>
+
+<summary>Root Certificate: <code>Profile from previous step</code></summary>
+
+Please select the Intune profile from [[#root-certificate](android.md#root-certificate "mention")](android.md#root-certificate).
+
+</details>
+
+<details>
+
+<summary>Extended key usage: <code>Client Authentication, 1.3.6.1.5.5.7.3.2</code></summary>
+
+Please choose **Client Authentication (1.3.6.1.5.5.7.3.2)** under **Predefined values**. The other fields will be filled out automatically.
+
+</details>
+
+<details>
+
+<summary>Renewal threshold (%): <code>20</code></summary>
+
+This value defines when the device is allowed to renew its certificate (based on the remaining lifetime of an existing certificate). Please read the note under **Certificate validity period** and select a suitable value that allows the device the renew the certificate over a long period. A value of 20% would allow the device with 1 year valid certificate to start renewal 73 days before expiration.
+
+</details>
+
+<details>
+
+<summary>SCEP Server URLs: Open the SCEPman portal and copy the URL of <a href="android.md#device-certificates">Intune MDM</a></summary>
+
+**Example**
+
+```
+https://scepman.contoso.com/certsrv/mscep/mscep.dll
+```
+
+</details>
+
+### **Example**
+
+<figure><img src="../../.gitbook/assets/2024-01-11 11_04_19-SCEP certificate - AndroidEnterpriseDeviceCert.png" alt=""><figcaption></figcaption></figure>
+
+## User Certificates
+
+Please follow the instructions of [#Device certificates](android.md#device-certificates) and take care of the following differences:
+
+
+
+<details>
+
+<summary>Certificate type: <code>User</code></summary>
+
+In this section we are setting up a user certificate.
+
+</details>
+
+<details>
+
+<summary>Subject name format: <code>CN={{UserName}},E={{EmailAddress}}</code></summary>
+
+You can define RDNs based on your needs. Supported variables are listed in the [Microsoft docs](https://docs.microsoft.com/en-us/mem/intune/protect/certificates-profile-scep#create-a-scep-certificate-profile). We recommend to include the username (e.g.: janedoe) and email address (e.g.: janedoe@contoso.com) as baseline setting.
+
+</details>
+
+<details>
+
+<summary>Subject alternative name: <code>(UPN)</code>Value: <code>{{UserPrincipalName}}</code></summary>
+
+You **must** add the User principal name as the Subject alternative name. **Add '\{{UserPrincipalName\}}' as Subject Alternative Name of type User principal name (UPN).** This ensures that SCEPman can link certificates to user objects in AAD.&#x20;
+
+Other SAN values like an Email address can be added if needed.
+
+</details>
+
+{% hint style="info" %}
+It is required to have a **Subject alternative name** in the **SCEP Certificate, User Type**. Without a SAN, you have no access to your company's Wi-Fi.
 {% endhint %}
 
-![](<../../.gitbook/assets/scepman\_android2 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
+### **Example**
 
-1. Scroll down and enter the URL you have noted
-2. Then, click **Add**
-3. Next, click **OK** and finally click **Create**
+<figure><img src="../../.gitbook/assets/2024-01-11 10_59_48-SCEP certificate - AndroidEnterpriseUserCert.png" alt=""><figcaption></figcaption></figure>
 
-When all is finished, you have the following two certificate configurations:
+## Certificate Check
 
-* SCEPman - SCEP Android device certificate
-* SCEPman - Trusted root Android certificate
+To ensure the correct deployment of certificates on your Android device, there are two options:
 
-### Subject Alternative Name
+* In newer Android versions (e.g. 14), you can verify certificates (user and trusted certs.) from the **settings** > **security and privacy**
+* Via 3rd party apps like [My Certificates](https://play.google.com/store/apps/details?id=com.wesbunton.projects.mycertificates\&hl=en) or [X509 Certificate Viewer Tool](https://play.google.com/store/apps/details?id=com.rdupletlabs.certificateviewer)
 
-A [Subject alternative name](https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.6) (SAN) is important for the whole Android device login process into a Wi-Fi profile. It can be divided into three phases:
-
-1. During the enrollment phase, you have to log in to your company portal with a company domain (like john.doe@companyname.com)
-2. When the synchronization starts the device gets a certificate and a Wi-Fi.
-3. The Wi-Fi profile will be deployed. In detail, the following steps working in the background:
-   * SAN verification ([RFC 2818](https://www.rfc-editor.org/rfc/rfc2818))
-   * Search for certifications and profiles, based on your company domain
-   * Deploy Wi-Fi profile on your device
-
-It is required to have a **Subject alternative name** in the **SCEP Certificate**. Without a SAN, you have no access to your company's Wi-Fi.
-
-### My Certificates
-
-To check if your certificate runs well on your Android device you can use [My Certificates](https://play.google.com/store/apps/details?id=com.wesbunton.projects.mycertificates\&hl=en) from Google Play.
-
-## Deploying User Certificate
-
-Android offers two different solution sets for using an Android device. A [work profile](https://developers.google.com/android/work/requirements/work-profile) solution set and a [fully managed device](https://developers.google.com/android/work/requirements/fully-managed-device) solution set.
-
-### Certificate Deployment for Android Work Profiles
-
-First, we need to trust the public root certificate from SCEPman. Therefore, you have to download the CA certificate (from SCEPman) and deploy it via a trusted certificate profile in Microsoft Intune:
-
-Download the CA certificate:
-
-<figure><img src="../../.gitbook/assets/2023-06-15 14_02_30-Android - SCEPman.png" alt=""><figcaption></figcaption></figure>
-
-Then, create a profile in Microsoft Intune:
-
-![](<../../.gitbook/assets/scepman\_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1) (4).png>)
-
-1. Download the CA Certificate
-2. Then, create a profile in Microsoft Intune
-3. Select **Android Enterprise** as **Platform**
-4. As **Profile type** select **Trusted certificate** (under **Work Profile Only**)
-5. Click **Settings**, select **A valid .cer file**
-6. Then, click **OK**
-7. Finally, click **Create**
-
-When you are done with it, you can deploy this profile to your devices.
-
-Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
-
-![](<../../.gitbook/assets/scepman27 (2) (1) (28).png>)
-
-Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll)
-
-Next, to finally deploy the device certificates you have to create a SCEP certificate profile in Intune:
-
-1. Navigate to **Microsoft Intune**
-2. Click **Device Configuration**
-3. Choose **Profile** and click **Create profile**
-4. Then, enter a **Name**
-5. Select **Android Enterprise** as **Platform**
-6. As **Profile type** select **SCEP certificate** (under **Device Owner Only**)
-7. Click **Settings**
-
-![](<../../.gitbook/assets/scepman\_user\_android\_1 (2) (2) (2) (2) (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
-
-1. Configure the **SCEP Certificate**
-
-{% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory set by SCEPman, the yellow rectangle is automatically set by SCEPman (for better visibility I recommend to set the settings in the yellow rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 month currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **The setting for 'Subject name format' is freely selectable. For Subject alternative name we recommend to set 'User principial name (UPN)'.**
-{% endhint %}
-
-![](<../../.gitbook/assets/scepman\_user\_android\_2 (2) (2) (2) (2) (2) (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
-
-1. Scroll down and enter the URL you have noted
-2. Then, click **Add**
-3. Next click **OK** and finally click **Create**
-
-When all is done, you have the following two certificate configurations:
-
-* SCEPman - SCEP Android user certificate
-* SCEPman - Trusted root Android certificate
-
-### Certificate Deployment for Fully Managed Devices
-
-First, we need to trust the public root certificate from SCEPman. Therefore, you have to download the CA certificate (from SCEPman) and deploy it via a trusted certificate profile in Microsoft Intune:
-
-Download the CA certificate:
-
-<figure><img src="../../.gitbook/assets/2023-06-15 14_02_30-Android - SCEPman.png" alt=""><figcaption></figcaption></figure>
-
-Then, create a profile in Microsoft Intune:
-
-![](<../../.gitbook/assets/scepman\_android1 (4) (4) (4) (4) (4) (4) (4) (4) (4) (1) (4).png>)
-
-1. Download the CA Certificate
-2. Then, create a profile in Microsoft Intune
-3. Select **Android Enterprise** as **Platform**
-4. As **Profile type** select **Trusted certificate** (under **Device Owner Only**)
-5. Click **Settings** and select **A valid .cer file**
-6. Then click **OK**
-7. Finally click **Create**
-
-When you are done with it, you can deploy this profile to your devices.
-
-Now, you have to create a SCEP certificate profile to deploy the device certificates. Important for this step is the SCEP Server URL. This URL can be found in the **Overview** submenu of the app service of SCEPman:
-
-![](<../../.gitbook/assets/scepman27 (2) (1) (28).png>)
-
-Append the following to your URL: **/certsrv/mscep/mscep.dll**. Note this URL: [https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll](https://scepman.contoso.azurewebsites.net/certsrv/mscep/mscep.dll)
-
-Next, to finally deploy the device certificates you have to create a SCEP certificate profile in Intune:
-
-1. Navigate to **Microsoft Intune**
-2. Click **Device Configuration**
-3. Choose **Profile** and click **Create profile**
-4. Then, enter a **Name**
-5. Select **Android Enterprise** as **Platform**
-6. As **Profile type** select **SCEP certificate** (under **Device Owner Only**)
-7. Click **Settings**
-
-![](<../../.gitbook/assets/scepman\_user\_android\_1 (2) (2) (2) (2) (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
-
-1. Configure the **SCEP Certificate**
-
-{% hint style="warning" %}
-You can not configure all **SCEP Certificate** settings. This is because some settings are mandatory to set by SCEPman, the yellow rectangle is automatically set by SCEPman (for better visibility I recommend setting the settings in the yellow rectangle to the SCEPman mandatory settings like shown below). Hereby is the Key usage set to **Digital signature** and **Key encipherment**. The validity period is set to a fixed 6 months currently. The red rectangle is a setting that is free to modify. Long term, all settings will be supported for configuration. **The setting for 'Subject name format' is freely selectable. For Subject alternative name we recommend to set 'User principial name (UPN)'.**
-{% endhint %}
-
-![](<../../.gitbook/assets/scepman\_user\_android\_2 (2) (2) (2) (2) (2) (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png>)
-
-1. Scroll down and enter the URL you have noted
-2. Then, click **Add**
-3. Next, click **OK** and finally click **Create**
-
-When all is done, you have the following two certificate configurations:
-
-* SCEPman - SCEP Android user certificate
-* SCEPman - Trusted root Android certificate
-
-### Subject Alternative Name
-
-A [Subject alternative name](https://www.rfc-editor.org/rfc/rfc5280#section-4.2.1.6) (SAN) is important for the whole android device login process into a Wi-Fi profile. It can be divided into three phases:
-
-1. During the enrollment phase, you have to login to your company portal with a company domain (like john.doe@companyname.com)
-2. When the synchronization starts the device gets a certificate and a Wi-Fi.
-3. The Wi-Fi profile will be deployed. In detail, the following steps working in background:
-   * SAN verification ([RFC 2818](https://www.rfc-editor.org/rfc/rfc2818))
-   * Search for certifications and profiles, based on your company domain
-   * Deploy Wi-Fi profile on your device
-
-It is required to have a **Subject alternative name** in the **SCEP Certificate**. Without a SAN, you have no access to your company's Wi-Fi.
-
-### My Certificates
-
-To check if your certificate runs well on your Android device you can use [My Certificates](https://play.google.com/store/apps/details?id=com.wesbunton.projects.mycertificates\&hl=en) from Google Play.

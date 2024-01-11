@@ -9,7 +9,7 @@ To activate the Application Insights for your App Service, please follow these i
 1. Open your **App Service**
 2. On the left side, you can click on **Application Insights** under **Settings**
 
-![](<../../../.gitbook/assets/image (5).png>)
+![](<../../.gitbook/assets/image (5).png>)
 
 1. On the Application Insights pane, you can click the button Turn on Application Insights
 2. You can create a new Application Insights resource or select an existing one in the new context. _(See screenshot below)_\

@@ -2,7 +2,7 @@
 
 ## Available SCEPman Channels
 
-We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](application-settings/basics.md#website\_run\_from\_package) setting of your SCEPman App Service.
+We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](../scepman-configuration/optional/application-settings/basics.md#website\_run\_from\_package) setting of your SCEPman App Service.
 
 There are two independent artifact hosts, GitHub and Azure (install.scepman.com). If one of the two should fail, you can switch to the other. Thus, there are two download URLs for each channel. Detecting the used channel when using install.scepman.com requires SCEPman 2.3, but apart from that also works with SCEPman 2.2.
 
@@ -60,7 +60,7 @@ https://raw.githubusercontent.com/scepman/install/deferred/dist/Artifacts.zip
 
 ## Available SCEPman Certificate Master Channels
 
-We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](application-settings-1/basics.md#website\_run\_from\_package) setting of your Certificate Master App Service.
+We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](../certmaster-configuration/application-settings/basics.md#website\_run\_from\_package) setting of your Certificate Master App Service.
 
 ### Certificate Master Production Channel
 

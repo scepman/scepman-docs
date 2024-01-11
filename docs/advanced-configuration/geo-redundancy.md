@@ -32,7 +32,7 @@ To clone an App Service, first you need to create a new **App Service Plan** in 
 ![Creation of a new App Service Plan with Windows](<../.gitbook/assets/2022-06-15 13\_29\_57-Create App Service Plan.png>)
 
 {% hint style="info" %}
-App Service Clone requirements (via [SCEPman PowerShell Module](../scepman-deployment/permissions/post-installation-config.md#acquire-and-run-the-scepman-installation-powershell-module)):
+App Service Clone requirements (via [SCEPman PowerShell Module](../scepman-configuration/post-installation-config.md#acquire-and-run-the-scepman-installation-powershell-module)):
 
 * SCEPman **2.2** or above
 * SCEPman PowerShell Module **1.6.3.0** or above
@@ -113,7 +113,7 @@ Repeat the same steps for the second endpoint and choose the second (cloned) SCE
 
 ### Custom Domain Configuration
 
-After a successful deployment and configuration of the Traffic Manager Endpoints, you need to set up the **same** custom domain for **both** SCEPman instances as described [here](custom-domain.md).
+After a successful deployment and configuration of the Traffic Manager Endpoints, you need to set up the **same** custom domain for **both** SCEPman instances as described [here](../scepman-configuration/optional/custom-domain.md).
 
 Make sure to change the value of the setting **AppConfig:BaseUrl** for **both** SCEPman App Services after the custom domains have been created.
 
