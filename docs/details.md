@@ -20,8 +20,6 @@ SCEPman issues certificates that are **intended for authentication and transport
 **Do not** use SCEPman **for email-encryption** i.e. for S/MIME mail encryption in Microsoft Outlook (without a separate technology for key management). The nature of **the SCEP protocol does not include a mechanism to backup or archive private key material.** If you would use SCEP for email-encryption you may lose the keys to decrypt the messages at a later time.
 {% endhint %}
 
-For more details about the technical certificate workflow and the third-party certification authority SCEP integration, click [here](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview#overview).
-
 ### SCEPman Workflow
 
 Here's an overview about the SCEPman workflow when using Intune as MDM solution (the flows are similar for other MDM solutions). The first figure shows the certificate issuance and the second figure shows the certificate validation.
@@ -44,8 +42,6 @@ SCEPman is an Azure Web App with the following features:
 * A full replacement of Legacy PKI in many scenarios.
 
 SCEPman creates the CA root certificate during the initial installation. However, if for whatever reason an alternative CA key material shall be used it is possible to replace this CA key and certificate with your own in Azure Key Vault. For example, if you want to use a Sub CA certificate signed by an existing internal Root CA.
-
-SCEPman issues device and user certificates that are compatible with Intune's internally used authentication certificates. They contain Intune's extensions determining the tenant and the machine. Additionally, when using device certificates, the tenant ID and machine ID are stored in the certificate subject alternative names to allow a RADIUS server, like [RADIUS-as-a-Service](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.radiusaas-transactable-prod), to use these certificates for authentication.
 
 #### Certificate Master
 

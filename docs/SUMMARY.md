@@ -93,6 +93,7 @@
 ## Other
 
 * [FAQs](other/faqs/README.md)
+  * [General](other/faqs/general.md)
   * [Security & Privacy](other/faqs/security-faq.md)
   * [Certificate Connector](other/faqs/certificate-connector.md)
 * [Troubleshooting](other/troubleshooting/README.md)

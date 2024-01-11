@@ -35,10 +35,10 @@ Perform below steps to enroll a smart card certificate to your YubiKey device.
 3. Specify the **UPN** as per your requirements
 4. Set the **Key Length** to **2048** bits (YubiKey currently does not support 4096-bit keys).
 5. &#x20;Select **PKCS#12** as **Download file format**
-6.  Select **Smart card Logon** from the **Extended Key Usages**\
+6.  Select **Client Authentication** and **Smart card Logon** from the **Extended Key Usages**\
 
 
-    <figure><img src="../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 7. Before clicking **Submit**, ensure to take temporary note of the **Password** as it will be required when importing the certificate to the YubiKey.
 8. Open the YubiKey Manager
 9.  Navigate to **Applications** -> **PIV** and click **Configure Certificates**\

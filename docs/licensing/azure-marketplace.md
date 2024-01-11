@@ -82,7 +82,7 @@ To get started with your SCEPman subscription,
 * Locate SCEPman (Subscription) on the **Marketplace** in your [**Azure Portal**](https://portal.azure.com/#create/glueckkanja-gabag.scepman-transactable-prod/preview)
 * Select the SCEPman Enterprise Edition **Plan** based on your preferred renewal interval and click "Subscribe"
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (2).png>)
 
 * Create or select the **Resource group** you would like to deploy the subscription to
 * Assign a **Name** to later identify your SCEPman subscription
