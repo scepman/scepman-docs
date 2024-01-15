@@ -67,7 +67,7 @@ SCEPman Certificate Master lets you search, inspect, and manage the certificates
 * A data table in the Azure Storage Account deployed with SCEPman, and
 * Intune's database of issued certificates.
 
-Depending on whether you enrolled a certificate via the Intune MDM or through other means (e.g. [manually with Certificate Master](certificate-master/) or for [Domain Controllers](domain-controller-certificates.md)), you should search in the one table or the other. You can reach both of them via the navigation bar on the left hand side of the Certificate Master web UI.
+Depending on whether you enrolled a certificate via the Intune MDM or through other means (e.g. [manually with Certificate Master](certificate-master/) or for [Domain Controllers](domain-controller-certificates.md)), you should search in one table or the other. You can reach both of them via the navigation bar on the left-hand side of the Certificate Master web UI.
 
 {% hint style="info" %}
 It takes up to 6 hours after enrolling a certificate via Intune until it appears in the list of Intune certificates due to delays in the Intune API.
