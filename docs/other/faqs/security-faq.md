@@ -289,9 +289,9 @@ _No_, as this would break SCEPman's functionality. This is because SCEPman enrol
 
 #### 20. Can the `HTTP version` be set to `2.0`?
 
-While SCEPman should work with any of the available HTTP versions, as of today, we only support  the default `HTTP 1.1` - mainly due to lack of testing.&#x20;
+While SCEPman should work with any of the available HTTP versions, as of today, we only support the default `HTTP 1.1` - mainly due to lack of testing.&#x20;
 
-When changing this setting - on your own risk - please consider that it is not only SCEPman that needs to support the newer HTTP version. The different types of clients also need to support that version of HTTP, i.e. the OS-integrated SCEP clients of Window, MacOS, iOS, the ones in IoT devices, the OCSP clients on the same platforms, but also NACs of different vendors.
+When changing this setting - at your own risk - please consider that it is not only SCEPman that needs to support the newer HTTP version. The different types of clients also need to support that version of HTTP, i.e. the OS-integrated SCEP clients of Window, MacOS, iOS, the ones in IoT devices, the OCSP clients on the same platforms, but also NACs of different vendors.
 
 #### 21. Can `HTTPS Only` be enabled?
 
