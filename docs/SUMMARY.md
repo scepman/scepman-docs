@@ -105,6 +105,7 @@
   * [Change CA Subject](other/troubleshooting/change-ca-subject.md)
   * [Intune service discovery API permissions](other/troubleshooting/intune-service-discovery-api-permissions.md)
   * [Hide SCEPman homepage](other/troubleshooting/hide-scepman-homepage.md)
+  * [Moving SCEPman resources to another Azure subscription](other/troubleshooting/moving-scepman-resources-to-another-azure-subscription.md)
 * [Important Links](other/important-links.md)
 
 ***
