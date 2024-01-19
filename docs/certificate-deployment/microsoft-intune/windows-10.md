@@ -89,7 +89,7 @@ Note: There is **a bug in some older TPM firmware versions** that invalidates so
 
 Affected TPM firmware versions include:
 
-* STMicroelectronics: 71.12, 73.4.17568.4452, 71.12.17568.4100
+* STMicroelectronics: 71.12, 73.4.17568.4452, 71.12.17568.4100, 73.20.17568.6684
 * Intel: 11.8.50.3399, 2.0.0.2060
 * Infineon: 7.63.3353.0
 * IFX: Version 3.19 / Specification 1.2
