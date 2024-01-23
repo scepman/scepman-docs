@@ -100,12 +100,9 @@
   * [Common Problems](other/troubleshooting/general.md)
   * [Certifried Security Vulnerability](other/troubleshooting/certifried.md)
   * [Cisco ISE Host Header Limitation](other/troubleshooting/cisco-ise-host-header-limitation.md)
+  * [Intune service discovery API permissions](other/troubleshooting/intune-service-discovery-api-permissions.md)
   * [Re-enrollment trigger](other/troubleshooting/re-enrollment-trigger.md)
   * [View SCEPman issued certificates](other/troubleshooting/view-scepman-issued-certificates.md)
-  * [Change CA Subject](other/troubleshooting/change-ca-subject.md)
-  * [Intune service discovery API permissions](other/troubleshooting/intune-service-discovery-api-permissions.md)
-  * [Hide SCEPman homepage](other/troubleshooting/hide-scepman-homepage.md)
-  * [Moving SCEPman resources to another Azure subscription](other/troubleshooting/moving-scepman-resources-to-another-azure-subscription.md)
 * [Important Links](other/important-links.md)
 
 ***
