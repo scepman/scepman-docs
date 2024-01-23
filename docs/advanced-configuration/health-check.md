@@ -2,10 +2,6 @@
 
 You may configure the health check feature and corresponding alerting for the App Service to get a direct notification in case your SCEPman instance is no longer responsive.
 
-{% hint style="warning" %}
-After you have configured the health check and Alerting correctly it takes some time until the alert rule works properly. It is because the metric **Health check status** needs some time to get the information and the dynamic alert rule threshold needs some time to analyze the metric.
-{% endhint %}
-
 ## Configure Health Check
 
 1. Navigate to your **App Service** and on the left side scroll down to **Health check**
@@ -25,35 +21,51 @@ To get an alert from our health check we need to configure alert rules in our Ap
 
 ![Create alert rule](<../.gitbook/assets/2022-12-27 12\_13\_22.png>)
 
-5\. Now switch the **Threshold** to **Dynamic**\
-6\. Set **Aggregation type** to **Average**\
-7\. Set **Operator** to **Greater or Less than**\
-8\. Change the **Threshold Sensitivity** to **High**\
-9\. Select **5 minutes** to **Check every**\
-10\. And **15 minutes** as the **Lookback period**\
-11\. Click on **Next: Actions**
+5. Configure the alert as specified below:
 
-![Alert rule condition](<../.gitbook/assets/2022-12-27 10\_34\_32 (1).png>)
+| **Threshold**        | Static     |
+| -------------------- | ---------- |
+| **Aggregation type** | Average    |
+| **Operator**         | Less than  |
+| **Unit**             | Count      |
+| **Threshold value**  | 70         |
+| **Check every**      | 5 minutes  |
+| **Loopback period**  | 15 minutes |
 
-12\. Now you need to **Select action groups,** If you do not have any action groups available, you can click on **Create action group**
+<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption><p>Alert rule condition</p></figcaption></figure>
 
-13\. Define an **Action group name** and **Display name**
+6. Click on **Next: Actions**
+7. Select **Create action group**
+
+{% hint style="info" %}
+If you have existing action groups, choose **Select action groups**, select an action group and move to step 14.
+{% endhint %}
+
+8. Define an **Action group name** and **Display name**
 
 ![Create action group](<../.gitbook/assets/2022-12-27 12\_29\_38.png>)
 
-14\. Next to **Notifications** and add **Notification type**\
-15\. In the windows select **Email** and enter your email address that you want to get the notifications\
-16\. Then click on **OK**\
-17\. Enter a **Name** for the Notification type
+9. Next to **Notifications** and add **Notification type**
+10. In the window, tick the **Email** checkbox and enter the email address you wish to receive notifications on
+11. Then click on **OK**
+12. Enter a **Name** for the Notification type
 
 ![Set notifications to action group](../.gitbook/assets/screen-shot-2021-01-19-at-11.11.40.png)
 
-18\. After that you can click on **Review + create** and then on **Create** to be redirected back to **Actions** in creating the alert rule, Next to **Details**\
-19\. Now you must enter an **Alert rule name**, define the **Severity, Enable alter rule upon creation,** and **Automatically resolve alerts.**\
-20\. Click on **Review + Create,** then **Create**
+13. After that you can click on **Review + create** and then on **Create.** You will be redirected back to **Actions** in creating the alert rule
+14. Next to D**etails**, configure the following
+    * **Resource group**
+    * **Severity**
+    * **Alert rule name**
+    * Enable: **Enable upon creation**
+    * Enable: **Automatically resolve alerts**
 
-<figure><img src="../.gitbook/assets/2023-10-23 13_51_20-Create an alert rule.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/2023-10-23 13_51_20-Create an alert rule.png" alt=""><figcaption><p>Alert details</p></figcaption></figure>
+
+15. Click on **Review + Create,** then **Create**
 
 <figure><img src="../.gitbook/assets/2023-10-23 13_55_02-Create an alert rule.png" alt=""><figcaption></figcaption></figure>
+
+16. View your existing **Alert rules** as shown
 
 ![View existing alert rules](<../.gitbook/assets/2022-12-27 12\_46\_42.png>)
