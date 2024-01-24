@@ -68,9 +68,9 @@ Please fill out the following fields and save the configuration:
 
 ### Signing Certificate
 
-When using an external CA, Jamf requires that you add the CA certificate so Jamf can compare whether the certificates are correctly signed. However, Jamf allows adding a CA certificate only, if you also add a signing certificate with a corresponding private key. Jamf uses this signing certificate to sign certificate requests send to SCEPman. However, SCEPman does not evaluate the signature on requests and accepts even unsigned requests (e.g. from Intune), because the request validity stems solely from using the right request challenge password configured in Jamf.
+When using an external CA, Jamf requires that you add the CA certificate so Jamf can compare whether the certificates are correctly signed. However, Jamf only allows adding a CA certificate if you also add a signing certificate with a corresponding private key. Jamf uses this signing certificate to sign certificate requests that are sent to SCEPman. However, SCEPman does not evaluate the signature on requests and accepts even unsigned requests (e.g. from Intune), because the request validity stems solely from using the right request challenge password configured in Jamf.
 
-Hence, you may use any certificate you like signing certificate, for example you can generate a self-signed certificate with the following PowerShell command:
+Hence, you may use any certificate you like as the signing certificate, for example you can generate a self-signed certificate with the following PowerShell command:
 
 ```
 $cert = New-SelfSignedCertificate -Subject "CN=JAMF Signer Certificate for SCEPman" -CertStoreLocation "Cert:\CurrentUser\My" -NotAfter (Get-Date).AddYears(10)
@@ -82,4 +82,4 @@ Then click on "Change Signing and CA Certificates" in the External CA configurat
 
 ![](../../.gitbook/assets/jamfsigningcertificate.png)
 
-In the wizard, upload the PFX file with the signing certificate to Jamf when it asks for it (Note: Pkcs#12 and PFX are synonyms). In the next steps, enter the password for the PFX file and confirm the selection of the signing certificate. In the tab "Upload CA Certificate", you must upload the SCEPman CA certificate. You can obtain the SCEPman CA certificate by clicking on the link "Get CACert" on the top right of the homepage of your SCEPman instance. Finally, confirm your changes.
+In the wizard, upload the PFX file with the signing certificate to Jamf when it asks for it (Note: Pkcs#12 and PFX are synonyms). In the next steps, enter the password for the PFX file and confirm the selection of the signing certificate. In the tab "Upload CA Certificate", you must upload the SCEPman CA certificate. You can obtain the SCEPman CA certificate by clicking on the link "Get CA Certificate" on the top right of the homepage of your SCEPman instance. Finally, confirm your changes.
