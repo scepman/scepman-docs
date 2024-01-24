@@ -114,7 +114,7 @@ SCEPman Enterprise Edition only
 
 **Description:** When SCEPman receives an OCSP request for a certificate issued to an Intune user, SCEPman can optionally check the [user risk level](https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks#user-linked-detections). When set to **Always** SCEPman will query the user risk state and the OCSP result can only be GOOD if the user's risk is not in the list of [UntoleratedUserRisks](intune-validation.md#appconfig-intunevalidation-untolerateduserrisks).
 
-Settting this to **Never** will disable the user risk check.
+Setting this to **Never** will disable the user risk check.
 
 ## AppConfig:IntuneValidation:WaitForSuccessNotificationResponse
 
