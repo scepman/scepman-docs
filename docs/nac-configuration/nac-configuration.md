@@ -22,6 +22,10 @@ At least some versions of Cisco ISE 3.x require an Extended Key Usage extension 
 
 ## Aruba ClearPass
 
+{% hint style="info" %}
+This is only required if your ClearPass is running a version **< ClearPass 6.11**
+{% endhint %}
+
 Analogously to Cisco ISE, Aruba ClearPass uses HTTP 1.0 for OCSP requests and therefore requires [extra configuration steps adding an Application Proxy](../other/troubleshooting/cisco-ise-host-header-limitation.md) to work with SCEPman.
 
 ## Microsoft Network Policy Server (NPS)
