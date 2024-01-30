@@ -20,7 +20,7 @@ Applicable to version 1.7 and above
 
 **Value:** _String_
 
-**Description:** A challenge password that Jamf must include in every SCEP request to acquire a certificate. Only used if AppConfig:JamfValidation:Enabled is set to _true_.
+**Description:** A challenge password (max 32 characters) that Jamf must include in every SCEP request to acquire a certificate. Only used if AppConfig:JamfValidation:Enabled is set to _true_.
 
 We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--JamfValidation--RequestPassword_.
 
