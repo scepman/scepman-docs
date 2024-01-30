@@ -75,7 +75,7 @@ Hence, you may use any certificate you like as the signing certificate, for exam
 ```
 $cert = New-SelfSignedCertificate -Subject "CN=JAMF Signer Certificate for SCEPman" -CertStoreLocation "Cert:\CurrentUser\My" -NotAfter (Get-Date).AddYears(10)
 $pfxBytes = $cert.Export([System.Security.Cryptography.X509Certificates.X509ContentType]::Pfx, "password")
-[System.IO.File]::WriteAllBytes("c:\temp\temp\jamf.pfx", $pfxBytes)
+[System.IO.File]::WriteAllBytes("c:\temp\jamf.pfx", $pfxBytes)
 ```
 
 Then click on "Change Signing and CA Certificates" in the External CA configuration of Jamf
