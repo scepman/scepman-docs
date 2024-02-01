@@ -19,19 +19,23 @@ Whether you have just installed a fresh SCEPman 2.x installation or if you have 
 
 ### Running the SCEPman Installation CMDlet
 
+#### Enabled Homepage
+
 Once this prerequisites are met, you can install the SCEPman installation module from PowerShell Gallery and then run the CMDlet to complete the SCEPman and Certificate Master installation.
 
-First you need to navigate to SCEPman App Service and click on the URL (see screenshot below), this will navigate you to SCEPman homepage.
+1. First you need to navigate to SCEPman App Service and click on the URL (see screenshot below), this will navigate you to SCEPman homepage.
 
 ![](<../.gitbook/assets/2022-07-05 10\_22\_14-Window.png>)
 
-The homepage of your SCEPman instance shows the specific PowerShell commands to run if you haven't already run it (see screenshot below). This includes a parameter to identify your SCEPman instance, so the code can run ideally without any user interaction.
+2. Run the PowerShell command displayed on the homepage of your SCEPman instance (see screenshot below). This includes a parameter to identify your SCEPman instance, so the code can run ideally without any user interaction.
 
 ![](../.gitbook/assets/2022-04-07SCEPmanV2.0AfterNewInstallation.png)
 
-{% hint style="info" %}
+{% hint style="warning" %}
 After running the CMDlet, you may get "Service not available" or "502 Server Error" on SCEPman homepage, please wait 2-3 minutes and refresh the page again.
 {% endhint %}
+
+#### Disabled Homepage
 
 If you have disabled the SCEPman Homepage or need to execute the CMDlet again, you can paste this code in your PowerShell Shell:
 
@@ -72,9 +76,13 @@ SCEPman Enterprise Edition only
 
 ### Granting the Rights to Request Certificates via the Certificate Master Website
 
-Create an AAD Group, possibly a Privileged Access Group, for the people that shall be able to create web server certificates via SCEPman Certificate Master.
-
-In the Azure Portal, visit [Enterprise applications](https://portal.azure.com/#blade/Microsoft\_AAD\_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/). Remove the filter for "Application type == **Enterprise Applications**", search for _SCEPman-CertMaster_, and select the displayed application. Navigate to _Users and groups_ and click _Add user/group_ on the top menu. Select the group you have previously created. Select the desired role(s) (more information on the available roles can be found under [Certificate Master RBAC](../advanced-configuration/rbac.md)). After you hit _Assign_, direct members of the group can visit the Certificate Master website and perform tasks according to the permission of the assigned role(s). Note that using Certificate Master is an Enterprise feature. After assignment, the setting should look like this:
+1. Create an AAD Group, possibly a Privileged Access Group, for the people that shall be able to create web server certificates via SCEPman Certificate Master.
+2. In the Azure Portal, visit [Enterprise applications](https://portal.azure.com/#blade/Microsoft\_AAD\_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/).&#x20;
+3. Remove the filter for "Application type == **Enterprise Applications**", search for _SCEPman-CertMaster_, and select the displayed application.&#x20;
+4. Navigate to _Users and groups_ and click _Add user/group_ on the top menu.&#x20;
+5. Select the group you have previously created.&#x20;
+6. Select the desired role(s) (more information on the available roles can be found under [Certificate Master RBAC](../advanced-configuration/rbac.md)).&#x20;
+7. After you hit _Assign_, direct members of the group can visit the Certificate Master website and perform tasks according to the permission of the assigned role(s).  After assignment, the setting should look like this:
 
 ![](<../.gitbook/assets/2022-04-07 16\_55\_05-SCEPman-CertMaster - Permissions .png>)
 
