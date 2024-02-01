@@ -48,9 +48,7 @@ Copy the client secret value immediately. You will not be able to retrieve it af
 
 Stay within **App Registrations** and click on **API permissions**
 
-{% hint style="warning" %}
-1. **Remove** the default **User Read** permission
-{% endhint %}
+1. **Remove** the default **User** **Read** permission.
 
 ![](<../../.gitbook/assets/screenshot-2020-02-03-at-10.54.48 (1) (1).png>)
 
