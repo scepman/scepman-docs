@@ -36,6 +36,16 @@ We recommend the following sizing in Azure Compute Units (ACU) for the Azure App
 |     < 50.000 clients    | <p>1600 ACUs</p><p>(e.g. 1 x P3V3)</p> |   <p>2 x 1600 ACUs</p><p>(e.g. 2 x P3V3)</p>   |
 |    < 100.000 clients    | <p>3200 ACUs</p><p>(e.g. 2 x P3V3)</p> | <p>2 x 3200 ACUs</p><p>(e.g. 2 x 2 x P3V3)</p> |
 
+## Azure Cost Prognosis
+
+The main Azure costs will be for the Azure Apps Service Plan(s). You can derive your cost from the requirements in the table above and your Azure pricelist.
+
+The additional Azure resources (Key Vault, Storage Account, Log Analytics) play a minor role in the cost. Depending on the use cases in your environment, you should expect an additional 10% to 25% on top of the App Service Plan cost.
+
+{% hint style="info" %}
+This cost projection is just a rule of thumb to help you estimate the cost of Azure. It can vary significantly in different environments.
+{% endhint %}
+
 ## Fine tuning
 
 Every environment has its own load distribution over the day. In many environments the morning (start of work) generates a peak in terms of load at your SCEPman.
