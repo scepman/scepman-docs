@@ -40,7 +40,7 @@ We recommend the following sizing in Azure Compute Units (ACU) for the Azure App
 
 The main Azure costs will be for the Azure Apps Service Plan(s). You can derive your cost from the requirements in the table above and your Azure pricelist.
 
-The additional Azure resources (Key Vault, Storage Account, Log Analytics) play a minor role in the cost. Depending on the use cases in your environment, you should expect an additional 10% to 25% on top of the App Service Plan cost.
+The additional Azure resources (Key Vault, Storage Account, Log Analytics) play a minor role in the cost. Depending on the use cases in your environment, you should expect an additional 5% to 25% on top of the App Service Plan cost for these additional Azure resources.
 
 {% hint style="info" %}
 This cost projection is just a rule of thumb to help you estimate the cost of Azure. It can vary significantly in different environments.
