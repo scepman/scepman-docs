@@ -17,7 +17,7 @@ $certificates.items | Select-Object -Property Subject,Requester,ExpirationDate,F
 
 The Azure CLI must be installed on the machine where the query is run, and it must be logged on to the right account and subscription. This is automatically the case for an Azure Cloud Shell.
 
-## Can I remove SCEPman resources to another Azure subscription?
+## Can I move SCEPman resources to another Azure subscription?
 
 Technically it is feasible, but neither recommended nor supported from our side.  The main breaking change is moving the Key Vault. See  [Azure Key Vault moving a vault to a different subscription | Microsoft Learn](https://learn.microsoft.com/EN-us/azure/key-vault/general/move-subscription)
 
@@ -25,11 +25,11 @@ If it's still necessary, we strongly recommend deploying a new SCEPman instance 
 
 ## How to restrict public access to the SCEPman homepage?
 
-SCEPman homepage does not include any sensitive information, and attackers cannot leverage the available data for malicious purposes.&#x20;
+The SCEPman homepage does not include any sensitive information, and attackers cannot leverage the available data for malicious purposes.&#x20;
 
 However, If you prefer to hide the homepage from public access, you can do it using the setting [AppConfig setting: AnonymousHomePageAccess](../../scepman-configuration/optional/application-settings/basics.md#appconfig-anonymoushomepageaccess)
 
-Please ensure to restart SCEPman _App Service_ after adding the setting.
+Please ensure to restart the SCEPman _App Service_ after adding the setting.
 
 ## How to change SCEPman RootCA Subject?
 
