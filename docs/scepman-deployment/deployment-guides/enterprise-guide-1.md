@@ -127,7 +127,19 @@ We can configure a Health Check for the App Service to get direct notifications 
 [health-check.md](../../advanced-configuration/health-check.md)
 {% endcontent-ref %}
 
-### Step 8: Configure Autoscaling
+### Step 8: Ensure that SCEPman has sufficient Resources
+
+{% hint style="warning" %}
+This is a **mandatory** step.
+{% endhint %}
+
+Once you move SCEPman into a production environment, you should ensure that SCEPman is equipped with sufficient computing power. Therefore, please review our Azure Sizing guide and upgrade your App Service Plan tier if need be. You may postpone this until after your PoC or trial phase.
+
+{% content-ref url="../azure-sizing.md" %}
+[azure-sizing.md](../azure-sizing.md)
+{% endcontent-ref %}
+
+### Step 9: Configure Autoscaling
 
 {% hint style="info" %}
 This is an **optional** step.
@@ -143,7 +155,7 @@ To have an optimized performance and take care of the costs we recommend to setu
 [autoscaling.md](../../scepman-configuration/optional/autoscaling.md)
 {% endcontent-ref %}
 
-### Step 9: Configure Geo-Redundancy
+### Step 10: Configure Geo-Redundancy
 
 {% hint style="info" %}
 This is an **optional** step.
@@ -153,7 +165,7 @@ This is an **optional** step.
 [geo-redundancy.md](../../advanced-configuration/geo-redundancy.md)
 {% endcontent-ref %}
 
-### Step 10: Configure your MDM Deployment Profiles
+### Step 11: Configure your MDM Deployment Profiles
 
 {% hint style="warning" %}
 This is a **mandatory** step.
@@ -171,7 +183,7 @@ Please use one (or more) of the following articles, to deploy certificates with 
 [jamf](../../certificate-deployment/jamf/)
 {% endcontent-ref %}
 
-### Step 11: Issue TLS Server Certificates or sign CSRs using Cert Master
+### Step 12: Issue TLS Server Certificates or sign CSRs using Cert Master
 
 {% hint style="info" %}
 This is an **optional** step.

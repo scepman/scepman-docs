@@ -119,7 +119,19 @@ We can configure a Health Check for the App Service to get direct notifications 
 [health-check.md](../advanced-configuration/health-check.md)
 {% endcontent-ref %}
 
-### Step 8: Configure your MDM Deployment Profiles
+### Step 8: Ensure that SCEPman has sufficient Resources
+
+{% hint style="warning" %}
+This is a **mandatory** step.
+{% endhint %}
+
+Once you move SCEPman into a production environment, you should ensure that SCEPman is equipped with sufficient computing power. Therefore, please review our Azure Sizing guide and upgrade your App Service Plan tier if need be. You may postpone this until after your PoC or trial phase.
+
+{% content-ref url="azure-sizing.md" %}
+[azure-sizing.md](azure-sizing.md)
+{% endcontent-ref %}
+
+### Step 9: Configure your MDM Deployment Profiles
 
 {% hint style="warning" %}
 This is a **mandatory** step.
@@ -137,13 +149,13 @@ Please use one (or more) of the following articles, to deploy certificates with 
 [jamf](../certificate-deployment/jamf/)
 {% endcontent-ref %}
 
-### Step 9: Issue TLS Server Certificates or sign CSRs using Cert Master
+### Step 10: Manually issue Certificates or sign CSRs using Cert Master
 
 {% hint style="info" %}
 This is an **optional** step.
 {% endhint %}
 
-Please follow below link, to learn how to issue TLS server certificates based on a list of FQDNs or sign any CSR using the Cert Master component.
+Please follow below link, to learn how to issue TLS server or other certificates or how to sign any CSR using the Cert Master component.
 
 {% content-ref url="../certificate-deployment/certificate-master/" %}
 [certificate-master](../certificate-deployment/certificate-master/)
