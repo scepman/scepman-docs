@@ -10,9 +10,9 @@ In May 2022, [Oliver Lyak described a Privilege Escalation vulnerability](https:
 
 ## Consequences of Microsoft's Patch
 
-The patch in [KB5014754](https://support.microsoft.com/en-us/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16#bkmk\_certmap) just adds some additional audit events by default. Full Enforcement mode starts on November 14, 2023 -- or sooner when manually enabling it. With Full Enforcement mode, certificates can be used for user and device authentication only if they either contain the SID of an account or, in the case of user certificates, if the AD object of the user contains a reference to the specific certificate. The former requires a new proprietary X.509 extension, the latter is called Certificate Mapping and uses the altSecurityIdentities attribute.
+The patch in [KB5014754](https://support.microsoft.com/en-us/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16#bkmk\_certmap) just adds some additional audit events by default. Full Enforcement mode starts on February 11, 2025 -- or sooner when manually enabling it. With Full Enforcement mode, certificates can be used for user and device authentication only if they either contain the SID of an account or, in the case of user certificates, if the AD object of the user contains a reference to the specific certificate. The former requires a new proprietary X.509 extension, the latter is called Certificate Mapping and uses the altSecurityIdentities attribute.
 
-Generally speaking, this has an effect on AD authentications only. It required adding the CA certificate to the Forest's NTAuth Store. By default, SCEPman is not added to the NTAuth Store if you do not do this explicitely and manually. If you have not done this yet and do not plan to do it, the patch has no effect on your SCEPman instance. There is one use case where the SCEPman Docs recommend adding the SCEPman CA certificate to the NTAuth Store, which is when you want to [let SCEPman issue Domain Controller certificates for Kerberos Authentication](../../certificate-deployment/domain-controller-certificates.md#trust-the-ca-certificate-in-the-domain-for-kerberos-authentication).
+Generally speaking, this has an effect on AD authentications only. It requires adding the CA certificate to the Forest's NTAuth Store. By default, SCEPman is not added to the NTAuth Store if you do not do this explicitely and manually. If you have not done this yet and do not plan to do it, the patch has no effect on your SCEPman instance. There is one use case where the SCEPman Docs recommend adding the SCEPman CA certificate to the NTAuth Store, which is when you want to [let SCEPman issue Domain Controller certificates for Kerberos Authentication](../../certificate-deployment/domain-controller-certificates.md#trust-the-ca-certificate-in-the-domain-for-kerberos-authentication).
 
 ### Intune Device Certificates
 
@@ -20,7 +20,8 @@ Device Certificates might be usable for [Windows Hello for Business Certificate 
 
 ### Intune User Certificates
 
-User Certificates can be used for Windows Hello for Business Certificate Trust. They could also be used for other ways of certificate-based AD authentication like RDP sessions to domain-joined machines or WiFi authentication based on NPS. SCEPman itself does not write to the altSecurityIdentities attribute to provide the strong Certificate Mapping. The SCEPman logs do contain the serial numbers of issued certificates, which might be used to write them with some sort of external tool. Furthermore, Intune does not offer a way to include a SID into the certificate request and SCEPman itself also does not provide a way to lift that restriction, so SIDs are not possible when enrolling SCEPman certificates via Intune. In summary: Do not use Certificate Trust, but Cloud Trust. And the patch is one argument more for using [RADIUS-as-a-Service](https://www.radius-as-a-service.com/) instead of NPS.
+User Certificates can be used for Windows Hello for Business Certificate Trust. They could also be used for other ways of certificate-based AD authentication like RDP sessions to domain-joined machines or WiFi authentication based on NPS. If you want to do this, you can use the setting [AppConfig:AddSidExtension](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-addsidextension) to allow SCEPman to create Strong Certificate Mapping certificates. User certificates for users synchronized between AD and Entra ID automatically receive the extension with OID 1.3.6.1.4.1.311.25.2 to map them strongly to AD users.\
+The Intune team additionally [plans to add a SAN value](../faqs/intune-implementing-strong-mapping-for-scep-and-pkcs-certificates.md) to implement the strong certificate mapping. You can also use this method as an alternative to the SID extension.
 
 ### DC Certificates
 
@@ -38,7 +39,7 @@ Assume an attacker takes control over an AAD user account to let SCEPman enroll 
 
 User Certificates usually contain the EKU Client Authentication. But if you follow the recommendations, they do not contain a DNS name in the SAN. Therefore, these certificates cannot be used.
 
-If you configured the EKU Smart Card Logon, the certificate can be used for authentication, but only for the account in the UPN. The UPN comes from AAD is verfied, so the attacker cannot get an UPN of an account into the certificate that the attacker hasn't got hold of anyway.
+If you configured the EKU Smart Card Logon, the certificate can be used for authentication, but only for the account in the UPN. The UPN comes from AAD is verified, so the attacker cannot get an UPN of an account into the certificate that the attacker hasn't got hold of anyway. If you also use [Strong Certificate Mapping](../faqs/intune-implementing-strong-mapping-for-scep-and-pkcs-certificates.md), you can ensure that certificates do not work for different account if the UPN changes.
 
 ### Intune Device Certificates
 
