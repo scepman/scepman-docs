@@ -2,14 +2,15 @@
 
 ## Versions
 
-### 2.7 - Currently in Internal Channel
+### 2.7 - Currently in Beta Channel
 
 #### SCEPman
 
 * SCEPman's EST endpoint allows certificate renewal using mTLS. This is useful for unmanaged devices like web servers and Linux clients.
 * Device certificates enrolled via Intune can now contain any Subject, as long as they have a URI in the Subject Alternative Name in the format `IntuneDeviceId://{{DeviceId}}`.
 * SCEPman can use a User-Assigned Managed Identity instead of a System-Assigned Managed Identity. This is useful for large geo-redundant deployments, where you do not want to configure the System-assigned Managed Identity on all instances.
-* Fixes and small improvements
+* Fixes and small improvements, including:
+  * Automatic analysis of OCSP responses with performance issues
 
 #### Certificate Master
 
@@ -17,6 +18,7 @@
 * Small improvements, including:
   * Logging to Azure Event Hub like SCEPman
   * Document Signing Certificates
+  * Adjustable PFX password length with a default of 24 instead of 32 characters for increased compatibility
 
 ### 2.6 - November 2023
 
