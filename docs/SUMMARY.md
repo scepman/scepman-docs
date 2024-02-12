@@ -96,6 +96,7 @@
   * [General](other/faqs/general.md)
   * [Security & Privacy](other/faqs/security-faq.md)
   * [Certificate Connector](other/faqs/certificate-connector.md)
+  * [Intune implementing strong mapping for SCEP and PKCS certificates](other/faqs/intune-implementing-strong-mapping-for-scep-and-pkcs-certificates.md)
 * [Troubleshooting](other/troubleshooting/README.md)
   * [Common Problems](other/troubleshooting/general.md)
   * [Certifried Security Vulnerability](other/troubleshooting/certifried.md)
