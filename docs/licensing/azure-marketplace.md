@@ -86,7 +86,7 @@ To get started with your SCEPman subscription,
 
 * Create or select the **Resource group** you would like to deploy the subscription to
 * Assign a **Name** to later identify your SCEPman subscription
-* We recommend to keep **Recurring billing** on \*\*\*\* so that you do not have to worry about a manual renewal of your subscription.
+* We recommend to keep **Recurring billing** on so that you do not have to worry about a manual renewal of your subscription.
 * Click "Review + subscribe" and in the next blade "Subscribe" to deploy the subscription to your Azure SaaS portal.
 
 ![](<../.gitbook/assets/image (15).png>)
