@@ -18,8 +18,8 @@ Keep in mind that you need to plan a useful Azure resource design.
 
 #### Optional
 
-* [ ] Public Domain CNAME (scepman.yourdomain.com).
-* [ ] SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)).
+* [ ] Public Domain CNAME (scepman.yourdomain.com), if custom domain is used.
+* [ ] SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)), if custom domain is used.
 
 ### Overview Azure Resource
 
@@ -33,10 +33,6 @@ All these resources are recommended for a production environment.
 | Application Insights    | <p>Application Performance Management (APM) tool to get insights of the</p><p>SCEPman applications and requests. Needed to measure performance</p><p>and good for service optimization.</p>                                                                                                                    |
 | Storage account         | <p>Storage platform used by SCEPman's Certificate Master component to store certain attributes of the manually issued TLS server certificates for revocation purposes.<br><br><em>Optional:</em></p><p>The "App Service" will load the artifacts from a blob storage URI if manual updates are configured.</p> |
 | Log Analytics workspace | <p>A centralized and cloud-based log storage. The "App Service" will save all</p><p>platform logs and metrics into this workspace.</p>                                                                                                                                                                         |
-
-{% hint style="warning" %}
-
-{% endhint %}
 
 ## Configuration Steps
 
@@ -66,6 +62,12 @@ To properly link all components of SCEPman 2.X, several permissions need to be a
 
 ### Step 3: Create Root certificate
 
+{% hint style="danger" %}
+**Caution**: Before proceeding with the Root CA creation, temporarly downgrade to SCEPman 2.6 by pointing the [WEBSITE\_RUN\_FROM\_PACKAGE](https://docs.scepman.com/advanced-configuration/application-settings/basics#website\_run\_from\_package) parameter to the [deferred artifact channel](https://docs.scepman.com/advanced-configuration/application-artifacts#scepman-deferred-channel).
+
+**Remember** to **stop** and **subsquently** **start** your SCEPman AppService, after changing this parameter. This operation may take up to 2 minutes.
+{% endhint %}
+
 {% hint style="warning" %}
 This is a **mandatory** step.
 {% endhint %}
@@ -75,6 +77,12 @@ After the deployment and persmission assignment is complete, you need to create 
 {% content-ref url="../scepman-configuration/first-run-root-cert.md" %}
 [first-run-root-cert.md](../scepman-configuration/first-run-root-cert.md)
 {% endcontent-ref %}
+
+{% hint style="danger" %}
+After successful creation of the Root CA, switch back the SCEPman's latest version by pointing the [WEBSITE\_RUN\_FROM\_PACKAGE](https://docs.scepman.com/advanced-configuration/application-settings/basics#website\_run\_from\_package) parameter to the [production channel](https://docs.scepman.com/advanced-configuration/application-artifacts#scepman-production-channel).&#x20;
+
+**Remember** to **stop** and **subsquently** **start** your SCEPman AppService, after changing this parameter. This operation may take up to 2 minutes.
+{% endhint %}
 
 ### Step 4: Configure a Custom Domain and SSL Certificate
 
