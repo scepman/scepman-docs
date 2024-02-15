@@ -11,16 +11,23 @@ This will guide you through all steps to deploy SCEPman for an enterprise-grade 
 Let's start with the requirements and a resource overview.\
 Keep in mind that you need to plan a useful Azure resource design.
 
-### Checklist: Prerequisites
+### Prerequisites
 
-* [ ] _Mandatory_ - Azure resource naming convention
-* [ ] _Mandatory_ - Azure subscription (at least Contributor rights on that subscription)
-* [ ] _Mandatory_ - Azure owner rights (at least on Resource Group level)
-* [ ] _Mandatory_ - Microsoft Entra ID (Azure AD) "Global administrator" (Consent to access Graph API)
-* [ ] _Mandatory_ - Make sure to define your Azure policies [according to SCEPman requirements](../../other/faqs/security-faq.md#azure-cis) (e.g. do not enforce TLS)
-* [ ] _Optional_ - Public Domain CNAME (_scepman.yourdomain.com_)
-* [ ] _Optional_ - SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview))
-* [ ] _Mandatory_ - SCEPman Enterprise Edition License Key
+#### Mandatory
+
+* [ ] Azure resource naming convention.
+* [ ] Azure subscription (at least Contributor rights on that subscription).
+* [ ] Azure owner rights (at least on Resource Group level).
+* [ ] Microsoft Entra ID (Azure AD) "Global administrator" (Consent to access Graph API).
+* [ ] Make sure to define your Azure policies [according to SCEPman requirements](../../other/faqs/security-faq.md#azure-cis) (e.g. do not enforce TLS).
+* [ ] Public Domain CNAME (_scepman.yourdomain.com_), only if geo-redundancy is used.
+* [ ] SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)), only if geo-redundancy is used.
+* [ ] SCEPman Enterprise Edition License Key.
+
+#### Optional
+
+* [ ] Public Domain CNAME (_scepman.yourdomain.com_), only if a custom domain is used.
+* [ ] SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)), only if a custom domain is used.
 
 ### Overview Azure Resource
 
@@ -67,7 +74,7 @@ To properly link all components of SCEPman 2.X, several permissions need to be a
 [post-installation-config.md](../../scepman-configuration/post-installation-config.md)
 {% endcontent-ref %}
 
-### Step 3: Create Root certificate
+### Step 3: Create Root Certificate
 
 {% hint style="warning" %}
 This is a **mandatory** step.

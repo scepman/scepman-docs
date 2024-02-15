@@ -7,14 +7,19 @@ This will guide you through all steps necessary to set up SCEPman in your PoC or
 Let's start with the requirements and a resource overview.\
 Keep in mind that you need to plan a useful Azure resource design.
 
-### Checklist pre-requirements
+### Prerequisites
 
-* [ ] _Mandatory -_ Azure subscription (at least Contributor rights on that subscription)
-* [ ] _Mandatory -_ Azure owner rights (at least on Resource Group level)
-* [ ] _Mandatory -_ Microsoft Entra ID (Azure AD) "Global administrator" (Consent to access Graph API)
-* [ ] _Mandatory_ - Make sure to define your Azure policies [according to SCEPman requirements](../other/faqs/security-faq.md#azure-cis) (e.g. do not enforce TLS)
-* [ ] _Optional_ - Public Domain CNAME (_scepman.yourdomain.com_)
-* [ ] _Optional_ - SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview))
+#### Mandatory
+
+* [ ] Azure subscription (at least Contributor rights on that subscription).
+* [ ] Azure owner rights (at least on Resource Group level).
+* [ ] Microsoft Entra ID (Azure AD) "Global administrator" (Consent to access Graph API).
+* [ ] Make sure to define your Azure policies [according to SCEPman requirements](../other/faqs/security-faq.md#azure-cis) (e.g. do not enforce TLS).
+
+#### Optional
+
+* [ ] Public Domain CNAME (scepman.yourdomain.com).
+* [ ] SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)).
 
 ### Overview Azure Resource
 
