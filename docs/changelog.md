@@ -13,6 +13,10 @@
 * Fixes and small improvements, including:
   * Automatic analysis of OCSP responses with performance issues
 
+#### Certificate Master 2.7.705
+
+* Fixed a case of a broken view of manually revoked certificates enrolled via Intune.
+
 #### Certificate Master 2.7.702
 
 * Show certificates enrolled via Intune from the Storage Account.
