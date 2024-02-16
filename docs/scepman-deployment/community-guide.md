@@ -62,12 +62,6 @@ To properly link all components of SCEPman 2.X, several permissions need to be a
 
 ### Step 3: Create Root certificate
 
-{% hint style="danger" %}
-**Caution**: Before proceeding with the Root CA creation, temporarly downgrade to SCEPman 2.4 by pointing the [WEBSITE\_RUN\_FROM\_PACKAGE](https://docs.scepman.com/advanced-configuration/application-settings/basics#website\_run\_from\_package) parameter to the [deferred artifact channel](https://docs.scepman.com/advanced-configuration/application-artifacts#scepman-deferred-channel).
-
-**Remember** to **stop** and **subsquently** **start** your SCEPman AppService, after changing this parameter. This operation may take up to 2 minutes.
-{% endhint %}
-
 {% hint style="warning" %}
 This is a **mandatory** step.
 {% endhint %}
@@ -77,12 +71,6 @@ After the deployment and persmission assignment is complete, you need to create 
 {% content-ref url="../scepman-configuration/first-run-root-cert.md" %}
 [first-run-root-cert.md](../scepman-configuration/first-run-root-cert.md)
 {% endcontent-ref %}
-
-{% hint style="danger" %}
-After successful creation of the Root CA, switch back the SCEPman's latest version by pointing the [WEBSITE\_RUN\_FROM\_PACKAGE](https://docs.scepman.com/advanced-configuration/application-settings/basics#website\_run\_from\_package) parameter to the [production channel](https://docs.scepman.com/advanced-configuration/application-artifacts#scepman-production-channel).&#x20;
-
-**Remember** to **stop** and **subsquently** **start** your SCEPman AppService, after changing this parameter. This operation may take up to 2 minutes.
-{% endhint %}
 
 ### Step 4: Configure a Custom Domain and SSL Certificate
 
