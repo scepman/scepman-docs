@@ -18,8 +18,8 @@ Keep in mind that you need to plan a useful Azure resource design.
 
 #### Optional
 
-* [ ] Public Domain CNAME (scepman.yourdomain.com), if custom domain is used.
-* [ ] SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)), if custom domain is used.
+* [ ] Public Domain CNAME (scepman.yourdomain.com), if a custom domain is used.
+* [ ] SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)), if a custom domain is used.
 
 ### Overview Azure Resource
 
