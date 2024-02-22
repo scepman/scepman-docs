@@ -43,17 +43,21 @@ In this case we are setting up a device certificate
 
 <details>
 
-<summary>Subject name format: <code>CN={{DeviceId}}</code> or <code>CN={{AAD_Device_ID}}</code></summary>
+<summary>Subject name format: <code>CN={{DeviceName}}</code> or <code>CN={{DeviceId}}</code> or <code>CN={{AAD_Device_ID}}</code></summary>
 
-SCEPman uses the CN field of the subject to identify the device and as a seed for the certificate serial number generation. Microsoft Entra ID (Azure AD) and Intune offer two different IDs:
+**Optional:** If configured to `CN={{DeviceId}}` or `CN={{AAD_Device_ID}}`,  SCEPman uses the CN field of the subject name to identify the device and as a seed for the certificate serial number generation. Microsoft Entra ID (Azure AD) and Intune offer two different IDs:
 
-* \{{DeviceId\}}: This ID is generated and used by Intune **(Recommended)**\
+* `{{DeviceId}}`: This ID is generated and used by Intune **(Recommended)**\
   \
   (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
 
 <!---->
 
-* \{{AAD\_Device\_ID\}}: This ID is generated and used by Microsoft Entra ID (Azure AD).
+* `{{AAD_Device_ID}}`: This ID is generated and used by Microsoft Entra ID (Azure AD).
+
+In case any other variable is used for the CN field (e.g. `CN={{DeviceName}}`, SCEPman will identify the device based on the Intune Device ID (`(URI)Value:`   `IntuneDeviceId://{{DeviceId}}`) provided in the subject alternative name (SAN).
+
+**Important:** The choice of the CN field affects the [automatic revocation behavior](../manage-certificates.md#automatic-revocation) of certificates issued to your Intune-managed devices.
 
 You can add other RDNs if needed (e.g.: `CN={{DeviceId}}, O=Contoso, CN={{WiFiMacAddress}}`). Supported variables are listed in the [Microsoft docs](https://docs.microsoft.com/en-us/mem/intune/protect/certificates-profile-scep#create-a-scep-certificate-profile).
 

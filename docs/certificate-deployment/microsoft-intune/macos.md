@@ -79,9 +79,9 @@ Other SAN values like DNS can be added if needed.
 
 <summary>Certificate validity period: <code>1 years</code></summary>
 
-macOS devices ignore the configuration of the validity period via Intune. Please make sure, to configure [#appconfig-validityperioddays](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays "mention") to a fixed value. You can leave the certificate validity period setting to 1 year because Intune ignores it anyway.\
+<mark style="color:orange;">**Important:**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">macOS devices ignore the configuration of the validity period via Intune. Please make sure, to configure</mark> [#appconfig-validityperioddays](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays "mention") <mark style="color:orange;">to a fixed value. You can leave the certificate validity period setting to 1 year because it will be ignored anyway.</mark>\
 \
-Also note, that **certificates on macOS are only renewed** by Intune when the device is **unlocked, online, syncing and in scope of the renewal threshold**. If certificates are expired (e.g.: device was offline and/or locked for a long time), they won't be renewed any more. Therefore, we recommend to choose an higher value here.
+<mark style="color:orange;">**Important:**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">Also note, that</mark> <mark style="color:orange;"></mark><mark style="color:orange;">**certificates on macOS are only renewed**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">by Intune when the device is</mark> <mark style="color:orange;"></mark><mark style="color:orange;">**unlocked, online, syncing and in scope of the renewal threshold**</mark><mark style="color:orange;">. If certificates are expired (e.g.: device was offline and/or locked for a long time), they won't be renewed any more. Therefore, we recommend to choose an higher value here.</mark>
 
 </details>
 
@@ -114,6 +114,8 @@ Please select the Intune profile from [#Root certificates](macos.md#root-certifi
 <summary>Extended key usage: <code>Client Authentication, 1.3.6.1.5.5.7.3.2</code></summary>
 
 Please choose **Client Authentication (1.3.6.1.5.5.7.3.2)** under **Predefined values**. The other fields will be filled out automatically.
+
+<mark style="color:orange;">**Important:**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">macOS devices do not support any Extended Key Usages (EKUs) other than</mark> <mark style="color:orange;"></mark><mark style="color:orange;">`Client Authentication`</mark> <mark style="color:orange;"></mark><mark style="color:orange;">. This means that any other EKUs configured in this profile will be ignored.</mark>
 
 </details>
 

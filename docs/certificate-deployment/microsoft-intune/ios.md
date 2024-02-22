@@ -75,9 +75,9 @@ Other SAN values like DNS can be added if needed.
 
 <summary>Certificate validity period: <code>1 years</code></summary>
 
-iOS/iPadOS devices ignore the configuration of the validity period via Intune. Please make sure, to configure [#appconfig-validityperioddays](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays "mention") to a fixed value. We recommend 2 years, so you have to set this variable in SCEPman configuration to 730 days. But you can leave the certificate validity period setting to 1 year because Intune ignores it anyway.\
+<mark style="color:orange;">**Important:**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">iOS/iPadOS devices ignore the configuration of the validity period via Intune. Please make sure, to configure</mark> [#appconfig-validityperioddays](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays "mention") <mark style="color:orange;">to a fixed value. We recommend 2 years, so you have to set this variable in SCEPman configuration to 730 days. But you can leave the certificate validity period setting to 1 year because Intune ignores it anyway.</mark>\
 \
-Also note, that **certificates on iOS/iPadOS are only renewed** by Intune when the device is **unlocked, online, syncing and in scope of the renewal threshold**. If certificates are expired (e.g.: device was offline and/or locked for a long time), they won't be renewed any more. Therefore, we recommend to choose an higher value here.
+**I**<mark style="color:orange;">**mportant:**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">Also note, that</mark> <mark style="color:orange;"></mark><mark style="color:orange;">**certificates on iOS/iPadOS are only renewed**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">by Intune when the device is</mark> <mark style="color:orange;"></mark><mark style="color:orange;">**unlocked, online, syncing and in scope of the renewal threshold**</mark><mark style="color:orange;">. If certificates are expired (e.g.: device was offline and/or locked for a long time), they won't be renewed any more. Therefore, we recommend to choose an higher value here.</mark>
 
 </details>
 
@@ -111,7 +111,7 @@ Please select the Intune profile from [#root-certificate](ios.md#root-certificat
 
 Please choose **Client Authentication (1.3.6.1.5.5.7.3.2)** under **Predefined values**. The other fields will be filled out automatically.
 
-Currently, iOS/iPadOS devices do not support customized Extended Key Usages. So, certificates will always only have Client Authentication as Extended Key Usage.
+<mark style="color:orange;">**Important:**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">iOS/iPadOS devices do not support any Extended Key Usages (EKUs) other than</mark> <mark style="color:orange;"></mark><mark style="color:orange;">`Client Authentication`</mark> <mark style="color:orange;"></mark><mark style="color:orange;">. This means that any other EKUs configured in this profile will be ignored.</mark>
 
 </details>
 
