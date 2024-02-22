@@ -75,6 +75,10 @@ Currently, some Windows 10 devices do not have the correct time during the OOBE 
 
 You may proceed with the enrollment and once this is finished, the device will get a certificate successfully, as the clock is correct then. You may also use the new option [**AppConfig:ValidityClockSkewMinutes**](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityclockskewminutes) to date back certificates for more than 10 minutes. Use 1440 minutes to date back the certificates for a whole day. This will be the default for new SCEPman installations to address this issue.
 
+### I issued a certificate today, but the Issuance Date says it was yesterday
+
+This is because SCEPman dates back certificate by one day to counter issues with devices whose clock is late, see [Windows 10 devices cannot enroll with AutoPilot](general.md#windows-10-devices-cannot-enroll-with-autopilot).
+
 ## Problems with the Validity of Certificates
 
 ### Check local certificate on a Windows machine
