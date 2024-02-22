@@ -4,6 +4,10 @@
 
 ### 2.7 - February 2024
 
+#### SCEPman 2.7.1052
+
+* Fixed an issue with generating the Root CA in new installations of SCEPman.
+
 #### SCEPman 2.7.1049
 
 * Support storing certificates enrolled via Intune in the Storage Account for easier searching.
