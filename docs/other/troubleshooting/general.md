@@ -81,7 +81,9 @@ This is because SCEPman dates back certificate by one day to counter issues with
 
 ## Problems with the Validity of Certificates
 
-### Check local certificate on a Windows machine
+### Check local Certificate
+
+#### Windows Machine
 
 First, you need to check the validity of the device certificate. Therefore, open a command prompt as administrator and type the following command:
 
@@ -100,6 +102,27 @@ certutil -urlcache OCSP
 ```
 
 ![](<../../.gitbook/assets/scepman\_revocation2 (2) (3) (3) (3) (3) (3) (3) (3) (3) (4).png>)
+
+#### macOS Machine
+
+To check the validity of a certificate on a macOS machine using OCSP, please follow these steps:
+
+1. Export the SCEPman Root CA certificate from **Keychain Access** (**System Keychains > System Roots**) as \*.cer file and place it in a folder (alternatively, you can download it from your SCEPman instance's website).
+2. Export the client authentication certificate you want to verify from **Keychain Access** (**System Keychains > System > My Certificates**) as \*.cer file into the same folder.
+3.  Extract the OCSP responder URL from the client authentication certificate's **Authority Information Access** (AIA) property:
+
+    <figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+4. Open a **Terminal** session and `cd` to the folder that contains the exported certifcates.
+5. Execute the following command:
+
+```
+openssl ocsp -issuer <filename-scepman-root-ca-certificate> -cert <filename-certificate-to-be-verified> -text -url <ocsp-responder-url>
+```
+
+6.  Towards the end of the response, the revocation status is displayed:\
+
+
+    <figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
 ### Check certificates from other machines
 
