@@ -122,7 +122,7 @@ openssl ocsp -issuer <filename-scepman-root-ca-certificate> -cert <filename-cert
 6.  Towards the end of the response, the revocation status is displayed:\
 
 
-    <figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
 
 ### Check certificates from other machines
 
