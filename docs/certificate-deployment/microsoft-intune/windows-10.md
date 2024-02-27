@@ -100,6 +100,8 @@ Affected TPM firmware versions include:
 
 If you use TPM with this firmware, either update your firmware to a newer version or select "Software KSP" as a key storage provider.
 
+**Update:** You can workaround the TPM bug by removing the RSA-PSS signature algorithms -that are causing the issue- from the registry, for more information please check [Richard Hicks's article](https://directaccess.richardhicks.com/2023/02/13/always-on-vpn-authentication-failed-reason-code-16/) and [Microsoft Q\&A](https://learn.microsoft.com/en-us/answers/questions/467673/windows-10-tpm-2-0-client-authentication-in-tls-1)
+
 </details>
 
 <details>
