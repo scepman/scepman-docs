@@ -4,6 +4,10 @@
 
 ### 2.7 - February 2024
 
+#### SCEPman 2.7.1068
+
+* Fixed an issue where device certificates were bound to their Intune objects where they should have been bound to their Entra ID objects.
+
 #### SCEPman 2.7.1052
 
 * Fixed an issue with generating the Root CA in new installations of SCEPman.
