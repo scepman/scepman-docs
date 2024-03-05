@@ -13,7 +13,7 @@ In the following, we refer to the hosting tenant as **home tenant** and to the c
 To configure **SCEPman** and **Certificate Master** for split-tenancy, please follow these steps:
 
 1. Perform a standard deployment of SCEPman/Certificate Master as described in our [Getting Started Guide](../../scepman-deployment/deployment-guides/).
-2. Create an **App registration** in the **target tenant** as described here: [Azure App Registration](../azure-app-registration.md). This **App registration** will allow SCEPman to access the Azure AD and Intune directories in the **target tenant**.
+2. Create an **App registration** in the **target tenant** as described here: [Azure App Registration](../../scepman-deployment/permissions/azure-app-registration.md). This **App registration** will allow SCEPman to access the Azure AD and Intune directories in the **target tenant**.
 
 {% hint style="warning" %}
 The **client secret** generated as part of this **App registration** has an expiry and must be renewed before it expires. Please set a reminder for the renewal.
