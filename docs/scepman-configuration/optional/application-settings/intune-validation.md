@@ -137,3 +137,15 @@ Applicable to version 1.7 and above
 **Value:** Positive _Integer_
 
 **Description:** This setting further reduces the global ValidityPeriodDays for the Intune endpoint.
+
+## AppConfig:IntuneValidation:EnableCertificateStorage
+
+{% hint style="info" %}
+Applicable to version 2.7 and above
+
+SCEPman Enterprise Edition only
+{% endhint %}
+
+**Value:** _true_ or _false_ (default)
+
+**Description:** When requesting certificates via the Intune endpoint, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically when the associated Entra or Intune object goes into an invalid state as specified by the other settings (like being disabled or deleted). If set to _false_ or not set, SCEPman will not store issued certificates and the certificates are visible only in the logs or in the classic Intune view on Certificate Master or the Intune portal.
