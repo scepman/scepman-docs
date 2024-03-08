@@ -80,7 +80,7 @@
 * [Custom Domain](scepman-configuration/optional/custom-domain.md)
 * [Geo-Redundancy](advanced-configuration/geo-redundancy.md)
 * [Health Check](advanced-configuration/health-check.md)
-* [Intermediate Certificate](advanced-configuration/intermediate-certificate.md)
+* [Intermediate CA](advanced-configuration/intermediate-certificate.md)
 * [License Key](advanced-configuration/add-a-license-key.md)
 * [Log Configuration](advanced-configuration/log-configuration.md)
 * [Split-Tenancy](scepman-configuration/optional/split-tenancy.md)

@@ -1,10 +1,10 @@
-# Intermediate Certificate
+# Intermediate CA
 
 {% hint style="warning" %}
 SCEPman Enterprise Edition only
 {% endhint %}
 
-If you want to use another Root CA as a primary authority, you can create an intermediate CA certificate. You can create the correct certificate direct in Azure Key Vault and download the CSR for signing with your Root CA. The signed request can be uploaded and merged into the Azure Key Vault.
+If you want to use another Root CA as a primary authority, you can create an intermediate CA certificate to operate SCEPman as a Subordinate Certification Authority. You can create the correct certificate direct in Azure Key Vault and download the CSR for signing with your Root CA. The signed request can be uploaded and merged into Azure Key Vault. This article guides you through the necessary steps in detail.
 
 ## Key Vault Access Policy
 
