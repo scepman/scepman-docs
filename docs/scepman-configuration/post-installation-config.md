@@ -74,6 +74,19 @@ Once all your deployment slots are running on 2.x, just execute the Complete-SCE
 If you accidentally updated a deployment slot to Managed Identity authentication that still runs SCEPman 1.x, please look at the [downgrade guide](deployment-options/enterprise-deployment.md#downgrade-from-2.x-to-1.x) to make it work again.
 {% endhint %}
 
+### Considerations when Installing SCEPman Multiple Times in One Tenant
+
+The CMDlet Complete-SCEPmanInstallation creates two App Registrations: `SCEPman-api` and `SCEPman-CertMaster`. [Section "How the CMDlet Configures SCEPman Certificate Master](post-installation-config.md#how-the-cmdlet-configures-scepman-certificate-master)" explains what these App Registrations do. The CMDlet requires that their names are unique, so if you have multiple SCEPman installations in one tenant, they will share these App Registrations by default. This means that users have the same roles on all Certificate Masters and that, technically, each Certificate Master instance can submit certificate requests to any SCEPman (although that does not happen unless you configure SCEPman Certificate Master to do that).
+
+If you don't want that behavior, for example because the SCEPman installations belong to different parts of your organization, or one SCEPman installation is a pre-production environment, or you want a multi-tier PKI with a SCEPman Root CA and a SCEPman Issuing CA, you need to tell the SCEPman instances to use other app registrations.
+
+For this purpose, the Complete-SCEPmanInstallation CMDlet features the two parameters `-AzureADAppNameForSCEPman` and `-AzureADAppNameForCertMaster`. These parameters let you define different names for your App Registrations. For example, you might call the CMDlet like this for your Root CA:\
+`Complete-SCEPmanInstallation -SCEPmanAppServiceName app-scepmanroot -SearchAllSubscriptions -AzureAdAppNameForSCEPman SCEPman-api-root -AzureAdAppNameForCertMaster - SCEPman-CertMaster-root 6>&1`
+
+And then you call it another time for your Subordinate CA like this:
+
+`Complete-SCEPmanInstallation -SCEPmanAppServiceName app-scepmansub -SearchAllSubscriptions -AzureAdAppNameForSCEPman SCEPman-api-sub -AzureAdAppNameForCertMaster - SCEPman-CertMaster-sub 6>&1`
+
 ## Configure SCEPman Certificate Master
 
 {% hint style="warning" %}
