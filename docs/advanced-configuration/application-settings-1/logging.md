@@ -47,3 +47,39 @@ Changes can harm your service!
 The minimum log level to be logged. The default is 'Info'. Only log entries with a log level equal or higher than the configured log level will be logged.
 
 Note that if you configure this setting to 'Trace' or 'Debug', log output might contain personal data like UPNs or IP addresses of users. If you want to avoid personal data in the log output, you should configure this setting to 'Info' or higher.
+
+## AppConfig:LoggingConfig:AzureEventHubConnectionString
+
+{% hint style="info" %}
+Logging to Azure Event Hub is possible in version 2.7 and above
+{% endhint %}
+
+**Value:** String
+
+**Description:**
+
+The connection string to your Azure Event Hub. This is a required setting if you want to use Azure Event Hub.
+
+## AppConfig:LoggingConfig:AzureEventHubName
+
+{% hint style="info" %}
+Logging to Azure Event Hub is possible in version 2.7 and above
+{% endhint %}
+
+**Value:** String
+
+**Description:**
+
+The name of your Azure Event Hub. This is a required setting if you want to use Azure Event Hub.
+
+## AppConfig:LoggingConfig:AzureEventHubPartitionKey
+
+{% hint style="info" %}
+Logging to Azure Event Hub is possible in version 2.7 and above
+{% endhint %}
+
+**Value:** String
+
+**Description:**
+
+The partition key of your Azure Event Hub. Setting this is optional. If you don't set this, this defaults to '0'.
