@@ -4,13 +4,13 @@
 
 ### Eligibility
 
-Customers, who have an active subscription of SCEPman Enterprise are eligible for our support services. The support is included in the subscription fee of SCEPman Enterprise.
+Customers, who have an active subscription to SCEPman Enterprise are eligible for our support services. The support is included in the subscription fee of SCEPman Enterprise.
 
 ### Scope
 
 Our support services cover technical assistance for administrators:
 
-* For the most current version in our production channel.
+* For the most current version in our production channel
 * Technical questions about features of SCEPman
 * Support for incidents regarding SCEPman
 
@@ -31,7 +31,7 @@ Our engineers are happy to support you in these languages:
 
 * Monday-Friday
 * 08:00-18:00 CET / CEST
-* Except from public holidays for Hesse / Germany
+* Except for public holidays in Hesse / Germany
 
 ### Support response time
 
@@ -49,7 +49,7 @@ You do not need this package, if you can do the [setup](scepman-deployment/deplo
 
 SCEPman Setup Support is an **optional** remote support package that helps customers to configure SCEPman ready for production.
 
-The packages covers the following topics:
+The packages cover the following topics:
 
 * An overview of SCEPman
 * Architecture and setup recommendations for SCEPman
