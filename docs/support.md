@@ -10,6 +10,7 @@ Customers, who have an active subscription of SCEPman Enterprise are eligible fo
 
 Our support services cover technical assistance for administrators:
 
+* For the most current version in our production channel.
 * Technical questions about features of SCEPman
 * Support for incidents regarding SCEPman
 
