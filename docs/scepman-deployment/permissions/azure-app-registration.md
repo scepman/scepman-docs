@@ -66,14 +66,13 @@ Stay within **App Registrations** and click on **API permissions**
 
 ![](<../../.gitbook/assets/app-permission-scep (1) (1).png>)
 
-4\. Finally click on **Grant admin** consent and **confirm** the consent for the given app registration.
+4. Search and add the following Graph permissions as well: `DeviceManagementConfiguration.Read.All` and `DeviceManagedDevices.Read.All`
+5. &#x20;Finally click on **Grant admin** consent and **confirm** the consent for the given app registration.
 
-![](<../../.gitbook/assets/app-registration-consent (1).png>)
+<figure><img src="../../.gitbook/assets/2024-03-13 12_10_27-SCEPman-api.png" alt=""><figcaption></figcaption></figure>
 
-![](<../../.gitbook/assets/app-registration-consent-confirm (1).png>)
+6. After successfully granting the permissions you should see green status for each permission.
 
-5\. After successfully granting the permissions you should see green status for each permission.
-
-![](../../.gitbook/assets/2021-07-23-09\_29\_34-scepmanreg-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-edge.png)
+<figure><img src="../../.gitbook/assets/2024-03-13 12_12_18-SCEPman-api.png" alt=""><figcaption></figcaption></figure>
 
 The app registration is done.
