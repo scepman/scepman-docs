@@ -47,13 +47,14 @@ In this case we are setting up a device certificate
 
 **Optional:** If configured to `CN={{DeviceId}}` or `CN={{AAD_Device_ID}}`,  SCEPman uses the CN field of the subject name to identify the device and as a seed for the certificate serial number generation. Microsoft Entra ID (Azure AD) and Intune offer two different IDs:
 
-* `{{DeviceId}}`: This ID is generated and used by Intune **(Recommended)**\
+* `{{DeviceId}}`: This ID is generated and used by Intune.\
   \
   (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
 
 <!---->
 
 * `{{AAD_Device_ID}}`: This ID is generated and used by Microsoft Entra ID (Azure AD).
+* `{{DeviceName}}:`` `**`(Recommended)`**, in order to have a meaningful name of the certificate on the device or by looking for a certificate.
 
 In case any other variable is used for the CN field (e.g. `CN={{DeviceName}}`, SCEPman will identify the device based on the Intune Device ID (`(URI)Value:`   `IntuneDeviceId://{{DeviceId}}`) provided in the subject alternative name (SAN).
 
@@ -168,7 +169,7 @@ https://scepman.contoso.com/certsrv/mscep/mscep.dll
 
 ### Example
 
-<figure><img src="../../.gitbook/assets/Screenshot 2022-09-13 at 19.05.15 1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2024-03-14 15_18_35.png" alt=""><figcaption></figcaption></figure>
 
 * [ ] Now you can deploy this profile to your devices. Please choose the same group/s for assignment as for the Trusted certificate profile.
 
@@ -207,6 +208,8 @@ Based on customer feedback, it appears that some VPN clients (e.g., Azure VPN Cl
 {% endhint %}
 
 ### Example
+
+
 
 <figure><img src="../../.gitbook/assets/Screenshot 2022-09-14 at 09.55.05.png" alt=""><figcaption></figcaption></figure>
 
