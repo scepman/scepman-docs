@@ -295,7 +295,9 @@ When changing this setting - at your own risk - please consider that it is not o
 
 #### 21. Can `HTTPS Only` be enabled?
 
-_No_, as this will break the OCSP-responder functionality of SCEPman in combination with many OCSP clients and vendor appliances. OCSP is a protocol that is more commonly provided over HTTP than HTTPS. One of the reasons is, if you used TLS for certificate revocation checking (downloading CRLs or OCSP), there could be a chicken-and-egg-problem, where the client or appliance cannot establish the TLS connection to the OCSP endpoint, because the server certificate needs to be verified over OCSP first. It also doesn't add a lot of security, because OCSP responses are cryptographically signed anyway and therefore cannot be spoofed. Hence, SCEPman needs an exemption from policies enforcing TLS.
+_No (not for SCEPman app service)_, as this will break the OCSP-responder functionality of SCEPman in combination with many OCSP clients and vendor appliances. OCSP is a protocol that is more commonly provided over HTTP than HTTPS. One of the reasons is, if you used TLS for certificate revocation checking (downloading CRLs or OCSP), there could be a chicken-and-egg-problem, where the client or appliance cannot establish the TLS connection to the OCSP endpoint, because the server certificate needs to be verified over OCSP first. It also doesn't add a lot of security, because OCSP responses are cryptographically signed anyway and therefore cannot be spoofed. Hence, SCEPman needs an exemption from policies enforcing TLS.
+
+**Note:** **`HTTPS Only`** cannot be enabled for the SCEPman app service, but it should be enabled for the Certificate Master app service.
 
 ## Miscellaneous
 

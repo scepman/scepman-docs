@@ -103,7 +103,6 @@
   * [Cisco ISE Host Header Limitation](other/troubleshooting/cisco-ise-host-header-limitation.md)
   * [Intune service discovery API permissions](other/troubleshooting/intune-service-discovery-api-permissions.md)
   * [Re-enrollment trigger](other/troubleshooting/re-enrollment-trigger.md)
-  * [View SCEP certificates in Intune](other/troubleshooting/view-scepman-issued-certificates.md)
 * [Important Links](other/important-links.md)
 
 ***
