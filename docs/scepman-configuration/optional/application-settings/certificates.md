@@ -1,5 +1,9 @@
 # Certificates
 
+{% hint style="info" %}
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](../../../advanced-configuration/application-settings/).
+{% endhint %}
+
 ## AppConfig:AddMicrosoftAADExtensions
 
 {% hint style="info" %}

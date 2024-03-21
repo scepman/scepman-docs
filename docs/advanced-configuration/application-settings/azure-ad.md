@@ -1,5 +1,9 @@
 # Microsoft Entra ID (Azure AD)
 
+{% hint style="info" %}
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](./).
+{% endhint %}
+
 ## AppConfig:AuthConfig:ApplicationId
 
 The [Application (client) ID](../../scepman-deployment/permissions/azure-app-registration.md#basic-app-registration-application-id) from your Microsoft Entra ID (Azure AD) App registration. This setting is configured during the setup.

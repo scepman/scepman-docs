@@ -1,6 +1,8 @@
 # Logging
 
 {% hint style="info" %}
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](./).
+
 Applicable to version 2.4 and above
 {% endhint %}
 

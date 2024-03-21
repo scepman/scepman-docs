@@ -1,6 +1,8 @@
-# Certificate Master Connection
+# Enrollment REST API
 
 {% hint style="info" %}
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](../../../advanced-configuration/application-settings/).
+
 Applicable to version 2.3.689 and above
 
 SCEPman Enterprise Edition only

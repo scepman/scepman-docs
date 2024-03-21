@@ -1,4 +1,8 @@
-# Certificates
+# CRL
+
+{% hint style="info" %}
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](../../../advanced-configuration/application-settings/).
+{% endhint %}
 
 For a general comparison of techniques to control certificate validity, have a look into [our blog article](https://www.glueckkanja-gab.com/blog/security/certificates/scepman/2023/05/certificate-revocation-en/).
 
@@ -20,9 +24,9 @@ The CRL currently does not contain all revoked certificates. Thus, attackers pos
 Applicable to version 2.4 and above
 {% endhint %}
 
-**Value:** *None* (default) or *Storage*
+**Value:** _None_ (default) or _Storage_
 
-**Description:** If you set this value to *None*, the generated CRL will contain no revoked certificates at all. If you set this value to *Storage*, the CRL will contain all manually revoked certificates that are stored in the Azure Storage.
+**Description:** If you set this value to _None_, the generated CRL will contain no revoked certificates at all. If you set this value to _Storage_, the CRL will contain all manually revoked certificates that are stored in the Azure Storage.
 
 Certificates that are automatically revoked via OCSP will not be included in the CRL. For example, if you disable a device, the device's certificate will be automatically revoked via OCSP. However, the certificate will not be included in the CRL.
 

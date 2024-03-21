@@ -1,5 +1,9 @@
 # DC Validation
 
+{% hint style="info" %}
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](./).
+{% endhint %}
+
 ## AppConfig:DCValidation:Enabled
 
 {% hint style="info" %}
