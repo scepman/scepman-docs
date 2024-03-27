@@ -16,6 +16,7 @@ Log in with an AAD administrator account and visit this site, choose and click o
 * [Beta channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fbeta%2Fazuredeploy.json)
 * [Internal channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Finternal%2Fazuredeploy.json)
 * [Production channel in GCC High national cloud](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fgcchigh%2Fazuredeploy.json)
+* [Production channel in 21Vianet national cloud](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fvianet%2Fazuredeploy.json) (Experimental!)
 
 Fill out the values in the form
 
