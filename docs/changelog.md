@@ -2,6 +2,12 @@
 
 ## Versions
 
+### 2.8 - Currently in Internal and Beta Channel
+
+#### Certificate Master 2.8
+
+* Fixed a bug where the certificates were not displayed when there was a certificate in the list without CN field.
+
 ### 2.7 - February 2024
 
 #### SCEPman 2.7.1068
