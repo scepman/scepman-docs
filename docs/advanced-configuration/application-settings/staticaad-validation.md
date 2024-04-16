@@ -16,6 +16,27 @@ Applicable to version 2.2 and above
 
 **True**: SCEPman listens at the additional SCEP server endpoint with the path `/static/aad`. Use in conjunction with AppConfig:StaticAADValidation:RequestPassword. **False** (default): SCEPman does not issue AAD-bound certificates for 3rd-party MDM systems.
 
+## AppConfig:StaticAADValidation:DefaultEkus
+
+{% hint style="info" %}
+Applicable to version 2.8 and above
+{% endhint %}
+
+**Value:** Oids of the extended key usages (EKUs) that are added to the certificate if the Jamf endpoint is used. The Oids are separated by a comma, semicolon, or space. The default is Client Authentication (1.3.6.1.5.5.7.3.2)
+
+**Description:** If a certificate request does not contain any EKUs, SCEPman adds the EKUs defined in this setting to the certificate. If AppConfig:UseRequestedKeyUsages is set to _false_, the EKUs defined in this setting will be added to the certificate even if the certificate request contains EKUs.
+
+## AppConfig:StaticAADValidation:DefaultKeyUsage
+
+{% hint style="info" %}
+Applicable to version 2.8 and above
+{% endhint %}
+
+**Value:** EncipherOnly|CrlSign|KeyCertSign|KeyAgreement|DataEncipherment|*KeyEncipherment*|NonRepudiation|*DigitalSignature*|DecipherOnly (defaults are in *italic*)
+
+**Description:** If a certificate request does not contain a Key Usage, SCEPman adds the Key Usage defined in this setting to the certificate. If AppConfig:UseRequestedKeyUsages is set to _false_, the Key Usage defined in this setting will be added to the certificate even if the certificate request contains a Key Usage.
+
+
 ## AppConfig:StaticAADValidation:RequestPassword
 
 {% hint style="info" %}
@@ -48,4 +69,4 @@ SCEPman Enterprise Edition only
 
 **Value:** _true_ or _false_ (default)
 
-**Description:** When requesting certificates via the StaticAAD endpoint, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically if the corresponding AAD object is disabled or deleted. If set to _false_ or not set, SCEPman will not store issued certificates and the certificates are visible only in the logs or if the SCEP client stores them somewhere.
+**Description:** When requesting certificates via the StaticAAD endpoint, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically if the corresponding AAD object is disabled or deleted. If set to _false_, SCEPman will not store issued certificates and the certificates are visible only in the logs or if the SCEP client stores them somewhere. If this is not set, the behavior depends on the global setting AppConfig:EnableCertificateStorage.

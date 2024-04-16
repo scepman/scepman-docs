@@ -36,6 +36,24 @@ You can send Debug log information to a cloud-based monitoring solution of our c
 Do not forget to restart SCEPman App Service after enabling and saving the setting.
 {% endhint %}
 
+## AppConfig:CertificateStorage:TableStorageEndpoint
+
+This defines which Table Storage Endpoint to use for checking manual certificate revocations. If you remove this setting, SCEPman will not use the database for revocation checks.
+
+{% hint style="danger" %}
+Changes can harm your service!
+{% endhint %}
+
+## AppConfig:EnableCertificateStorage
+
+{% hint style="info" %}
+Applicable to version 2.8 and above
+{% endhint %}
+
+**Value:** _true_ or _false_ (default)
+
+**Description:** When requesting certificates, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_ and when this setting is not explictly overriden with _false_ for the specific endpoint. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically depending on the specific SCEP endpoint used for enrollment. If set to _false_ or not set, SCEPman will only store issued certificates for those endpoint where certificate storage has been explicitly enabled. If a certificate is not stored,they are visible only in the logs or if the SCEP client stores them somewhere.
+
 ## WEBSITE\_RUN\_FROM\_PACKAGE
 
 This setting points to the Application Artifacts that will be loaded by starting the App Service.\

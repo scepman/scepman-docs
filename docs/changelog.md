@@ -4,8 +4,26 @@
 
 ### 2.8 - Currently in Internal and Beta Channel
 
+#### SCEPman 2.8.1126
+
+* Improvements to OCSP response times
+* Logging improvements
+  * Tweaking of log levels to better emphasize important information
+  * Additional information about certificate revocations
+  * Less log clutter
+  * A transaction ID in the logs allows to correlate log entries that belong to the same SCEP or OCSP request
+* Configure default Extended Key Usages (EKUs) and Key Usages for each SCEP endpoint, e.g. if you want to enroll smart-card authentication certificates through [Jamf](advanced-configuration/application-settings/jamf-validation.md#appconfigjamfvalidationdefaultekus)
+* Update to .NET 8
+* Library updates
+  * Including the update of Azure.Identity to 1.11, fixing [CVE-2024-29992](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-29992). Currently, the exploit is not publicly disclosed, so the scope of the issue is unclear, but the published information indicates that SCEPman is likely not affected.
+* Small improvements, including:
+  * Use a Managed Identity when logging to Azure Event Hub
+
 #### Certificate Master 2.8
 
+* Update to .NET 8
+* Libary updates
+  * Including the update of Azure.Identity to 1.11, fixing [CVE-2024-29992](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-29992). Currently, the exploit is not publicly disclosed, so the scope of the issue is unclear, but the published information indicates that SCEPman is likely not affected.
 * Fixed a bug where the certificates were not displayed when there was a certificate in the list without CN field.
 
 ### 2.7 - February 2024
