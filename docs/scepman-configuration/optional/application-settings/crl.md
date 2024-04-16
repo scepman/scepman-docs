@@ -4,7 +4,7 @@
 These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](../../../advanced-configuration/application-settings/).
 {% endhint %}
 
-For a general comparison of techniques to control certificate validity, have a look into [our blog article](https://www.glueckkanja-gab.com/blog/security/certificates/scepman/2023/05/certificate-revocation-en/).
+For a general comparison of techniques to control certificate validity, have a look into [our blog article](https://www.glueckkanja.com/blog/products/2023/05/certificate-revocation-en/).
 
 ## AppConfig:CRL:RequestToken
 
