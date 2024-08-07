@@ -17,6 +17,8 @@ $certificates.items | Select-Object -Property Subject,Requester,ExpirationDate,F
 
 The Azure CLI must be installed on the machine where the query is run, and it must be logged on to the right account and subscription. This is automatically the case for an Azure Cloud Shell.
 
+If you are using a [Private Endpoint ](../../architecture/private-endpoints.md)for the Storage Account, you need to add your client's IP address to the exception list in the Networking pane of the Storage Account.
+
 ## Can I move SCEPman resources to another Azure subscription?
 
 Technically it is feasible, but neither recommended nor supported from our side.  The main breaking change is moving the Key Vault. See  [Azure Key Vault moving a vault to a different subscription | Microsoft Learn](https://learn.microsoft.com/EN-us/azure/key-vault/general/move-subscription)
@@ -55,7 +57,7 @@ On the migration day (ensure all devices are powered on and connected to the net
 
 The SCEPman homepage does not include any sensitive information, and attackers cannot leverage the available data for malicious purposes.&#x20;
 
-However, If you prefer to hide the homepage from public access, you can do it using the setting [AppConfig setting: AnonymousHomePageAccess](../../scepman-configuration/optional/application-settings/basics.md#appconfig-anonymoushomepageaccess)
+However, If you prefer to hide the homepage from public access, you can do it using the setting [AppConfig setting: AnonymousHomePageAccess](../../advanced-configuration/application-settings/basics.md#appconfig-anonymoushomepageaccess)
 
 Please ensure to restart the SCEPman _App Service_ after adding the setting.
 
@@ -68,15 +70,15 @@ By changing the CA Subject, you must issue a new Root CA and deploy it to all us
 If you do not have a problem with that please follow the steps below to change the CA subject
 
 * Navigate to your SCEPman App Service configuration
-* Change the CN value of the setting [`AppConfig:KeyVaultConfig:RootCertificateConfig:Subject`](../../scepman-configuration/optional/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-subject) to the new subject name you want
-* It is also recommended to change the value of the setting [`AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName`](../../scepman-configuration/optional/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-certificatename) to the new subject name, however, this is only visible in Azure KeyVault and not on the certificate itself.
+* Change the CN value of the setting [`AppConfig:KeyVaultConfig:RootCertificateConfig:Subject`](../../advanced-configuration/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-subject) to the new subject name you want
+* It is also recommended to change the value of the setting [`AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName`](../../advanced-configuration/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-certificatename) to the new subject name, however, this is only visible in Azure KeyVault and not on the certificate itself.
 
 {% hint style="info" %}
 The name does not appear in the certificate itself and is only a reference to the CA certificate within Azure Key Vault. As it is part of the URL, there are name restrictions, like limitations to alphanumeric characters, numbers, and dashes. **Spaces are not allowed**
 {% endhint %}
 
 * After changing both values, save and restart the App Service
-* Navigate to your SCEPman homepage and issue a new RootCA as described [here](../../scepman-configuration/first-run-root-cert.md)
+* Navigate to your SCEPman homepage and issue a new RootCA as described [here](../../scepman-deployment/first-run-root-cert.md)
 * Download the new RootCA and upload it to your Profile, then re-deploy the client certificates again to get the new subject
 
 ## How to view SCEP certificates in Intune?

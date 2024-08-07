@@ -32,7 +32,7 @@ To get an alert from our health check we need to configure alert rules in our Ap
 | **Check every**      | 5 minutes  |
 | **Loopback period**  | 15 minutes |
 
-<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption><p>Alert rule condition</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption><p>Alert rule condition</p></figcaption></figure>
 
 6. Click on **Next: Actions**
 7. Select **Create action group**

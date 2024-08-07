@@ -45,18 +45,19 @@ In this case we are setting up a device certificate
 
 <summary>Subject name format: <code>CN={{DeviceName}}</code> or <code>CN={{DeviceId}}</code> or <code>CN={{AAD_Device_ID}}</code></summary>
 
+**Recommended:** Use `{{DeviceName}}`for the CN RDN to have a meaningful name of the certificate on the device or when searching for the certificate.
+
 **Optional:** If configured to `CN={{DeviceId}}` or `CN={{AAD_Device_ID}}`,  SCEPman uses the CN field of the subject name to identify the device and as a seed for the certificate serial number generation. Microsoft Entra ID (Azure AD) and Intune offer two different IDs:
 
 * `{{DeviceId}}`: This ID is generated and used by Intune.\
   \
-  (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
+  (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
 
 <!---->
 
 * `{{AAD_Device_ID}}`: This ID is generated and used by Microsoft Entra ID (Azure AD).
-* `{{DeviceName}}:`` `**`(Recommended)`**, in order to have a meaningful name of the certificate on the device or by looking for a certificate.
 
-In case any other variable is used for the CN field (e.g. `CN={{DeviceName}}`, SCEPman will identify the device based on the Intune Device ID (`(URI)Value:`   `IntuneDeviceId://{{DeviceId}}`) provided in the subject alternative name (SAN).
+In case neither `CN={{DeviceId}}` nor `CN={{AAD_Device_ID}}` is used for the CN field (e.g. `CN={{DeviceName}})`, SCEPman will identify the device based on the Intune Device ID (`(URI)Value:`   `IntuneDeviceId://{{DeviceId}}`) provided in the subject alternative name (SAN).
 
 **Important:** The choice of the CN field affects the [automatic revocation behavior](../manage-certificates.md#automatic-revocation) of certificates issued to your Intune-managed devices.
 
@@ -68,7 +69,13 @@ You can add other RDNs if needed (e.g.: `CN={{DeviceId}}, O=Contoso, CN={{WiFiMa
 
 <summary>Subject alternative name: <code>(URI)</code>Value: <code>IntuneDeviceId://{{DeviceId}}</code></summary>
 
-The URI field is [recommended by Microsoft](https://techcommunity.microsoft.com/t5/intune-customer-success/new-microsoft-intune-service-for-network-access-control/ba-p/2544696) for NAC solutions to identify the devices based on their Intune Device ID.
+The URI field is [recommended by Microsoft](https://techcommunity.microsoft.com/t5/intune-customer-success/new-microsoft-intune-service-for-network-access-control/ba-p/2544696) for NAC solutions to identify the devices based on their Intune Device ID. The value should be:&#x20;
+
+```
+IntuneDeviceId://{{DeviceId}}
+```
+
+The **URI field is mandatory** in case neither `CN={{DeviceId}}` nor `CN={{AAD_Device_ID}}` is used in the **Subject name format** field.
 
 Other SAN values like DNS can be added if needed.
 
@@ -80,7 +87,7 @@ Other SAN values like DNS can be added if needed.
 
 The amount of time remaining before the certificate expires. Default is set at one year.
 
-SCEPman caps the certificate validity to the configured maximum in setting [_**AppConfig:ValidityPeriodDays**_](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays), but otherwise uses the validity configured in the request.
+SCEPman caps the certificate validity to the configured maximum in setting [_**AppConfig:ValidityPeriodDays**_](../../advanced-configuration/application-settings/certificates.md#appconfig-validityperioddays), but otherwise uses the validity configured in the request.
 
 </details>
 
@@ -111,7 +118,7 @@ If you use TPM with this firmware, either update your firmware to a newer versio
 
 Please activate both cryptographic actions.
 
-SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the setting here unless the setting [_**AppConfig:UseRequestedKeyUsages**_](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-userequestedkeyusages) is set to _true_.
+SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the setting here unless the setting [_**AppConfig:UseRequestedKeyUsages**_](../../advanced-configuration/application-settings/certificates.md#appconfig-userequestedkeyusages) is set to _true_.
 
 </details>
 
@@ -135,7 +142,8 @@ SCEPman supports SHA-2 algorithm.
 
 <summary>Root Certificate: <code>Profile from previous step (Root certificate Profile)</code></summary>
 
-Please select the Intune profile from [#Root Certificate](windows-10.md#root-certificate).
+Please select the Intune profile from [#Root Certificate](windows-10.md#root-certificate).\
+If you are using an [Intermediate CA](../../advanced-configuration/intermediate-certificate.md), you must select the Trusted certificate profile for the Intermediate CA, not the Root CA!
 
 </details>
 
@@ -209,9 +217,7 @@ Based on customer feedback, it appears that some VPN clients (e.g., Azure VPN Cl
 
 ### Example
 
-
-
-<figure><img src="../../.gitbook/assets/Screenshot 2022-09-14 at 09.55.05.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2024-04-17 16_04_53.png" alt=""><figcaption></figcaption></figure>
 
 ## User Digital Signature Certificate
 
@@ -225,8 +231,8 @@ You may use SCEPman for transnational **digital signatures** i.e. for S/MIME sig
 
 <!---->
 
-* [_`AppConfig:UseRequestedKeyUsages`_](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-userequestedkeyusages) set to _`true`_
-* [_`AppConfig:ValidityPeriodDays`_](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays) _set to `365` (a maximum value of 1825 - 5 years is possible)_
+* [_`AppConfig:UseRequestedKeyUsages`_](../../advanced-configuration/application-settings/certificates.md#appconfig-userequestedkeyusages) set to _`true`_
+* [_`AppConfig:ValidityPeriodDays`_](../../advanced-configuration/application-settings/certificates.md#appconfig-validityperioddays) _set to `365` (a maximum value of 1825 - 5 years is possible)_
 
 To deploy user certificates used for **Digital Signatures** please follow the instructions of [#User certificates](windows-10.md#user-certificates) and take care of the following differences and notes:
 
@@ -271,7 +277,7 @@ We recommend setting Renewal Threshold (%) to a value that ensures certificates 
 
 After a successful profile sync, you should see the user certificate for Intended Purposes **Secure Email**
 
-![](<../../.gitbook/assets/image (16).png>)
+![](<../../.gitbook/assets/image (16) (1).png>)
 
 The certificate will be available for Digital Signature usage in e.g. Outlook. Below is an example of the usage
 

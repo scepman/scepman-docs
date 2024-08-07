@@ -20,9 +20,13 @@ The following instructions outline the steps required to create an Azure Applica
 
 ![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.19 (2) (4) (5) (5) (5) (2) (1) (7).png>)
 
-## 4) Create a new Backend Pool
+## 4) Create a new Backend Pool and point it to your SCEPman App Service
 
 ![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.55 (2) (4) (5) (2) (1) (1) (1) (1) (1) (1) (2) (6).png>)
+
+{% hint style="info" %}
+In the Geo-Redundant scenario, you must add both SCEPman app services to the backend pool.
+{% endhint %}
 
 ## 5) Add a routing rule for HTTP
 
@@ -56,7 +60,9 @@ The use of HTTP without TLS is not a security vulnerability; PKI-based resources
 
 ## 6b) Add a new HTTPS Setting with Host Header (your SCEPman public FQDN)
 
-![](../../.gitbook/assets/Replace6b.png)
+
+
+<figure><img src="../../.gitbook/assets/2024-06-06 16_52_56-.png" alt=""><figcaption></figcaption></figure>
 
 ![](../../.gitbook/assets/Replace62.png)
 
@@ -77,22 +83,18 @@ Then, add a DNS name for the Gateway:
 
 ![](../../.gitbook/assets/ip-address.png)
 
-1. Optional: You can add a CNAME entry for a DNS record that you own DNS servers.
+Optional: You can add a CNAME entry for the DNS name in your own DNS server.
 
-## 10) Add the Application Gateway DNS name to SCEPman configuration
+{% hint style="info" %}
+In Geo-Redundant scenario, you can still use the SCEPman custom domain URL (which points to the traffic manager) and the Application Gateway URL in Cisco ISE as an OCSP responder.&#x20;
+{% endhint %}
 
-Eventually, configure the new name in the SCEPman settings:
+{% hint style="info" %}
+OCSP responder URL would be: `http://<Application-Gateway-URL>/ocsp`
 
-1\. Go to the App Service for SCEPman and open the Configuration page in the Settings section.
-
-2\. Edit the value AppConfig:BaseURL.
-
-![](../../.gitbook/assets/appconfig-baseurl.png)
-
-3\. Enter the DNS name for the IP address prefixed with "http://". If you have configured a TLS certificate in the Azure Application Gateway, you may also use HTTPS.
-
-![](../../.gitbook/assets/appconfig-baseurl-gateway.png)
+**Note:** The OCSP responder URL should be HTTP not HTTPS, see [here](../faqs/security-faq.md#id-21.-can-https-only-be-enabled)
+{% endhint %}
 
 ## Intune/JAMF configuration
 
-In the Intune configuration, you may still use the App Service's URL instead of the Azure Application Gateway's. If you do this, the clients communicate directly with the App Service. You must configure the Azure Application Gateway's URL in Cisco ISE, as only this URL supports HTTP 1.0 requests.
+You may still use the App Service's URL instead of the Azure Application Gateway's in the Intune configuration. If you do this, the clients communicate directly with the App Service. You must configure the Azure Application Gateway's URL in Cisco ISE, as only this URL supports HTTP 1.0 requests.

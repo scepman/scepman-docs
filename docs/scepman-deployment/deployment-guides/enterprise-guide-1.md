@@ -42,6 +42,8 @@ All these resources are recommended for a production environment.
 | Storage account         | <p>Storage platform used by SCEPman's Certificate Master component to store certain attributes of the manually issued TLS server certificates for revocation purposes.<br><br><em>Optional:</em></p><p>The "App Service" will load the artifacts from a blob storage URI if manual updates are configured.</p> |
 | Log Analytics workspace | <p>A centralized and cloud-based log storage. The "App Service" will save all</p><p>platform logs and metrics into this workspace.</p>                                                                                                                                                                         |
 
+Additionally, if you are using Private Endpoints, you have [seven more Azure Resources.](../../architecture/private-endpoints.md#azure-resources-used-for-private-endpoints)
+
 ## Configuration Steps
 
 ### Step 1: Deploy SCEPman Base Services
@@ -52,14 +54,14 @@ This is a **mandatory** step.
 
 To start with the deployment, you need to follow our setup instructions leveraging an **ARM Template**
 
-{% content-ref url="../../scepman-configuration/deployment-options/enterprise-deployment.md" %}
-[enterprise-deployment.md](../../scepman-configuration/deployment-options/enterprise-deployment.md)
+{% content-ref url="../deployment-options/enterprise-deployment.md" %}
+[enterprise-deployment.md](../deployment-options/enterprise-deployment.md)
 {% endcontent-ref %}
 
 or alternatively our **Terraform** script:
 
-{% content-ref url="../../scepman-configuration/deployment-options/terraform-deployment.md" %}
-[terraform-deployment.md](../../scepman-configuration/deployment-options/terraform-deployment.md)
+{% content-ref url="../deployment-options/terraform-deployment.md" %}
+[terraform-deployment.md](../deployment-options/terraform-deployment.md)
 {% endcontent-ref %}
 
 ### Step 2: Perform Post-Deployment Steps (Permission Assignments)
@@ -70,8 +72,8 @@ This is a **mandatory** step.
 
 To properly link all components of SCEPman 2.X, several permissions need to be assigned. Please follow these steps to establish the relevant connections:
 
-{% content-ref url="../../scepman-configuration/post-installation-config.md" %}
-[post-installation-config.md](../../scepman-configuration/post-installation-config.md)
+{% content-ref url="../permissions/post-installation-config.md" %}
+[post-installation-config.md](../permissions/post-installation-config.md)
 {% endcontent-ref %}
 
 ### Step 3: Create Root Certificate
@@ -82,8 +84,8 @@ This is a **mandatory** step.
 
 After the deployment and persmission assignment is complete, you need to create the root certificate for SCEPman:
 
-{% content-ref url="../../scepman-configuration/first-run-root-cert.md" %}
-[first-run-root-cert.md](../../scepman-configuration/first-run-root-cert.md)
+{% content-ref url="../first-run-root-cert.md" %}
+[first-run-root-cert.md](../first-run-root-cert.md)
 {% endcontent-ref %}
 
 ### Step 4: Configure a Custom Domain and SSL Certificate
@@ -94,8 +96,8 @@ This is a **recommended** step. However, **skip** this step if you are implement
 
 To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.**
 
-{% content-ref url="../../scepman-configuration/optional/custom-domain.md" %}
-[custom-domain.md](../../scepman-configuration/optional/custom-domain.md)
+{% content-ref url="../../advanced-configuration/custom-domain.md" %}
+[custom-domain.md](../../advanced-configuration/custom-domain.md)
 {% endcontent-ref %}
 
 ### Step 5: Manual Updates
@@ -104,10 +106,10 @@ To have your SCEPman available under your specific domain you need to create a *
 This is an **optional** step.
 {% endhint %}
 
-By default, SCEPman's update strategy is configured to the [Evergreen approach](../../scepman-configuration/optional/update-strategy.md#evergreen-approach) / auto-updates. In case you require full control over your SCEPman updates, please configure a deployment slot as described in the following guide under section **Deployment Slot Configuration**.
+By default, SCEPman's update strategy is configured to the [Evergreen approach](../../advanced-configuration/update-strategy.md#evergreen-approach) / auto-updates. In case you require full control over your SCEPman updates, please configure a deployment slot as described in the following guide under section **Deployment Slot Configuration**.
 
-{% content-ref url="../../scepman-configuration/optional/update-strategy.md" %}
-[update-strategy.md](../../scepman-configuration/optional/update-strategy.md)
+{% content-ref url="../../advanced-configuration/update-strategy.md" %}
+[update-strategy.md](../../advanced-configuration/update-strategy.md)
 {% endcontent-ref %}
 
 ### Step 6: Deploy Application Insights
@@ -118,8 +120,8 @@ This is **recommended** step.
 
 The Application Insights can be used to get an overview of the App Service performance and to get deeper insights of the request processing of SCEPman. We recommend to always configure Application Insights to monitor, maintain and optimize the App Service.
 
-{% content-ref url="../../scepman-configuration/optional/application-insights.md" %}
-[application-insights.md](../../scepman-configuration/optional/application-insights.md)
+{% content-ref url="../../advanced-configuration/application-insights.md" %}
+[application-insights.md](../../advanced-configuration/application-insights.md)
 {% endcontent-ref %}
 
 ### Step 7: Configure Health Check
@@ -158,8 +160,8 @@ The second task is the certificate validation: After we deployed certificates to
 
 To have an optimized performance and take care of the costs we recommend to setup the Autoscaling functionality of the App Service. With this feature your application can scale-out and scale-in based on metrics.
 
-{% content-ref url="../../scepman-configuration/optional/autoscaling.md" %}
-[autoscaling.md](../../scepman-configuration/optional/autoscaling.md)
+{% content-ref url="../../advanced-configuration/autoscaling.md" %}
+[autoscaling.md](../../advanced-configuration/autoscaling.md)
 {% endcontent-ref %}
 
 ### Step 10: Configure Geo-Redundancy

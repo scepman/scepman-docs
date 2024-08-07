@@ -16,36 +16,6 @@ Applicable to version 1.7 and above
 
 **True**: SCEPman listens at the additional SCEP server endpoint with the path `/jamf`. Use in conjunction with AppConfig:JamfValidation:RequestPassword. **False** (default): SCEPman does not issue certificates for Jamf.
 
-## AppConfig:JamfValidation:APIUsername
-
-{% hint style="info" %}
-Applicable to version 1.7 and above
-{% endhint %}
-
-**Value:** _String_
-
-**Description:** The name of a service account in Jamf that SCEPman uses to authenticate on your Jamf instance. SCEPman needs the following permissions to query for computers, devices, and users:
-
-* Computers -> Read
-* Mobile Devices -> Read
-* Users -> Read
-
-## AppConfig:JamfValidation:APIPassword
-
-{% hint style="info" %}
-Applicable to version 1.7 and above
-{% endhint %}
-
-**Value:** _String_
-
-**Description:** The password of the service account configured in AppConfig:JamfValidation:APIUsername.
-
-We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--JamfValidation--APIPassword_.
-
-{% hint style="info" %}
-If you set this setting as a Secret in the Key Vault, you do not need to add the **AppConfig:JamfValidation:APIPassword** to SCEPman configuration anymore.
-{% endhint %}
-
 ## AppConfig:JamfValidation:DefaultEkus
 
 {% hint style="info" %}
@@ -54,7 +24,7 @@ Applicable to version 2.8 and above
 
 **Value:** Oids of the extended key usages (EKUs) that are added to the certificate if the Jamf endpoint is used. The Oids are separated by a comma, semicolon, or space. The default is Client Authentication (1.3.6.1.5.5.7.3.2)
 
-**Description:** If a certificate request does not contain any EKUs, SCEPman adds the EKUs defined in this setting to the certificate. Currently, Jamf never adds EKUs to the certificate request, so all certificates enrolled through Jamf will have the EKUs defined in this setting. If AppConfig:UseRequestedKeyUsages is set to _false_, the EKUs defined in this setting will be added to the certificate even if the certificate request contains EKUs.
+**Description:** If a certificate request does not contain any EKUs, SCEPman adds the EKUs defined in this setting to the certificate. If AppConfig:UseRequestedKeyUsages is set to _false_, the EKUs defined in this setting will be added to the certificate even if the certificate request contains EKUs.
 
 ## AppConfig:JamfValidation:DefaultKeyUsage
 
@@ -62,21 +32,9 @@ Applicable to version 2.8 and above
 Applicable to version 2.8 and above
 {% endhint %}
 
-**Value:** EncipherOnly|CrlSign|KeyCertSign|KeyAgreement|DataEncipherment|*KeyEncipherment*|NonRepudiation|*DigitalSignature*|DecipherOnly (defaults are in *italic*)
+**Value:** EncipherOnly|CrlSign|KeyCertSign|KeyAgreement|DataEncipherment|_KeyEncipherment_|NonRepudiation|_DigitalSignature_|DecipherOnly (defaults are in _italic_)
 
 **Description:** If a certificate request does not contain a Key Usage, SCEPman adds the Key Usage defined in this setting to the certificate. If AppConfig:UseRequestedKeyUsages is set to _false_, the Key Usage defined in this setting will be added to the certificate even if the certificate request contains a Key Usage.
-
-## AppConfig:JamfValidation:EnableCertificateStorage
-
-{% hint style="info" %}
-Applicable to version 2.3 and above
-
-SCEPman Enterprise Edition only
-{% endhint %}
-
-**Value:** _true_ or _false_ (default)
-
-**Description:** When requesting certificates via the Jamf endpoint, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically if the corresponding Jamf object is deleted. If set to _false_, SCEPman will not store issued certificates and the certificates are visible only in the logs or if the SCEP client stores them somewhere. If this is not set, the behavior depends on the global setting AppConfig:EnableCertificateStorage.
 
 ## AppConfig:JamfValidation:RequestPassword
 
@@ -109,3 +67,45 @@ Applicable to version 1.7 and above
 **Value:** _String_
 
 **Description:** The root URL of your Jamf instance. If you use Jamf Cloud, this will probably look like `https://your-instance.jamfcloud.com/`.
+
+## AppConfig:JamfValidation:APIUsername
+
+{% hint style="info" %}
+Applicable to version 1.7 and above
+{% endhint %}
+
+**Value:** _String_
+
+**Description:** The name of a service account in Jamf that SCEPman uses to authenticate on your Jamf instance. SCEPman needs the following permissions to query for computers, devices, and users:
+
+* Computers -> Read
+* Mobile Devices -> Read
+* Users -> Read
+
+## AppConfig:JamfValidation:APIPassword
+
+{% hint style="info" %}
+Applicable to version 1.7 and above
+{% endhint %}
+
+**Value:** _String_
+
+**Description:** The password of the service account configured in AppConfig:JamfValidation:APIUsername.
+
+We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--JamfValidation--APIPassword_.
+
+{% hint style="info" %}
+If you set this setting as a Secret in the Key Vault, you do not need to add the **AppConfig:JamfValidation:APIPassword** to SCEPman configuration anymore.
+{% endhint %}
+
+## AppConfig:JamfValidation:EnableCertificateStorage
+
+{% hint style="info" %}
+Applicable to version 2.3 and above
+
+SCEPman Enterprise Edition only
+{% endhint %}
+
+**Value:** _true_ or _false_ (default)
+
+**Description:** When requesting certificates via the Jamf endpoint, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically if the corresponding Jamf object is deleted. If set to _false_, SCEPman will not store issued certificates and the certificates are visible only in the logs or if the SCEP client stores them somewhere. If this is not set, the behavior depends on the global setting [AppConfig:EnableCertificateStorage](basics.md#appconfig-enablecertificatestorage).

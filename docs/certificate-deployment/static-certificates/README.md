@@ -16,7 +16,7 @@ To enable the feature, you must add two application settings in your SCEPman ser
 
 1. Navigate to **App Services**
 2. Then choose your SCEPman app
-3. Next under **Settings** click **Configuration**
+3.
 4. Select **New application setting**
 5. Type **AppConfig:StaticValidation:Enabled** as Name
 6. Type **true** as Value

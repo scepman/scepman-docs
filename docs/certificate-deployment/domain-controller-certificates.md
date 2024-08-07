@@ -44,12 +44,12 @@ To enable the feature, you must add two application settings in your SCEPman ser
 
 1. Navigate to **App Services**
 2. Then choose your SCEPman app
-3. Next under **Settings** click **Configuration**
-4. Select **New application setting**
+3. Next under **Settings** click **Environment variables**
+4. Select Add
 5. Type **AppConfig:DCValidation:Enabled** as Name
 6. Type **true** as Value
 7. Confirm with **OK**
-8. Select **New application setting** again
+8. Select **Add** again
 9. Type **AppConfig:DCValidation:RequestPassword** as Name
 10. Type your **key/password**, that you have generated earlier, as Value
 11. Confirm with **OK**
@@ -83,7 +83,7 @@ Execute the following command in an elevated command prompt on a domain controll
 ScepClient.exe newdccert https://your-scepman-domain/dc RequestPassword
 ```
 
-You must add the SCEPman URL in the previous command, but keep the path `/dc`. Replace `RequestPassword` with the secure key/password you generated earlier.
+You must add the SCEPman URL in the previous command but keep the path `/dc`. Replace `RequestPassword` with the secure key/password you generated earlier.
 
 The request password is encrypted with SCEPman's CA certificate, so only SCEPman can read it. Domain Controller certificates are only issued with the correct request password.
 

@@ -24,6 +24,15 @@ You need to grant access to the Azure Key Vault to your user account to create t
 
 After adding the permissions, your Azure AD account is permitted to create a CSR and upload the certificate.
 
+## Open Key Vault Networking to the Admin System
+
+If you are using a [Private Endpoint](../architecture/private-endpoints.md) for Key Vault, you need to add an exception that allows the client to access the Key Vault on a network level. If you are not using a Private Endpoint, you can skip this part.
+
+* Go to Azure Key Vault in the Azure Portal.
+* Navigate to the Networking blade under Settings.
+* Switch to "Allow public access from specific virtual networks and IP addresses" if you have currently selected "Disable public access".
+* Add the IP address of the client on which you want to [run the SCEPman PowerShell module later on](intermediate-certificate.md#creating-intermediate-ca-certificate-with-the-scepman-powershell-module). If you are using the Azure Cloud Shell and [it is connected to a VNET](https://learn.microsoft.com/en-us/azure/cloud-shell/vnet/overview), you can add this VNET. Otherwise, the easiest way is to temporarily allow the Cloud Shell's Public IP address, since strong authentication protects your Key Vault. You might use a command like `(Invoke-WebRequest -UseBasicParsing -uri "http://ifconfig.me/ip").Content` to find the session's public IP address.
+
 ## Update Azure App Service Settings
 
 The next step is to update the Azure App Service configuration to match the subject name of the intermediate CA you will create in the next step.
@@ -66,7 +75,7 @@ Set-IntermediateCaPolicy -Policy $policy
 Finally, you can create the CSR with the following command (or a similar one according to your environment):
 
 ```PowerShell
-New-IntermediateCA -SCEPmanAppServiceName "app-scepman-example" -SearchAllSubscriptions
+New-IntermediateCA -SCEPmanAppServiceName "app-scepman-example" -SearchAllSubscriptions 6>&1
 ```
 
 The command will output the CSR that you submit to your Root CA for signing.

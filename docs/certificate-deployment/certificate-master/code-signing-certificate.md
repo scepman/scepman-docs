@@ -18,4 +18,4 @@ To generate a new Code Signing Certificate, navigate to **New code signing Certi
 Be aware that once you navigate away from this page, the password will no longer be accessible.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption><p>Certificate Master - New Code Signing Certificate</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (37).png" alt=""><figcaption><p>Certificate Master - New Code Signing Certificate</p></figcaption></figure>

@@ -18,7 +18,7 @@ To generate a new Client Certificate, navigate to **New Client Certificate** in 
 Be aware that once you navigate away from this page, the password will no longer be accessible.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (36).png" alt=""><figcaption><p>Certificate Master - New Client Certificate</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption><p>Certificate Master - New Client Certificate</p></figcaption></figure>
 
 Some systems can import a certificate with the private key, but do not accept PKCS#12. You can convert the PKCS#12 file to other formats using standard tools like OpenSSL. For example, if your target system requires a PEM file with the certificate and private key, you may use this command:
 

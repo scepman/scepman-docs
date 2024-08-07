@@ -1,7 +1,7 @@
 # V1.x: Azure App Registration
 
 {% hint style="info" %}
-Only the **1.x** versions require an Azure App Registration. SCEPman 2.x still supports it, but we recommend using [Managed Identities](../../scepman-configuration/post-installation-config.md).
+Only the **1.x** versions require an Azure App Registration. SCEPman 2.x still supports it, but we recommend using [Managed Identities](post-installation-config.md).
 {% endhint %}
 
 SCEPman needs to interact with your Azure Active Directory and Intune endpoints to provide the certificate and OCSP validation of users and devices. To provide the necessary permissions to SCEPman you need to create an App Registration within your tenant.
@@ -42,9 +42,9 @@ Please do not mix it up with the "Client Secret **ID**". We need the "Client Sec
 Copy the client secret value immediately. You will not be able to retrieve it after you leave this submenu.
 {% endhint %}
 
-![](<../../.gitbook/assets/image (10).png>)
+![](<../../.gitbook/assets/image (18).png>)
 
-4. update the value of the SCEPman setting [AppConfig:AuthConfig:ApplicationId](../../advanced-configuration/application-settings/azure-ad.md#appconfig-authconfig-applicationid) with the client secret value.
+4. update the value of the SCEPman setting [AppConfig:AuthConfig:ApplicationKey](../../advanced-configuration/application-settings/azure-ad.md#appconfig-authconfig-applicationkey) with the client secret value.
 
 ## Configure Permissions
 
@@ -66,7 +66,7 @@ Stay within **App Registrations** and click on **API permissions**
 
 ![](<../../.gitbook/assets/app-permission-scep (1) (1).png>)
 
-4. Search and add the following Graph permissions as well: `DeviceManagementConfiguration.Read.All` and `DeviceManagedDevices.Read.All`
+4. Search and add the following Graph permissions as well: `DeviceManagementConfiguration.Read.All` and `DeviceManagementManagedDevices.Read.All`
 5. &#x20;Finally click on **Grant admin** consent and **confirm** the consent for the given app registration.
 
 <figure><img src="../../.gitbook/assets/2024-03-13 12_10_27-SCEPman-api.png" alt=""><figcaption></figcaption></figure>

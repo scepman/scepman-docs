@@ -14,4 +14,4 @@ In some use cases, you may need to issue a Sub CA of SCEPman RootCA (e.g. for a 
 Be aware that once you navigate away from this page, the password will no longer be accessible.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption><p>Certificate Master - New Sub CA Certificate</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (38).png" alt=""><figcaption><p>Certificate Master - New Sub CA Certificate</p></figcaption></figure>

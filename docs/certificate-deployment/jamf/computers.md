@@ -3,7 +3,7 @@
 Please follow this guide to distribute certificates to computers (macOS). Before deploying the first certificates via Jamf, follow the [general steps for Jamf](general.md) first.
 
 {% hint style="success" %}
-We strongly recommend to configure all use-case relevant certificate payloads (trusted certificate / SCEP certificate) in a **single** Configuration Profile in Jamf.
+We strongly recommend configuring all use-case relevant certificate payloads (trusted certificate / SCEP certificate) in a **single** Configuration Profile in Jamf.
 {% endhint %}
 
 ## SCEPman Root Certificate
@@ -24,16 +24,17 @@ Please add another "macOS Configuration Profile" and choose "SCEP" as payload. A
 
 | Field                      | Description                                     | Value/Example                                  |
 | -------------------------- | ----------------------------------------------- | ---------------------------------------------- |
-| Name                       | name/purpose                                    | e.g. "Device Authentication"                   |
-| Redistribute Profile       | re-deploys profile for renewal                  | e.g. "14 days"                                 |
-| Subject                    | subject for certificate, additions are possible | CN=$JSSID,OU=computers,CN=$PROFILE\_IDENTIFIER |
-| Allow export from keychain | controls wether private key is exportable       | No                                             |
+| Name                       | Name/purpose                                    | e.g. "Device Authentication"                   |
+| Redistribute Profile       | Re-deploys profile for renewal                  | e.g. "14 days"                                 |
+| Subject                    | Subject for certificate, additions are possible | CN=$JSSID,OU=computers,CN=$PROFILE\_IDENTIFIER |
+| Allow export from keychain | Controls whether the private key is exportable  | No                                             |
+| Allow all apps access      | Controls access to the SCEP certificate         | Yes                                            |
 
 Please adjust other options on your needs.
 
-![](<../../.gitbook/assets/image (21).png>)
+![](<../../.gitbook/assets/image (21) (1).png>)
 
-![](<../../.gitbook/assets/image (24).png>)
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 ## Output on the Client
 

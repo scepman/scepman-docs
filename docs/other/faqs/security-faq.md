@@ -42,7 +42,7 @@ SCEPman's core services are provided by a stateless web application that does no
 
     SCEPman always sends a limited amount of **non-secret** and **non-personal** data to our Log Analytics Workspace (LAW). This data is used for
 
-    * Licensing purposes
+    * Licensing purposes.
     * Quality assurance (e.g. monitoring exceptions globally helps us to recognize general and widespread issues quickly, allowing us to provide remedy to our clients fast, thus preventing expensive service outages).
 
     By default, SCEPman does **not send any personal data** to our LAW.
@@ -62,7 +62,7 @@ SCEPman's core services are provided by a stateless web application that does no
 
 If you are using Certificate Master, additional data will be stored.
 
-An Azure Storage Account stores all certificates that were issued via the Certificate Master component including the requester (Azure AD UPN), the certificate revocation status, the identity of the user who revoked it (Azure AD UPN) and a revocation reason. _We never store the private key_, which is only available as a one-time download.
+An Azure Storage Account stores all certificates that were issued via the Certificate Master component including the requester (Microsoft Entra ID (Azure AD) UPN), the certificate revocation status, the identity of the user who revoked it (Microsoft Entra ID (Azure AD) UPN) and a revocation reason. _We never store the private key_, which is only available as a one-time download.
 
 ### 3. Where (geographically) does SCEPman process and store data?
 
@@ -83,13 +83,13 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
    With this permission SCEPman may forward the certificate request to Intune and verify that the certificate request originates from Intune, where the latter adds an additional layer of security.
 2. Microsoft Graph `Directory.Read.All`:\
    \
-   With this permission, SCEPman may consult with AAD in order to check if the user or device certificate is originating from an authorized user or device. For details, refer to [SCEPman Docs](../../scepman-deployment/permissions/azure-app-registration.md#azure-app-registration-api-permissions).
+   With this permission, SCEPman may consult with Microsoft Entra ID (Azure AD) in order to check if the user or device certificate is originating from an authorized user or device. For details, refer to [SCEPman Docs](../../scepman-deployment/permissions/azure-app-registration.md#azure-app-registration-api-permissions).
 3. Microsoft Graph `DeviceManagementManagedDevices.Read.All` and `DeviceManagementConfiguration.Read.All`:\
    \
-   With these permissions, SCEPman requests the list of issued certificates via Intune when using the [EndpointList revocation feature](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory).
+   With these permissions, SCEPman requests the list of issued certificates via Intune when using the [EndpointList revocation feature](../../advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory).
 4. Microsoft Graph `IdentityRiskyUser.Read.All`:\
    \
-   This permission allows SCEPman to automatically [revoke user certificates if the AAD User Risk exceeds a configured threshold](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck).
+   This permission allows SCEPman to automatically [revoke user certificates if the AAD User Risk exceeds a configured threshold](../../advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck).
 
 #### JAMF
 
@@ -130,22 +130,22 @@ While the below consents make data available to SCEPman, SCEPman does not proces
 ### 6. Which externally accessible endpoints does SCEPman expose?
 
 1. SCEP-endpoint(s)
-   * Invoked for SCEP-requests
-   * Based on the configuration, SCEPman may expose several SCEP-endpoints for Intune, JAMF, DCs, generic 3rd-party MDMs
+   * Invoked for SCEP-requests.
+   * Based on the configuration, SCEPman may expose several SCEP-endpoints for Intune, JAMF, DCs, generic 3rd-party MDMs.
 2. OCSP-endpoint
-   * Invoked for OCSP-requests
+   * Invoked for OCSP-requests.
 3. SCEPman homepage
-   * Displays SCEPman's basic status information publicly (no secrets)
-   * Read-only
-   * Can be disabled via configuration
+   * Displays SCEPman's basic status information publicly (no secrets).
+   * Read-only.
+   * Can be disabled via configuration.
 4. SCEPman probe-endpoint
-   * Health Checks: Integrated App Service Health Check, Traffic Manager probing, Application Gateway probing
+   * Health Checks: Integrated App Service Health Check, Traffic Manager probing, Application Gateway probing.
 5. Certificate Master web portal
-   * Manually issue server certificates and sign CSRs
-   * Manually revoke certificates issued via the Certificate Master
-   * View list of manually issued certificates
+   * Manually issue server certificates and sign CSRs.
+   * Manually revoke certificates issued via the Certificate Master.
+   * View list of manually issued certificates.
 6. Certificate Master probe-endpoint
-   * Health Checks: Integrated App Service Health Check
+   * Health Checks: Integrated App Service Health Check.
 7. SCEPman API
    * Allows Certificate Master to request certificates from SCEPman's core service.
 
@@ -155,39 +155,57 @@ While the below consents make data available to SCEPman, SCEPman does not proces
    * Intune: Protected via Intune Challenge API ([Microsoft Docs](https://docs.microsoft.com/en-us/mem/intune/protect/scep-libraries-apis))
    * JAMF, DCs, generic 3rd party MDMs: Protected with a static SCEP-challenge. Configurable by the customer. May be stored in Azure Key Vault.
 2. OCSP-endpoint
-   * No protection required
+   * No protection required.
 3. SCEPman homepage
-   * No protection but can be disabled
+   * No protection but can be disabled.
 4. SCEPman probe-endpoint
-   * No protection
+   * No protection.
 5. Certificate Master web portal
-   * Azure AD integrated authentication
+   * Microsoft Entra ID (Azure AD) integrated authentication.
 6. Certificate Master probe-endpoint
-   * No protection
+   * No protection.
 7. SCEPman API
-   * Azure AD integrated authentication
+   * Microsoft Entra ID (Azure AD) integrated authentication.
+
+### 8. What ports and protocols are used by the endpoints from Question 6?
+
+1. SCEP-endpoint(s)
+   * Intune: HTTPS (TCP / 443)
+   * JAMF, DCs, generic 3rd party MDMs: HTTPS (TCP / 443)
+2. OCSP-endpoint
+   * HTTP (TCP / 80)
+3. SCEPman homepage
+   * HTTPS (TCP / 443)
+4. SCEPman probe-endpoint
+   * HTTPS (TCP / 443)
+5. Certificate Master web portal
+   * HTTPS (TCP / 443)
+6. Certificate Master probe-endpoint
+   * HTTPS (TCP / 443)
+7. SCEPman API
+   * HTTPS (TCP / 443)
 
 ## Identity
 
-### 8. What authorization schemes are used to gain access to SCEPman?
+### 1. What authorization schemes are used to gain access to SCEPman?
 
-* Administrative access is realized through AAD authentication via the Azure Portal.
+* Administrative access is realized through Microsoft Entra ID (Azure AD) authentication via the Azure Portal.
 * Limited read-access may be configured to be publicly available (see [7.](security-faq.md#7-how-are-the-endpoints-from-6-protected))
-* Access to the Certificate Master web portal uses AAD authentication and AAD Role Assignments for authorization as [described in the SCEPman documentation](../../scepman-configuration/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website).
-* The SCEPman API uses AAD Role Assignments. In the recommended default configuration, only Certificate Master has access to the API.
+* Access to the Certificate Master web portal uses Microsoft Entra ID (Azure AD) authentication and Microsoft Entra ID (Azure AD) Role Assignments for authorization as [described in the SCEPman documentation](../../scepman-deployment/permissions/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website).
+* The SCEPman API uses Microsoft Entra ID (Azure AD) Role Assignments. In the recommended default configuration, only Certificate Master has access to the API.
 
-### 9. Are there conditional access / role-based access controls in place to protect SCEPman?
+### 2. Are there conditional access / role-based access controls in place to protect SCEPman?
 
-* Yes. The full set of AAD RBAC policies can be leveraged.
+* Yes. The full set of Microsoft Entra ID (Azure AD) RBAC policies can be leveraged.
 
-### 10. Can access credentials be recovered? If yes, how?
+### 3. Can access credentials be recovered? If yes, how?
 
-* Login Credentials: Depends on the configured AAD policies in the customer tenant.
+* Login Credentials: Depends on the configured Microsoft Entra ID (Azure AD) policies in the customer tenant.
 * Static SCEP challenge: Authorized users may review the challenge.
 
 ## Data Protection
 
-### 11. How is _data at-rest_ protected against unauthorized access?
+### 1. How is _data at-rest_ protected against unauthorized access?
 
 #### Configuration Data
 
@@ -209,7 +227,7 @@ While the below consents make data available to SCEPman, SCEPman does not proces
 
 * If logging is configured active, the customer decides where the logs are stored.
 
-### 12. How is _data in transit_ protected against unauthorized access?
+### 2. How is _data in transit_ protected against unauthorized access?
 
 * SCEP:
   * Uses TLS by default (minimum TLS 1.2 - Microsoft policies apply)
@@ -223,7 +241,7 @@ While the below consents make data available to SCEPman, SCEPman does not proces
 
 ## Security by Design
 
-### 13. Does SCEPman employ a defense in depth strategy?
+### 1. Does SCEPman employ a defense in depth strategy?
 
 #### Azure Components
 
@@ -232,7 +250,7 @@ SCEPman's design philosophy follows the approach to minimize its exposure to ext
 * Key Vault
 * App Insights
 * Intune device enrollment verification
-* Azure AD device check
+* Microsoft Entra ID (Azure AD) device check
 
 Since SCEPman founds on Azure components, you may use Microsoft Defender for Cloud tools like for MD for App Service, MD for Storage, or MD for Key Vault.
 
@@ -242,26 +260,26 @@ As a cloud PKI, SCEPman is responsible for the issuance and revocation of digita
 
 Thus, if a private key is compromised, SCEPman can revoke the corresponding certificate in real-time. For certificates enrolled via Intune and Jamf, SCEPman does this automatically as soon as common countermeasures not specific to SCEPman are taken against the attack. You just have to [delete the corresponding Intune](../../architecture/device-directories.md) or Jamf object.
 
-Depending on your device retirement processes, you can additionally configure to [revoke certificates when a wipe is triggered](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationrevokecertificatesonwipe), when [Intune requests revocation](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationdevicedirectory), depending on [device compliance](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationcompliancecheck) or [user risk level](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationuserriskcheck), or you can manually revoke single certificates via the Certificate Master component.
+Depending on your device retirement processes, you can additionally configure to [revoke certificates when a wipe is triggered](../../advanced-configuration/application-settings/intune-validation.md#appconfigintunevalidationrevokecertificatesonwipe), when [Intune requests revocation](../../advanced-configuration/application-settings/intune-validation.md#appconfigintunevalidationdevicedirectory), depending on [device compliance](../../advanced-configuration/application-settings/intune-validation.md#appconfigintunevalidationcompliancecheck) or [user risk level](../../advanced-configuration/application-settings/intune-validation.md#appconfigintunevalidationuserriskcheck), or you can manually revoke single certificates via the Certificate Master component.
 
 [Manually created certificates](../../certificate-deployment/certificate-master/) always require a manual revocation.
 
-### 14. What technologies, stacks, platforms were used to design SCEPman?
+### 2. What technologies, stacks, platforms were used to design SCEPman?
 
 * `C#`
 * `ASP.NET Core MVC`
 * `Bouncy Castle Crypto API`
 * `Azure (App Service, Key Vault, Storage Account)`
 
-### 15. What cryptographic algorithms and key sizes does SCEPman support?
+### 3. What cryptographic algorithms and key sizes does SCEPman support?
 
 For the keys of issued certificates, Certificate Master has no restrictions when using the CSR method. For forms-based certificates, RSA with 2048 bits is the only supported algorithm and key size.
 
 For SCEP-enrolled certificates, Intune supports only RSA 2048 on most platforms, but some support RSA 4096, which SCEPman also supports. When using the static SCEP endpoint, all common algorithms and key sizes are supported (specifically those which [the Bouncy Castle cryptographic library for C# supports](https://www.bouncycastle.org/csharp/)).
 
-For the CA key, SCEPman supports RSA only. 2048 bit key size is the default, but you can use a larger key size by specifying a larger value for [AppConfig:KeyVaultConfig:RootCertificateConfig:KeySize](../../scepman-configuration/optional/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-keysize) before generating the Root CA certificate. 4096 bit is currently the maximum supported by Azure Key Vault. If you use an Intermediate CA certificate, you can also use any key size supported by Key Vault, but it must be an RSA key.
+For the CA key, SCEPman supports RSA only. 2048 bit key size is the default, but you can use a larger key size by specifying a larger value for [AppConfig:KeyVaultConfig:RootCertificateConfig:KeySize](../../advanced-configuration/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-keysize) before generating the Root CA certificate. 4096 bit is currently the maximum supported by Azure Key Vault. If you use an Intermediate CA certificate, you can also use any key size supported by Key Vault, but it must be an RSA key.
 
-### 16. Is the CA created by SCEPman unique?
+### 4. Is the CA created by SCEPman unique?
 
 Yes
 
@@ -277,35 +295,49 @@ This section covers questions that arise when defining cyberdefense policies for
 
 ### Storage Accounts
 
-#### 18. Can `Allow Blob public access` be disabled?
+#### 1. Can `Allow Blob public access` be disabled?
 
 _Yes_, that is actually already the default for new SCEPman installations.
 
 ### App Services
 
-#### 19. TLS: Can `Client certificate mode` be set to `Require`?&#x20;
+#### 2. TLS: Can `Client certificate mode` be set to `Require`?&#x20;
 
 _No_, as this would break SCEPman's functionality. This is because SCEPman enrolls client certificates, so the clients do not yet have client certificates to authenticate with (chicken-egg-problem). That is not a security issue, though, as the SCEP protocol uses its own authentication mechanisms through the SCEP challenge. Hence, SCEPman needs an exemption from policies enforcing mutual TLS. The `Client certificate mode` must be set to `Ignore`.
 
-#### 20. Can the `HTTP version` be set to `2.0`?
+#### 3. Can the `HTTP version` be set to `2.0`?
 
 While SCEPman should work with any of the available HTTP versions, as of today, we only support the default `HTTP 1.1` - mainly due to lack of testing.&#x20;
 
 When changing this setting - at your own risk - please consider that it is not only SCEPman that needs to support the newer HTTP version. The different types of clients also need to support that version of HTTP, i.e. the OS-integrated SCEP clients of Window, MacOS, iOS, the ones in IoT devices, the OCSP clients on the same platforms, but also NACs of different vendors.
 
-#### 21. Can `HTTPS Only` be enabled?
+#### 4. Can `HTTPS Only` be enabled?
 
 _No (not for SCEPman app service)_, as this will break the OCSP-responder functionality of SCEPman in combination with many OCSP clients and vendor appliances. OCSP is a protocol that is more commonly provided over HTTP than HTTPS. One of the reasons is, if you used TLS for certificate revocation checking (downloading CRLs or OCSP), there could be a chicken-and-egg-problem, where the client or appliance cannot establish the TLS connection to the OCSP endpoint, because the server certificate needs to be verified over OCSP first. It also doesn't add a lot of security, because OCSP responses are cryptographically signed anyway and therefore cannot be spoofed. Hence, SCEPman needs an exemption from policies enforcing TLS.
 
 **Note:** **`HTTPS Only`** cannot be enabled for the SCEPman app service, but it should be enabled for the Certificate Master app service.
 
+## GDPR and Data-residency <a href="#user-content-gdpr-and-data-residency" id="user-content-gdpr-and-data-residency"></a>
+
+### 1. Is data leaving Europe?
+
+* This depends on the customer's choice on the Azure data center in which SCEPman and its components shall be deployed.
+* A full deployment of SCEPman including all its components into European Azure data centers is possible.
+
+### 2. What 3rd-Party cloud-providers does SCEPman rely on and why?
+
+| Company                                          | Services                                                                  | Contact                                                                                   | Purpose                                                                                               |
+| ------------------------------------------------ | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Microsoft Corporation                            | Cloud Services (Azure)                                                    | <p>Building 3, Carmanhall Road Sandyford,<br>Industrial Estate 18, Dublin,<br>Ireland</p> | See [here](../../scepman-deployment/deployment-guides/enterprise-guide-1.md#overview-azure-resource). |
+| GitHub Inc (subsidiary of Microsoft Corporation) | git code repository, integration, testing and release automation, storage | <p>88 Colin P Kelly Jr St, </p><p>San Francisco,</p><p>CA 94107, </p><p>United States</p> | Code repository, CI/CD pipeline, binary storage                                                       |
+
 ## Miscellaneous
 
-### 22. Is SCEPman part of a bug-bounty program?
+### 1. Is SCEPman part of a bug-bounty program?
 
 No
 
-### 23. What QA measures are in place?
+### 2. What QA measures are in place?
 
 * We provide SCEPman on an internal-, beta-, and production channel
 * Each production release must go through the internal- and beta-channel first, passing the relevant QA hurdles as part of our CI process
@@ -315,8 +347,3 @@ No
   * Stress tests
   * Experience-based testing
   * 3rd-party code analysis, e.g. Sonar, Dependabot, and others
-
-### 24. What cloud-providers does SCEPman rely on?
-
-* Microsoft Azure
-* GitHub (for automatic updates)

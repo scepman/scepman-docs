@@ -11,6 +11,7 @@ In some cases, admins want to trigger a re-enrollment for SCEP certificates, in 
 | Certificate validity period |           Yes           |
 |  Extended Key Usages (EKU)  |           Yes           |
 |      Renewal threshold      |            No           |
+|       SCEP Server URL       |            No           |
 
 {% hint style="info" %}
 To understand and troubleshoot SCEP certificate renewal process in Intune, please check the great article [Deep dive of SCEP certificate request/renewal on Intune-managed Windows clients](https://oliverkieselbach.com/2022/09/21/deep-dive-of-scep-certificate-request-renewal-on-intune-managed-windows-clients/) on Oliver Kieselbach's blog.

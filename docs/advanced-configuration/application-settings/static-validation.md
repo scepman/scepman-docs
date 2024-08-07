@@ -22,7 +22,7 @@ Applicable to version 1.6 and above
 Applicable to version 2.8 and above
 {% endhint %}
 
-**Value:** Oids of the extended key usages (EKUs) that are added to the certificate if the Jamf endpoint is used. The Oids are separated by a comma, semicolon, or space. The default is Client Authentication (1.3.6.1.5.5.7.3.2)
+**Value:** Oids of the extended key usages (EKUs) that are added to the certificate if the Static endpoint is used. The Oids are separated by a comma, semicolon, or space. The default is Client Authentication (1.3.6.1.5.5.7.3.2)
 
 **Description:** If a certificate request does not contain any EKUs, SCEPman adds the EKUs defined in this setting to the certificate. If AppConfig:UseRequestedKeyUsages is set to _false_, the EKUs defined in this setting will be added to the certificate even if the certificate request contains EKUs.
 
@@ -32,7 +32,7 @@ Applicable to version 2.8 and above
 Applicable to version 2.8 and above
 {% endhint %}
 
-**Value:** EncipherOnly|CrlSign|KeyCertSign|KeyAgreement|DataEncipherment|*KeyEncipherment*|NonRepudiation|*DigitalSignature*|DecipherOnly (defaults are in *italic*)
+**Value:** EncipherOnly|CrlSign|KeyCertSign|KeyAgreement|DataEncipherment|_KeyEncipherment_|NonRepudiation|_DigitalSignature_|DecipherOnly (defaults are in _italic_)
 
 **Description:** If a certificate request does not contain a Key Usage, SCEPman adds the Key Usage defined in this setting to the certificate. If AppConfig:UseRequestedKeyUsages is set to _false_, the Key Usage defined in this setting will be added to the certificate even if the certificate request contains a Key Usage.
 
@@ -68,4 +68,4 @@ SCEPman Enterprise Edition only
 
 **Value:** _true_ or _false_ (default)
 
-**Description:** When requesting certificates via the static endpoint, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them. If set to _false_, SCEPman will not store issued certificates and the certificates are visible only in the logs or if the SCEP client stores them somewhere. If this is not set, the behavior depends on the global setting AppConfig:EnableCertificateStorage.
+**Description:** When requesting certificates via the static endpoint, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them. If set to _false_, SCEPman will not store issued certificates and the certificates are visible only in the logs or if the SCEP client stores them somewhere. If this is not set, the behavior depends on the global setting [AppConfig:EnableCertificateStorage](basics.md#appconfig-enablecertificatestorage).

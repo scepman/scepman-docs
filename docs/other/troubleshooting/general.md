@@ -36,6 +36,8 @@ This could happen when a wrong trusted root certificate was selected in the SCEP
 
 ![](<../../.gitbook/assets/event32\_1 (2) (3) (3) (3) (2) (1) (12).png>)
 
+If you are using an Intermediate CA, note that you have to [select the Intermediate CA certificate](../../advanced-configuration/intermediate-certificate.md#intermediate-cas-and-intune-scep-profiles) and not the Root CA certificate in the SCEP configuration profile! Note that this is specific to the Windows platform and for example Android requires selecting the Root CA certificate in the SCEP configuration profile.
+
 ### My Certificate does not have the correct OCSP URL Entry
 
 {% hint style="info" %}
@@ -73,7 +75,7 @@ Oliver Kieselbach and Christoph Hannebauer wrote [a blog article about analysis 
 
 Currently, some Windows 10 devices do not have the correct time during the OOBE experience. This is not easy to see, since the screen shows no clock. This causes a problem with newly issued certificates, as they are _not yet_ valid. Windows then discards these "invalid" certificates and shows an error. Certificates are issued 10 minutes in the past by default to address smaller clock issues, but we have recently seen Windows 10 devices that are up to 9 hours behind time.
 
-You may proceed with the enrollment and once this is finished, the device will get a certificate successfully, as the clock is correct then. You may also use the new option [**AppConfig:ValidityClockSkewMinutes**](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityclockskewminutes) to date back certificates for more than 10 minutes. Use 1440 minutes to date back the certificates for a whole day. This will be the default for new SCEPman installations to address this issue.
+You may proceed with the enrollment and once this is finished, the device will get a certificate successfully, as the clock is correct then. You may also use the new option [**AppConfig:ValidityClockSkewMinutes**](../../advanced-configuration/application-settings/certificates.md#appconfig-validityclockskewminutes) to date back certificates for more than 10 minutes. Use 1440 minutes to date back the certificates for a whole day. This will be the default for new SCEPman installations to address this issue.
 
 ### I issued a certificate today, but the Issuance Date says it was yesterday
 
@@ -111,7 +113,7 @@ To check the validity of a certificate on a macOS machine using OCSP, please fol
 2. Export the client authentication certificate you want to verify from **Keychain Access** (**System Keychains > System > My Certificates**) as \*.cer file into the same folder.
 3.  Extract the OCSP responder URL from the client authentication certificate's **Authority Information Access** (AIA) property:
 
-    <figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 4. Open a **Terminal** session and `cd` to the folder that contains the exported certifcates.
 5. Execute the following command:
 
@@ -122,7 +124,7 @@ openssl ocsp -issuer <filename-scepman-root-ca-certificate> -cert <filename-cert
 6.  Towards the end of the response, the revocation status is displayed:\
 
 
-    <figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
 
 ### Check certificates from other machines
 
@@ -141,10 +143,10 @@ If you want to revoke a **user** certificate, you have two options:‌
 1. Deleting the user from Microsoft Entra ID (Azure AD) or
 2. Block sign-in for the user
 
-If you want to revoke a **device** certificate, you have multiple options depending on [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention"):
+If you want to revoke a **device** certificate, you have multiple options depending on [#appconfig-intunevalidation-devicedirectory](../../advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention"):
 
 1. Microsoft Entra ID (Azure AD): Delete or disable the device ([Microsoft Entra ID (Azure AD) Portal](https://aad.portal.azure.com/): "Devices" - "All devices").
-2. **Intune**: Delete the device or trigger a remote action (several managements states like "WipePending" automatically revoke certificates as stated under [#appconfig-intunevalidation-revokecertificatesonwipe](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-revokecertificatesonwipe "mention")).
+2. **Intune**: Delete the device or trigger a remote action (several managements states like "WipePending" automatically revoke certificates as stated under [#appconfig-intunevalidation-revokecertificatesonwipe](../../advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-revokecertificatesonwipe "mention")).
 3. **Both directories**: Execute actions for Microsoft Entra ID (Azure AD) **and** Intune as described.
 
 {% hint style="info" %}
@@ -195,4 +197,4 @@ We are currently working with Microsoft to solve this issue in all configuration
 
 If your SCEPman homepage shows a red tag "Not Connected" for Storage Account connectivity, possibly the Managed Identity of the SCEPman App Service (and possibly that of SCEPman Certificate Master) is missing permissions on the Storage Account. In this case, SCEPman cannot check whether a certificate is manually revoked and therefore cannot respond to OCSP requests. This usually happens if you move the Storage Account to another subscription or resource group. It may also occur after upgrading a Community Edition version to Enterprise Edition -- in this case, the permission problem existed before, but the Community Edition did not check for it.
 
-To fix this, you need to grant the Managed Identity of the SCEPman App Service and that of SCEPman Certificate Master the role "Storage Table Data Contributor" on the Storage Account. The role assignments can be done manually in the Azure Portal under "Access Control (IAM)" in the Storage Account. Alternatively, just [execute the SCEPman Installation CMDlet from the SCEPman PowerShell module once again](../../scepman-configuration/post-installation-config.md#running-the-scepman-installation-cmdlet).
+To fix this, you need to grant the Managed Identity of the SCEPman App Service and that of SCEPman Certificate Master the role "Storage Table Data Contributor" on the Storage Account. The role assignments can be done manually in the Azure Portal under "Access Control (IAM)" in the Storage Account. Alternatively, just [execute the SCEPman Installation CMDlet from the SCEPman PowerShell module once again](../../scepman-deployment/permissions/post-installation-config.md#running-the-scepman-installation-cmdlet).

@@ -14,6 +14,6 @@ This change is currently (February 2024) being rolled out to all Microsoft Intun
 SCEPman is ready for this change. SCEPman customers do not have to take action.
 {% endhint %}
 
-We addressed the KDC issue in [July 2023](../../changelog.md#scepman-2.5.892) by [using the SID extension](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-addsidextension) that the on-premises ADCS also use. Therefore, SCEPman customers do not require the new SAN field.
+We addressed the KDC issue in [July 2023](../../changelog.md#scepman-2.5.892) by [using the SID extension](../../advanced-configuration/application-settings/certificates.md#appconfig-addsidextension) that the on-premises ADCS also use. Therefore, SCEPman customers do not require the new SAN field.
 
 However, we have also tested that SCEPman supports this SAN format and it works with all SCEPman versions. SCEPman customers can choose whether they want the SID extension or the SID SAN value.

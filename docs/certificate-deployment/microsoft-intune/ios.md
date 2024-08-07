@@ -12,7 +12,7 @@ The basis for deploying SCEP certificates is to trust the root certificate of SC
 
 * [ ] Create a profile for iOS/iPadOS with type **Trusted certificate** in Microsoft Intune:
 
-![](<../../.gitbook/assets/image (11).png>)
+![](<../../.gitbook/assets/image (19).png>)
 
 * [ ] Upload your previously downloaded **.cer file**.
 * [ ] Now you can deploy this profile to your devices. Please choose All Users and/or All Devices or a dedicated group for assignment.
@@ -29,7 +29,7 @@ Note, that you have to use the **same group for assigning** the **Trusted certif
 
 * [ ] Create a profile for iOS/iPadOS with type **SCEP certificate** in Microsoft Intune:
 
-![](<../../.gitbook/assets/image (12).png>)
+![](<../../.gitbook/assets/image (20).png>)
 
 * [ ] Configure the profile as described:
 
@@ -49,7 +49,7 @@ SCEPman uses the CN field of the subject to identify the device and as a seed fo
 
 * \{{DeviceId\}}: This ID is generated and used by Intune **(Recommended)**\
   \
-  (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
+  (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
 
 <!---->
 
@@ -75,7 +75,7 @@ Other SAN values like DNS can be added if needed.
 
 <summary>Certificate validity period: <code>1 years</code></summary>
 
-<mark style="color:orange;">**Important:**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">iOS/iPadOS devices ignore the configuration of the validity period via Intune. Please make sure, to configure</mark> [#appconfig-validityperioddays](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays "mention") <mark style="color:orange;">to a fixed value. We recommend 2 years, so you have to set this variable in SCEPman configuration to 730 days. But you can leave the certificate validity period setting to 1 year because Intune ignores it anyway.</mark>\
+<mark style="color:orange;">**Important:**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">iOS/iPadOS devices ignore the configuration of the validity period via Intune. Please make sure, to configure</mark> [#appconfig-validityperioddays](../../advanced-configuration/application-settings/certificates.md#appconfig-validityperioddays "mention") <mark style="color:orange;">to a fixed value. We recommend 2 years, so you have to set this variable in SCEPman configuration to 730 days. But you can leave the certificate validity period setting to 1 year because Intune ignores it anyway.</mark>\
 \
 **I**<mark style="color:orange;">**mportant:**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">Also note, that</mark> <mark style="color:orange;"></mark><mark style="color:orange;">**certificates on iOS/iPadOS are only renewed**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">by Intune when the device is</mark> <mark style="color:orange;"></mark><mark style="color:orange;">**unlocked, online, syncing and in scope of the renewal threshold**</mark><mark style="color:orange;">. If certificates are expired (e.g.: device was offline and/or locked for a long time), they won't be renewed any more. Therefore, we recommend to choose an higher value here.</mark>
 

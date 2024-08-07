@@ -3,7 +3,7 @@
 Please follow this guide to distribute certificates to devices (e.g.: iOS, iPadOS). Before deploying the first certificates via Jamf, follow the [general steps for Jamf](general.md) first.
 
 {% hint style="success" %}
-We strongly recommend to configure all use-case relevant certificate payloads (trusted certificate / SCEP certificate) in a **single** Configuration Profile in Jamf.
+We strongly recommend configuring all use-case relevant certificate payloads (trusted certificate / SCEP certificate) in a **single** Configuration Profile in Jamf.
 {% endhint %}
 
 ## SCEPman Root Certificate
@@ -22,9 +22,9 @@ Please add another "Mobile Device Configuration Profile" and choose "SCEP" as pa
 
 | Field                | Description                                     | Value/Example                                |
 | -------------------- | ----------------------------------------------- | -------------------------------------------- |
-| Name                 | name/purpose                                    | e.g. "Device Authentication"                 |
-| Redistribute Profile | re-deploys profile for renewal                  | e.g. "14 days"                               |
-| Subject              | subject for certificate, additions are possible | CN=$JSSID,OU=devices,CN=$PROFILE\_IDENTIFIER |
+| Name                 | Name/purpose                                    | e.g. "Device Authentication"                 |
+| Redistribute Profile | Re-deploys profile for renewal                  | e.g. "14 days"                               |
+| Subject              | Subject for certificate, additions are possible | CN=$JSSID,OU=devices,CN=$PROFILE\_IDENTIFIER |
 
 ![](<../../.gitbook/assets/image (28).png>)
 
