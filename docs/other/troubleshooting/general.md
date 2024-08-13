@@ -14,6 +14,14 @@ Check if the Azure resource is up and running.
 
 ![](<../../.gitbook/assets/event32\_2 (3) (3) (3) (3) (2) (1) (12).png>)
 
+### My App Service uses the wrong .NET version
+
+In the App Service resource of SCEPman or Certificate Master, you can check which Stack and version is configured for that App Service under Settings -> Configuration -> General settings -> Stack settings. While the Stack is .NET, the .NET version might not match what you expect for your version of SCEPman, e.g. .NET 8 for SCEPman 2.8.
+
+This is because some common .NET versions are automatically available on all Windows App Services, independently of which .NET version you select in the settings. We only lift SCEPman to a new .NET version when this version is included in this set of automatically installed .NET versions. We do this because our update mechanism via WEBSITE\_RUN\_FROM\_PACKAGE does not give us any control over the .NET version setting. Hence, it actually does not matter what is configured as .NET version.
+
+As a side note, Linux App Services do not include any automatically installed .NET stacks. If you wanted to run SCEPman on a Linux App Service, you would have to configure the correct .NET version. However, the next SCEPman update could break your installation if it used a newer .NET version. This is why we do not support SCEPman on Linux App Services.
+
 ## Problems Issuing Certificates
 
 ### Trusted Root Certificate is deployed but my Device Certificate via SCEP Profile results in an Error
