@@ -16,16 +16,15 @@ To enable the feature, you must add two application settings in your SCEPman ser
 
 1. Navigate to **App Services**
 2. Then choose your SCEPman app
-3.
-4. Select **New application setting**
-5. Type **AppConfig:StaticValidation:Enabled** as Name
-6. Type **true** as Value
-7. Confirm with **OK**
-8. Select **New application setting** again
-9. Type **AppConfig:StaticValidation:RequestPassword** as Name
-10. Type your **key/password**, that you have generated earlier, as Value
-11. Confirm with **OK**
-12. Save the application settings
+3. Select **New application setting**
+4. Type **AppConfig:StaticValidation:Enabled** as Name
+5. Type **true** as Value
+6. Confirm with **OK**
+7. Select **New application setting** again
+8. Type **AppConfig:StaticValidation:RequestPassword** as Name
+9. Type your **key/password**, that you have generated earlier, as Value
+10. Confirm with **OK**
+11. Save the application settings
 
 ## MDM Configuration
 

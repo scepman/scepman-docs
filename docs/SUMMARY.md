@@ -48,6 +48,7 @@
 * [3rd-party MDM Solutions](certificate-deployment/static-certificates/README.md)
   * [Kandji](certificate-deployment/static-certificates/kandji.md)
   * [Mosyle](certificate-deployment/static-certificates/mosyle.md)
+  * [SOTI MobiControl](certificate-deployment/static-certificates/soti-mobicontrol.md)
 * [Domain Controller Certificates](certificate-deployment/domain-controller-certificates.md)
 * [Enrollment REST API](certificate-deployment/api-certificates.md)
 * [Manage Certificates](certificate-deployment/manage-certificates.md)
