@@ -132,8 +132,8 @@ This is **recommended** step.
 
 We can configure a Health Check for the App Service to get direct notifications in case that the SCEPman stops working.
 
-{% content-ref url="../../advanced-configuration/health-check.md" %}
-[health-check.md](../../advanced-configuration/health-check.md)
+{% content-ref url="../../advanced-configuration/health-check/" %}
+[health-check](../../advanced-configuration/health-check/)
 {% endcontent-ref %}
 
 ### Step 8: Ensure that SCEPman has sufficient Resources
