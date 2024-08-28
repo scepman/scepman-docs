@@ -79,7 +79,7 @@ Applicable to version 2.1 and above.
 
 **Value:** _true_ (default) or _false_
 
-**Description:** This setting extends validation of devices when using the Intune Device ID. If it is enabled, SCEPman evaluates the Management State property of an Intune Device when its device certificate is validated. If the state indicates one of the following values, the certificate is revoked:
+**Description:** This setting extends validation of devices when using the Intune Device ID. It does not work when using the AAD Device ID. If it is enabled, SCEPman evaluates the Management State property of an Intune Device when its device certificate is validated. If the state indicates one of the following values, the certificate is revoked:
 
 * RetirePending
 * RetireFailed
