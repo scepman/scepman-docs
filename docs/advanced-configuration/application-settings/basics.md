@@ -52,7 +52,7 @@ Applicable to version 2.8 and above
 
 **Value:** _true_ or _false_ (default)
 
-**Description:** When requesting certificates, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_ and when this setting is not explictly overriden with _false_ for the specific endpoint. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically depending on the specific SCEP endpoint used for enrollment. If set to _false_ or not set, SCEPman will only store issued certificates for those endpoint where certificate storage has been explicitly enabled. If a certificate is not stored,they are visible only in the logs or if the SCEP client stores them somewhere.
+**Description:** When requesting certificates, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_ and when this setting is not explictly overriden with _false_ for the specific endpoint. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically depending on the specific SCEP endpoint used for enrollment. If set to _false_ or not set, SCEPman will only store issued certificates for those endpoints where certificate storage has been explicitly enabled. If a certificate is not stored, they are visible only in the logs or if the SCEP client stores them somewhere.
 
 ## WEBSITE\_RUN\_FROM\_PACKAGE
 
