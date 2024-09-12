@@ -71,6 +71,6 @@ If you download a new service account key later, restart the service to apply it
 {% hint style="info" %}
 For more information and references please visit [Google Workspace Admin Help](https://support.google.com/a/answer/9366164?hl=en\&fl=1\&sjid=2941552975651362083-NC) or download the original PDF guide [Configuring Certificate Enrollment for ChromeOS via SCEP](https://support.google.com/chrome/a/answer/11338941?hl=en).
 
-_Google, Google Workspace, and related marks and logos are trademarks of Google LLC. All other company and product names are trademarks of the companies with which they are associated._
+_Google, Google Workspace, ChromeOS and related marks and logos are trademarks of Google LLC._&#x20;
 {% endhint %}
 
