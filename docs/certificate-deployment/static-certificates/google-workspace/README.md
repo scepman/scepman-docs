@@ -32,7 +32,6 @@ This guide assumes that you already provisioned Chromebook computer(s) running C
 * The GCCC requires a Windows Server appliance or VM running Windows Server 2016 or later.
 * The Windows Server instance must have the following network access:
   * Outbound: HTTP (80) and HTTPS (443).
-  * Inbound: HTTPS (443).
 
 #### **Installation of the GCCC**
 

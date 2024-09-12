@@ -56,4 +56,7 @@ The SCEP profile defines the certificate that lets users access your WiFi. Assig
 
 <figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
-The SCEP profile is automatically distributed to users in the organisational unit.
+5. The SCEP profile is automatically distributed to users in the organisational unit.
+6. To check for this certificate, in your Chromebook navigate to **chrome://certificate.manager**.
+
+<figure><img src="../../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
