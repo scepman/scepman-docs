@@ -23,7 +23,7 @@ description: >-
 
 This guide assumes that you already provisioned Chromebook computer(s) running ChromeOS version 89 or later managed with **Chrome Enterprise**.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Minimum subscriptions required</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Minimum subscriptions required</p></figcaption></figure>
 
 ### Google Cloud Certificate Connector (GCCC)
 
@@ -67,3 +67,10 @@ If you download a new service account key later, restart the service to apply it
 |                [AppConfig:StaticValidation:RequestPassword](../../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-requestpassword)               | <p>Certificate signing requests sent to SCEPman for signing are authenticated with this secure static password<br><br><strong>Recommendation</strong>: Store this secret in <a href="../../../advanced-configuration/application-settings/#secure-configuration-in-azure-key-vault">Azure KeyVault</a>.</p> |      _generate a 32 character password_      |
 |       [AppConfig:StaticValidation:ValidityPeriodDays](../../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-validityperioddays) (optional)       | Days certificates issued via Google Workspace are valid                                                                                                                                                                                                                                                     |                      365                     |
 | [AppConfig:StaticValidation:EnableCertificateStorage](../../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-enablecertificatestorage) (optional) | Store requested certificates in the Storage Account, in order to show them in SCEPman Certificate Master                                                                                                                                                                                                    | _**true**_ to enable, _**false** to disable_ |
+
+{% hint style="info" %}
+For more information and references please visit [Google Workspace Admin Help](https://support.google.com/a/answer/9366164?hl=en\&fl=1\&sjid=2941552975651362083-NC) or download the original PDF guide [Configuring Certificate Enrollment for ChromeOS via SCEP](https://support.google.com/chrome/a/answer/11338941?hl=en).
+
+_Google, Google Workspace, and related marks and logos are trademarks of Google LLC. All other company and product names are trademarks of the companies with which they are associated._
+{% endhint %}
+
