@@ -27,7 +27,7 @@ After adding or editing SCEPman configuration parameters, you need to restart th
 
 ### SCEPman Root Certificate
 
-As a first step you need to deploy SCEPman root certificate. Download this CA certificate via SCEPman website:
+As a first step you must deploy SCEPman's root certificate. Download this CA certificate via SCEPman website:
 
 ![SCEPman Website](<../../.gitbook/assets/SCEPmanHomePage (2).png>)
 

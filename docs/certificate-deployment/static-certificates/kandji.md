@@ -27,7 +27,7 @@ After adding or editing SCEPman configuration parameters, you need to restart th
 
 ### SCEPman Root Certificate
 
-As a first step, you need to deploy SCEPman root certificate. Download this CA certificate via the SCEPman website:
+As a first step, you must deploy SCEPman's root certificate. Download this CA certificate via the SCEPman website:
 
 ![SCEPman Website](<../../.gitbook/assets/SCEPmanHomePage (2).png>)
 
@@ -43,7 +43,7 @@ To upload the certificate, first select **PKCS #1-formatted certificate** under 
 
 The second step is to add a **SCEP Profile** to your **Blueprint**. Therefore, add a new **SCEP Library Item** and configure it as below:
 
-* **URL**: \*\*\*\* The static SCEP endpoint of SCEPman you configured [above](kandji.md#enable-kandji-integration)
+* **URL**: The static SCEP endpoint of SCEPman you configured [above](kandji.md#enable-kandji-integration)
 * **Name:** An optional SAN attribute
 * **Challenge**: Is required to authenticate CSR requests sent to SCEPman's static SCEP interface. It must match the [value](../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-requestpassword) you have configured [above](kandji.md#enable-kandji-integration).
 * **Fingerprint:** Optional CA fingerprint. It is highly recommended to configure this value as it provides an additional level of security. You can find it on your SCEPman website as **CA Thumbprint**.

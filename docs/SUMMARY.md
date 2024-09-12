@@ -46,6 +46,8 @@
   * [Client Certificate](certificate-deployment/certificate-master/client-certificate-pkcs-12.md)
   * [User Certificate](certificate-deployment/certificate-master/user-certificate.md)
 * [3rd-party MDM Solutions](certificate-deployment/static-certificates/README.md)
+  * [Google Workspace](certificate-deployment/static-certificates/google-workspace/README.md)
+    * [ChromeOS](certificate-deployment/static-certificates/google-workspace/chromeos.md)
   * [Kandji](certificate-deployment/static-certificates/kandji.md)
   * [Mosyle](certificate-deployment/static-certificates/mosyle.md)
   * [SOTI MobiControl](certificate-deployment/static-certificates/soti-mobicontrol.md)

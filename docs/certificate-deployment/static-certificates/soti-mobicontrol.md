@@ -4,22 +4,28 @@ SCEPman can be integrated with SOTI MobiControl as a Certificate Authority. By c
 
 For more general information about 3rd-party MDM solutions and SCEPman integration please check [here](./).
 
-## SCEPman configuration
+## Enable SOTI MobiControl Integration
 
-1. Please do the general setup of SCEPman as described [in our Getting Started Guide](../../scepman-deployment/deployment-guides/).
-2. Please enable the Static SCEP interface of SCEPman as described [here](./#scepman-configuration).
+SOTI MobiControl integration of SCEPman can be easily enabled via the following app configurations:
 
-## SOTI MobiControl configuration
+|                                                                                               Setting                                                                                              | Description                                                                                                                                                                                                                                                                                              |                     Value                    |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------: |
+|                           [AppConfig:StaticValidation:Enabled](../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-enabled)                          | Enable the 3rd-party validation                                                                                                                                                                                                                                                                          |   **true** to enable, **false** to disable   |
+|                   [AppConfig:StaticValidation:RequestPassword](../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-requestpassword)                  | <p>Certificate signing requests sent to SCEPman for signing are authenticated with this secure static password<br><br><strong>Recommendation</strong>: Store this secret in <a href="../../advanced-configuration/application-settings/#secure-configuration-in-azure-key-vault">Azure KeyVault</a>.</p> |      _generate a 32 character password_      |
+|          [AppConfig:StaticValidation:ValidityPeriodDays](../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-validityperioddays) (optional)          | How many days shall certificates issued via SOTI MobiControl be valid                                                                                                                                                                                                                                    |                      365                     |
+| [AppConfig:StaticValidation:EnableCertificateStorage](../../advanced-configuration/application-settings/staticaad-validation.md#appconfig-staticaadvalidation-enablecertificatestorage) (optional) | Store requested certificates in the Storage Account, in order to show them in SCEPman Certificate Master                                                                                                                                                                                                 | _**true**_ to enable, _**false** to disable_ |
+
+## SOTI MobiControl Configuration
 
 ### Add Certificate Authority
 
-3. In Soti Mobicontrol, navigate to System Settings > Global Settings > Services > Certificate Authority.
+1. In Soti Mobicontrol, navigate to System Settings > Global Settings > Services > Certificate Authority.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Authority Page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Authority Page</p></figcaption></figure>
 
-4. Click the Add button to create a new Certificate Authority.
+2. Click the Add button to create a new Certificate Authority.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Soti MobiControl Certificate Authority Details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Authority Details</p></figcaption></figure>
 
 * Enter a **name** for this Certificate Authority.&#x20;
 * Select `Generic SCEP` for **Certificate Type**.&#x20;
@@ -33,7 +39,7 @@ For more general information about 3rd-party MDM solutions and SCEPman integrati
 
 ### Add Certificate Template
 
-5. Click the Add button to add a **Certificate Template**.
+3. Click the Add button to add a **Certificate Template**.
 
 <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Soti MobiControl Certificate Template Detail</p></figcaption></figure>
 
@@ -49,5 +55,5 @@ The format for the **Subject Name** field can only be the following format: “C
 * Select the desired option for the remaining fields: **Certificate Usage**, **Key Size**, **Remove old certificates upon successful renewal**, and **Key Protection**.
 * Click Add, then Save to save the Template
 
-6. Click **Save** to save the Certificate Authority.
-7. **Create a Profile** in Soti MobiControl to assign this to your devices. There are multiple ways of achieving this in Soti MobiControl, as such, this document will not detail those methodologies.
+4. Click **Save** to save the Certificate Authority.
+5. **Create a Profile** in Soti MobiControl to assign this to your devices. There are multiple ways of achieving this in Soti MobiControl, as such, this document will not detail those methodologies.
