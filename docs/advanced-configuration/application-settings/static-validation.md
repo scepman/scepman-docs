@@ -12,9 +12,9 @@ Applicable to version 1.6 and above
 
 **Value:** _true_ or _false_
 
-**Description:** This setting helps you to request certificates from [3rd-party MDM systems](../../certificate-deployment/static-certificates/) (i.e. other than Intune and JAMF).
+**Description:** This setting helps you to request certificates from [Other MDM systems](../../certificate-deployment/static-certificates/) (i.e. other than Intune and JAMF).
 
-**True**: SCEPman listens at the additional SCEP server endpoint with the path `/static`. Use in conjunction with AppConfig:StaticValidation:RequestPassword. **False** (default): SCEPman does not issue certificates for 3rd-party MDM systems (i.e. other than Intune and JAMF).
+**True**: SCEPman listens at the additional SCEP server endpoint with the path `/static`. Use in conjunction with AppConfig:StaticValidation:RequestPassword. **False** (default): SCEPman does not issue certificates for Other MDM systems (i.e. other than Intune and JAMF).
 
 ## AppConfig:StaticValidation:DefaultEkus
 
@@ -44,7 +44,7 @@ Applicable to version 1.6 and above
 
 **Value:** _String_
 
-**Description:** A challenge password that a 3rd-party MDM system must include in every SCEP request to acquire a certificate. Only used if AppConfig:StaticValidation:Enabled is set to _true_.
+**Description:** A challenge password that Other MDM system must include in every SCEP request to acquire a certificate. Only used if AppConfig:StaticValidation:Enabled is set to _true_.
 
 We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--StaticValidation--RequestPassword_.
 

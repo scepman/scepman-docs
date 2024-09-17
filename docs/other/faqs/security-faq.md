@@ -110,7 +110,7 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
 
 1. SCEP-endpoint(s)
    * Invoked for SCEP-requests.
-   * Based on the configuration, SCEPman may expose several SCEP-endpoints for Intune, Jamf Pro, DCs, generic 3rd-party MDMs.
+   * Based on the configuration, SCEPman may expose several SCEP-endpoints for Intune, Jamf Pro, DCs, generic Other MDMs.
 2. Enrollment REST API
    * Allows Certificate Master to request certificates from SCEPman's core service.
    * Allows custom applications to request certificates from SCEPman's core service.

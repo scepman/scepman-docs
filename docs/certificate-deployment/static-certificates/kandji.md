@@ -6,7 +6,7 @@ This feature requires version 1.6 or above.
 
 SCEPman can be connected to [Kandji](https://www.kandji.io/) as External CA. Via SCEPman's static interface and a challenge password enrolled devices will be able to obtain certificates.
 
-For more general information about 3rd-party MDM solutions and SCEPman integration please check [here](./).
+For more general information about other MDM solutions and SCEPman integration please check [here](./).
 
 ## Enable Kandji Integration
 
