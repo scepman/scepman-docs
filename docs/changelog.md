@@ -251,7 +251,7 @@
 ### 1.6.455 - November 2020
 
 * Support for certificates for [Domain Controllers](certificate-deployment/domain-controller-certificates.md), especially for use in Windows Hello for Business (Enterprise Edition only)
-* Generic support for [3rd-party MDM systems via endpoint static](certificate-deployment/static-certificates/)
+* Generic support for [Other MDM systems via endpoint static](certificate-deployment/static-certificates/)
 * Improved error logging
 * Bug fixing
 
