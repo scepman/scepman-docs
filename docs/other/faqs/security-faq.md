@@ -146,7 +146,7 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
 
 1. SCEP-endpoint(s)
    * Intune: Protected via Intune Challenge API ([Microsoft Docs](https://docs.microsoft.com/en-us/mem/intune/protect/scep-libraries-apis))
-   * Jamf Pro, DCs, generic 3rd party MDMs: Protected with a static SCEP-challenge. Configurable by the customer. May be stored in Azure Key Vault.
+   * Jamf Pro, DCs, generic Other MDMs: Protected with a static SCEP-challenge. Configurable by the customer. May be stored in Azure Key Vault.
 2. Enrollment REST API
    * Microsoft Entra ID (Azure AD) integrated authentication.
 3. EST-endpoint
@@ -177,7 +177,7 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
 
 1. SCEP-endpoint(s)
    * Intune: HTTPS (TCP / 443)
-   * Jamf Pro, DCs, generic 3rd party MDMs: HTTPS (TCP / 443)
+   * Jamf Pro, DCs, generic Other MDMs: HTTPS (TCP / 443)
 2. Enrollment REST API
    * HTTPS (TCP / 443)
 3. EST-endpoint
