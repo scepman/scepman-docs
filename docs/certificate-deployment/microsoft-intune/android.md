@@ -55,7 +55,7 @@ In this section, we are setting up a device certificate.
 
 SCEPman uses the CN field of the subject to identify the device and as a seed for the certificate serial number generation. Microsoft Entra ID (Azure AD) and Intune offer two different IDs:
 
-* \{{DeviceId\}}: This ID is generated and used by Intune **(Recommended).** (Requires SCEPman 2.0 or higher and [#AppConfig:IntuneValidation:DeviceDirectory](../../advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory) to be set to **Intune** or **AADAndIntune**
+* \{{DeviceId\}}: This ID is generated and used by Intune **(Recommended).** (Requires SCEPman 2.0 or higher and [#AppConfig:IntuneValidation:DeviceDirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory) to be set to **Intune** or **AADAndIntune**
 * \{{AAD\_Device\_ID\}}: This ID is generated and used by Microsoft Entra ID (Azure AD).
 
 You can add other RDNs if needed (e.g.: `CN={{DeviceId}}, O=Contoso, CN={{WiFiMacAddress}}`). Supported variables are listed in the [Microsoft docs](https://learn.microsoft.com/en-us/mem/intune/protect/certificates-profile-scep#create-a-scep-certificate-profile).
@@ -78,7 +78,7 @@ Other SAN values like DNS can be added if needed.
 
 The amount of time remaining before the certificate expires. Default is set at one year.
 
-SCEPman caps the certificate validity to the configured maximum in setting [_**AppConfig:ValidityPeriodDays**_](../../advanced-configuration/application-settings/certificates.md#appconfig-validityperioddays), but otherwise uses the validity configured in the request.
+SCEPman caps the certificate validity to the configured maximum in setting [_**AppConfig:ValidityPeriodDays**_](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays), but otherwise uses the validity configured in the request.
 
 </details>
 

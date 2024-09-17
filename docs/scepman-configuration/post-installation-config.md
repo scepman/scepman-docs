@@ -14,7 +14,7 @@ Whether you have just installed a fresh SCEPman 2.x installation or if you have 
 
 ### Prerequisites
 
-* A Global Admin Account for the tenant to which you want to install SCEPman (or another AAD role like _Privileged Role Administrator_ and write permissions to the Azure Subscription). There is an option to use an account with only the _Application Administrator_ role, and execute the commands requiring Global Administrator permissions later manually.
+* A Global Admin Account for the tenant to which you want to install SCEPman (or another AAD role like _Privileged Role Administrator_ and write permissions to the Azure Subscription). There is an option to use an account with only the _Application Administrator_ role and execute the commands requiring Global Administrator permissions later manually.
 * A workstation with [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (also known as _az_) installed. Azure CLI is pre-installed in the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), the preferred way to run the module.
 
 ### Running the SCEPman Installation CMDlet
@@ -23,9 +23,9 @@ Whether you have just installed a fresh SCEPman 2.x installation or if you have 
 
 Once the prerequisites are met, you can install the SCEPman installation module from PowerShell Gallery and then run the CMDlet to complete the SCEPman and Certificate Master installation.
 
-1. First you need to navigate to the SCEPman App Service and click on the URL (see screenshot below). This will navigate you to the SCEPman homepage.
+1. First, you need to navigate to the SCEPman App Service and click on Default domain (see screenshot below). This will navigate you to the SCEPman homepage.
 
-![](<../.gitbook/assets/2022-07-05 10\_22\_14-Window.png>)
+<figure><img src="../.gitbook/assets/2024-04-17 16_16_16.png" alt=""><figcaption></figcaption></figure>
 
 2. Run the PowerShell command displayed on the homepage of your SCEPman instance in your PowerShell or Azure Cloud Shell (see screenshot below). This includes a parameter to identify your SCEPman instance, so the code can run ideally without any user interaction.
 

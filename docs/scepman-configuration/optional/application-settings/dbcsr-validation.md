@@ -12,7 +12,7 @@ SCEPman Enterprise Edition only
 
 **Value:** _true_ or _false_
 
-**Description:** This is a REST API endpoint that custom scripts and processes can use. See [our article on how to use the REST API](../../../certificate-deployment/api-certificates.md) for details.
+**Description:** This is a REST API endpoint that custom scripts and processes can use. See [our article on how to use the REST API](../../../certificate-deployment/api-certificates/) for details.
 
 ## AppConfig:DbCSRValidation:ValidityPeriodDays
 

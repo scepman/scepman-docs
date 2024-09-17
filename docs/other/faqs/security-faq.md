@@ -36,7 +36,7 @@ Certificate Master maintains an audit trail on administrator activity (UPNs).
 2. Issued  Certificates
    * All issued certificates are stored in an Azure Storage Account - _excluding private keys_.
    * For the data that might be part of a certificate, please refer to [question 1](security-faq.md#id-1.-which-data-is-processed-by-scepman).
-   * This behaviour can be [disabled](../../advanced-configuration/application-settings/basics.md#appconfig-enablecertificatestorage).
+   * This behaviour can be [disabled](../../scepman-configuration/optional/application-settings/basics.md#appconfig-enablecertificatestorage).
    * When issuing certificates via Certificate Master, the requester (Microsoft Entra ID (Azure AD) UPN) is stored.
    * When revoking certificates via Certificate Master, the certificate revocation status and the identity of the user who revoked it (Microsoft Entra ID (Azure AD) UPN) is stored.
 3.  Logging
@@ -51,7 +51,7 @@ Certificate Master maintains an audit trail on administrator activity (UPNs).
 
     By default, SCEPman does **not send any personal data** to our LAW.
 
-    Depending on the logging settings, debug and other information is forwarded to glueckkanja-gab AG's LAW. Our support engineers may request to [activate](../../advanced-configuration/application-settings/basics.md#appconfig-remotedebug) the remote debugging feature from the customer admin in support of troubleshooting inquiries. In such cases, information on the certificate request may be sent to our LAW account, possibly (the customer decides what information is part of the certificate) containing personal data such as:
+    Depending on the logging settings, debug and other information is forwarded to glueckkanja-gab AG's LAW. Our support engineers may request to [activate](../../scepman-configuration/optional/application-settings/basics.md#appconfig-remotedebug) the remote debugging feature from the customer admin in support of troubleshooting inquiries. In such cases, information on the certificate request may be sent to our LAW account, possibly (the customer decides what information is part of the certificate) containing personal data such as:
 
     * Username
     * Email
@@ -84,10 +84,10 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
    With this permission, SCEPman may consult with Microsoft Entra ID (Azure AD) in order to check if the user or device certificate is originating from an authorized user or device.
 3. Microsoft Graph `DeviceManagementManagedDevices.Read.All` and `DeviceManagementConfiguration.Read.All`:\
    \
-   With these permissions, SCEPman requests the list of issued certificates via Intune when using the [EndpointList revocation feature](../../advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory).
+   With these permissions, SCEPman requests the list of issued certificates via Intune when using the [EndpointList revocation feature](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory).
 4. Microsoft Graph `IdentityRiskyUser.Read.All`:\
    \
-   This permission allows SCEPman to automatically [revoke user certificates if the AAD User Risk exceeds a configured threshold](../../advanced-configuration/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck).
+   This permission allows SCEPman to automatically [revoke user certificates if the AAD User Risk exceeds a configured threshold](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck).
 
 #### Jamf Pro
 
@@ -121,13 +121,13 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
    * Invoked for OCSP-requests.
 5. Certificate Distribution Point (CDP)
    * The Certificate Revocation List (CRL) is made available via this endpoint.
-   * Can be enabled via [configuration](../../advanced-configuration/application-settings/crl.md).
+   * Can be enabled via [configuration](../../scepman-configuration/optional/application-settings/crl.md).
 6. Validation API
    * Allows Certificate Master to evaluate the automatic revocation status of a certificate.
 7. SCEPman homepage
    * Displays SCEPman's basic status information publicly (no secrets).
    * Read-only.
-   * Can be disabled via [configuration](../../advanced-configuration/application-settings/basics.md#appconfig-anonymoushomepageaccess).
+   * Can be disabled via [configuration](../../scepman-configuration/optional/application-settings/basics.md#appconfig-anonymoushomepageaccess).
 8. SCEPman probe-endpoint
    * Health Checks: Integrated App Service Health Check, Traffic Manager probing, Application Gateway probing.
 
@@ -278,7 +278,7 @@ As a cloud PKI, SCEPman is responsible for the issuance and revocation of digita
 
 Thus, if a private key is compromised, SCEPman can revoke the corresponding certificate in real-time. For certificates enrolled via Intune and Jamf Pro, SCEPman does this automatically as soon as common countermeasures not specific to SCEPman are taken against the attack. You just have to [delete the corresponding Intune](../../architecture/device-directories.md) or Jamf Pro object.
 
-Depending on your device retirement processes, you can additionally configure to [revoke certificates when a wipe is triggered](../../advanced-configuration/application-settings/intune-validation.md#appconfigintunevalidationrevokecertificatesonwipe), when [Intune requests revocation](../../advanced-configuration/application-settings/intune-validation.md#appconfigintunevalidationdevicedirectory), depending on [device compliance](../../advanced-configuration/application-settings/intune-validation.md#appconfigintunevalidationcompliancecheck) or [user risk level](../../advanced-configuration/application-settings/intune-validation.md#appconfigintunevalidationuserriskcheck), or you can manually revoke single certificates via the Certificate Master component.
+Depending on your device retirement processes, you can additionally configure to [revoke certificates when a wipe is triggered](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationrevokecertificatesonwipe), when [Intune requests revocation](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationdevicedirectory), depending on [device compliance](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationcompliancecheck) or [user risk level](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfigintunevalidationuserriskcheck), or you can manually revoke single certificates via the Certificate Master component.
 
 [Manually created certificates](../../certificate-deployment/certificate-master/) always require a manual revocation.
 

@@ -10,7 +10,7 @@ Access to the management interface of the Key Vault and Storage Account is unaff
 
 The SCEPman and SCEPman Certificate Master App Services do not have Private Endpoints, even if you install SCEPman 2.8 or newer. They can still be accessed from the Internet without networking restrictions. We recommend to not restrict access SCEPman on a networking level, as SCEPman is usually part of the infrastructure used to establish network connections and should therefore be available even if you are not yet connected.
 
-Again, you can use Conditional Access to limit access to SCEPman Certificate Master with various restrictions, including networking conditions. SCEPman usually does not use Conditional Access, as the two endpoints SCEP and OCSP do not use Entra authentication. However, you might use Conditional Access to restrict access to [SCEPman's REST API](../certificate-deployment/api-certificates.md).
+Again, you can use Conditional Access to limit access to SCEPman Certificate Master with various restrictions, including networking conditions. SCEPman usually does not use Conditional Access, as the two endpoints SCEP and OCSP do not use Entra authentication. However, you might use Conditional Access to restrict access to [SCEPman's REST API](../certificate-deployment/api-certificates/).
 
 ### Azure Resources Used for Private Endpoints
 

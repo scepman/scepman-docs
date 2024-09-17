@@ -59,9 +59,9 @@ Available options:
 
 **Description:** Determines where to look up devices on OCSP requests for device certificates. The corresponding directory is queried for a device matching the device ID written to the certificate's subject CN field. The certificate is valid only if the device exists. For **`AAD`**, it must also be enabled (Intune doesn't support disabling devices). If the ComplianceCheck is activated, the device must also be compliant. If nothing is configured and for SCEPman 1.9 and before, `AAD` is used.
 
-Hence, you must configure the Intune configuration profile for devices accordingly. \{{AAD\_Device\_ID\}} is the AAD device ID, while \{{DeviceID\}} is the Intune device ID.
+Hence, you must configure the Intune configuration profile for devices accordingly. \{{AAD\_Device\_ID\}} is the Entra/AAD device ID, while \{{DeviceID\}} is the Intune device ID.
 
-For **`AADAndIntune`**, both directories are queried in parallel. In this case, it is sufficient that the device exists in one of the two directories. This setting enables migrating from one setting to the other when there are still valid certificates for both types of directories. It also supports cases where you configure platforms differently. It can also be used as a workaround for iOS or Android devices that receive an Intune ID instead of an AAD ID, because they are not fully AAD-joined at the time of certificate enrollment.
+For **`AADAndIntune`**, both directories are queried in parallel. In this case, it is sufficient that the device exists in one of the two directories. This setting enables migrating from one setting to the other when there are still valid certificates for both types of directories. It also supports cases where you configure platforms differently. It can also be used as a workaround for iOS or Android devices that receive an Intune ID instead of an Entra ID object ID, because they are not fully Entra-joined at the time of certificate enrollment.
 
 If you have upgraded from SCEPman 1.x to SCEPman 2.x and you are still using [an App Registration for SCEPman permissions](../../../scepman-deployment/permissions/azure-app-registration.md), SCEPman lacks the permissions to query Intune for devices. Thus, you are limited to the `AAD` option. The option **`AADAndIntuneOpportunistic`** checks whether the permissions to query Intune have been granted to SCEPman. If they are there, this works like `AADAndIntune`. If they are not there, this behaves like `AAD`.
 
@@ -79,7 +79,7 @@ Applicable to version 2.1 and above.
 
 **Value:** _true_ (default) or _false_
 
-**Description:** This setting extends validation of devices when using the Intune Device ID. If it is enabled, SCEPman evaluates the Management State property of an Intune Device when its device certificate is validated. If the state indicates one of the following values, the certificate is revoked:
+**Description:** This setting extends validation of devices when using the Intune Device ID. It does not work when using the Entra/AAD Device ID. If it is enabled, SCEPman evaluates the Management State property of an Intune Device when its device certificate is validated. If the state indicates one of the following values, the certificate is revoked:
 
 * RetirePending
 * RetireFailed
@@ -152,4 +152,4 @@ SCEPman Enterprise Edition only
 
 **Value:** _true_ or _false_ (default)
 
-**Description:** When requesting certificates via the Intune endpoint, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically when the associated Entra or Intune object goes into an invalid state as specified by the other settings (like being disabled or deleted). If set to _false_, SCEPman will not store issued certificates and the certificates are visible only in the logs or in the classic Intune view on Certificate Master or the Intune portal. If this is not set, the behavior depends on the global setting AppConfig:EnableCertificateStorage.
+**Description:** When requesting certificates via the Intune endpoint, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically when the associated Entra or Intune object goes into an invalid state as specified by the other settings (like being disabled or deleted). If set to _false_, SCEPman will not store issued certificates and the certificates are visible only in the logs or in the classic Intune view on Certificate Master or the Intune portal. If this is not set, the behavior depends on the global setting [AppConfig:EnableCertificateStorage](basics.md#appconfig-enablecertificatestorage).

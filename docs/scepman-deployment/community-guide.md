@@ -34,6 +34,8 @@ All these resources are recommended for a production environment.
 | Storage account         | <p>Storage platform used by SCEPman's Certificate Master component to store certain attributes of the manually issued TLS server certificates for revocation purposes.<br><br><em>Optional:</em></p><p>The "App Service" will load the artifacts from a blob storage URI if manual updates are configured.</p> |
 | Log Analytics workspace | <p>A centralized and cloud-based log storage. The "App Service" will save all</p><p>platform logs and metrics into this workspace.</p>                                                                                                                                                                         |
 
+Additionally, if you are using Private Endpoints, you have [seven more Azure Resources.](../architecture/private-endpoints.md#azure-resources-used-for-private-endpoints)
+
 ## Configuration Steps
 
 ### Step 1: Deploy SCEPman Base Services
@@ -66,7 +68,7 @@ To properly link all components of SCEPman 2.X, several permissions need to be a
 This is a **mandatory** step.
 {% endhint %}
 
-After the deployment and persmission assignment is complete, you need to create the root certificate for SCEPman:
+After the deployment and permission assignment is complete, you need to create the root certificate for SCEPman:
 
 {% content-ref url="../scepman-configuration/first-run-root-cert.md" %}
 [first-run-root-cert.md](../scepman-configuration/first-run-root-cert.md)

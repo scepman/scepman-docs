@@ -20,7 +20,7 @@ Device Certificates might be usable for [Windows Hello for Business Certificate 
 
 ### Intune User Certificates
 
-User Certificates can be used for Windows Hello for Business Certificate Trust. They could also be used for other ways of certificate-based AD authentication like RDP sessions to domain-joined machines or WiFi authentication based on NPS. If you want to do this, you can use the setting [AppConfig:AddSidExtension](../../advanced-configuration/application-settings/certificates.md#appconfig-addsidextension) to allow SCEPman to create Strong Certificate Mapping certificates. User certificates for users synchronized between AD and Entra ID automatically receive the extension with OID 1.3.6.1.4.1.311.25.2 to map them strongly to AD users.\
+User Certificates can be used for Windows Hello for Business Certificate Trust. They could also be used for other ways of certificate-based AD authentication like RDP sessions to domain-joined machines or WiFi authentication based on NPS. If you want to do this, you can use the setting [AppConfig:AddSidExtension](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-addsidextension) to allow SCEPman to create Strong Certificate Mapping certificates. User certificates for users synchronized between AD and Entra ID automatically receive the extension with OID 1.3.6.1.4.1.311.25.2 to map them strongly to AD users.\
 The Intune team additionally [plans to add a SAN value](../faqs/intune-implementing-strong-mapping-for-scep-and-pkcs-certificates.md) to implement the strong certificate mapping. You can also use this method as an alternative to the SID extension.
 
 ### DC Certificates
@@ -61,7 +61,7 @@ There are three ways to issue certificates via the Certificate Master component 
 
 [**Custom CSR Requests**](../../certificate-deployment/certificate-master/certificate-signing-request-csr.md) are freely configurable and include authentication certificates. As anybody having access to the Certificate Master application may issue such a certificate you should take at least one of the following precautions:
 
-* Make sure that only priviledged accounts can access Certificate Master. You could, for example, [grant access to the Certificate Master component](../../scepman-deployment/permissions/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website) only to a single AAD Group that you design as [Priviledged Access group](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/groups-features).
+* Make sure that only priviledged accounts can access Certificate Master. You could, for example, [grant access to the Certificate Master component](../../scepman-configuration/post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website) only to a single AAD Group that you design as [Priviledged Access group](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/groups-features).
 * Use separate SCEPman instances and CA certificates for DC Certificates (whose CA certificate is in the NTAuth Store) and Certificate Master.
 * Enable Full Enforcement mode in your AD domain.
 
