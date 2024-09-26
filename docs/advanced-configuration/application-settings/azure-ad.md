@@ -67,11 +67,3 @@ The time as Unix epoch when the required permissions to the Managed Identity wer
 {% hint style="danger" %}
 Changes can harm your service!
 {% endhint %}
-
-## AppConfig:SCEPResponseEncryptionAlgorithm
-
-The algorithm used to encrypt SCEP responses. Reasonable values include "2.16.840.1.101.3.4.1.42" for AES-256-CBC (the default) and "2.16.840.1.101.3.4.1.2" for AES-128-CBC.
-
-{% hint style="danger" %}
-Changes can harm your service!
-{% endhint %}

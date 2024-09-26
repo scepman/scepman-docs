@@ -54,6 +54,14 @@ Applicable to version 2.8 and above
 
 **Description:** When requesting certificates, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_ and when this setting is not explictly overriden with _false_ for the specific endpoint. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically depending on the specific SCEP endpoint used for enrollment. If set to _false_ or not set, SCEPman will only store issued certificates for those endpoints where certificate storage has been explicitly enabled. If a certificate is not stored, they are visible only in the logs or if the SCEP client stores them somewhere.
 
+## AppConfig:SCEPResponseEncryptionAlgorithm
+
+The algorithm used to encrypt SCEP responses. Reasonable values include "2.16.840.1.101.3.4.1.42" for AES-256-CBC (the default) and "2.16.840.1.101.3.4.1.2" for AES-128-CBC.
+
+{% hint style="danger" %}
+Changes can harm your service!
+{% endhint %}
+
 ## WEBSITE\_RUN\_FROM\_PACKAGE
 
 This setting points to the Application Artifacts that will be loaded by starting the App Service.\
