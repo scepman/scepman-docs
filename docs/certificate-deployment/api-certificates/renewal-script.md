@@ -1,6 +1,6 @@
 # Renewal Script
 
-We are currently in the process of developing scripts that utilise an endpoint in the SCEPman REST API to facilitate the renewal of SCEPman-issued certificates using mTLS (mutual TLS).
+We are currently in the process of developing scripts that utilise an endpoint in the SCEPman REST API to facilitate the renewal of SCEPman-issued certificates using mTLS (mutual TLS). This endpoint creates an identical certificate to the one you have elected to renew, however with an expiry date `ValidityPeriod` days in the future (this will depend on your [configuration](https://docs.scepman.com/advanced-configuration/application-settings/certificates#appconfig-validityperioddays)).
 
 ### Prerequisites
 
@@ -49,6 +49,20 @@ In order to facilitate automatic certificate renewal, you could use Linux's Cron
 
 Since commands run by Cron will not necessarily be run from the directory that the script/certificates are in, it is important to provide the absolute paths to the script/certificates.
 
-## Powershell Script (Windows)
+## Powershell Cmdlet (Windows)
 
-Coming soon...
+This [cmdlet ](https://github.com/scepman/scepclient/blob/ScriptESTRenewal/RenewSCEPmanCerts.ps1)(`RenewSCEPmanCerts`) locates certificates issued by SCEPman in either the user or machine certificate stores and renews them using mTLS.&#x20;
+
+### Parameters
+
+<table><thead><tr><th width="270">Parameter</th><th width="107">Optional?</th><th>Description</th></tr></thead><tbody><tr><td><code>-AppServiceUrl</code></td><td>No</td><td>The URL of your SCEPman app service.</td></tr><tr><td>-<code>User</code> or <code>-Machine</code></td><td>No</td><td>Specifies whether you would like to renew certificates from the user or machine store. One of these must be specified. (note that to edit the machine store you must run the command as admin).</td></tr><tr><td><code>-FilterString</code></td><td>Yes</td><td>Will only renew certificates whose Subject field contains the filter string.</td></tr><tr><td><code>-ValidityThresholdDays</code></td><td>Yes</td><td>Will only renew certificates that are within this number of days of expiry (default value is 30).</td></tr></tbody></table>
+
+### Example command
+
+```powershell
+RenewSCEPmanCerts -AppServiceUrl "https://scepman-appservice.net/" -User -ValidityThresholdDays 100 -FilterString "certificate"
+```
+
+### Cmdlet for finding certificates
+
+This cmdlet finds certificates using another cmdlet called `GetScepmanCerts` which takes the same parameters. You can make use of this cmdlet on its own to make sure you're finding the right certificates before renewing them. You can add the flag `-InformationAction Continue` so that this cmdlet will print the relevant information about these certificates to the output stream.
