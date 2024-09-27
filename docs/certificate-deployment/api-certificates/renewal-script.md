@@ -1,6 +1,6 @@
 # Renewal Script
 
-We are currently in the process of developing scripts that utilise an endpoint in the SCEPman REST API to facilitate the renewal of SCEPman-issued certificates using mTLS (mutual TLS). This endpoint creates an identical certificate to the one you have elected to renew, however with an expiry date `ValidityPeriod` days in the future (this will depend on your [configuration](https://docs.scepman.com/advanced-configuration/application-settings/certificates#appconfig-validityperioddays)).
+With the help of the scripts in this article, you can utilise an endpoint in the SCEPman REST API to renew SCEPman-issued certificates using mTLS (mutual TLS). This endpoint creates an identical certificate to the one you have elected to renew, however with an expiry date `ValidityPeriod` days in the future (this will depend on your [configuration](https://docs.scepman.com/advanced-configuration/application-settings/certificates#appconfig-validityperioddays)).
 
 ### Prerequisites
 
@@ -38,13 +38,13 @@ This script was developed with the aim to facilitate automatic renewal of certif
 ### Example command
 
 ```
-sh renewcertificate.sh https://your-scepman-domain.net/ cert.pem cert.key root.pem 10
+sh renewcertificate.sh https://scepman.contoso.com/ cert.pem cert.key root.pem 10
 ```
 
 In order to facilitate automatic certificate renewal, you could use Linux's Cron utility to run this script regularly. This will cause the certificate to be renewed automatically once the current date is within the threshold number of days specified in the command. The below command will set up a cron job to run the command daily (if the system is powered on) and a cron job to run the command on reboot.
 
 ```
-(crontab -l ; echo @daily /path/to/renewcertificate.sh https://your-scepman-domain.net/ /path/to/cert.pem /path/to/cert.key /path/to/root.pem 10 ; echo @reboot /path/to/renewcertificate.sh https://your-scepman-domain.net/ /path/to/cert.pem /path/to/cert.key /path/to/root.pem 10) | crontab -
+(crontab -l ; echo @daily /path/to/renewcertificate.sh https://scepman.contoso.com/ /path/to/cert.pem /path/to/cert.key /path/to/root.pem 10 ; echo @reboot /path/to/renewcertificate.sh https://your-scepman-domain.net/ /path/to/cert.pem /path/to/cert.key /path/to/root.pem 10) | crontab -
 ```
 
 Since commands run by Cron will not necessarily be run from the directory that the script/certificates are in, it is important to provide the absolute paths to the script/certificates.
@@ -60,7 +60,7 @@ This [cmdlet ](https://github.com/scepman/scepclient/blob/ScriptESTRenewal/Renew
 ### Example command
 
 ```powershell
-RenewSCEPmanCerts -AppServiceUrl "https://scepman-appservice.net/" -User -ValidityThresholdDays 100 -FilterString "certificate"
+RenewSCEPmanCerts -AppServiceUrl "https://scepman.contoso.com/" -User -ValidityThresholdDays 100 -FilterString "certificate"
 ```
 
 ### Cmdlet for finding certificates
