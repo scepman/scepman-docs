@@ -22,9 +22,9 @@ This guide explains how to move SCEPman resources from one subscription to a new
   * Key Vault
   * Log Analytics Workspace
 
-### Since Private Endpoints are not movable, you need to take the following steps (if your SCEPman is not using Private endpoints, skip these steps):
+#### Since Private Endpoints are not movable, you need to take the following steps (if your SCEPman is not using Private endpoints, skip these steps):
 
-* First enable public access on the Key Vault and Storage Account and remove the private endpoints
+* First, enable public access on the Key Vault and Storage Account and remove the private endpoints
 
 <figure><img src="../.gitbook/assets/2024-09-30 16_38_27-kv-scepman-n4gwfa6u2pwuc - Microsoft Azure and 8 more pages - ADMIN MPN Tenant -.png" alt=""><figcaption></figcaption></figure>
 
