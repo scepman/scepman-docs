@@ -1,11 +1,11 @@
 # Move SCEPman resources to another subscription
 
 {% hint style="warning" %}
-Moving SCEPman resources from one tenant to another is not supported or recommended by us. For more information see [https://learn.microsoft.com/en-us/azure/key-vault/general/move-subscription](https://learn.microsoft.com/en-us/azure/key-vault/general/move-subscription)
+Moving SCEPman resources from **tenant to tenant** is not supported. For more information on the underlying problem, see [https://learn.microsoft.com/en-us/azure/key-vault/general/move-subscription](https://learn.microsoft.com/en-us/azure/key-vault/general/move-subscription)
 {% endhint %}
 
 {% hint style="info" %}
-This guide explains how to move SCEPman resources from one subscription to a new resource group in a different subscription within the same tenant
+This guide explains how to move SCEPman resources from one subscription to a new resource group in a different subscription within the same tenant.
 {% endhint %}
 
 ## Preparations
