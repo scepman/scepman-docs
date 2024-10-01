@@ -89,6 +89,7 @@
 * [Intermediate CA](advanced-configuration/intermediate-certificate.md)
 * [License Key](advanced-configuration/add-a-license-key.md)
 * [Log Configuration](advanced-configuration/log-configuration.md)
+* [Move SCEPman resources to another subscription](advanced-configuration/move-scepman-resources-to-another-subscription.md)
 * [Split-Tenancy](scepman-configuration/optional/split-tenancy.md)
 * [Update Strategy](scepman-configuration/optional/update-strategy.md)
 

@@ -41,7 +41,7 @@ SOTI MobiControl integration of SCEPman can be easily enabled via the following 
 
 3. Click the Add button to add a **Certificate Template**.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Soti MobiControl Certificate Template Detail</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Template Detail</p></figcaption></figure>
 
 * Enter a **name** for this MobiControl Template.
 * Enter a **Subject Name**.

@@ -34,7 +34,7 @@ Please adjust other options on your needs.
 
 ![](<../../.gitbook/assets/image (21) (1).png>)
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Output on the Client
 

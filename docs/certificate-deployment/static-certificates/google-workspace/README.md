@@ -23,7 +23,7 @@ description: >-
 
 This guide assumes that you already provisioned Chromebook computer(s) running ChromeOS version 89 or later managed with **Chrome Enterprise**.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Minimum subscriptions required</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Minimum subscriptions required</p></figcaption></figure>
 
 ### Google Cloud Certificate Connector (GCCC)
 

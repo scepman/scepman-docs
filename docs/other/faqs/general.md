@@ -19,40 +19,6 @@ The Azure CLI must be installed on the machine where the query is run, and it mu
 
 If you are using a [Private Endpoint ](../../architecture/private-endpoints.md)for the Storage Account, you need to add your client's IP address to the exception list in the Networking pane of the Storage Account.
 
-## Can I move SCEPman resources to another Azure subscription?
-
-Technically it is feasible, but neither recommended nor supported from our side.  The main breaking change is moving the Key Vault. See  [Azure Key Vault moving a vault to a different subscription | Microsoft Learn](https://learn.microsoft.com/EN-us/azure/key-vault/general/move-subscription)
-
-If it's still necessary, we strongly recommend deploying a new SCEPman instance and migrating to the specified use case.
-
-### Migration example
-
-* Use-Case: SCEPman certificates for network authentication (e.g. [RADIUSaaS](https://www.radius-as-a-service.com/))
-* SSID remains the same
-
-#### Part 1 - Preparation
-
-1. [Deploy a new SCEPman instance.](../../scepman-deployment/deployment-guides/)
-2. [Push the root CA certificate](../../certificate-deployment/microsoft-intune/windows-10.md) of the new SCEPman instance to all endpoints.
-3. [Issue new client certificates via SCEP](../../certificate-deployment/microsoft-intune/windows-10.md#device-certificates) to all endpoints.
-4. Add the root certificate of the new SCEPman instance to the [trusted root store of RADIUSaaS](https://docs.radiusaas.com/portal/settings/settings-trusted-roots/trusted-roots).
-5. Once all endpoints have received the new root and client certificates (via SCEP), schedule a migration for day x.
-
-#### Part 2: Execution
-
-On the migration day (ensure all devices are powered on and connected to the network):
-
-1. Add the new SCEP certificate profile (step 3 in [Preparation](general.md#part-1-preparation)) to the list of **Client certificates for client authentication** in the **existing** WiFi profile.
-2. Trigger an Intune sync on all devices.
-
-#### Part 3: Clean-up
-
-1. Ensure that all endpoints are synced and have received both new profiles and updates to the WiFi profile.
-2. Uninstall the old SCEPman by deleting the resource group it resides in.
-3. Remove the old SCEP client certificate profile from the list of **Client certificates for client authentication** in the WiFi profile.
-4. Remove the profiles from Intune that are related to the old SCEPman instance (trusted root, SCEP device cert).
-5. Remove the old SCEPman Root CA certificate from the trust list on RADIUSaaS.
-
 ## How to restrict public access to the SCEPman homepage?
 
 The SCEPman homepage does not include any sensitive information, and attackers cannot leverage the available data for malicious purposes.&#x20;

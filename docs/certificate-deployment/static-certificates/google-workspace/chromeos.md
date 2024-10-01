@@ -31,7 +31,7 @@ The SCEP profile defines the certificate that lets users access your WiFi. Assig
 | -------------------- | ------------------- | ----------------- |
 | **Device platforms** | Chromebook (device) | Chromebook (user) |
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (51) (1).png" alt=""><figcaption></figcaption></figure>
 
 | Attribute             |                                       |
 | --------------------- | ------------------------------------- |
