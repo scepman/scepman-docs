@@ -84,7 +84,7 @@ Applicable to version 1.8 and above
 
 **Value:** Positive _Integer_
 
-**Default:** 10
+**Default:** 1440
 
 **Description:** When SCEPman issues a certificate, it will not be valid exactly from the time of issuance, but already a few minutes earlier (default is 10). This is because the client's clock may run slower than SCEPman's and then assume that the certificate is not yet valid. Some platforms immediately discard invalid certificates, even if they became valid a few seconds later.
 
