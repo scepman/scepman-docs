@@ -1,4 +1,4 @@
-# Move SCEPman resources to another subscription
+# Move SCEPman resources
 
 {% hint style="warning" %}
 Moving SCEPman resources from **tenant to tenant** is not supported. For more information on the underlying problem, see [https://learn.microsoft.com/en-us/azure/key-vault/general/move-subscription](https://learn.microsoft.com/en-us/azure/key-vault/general/move-subscription)
@@ -15,6 +15,11 @@ This guide explains how to move SCEPman resources from one subscription to a new
   * 2x Private endpoints
   * 2x Network Interface
   * 2x Private DNS zone
+
+{% hint style="info" %}
+Alerts and Action groups are also not movable, in case you have any, they need to be reconfigured in the new subscription.
+{% endhint %}
+
 * Movable SCEPman resources are:
   * App Service Plan
   * SCEPman and Certificate Master App Services
