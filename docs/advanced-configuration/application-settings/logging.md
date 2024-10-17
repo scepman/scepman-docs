@@ -56,7 +56,7 @@ Logging to Azure Event Hub is possible in version 2.5 and above
 
 **Description:**
 
-The connection string to your Azure Event Hub. This is a required setting if you want to use Azure Event Hub.
+The connection string to your Azure Event Hub. If you want to use Azure Event Hub, you must either configure this setting or AppConfig:LoggingConfig:AzureEventHubServiceUri. If you use AzureEventHubConnectionString, it must include the authentication information.
 
 ## AppConfig:LoggingConfig:AzureEventHubName
 
@@ -81,3 +81,13 @@ Logging to Azure Event Hub is possible in version 2.5 and above
 **Description:**
 
 The partition key of your Azure Event Hub. Setting this is optional. If you don't set this, this defaults to '0'.
+
+## AppConfig:LoggingConfig:AzureEventHubServiceUri
+
+{% hint style="info" %}
+Logging to Azure Event Hub with Managed Identity is possible in version 2.8 and above
+{% endhint %}
+
+**Value:** String
+
+Description: The Service URI of the Azure Event Hub. If you want to use Azure Event Hub, you must either configure this setting or AppConfig:LoggingConfig:AzureEventHubConnectionString. If you use AzureEventHubServiceUri, SCEPman/Certificate Master will authenticate with its Managed Identity to the Azure Event Hub Service.
