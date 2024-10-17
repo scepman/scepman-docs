@@ -140,7 +140,7 @@ To configure this, do the following:
 1. Go to your Azure portal
 2. Navigate to **App Services**
 3. Choose your SCEPman AppService
-4. Then, click **Configuration** (submenu **Settings**)
+4. Then, click **Environment variables** (submenu **Settings**)
 5. Locate the parameter **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
 
 ![](<../.gitbook/assets/scepman\_optional2 (3) (3) (3) (3) (3) (3) (3) (2) (1) (1) (1) (1) (1) (1) (1) (1) (4) (2).png>)

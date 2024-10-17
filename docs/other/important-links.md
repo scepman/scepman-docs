@@ -24,4 +24,4 @@ order: 2
 
 ## SCEPman on GitHub
 
-{% embed url="https://github.com/glueckkanja/gk-scepman" %}
+{% @github-files/github-code-block url="https://github.com/glueckkanja/gk-scepman" %}

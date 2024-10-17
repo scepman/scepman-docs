@@ -33,11 +33,11 @@ Alerts and Action groups are also not movable, in case you have any, they need t
 
 <figure><img src="../.gitbook/assets/2024-09-30 16_38_27-kv-scepman-n4gwfa6u2pwuc - Microsoft Azure and 8 more pages - ADMIN MPN Tenant -.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
-
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Then, disconnect the outbound network integration on both app services
 

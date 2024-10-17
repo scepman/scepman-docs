@@ -38,16 +38,16 @@ If you are using a [Private Endpoint](../architecture/private-endpoints.md) for 
 The next step is to update the Azure App Service configuration to match the subject name of the intermediate CA you will create in the next step.
 
 1. Navigate to your Azure App Service
-2. Click on **Configuration** in the left navigation pane
+2. Click on **Environment variables** in the left navigation pane
 3. In **Application settings,** you must edit the following settings:
    1. `AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName` \
       Change this to a preferred common name (CN) for your intermediate CA.
    2. `AppConfig:KeyVaultConfig:RootCertificateConfig:Subject`\
       Only change the CN value of the subject name to match the common name used above.
-4. Click on **Save** in the upper left toolbar.
-5. To complete this step, restart the Azure App Service and then navigate to your SCEPman URL.
+4. Click on **Apply and Confirm.**
+5. Restart the Azure **App Service** to apply the changes then navigate to your SCEPman URL.
 
-![](<../.gitbook/assets/screenshot-2020-10-19-at-16.06.40 (1).png>)
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## Creating Intermediate CA Certificate with the SCEPman PowerShell Module
 
