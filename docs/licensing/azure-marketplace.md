@@ -77,7 +77,7 @@ The information provided throughout this article is analogously applicable for R
 ### User Downgrades
 
 * Downgrading the amount of users is currently not possible without cancelling the subscription.
-* If you want to perform a downgrade, please [cancel](https://docs.radiusaas.com/licensing/azure-marketplace#cancellation) your current subscription and re-subscribe with the desired amount of users once the cancellation becomes effective.
+* If you want to perform a downgrade, please [cancel](azure-marketplace.md#cancellation) your current subscription and re-subscribe with the desired amount of users once the cancellation becomes effective.
 
 ### Change Plan
 
