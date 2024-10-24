@@ -4,6 +4,10 @@
 
 ### 2.8 - May 2024
 
+**SCEPman 2.8.1225**
+
+* Fix for CRL generation if SCEPman is a Subordinate Certification Authority.
+
 **SCEPman 2.8.1155**
 
 * SCEPman uses a newer URL and data format for the Jamf Bearer authentication, which is required when using Jamf \~11.5.0 and newer, which has disabled the older URL alongside Basic Authentication
