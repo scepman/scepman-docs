@@ -8,7 +8,7 @@ SCEPman can be connected to Jamf as External CA. Via SCEPman's static interface 
 
 ## Enable Jamf Integration
 
-Jamf integration of SCEPman can be easily enabled via the following app configurations:
+Jamf integration of SCEPman can be easily enabled via the following environment variables on SCEPman app service **(the one without -cm in the name)**:
 
 | Setting                                                                                                                                                                    | Description                                                                                                                                                                                                                                                         | Example                     |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
@@ -18,7 +18,7 @@ Jamf integration of SCEPman can be easily enabled via the following app configur
 
 ## API Connection
 
-SCEPman needs to be connected to the Jamf API to check the status of onboarded clients. This is used for the revocation of certificates. Please define the following app configuration parameters:
+SCEPman needs to be connected to the Jamf API to check the status of onboarded clients. This is used for the revocation of certificates. Please define the following environment variables:
 
 | Setting                                                                                                                                           | Description                                                                                                                                                                                                           | Example                         |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |

@@ -10,7 +10,7 @@ For more general information about other MDM solutions and SCEPman integration p
 
 ## Enable Kandji Integration
 
-Kandji integration of SCEPman can be easily enabled via the following app configurations:
+Kandji integration of SCEPman can be easily enabled via the following environment variables on SCEPman app service **(the one without -cm in the name)**:
 
 |                                                                                            Setting                                                                                           | Description                                                                                                                                                                                                                                                                                              |                     Value                    |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------: |
