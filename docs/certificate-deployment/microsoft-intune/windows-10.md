@@ -179,7 +179,7 @@ https://scepman.contoso.com/certsrv/mscep/mscep.dll
 
 <figure><img src="../../.gitbook/assets/2024-03-14 15_18_35.png" alt=""><figcaption></figcaption></figure>
 
-* [ ] Now you can deploy this profile to your devices. Please choose the same group/s for assignment as for the Trusted certificate profile.
+* [ ] Now you can deploy this profile to your devices. Please choose the same group/s for the assignment as for the Trusted certificate profile.
 
 ## User Certificates
 
@@ -217,7 +217,7 @@ Based on customer feedback, it appears that some VPN clients (e.g., Azure VPN Cl
 
 ### Example
 
-<figure><img src="../../.gitbook/assets/2024-04-17 16_04_53.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## User Digital Signature Certificate
 
@@ -273,7 +273,7 @@ We recommend setting Renewal Threshold (%) to a value that ensures certificates 
 
 ### **Example**
 
-<figure><img src="../../.gitbook/assets/Screenshot 2022-09-14 at 09.57.20.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 After a successful profile sync, you should see the user certificate for Intended Purposes **Secure Email**
 

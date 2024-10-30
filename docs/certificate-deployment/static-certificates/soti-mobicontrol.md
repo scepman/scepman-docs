@@ -21,17 +21,17 @@ SOTI MobiControl integration of SCEPman can be easily enabled via the following 
 
 First, you need to deploy SCEPman RootCA to all endpoints as a trusted root ca, you can download the certificate from SCEPman homepage:
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Add Certificate Authority
 
 1. In Soti Mobicontrol, navigate to System Settings > Global Settings > Services > Certificate Authority.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Authority Page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Authority Page</p></figcaption></figure>
 
 2. Click the Add button to create a new Certificate Authority.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Authority Details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Authority Details</p></figcaption></figure>
 
 * Enter a **name** for this Certificate Authority.&#x20;
 * Select `Generic SCEP` for **Certificate Type**.&#x20;
@@ -47,7 +47,7 @@ First, you need to deploy SCEPman RootCA to all endpoints as a trusted root ca, 
 
 3. Click the Add button to add a **Certificate Template**.
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Template Detail</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Template Detail</p></figcaption></figure>
 
 * Enter a **name** for this MobiControl Template.
 * Enter a **Subject Name**.
