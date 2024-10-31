@@ -351,13 +351,71 @@ _No (not for SCEPman app service)_, as this will break the OCSP-responder functi
 | Microsoft Corporation                            | Cloud Services (Azure)                                                    | <p>Building 3, Carmanhall Road Sandyford,<br>Industrial Estate 18, Dublin,<br>Ireland</p> | See [here](../../scepman-deployment/deployment-guides/enterprise-guide-1.md#overview-azure-resource). |
 | GitHub Inc (subsidiary of Microsoft Corporation) | git code repository, integration, testing and release automation, storage | <p>88 Colin P Kelly Jr St, </p><p>San Francisco,</p><p>CA 94107, </p><p>United States</p> | Code repository, CI/CD pipeline, binary storage                                                       |
 
-## Miscellaneous
+## Secure Development Practices
 
-### 1. Is SCEPman part of a bug-bounty program?
+### 1. What ensures that SCEPman is secure software?
+
+Our software development founds on the [Microsoft Security Development Lifecycle](https://www.microsoft.com/en-us/securityengineering/sdl/). Employing SDL practices helps us to create secure code and deployments. [We have the ISO 27001 information security certification for our product development](https://www.glueckkanja.com/documents/general/gkgab-ISO27001Certificate-en.pdf).
+
+### 2. How do you implement common Secure Design Practices?
+
+This is how we implement [Secure Design Practices recommended by the SDL](https://www.microsoft.com/en-us/securityengineering/sdl/practices/secure-by-design):
+
+#### Design and Threat Model as a Team
+
+Our Thread Modelling practice founds on the [recommendations of the Tufts Security and Privacy Lab](https://tsp.cs.tufts.edu/tmnt/threatmodeling.html). We discuss design decisions and potential STRIDE threats in a heterogeneous team of developers, our [CSOC ](https://www.glueckkanja.com/en/security/cloud-security-operations-center/)and PKI consultants, and support crew.
+
+#### Prefer Platform Security to Custom Code
+
+Where possible, we use functionality from .NET or established libraries, preferably Open Source, instead of re-inventing the wheel. For example, we use Legion of the Bouncy Castle C# for working with cryptographic data standards. We also rely on Azure services like Key Vault for generating cryptographic keys, App Services for webserver hosting, Azure Monitor for logging, and Azure Storage as database engine.
+
+#### Secure Configuration is the Default
+
+In order to minimize the potential for human error, we design the products such that you have a secure configuration if you use the defaults. For example, our [ARM templates](https://github.com/scepman/install) and our [Terraform provider ](https://registry.terraform.io/modules/scepman/scepman/)set configuration settings to use 4096-bit HSM-backed RSA keys, and they disable all enrollment endpoints except for Intune SCEP and Certificate Master (for which you have to explicitly assign permissions).
+
+#### Never Trust Data from the Client
+
+As a PKI software, deciding which data to trust is at the very heart of every decision. After all, the purpose of certificates and their enrollment protocols is deciding which data to trust.
+
+#### Assume Breach
+
+Our logging based on Azure Monitor allows surveillance of SCEPman's operations. It integrates easily with SIEM systems like Sentinel to detect successful attackers, e.g. if they succeeded to enroll certificates without authorization. Our integration with Azure Services allows leveraging the Microsoft Defender for Cloud services, e.g. Defender for App Service.
+
+#### Enforce Least Privilege
+
+Our RBAC model for Certificate Master allows to assign only those permissions to user that they really need.
+
+SCEPman uses Managed Identities that have only [the permissions needed for operation](security-faq.md#id-4.-which-tenant-permissions-does-the-admin-have-to-consent-to).
+
+#### Minimize Blast Radius
+
+We strive to minimize the possible damage in case of a successful attack. For example, our default installation enables the Key Vault[ Soft Delete feature with Purge Protection](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview) with a [non-exportable HSM-backed private key](https://learn.microsoft.com/en-us/azure/key-vault/keys/about-keys#hsm-protected-keys) for the Certification Authority. Soft Delete with Purge Protection makes sure that no rogue admin or compromised admin account can delete the private key of the CA -- it can be restored in minutes to continue with normal operations and not even a Global Admin can purge it before a 90 days period. The non-exportable HSM-backed CA key makes sure that even an attacker with the highest possible privileges cannot steal the CA key.
+
+#### Minimize Attack Surface
+
+We make sure to expose only those interfaces required for operations by the customer. If a SCEP-endpoint is unconfigured, SCEP requests are not even processed.
+
+Using [Private Endpoints](../../architecture/private-endpoints.md), we make sure that two services SCEPman depends on, Azure Key Vault and Azure Storage, are not reachable over the internet.
+
+#### Consider Abuse Cases
+
+When SCEPman receives an authorized certificate signing requests (CSRs), it is still subject to several configurable restrictions. For example, the lifetime can never exceed the [configured maximum validity period](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays), even if this was requested.
+
+#### Monitor and Alert on Security Events
+
+If SCEPman detects Security Events, they will be logged as Warning or Error to the logs. The integration with Azure Monitor and Azure Event Hub makes it easy to [configure alerts](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview) or analyze these Security Events with a SIEM.
+
+### 3. How do you secure your own development environment?
+
+As part of a company that also provides CSOC services and security consulting, we have very security standards for our devices, processes, and user awareness. We are part of Microsoft MISA, ISO 27001-certified, and Microsoft Partner of the Year with our Security offerings.
+
+Our source repositories have Branch Protection rules and we assign only the least necessary principles to the repositories and deployment pipelines to individual developer accounts. We automate tests and deployments where possible to reduce the attack surface using compromised accounts.
+
+### 4. Is SCEPman part of a bug-bounty program?
 
 No
 
-### 2. What QA measures are in place?
+### 5. What QA measures are in place?
 
 * We provide SCEPman on an internal-, beta-, and production channel
 * Each production release must go through the internal- and beta-channel first, passing the relevant QA hurdles as part of our CI process
