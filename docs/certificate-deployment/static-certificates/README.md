@@ -1,7 +1,11 @@
-# 3rd-party MDM Solutions
+# Other MDM Solutions
 
 {% hint style="info" %}
 This feature requires version **1.6** or above.
+{% endhint %}
+
+{% hint style="warning" %}
+SCEPman Enterprise Edition only
 {% endhint %}
 
 You can use SCEPman to issue certificates via MDM systems other than Intune. You must configure a static challenge password (see [RFC 8894, Section 7.3](https://www.rfc-editor.org/rfc/rfc8894.html#name-challengepassword-shared-se) for the formal specification) in both SCEPman and the MDM system. Virtually all MDM systems support this mode of SCEP authentication.

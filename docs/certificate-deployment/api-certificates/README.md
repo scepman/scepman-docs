@@ -2,7 +2,9 @@
 
 {% hint style="info" %}
 This feature requires version **2.3.689** or above.
+{% endhint %}
 
+{% hint style="warning" %}
 SCEPman Enterprise Edition only
 {% endhint %}
 

@@ -1,11 +1,11 @@
 # Domain Controller Certificates
 
-{% hint style="warning" %}
-SCEPman Enterprise Edition only
-{% endhint %}
-
 {% hint style="info" %}
 This feature requires version **1.6** or above.
+{% endhint %}
+
+{% hint style="warning" %}
+SCEPman Enterprise Edition only
 {% endhint %}
 
 You can use SCEPman to issue Kerberos authentication certificates to your domain controllers. This allows your AAD or hybrid-joined devices to authenticate seamlessly when accessing on-premises resources. This can be used to implement the **Hybrid Key trust for Windows Hello for Business**. The SCEPman will replace the requirement of a **Public key infrastructure**. Details can be found [here](https://docs.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-hybrid-key-trust-prereqs)

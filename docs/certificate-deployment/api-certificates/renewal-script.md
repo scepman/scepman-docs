@@ -1,5 +1,9 @@
 # Renewal Script
 
+{% hint style="warning" %}
+SCEPman Enterprise Edition Only
+{% endhint %}
+
 With the help of the scripts in this article, you can utilise an endpoint in the SCEPman REST API to renew SCEPman-issued certificates using mTLS (mutual TLS). This endpoint creates an identical certificate to the one you have elected to renew, however with an expiry date `ValidityPeriod` days in the future (this will depend on your [configuration](https://docs.scepman.com/advanced-configuration/application-settings/certificates#appconfig-validityperioddays)).
 
 ### Prerequisites

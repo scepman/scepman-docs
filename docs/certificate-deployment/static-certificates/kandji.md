@@ -4,13 +4,21 @@
 This feature requires version 1.6 or above.
 {% endhint %}
 
+{% hint style="warning" %}
+SCEPman Enterprise Edition only
+{% endhint %}
+
 SCEPman can be connected to [Kandji](https://www.kandji.io/) as External CA. Via SCEPman's static interface and a challenge password enrolled devices will be able to obtain certificates.
 
 For more general information about other MDM solutions and SCEPman integration please check [here](./).
 
 ## Enable Kandji Integration
 
-Kandji integration of SCEPman can be easily enabled via the following environment variables on SCEPman app service **(the one without -cm in the name)**:
+Integrating of SCEPman can be easily enabled via the following environment variables on SCEPman App Service:
+
+{% hint style="info" %}
+You can differentiate between the SCEPman App Service and the Certificate Master by looking for the App Service **without** the "-cm" in its name
+{% endhint %}
 
 |                                                                                            Setting                                                                                           | Description                                                                                                                                                                                                                                                                                              |                     Value                    |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------: |
@@ -19,7 +27,7 @@ Kandji integration of SCEPman can be easily enabled via the following environmen
 |       [AppConfig:StaticValidation:ValidityPeriodDays](../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-validityperioddays) (optional)       | Days certificates issued via Kandji are valid                                                                                                                                                                                                                                                            |                      365                     |
 | [AppConfig:StaticValidation:EnableCertificateStorage](../../advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-enablecertificatestorage) (optional) | Store requested certificates in the Storage Account, in order to show them in SCEPman Certificate Master                                                                                                                                                                                                 | _**true**_ to enable, _**false** to disable_ |
 
-{% hint style="info" %}
+{% hint style="warning" %}
 After adding or editing SCEPman configuration parameters, you need to restart the App Service.
 {% endhint %}
 

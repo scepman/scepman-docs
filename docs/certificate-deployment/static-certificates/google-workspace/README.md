@@ -6,6 +6,14 @@ description: >-
 
 # Google Workspace
 
+{% hint style="info" %}
+This feature requires version 1.6 or above.
+{% endhint %}
+
+{% hint style="warning" %}
+SCEPman Enterprise Edition only
+{% endhint %}
+
 <img src="../../../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
 
 ## Workflow of issuing SCEP Certificates&#x20;
@@ -59,7 +67,11 @@ If you download a new service account key later, restart the service to apply it
 
 ### SCEPman
 
-#### Enable Google Workspace Integration by adding the following environment variables on SCEPman app service **(the one without -cm in the name)**:
+Enable Google Workspace Integration by adding the following environment variables on SCEPman app service:
+
+{% hint style="info" %}
+You can differentiate between the SCEPman App Service and the Certificate Master by looking for the App Service **without** the "-cm" in its name
+{% endhint %}
 
 |                                                                                             Setting                                                                                             | Description                                                                                                                                                                                                                                                                                                 |                     Value                    |
 | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------: |

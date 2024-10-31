@@ -1,12 +1,24 @@
 # SOTI MobiControl
 
+{% hint style="info" %}
+This feature requires version 1.6 or above.
+{% endhint %}
+
+{% hint style="warning" %}
+SCEPman Enterprise Edition Only
+{% endhint %}
+
 SCEPman can be integrated with SOTI MobiControl as a Certificate Authority. By connecting both systems through SCEPman's Static SCEP interface, MobiControl-enrolled devices can obtain device certificates from SCEPman.
 
 For more general information about other MDM solutions and SCEPman integration please check [here](./).
 
 ## Enable SOTI MobiControl Integration
 
-SOTI MobiControl integration of SCEPman can be easily enabled via the following environment variables on SCEPman app service **(the one without -cm in the name)**:
+SOTI MobiControl integration of SCEPman can be easily enabled via the following environment variables on SCEPman app service:
+
+{% hint style="info" %}
+You can differentiate between the SCEPman App Service and the Certificate Master by looking for the App Service **without** the "-cm" in its name
+{% endhint %}
 
 |                                                                                               Setting                                                                                              | Description                                                                                                                                                                                                                                                                                              |                     Value                    |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------: |
