@@ -383,7 +383,7 @@ Our logging based on Azure Monitor allows surveillance of SCEPman's operations. 
 
 #### Enforce Least Privilege
 
-Our RBAC model for Certificate Master allows to assign only those permissions to user that they really need.
+Our RBAC model for Certificate Master allows to assign only those permissions to users that they really need.
 
 SCEPman uses Managed Identities that have only [the permissions needed for operation](security-faq.md#id-4.-which-tenant-permissions-does-the-admin-have-to-consent-to).
 
