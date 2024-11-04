@@ -22,7 +22,7 @@ Applicable to version 2.5 and above
 
 **Value:** _true_ or _false_ (default)
 
-**Description:** This setting determines whether certificates can have the extension 1.3.6.1.4.1.311.25.2 (user's Security Identifier (SID))? This extension is required to mitigate [Certifried attacks](../../../other/troubleshooting/certifried.md) if certificates are used for on-prem AD user authentication.
+**Description:** This setting determines whether certificates can have the extension 1.3.6.1.4.1.311.25.2 (user's Security Identifier (SID)). This extension is required to mitigate [Certifried attacks](../../../other/troubleshooting/certifried.md) if certificates are used for on-prem AD user authentication.
 
 If this is set to false, SCEPman will never issue certificates with this extension. If this is set to true, SCEPman may issue certificates with this extension in two cases:
 
