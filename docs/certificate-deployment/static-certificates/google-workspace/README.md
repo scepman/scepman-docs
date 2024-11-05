@@ -10,10 +10,6 @@ description: >-
 This feature requires version 1.6 or above.
 {% endhint %}
 
-{% hint style="warning" %}
-SCEPman Enterprise Edition only
-{% endhint %}
-
 <img src="../../../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
 
 ## Workflow of issuing SCEP Certificates&#x20;

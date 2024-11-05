@@ -4,10 +4,6 @@
 This feature requires version 1.6 or above.
 {% endhint %}
 
-{% hint style="warning" %}
-SCEPman Enterprise Edition Only
-{% endhint %}
-
 SCEPman can be integrated with SOTI MobiControl as a Certificate Authority. By connecting both systems through SCEPman's Static SCEP interface, MobiControl-enrolled devices can obtain device certificates from SCEPman.
 
 For more general information about other MDM solutions and SCEPman integration please check [here](./).
