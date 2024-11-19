@@ -11,8 +11,8 @@ With the help of the scripts in this article, you can utilise an endpoint in the
 In order to make use of this endpoint, you must set the following application settings on the SCEPman app service.
 
 * [AppConfig:DbCSRValidation:Enabled](../../scepman-configuration/optional/application-settings/dbcsr-validation.md#appconfig-dbcsrvalidation-enabled) = true
-* AppConfig:DbCSRValidation:AllowRenewals = true
-* AppConfig:DbCSRValidation:ReenrollmentAllowedCertificateTypes = Static
+* [AppConfig:DbCSRValidation:AllowRenewals](../../scepman-configuration/optional/application-settings/dbcsr-validation.md#appconfig-dbcsrvalidation-allowrenewals) = true
+* [AppConfig:DbCSRValidation:ReenrollmentAllowedCertificateTypes](../../scepman-configuration/optional/application-settings/dbcsr-validation.md#appconfig-dbcsrvalidation-reenrollmentallowedcertificatetypes) = Static
 
 Further, configure your SCEPman App Service to accept mTLS client certificates. In the Configuration blade of the Settings section, switch the Client certificate mode in Incoming client certificates from Ignore to Optional.
 

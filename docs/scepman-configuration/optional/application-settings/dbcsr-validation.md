@@ -10,14 +10,38 @@ SCEPman Enterprise Edition only
 
 ## AppConfig:DbCSRValidation:Enabled
 
-**Value:** _true_ or _false_
+**Value:** _true_ or _false_ (default)
 
 **Description:** This is a REST API endpoint that custom scripts and processes can use. See [our article on how to use the REST API](../../../certificate-deployment/api-certificates/) for details.
 
 ## AppConfig:DbCSRValidation:ValidityPeriodDays
 
-**Value:** Positive _Integer_
+**Value:** Positive Integer
 
 **Description:** This setting further reduces the global ValidityPeriodDays for the REST API endpoint. For example, you may define a value like 365 days here and set the global AppConfig:ValidityPeriodDays to 730. Then, certificates issued through the API will have one year validity, while certificates issued through other endpoints may be valid up to two years.
 
 Additionally, you can include an extension in your PKCS#10 requests to enroll certificates with a specific individual validity that is lower than the one configured here.
+
+## AppConfig:DbCSRValidation:AllowRenewals
+
+**Value:** _true_ or _false_ (default)
+
+**Description:** This allows using the EST "simplereenroll" endpoint, enabling [certificate renewal using mTLS](../../../certificate-deployment/api-certificates/renewal-script.md). It works only for certificate types added to AppConfig:DbCSRValidation:ReenrollmentAllowedCertificateTypes.
+
+## AppConfig:DbCSRValidation:ReenrollmentAllowedCertificateTypes
+
+**Value:** Comma-separated list of certificate types from this list:
+
+* DomainController
+* Static
+* IntuneUser
+* IntuneDevice
+* JamfUser
+* JamfUserWithDevice
+* JamfUserWithComputer
+* JamfDevice
+* JamfComputer
+
+**Description:** You can use the simplereenroll endpoint of for certificates of the types specified in this setting. If you do not specifiy any value, it defaults to no types, i.e. you cannot use the simplereenroll endpoint.
+
+For example, if you wanted to renew certificates issued manually through Certificate Master, you would specify `Static`. If you also want to renew Domain Controller certificates, you would specify `DomainController,Static`.
