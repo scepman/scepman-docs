@@ -4,6 +4,10 @@ description: A guide for enrolling Linux devices with automatically renewing cer
 
 # Linux Enrollment Guide
 
+{% hint style="info" %}
+Applicable to SCEPman version 2.9 and above
+{% endhint %}
+
 ## Step 1: Assign Linux users with self-service role
 
 Create a group of users who will be using the Linux devices and assign this group with the Self Service role so that they can enroll certificates to their own device using the Enrollment REST API.
