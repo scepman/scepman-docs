@@ -42,6 +42,6 @@ Additionally, you can include an extension in your PKCS#10 requests to enroll ce
 * JamfDevice
 * JamfComputer
 
-**Description:** You can use the simplereenroll endpoint of for certificates of the types specified in this setting. If you do not specifiy any value, it defaults to no types, i.e. you cannot use the simplereenroll endpoint.
+**Description:** You can use the simplereenroll endpoint for certificates of the types specified in this setting. If you do not specifiy any value, it defaults to no types, i.e. you cannot use the simplereenroll endpoint.
 
 For example, if you wanted to renew certificates issued manually through Certificate Master, you would specify `Static`. If you also want to renew Domain Controller certificates, you would specify `DomainController,Static`.
