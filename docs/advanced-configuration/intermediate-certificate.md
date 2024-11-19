@@ -47,7 +47,7 @@ The next step is to update the Azure App Service configuration to match the subj
 4. Click on **Apply and Confirm.**
 5. Restart the Azure **App Service** to apply the changes then navigate to your SCEPman URL.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Creating Intermediate CA Certificate with the SCEPman PowerShell Module
 

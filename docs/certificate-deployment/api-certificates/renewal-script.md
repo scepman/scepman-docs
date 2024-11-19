@@ -22,16 +22,20 @@ Do not set the Client certificate mode to Require or Allow, as that would break 
 
 ## Bash Script (Linux)
 
-The script can be found [here](https://github.com/scepman/csr-request/tree/dev-interactive/enroll-certificate).
+The scripts can be found [here](https://github.com/scepman/csr-request/tree/dev-interactive/enroll-certificate).
 
-This script was developed with the aim to facilitate automatic renewal of certificates with devices that lack MDM compatibility (particularly Linux devices). If this script were to be run regularly using Linux's Cron or Anacron utilities, it could allow for the automatic renewal of certificates on Linux devices.
+These scripts were developed with the aim to facilitate automatic renewal of certificates with devices that lack MDM compatibility (particularly Linux devices). If this script were to be run regularly using Linux's Cron or Anacron utilities, it could allow for the automatic renewal of certificates on Linux devices.
 
 ### Considerations
 
 * This script does not encrypt the generated keys (this requires passphrase input, so encryption has been omitted to allow for automatic renewal.)
 * If you are renewing passphrase-protected certificates from Certificate Master, you will need to input this passphrase in order to renew them.
 
-### Parameters for the script
+### Renewal script
+
+This script will renew the specified certificate using mTLS if it exists.
+
+#### Parameters
 
 1. SCEPman instance URL
 2. Certificate to be renewed (name of PEM encoded certificate file)
@@ -39,34 +43,58 @@ This script was developed with the aim to facilitate automatic renewal of certif
 4. Root certificate (name of PEM encoded certificate file)
 5. Renewal threshold (# of days): certificate will only renew if expiring in this or less many days
 
-### Example command
+#### Example command
 
 ```
-sh renewcertificate.sh https://scepman.contoso.com/ cert.pem cert.key root.pem 10
+sh renewcertificate.sh https://scepman.contoso.de/ cert.pem cert.key root.pem 10
 ```
 
-In order to facilitate automatic certificate renewal, you could use Linux's Cron utility to run this script regularly. This will cause the certificate to be renewed automatically once the current date is within the threshold number of days specified in the command. The below command will set up a cron job to run the command daily (if the system is powered on) and a cron job to run the command on reboot.
+### Enroll + Renewal script&#x20;
 
-```
-(crontab -l ; echo @daily /path/to/renewcertificate.sh https://scepman.contoso.com/ /path/to/cert.pem /path/to/cert.key /path/to/root.pem 10 ; echo @reboot /path/to/renewcertificate.sh https://your-scepman-domain.net/ /path/to/cert.pem /path/to/cert.key /path/to/root.pem 10) | crontab -
-```
+The enrollment and renewal script will create a certificate if one of the specified name doesn't exist in the specified directory, and if it does exist, will renew the specified certificate using mTLS.
 
-Since commands run by Cron will not necessarily be run from the directory that the script/certificates are in, it is important to provide the absolute paths to the script/certificates.
+#### Parameters
+
+1. SCEPman instance URL
+2. API scope of SCEPman-api app registration
+3. Desired name of certificate
+4. Directory where certificate is to be installed
+5. Directory where private key is to be installed
+6. Root certificate (name of PEM encoded certificate file)
+7. Renewal threshold (# of days): certificate will only renew if expiring in this or less many days
+
+#### Example command
+
+```nasm
+bash enrollcertificate.sh https://scepman.contoso.de/ api://123guid cert-name cert-directory key-directory root.pem
+```
 
 ## Powershell Cmdlet (Windows)
 
-This [cmdlet ](https://github.com/scepman/scepclient/blob/ScriptESTRenewal/RenewSCEPmanCerts.ps1)(`RenewSCEPmanCerts`) locates certificates issued by SCEPman in either the user or machine certificate stores and renews them using mTLS.&#x20;
+The cmdlet `Update-CertificateViaEST` (contained in the SCEPman powershell module) locates certificates issued by SCEPman in either the user or machine certificate stores and renews them using mTLS. Note that this cmdlet (unlike other parts of the powershell module) can only be used on Windows devices.&#x20;
 
 ### Parameters
 
-<table><thead><tr><th width="270">Parameter</th><th width="107">Optional?</th><th>Description</th></tr></thead><tbody><tr><td><code>-AppServiceUrl</code></td><td>No</td><td>The URL of your SCEPman app service.</td></tr><tr><td>-<code>User</code> or <code>-Machine</code></td><td>No</td><td>Specifies whether you would like to renew certificates from the user or machine store. One of these must be specified. (note that to edit the machine store you must run the command as admin).</td></tr><tr><td><code>-FilterString</code></td><td>Yes</td><td>Will only renew certificates whose Subject field contains the filter string.</td></tr><tr><td><code>-ValidityThresholdDays</code></td><td>Yes</td><td>Will only renew certificates that are within this number of days of expiry (default value is 30).</td></tr></tbody></table>
+This cmdlet has two parameter sets, `Direct`, which allows you to pass in a certificate directly and renew it, and `Search` which searches the My store for SCEPman issued certificates and renews them. The parameters included in these sets are detailed below:
 
-### Example command
+#### Direct
+
+<table><thead><tr><th width="270">Parameter</th><th width="107">Optional?</th><th>Description</th></tr></thead><tbody><tr><td><code>-AppServiceUrl</code></td><td>Yes</td><td>The URL of your SCEPman app service.</td></tr><tr><td><code>-Certificate</code></td><td>No</td><td>Certificate object that is to be renewed</td></tr></tbody></table>
+
+Example command:
 
 ```powershell
-RenewSCEPmanCerts -AppServiceUrl "https://scepman.contoso.com/" -User -ValidityThresholdDays 100 -FilterString "certificate"
+ $cert = Get-Item -Path "Cert:\CurrentUser\My\1234567890ABCDEF1234567890ABCDEF12345678"
+ Update-CertificateViaEST -AppServiceUrl "https://scepman.contoso.de/" -Certificate $cert
 ```
 
-### Cmdlet for finding certificates
+#### Search
 
-This cmdlet finds certificates using another cmdlet called `GetScepmanCerts` which takes the same parameters. You can make use of this cmdlet on its own to make sure you're finding the right certificates before renewing them. You can add the flag `-InformationAction Continue` so that this cmdlet will print the relevant information about these certificates to the output stream.
+<table><thead><tr><th width="270">Parameter</th><th width="107">Optional?</th><th>Description</th></tr></thead><tbody><tr><td><code>-AppServiceUrl</code></td><td>Yes</td><td>The URL of your SCEPman app service.</td></tr><tr><td>-<code>User</code> or <code>-Machine</code></td><td>No</td><td>Specifies whether you would like to renew certificates from the user or machine store. One of these must be specified. (note that to edit the machine store you must run the command as admin).</td></tr><tr><td><code>-FilterString</code></td><td>Yes</td><td>Will only renew certificates whose Subject field contains the filter string.</td></tr><tr><td><code>-ValidityThresholdDays</code></td><td>Yes</td><td>Will only renew certificates that are within this number of days of expiry (default value is 30).</td></tr><tr><td><code>-AllowInvalid</code></td><td>Yes</td><td>If specified, the cmdlet will also renew invalid (expired) certificates.</td></tr></tbody></table>
+
+Example command:
+
+```powershell
+Update-CertificateViaEST -AppServiceUrl "https://scepman.contoso.de/" -User -ValidityThresholdDays 100 -FilterString "certificate"
+```
+
