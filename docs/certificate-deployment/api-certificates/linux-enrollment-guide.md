@@ -26,7 +26,7 @@ Use the bash script described in the page below to enroll a certificate on the L
 
 ## Step 3: Set up automatic renewal
 
-When the above bash script is run and detects that a certificate has already been enrolled, it will renew the certificate (if it is close to expiry) using mTLS. If the script is run regularly, this will ensure the certificate is renewed when it gets close to expiry. This can be done using Intune (by setting the 'Execution Frequency' for the Intune script to an appropriate value). Or you could set up a cronjob. The below command is an example of how this could be done. It will set up a cronjob to run the command daily (if the system is powered on) and a cronjob to run the command on reboot.
+When the above bash script is run and detects that a certificate has already been enrolled, it will renew the certificate (if it is close to expiry) using mTLS. If the script is run regularly, this will ensure the certificate is renewed when it gets close to expiry. You can set up a cronjob to achieve this. The below command is an example of how this could be done. It will set up a cronjob to run the command daily (if the system is powered on) and a cronjob to run the command on reboot.
 
 <pre><code><strong>(crontab -l ; echo @daily /path/to/enrolrenewcertificate.sh https://scepman.contoso.com/ api://123guid certname /cert/directory /key/directory /path/to/root.pem 10 ; echo @reboot  /path/to/enrolrenewcertificate.sh https://scepman.contoso.com/ api://123guid certname /cert/directory /key/directory /path/to/root.pem 10 ) | crontab -
 </strong></code></pre>
