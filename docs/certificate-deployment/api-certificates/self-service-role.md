@@ -24,6 +24,20 @@ You can create role assignments for users and groups in the SCEPman-api Enterpri
 
 A user with the self-service role can only enrol certificates with the following attributes. (These are the same as the attributes you would select when enrolling certificates via a SCEP profile in [Intune ](../microsoft-intune/)for instance). The certificate's validity will be tied to the device object in Intune or Entra Id or to the user object in Entra Id, analogously to Intune-enrolled certificates.
 
+{% hint style="danger" %}
+**User-controlled Subjects and Subject Alternative Names**
+
+SCEPman enforces only the few requirements on the Subject and Subject Alternative Names listed below, i.e.&#x20;
+
+* a Guid in the CN part of the Subject implies that the certificate was issued to a device with this Intune/Entra Device ID,
+* a UPN SAN implies that the certificate was issued either to a user with this UPN or it contains the Intune/Entra Device ID, or
+* there is a SAN URI that contains the IntuneDeviceId URI with the Intune Device Id.
+
+Additional allowed cases may be added in future SCEPman versions.
+
+Conversely, a user with the Self Service Role can request a certificate with almost any RDNs in the Subject and SAN values, so the certificate may look like as if it was issued to a different entity. If you grant the self-service role to a user, ensure that your applications do not rely on properties of the Subject or SAN whose value is not enforced by SCEPman.
+{% endhint %}
+
 ### Device Certificates
 
 Either the Subject Alternative Name (SAN) must include `IntuneDeviceID://<IntuneDeviceId>` as an URI, where `<IntuneDeviceId>` without the curly braces is the Device Id of the device in Intune. Or the CN field of the Subject must be the Entra ID device ID or the Intune Device Id. If you use the SAN method, you can have any kind of Subject, e.g. the name of the device (except for values that look like a Guid).
