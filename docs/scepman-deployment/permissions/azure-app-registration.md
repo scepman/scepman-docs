@@ -8,13 +8,13 @@ SCEPman needs to interact with your Azure Active Directory and Intune endpoints 
 
 ## Generate App Registration (get Application ID)
 
-1. Login in to [Azure Portal](https://portal.azure.com)
+1. Login to [Azure Portal](https://portal.azure.com)
 2. Navigate to **Azure Active Directory**
 3. Click **App registrations**
 
 ![](../../.gitbook/assets/2021-07-23-08\_47\_59-app-registrations-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-.png)
 
-4\. Click **New registration** and enter a **name**, i.e. SCEPman. For supported account type choose **Accounts in this organizational directory only** and click register.
+4\. Click **New Registration** and enter a **name**, i.e. SCEPman. For supported account type choose **Accounts in this organizational directory only** and click register.
 
 ![](../../.gitbook/assets/2021-07-23-08\_49\_37-register-an-application-microsoft-azure-and-2-more-pages-c4a8-ehamed-micro.png)
 
@@ -22,13 +22,15 @@ SCEPman needs to interact with your Azure Active Directory and Intune endpoints 
 
 ![](../../.gitbook/assets/2021-07-23-08\_50\_59-scepmanreg-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-edge.png)
 
+Create a new environment variable in SCEPman app service with the name [AppConfig:AuthConfig:ApplicationId](../../advanced-configuration/application-settings/azure-ad.md#appconfig-authconfig-applicationid) and paste the copied application ID as a value.
+
 ## Generate Secret (get Client Secret Value)
 
 1\. Stay within **App registrations** and click on **Certificates & secrets**
 
 ![](../../.gitbook/assets/2021-07-23-08\_52\_08-scepmanreg-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-edge.png)
 
-2\. Click **New client secret**, add a description and choose the expiration. We recommend **24 months**, this helps to provide an ongoing service for two years. You can revoke a secret at any time. Click **Add**
+2\. Click **New client secret**, add a description, and choose the expiration. We recommend **24 months**, this helps to provide an ongoing service for two years. You can revoke a secret at any time. Click **Add**
 
 ![](../../.gitbook/assets/2021-07-23-09\_06\_11-azure-app-registration-scepman-docs-and-1-more-page-work-microsoft-edge.png)
 
