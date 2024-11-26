@@ -2,6 +2,12 @@
 
 ## Versions
 
+### 2.9 - Currently in Beta Channel
+
+**SCEPman**
+
+* [ClientID/ClientSecret support in Jamf](advanced-configuration/application-settings/jamf-validation.md#appconfig-jamfvalidation-clientid)
+
 ### 2.8 - May 2024
 
 **SCEPman 2.8.1225**

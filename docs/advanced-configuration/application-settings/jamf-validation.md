@@ -4,11 +4,11 @@
 These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](./).
 {% endhint %}
 
-## AppConfig:JamfValidation:Enabled
-
 {% hint style="info" %}
-Applicable to version 1.7 and above
+Jamf is available in SCEPman version 1.7 and above
 {% endhint %}
+
+## AppConfig:JamfValidation:Enabled
 
 **Value:** _true_ or _false_
 
@@ -38,10 +38,6 @@ Applicable to version 2.8 and above
 
 ## AppConfig:JamfValidation:RequestPassword
 
-{% hint style="info" %}
-Applicable to version 1.7 and above
-{% endhint %}
-
 **Value:** _String_
 
 **Description:** A challenge password (max 32 characters) that Jamf must include in every SCEP request to acquire a certificate. Only used if AppConfig:JamfValidation:Enabled is set to _true_.
@@ -50,43 +46,60 @@ We recommend to define this setting as Secret in Azure Key Vault. The Secret mus
 
 ## AppConfig:JamfValidation:ValidityPeriodDays
 
-{% hint style="info" %}
-Applicable to version 1.7 and above
-{% endhint %}
-
 **Value:** Positive _Integer_
 
 **Description:** This setting further reduces the global ValidityPeriodDays for the Jamf endpoint.
 
 ## AppConfig:JamfValidation:URL
 
-{% hint style="info" %}
-Applicable to version 1.7 and above
-{% endhint %}
-
 **Value:** _String_
 
 **Description:** The root URL of your Jamf instance. If you use Jamf Cloud, this will probably look like `https://your-instance.jamfcloud.com/`.
 
-## AppConfig:JamfValidation:APIUsername
+## AppConfig:JamfValidation:ClientID
 
 {% hint style="info" %}
-Applicable to version 1.7 and above
+Applicable to version 2.9 and above
 {% endhint %}
 
 **Value:** _String_
 
-**Description:** The name of a service account in Jamf that SCEPman uses to authenticate on your Jamf instance. SCEPman needs the following permissions to query for computers, devices, and users:
+**Description:** ClientID and ClientSecret are an alternative to APIUsername and APIPassword.
+
+Enter the Client ID of an API Client matching the Client Secret configured in the AppConfig:JamfValidation:ClientSecret setting. [Refer to the Jamf documentation](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/API_Roles_and_Clients.html) on how to create an API Role and API Client. The API Client must have a role with these permissions:
+
+* Read Mobile Devices
+* Read Computers
+* Read User
+
+## AppConfig:JamfValidation:ClientSecret
+
+{% hint style="info" %}
+Applicable to version 2.9 and above
+{% endhint %}
+
+**Value:** _String_
+
+**Description:** The Client Secret value for the API Client configuration in AppConfig:JamfValidation:ClientID.
+
+We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--JamfValidation--ClientSecret_.
+
+{% hint style="info" %}
+If you set this setting as a Secret in the Key Vault, you do not need to add the **AppConfig:JamfValidation:ClientSecret** to the SCEPman configuration anymore.
+{% endhint %}
+
+## AppConfig:JamfValidation:APIUsername
+
+**Value:** _String_
+
+**Description:** Either use this and APIPassword or ClientID and ClientSecret.\
+The name of a service account in Jamf that SCEPman uses to authenticate on your Jamf instance. SCEPman needs the following permissions to query for computers, devices, and users:
 
 * Computers -> Read
 * Mobile Devices -> Read
 * Users -> Read
 
 ## AppConfig:JamfValidation:APIPassword
-
-{% hint style="info" %}
-Applicable to version 1.7 and above
-{% endhint %}
 
 **Value:** _String_
 
@@ -95,7 +108,7 @@ Applicable to version 1.7 and above
 We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--JamfValidation--APIPassword_.
 
 {% hint style="info" %}
-If you set this setting as a Secret in the Key Vault, you do not need to add the **AppConfig:JamfValidation:APIPassword** to SCEPman configuration anymore.
+If you set this setting as a Secret in the Key Vault, you do not need to add the **AppConfig:JamfValidation:APIPassword** to the SCEPman configuration anymore.
 {% endhint %}
 
 ## AppConfig:JamfValidation:EnableCertificateStorage
