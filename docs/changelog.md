@@ -6,9 +6,30 @@
 
 **SCEPman 2.9.1274**
 
+* [Certificate self-service enrollment via EST/REST API](certificate-deployment/api-certificates/self-service-enrollment.md)
 * [ClientID/ClientSecret support in Jamf](advanced-configuration/application-settings/jamf-validation.md#appconfig-jamfvalidation-clientid)
 * [Authorized Responders for OCSP Requests](advanced-configuration/application-settings/ocsp.md#appconfig-ocsp-authorizedrespondervalidityhours)
-* Library Updates
+* Smaller improvements, e.g.
+  * Configure default EKUs for the REST API, allowing you to enforce specific EKUs
+  * Logging improvements to make the log more concise
+  * Improved connectivity status evaluation on splash page
+  * OCSP Response for the status of SCEPman's CA certificate (for compatibility with a Palo Alto setup)
+* Library Updates, including
+  * the update to Azure.Identity 1.12, fixing [CVE-2024-35255](https://www.cve.org/CVERecord?id=CVE-2024-35255),
+  * the update to Bouncy Castle .NET 2.4, fixing [CVE-2024-29857](https://github.com/bcgit/bc-csharp/wiki/CVE%E2%80%902024%E2%80%9029857).
+
+**Certificate Master 2.9.846**
+
+* Smaller improvements
+* Library Updates, including
+  * the update of Azure.Identity to 1.12, fixing [CVE-2024-35255](https://www.cve.org/CVERecord?id=CVE-2024-35255),
+  * the update to Bouncy Castle .NET 2.4, fixing [CVE-2024-29857](https://github.com/bcgit/bc-csharp/wiki/CVE%E2%80%902024%E2%80%9029857).
+
+**SCEPman PowerShell Module 2.9**
+
+Starting with this version, the SCEPman PowerShell Module with have the same major and minor version number as the corresponding SCEPman release.
+
+* New CMDlet `Update-CertificateViaEST` for[ renewing certificates over EST](certificate-deployment/api-certificates/renewal-script.md) on Windows
 
 ### 2.8 - May 2024
 
