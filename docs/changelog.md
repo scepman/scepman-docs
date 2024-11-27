@@ -4,9 +4,11 @@
 
 ### 2.9 - Currently in Beta Channel
 
-**SCEPman**
+**SCEPman 2.9.1274**
 
 * [ClientID/ClientSecret support in Jamf](advanced-configuration/application-settings/jamf-validation.md#appconfig-jamfvalidation-clientid)
+* [Authorized Responders for OCSP Requests](advanced-configuration/application-settings/ocsp.md#appconfig-ocsp-authorizedrespondervalidityhours)
+* Library Updates
 
 ### 2.8 - May 2024
 

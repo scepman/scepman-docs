@@ -38,7 +38,7 @@ Changes can harm your service!
 
 ## AppConfig:LoggingConfig:LogLevel
 
-**Value:** Trace, Debug, Info, Warn, Error, Fatal
+**Value:** _Trace_, _Debug_, _Info_, _Warn_, _Error_, or _Fatal_
 
 **Description:**
 
