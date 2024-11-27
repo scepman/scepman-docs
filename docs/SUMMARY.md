@@ -53,7 +53,7 @@
   * [SOTI MobiControl](certificate-deployment/static-certificates/soti-mobicontrol.md)
 * [Domain Controller Certificates](certificate-deployment/domain-controller-certificates.md)
 * [Enrollment REST API](certificate-deployment/api-certificates/README.md)
-  * [Self Service Role](certificate-deployment/api-certificates/self-service-role.md)
+  * [Self Service Enrollment](certificate-deployment/api-certificates/self-service-enrollment.md)
   * [Renewal Script](certificate-deployment/api-certificates/renewal-script.md)
   * [Linux Enrollment Guide](certificate-deployment/api-certificates/linux-enrollment-guide.md)
 * [Manage Certificates](certificate-deployment/manage-certificates.md)

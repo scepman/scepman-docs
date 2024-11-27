@@ -12,8 +12,8 @@ Applicable to SCEPman version 2.9 and above
 
 Create a group of users who will be using the Linux devices and assign this group with the Self Service role so that they can enroll certificates to their own device using the Enrollment REST API.
 
-{% content-ref url="self-service-role.md" %}
-[self-service-role.md](self-service-role.md)
+{% content-ref url="self-service-enrollment.md" %}
+[self-service-enrollment.md](self-service-enrollment.md)
 {% endcontent-ref %}
 
 ## Step 2: Enroll certificates
