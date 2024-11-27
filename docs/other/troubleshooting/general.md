@@ -12,7 +12,7 @@ The URL [https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip
 
 Check if the Azure resource is up and running.
 
-![](<../../.gitbook/assets/event32\_2 (3) (3) (3) (3) (2) (1) (12).png>)
+![](<../../.gitbook/assets/event32_2 (3) (3) (3) (3) (2) (1) (12).png>)
 
 ### My App Service uses the wrong .NET version
 
@@ -22,9 +22,9 @@ This is because some common .NET versions are automatically available on all Win
 
 As a side note, Linux App Services do not include any automatically installed .NET stacks. If you wanted to run SCEPman on a Linux App Service, you would have to configure the correct .NET version. However, the next SCEPman update could break your installation if it used a newer .NET version. This is why we do not support SCEPman on Linux App Services.
 
-### My SCEPman App Service did/will not work on 2024-11-13 and it ceases to work completely since 2024-11-20 after is has been working with no issues for many years
+### My SCEPman App Service did not work on 2024-11-27 and it ceases to work completely since 2024-12-04 after is has been working with no issues for many years
 
-We are shutting down the deprecated SCEPman artifacts repository [https://github.com/glueckkanja/gk-scepman](https://github.com/glueckkanja/gk-scepman) after over three years of moving artifacts to the new location [https://github.com/scepman/install](https://github.com/scepman/install). On Wednesday, 2024-11-13, we are temporarily disabling the old location to make users aware of the permanent shutdown on Wednesday, 2024-11-20.
+We are shutting down the deprecated SCEPman artifacts repository [https://github.com/glueckkanja/gk-scepman](https://github.com/glueckkanja/gk-scepman) after over three years of moving artifacts to the new location [https://github.com/scepman/install](https://github.com/scepman/install). On Wednesday, 2024-11-27, we are temporarily disabling the old location to make users aware of the permanent shutdown on Wednesday, 2024-12-04.
 
 If you are affected, check your WEBSITE\_RUN\_FROM\_PACKAGE setting and [update the value](../../advanced-configuration/application-artifacts.md) to the new package location. This will also update your SCEPman version from 1.8 to the latest version, granting [many improvements](../../changelog.md) with full backwards compatibility.
 
@@ -52,7 +52,7 @@ This could happen when a wrong trusted root certificate was selected in the SCEP
 8. It contains a short error report
    * SCEP: Certificate enrollment failed. Result (The hash value is not correct.).
 
-![](<../../.gitbook/assets/event32\_1 (2) (3) (3) (3) (2) (1) (12).png>)
+![](<../../.gitbook/assets/event32_1 (2) (3) (3) (3) (2) (1) (12).png>)
 
 If you are using an Intermediate CA, note that you have to [select the Intermediate CA certificate](../../advanced-configuration/intermediate-certificate.md#intermediate-cas-and-intune-scep-profiles) and not the Root CA certificate in the SCEP configuration profile! Note that this is specific to the Windows platform and for example Android requires selecting the Root CA certificate in the SCEP configuration profile.
 
@@ -64,7 +64,7 @@ This is just a problem before version 1.2
 
 If the device certificate has a localhost URL for the OCSP entry in the certificate like this:
 
-![](<../../.gitbook/assets/event32\_7 (3) (3) (3) (3) (3) (3) (3) (1) (12).png>)
+![](<../../.gitbook/assets/event32_7 (3) (3) (3) (3) (3) (3) (3) (1) (12).png>)
 
 The App Service is missing an important application setting with the name **AppConfig:BaseUrl** set to the azurewebsite URL. To fix this, add the variable and save the App Service config:
 
@@ -75,7 +75,7 @@ https://scepman-XXXXX.azurewebsites.net
 
 Delete this certificate from the device and do the MDM sync. If you did it you will see a proper URL for the OCSP entry:
 
-![](<../../.gitbook/assets/event32\_8 (3) (3) (3) (3) (3) (3) (3) (2) (4).png>)
+![](<../../.gitbook/assets/event32_8 (3) (3) (3) (3) (3) (3) (3) (2) (4).png>)
 
 ### My SCEP configuration profile shows pending and is not applied
 
@@ -113,7 +113,7 @@ certutil -verifyStore MY
 
 Look at the certificate with the device ID issued by the SCEPman-Device-Root-CA-V1 and verify if the certificate is valid (see last line).
 
-![](<../../.gitbook/assets/scepman\_revocation1 (3) (3) (3) (3) (3) (3) (3) (3) (1) (4).png>)
+![](<../../.gitbook/assets/scepman_revocation1 (3) (3) (3) (3) (3) (3) (3) (3) (1) (4).png>)
 
 To verify that the OCSP responder is working, you can look at the OCSP url cache with the following command:
 
@@ -121,7 +121,7 @@ To verify that the OCSP responder is working, you can look at the OCSP url cache
 certutil -urlcache OCSP
 ```
 
-![](<../../.gitbook/assets/scepman\_revocation2 (2) (3) (3) (3) (3) (3) (3) (3) (3) (4).png>)
+![](<../../.gitbook/assets/scepman_revocation2 (2) (3) (3) (3) (3) (3) (3) (3) (3) (4).png>)
 
 #### macOS Machine
 
@@ -152,7 +152,7 @@ As an alternate you can export the device certificate and use `certutil` on a Wi
 certutil -url <path-to-exported-device-certificate>
 ```
 
-![](<../../.gitbook/assets/scepman\_revocation4 (3) (3) (3) (3) (3) (3) (3) (3) (3) (2) (4).png>)
+![](<../../.gitbook/assets/scepman_revocation4 (3) (3) (3) (3) (3) (3) (3) (3) (3) (2) (4).png>)
 
 ### Revoke a user
 
@@ -185,7 +185,7 @@ certutil -verifyStore MY
 
 As you can see in the last line, the **Certificate is REVOKED**
 
-![](<../../.gitbook/assets/scepman\_revocation3 (2) (3) (3) (3) (3) (3) (3) (3) (3) (2) (12).png>)
+![](<../../.gitbook/assets/scepman_revocation3 (2) (3) (3) (3) (3) (3) (3) (3) (3) (2) (12).png>)
 
 When you enable the device in Microsoft Entra ID (Azure AD) again and you type in the command from above again, the certificate should be marked as valid.
 
@@ -207,7 +207,7 @@ _Solution_: Please see [here](cisco-ise-host-header-limitation.md).
 
 On Android (dedicated) systems, Intune or Android accidentally puts the Intune Device ID into the certificate instead of the AAD Device ID in random cases, although you configure the variable in the SCEP configuration profile. SCEPman then cannot find a device with this ID in AAD and therefore considers the certificate revoked.
 
-This happens only when you use the Microsoft Entra ID (Azure AD) shared mode for enrollment method for corporate-owned dedicated devices instead of the default mode. If you use the default mode for Token types `Corporate-owned dedicated device`, you will not be affected by the problem. Intune will still put the Intune Device ID into the certificate instead of the AAD Device ID, but they will be the same for the default mode, so it does not matter. To change the enrollment mode, go to the [Android enrollment settings of Microsoft Endpoint Manager admin center](https://endpoint.microsoft.com/#blade/Microsoft\_Intune\_DeviceSettings/DevicesAndroidMenu/androidEnrollment) and choose `Corporate-owned dedicated device (default)` instead of `Corporate-owned dedicated device with Azure AD shared mode`. Please refer to the [Microsoft documentation](https://docs.microsoft.com/en-us/mem/intune/enrollment/android-kiosk-enroll) for the implications of this selection.
+This happens only when you use the Microsoft Entra ID (Azure AD) shared mode for enrollment method for corporate-owned dedicated devices instead of the default mode. If you use the default mode for Token types `Corporate-owned dedicated device`, you will not be affected by the problem. Intune will still put the Intune Device ID into the certificate instead of the AAD Device ID, but they will be the same for the default mode, so it does not matter. To change the enrollment mode, go to the [Android enrollment settings of Microsoft Endpoint Manager admin center](https://endpoint.microsoft.com/#blade/Microsoft_Intune_DeviceSettings/DevicesAndroidMenu/androidEnrollment) and choose `Corporate-owned dedicated device (default)` instead of `Corporate-owned dedicated device with Azure AD shared mode`. Please refer to the [Microsoft documentation](https://docs.microsoft.com/en-us/mem/intune/enrollment/android-kiosk-enroll) for the implications of this selection.
 
 We are currently working with Microsoft to solve this issue in all configurations. Please contact our support if you are also affected.
 
