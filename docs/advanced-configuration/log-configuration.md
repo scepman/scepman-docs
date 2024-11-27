@@ -39,22 +39,31 @@ SCEPman_CL
 | summarize IssuanceCount = count() by Endpoint = extract("/([a-zA-Z]+)$", 1, RequestBase)
 ```
 
-Starting with SCEPman 2.8, there is always exactly one Info level log entry whose log message starts with "Issued a certificate with serial number " per issued certificate, followed by its serial number. However, due to the unsolvable [Two Armies Problem](https://en.wikipedia.org/wiki/Two\_Generals'\_Problem), it can happen that the created certificate never reaches the requester or some other type of error prevents the actual enrollment. Likewise, in case of severe errors, it can happen that a log entry exists without corresponding database entry or vice versa.
+Starting with SCEPman 2.8, there is always exactly one Info level log entry whose log message starts with "Issued a certificate with serial number " per issued certificate, followed by its serial number. However, due to the unsolvable [Two Armies Problem](https://en.wikipedia.org/wiki/Two_Generals'_Problem), it can happen that the created certificate never reaches the requester or some other type of error prevents the actual enrollment. Likewise, in case of severe errors, it can happen that a log entry exists without corresponding database entry or vice versa.
 
-### OCSP Requests by Type of Certificate
+### Distinct Certificates with OCSP Check
 
 ```kusto
 let map_certtype = datatable(serial_start:string, readable:string)
 [
   "40", "Intune Device",
+  "41", "Intune Device",
+  "42", "Intune Incompliant Device",
   "50", "Static",
+  "51", "Static",
   "60", "Intune User",
+  "61", "Intune User",
   "64", "Jamf User",
+  "65", "Jamf User",
   "6C", "Jamf User on Device",
+  "6D", "Jamf User on Device",
+  "70", "Domain Controller",
   "7C", "Jamf User on Computer",
+  "7D", "Jamf User on Computer",
   "54", "Jamf Computer",
   "55", "Jamf Computer",
-  "44", "Jamf Device"
+  "44", "Jamf Device",
+  "45", "Jamf Device"
 ];
 SCEPman_CL
 | where LogCategory_s == "Scepman.Server.Controllers.OcspController" and Level == "Info"
@@ -62,6 +71,6 @@ SCEPman_CL
 | project serial = extract("Serial Number ([A-F0-9]+)", 1, Message)
 | distinct serial
 | extend serial_start = substring(serial,0,2)
-| summarize count() by (serial_start)
 | join kind=leftouter map_certtype on serial_start
+| summarize count() by (readable)
 ```
