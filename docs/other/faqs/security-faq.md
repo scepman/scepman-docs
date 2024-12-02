@@ -407,7 +407,7 @@ If SCEPman detects Security Events, they will be logged as Warning or Error to t
 
 ### 3. How do you secure your own development environment?
 
-As part of a company that also provides CSOC services and security consulting, we have very security standards for our devices, processes, and user awareness. We are part of Microsoft MISA, ISO 27001-certified, and Microsoft Partner of the Year with our Security offerings.
+As part of a company that also provides CSOC services and security consulting, we have high security standards for our devices, processes, and user awareness. We are part of Microsoft MISA, ISO 27001-certified, and Microsoft Partner of the Year with our Security offerings.
 
 Our source repositories have Branch Protection rules and we assign only the least necessary principles to the repositories and deployment pipelines to individual developer accounts. We automate tests and deployments where possible to reduce the attack surface using compromised accounts.
 
