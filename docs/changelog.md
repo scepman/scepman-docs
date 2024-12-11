@@ -2,9 +2,9 @@
 
 ## Versions
 
-### 2.9 - Currently in Beta Channel
+### 2.9 - December 2024
 
-**SCEPman 2.9.1274**
+**SCEPman 2.9.1294**
 
 * [Certificate self-service enrollment via EST/REST API](certificate-deployment/api-certificates/self-service-enrollment.md)
 * [ClientID/ClientSecret support in Jamf](advanced-configuration/application-settings/jamf-validation.md#appconfig-jamfvalidation-clientid)
@@ -18,7 +18,7 @@
   * the update to Azure.Identity 1.12, fixing [CVE-2024-35255](https://www.cve.org/CVERecord?id=CVE-2024-35255),
   * the update to Bouncy Castle .NET 2.4, fixing [CVE-2024-29857](https://github.com/bcgit/bc-csharp/wiki/CVE%E2%80%902024%E2%80%9029857).
 
-**Certificate Master 2.9.846**
+**Certificate Master 2.9.858**
 
 * Smaller improvements
 * Library Updates, including
