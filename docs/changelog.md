@@ -62,7 +62,7 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
 * Update to .NET 8
 * Library updates
   * Including the update of Azure.Identity to 1.11, fixing [CVE-2024-29992](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-29992). Currently, the exploit is not publicly disclosed, so the scope of the issue is unclear, but the published information indicates that SCEPman is likely not affected.
-* Small fixes and improvements including:
+*
   * Fixed a bug where the certificates were not displayed when there was a certificate in the list without CN field.
   * Fixed a bug where a user with only the MANAGE\_INTUNE or MANAGE\_INTUNE\_READ role couldn't see revoked certificates enrolled over Intune.
 
@@ -90,14 +90,6 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
 * Fixed a case of a broken view of manually revoked certificates enrolled via Intune.
 
 #### Certificate Master 2.7.702
-
-* Show certificates enrolled via Intune from the Storage Account.
-* When downloading certificates in PFX format, you can select whether to use a modern cryptographic algorithm required for example by OpenSSL 2.x or a legacy algorithm required by MacOS and Windows Server 2016.
-* Small improvements, including:
-  * Improved performance for large numbers of certificates in the database
-  * Logging to Azure Event Hub like SCEPman
-  * Document Signing Certificates
-  * Adjustable PFX password length with a default of 24 instead of 32 characters for increased compatibility
 
 ### 2.6 - November 2023
 
