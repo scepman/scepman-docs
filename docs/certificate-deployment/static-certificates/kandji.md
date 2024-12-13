@@ -33,7 +33,7 @@ After adding or editing SCEPman configuration parameters, you need to restart th
 
 As a first step, you must deploy SCEPman's root certificate. Download this CA certificate via the SCEPman website:
 
-![SCEPman Website](<../../.gitbook/assets/SCEPmanHomePage (2).png>)
+![SCEPman Website](../../.gitbook/assets/image-2.png)
 
 In Kandji, navigate to **Library** on the left navigation bar and add a **Certificate Library Item** to your Blueprint.
 

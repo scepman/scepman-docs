@@ -16,7 +16,7 @@ The basis for deploying SCEP certificates (device or user)  is to trust the root
 
 * [ ] Download the CA Certificate from SCEPman portal
 
-![](<../../.gitbook/assets/SCEPmanHomePage (2).png>)
+![](../../.gitbook/assets/image-2.png)
 
 * [ ] Create a profile for Android Enterprise with the type **Trusted certificate** in Microsoft Intune (based on your enrollment option for Android devices)
 

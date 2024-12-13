@@ -2,7 +2,7 @@
 
 Both Cisco ISE as well as Aruba ClearPass (only up to and including **ClearPass 6.9.5**) do not support HTTP 1.1 when looking up OCSP and do not send a host header in their OCSP request. This is likely because OpenSSL up to version 1.0.2, which seems to be used in the backend, [required an extra parameter to send the host header for OCSP requests](https://github.com/openssl/openssl/issues/1986), while OpenSSL 1.1.0 released in August 2016 does that automatically. Therefore, they cannot connect to a general SCEPman instance running on Azure App Services. The error message may look like this:
 
-![](<../../.gitbook/assets/cisco-ocsp-error (2) (4) (4) (4) (4) (4) (2) (1) (12).jpg>)
+![](../../.gitbook/assets/cisco-ocsp-error.jpg)
 
 Cisco is currently investigating future enhancements but for the time being you can use an [Azure Application Gateway](https://azure.microsoft.com/en-us/services/application-gateway/) to provide an instance of SCEPman not requiring a Host Header.
 
@@ -10,19 +10,19 @@ The following instructions outline the steps required to create an Azure Applica
 
 ## 1) Create a new Application Gateway
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.12.40 (2) (2) (2) (2) (2) (2) (2) (1) (2).png>)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.12.40.png)
 
 ## 2) Provide the necessary basic information
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.13.55 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1) (2).png>)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.13.55.png)
 
 ## 3) Create a new static public IP address
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.19 (2) (4) (5) (5) (5) (2) (1) (7).png>)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.19.png)
 
 ## 4) Create a new Backend Pool and point it to your SCEPman App Service
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.55 (2) (4) (5) (2) (1) (1) (1) (1) (1) (1) (2) (6).png>)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.14.55.png)
 
 {% hint style="info" %}
 In the Geo-Redundant scenario, you must add both SCEPman app services to the backend pool.
@@ -30,7 +30,7 @@ In the Geo-Redundant scenario, you must add both SCEPman app services to the bac
 
 ## 5) Add a routing rule for HTTP
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.36 (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (2) (1).png>)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.15.36.png)
 
 ![](../../.gitbook/assets/Replace5.png)
 
@@ -40,7 +40,7 @@ In the Geo-Redundant scenario, you must add both SCEPman app services to the bac
 Around the beginning of June, Microsoft introduced a bug in Azure Application Gateway that prevents adding a host header to host-header-free requests when "Pick host name from backend target" is selected. We recommended "Pick host name from backend target" in a previous version of this documentation, but this does no longer work. As a workaround, choose "Override with specific domain name" as depicted below and insert the name of your SCEPman App Service, e.g. _contoso-scepman.azurewebsites.net_.
 {% endhint %}
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.21 (1) (1) (2) (4) (3) (1) (7).png>)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.16.21.png)
 
 ![](../../.gitbook/assets/Replace5b2.png)
 
@@ -56,7 +56,7 @@ The use of HTTP without TLS is not a security vulnerability; PKI-based resources
 
 ![](../../.gitbook/assets/Replace61.png)
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.17.44 (2) (4) (3) (7).png>)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.17.44.png)
 
 ## 6b) Add a new HTTPS Setting with Host Header (your SCEPman public FQDN)
 
@@ -68,11 +68,11 @@ The use of HTTP without TLS is not a security vulnerability; PKI-based resources
 
 ## 7) Confirm Routing Rules
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.18.56 (2) (2) (2) (2) (2) (2) (1) (2).png>)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.18.56.png)
 
 ## 8) Finalize the Application Gateway configuration
 
-![](<../../.gitbook/assets/screen-shot-2019-10-18-at-17.19.13 (2) (4) (3) (1) (7).png>)
+![](../../.gitbook/assets/screen-shot-2019-10-18-at-17.19.13.png)
 
 ## 9) Configure the DNS name for the IP
 

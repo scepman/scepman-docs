@@ -26,11 +26,11 @@ Here's an overview about the SCEPman workflow when using Intune as MDM solution 
 
 Process of certificate issuance:
 
-![](<.gitbook/assets/Overview1 (2).png>)
+![](.gitbook/assets/Overview1.png)
 
 Process of certificate validation during certificate-based authentication:
 
-![](<.gitbook/assets/Overview2 (2).png>)
+![](.gitbook/assets/Overview2.png)
 
 ### SCEPman Features
 
