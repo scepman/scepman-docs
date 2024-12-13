@@ -18,7 +18,7 @@ Note that the "User and Location" data of your computers or mobile devices need 
 
 As first step you need to deploy SCEPman root certificate if you haven't done this already for the target platform. Download this CA certificate via SCEPman dashboard:
 
-![](../../.gitbook/assets/image-2.png)
+![](<../../.gitbook/assets/image-2 (10).png>)
 
 Add a new "Mobile Device Configuration Profile" and/or "macOS Configuration Profile", depending on your target platform, and choose "Certificate" as payload. Enter a meaningful name and upload the certificate (for "Select Certificate Option" select "Upload):
 
@@ -27,7 +27,7 @@ Add a new "Mobile Device Configuration Profile" and/or "macOS Configuration Prof
 ## User Certificates on Computers
 
 {% hint style="info" %}
-Jamf can only deploy user certificates to **MDM-enabled users**. There are some provisioning/pre-stage scenarios in which such user accounts are not created. For further information, please refer to the [Jamf documentation](https://docs.jamf.com/10.33.0/jamf-pro/administrator-guide/MDM-Enabled\_Local\_User\_Accounts.html).
+Jamf can only deploy user certificates to **MDM-enabled users**. There are some provisioning/pre-stage scenarios in which such user accounts are not created. For further information, please refer to the [Jamf documentation](https://docs.jamf.com/10.33.0/jamf-pro/administrator-guide/MDM-Enabled_Local_User_Accounts.html).
 {% endhint %}
 
 Under Computers -> Configuration Profiles, please add another "macOS Configuration Profile". Under the General Tab, change the Level to "User Level". On the left side, switch to the "SCEP" tab and configure a new SCEP payload. Activate "Use the External Certificate Authority settings to enable Jamf Pro as SCEP proxy for this configuration profile" and enter the following information:

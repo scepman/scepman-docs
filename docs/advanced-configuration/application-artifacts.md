@@ -2,7 +2,7 @@
 
 ## Available SCEPman Channels
 
-We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](../scepman-configuration/optional/application-settings/basics.md#website\_run\_from\_package) setting of your SCEPman App Service.
+We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](../scepman-configuration/optional/application-settings/basics.md#website_run_from_package) setting of your SCEPman App Service.
 
 There are two independent artifact hosts, GitHub and Azure (install.scepman.com). If one of the two should fail, you can switch to the other. Thus, there are two download URLs for each channel. Detecting the used channel when using install.scepman.com requires SCEPman 2.3, but apart from that also works with SCEPman 2.2.
 
@@ -60,7 +60,7 @@ https://raw.githubusercontent.com/scepman/install/deferred/dist/Artifacts.zip
 
 ## Available SCEPman Certificate Master Channels
 
-We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](../certmaster-configuration/application-settings/basics.md#website\_run\_from\_package) setting of your Certificate Master App Service.
+We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](../certmaster-configuration/application-settings/basics.md#website_run_from_package) setting of your Certificate Master App Service.
 
 ### Certificate Master Production Channel
 
@@ -143,10 +143,10 @@ To configure this, do the following:
 4. Then, click **Environment variables** (submenu **Settings**)
 5. Locate the parameter **WEBSITE\_RUN\_FROM\_PACKAGE** and click on it
 
-![](../.gitbook/assets/scepman-optional2.png)
+![](<../.gitbook/assets/scepman-optional2 (12).png>)
 
 6\. Then replace the URL in \*\*Value\*\* with the [SCEPman GitHub URL](application-artifacts.md#available-scepman-channels) (Evergreen Approach) or your Storage account blob URL you already copied:
 
-![](../.gitbook/assets/2021-10-08 16-40-54-Scepman02testServiceName - Microsoft Azure and 10 more pages - C4A8 EHamed - Mic.png)
+!\[]\(../.gitbook/assets/2021-10-08 16-40-54-Scepman02testServiceName - Microsoft Azure and 10 more pages - C4A8 EHamed - Mic.png)
 
 7\. Repeat the steps 1. - 6. for the Certificate Master AppService, which provides the same **WEBSITE\_RUN\_FROM\_PACKAGE** parameter under **Configuration**. Remember to provide the [CertMaster GitHub URL](application-artifacts.md#available-certificate-master-channels) in case you are following our Evergreen Approach.

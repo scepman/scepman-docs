@@ -12,15 +12,15 @@ SCEPman needs to interact with your Azure Active Directory and Intune endpoints 
 2. Navigate to **Azure Active Directory**
 3. Click **App registrations**
 
-![](../../.gitbook/assets/2021-07-23-08\_47\_59-app-registrations-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-.png)
+![](../../.gitbook/assets/2021-07-23-08_47_59-app-registrations-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-.png)
 
 4\. Click **New Registration** and enter a **name**, i.e. SCEPman. For supported account type choose **Accounts in this organizational directory only** and click register.
 
-![](../../.gitbook/assets/2021-07-23-08\_49\_37-register-an-application-microsoft-azure-and-2-more-pages-c4a8-ehamed-micro.png)
+![](../../.gitbook/assets/2021-07-23-08_49_37-register-an-application-microsoft-azure-and-2-more-pages-c4a8-ehamed-micro.png)
 
 5\. You may copy the **Application (client) ID** now. The ID is important and will be needed later by SCEPman deployment.
 
-![](../../.gitbook/assets/2021-07-23-08\_50\_59-scepmanreg-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-edge.png)
+![](../../.gitbook/assets/2021-07-23-08_50_59-scepmanreg-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-edge.png)
 
 Create a new environment variable in SCEPman app service with the name [AppConfig:AuthConfig:ApplicationId](../../advanced-configuration/application-settings/azure-ad.md#appconfig-authconfig-applicationid) and paste the copied application ID as a value.
 
@@ -28,11 +28,11 @@ Create a new environment variable in SCEPman app service with the name [AppConfi
 
 1\. Stay within **App registrations** and click on **Certificates & secrets**
 
-![](../../.gitbook/assets/2021-07-23-08\_52\_08-scepmanreg-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-edge.png)
+![](../../.gitbook/assets/2021-07-23-08_52_08-scepmanreg-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-edge.png)
 
 2\. Click **New client secret**, add a description, and choose the expiration. We recommend **24 months**, this helps to provide an ongoing service for two years. You can revoke a secret at any time. Click **Add**
 
-![](../../.gitbook/assets/2021-07-23-09\_06\_11-azure-app-registration-scepman-docs-and-1-more-page-work-microsoft-edge.png)
+![](../../.gitbook/assets/2021-07-23-09_06_11-azure-app-registration-scepman-docs-and-1-more-page-work-microsoft-edge.png)
 
 3\. **Copy the secret value** and copy it down in a secure place.
 
@@ -54,22 +54,22 @@ Stay within **App Registrations** and click on **API permissions**
 
 1. **Remove** the default **User** **Read** permission.
 
-![](../../.gitbook/assets/screenshot-2020-02-03-at-10.54.48.png)
+![](<../../.gitbook/assets/screenshot-2020-02-03-at-10.54.48 (1).png>)
 
 2\. Click on **Add a permission** and choose **Microsoft Graph**. When chosen, select **Application permissions** and search for directory. Add **Directory.ReadAll** as permission.
 
-![](../../.gitbook/assets/app-permission-graph.png)
+![](<../../.gitbook/assets/app-permission-graph (1).png>)
 
-![](../../.gitbook/assets/app-permission-directory-read.png)
+![](<../../.gitbook/assets/app-permission-directory-read (1).png>)
 
 3\. Now click on **Add a permission** and choose **Intune**. When chosen, select **Application permissions** and search for scep. Add **scep\_challenge\_provider** as a permission
 
-![](../../.gitbook/assets/app-permission-intune.png)
+![](<../../.gitbook/assets/app-permission-intune (1).png>)
 
-![](../../.gitbook/assets/app-permission-scep.png)
+![](<../../.gitbook/assets/app-permission-scep (1).png>)
 
 4. Search and add the following Graph permissions as well: `DeviceManagementConfiguration.Read.All` and `DeviceManagementManagedDevices.Read.All`
-5. &#x20;Finally click on **Grant admin** consent and **confirm** the consent for the given app registration.
+5. Finally click on **Grant admin** consent and **confirm** the consent for the given app registration.
 
 <figure><img src="../../.gitbook/assets/2024-03-13 12_10_27-SCEPman-api.png" alt=""><figcaption></figcaption></figure>
 

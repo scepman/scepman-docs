@@ -12,7 +12,7 @@ The basis for deploying SCEP certificates is to trust the root certificate of SC
 
 * [ ] Download the CA Certificate from SCEPman portal:
 
-![](../../.gitbook/assets/image-2.png)
+![](<../../.gitbook/assets/image-2 (10).png>)
 
 * [ ] Create a profile for macOS with type **Trusted certificate** in Microsoft Intune:
 
@@ -29,7 +29,7 @@ Note, that you have to use the **same group for assigning** the **Trusted certif
 
 * [ ] Open the SCEPman portal and copy the URL under **Intune MDM**:
 
-![](../../.gitbook/assets/image-3.png)
+![](<../../.gitbook/assets/image-3 (1).png>)
 
 * [ ] Create a profile for macOS with type **SCEP certificate** in Microsoft Intune:
 
@@ -51,17 +51,15 @@ In this section we are setting up a device certificate.
 
 **Recommended:** Use `{{DeviceName}}`for the CN RDN to have a meaningful name of the certificate on the device or when searching for the certificate.
 
-**Optional:** If configured to `CN={{DeviceId}}` or `CN={{AAD_Device_ID}}`,  SCEPman uses the CN field of the subject name to identify the device and as a seed for the certificate serial number generation. Microsoft Entra ID (Azure AD) and Intune offer two different IDs:
+**Optional:** If configured to `CN={{DeviceId}}` or `CN={{AAD_Device_ID}}`, SCEPman uses the CN field of the subject name to identify the device and as a seed for the certificate serial number generation. Microsoft Entra ID (Azure AD) and Intune offer two different IDs:
 
 * `{{DeviceId}}`: This ID is generated and used by Intune.\
   \
   (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
 
-<!---->
+- `{{AAD_Device_ID}}`: This ID is generated and used by Microsoft Entra ID (Azure AD).
 
-* `{{AAD_Device_ID}}`: This ID is generated and used by Microsoft Entra ID (Azure AD).
-
-In case neither `CN={{DeviceId}}` nor `CN={{AAD_Device_ID}}` is used for the CN field (e.g. `CN={{DeviceName}})`, SCEPman will identify the device based on the Intune Device ID (`(URI)Value:`   `IntuneDeviceId://{{DeviceId}}`) provided in the subject alternative name (SAN).
+In case neither `CN={{DeviceId}}` nor `CN={{AAD_Device_ID}}` is used for the CN field (e.g. `CN={{DeviceName}})`, SCEPman will identify the device based on the Intune Device ID (`(URI)Value:` `IntuneDeviceId://{{DeviceId}}`) provided in the subject alternative name (SAN).
 
 **Important:** The choice of the CN field affects the [automatic revocation behavior](../manage-certificates.md#automatic-revocation) of certificates issued to your Intune-managed devices.
 
@@ -85,9 +83,9 @@ Other SAN values like DNS can be added if needed.
 
 <summary>Certificate validity period: <code>1 years</code></summary>
 
-<mark style="color:orange;">**Important:**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">macOS devices ignore the configuration of the validity period via Intune. Please make sure, to configure</mark> [#appconfig-validityperioddays](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays "mention") <mark style="color:orange;">to a fixed value. You can leave the certificate validity period setting to 1 year because it will be ignored anyway.</mark>\
+<mark style="color:orange;">**Important:**</mark> <mark style="color:orange;">macOS devices ignore the configuration of the validity period via Intune. Please make sure, to configure</mark> [#appconfig-validityperioddays](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityperioddays "mention") <mark style="color:orange;">to a fixed value. You can leave the certificate validity period setting to 1 year because it will be ignored anyway.</mark>\
 \
-<mark style="color:orange;">**Important:**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">Also note, that</mark> <mark style="color:orange;"></mark><mark style="color:orange;">**certificates on macOS are only renewed**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">by Intune when the device is</mark> <mark style="color:orange;"></mark><mark style="color:orange;">**unlocked, online, syncing and in scope of the renewal threshold**</mark><mark style="color:orange;">. If certificates are expired (e.g.: device was offline and/or locked for a long time), they won't be renewed any more. Therefore, we recommend to choose an higher value here.</mark>
+<mark style="color:orange;">**Important:**</mark> <mark style="color:orange;">Also note, that</mark> <mark style="color:orange;">**certificates on macOS are only renewed**</mark> <mark style="color:orange;">by Intune when the device is</mark> <mark style="color:orange;">**unlocked, online, syncing and in scope of the renewal threshold**</mark><mark style="color:orange;">. If certificates are expired (e.g.: device was offline and/or locked for a long time), they won't be renewed any more. Therefore, we recommend to choose an higher value here.</mark>
 
 </details>
 
@@ -121,7 +119,7 @@ Please select the Intune profile from [#Root certificates](macos.md#root-certifi
 
 Please choose **Client Authentication (1.3.6.1.5.5.7.3.2)** under **Predefined values**. The other fields will be filled out automatically.
 
-<mark style="color:orange;">**Important:**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">macOS devices do not support any Extended Key Usages (EKUs) other than</mark> <mark style="color:orange;"></mark><mark style="color:orange;">`Client Authentication`</mark> <mark style="color:orange;"></mark><mark style="color:orange;">. This means that any other EKUs configured in this profile will be ignored.</mark>
+<mark style="color:orange;">**Important:**</mark> <mark style="color:orange;">macOS devices do not support any Extended Key Usages (EKUs) other than</mark> <mark style="color:orange;">`Client Authentication`</mark> <mark style="color:orange;">. This means that any other EKUs configured in this profile will be ignored.</mark>
 
 </details>
 

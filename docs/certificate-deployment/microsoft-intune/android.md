@@ -12,11 +12,11 @@ Android device administrator management was released in Android 2.2 as a way to 
 
 ## Root Certificate
 
-The basis for deploying SCEP certificates (device or user)  is to trust the root certificate of SCEPman. Therefore, you have to download the CA Root certificate and deploy it as a **Trusted certificate** profile via Microsoft Intune:
+The basis for deploying SCEP certificates (device or user) is to trust the root certificate of SCEPman. Therefore, you have to download the CA Root certificate and deploy it as a **Trusted certificate** profile via Microsoft Intune:
 
 * [ ] Download the CA Certificate from SCEPman portal
 
-![](../../.gitbook/assets/image-2.png)
+![](<../../.gitbook/assets/image-2 (10).png>)
 
 * [ ] Create a profile for Android Enterprise with the type **Trusted certificate** in Microsoft Intune (based on your enrollment option for Android devices)
 
@@ -102,7 +102,7 @@ SCEPman supports 4096 bits.
 
 <summary>Root Certificate: <code>Profile from previous step</code></summary>
 
-Please select the Intune profile from [[#root-certificate](android.md#root-certificate "mention")](android.md#root-certificate).
+Please select the Intune profile from \[[#root-certificate](android.md#root-certificate "mention")]\(android.md#root-certificate).
 
 If you are using an [Intermediate CA](../../advanced-configuration/intermediate-certificate.md), you must still select the Trusted certificate profile for Root CA, not the Intermediate CA!
 
@@ -144,8 +144,6 @@ https://scepman.contoso.com/certsrv/mscep/mscep.dll
 
 Please follow the instructions of [#Device certificates](android.md#device-certificates) and take care of the following differences:
 
-
-
 <details>
 
 <summary>Certificate type: <code>User</code></summary>
@@ -166,7 +164,7 @@ You can define RDNs based on your needs. Supported variables are listed in the [
 
 <summary>Subject alternative name: <code>(UPN)</code>Value: <code>{{UserPrincipalName}}</code></summary>
 
-You **must** add the User principal name as the Subject alternative name. **Add '\{{UserPrincipalName\}}' as Subject Alternative Name of type User principal name (UPN).** This ensures that SCEPman can link certificates to user objects in AAD.&#x20;
+You **must** add the User principal name as the Subject alternative name. **Add '\{{UserPrincipalName\}}' as Subject Alternative Name of type User principal name (UPN).** This ensures that SCEPman can link certificates to user objects in AAD.
 
 Other SAN values like an Email address can be added if needed.
 
@@ -186,4 +184,3 @@ To ensure the correct deployment of certificates on your Android device, there a
 
 * In newer Android versions (e.g. 14), you can verify certificates (user and trusted certs.) from the **settings** > **security and privacy**
 * Via 3rd party apps like [My Certificates](https://play.google.com/store/apps/details?id=com.wesbunton.projects.mycertificates\&hl=en) or [X509 Certificate Viewer Tool](https://play.google.com/store/apps/details?id=com.rdupletlabs.certificateviewer)
-

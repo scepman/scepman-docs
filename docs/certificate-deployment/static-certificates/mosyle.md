@@ -33,7 +33,7 @@ After adding or editing SCEPman configuration parameters, you need to restart th
 
 As a first step you must deploy SCEPman's root certificate. Download this CA certificate via SCEPman website:
 
-![SCEPman Website](../../.gitbook/assets/image-2.png)
+![SCEPman Website](<../../.gitbook/assets/image-2 (10).png>)
 
 In Mosyle, navigate to Management and add "**Multi-Cert Profile**" as a new profile type (if it does not already exist).
 
@@ -41,23 +41,23 @@ Now **Add new profile,** choose a name for this profile, e.g. SCEPman Root CA, t
 
 ![Adding a Root CA Profile](<../../.gitbook/assets/2022-07-25 09-56-09-Glueckkanja GAB and 1 more page - Work - Microsoft Edge.png>)
 
-![Upload Root CA](<../../.gitbook/assets/2022-07-25 10\_04\_49-Window.png>)
+![Upload Root CA](<../../.gitbook/assets/2022-07-25 10_04_49-Window.png>)
 
 Now you need to assign this profile to your devices/users, then Save
 
-![Save Root CA profile](<../../.gitbook/assets/2022-07-25 10\_07\_23-Window.png>)
+![Save Root CA profile](<../../.gitbook/assets/2022-07-25 10_07_23-Window.png>)
 
 After saving, you can check the compliance status by clicking on view details on the profile
 
-![Profile Distribution Status](<../../.gitbook/assets/2022-07-25 10\_10\_27-Window.png>)
+![Profile Distribution Status](<../../.gitbook/assets/2022-07-25 10_10_27-Window.png>)
 
 ### Device Certificate
 
 Add a new profile, add profile name e.g. SCEPman Device Certificate, **+ADD PROFILE,** now choose **SCEP Profile** and fill out the values as shown below
 
-![SCEP Profile Configuration](<../../.gitbook/assets/2022-07-25 11\_41\_51.png>)
+![SCEP Profile Configuration](<../../.gitbook/assets/2022-07-25 11_41_51.png>)
 
-![SCEP Profile Configuration](<../../.gitbook/assets/2022-07-25 11\_29\_43.png>)
+![SCEP Profile Configuration](<../../.gitbook/assets/2022-07-25 11_29_43.png>)
 
 **Profile Name:** choose a name for your profile
 
@@ -81,4 +81,4 @@ Now you need to assign this profile to your devices/users, then **Save**.
 
 After saving, you can check the compliance status by clicking on view details on the profile
 
-![Profile Distribution Status](<../../.gitbook/assets/2022-07-25 11\_55\_57-Window.png>)
+![Profile Distribution Status](<../../.gitbook/assets/2022-07-25 11_55_57-Window.png>)

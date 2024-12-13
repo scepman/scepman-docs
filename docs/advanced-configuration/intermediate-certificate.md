@@ -40,7 +40,7 @@ The next step is to update the Azure App Service configuration to match the subj
 1. Navigate to your Azure App Service
 2. Click on **Environment variables** in the left navigation pane
 3. In **Application settings,** you must edit the following settings:
-   1. `AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName` \
+   1. `AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName`\
       Change this to a preferred common name (CN) for your intermediate CA.
    2. `AppConfig:KeyVaultConfig:RootCertificateConfig:Subject`\
       Only change the CN value of the subject name to match the common name used above.
@@ -53,13 +53,13 @@ The next step is to update the Azure App Service configuration to match the subj
 
 You can use the SCEPman PowerShell module version 1.9 and later to create a CSR for an Intermediate CA certificate. You can install the latest version of the module from PowerShell Gallery with the following command:
 
-```PowerShell
+```powershell
 Install-Module -Name SCEPman -Scope CurrentUser -Force
 ```
 
 Then, you can tell the module the name of your organization to appear in the certificate:
 
-```PowerShell
+```powershell
 Reset-IntermediateCaPolicy -Organization "My Organization"
 ```
 
@@ -74,7 +74,7 @@ Set-IntermediateCaPolicy -Policy $policy
 
 Finally, you can create the CSR with the following command (or a similar one according to your environment):
 
-```PowerShell
+```powershell
 New-IntermediateCA -SCEPmanAppServiceName "app-scepman-example" -SearchAllSubscriptions 6>&1
 ```
 
@@ -114,7 +114,7 @@ Critical=2.5.29.15
 1. In Azure Key Vault, click on your certificate and press **Certificate Operation**
 2. Now you can see the options **Download CSR** and **Merge Signed Request**
 
-![](../.gitbook/assets/screenshot-2020-10-19-at-16.01.18.png)
+![](<../.gitbook/assets/screenshot-2020-10-19-at-16.01.18 (13).png>)
 
 1. Click on **Merge Signed Request** and upload your Intermediate CA Certificate. After you have uploaded the signed request, you can see the valid certificate in your Azure Key Vault in the area **Completed**
 
