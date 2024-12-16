@@ -22,9 +22,9 @@ This is because some common .NET versions are automatically available on all Win
 
 As a side note, Linux App Services do not include any automatically installed .NET stacks. If you wanted to run SCEPman on a Linux App Service, you would have to configure the correct .NET version. However, the next SCEPman update could break your installation if it used a newer .NET version. This is why we do not support SCEPman on Linux App Services.
 
-### My SCEPman App Service did not work on 2024-11-27 and it ceases to work completely since 2024-12-04 after is has been working with no issues for many years
+### My SCEPman App Service did not work on 2024-11-27 and it ceased to work completely since 2024-12-16 after is has been working with no issues for many years
 
-We are shutting down the deprecated SCEPman artifacts repository [https://github.com/glueckkanja/gk-scepman](https://github.com/glueckkanja/gk-scepman) after over three years of moving artifacts to the new location [https://github.com/scepman/install](https://github.com/scepman/install). On Wednesday, 2024-11-27, we are temporarily disabling the old location to make users aware of the permanent shutdown on Wednesday, 2024-12-04.
+We are shutting down the deprecated SCEPman artifacts repository [https://github.com/glueckkanja/gk-scepman](https://github.com/glueckkanja/gk-scepman) after over three years of moving artifacts to the new location [https://github.com/scepman/install](https://github.com/scepman/install). On Wednesday, 2024-11-27, we temporarily disabled the old location to make users aware of the permanent shutdown on Monday, 2024-12-16.
 
 If you are affected, check your WEBSITE\_RUN\_FROM\_PACKAGE setting and [update the value](../../advanced-configuration/application-artifacts.md) to the new package location. This will also update your SCEPman version from 1.8 to the latest version, granting [many improvements](../../changelog.md) with full backwards compatibility.
 
