@@ -57,6 +57,10 @@ Available options:
 * `AADAndIntuneAndEndpointlist`\
   (available in SCEPman 2.2 and newer)
 
+{% hint style="warning" %}
+If you want to change this setting in an existing deployment that was installed with a previous version of SCEPman, please run the [PowerShell configuration script](../../post-installation-config.md#acquire-and-run-the-scepman-installation-powershell-module) again to make sure that SCEPman has the latest permissions to access the corresponding device directories.
+{% endhint %}
+
 **Description:** Determines where to look up devices on OCSP requests for device certificates. The corresponding directory is queried for a device matching the device ID written to the certificate's subject CN field. The certificate is valid only if the device exists. For **`AAD`**, it must also be enabled (Intune doesn't support disabling devices). If the ComplianceCheck is activated, the device must also be compliant. If nothing is configured and for SCEPman 1.9 and before, `AAD` is used.
 
 Hence, you must configure the Intune configuration profile for devices accordingly. \{{AAD\_Device\_ID\}} is the Entra/AAD device ID, while \{{DeviceID\}} is the Intune device ID.
@@ -65,7 +69,7 @@ For **`AADAndIntune`**, both directories are queried in parallel. In this case, 
 
 If you have upgraded from SCEPman 1.x to SCEPman 2.x and you are still using [an App Registration for SCEPman permissions](../../../scepman-deployment/permissions/azure-app-registration.md), SCEPman lacks the permissions to query Intune for devices. Thus, you are limited to the `AAD` option. The option **`AADAndIntuneOpportunistic`** checks whether the permissions to query Intune have been granted to SCEPman. If they are there, this works like `AADAndIntune`. If they are not there, this behaves like `AAD`.
 
-The value **`AADAndIntuneAndEndpointlist`** works just like `AADAndIntune`, but additionally queries [Intune's list of issued certificates](https://endpoint.microsoft.com/#view/Microsoft\_Intune\_DeviceSettings/DevicesMonitorMenu/\~/certificateReport). If Intune [triggered the revocation of a certificate](https://learn.microsoft.com/en-us/mem/intune/protect/remove-certificates#scep-certificates), this will make the certificate revoked in SCEPman.
+The value **`AADAndIntuneAndEndpointlist`** works just like `AADAndIntune`, but additionally queries [Intune's list of issued certificates](https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMonitorMenu/~/certificateReport). If Intune [triggered the revocation of a certificate](https://learn.microsoft.com/en-us/mem/intune/protect/remove-certificates#scep-certificates), this will make the certificate revoked in SCEPman.
 
 {% embed url="https://www.youtube.com/watch?v=K0SK0BtoBUQ" %}
 SCEPman 2.0: Certificate Validation
