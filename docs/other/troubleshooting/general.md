@@ -215,3 +215,11 @@ We are currently working with Microsoft to solve this issue in all configuration
 If your SCEPman homepage shows a red tag "Not Connected" for Storage Account connectivity, possibly the Managed Identity of the SCEPman App Service (and possibly that of SCEPman Certificate Master) is missing permissions on the Storage Account. In this case, SCEPman cannot check whether a certificate is manually revoked and therefore cannot respond to OCSP requests. This usually happens if you move the Storage Account to another subscription or resource group. It may also occur after upgrading a Community Edition version to Enterprise Edition -- in this case, the permission problem existed before, but the Community Edition did not check for it.
 
 To fix this, you need to grant the Managed Identity of the SCEPman App Service and that of SCEPman Certificate Master the role "Storage Table Data Contributor" on the Storage Account. The role assignments can be done manually in the Azure Portal under "Access Control (IAM)" in the Storage Account. Alternatively, just [execute the SCEPman Installation CMDlet from the SCEPman PowerShell module once again](../../scepman-configuration/post-installation-config.md#running-the-scepman-installation-cmdlet).
+
+
+
+## SCEPman won't issue certificates with EKUs other than Client Authentication
+
+Check your SCEPman Environment Variables to see what is configured for [AppConfig:UseRequestedKeyUsages](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-userequestedkeyusages). If it is not set, it defaults to "false".&#x20;
+
+New installations will automatically set this to "true", however older SCEPman installations have this set as false. SCEPman updates don't change any behavior except for fixes or changes that have under no circumstances a disadvantage. When this is set to false, the requests EKUs and Key Usages are ignored.\
