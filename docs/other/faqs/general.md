@@ -53,9 +53,14 @@ In order to view SCEPman issued certificates in Intune, navigate to certificates
 
 **Intune -> Devices -> Monitor -> Certificates**
 
-![](<../../.gitbook/assets/2022-07-26 11\_38\_54-Window.png>)
+![](<../../.gitbook/assets/2022-07-26 11_38_54-Window.png>)
 
 There you will find a list of all issued certificates with details like device name, user name, thumbprint, serial number, subject name, issuance date, expiry date, and certificate status.
 
 For a more comprehensive view of the certificates along with additional actions, review the certificates in [Certificate Master.](../../certificate-deployment/certificate-master/)
 
+
+
+## What's the expiry of the SCEPman Root CA? Can it be extended/renewed?
+
+The SCEPman Root CA has an expiry of 10 years. Once expired, SCEPman will have to be re-deployed, however this is not necessarily a bad thing as it has the advantage that the new root will live up to the security standards (key size, algorithms) that are relevant at that time in the future.
