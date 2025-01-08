@@ -12,7 +12,7 @@ For a general comparison of techniques to control certificate validity, have a l
 Applicable to version 2.3 and above
 {% endhint %}
 
-**Value:** A secret string consisting of lower case characters, numbers and dashes
+**Value:** A custom secret string consisting of alphanumerical characters and dashes
 
 **Description:** If you set this value to anything that is not an empty string, you can download a Certificate Revocation List (CRL) from SCEPman. The URL of the CRL is https://scepman.contoso.de/crl/{RequestToken}, where scepman.contoso.de is the domain of your SCEPman instance and {RequestToken} is the token configured here.
 

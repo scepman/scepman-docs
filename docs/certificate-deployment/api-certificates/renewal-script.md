@@ -72,7 +72,7 @@ The enrollment and renewal script will create a certificate if one of the specif
 #### Example command
 
 ```nasm
-bash enrollcertificate.sh https://scepman.contoso.de/ api://123guid cert-name cert-directory key-directory root.pem
+bash enrollrenewcertificate.sh https://scepman.contoso.de/ api://123guid cert-name cert-directory key-directory root.pem 40
 ```
 
 ## Powershell Cmdlet (Windows)
