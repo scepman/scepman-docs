@@ -6,11 +6,11 @@ This VNET is located in the same resource group as the other SCEPman components.
 
 After installation, there are no exceptions configured, so no other entity can access the Key Vault certificates and keys or the Table Storage of the Storage Account. If required, for example when [generating a Subordinate CA](../advanced-configuration/intermediate-certificate.md) or when[ querying the Storage Account](../other/faqs/general.md#how-can-i-programmatically-query-the-storage-account-table), you need to add exceptions under the Networking blade of the respective Azure Resource.
 
-Access to the management interface of the Key Vault and Storage Account is unaffected, i.e. you don't need to add your admin machines to the exception list to do things like changing the SKU of your Storage Account or inspecting the access logs of your Key Vault. Of course, you can use Conditional Access to restrict access to the Azure Portal.
+Access to the management interface of the Key Vault and Storage Account is unaffected, i.e. you don't need to add your admin machines to the exception list to perform functions such as changing the SKU of your Storage Account or inspecting the access logs of your Key Vault. Of course, you can use Conditional Access to restrict access to the Azure Portal.
 
-The SCEPman and SCEPman Certificate Master App Services do not have Private Endpoints, even if you install SCEPman 2.8 or newer. They can still be accessed from the Internet without networking restrictions. We recommend to not restrict access SCEPman on a networking level, as SCEPman is usually part of the infrastructure used to establish network connections and should therefore be available even if you are not yet connected.
+The SCEPman and SCEPman Certificate Master App Services do not have Private Endpoints, even if you install SCEPman 2.8 or newer. They can still be accessed from the Internet without networking restrictions. We recommend not restricting access to SCEPman on a networking level, as SCEPman is usually part of the infrastructure used to establish network connections and should therefore be available even if you are not yet connected.
 
-Again, you can use Conditional Access to limit access to SCEPman Certificate Master with various restrictions, including networking conditions. SCEPman usually does not use Conditional Access, as the two endpoints SCEP and OCSP do not use Entra authentication. However, you might use Conditional Access to restrict access to [SCEPman's REST API](../certificate-deployment/api-certificates/).
+If needed, Conditional Access can be employed to limit access to SCEPman Certificate Master with various restrictions, including networking conditions. SCEPman usually does not use Conditional Access, as the two endpoints SCEP and OCSP do not use Entra authentication. However, you might use Conditional Access to restrict access to [SCEPman's REST API](../certificate-deployment/api-certificates/).
 
 ### Azure Resources Used for Private Endpoints
 
@@ -21,19 +21,19 @@ Again, you can use Conditional Access to limit access to SCEPman Certificate Mas
 If you have installed SCEPman 2.7 or older, your Key Vault and Storage Account won't automatically have Private Endpoints, even if you update to SCEPman 2.8 or newer. You have to add them manually after a conscious decision. Please follow this guide to do so:
 
 * **Create Virtual Network**:
-  * In the SCEPman resource group, create a virtual network.
+  * In the SCEPman resource group, create a virtual network using default settings or as required by your organisation.
   * Create a new subnet in the new **Virtual Network** with default settings and set **"Subnet Delegation"** as **Microsoft.Web\&serverfarms**
 
 <figure><img src="../.gitbook/assets/2024-05-17 13_27_04.png" alt=""><figcaption></figcaption></figure>
 
 * **Create KeyVault Private Endpoint**:
-  * Navigate to SCEPman **KeyVault** > Networking > Private endpoint connections, and Create a private endpoint
-  * Select resource type: **Microsoft.KeyVault/Vaults**
+  * Navigate to your SCEPman's Resource Group > **KeyVault** > Settings > Networking > Private endpoint connections, and create a private endpoint
+  * Select resource type: **Microsoft.KeyVault/vaults**
   * Select your **KeyVault** by Resource and **vault** for Target sub-resource
   * Choose the virtual network and the default subnet (not the subnet created in the first step)
   * Enable **Integrate with private DNS zone** to automatically create and connect the Private DNS zone
 * **Create Storage Account Private Endpoint**
-  * Navigate to **StorageAccount** > Networking > Create private endpoint connections, create a private endpoint
+  * Navigate to **StorageAccount** > Security + Networking > Networking > Private endpoint connections and create a Private endpoint
   * By resource, set target sub-resource to **table**
   * Choose your virtual network and default subnet
   * Enable **Integrate with private DNS zone** to automatically create and connect the Private DNS zone
