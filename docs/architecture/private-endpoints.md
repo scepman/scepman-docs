@@ -52,7 +52,13 @@ If you have installed SCEPman 2.7 or older, your Key Vault and Storage Account w
 
 <figure><img src="../.gitbook/assets/2024-05-17 13_56_09.png" alt=""><figcaption></figcaption></figure>
 
-Now verify that the private endpoints for both the Key Vault and Storage Account are approved. Once confirmed, you can disable public access for both of them.
+Now verify that the private endpoints for both the Key Vault and Storage Account are approved.&#x20;
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+Once confirmed, you can disable public access for both, Key vault and Storage account.
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 For testing, you can create a new client certificate in Certificate Master, see [Client Certificate](../certificate-deployment/certificate-master/client-certificate-pkcs-12.md)
 

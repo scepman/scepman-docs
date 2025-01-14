@@ -269,7 +269,7 @@ We recommend setting Renewal Threshold (%) to a value that ensures certificates 
 
 ### **Example**
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 After a successful profile sync, you should see the user certificate for Intended Purposes **Secure Email**
 
