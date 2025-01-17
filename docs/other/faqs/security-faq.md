@@ -337,6 +337,10 @@ _No (not for SCEPman app service)_, as this will break the OCSP-responder functi
 
 **Note:** **`HTTPS Only`** cannot be enabled for the SCEPman app service, but it should be enabled for the Certificate Master app service.
 
+#### 5. Can the Minimum Inbound TLS Version be set to 1.3?
+
+_No_, as TLS 1.3 doesn't support re-negotiation. This means that once a connection is established, the server cannot ask the client to present a client certificate. We want the client to authenticate with a certificate in some circumstances (EST simple reenroll), so if you set TLS to 1.3, you won't be able to renew your certificates using EST.
+
 ## GDPR and Data-residency <a href="#user-content-gdpr-and-data-residency" id="user-content-gdpr-and-data-residency"></a>
 
 ### 1. Is data leaving Europe?
