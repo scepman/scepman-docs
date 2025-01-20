@@ -48,7 +48,7 @@ This defines which Table Storage Endpoint to use for checking manual certificate
 Changes can harm your service!
 {% endhint %}
 
-## AppConfig:EnableCertificateStorage
+## AppConfig:EnableCertificateStorage[^1]
 
 {% hint style="info" %}
 Applicable to version 2.8 and above
@@ -70,3 +70,5 @@ Changes can harm your service!
 
 This setting points to the Application Artifacts that will be loaded by starting the App Service.\
 Please have a look at these instructions: [Application Artifacts](../../../advanced-configuration/application-artifacts.md#change-artifacts).
+
+[^1]: Applicable to SCEPman version 2.8 and above
