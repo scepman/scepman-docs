@@ -24,6 +24,10 @@ You can create role assignments for users and groups in the SCEPman-api Enterpri
 
 A user with the self-service role can only enroll certificates with the following attributes. (These are the same as the attributes you would select when enrolling certificates via a SCEP profile in [Intune ](../microsoft-intune/)for instance). The certificate's validity will be tied to the device object in Intune or Entra Id or to the user object in Entra Id, analogously to Intune-enrolled certificates.
 
+{% hint style="info" %}
+If you are using the pre-supplied enrollment script from our [Section Use Cases](../../use-cases.md), it will automatically generate a request according to these requirements.
+{% endhint %}
+
 ### Device Certificates
 
 Either the Subject Alternative Name (SAN) must include `IntuneDeviceID://<IntuneDeviceId>` as an URI, where `<IntuneDeviceId>` without the curly braces is the Device Id of the device in Intune. Or the CN field of the Subject must be the Entra ID device ID or the Intune Device Id.
@@ -33,9 +37,3 @@ Either the Subject Alternative Name (SAN) must include `IntuneDeviceID://<Intune
 ### User Certificates
 
 <table><thead><tr><th width="221">Field</th><th>Value</th></tr></thead><tbody><tr><td>Subject</td><td><code>CN=&#x3C;DisplayName></code></td></tr><tr><td>SAN (Other Name/UPN)</td><td><code>&#x3C;UserPrincipalName></code></td></tr><tr><td>Basic Constraints</td><td><code>Subject Type=End Entity</code></td></tr><tr><td>EKUs</td><td><code>Client Authentication, 1.3.6.1.5.5.7.3.2</code></td></tr></tbody></table>
-
-## Requesting the Certificate
-
-On Linux, follow the instructions of the [Linux Enrollment Guide](linux-enrollment-guide.md).
-
-For other plattforms, follow our general instructions for using the [Enrollment REST API](./).

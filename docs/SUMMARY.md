@@ -33,6 +33,7 @@
   * [macOS](certificate-deployment/microsoft-intune/macos.md)
   * [Android](certificate-deployment/microsoft-intune/android.md)
   * [iOS/iPadOS](certificate-deployment/microsoft-intune/ios.md)
+  * [Linux](certificate-deployment/microsoft-intune/linux.md)
 * [Jamf Pro](certificate-deployment/jamf/README.md)
   * [General Configuration](certificate-deployment/jamf/general.md)
   * [Computers](certificate-deployment/jamf/computers.md)
@@ -53,9 +54,13 @@
   * [SOTI MobiControl](certificate-deployment/static-certificates/soti-mobicontrol.md)
 * [Domain Controller Certificates](certificate-deployment/domain-controller-certificates.md)
 * [Enrollment REST API](certificate-deployment/api-certificates/README.md)
+  * [Use Cases](certificate-deployment/api-certificates/use-cases/README.md)
+    * [Intune-managed Linux Client](certificate-deployment/api-certificates/use-cases/intune-managed-linux-client.md)
+    * [Non-Intune-managed Linux Client](certificate-deployment/api-certificates/use-cases/non-intune-managed-linux-client.md)
+    * [Linux Server](certificate-deployment/api-certificates/use-cases/linux-server.md)
+    * [Windows Server](certificate-deployment/api-certificates/use-cases/windows-server.md)
   * [Self Service Enrollment](certificate-deployment/api-certificates/self-service-enrollment.md)
-  * [Renewal Script](certificate-deployment/api-certificates/renewal-script.md)
-  * [Linux Enrollment Guide](certificate-deployment/api-certificates/linux-enrollment-guide.md)
+  * [API Enrollment](certificate-deployment/api-certificates/api-enrollment.md)
 * [Manage Certificates](certificate-deployment/manage-certificates.md)
 
 ## Advanced Configuration

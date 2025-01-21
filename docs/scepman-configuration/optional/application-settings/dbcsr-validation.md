@@ -26,7 +26,7 @@ Additionally, you can include an extension in your PKCS#10 requests to enroll ce
 
 **Value:** _true_ or _false_ (default)
 
-**Description:** This allows using the EST "simplereenroll" endpoint, enabling [certificate renewal using mTLS](../../../certificate-deployment/api-certificates/renewal-script.md). It works only for certificate types added to AppConfig:DbCSRValidation:ReenrollmentAllowedCertificateTypes.
+**Description:** This allows using the EST "simplereenroll" endpoint, enabling [certificate renewal using mTLS](broken-reference). It works only for certificate types added to AppConfig:DbCSRValidation:ReenrollmentAllowedCertificateTypes.
 
 ## AppConfig:DbCSRValidation:ReenrollmentAllowedCertificateTypes
 

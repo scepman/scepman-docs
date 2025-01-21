@@ -29,7 +29,7 @@
 
 Starting with this version, the SCEPman PowerShell Module with have the same major and minor version number as the corresponding SCEPman release.
 
-* New CMDlet `Update-CertificateViaEST` for[ renewing certificates over EST](certificate-deployment/api-certificates/renewal-script.md) on Windows
+* New CMDlet `Update-CertificateViaEST` for[ renewing certificates over EST](broken-reference) on Windows
 
 ### 2.8 - May 2024
 
