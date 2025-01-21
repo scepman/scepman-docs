@@ -38,7 +38,7 @@ Example:
 
 {% code overflow="wrap" %}
 ```bash
-./enrollrenewcertificate.sh -s https://scepman.contoso.net/ api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436 ~/certs/ "myCertificate" "myKeyName" 30 edbc406b-7384-414e-af8b-1a3b187b3f7e [Client_Secret] 736e80bb-3102-479b-83ba-e45c80ef723b "/CN=SubjectName,O=Organization"
+./enrollrenewcertificate.sh -s https://scepman.contoso.net/ api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436 ~/certs/ "myCertificate" "myKeyName" 30 edbc406b-7384-414e-af8b-1a3b187b3f7e [Client_Secret] 736e80bb-3102-479b-83ba-e45c80ef723b "/CN=SubjectName,O=Organization" "DNS:webserver.contoso.com"
 ```
 {% endcode %}
 
@@ -135,7 +135,7 @@ When the above bash script is run and detects that a certificate has already bee
 
 {% code overflow="wrap" %}
 ```
-(crontab -l ; echo @daily /path/to/enrollrenewcertificate.sh -s https://scepman.contoso.net/ api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436 /path/to/certs "myCertificate" "myKeyName" 30 edbc406b-7384-414e-af8b-1a3b187b3f7e [Client_Secret] 736e80bb-3102-479b-83ba-e45c80ef723b "/CN=SubjectName,O=Organization" ; echo @reboot /path/to/enrollrenewcertificate.sh -s https://scepman.contoso.net/ api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436 /path/to/certs "myCertificate" "myKeyName" 30 edbc406b-7384-414e-af8b-1a3b187b3f7e [Client_Secret] 736e80bb-3102-479b-83ba-e45c80ef723b "/CN=SubjectName,O=Organization" ) | crontab -
+(crontab -l ; echo @daily /path/to/enrollrenewcertificate.sh -s https://scepman.contoso.net/ api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436 /path/to/certs "myCertificate" "myKeyName" 30 edbc406b-7384-414e-af8b-1a3b187b3f7e [Client_Secret] 736e80bb-3102-479b-83ba-e45c80ef723b "/CN=SubjectName,O=Organization" "DNS:webserver.contoso.com" ; echo @reboot /path/to/enrollrenewcertificate.sh -s https://scepman.contoso.net/ api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436 /path/to/certs "myCertificate" "myKeyName" 30 edbc406b-7384-414e-af8b-1a3b187b3f7e [Client_Secret] 736e80bb-3102-479b-83ba-e45c80ef723b "/CN=SubjectName,O=Organization" "DNS:webserver.contoso.com") | crontab -
 ```
 {% endcode %}
 
