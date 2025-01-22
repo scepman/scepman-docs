@@ -34,7 +34,7 @@ Example:
 
 {% code overflow="wrap" %}
 ```bash
-./enrollrenewcertificate.sh -u https://scepman.contoso.net/ api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436 ~/certs/ "myCertificate" "myKeyName" 30
+./enrollrenewcertificate.sh -u https://scepman.contoso.net/ api://b7d17d51-8b6d-45eb-b42b-3dae638cd5bc/Cert.Enroll ~/certs/ "myCertificate" "myKeyName" 30
 ```
 {% endcode %}
 
@@ -66,13 +66,17 @@ The URL of the SCEPman app service.
 
 _Example: "https://scepman.contoso.net/"_
 
-#### 3. API Scope
+#### 3. API\_SCOPE
 
-This is the _**Application ID URI**_ of the _**SCEPman-api**_ app registration in your environment.
+This is the API scope you can create in the _**SCEPman-api**_ app registration in your environment.
 
-_Example: "api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436"_
+The user will be presented with your desired consent dialog and can afterwards user the self service functionality.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+_Example: "api://_&#x62;7d17d51-8b6d-45eb-b42b-3dae638cd5bc/Cert.Enrol&#x6C;_"_
+
+<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+
+
 
 #### 4. Certificate Filename
 
@@ -103,7 +107,7 @@ _Example: 30_
 
 When the above bash script is run and detects that a certificate has already been enrolled, it will renew the certificate (if it is close to expiry) using mTLS. If the script is run regularly, this will ensure the certificate is renewed when it gets close to expiry. You can set up a cronjob to achieve this. The below command is an example of how this could be done. It will set up a cronjob to run the command daily (if the system is powered on) and a cronjob to run the command on reboot.
 
-<pre data-overflow="wrap"><code><strong>(crontab -l ; echo @daily /path/to/enrollrenewcertificate.sh -u https://scepman.contoso.net/ api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436 /home/user/certs/ "myCertificate" "myKeyName" 30 ; echo @reboot /path/to/enrollrenewcertificate.sh -u https://scepman.contoso.net/ api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436 /home/user/certs/ "myCertificate" "myKeyName" 30 ) | crontab -
+<pre data-overflow="wrap"><code><strong>(crontab -l ; echo @daily /path/to/enrollrenewcertificate.sh -u https://scepman.contoso.net/ api://b7d17d51-8b6d-45eb-b42b-3dae638cd5bc/Cert.Enroll /home/user/certs/ "myCertificate" "myKeyName" 30 ; echo @reboot /path/to/enrollrenewcertificate.sh -u https://scepman.contoso.net/ api://b7d17d51-8b6d-45eb-b42b-3dae638cd5bc/Cert.Enroll /home/user/certs/ "myCertificate" "myKeyName" 30 ) | crontab -
 </strong></code></pre>
 
 Since commands run by Cron will not necessarily be run from the directory that the script/certificates are in, it is important to provide the absolute paths to the script/certificates.&#x20;

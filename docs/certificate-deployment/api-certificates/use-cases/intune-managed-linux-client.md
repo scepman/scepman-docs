@@ -46,7 +46,7 @@ Example configuration:
 
 ```bash
 APPSERVICE_URL="https://scepman.contoso.net/"
-API_SCOPE="api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436"
+API_SCOPE="api://b7d17d51-8b6d-45eb-b42b-3dae638cd5bc/Cert.Enroll"
 CERT_DIR=~/certs
 CERT_NAME="myCertificate"
 KEY_NAME="myKey"
@@ -65,11 +65,13 @@ _Example: "https://scepman.contoso.net/"_
 
 #### API\_SCOPE
 
-This is the _**Application ID URI**_ of the _**SCEPman-api**_ app registration in your environment.
+This is the API scope you can create in the _**SCEPman-api**_ app registration in your environment.
 
-_Example: "api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436"_
+The user will be presented with your desired consent dialog and can afterwards user the self service functionality.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+_Example: "api://_&#x62;7d17d51-8b6d-45eb-b42b-3dae638cd5bc/Cert.Enrol&#x6C;_"_
+
+<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
 #### CERT\_DIR
 
