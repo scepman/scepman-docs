@@ -79,11 +79,17 @@ The directory the certificate will be created or tried to be renewed. The privat
 
 _Example: \~/certs/_
 
-#### CERTNAME
+#### CERT\_NAME
 
 The filename (without extension) of the certificate that will be created or read for renewal.
 
 _Example: "myCertificate"_
+
+#### KEY\_NAME
+
+The filename of the private key that will be created or read for renewal.
+
+_Example: "myKey"_
 
 #### RENEWAL\_THRESHOLD\_DAYS
 
@@ -96,6 +102,16 @@ _Example: 30_
 The type of certificate that will be enrolled.
 
 _Can be either "user" or "device"_
+
+#### CERT\_COMMAND
+
+This defines the behavior of the script in relation to enrollment and renewal:
+
+**"auto"** will create a certificate initially or renew a certificate if it already exists and is about to expire.
+
+**"renewal"** will renew a certificate if it is about to expire but will not create a certificate initially.
+
+**"initial"** will only enroll a certificate but not renew a existing one.
 
 {% hint style="warning" %}
 If you are enrolling or renewing a device certificate the DeviceId will be retrieved from _\~/.config/intune/registration.toml_ and the authenticated user will need to match the owner of the object in the configured [DeviceDirectory](https://docs.scepman.com/advanced-configuration/application-settings/intune-validation#appconfig-intunevalidation-devicedirectory).

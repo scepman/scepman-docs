@@ -34,7 +34,7 @@ Example:
 
 {% code overflow="wrap" %}
 ```bash
-./enrollrenewcertificate.sh -u https://scepman.contoso.net/ api://b7d17d51-8b6d-45eb-b42b-3dae638cd5bc/Cert.Enroll ~/certs/ "myCertificate" "myKeyName" 30
+./enrollrenewcertificate.sh -u https://scepman.contoso.net/ api://b7d17d51-8b6d-45eb-b42b-3dae638cd5bc/Cert.Enroll ~/certs/ "myCertificate" "myKey" 30
 ```
 {% endcode %}
 
@@ -76,21 +76,25 @@ _Example: "api://_&#x62;7d17d51-8b6d-45eb-b42b-3dae638cd5bc/Cert.Enrol&#x6C;_"_
 
 <figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
-
-
-#### 4. Certificate Filename
-
-The filename (without extension) of the certificate that will be created or read for renewal.
-
-_Example: "myCertificate"_
-
-#### 5. Certificate Directory
+#### 4. Certificate Directory
 
 The directory the certificate will be created or tried to be renewed.
 
 _Example: \~/certs/_
 
-#### 8. Renewal Threshold
+#### 5. Certificate Filename
+
+The filename (without extension) of the certificate that will be created or read for renewal.
+
+_Example: "myCertificate"_
+
+#### 6. Private Key Filename
+
+The filename of the private key that will be created or read for renewal.
+
+_Example: "myKey"_
+
+#### 7. Renewal Threshold
 
 The amount of days the certificate will need to expire in for the script to begin the renewal process.
 
