@@ -1,5 +1,11 @@
 # Change Log
 
+{% hint style="success" %}
+If you'd like to **stay up to date on the latest changes and news in the SCEPman changelog**, you can subscribe to our email update service. Subscribers will receive **email notifications** when there are new updates to the changelog.
+
+[**Please click here to sign up for email notifications.**](https://feedback.scepman.com/)
+{% endhint %}
+
 ## Versions
 
 ### 2.9 - December 2024
