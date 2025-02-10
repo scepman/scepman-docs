@@ -15,6 +15,10 @@
     {
       "pattern": "^https://azure.microsoft.com/.*",
       "comment": "too many false positives, they are probably blocking requests from github.com"
+    },
+    {
+      "pattern": "^https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip$",
+      "comment": "link is intended to not be available as warning in common problems"
     }
   ],
   "replacementPatterns": [
