@@ -6,7 +6,7 @@
 
 If the error is '503 Cannot download ZIP', then the web app cannot download the ZIP with the application binaries from the URL configured in the app setting WEBSITE\_RUN\_FROM\_PACKAGE (see [Application Configuration](../../advanced-configuration/application-artifacts.md#change-artifacts)).
 
-The URL [https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip](https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip) that we had recommended for GitHub deployments in earlier versions of this documentation redirects to another URL. Microsoft changed the behavior of some of their Web Apps and now some versions do not support redirects together with WEBSITE\_RUN\_FROM\_PACKAGE. Hence, you need to change the URL to `https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts.zip`.
+The URL _https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip_ that we had recommended for GitHub deployments in earlier versions of this documentation redirects to another URL. Microsoft changed the behavior of some of their Web Apps and now some versions do not support redirects together with WEBSITE\_RUN\_FROM\_PACKAGE. Hence, you need to change the URL to `https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts.zip`.
 
 ### SCEPman Azure Web App is not running
 

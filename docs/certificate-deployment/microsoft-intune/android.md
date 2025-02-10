@@ -183,4 +183,4 @@ It is required to have a **Subject alternative name** in the **SCEP Certificate,
 To ensure the correct deployment of certificates on your Android device, there are two options:
 
 * In newer Android versions (e.g. 14), you can verify certificates (user and trusted certs.) from the **settings** > **security and privacy**
-* Via 3rd party apps like [My Certificates](https://play.google.com/store/apps/details?id=com.wesbunton.projects.mycertificates\&hl=en) or [X509 Certificate Viewer Tool](https://play.google.com/store/apps/details?id=com.rdupletlabs.certificateviewer)
+* Via 3rd party apps like [X509 Certificate Viewer Tool](https://play.google.com/store/apps/details?id=com.rdupletlabs.certificateviewer)

@@ -36,7 +36,7 @@ Process of certificate validation during certificate-based authentication:
 
 SCEPman is an Azure Web App with the following features:
 
-* A SCEP interface that is compatible with the Intune [SCEP API](https://docs.microsoft.com/en-us/intune/certificate-authority-add-scep-overview) in particular.
+* A SCEP interface that is compatible with the Intune [SCEP API](https://learn.microsoft.com/en-us/mem/intune/protect/certificate-authority-add-scep-overview) in particular.
 * SCEPman provides certificates signed by a CA root key stored in **Azure Key Vault**.
 * SCEPman contains an **OCSP responder** (see below) to provide [certificate validity / auto-revocation](certificate-deployment/manage-certificates.md#automatic-revocation) in real-time
 * A full replacement of Legacy PKI in many scenarios.
