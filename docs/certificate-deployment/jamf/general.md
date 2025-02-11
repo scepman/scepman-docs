@@ -19,23 +19,21 @@ Jamf integration of SCEPman can be easily enabled via the following environment 
 
 ## API Connection
 
-SCEPman needs to be connected to the Jamf API to check the status of onboarded clients. This is used for the revocation of certificates. Please define the following environment variables:
+SCEPman needs to be connected to the Jamf API to check the status of onboarded clients. This is used for the revocation of certificates.
 
-| Setting                                                                                                                                           | Description                                                                                                                                                                                                          | Example                         |
-| ------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| [AppConfig:JamfValidation:URL](../../advanced-configuration/application-settings/jamf-validation.md#appconfig-jamfvalidation-url)                 | The URL of your Jamf instance                                                                                                                                                                                        | `https://contoso.jamfcloud.com` |
-| [AppConfig:JamfValidation:APIUsername](../../advanced-configuration/application-settings/jamf-validation.md#appconfig-jamfvalidation-apiusername) | The user name of Jamf service account                                                                                                                                                                                | svc-scepman (see screenshot)    |
-| [AppConfig:JamfValidation:APIPassword](../../advanced-configuration/application-settings/jamf-validation.md#appconfig-jamfvalidation-apipassword) | <p>The password for the above account.</p><p>Consider adding this as a secret in your SCEPman <a href="../../advanced-configuration/application-settings/#secure-configuration-in-azure-key-vault">KeyVault</a>.</p> | password123 (see screenshot)    |
+[Refer to the Jamf documentation](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/API_Roles_and_Clients.html) on how to create an API role and API client. The API client must have a role with these permissions:
 
-Therefore, please add an appropriate service account under "Jamf Pro User Accounts & Groups":
+* Read Mobile Devices
+* Read Computers
+* Read User
 
-![](<../../.gitbook/assets/image (33).png>)
+&#x20;Please define the following environment variables:
 
-This account needs the following three **read** permissions under "Privileges" (section "Jamf Pro Server Objects"):
-
-* Computers
-* Mobile Devices
-* Users
+| Setting                                                                                                                                                             | Description                                                                                                                                                                                                                                | Example                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [AppConfig:JamfValidation:URL](../../advanced-configuration/application-settings/jamf-validation.md#appconfig-jamfvalidation-url)                                   | The URL of your Jamf instance                                                                                                                                                                                                              | `https://contoso.jamfcloud.com`                                                                                                            |
+| [AppConfig:JamfValidation:ClientID](https://docs.scepman.com/advanced-configuration/application-settings/jamf-validation#appconfig-jamfvalidation-clientid)         | The identifier of the Jamf API client                                                                                                                                                                                                      | See [Jamf ClientId](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/API_Roles_and_Clients.html#ariaid-title3)      |
+| [AppConfig:JamfValidation:ClientSecret](https://docs.scepman.com/advanced-configuration/application-settings/jamf-validation#appconfig-jamfvalidation-clientsecret) | <p>The Client Secret value for the API Client configuration.</p><p>Consider adding this as a secret in your SCEPman <a href="../../advanced-configuration/application-settings/#secure-configuration-in-azure-key-vault">KeyVault</a>.</p> | See [Jamf Client Secret](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/API_Roles_and_Clients.html#ariaid-title4) |
 
 {% hint style="warning" %}
 Jamf Pro's Classic API supports Bearer Authentication since version 10.35.0. There is a setting to disable the previous authentication method, Basic Authentication, since version 10.36.0. A future Jamf version scheduled for August-December 2022 will remove support for Basic Authentication. SCEPman 2.0 and lower support only Basic Authentication for the Classic API, while SCEPman 2.1 and higher uses Bearer Authentication. In order to use Bearer Authentication, you must upgrade to SCEPman 2.1 or higher.
