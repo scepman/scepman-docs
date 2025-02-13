@@ -10,7 +10,7 @@ SCEPman features a REST API to enroll certificates. This is an alternative to th
 
 See our use cases for step-by-step guides on how to use this feature:
 
-{% content-ref url="../../use-cases.md" %}
-[use-cases.md](../../use-cases.md)
+{% content-ref url="use-cases/" %}
+[use-cases](use-cases/)
 {% endcontent-ref %}
 
