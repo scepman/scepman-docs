@@ -46,7 +46,7 @@ Copy the client secret value immediately. You will not be able to retrieve it af
 
 ![](<../../.gitbook/assets/image (18).png>)
 
-4. update the value of the SCEPman setting [AppConfig:AuthConfig:ApplicationKey](../../advanced-configuration/application-settings/azure-ad.md#appconfig-authconfig-applicationkey) with the client secret value.
+4. Create the SCEPman setting [AppConfig:AuthConfig:ApplicationKey](../../advanced-configuration/application-settings/azure-ad.md#appconfig-authconfig-applicationkey) with the client secret value.
 
 ## Configure Permissions
 

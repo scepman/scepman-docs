@@ -13,15 +13,10 @@ In the following, we refer to the hosting tenant as **home tenant,** while to th
 ## Configuration Steps
 
 1. In the **home tenant**, perform a standard deployment of SCEPman/Certificate Master as described in our [Getting Started Guide](../../scepman-deployment/deployment-guides/).
-2. Create an **App registration** in the **target tenant** as described here: [Azure App Registration](../../scepman-deployment/permissions/azure-app-registration.md). This **App registration** will allow SCEPman to access the Azure AD and Intune directories in the **target tenant**.
-
-{% hint style="warning" %}
-The **client secret** generated as part of this **App registration** has an expiration and must be renewed before it expires. Please set a reminder for the renewal.
-{% endhint %}
 
 ### In SCEPman (Home Tenant)
 
-3. Navigate to the SCEPman **App service** and then to "Settings" --> "Environment variables". Locate the following parameters and **delete** them:
+2. Navigate to the SCEPman **App service** and then to "Settings" --> "Environment variables". Locate the following parameters and **delete** them:
 
 |                                                                 |
 | --------------------------------------------------------------- |
@@ -29,40 +24,36 @@ The **client secret** generated as part of this **App registration** has an expi
 | `AppConfig:AuthConfig:ManagedIdentityEnabledOnUnixTime`         |
 | `AppConfig:AuthConfig:ManagedIdentityPermissionLevel`           |
 
-4. **Rename** the following settings (**do not change their values**):
+3. **Rename** the following settings (**do not change their values**):
 
-| Original name                        | New name                                 |
-| ------------------------------------ | ---------------------------------------- |
-| `AppConfig:AuthConfig:ApplicationId` | `AppConfig:AuthConfig:HomeApplicationId` |
-| `AppConfig:AuthConfig:TenantId`      | `AppConfig:AuthConfig:HomeTenantId`      |
+<table><thead><tr><th width="384">Original name</th><th>New name</th></tr></thead><tbody><tr><td><code>AppConfig:AuthConfig:ApplicationId</code></td><td><code>AppConfig:AuthConfig:HomeApplicationId</code></td></tr><tr><td><code>AppConfig:AuthConfig:TenantId</code></td><td><code>AppConfig:AuthConfig:HomeTenantId</code></td></tr></tbody></table>
 
-5. **Create** the following new environment variables:
+4. Create an **App registration** in the **target tenant** as described here: [Azure App Registration](../../scepman-deployment/permissions/azure-app-registration.md). This **App registration** will allow SCEPman to access the Azure AD and Intune directories in the **target tenant**.
 
-| Name                                  | Value                                                                                                             |
-| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `AppConfig:AuthConfig:ApplicationId`  | GUID of the **App registration** that was created before **(target tenant)** .                                    |
-| `AppConfig:AuthConfig:TenantId`       | Tenant ID of the **target tenant**.                                                                               |
-| `AppConfig:AuthConfig:ApplicationKey` | **Value** of the **Client secret** that was created as part of the **App registration** in the **target tenant**. |
+{% hint style="warning" %}
+The **client secret** generated as part of this **App registration** has an expiration and must be renewed before it expires. Please set a reminder for the renewal.
+{% endhint %}
 
-6. Apply the changes.
-7. Restart the SCEPman **App service**.
+**Create** the following new environment variables if you haven't done that already during creation of the app registration:
+
+<table><thead><tr><th width="395">Name</th><th>Value</th></tr></thead><tbody><tr><td><code>AppConfig:AuthConfig:ApplicationId</code></td><td>GUID of the <strong>App registration</strong> that was created before <strong>(target tenant)</strong> .</td></tr><tr><td><code>AppConfig:AuthConfig:TenantId</code></td><td>Tenant ID of the <strong>target tenant</strong>.</td></tr><tr><td><code>AppConfig:AuthConfig:ApplicationKey</code></td><td><strong>Value</strong> of the <strong>Client secret</strong> that was created as part of the <strong>App registration</strong> in the <strong>target tenant</strong>.</td></tr></tbody></table>
+
+5. Apply the changes.
+6. Restart the SCEPman **App service**.
 
 ### Certificate Master
 
-8. Navigate to the Certificate Master **App service** and then to "Settings" > "Environment variables".
-9. Now you have two options:
+7. Navigate to the Certificate Master **App service** and then to "Settings" > "Environment variables".
+8. Now you have two options:
    1. If you want users from your **home tenant** to log in to Certificate Master and issue certificates, which includes guest users in your home tenant, e.g. from your target tenant.&#x20;
 
 <figure><img src="../../.gitbook/assets/scepman-split-graphic2.png" alt=""><figcaption><p>Option 1: Users from Home Tenant log in to Certificate Master</p></figcaption></figure>
 
 If that is the case, **rename** the following settings (**do not change their values**):
 
-| Original name                        | New name                                 |
-| ------------------------------------ | ---------------------------------------- |
-| `AppConfig:AuthConfig:TenantId`      | `AppConfig:AuthConfig:HomeTenantId`      |
-| `AppConfig:AuthConfig:ApplicationId` | `AppConfig:AuthConfig:HomeApplicationId` |
+<table><thead><tr><th width="385">Original name</th><th>New name</th></tr></thead><tbody><tr><td><code>AppConfig:AuthConfig:TenantId</code></td><td><code>AppConfig:AuthConfig:HomeTenantId</code></td></tr><tr><td><code>AppConfig:AuthConfig:ApplicationId</code></td><td><code>AppConfig:AuthConfig:HomeApplicationId</code></td></tr></tbody></table>
 
-2. You want users from your **target tenant** to log in to Certificate Master and issue certificates, which includes guest users in your target tenant, e.g. from your home tenant.&#x20;
+b. You want users from your **target tenant** to log in to Certificate Master and issue certificates, which includes guest users in your target tenant, e.g. from your home tenant.&#x20;
 
 <figure><img src="../../.gitbook/assets/scepman-split-graphic3.png" alt=""><figcaption><p>Option 2: Users from the Target Tenant log in to Certificate Master</p></figcaption></figure>
 
@@ -82,15 +73,11 @@ Replace `<url>` with your Certificate Master URL
   * `AppConfig:AuthConfig:HomeTenantId` in your Certificate Master settings.
 * Now **create** the following new application settings, possibly overriding the existing ones, with the same values as in SCEPman:
 
-| Name                                  | Value                                                                                                                                                                                                                            |
-| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `AppConfig:AuthConfig:ApplicationId`  | GUID of the **App registration** that was created before.                                                                                                                                                                        |
-| `AppConfig:AuthConfig:TenantId`       | Tenant ID of the **target tenant**.                                                                                                                                                                                              |
-| `AppConfig:AuthConfig:ApplicationKey` | <p><strong>Value</strong> of the <strong>Client secret</strong> that was created as part of the <strong>App registration</strong> before.<br>You can create a separate new Client secret for Certificate Master if you want.</p> |
+<table><thead><tr><th width="393">Name</th><th>Value</th></tr></thead><tbody><tr><td><code>AppConfig:AuthConfig:ApplicationId</code></td><td>GUID of the <strong>App registration</strong> that was created before.</td></tr><tr><td><code>AppConfig:AuthConfig:TenantId</code></td><td>Tenant ID of the <strong>target tenant</strong>.</td></tr><tr><td><code>AppConfig:AuthConfig:ApplicationKey</code></td><td><strong>Value</strong> of the <strong>Client secret</strong> that was created as part of the <strong>App registration</strong> before.<br>You can create a separate new Client secret for Certificate Master if you want.</td></tr></tbody></table>
 
-10. Save the changes
-11. Restart the SCEPman Certificate Master **App service**.
-12. Grant the rights to request certificates via the **Certificate Master** web app, see [here](../post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website)
+9. Save the changes
+10. Restart the SCEPman Certificate Master **App service**.
+11. Grant the rights to request certificates via the **Certificate Master** web app, see [here](../post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website)
 
 As an overview, here are the accounts used by **Certificate Master** and what they are used for:
 
