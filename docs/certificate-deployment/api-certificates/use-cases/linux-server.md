@@ -96,8 +96,6 @@ The amount of days the certificate will need to expire in for the script to begi
 
 _Example: 30_
 
-
-
 ### _Additional parameters for Server Certificates:_
 
 #### 9. Service Principal Client Id
@@ -123,6 +121,25 @@ _Format: /CN=SubjectName,O=Organization_
 This will be added as subject alternative name
 
 _Example: DNS:webserver.contoso.com_
+
+
+
+### _Usage example for CSR signing (-c command)_&#x20;
+
+{% code overflow="wrap" %}
+```bash
+# Generate a private key
+openssl genrsa -out myKey.rsa 4096
+
+# Create a csr for a user certificate for client authentication
+openssl req -new -key myKey.rsa -sha256 -out myCSR -subj "/CN=John Smith" -addext "subjectAltName=otherName:1.3.6.1.4.1.311.20.2.3;UTF8:john.smith@contoso.net" -addext "extendedKeyUsage=1.3.6.1.5.5.7.3.2"
+
+./enrollrenewcertificate.sh -c https://scepman.contoso.net/ api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436 ~/certs "myCertificate" myKey.rsa 30 edbc406b-7384-414e-af8b-1a3b187b3f7e [Client_Secret] 736e80bb-3102-479b-83ba-e45c80ef723b myCSR
+
+```
+{% endcode %}
+
+
 
 #### Considerations
 
