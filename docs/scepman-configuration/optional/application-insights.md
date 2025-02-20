@@ -7,7 +7,7 @@ We recommend enabling Application Insights to get a very helpful graphical repre
 To activate the Application Insights for your App Service, please follow these instructions:
 
 1. Open your **App Service**
-2. On the left side, you can click on **Application Insights** under **Settings**
+2. On the left side, you can click on **Application Insights** under **Monitoring**
 
 ![](<../../.gitbook/assets/image (5) (1) (1).png>)
 

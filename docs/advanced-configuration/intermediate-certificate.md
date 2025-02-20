@@ -6,10 +6,30 @@ SCEPman Enterprise Edition only
 
 If you want to use another Root CA as a primary authority, you can create an intermediate CA certificate to operate SCEPman as a Subordinate Certification Authority. You can create the correct certificate direct in Azure Key Vault and download the CSR for signing with your Root CA. The signed request can be uploaded and merged into Azure Key Vault. This article guides you through the necessary steps in detail.
 
-## Key Vault Access Policy
 
-You need to grant access to the Azure Key Vault to your user account to create the CSR and merge the Intermediate CA certificate.
 
+## Key Vault Permissions
+
+You need to grant access to the Azure Key Vault to your user account to create the CSR and merge the Intermediate CA certificate. The way of assigning the permissions depends on the access configuration of your Key Vault:
+
+{% tabs %}
+{% tab title="Azure RBAC" %}
+1. Navigate to your Azure Key Vault in the Azure Portal
+2. Click on **Access control (IAM)** in the left navigation pane.
+3. Click on **Role assignments** and add a new role assignment
+
+<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption><p>Add a new role assignment to your Key Vault</p></figcaption></figure>
+
+4. Select the **Key Vault Certificate Officer** role and click **Next**
+
+<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+
+5. Now search and add your AAD admin account in the **Members** section and continue to assign the role
+
+After adding the role assignment, your Azure AD account is permitted to create a CSR and upload the certificate.
+{% endtab %}
+
+{% tab title="Vault Access Policies" %}
 1. Navigate to your Azure Key Vault in the Azure Portal
 2. Click on **Access policies** in the left navigation pane.
 3. Click on **Create** and choose the **Certificate Management** template, then next
@@ -23,6 +43,10 @@ You need to grant access to the Azure Key Vault to your user account to create t
 <figure><img src="../.gitbook/assets/2023-06-14 17_06_33-.png" alt=""><figcaption></figcaption></figure>
 
 After adding the permissions, your Azure AD account is permitted to create a CSR and upload the certificate.
+{% endtab %}
+{% endtabs %}
+
+
 
 ## Open Key Vault Networking to the Admin System
 
