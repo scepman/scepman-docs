@@ -71,6 +71,10 @@ The next step is to update the Azure App Service configuration to match the subj
 4. Click on **Apply and Confirm.**
 5. Restart the Azure **App Service** to apply the changes then navigate to your SCEPman URL.
 
+{% hint style="warning" %}
+Please be aware that the CertificateName variable will directly correspond to the certificate object that will be created in the Azure Key Vault. You can therefore only use certificate names that contain alphanumeric characters and dashes&#x20;
+{% endhint %}
+
 <figure><img src="../.gitbook/assets/image (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Creating Intermediate CA Certificate with the SCEPman PowerShell Module
@@ -87,14 +91,16 @@ Then, you can tell the module the name of your organization to appear in the cer
 Reset-IntermediateCaPolicy -Organization "My Organization"
 ```
 
-Configure the common name (CN) of your intermediate CA to match the one you have used above (optionally, you can modify some additional settings to control the CSR content):
+Configure the subject of your intermediate CA to match the one you have used above in `AppConfig:KeyVaultConfig:RootCertificateConfig:Subject` (optionally, you can modify some additional settings to control the CSR content):
 
+{% code lineNumbers="true" %}
 ```
 $policy = Get-IntermediateCaPolicy
-$policy.policy.x509_props.subject = "CN=<CN used above>,OU={{TenantId}},O=My Organization"
+$policy.policy.x509_props.subject = "CN=YOUR_CN_FROM_ABOVE,OU=YOUR_TENANT_ID,O=YOUR_ORGANIZATION"
 # change some additional settings of $policy
 Set-IntermediateCaPolicy -Policy $policy
 ```
+{% endcode %}
 
 Finally, you can create the CSR with the following command (or a similar one according to your environment):
 
