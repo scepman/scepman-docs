@@ -4,6 +4,10 @@
 Applicable to SCEPman version 2.9 and above
 {% endhint %}
 
+{% hint style="warning" %}
+SCEPman Enterprise Edition only
+{% endhint %}
+
 This method can be used to enroll certificates for users and devices that are not managed by Intune or another MDM.
 
 ## Prerequisites

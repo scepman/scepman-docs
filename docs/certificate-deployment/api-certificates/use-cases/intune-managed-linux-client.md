@@ -4,6 +4,10 @@
 Applicable to SCEPman version 2.9 and above
 {% endhint %}
 
+{% hint style="warning" %}
+SCEPman Enterprise Edition only
+{% endhint %}
+
 This method can be used to enroll certificates for users and devices that are managed by Intune.
 
 Intune will in this case push a script to leverage the SCEPman REST API that in turn will either enroll a new certificate or renew an already existing one.

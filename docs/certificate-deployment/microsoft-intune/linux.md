@@ -1,5 +1,9 @@
 # Linux
 
+{% hint style="warning" %}
+SCEPman Enterprise Edition only
+{% endhint %}
+
 The following article describes how to deploy a device or/and user certificates for Intune-managed Linux devices.
 
 
