@@ -114,7 +114,7 @@ For **new customers**, you will have to [deploy the infrastructure](../scepman-d
 
 To get started with your SCEPman subscription, follow below steps:
 
-* Locate [SCEPman](https://portal.azure.com/#view/Microsoft\_Azure\_Marketplace/GalleryItemDetailsBladeNopdl/id/glueckkanja-gabag.scepman-transactable-prod) on the **Marketplace** in your **Azure Portal**. In case we have extended a **Private Offer** to you or your MSP/distribution has extended a **Multiparty Offer (MPO)** to you, navigate to **Marketplace** in your **Azure Portal** and then to **Private Offer Management** to locate the Private Offer.
+* Locate [SCEPman](https://portal.azure.com/#view/Microsoft_Azure_Marketplace/GalleryItemDetailsBladeNopdl/id/glueckkanja-gabag.scepman-transactable-prod) on the **Marketplace** in your **Azure Portal**. In case we have extended a **Private Offer** to you or your MSP/distribution has extended a **Multiparty Offer (MPO)** to you, navigate to **Marketplace** in your **Azure Portal** and then to **Private Offer Management** to locate the Private Offer.
   * More details on Private Offers and MPOs can be found in Microsoft's documentation.
     * [Private Offer](https://learn.microsoft.com/en-us/marketplace/private-offers-purchase)
     * [Multiparty Offer](https://www.youtube.com/watch?v=TANUlgLuVqI)
@@ -147,7 +147,7 @@ The **Technical contact** must have a mailbox connected to it, so we are able to
 If the plan contains chargeable add-ons, you can select them under **Extras**. For example, all SCEPman plans allow you to purchase the optional [SCEPman Setup Support](../support.md#scepman-setup-support) package.
 {% endhint %}
 
-![](../.gitbook/assets/Screenshot\_2022-02-18\_at\_19\_21\_14.png)
+![](../.gitbook/assets/Screenshot_2022-02-18_at_19_21_14.png)
 
 * Based on the amount of users provided, we will charge the relevant base fee for your user segment as well as additional users, in case you require more than the included amount in your base fee. **The platform automatically selects the best price / tier**.
 * The platform will show you the licensing fees you have to expect under **Cost Projection**.
@@ -172,3 +172,7 @@ You may encounter problems when purchasing through Azure Marketplace. Here is a 
 4. The subscription/billing account isn't associated with a valid payment instrument (such as a valid credit card).
 5. Private Marketplace is enabled for the subscription and the offer isn't in the list of allowed offers.
 6. Purchases are not permitted for subscriptions with a spending cap, including Free subscriptions, Sponsorships, and similar types.
+
+### Does SCEPman count towards my Microsoft Azure Consumption Commitment (MACC)?
+
+Yes.
