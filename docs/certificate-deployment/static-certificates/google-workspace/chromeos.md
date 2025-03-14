@@ -16,6 +16,10 @@ As a first step, you must deploy SCEPman's root certificate. Therefore, follow t
 
 2. Now upload your SCEPmen root CA to your Google Workplace. In your Google **Admin console** (admin.google.com) navigate to **Menu** > **Devices** > **Networks** > **Certificates** > **ADD CERTIFICATE**
 
+{% hint style="warning" %}
+Be aware that the Google Admin console only accepts certificates in PEM format. You will need to convert SCEPman root CA (which is downloaded in DER by default) using _openssl_ or by importing it in Windows and exporting it again in Base-64 format.
+{% endhint %}
+
 <figure><img src="../../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
 
 ## Add a SCEP Profile
