@@ -79,6 +79,10 @@ Please be aware that the CertificateName variable will directly correspond to th
 
 ## Creating Intermediate CA Certificate with the SCEPman PowerShell Module
 
+{% hint style="warning" %}
+To ensure this module functions correctly, you will need a workstation with [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (also known as `az`) installed. The Azure CLI is pre-installed in the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), which is the recommended environment for running this module.
+{% endhint %}
+
 You can use the SCEPman PowerShell module version 1.9 and later to create a CSR for an Intermediate CA certificate. You can install the latest version of the module from PowerShell Gallery with the following command:
 
 ```powershell
