@@ -68,7 +68,7 @@ The information provided throughout this article is analogously applicable for R
 
 * If you would like to upgrade your user count, you can do that any time during the current subscription cycle by navigating to your **SCEPman subscription** in the [Azure SaaS portal](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.SaaS%2Fresources) and by clicking "Open SaaS Account on publisher's site" (see screenshot below). This will re-direct you to our platform where the amount of users can be upgraded.
 
-![](<../../.gitbook/assets/Screenshot 2022-02-18 at 19.25.35 2.png>)
+<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
 
 * Our platform will inform you about the new fees you to expect for a **complete** subscription cycle.
 * For the current cycle, we will bill the additional users for remaining days only.
@@ -93,7 +93,7 @@ If you decide to disable **Recurring billing**, your subscription will not renew
 
 * If you would like to (irreversibly) cancel your subscription, navigate to your **SCEPman subscription** in the [Azure SaaS portal](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.SaaS%2Fresources) and click **Cancel subscription**.
 
-![](<../../.gitbook/assets/Screenshot 2022-02-18 at 19.25.35 3.png>)
+<figure><img src="../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
 * If you cancel within the grace period, the service will be stopped immediately.
 * If you cancel after the grace period, the service will remain active until the end of the current subscription cycle.
@@ -114,20 +114,20 @@ For **new customers**, you will have to [deploy the infrastructure](../../scepma
 
 To get started with your SCEPman subscription, follow below steps:
 
-* Locate [SCEPman](https://portal.azure.com/#view/Microsoft_Azure_Marketplace/GalleryItemDetailsBladeNopdl/id/glueckkanja-gabag.scepman-transactable-prod) on the **Marketplace** in your **Azure Portal**. In case we have extended a **Private Offer** to you or your MSP/distribution has extended a **Multiparty Offer (MPO)** to you, navigate to **Marketplace** in your **Azure Portal** and then to **Private Offer Management** to locate the Private Offer.
+* Locate [SCEPman Enterprise Edition](https://portal.azure.com/#view/Microsoft_Azure_Marketplace/GalleryItemDetailsBladeNopdl/id/glueckkanja-gabag.scepman-transactable-prod) on the **Marketplace** in your **Azure Portal**. In case we have extended a **Private Offer** to you or your MSP/distribution has extended a **Multiparty Offer (MPO)** to you, navigate to **Marketplace** in your **Azure Portal** and then to **Private Offer Management** to locate the Private Offer.
   * More details on Private Offers and MPOs can be found in Microsoft's documentation.
     * [Private Offer](https://learn.microsoft.com/en-us/marketplace/private-offers-purchase)
     * [Multiparty Offer](https://www.youtube.com/watch?v=TANUlgLuVqI)
 * Select the **Plan** based on your preferred renewal interval and click **Subscribe**.
 
-![](<../../.gitbook/assets/image (11).png>)
+<figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 
 * Create or select the **Resource group** you would like to deploy the subscription to.
-* Assign a **Name** to later identify your SCEPman subscription.
-* We recommend to keep **Recurring billing** on so that you do not have to worry about a manual renewal of your subscription..
+* Assign a **Name** to later identify your SCEPman Enterprise Edition subscription.
+* We recommend to keep **Recurring billing** on so that you do not have to worry about a manual renewal of your subscription.
 * Click **Review + subscribe** and then **Subscribe** to deploy the **SaaS** resource to your **Resource group**.
 
-![](<../../.gitbook/assets/image (27).png>)
+<figure><img src="../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 The random order of **Base Fees** und **Additional Users** under the **Price** information is attributed to limitations of the Azure Marketplace. Later during the the enrolment process, we will provide you with transparent information on the expected licensing costs.
@@ -135,7 +135,7 @@ The random order of **Base Fees** und **Additional Users** under the **Price** i
 
 * Once the deployment is complete, please navigate to our platform to complete the checkout. Therefore click **Configure account now**.
 
-![](<../../.gitbook/assets/image (14).png>)
+<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
 
 * After authenticating on our platform using your Microsoft credentials, you will be prompted for additional information, such as the desired total **User** amount and a **Technical contact**.
 
