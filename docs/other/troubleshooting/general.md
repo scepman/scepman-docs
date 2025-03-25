@@ -4,7 +4,7 @@
 
 ### I deployed SCEPman from GitHub and it used to work, but now the Web App does not start anymore
 
-If the error is '503 Cannot download ZIP', then the web app cannot download the ZIP with the application binaries from the URL configured in the app setting WEBSITE\_RUN\_FROM\_PACKAGE (see [Application Configuration](../../advanced-configuration/application-artifacts.md#change-artifacts)).
+If the error is '503 Cannot download ZIP', then the web app cannot download the ZIP with the application binaries from the URL configured in the app setting WEBSITE\_RUN\_FROM\_PACKAGE (see [Application Configuration](../../scepman-configuration/application-artifacts.md#change-artifacts)).
 
 The URL _https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip_ that we had recommended for GitHub deployments in earlier versions of this documentation redirects to another URL. Microsoft changed the behavior of some of their Web Apps and now some versions do not support redirects together with WEBSITE\_RUN\_FROM\_PACKAGE. Hence, you need to change the URL to `https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts.zip`.
 
@@ -18,7 +18,7 @@ Check if the Azure resource is up and running.
 
 In the App Service resource of SCEPman or Certificate Master, you can check which Stack and version is configured for that App Service under Settings -> Configuration -> General settings -> Stack settings. While the Stack is .NET, the .NET version might not match what you expect for your version of SCEPman, e.g. .NET 8 for SCEPman 2.8.
 
-This is because some common .NET versions are automatically available on all Windows App Services, independently of which .NET version you select in the settings. We only lift SCEPman to a new .NET version when this version is included in this set of automatically installed .NET versions. We do this because our update mechanism via [WEBSITE\_RUN\_FROM\_PACKAGE ](../../scepman-configuration/optional/application-settings/basics.md#website_run_from_package)does not give us any control over the .NET version setting. Hence, it actually does not matter what is configured as .NET version.
+This is because some common .NET versions are automatically available on all Windows App Services, independently of which .NET version you select in the settings. We only lift SCEPman to a new .NET version when this version is included in this set of automatically installed .NET versions. We do this because our update mechanism via [WEBSITE\_RUN\_FROM\_PACKAGE ](../../scepman-configuration/application-settings/basics.md#website_run_from_package)does not give us any control over the .NET version setting. Hence, it actually does not matter what is configured as .NET version.
 
 As a side note, Linux App Services do not include any automatically installed .NET stacks. If you wanted to run SCEPman on a Linux App Service, you would have to configure the correct .NET version. However, the next SCEPman update could break your installation if it used a newer .NET version. This is why we do not support SCEPman on Linux App Services.
 
@@ -26,7 +26,7 @@ As a side note, Linux App Services do not include any automatically installed .N
 
 We are shutting down the deprecated SCEPman artifacts repository [https://github.com/glueckkanja/gk-scepman](https://github.com/glueckkanja/gk-scepman) after over three years of moving artifacts to the new location [https://github.com/scepman/install](https://github.com/scepman/install). On Wednesday, 2024-11-27, we temporarily disabled the old location to make users aware of the permanent shutdown on Monday, 2024-12-16.
 
-If you are affected, check your WEBSITE\_RUN\_FROM\_PACKAGE setting and [update the value](../../advanced-configuration/application-artifacts.md) to the new package location. This will also update your SCEPman version from 1.8 to the latest version, granting [many improvements](../../changelog.md) with full backwards compatibility.
+If you are affected, check your WEBSITE\_RUN\_FROM\_PACKAGE setting and [update the value](../../scepman-configuration/application-artifacts.md) to the new package location. This will also update your SCEPman version from 1.8 to the latest version, granting [many improvements](../../changelog.md) with full backwards compatibility.
 
 If you are unsure whether you are using the latest repository, visit your SCEPman's splash page. If it is still configured at the old repository, it is displaying a warning (and has done that for the last three years already) that looks like this:
 
@@ -54,7 +54,7 @@ This could happen when a wrong trusted root certificate was selected in the SCEP
 
 ![](<../../.gitbook/assets/event32-1 (15).png>)
 
-If you are using an Intermediate CA, note that you have to [select the Intermediate CA certificate](../../advanced-configuration/intermediate-certificate.md#intermediate-cas-and-intune-scep-profiles) and not the Root CA certificate in the SCEP configuration profile! Note that this is specific to the Windows platform and for example Android requires selecting the Root CA certificate in the SCEP configuration profile.
+If you are using an Intermediate CA, note that you have to [select the Intermediate CA certificate](../../scepman-deployment/intermediate-certificate.md#intermediate-cas-and-intune-scep-profiles) and not the Root CA certificate in the SCEP configuration profile! Note that this is specific to the Windows platform and for example Android requires selecting the Root CA certificate in the SCEP configuration profile.
 
 ### My Certificate does not have the correct OCSP URL Entry
 
@@ -93,7 +93,7 @@ Oliver Kieselbach and Christoph Hannebauer wrote [a blog article about analysis 
 
 Currently, some Windows 10 devices do not have the correct time during the OOBE experience. This is not easy to see, since the screen shows no clock. This causes a problem with newly issued certificates, as they are _not yet_ valid. Windows then discards these "invalid" certificates and shows an error. Certificates are issued 10 minutes in the past by default to address smaller clock issues, but we have recently seen Windows 10 devices that are up to 9 hours behind time.
 
-You may proceed with the enrollment and once this is finished, the device will get a certificate successfully, as the clock is correct then. You may also use the new option [**AppConfig:ValidityClockSkewMinutes**](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-validityclockskewminutes) to date back certificates for more than 10 minutes. Use 1440 minutes to date back the certificates for a whole day. This will be the default for new SCEPman installations to address this issue.
+You may proceed with the enrollment and once this is finished, the device will get a certificate successfully, as the clock is correct then. You may also use the new option [**AppConfig:ValidityClockSkewMinutes**](../../scepman-configuration/application-settings/certificates.md#appconfig-validityclockskewminutes) to date back certificates for more than 10 minutes. Use 1440 minutes to date back the certificates for a whole day. This will be the default for new SCEPman installations to address this issue.
 
 ### I issued a certificate today, but the Issuance Date says it was yesterday
 
@@ -160,14 +160,14 @@ If you want to revoke a **user** certificate, you have two options:‌
 1. Deleting the user from Microsoft Entra ID (Azure AD) or
 2. Block sign-in for the user
 
-If you want to revoke a **device** certificate, you have multiple options depending on [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention"):
+If you want to revoke a **device** certificate, you have multiple options depending on [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention"):
 
 1. Microsoft Entra ID (Azure AD): Delete or disable the device ([Microsoft Entra ID (Azure AD) Portal](https://aad.portal.azure.com/): "Devices" - "All devices").
-2. **Intune**: Delete the device or trigger a remote action (several managements states like "WipePending" automatically revoke certificates as stated under [#appconfig-intunevalidation-revokecertificatesonwipe](../../scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-revokecertificatesonwipe "mention")).
+2. **Intune**: Delete the device or trigger a remote action (several managements states like "WipePending" automatically revoke certificates as stated under [#appconfig-intunevalidation-revokecertificatesonwipe](../../scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-revokecertificatesonwipe "mention")).
 3. **Both directories**: Execute actions for Microsoft Entra ID (Azure AD) **and** Intune as described.
 
 {% hint style="info" %}
-For more details on device directories, please read the article [device-directories.md](../../architecture/device-directories.md "mention").
+For more details on device directories, please read the article [device-directories.md](../../scepman-configuration/device-directories.md "mention").
 {% endhint %}
 
 The following example revokes a device certificate via Microsoft Entra ID (Azure AD):
@@ -220,6 +220,6 @@ To fix this, you need to grant the Managed Identity of the SCEPman App Service a
 
 ## SCEPman won't issue certificates with EKUs other than Client Authentication
 
-Check your SCEPman Environment Variables to see what is configured for [AppConfig:UseRequestedKeyUsages](../../scepman-configuration/optional/application-settings/certificates.md#appconfig-userequestedkeyusages). If it is not set, it defaults to "false".&#x20;
+Check your SCEPman Environment Variables to see what is configured for [AppConfig:UseRequestedKeyUsages](../../scepman-configuration/application-settings/certificates.md#appconfig-userequestedkeyusages). If it is not set, it defaults to "false".&#x20;
 
 New installations will automatically set this to "true", however older SCEPman installations have this set as false. SCEPman updates don't change any behavior except for fixes or changes that have under no circumstances a disadvantage. When this is set to false, the requests EKUs and Key Usages are ignored.\

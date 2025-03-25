@@ -1,4 +1,4 @@
-# V2.x: Managed Identities
+# Managed Identities
 
 {% hint style="info" %}
 This feature requires version **2.0** or above.
@@ -96,14 +96,14 @@ SCEPman Enterprise Edition only
 ### Granting the Rights to Request Certificates via the Certificate Master Website
 
 1. Create an AAD Group, possibly a Privileged Access Group, for the people that shall be able to create web server certificates via SCEPman Certificate Master.
-2. In the Azure Portal, visit [Enterprise applications](https://portal.azure.com/#blade/Microsoft\_AAD\_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/).&#x20;
+2. In the Azure Portal, visit [Enterprise applications](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/).&#x20;
 3. Remove the filter for "Application type == **Enterprise Applications**", search for _SCEPman-CertMaster_, and select the displayed application.&#x20;
 4. Navigate to _Users and groups_ and click _Add user/group_ on the top menu.&#x20;
 5. Select the group you have previously created.&#x20;
-6. Select the desired role(s) (more information on the available roles can be found under [Certificate Master RBAC](../advanced-configuration/rbac.md)).&#x20;
+6. Select the desired role(s) (more information on the available roles can be found under [Certificate Master RBAC](rbac.md)).&#x20;
 7. After you hit _Assign_, direct members of the group can visit the Certificate Master website and perform tasks according to the permission of the assigned role(s).  After assignment, the setting should look like this:
 
-![](<../.gitbook/assets/2022-04-07 16\_55\_05-SCEPman-CertMaster - Permissions .png>)
+![](<../.gitbook/assets/2022-04-07 16_55_05-SCEPman-CertMaster - Permissions .png>)
 
 ## Background Details of the SCEPman PowerShell Module
 
@@ -126,9 +126,9 @@ Even for the Community Edition, which does not use the SCEPman Certificate Maste
 
 SCEPman 1.x used an App Registration to authenticate against Microsoft Graph and Intune, while SCEPman 2.x can use its Managed Identity. The CMDlet switches to the Managed Identity by changing these settings:
 
-* [AppConfig:AuthConfig:ApplicationId](../advanced-configuration/application-settings/azure-ad.md#appconfigauthconfigapplicationid) is set to a newly created app registration without any permissions. It is used to authenticate _against_ SCEPman, not for SCEPman authenticating somewhere else. The old value is backed up as `Backup:AppConfig:AuthConfig:ApplicationId`.
-* [AppConfig:AuthConfig:ApplicationKey](../advanced-configuration/application-settings/azure-ad.md#appconfigauthconfigapplicationkey) is deleted, the old value is backed up as `Backup:AppConfig:AuthConfig:ApplicationKey`. It is not needed anymore, because SCEPman does not authenticate as the Application.
-* [AppConfig:AuthConfig:ManagedIdentityEnabledOnUnixTime](../advanced-configuration/application-settings/azure-ad.md#appconfigauthconfigmanagedidentityenabledonunixtime) contains the time when the CMDlet was run. SCEPman acquires a token using the Managed Identity only after a short delay after the CMDlet was run, because only then do the roles in the token reflect the correct permissions added by the CMDlet.
+* [AppConfig:AuthConfig:ApplicationId](application-settings/dependencies-azure-services/azure-ad.md#appconfigauthconfigapplicationid) is set to a newly created app registration without any permissions. It is used to authenticate _against_ SCEPman, not for SCEPman authenticating somewhere else. The old value is backed up as `Backup:AppConfig:AuthConfig:ApplicationId`.
+* [AppConfig:AuthConfig:ApplicationKey](application-settings/dependencies-azure-services/azure-ad.md#appconfigauthconfigapplicationkey) is deleted, the old value is backed up as `Backup:AppConfig:AuthConfig:ApplicationKey`. It is not needed anymore, because SCEPman does not authenticate as the Application.
+* [AppConfig:AuthConfig:ManagedIdentityEnabledOnUnixTime](application-settings/dependencies-azure-services/azure-ad.md#appconfigauthconfigmanagedidentityenabledonunixtime) contains the time when the CMDlet was run. SCEPman acquires a token using the Managed Identity only after a short delay after the CMDlet was run, because only then do the roles in the token reflect the correct permissions added by the CMDlet.
 
 ### How the CMDlet Configures SCEPman Certificate Master
 

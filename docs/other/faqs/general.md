@@ -1,6 +1,22 @@
 # General
 
-## How can I programmatically query the Storage Account Table?
+## How to add a License Key?
+
+To upgrade a Community Edition to an Enterprise Edition you have to add the license key in the app settings. How this works is explained in the following chapter:
+
+1. Navigate to **App Services**.
+2. Then choose your SCEPman app.
+3. Next under **Settings** click **Environment variables**.
+4. Select **AppConfig:LicenseKey**.
+5. Under **Value**, enter your license key.
+
+<figure><img src="../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+
+6. Then, Save the settings, and under Overview, restart your App Service.
+7. After the restart, your SCEPman instance homepage will show Enterprise Edition.
+8. Ensure that your SCEPman instance homepage shows on the left side that the Storage Account is connected (green bubble). If there are connection issues, the bubble will be red, and your OCSP responder will not work.
+
+## How to programmatically query the Storage Account Table?
 
 For some use cases, it might be necessary to query the storage account table directly. This can be done manually using the [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/) or programmatically using the [Azure Storage Rest API](https://docs.microsoft.com/en-us/rest/api/storageservices/query-entities). Assign the `Storage Table Data Reader` role to the account you are using. Here is an example of a query that returns all certificates in the Storage Account expiring in the next 30 days:
 
@@ -17,13 +33,13 @@ $certificates.items | Select-Object -Property Subject,Requester,ExpirationDate,F
 
 The Azure CLI must be installed on the machine where the query is run, and it must be logged on to the right account and subscription. This is automatically the case for an Azure Cloud Shell.
 
-If you are using a [Private Endpoint ](../../architecture/private-endpoints.md)for the Storage Account, you need to add your client's IP address to the exception list in the Networking pane of the Storage Account.
+If you are using a [Private Endpoint ](../../azure-configuration/private-endpoints.md)for the Storage Account, you need to add your client's IP address to the exception list in the Networking pane of the Storage Account.
 
 ## How to restrict public access to the SCEPman homepage?
 
 The SCEPman homepage does not include any sensitive information, and attackers cannot leverage the available data for malicious purposes.&#x20;
 
-However, If you prefer to hide the homepage from public access, you can do it using the setting [AppConfig setting: AnonymousHomePageAccess](../../scepman-configuration/optional/application-settings/basics.md#appconfig-anonymoushomepageaccess)
+However, If you prefer to hide the homepage from public access, you can do it using the setting [AppConfig setting: AnonymousHomePageAccess](../../scepman-configuration/application-settings/basics.md#appconfig-anonymoushomepageaccess)
 
 Please ensure to restart the SCEPman _App Service_ after adding the setting.
 
@@ -36,8 +52,8 @@ By changing the CA Subject, you must issue a new Root CA and deploy it to all us
 If you do not have a problem with that please follow the steps below to change the CA subject
 
 * Navigate to your SCEPman App Service configuration
-* Change the CN value of the setting [`AppConfig:KeyVaultConfig:RootCertificateConfig:Subject`](../../scepman-configuration/optional/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-subject) to the new subject name you want
-* It is also recommended to change the value of the setting [`AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName`](../../scepman-configuration/optional/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-certificatename) to the new subject name, however, this is only visible in Azure KeyVault and not on the certificate itself.
+* Change the CN value of the setting [`AppConfig:KeyVaultConfig:RootCertificateConfig:Subject`](../../scepman-configuration/application-settings/dependencies-azure-services/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-subject) to the new subject name you want
+* It is also recommended to change the value of the setting [`AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName`](../../scepman-configuration/application-settings/dependencies-azure-services/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-certificatename) to the new subject name, however, this is only visible in Azure KeyVault and not on the certificate itself.
 
 {% hint style="info" %}
 The name does not appear in the certificate itself and is only a reference to the CA certificate within Azure Key Vault. As it is part of the URL, there are name restrictions, like limitations to alphanumeric characters, numbers, and dashes. **Spaces are not allowed**
@@ -57,7 +73,7 @@ In order to view SCEPman issued certificates in Intune, navigate to certificates
 
 There you will find a list of all issued certificates with details like device name, user name, thumbprint, serial number, subject name, issuance date, expiry date, and certificate status.
 
-For a more comprehensive view of the certificates along with additional actions, review the certificates in [Certificate Master.](../../certificate-deployment/certificate-master/)
+For a more comprehensive view of the certificates along with additional actions, review the certificates in [Certificate Master.](../../certificate-management/certificate-master/)
 
 
 

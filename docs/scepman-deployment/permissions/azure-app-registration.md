@@ -1,7 +1,7 @@
-# V1.x: Azure App Registration
+# Azure App Registration
 
 {% hint style="info" %}
-Only the **1.x** versions require an Azure App Registration. SCEPman 2.x still supports it, but we recommend using [Managed Identities](../../scepman-configuration/post-installation-config.md).
+Only relevant for [Split-Tenancy](../../azure-configuration/split-tenancy.md) setups.
 {% endhint %}
 
 SCEPman needs to interact with your Azure Active Directory and Intune endpoints to provide the certificate and OCSP validation of users and devices. To provide the necessary permissions to SCEPman you need to create an App Registration within your tenant.
@@ -22,7 +22,7 @@ SCEPman needs to interact with your Azure Active Directory and Intune endpoints 
 
 ![](../../.gitbook/assets/2021-07-23-08_50_59-scepmanreg-microsoft-azure-and-2-more-pages-c4a8-ehamed-microsoft-edge.png)
 
-Create a new environment variable in SCEPman app service with the name [AppConfig:AuthConfig:ApplicationId](../../advanced-configuration/application-settings/azure-ad.md#appconfig-authconfig-applicationid) and paste the copied application ID as a value.
+Create a new environment variable in SCEPman app service with the name [AppConfig:AuthConfig:ApplicationId](../../scepman-configuration/application-settings/dependencies-azure-services/azure-ad.md#appconfig-authconfig-applicationid) and paste the copied application ID as a value.
 
 ## Generate Secret (get Client Secret Value)
 
@@ -46,7 +46,7 @@ Copy the client secret value immediately. You will not be able to retrieve it af
 
 ![](<../../.gitbook/assets/image (18).png>)
 
-4. Create the SCEPman setting [AppConfig:AuthConfig:ApplicationKey](../../advanced-configuration/application-settings/azure-ad.md#appconfig-authconfig-applicationkey) with the client secret value.
+4. Create the SCEPman setting [AppConfig:AuthConfig:ApplicationKey](../../scepman-configuration/application-settings/dependencies-azure-services/azure-ad.md#appconfig-authconfig-applicationkey) with the client secret value.
 
 ## Configure Permissions
 

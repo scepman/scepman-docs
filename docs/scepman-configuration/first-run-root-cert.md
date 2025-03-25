@@ -1,11 +1,11 @@
-# Root Certificate
+# Root CA
 
 After you have deployed your SCEPman environment you have to create a root certificate.
 
 If you want to use an intermediate certificate (Enterprise Edition only) you can have a look at this guide:
 
-{% content-ref url="../advanced-configuration/intermediate-certificate.md" %}
-[intermediate-certificate.md](../advanced-configuration/intermediate-certificate.md)
+{% content-ref url="../scepman-deployment/intermediate-certificate.md" %}
+[intermediate-certificate.md](../scepman-deployment/intermediate-certificate.md)
 {% endcontent-ref %}
 
 **For a standard SCEPman setup, we recommend generating a new root certificate with the following steps:**
@@ -24,4 +24,4 @@ If you want to use an intermediate certificate (Enterprise Edition only) you can
 
 <figure><img src="../.gitbook/assets/2024-04-17 16_11_52.png" alt=""><figcaption></figcaption></figure>
 
-Now you are ready to start! Check [Certificate Deployment via Microsoft Intune](../certificate-deployment/microsoft-intune/)
+Now you are ready to start! Check [Certificate Deployment via Microsoft Intune](../certificate-management/microsoft-intune/)

@@ -19,7 +19,7 @@ Keep in mind that you need to plan a useful Azure resource design.
 * [ ] Azure subscription (at least Contributor rights on that subscription).
 * [ ] Azure owner rights (at least on Resource Group level).
 * [ ] Microsoft Entra ID (Azure AD) "Global administrator" (Consent to access Graph API).
-* [ ] Make sure to define your Azure policies [according to SCEPman requirements](../../other/faqs/security-faq.md#azure-cis) (e.g. do not enforce TLS).
+* [ ] Make sure to define your Azure policies [according to SCEPman requirements](../../other/security-faq.md#azure-cis) (e.g. do not enforce TLS).
 * [ ] Public Domain CNAME (_scepman.yourdomain.com_), only if geo-redundancy is used.
 * [ ] SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)), only if geo-redundancy is used.
 * [ ] SCEPman Enterprise Edition License Key.
@@ -42,7 +42,7 @@ All these resources are recommended for a production environment.
 | Storage account         | <p>Storage platform used by SCEPman's Certificate Master component to store certain attributes of the manually issued TLS server certificates for revocation purposes.<br><br><em>Optional:</em></p><p>The "App Service" will load the artifacts from a blob storage URI if manual updates are configured.</p> |
 | Log Analytics workspace | <p>A centralized and cloud-based log storage. The "App Service" will save all</p><p>platform logs and metrics into this workspace.</p>                                                                                                                                                                         |
 
-Additionally, if you are using Private Endpoints, you have [seven more Azure Resources.](../../architecture/private-endpoints.md#azure-resources-used-for-private-endpoints)
+Additionally, if you are using Private Endpoints, you have [seven more Azure Resources.](../../azure-configuration/private-endpoints.md#azure-resources-used-for-private-endpoints)
 
 ## Configuration Steps
 
@@ -96,8 +96,8 @@ This is a **recommended** step. However, **skip** this step if you are implement
 
 To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.**
 
-{% content-ref url="../../scepman-configuration/optional/custom-domain.md" %}
-[custom-domain.md](../../scepman-configuration/optional/custom-domain.md)
+{% content-ref url="../../azure-configuration/custom-domain.md" %}
+[custom-domain.md](../../azure-configuration/custom-domain.md)
 {% endcontent-ref %}
 
 ### Step 5: Manual Updates
@@ -106,10 +106,10 @@ To have your SCEPman available under your specific domain you need to create a *
 This is an **optional** step.
 {% endhint %}
 
-By default, SCEPman's update strategy is configured to the [Evergreen approach](../../scepman-configuration/optional/update-strategy.md#evergreen-approach) / auto-updates. In case you require full control over your SCEPman updates, please configure a deployment slot as described in the following guide under section **Deployment Slot Configuration**.
+By default, SCEPman's update strategy is configured to the [Evergreen approach](../../update-strategy.md#evergreen-approach) / auto-updates. In case you require full control over your SCEPman updates, please configure a deployment slot as described in the following guide under section **Deployment Slot Configuration**.
 
-{% content-ref url="../../scepman-configuration/optional/update-strategy.md" %}
-[update-strategy.md](../../scepman-configuration/optional/update-strategy.md)
+{% content-ref url="../../update-strategy.md" %}
+[update-strategy.md](../../update-strategy.md)
 {% endcontent-ref %}
 
 ### Step 6: Deploy Application Insights
@@ -120,8 +120,8 @@ This is **recommended** step.
 
 The Application Insights can be used to get an overview of the App Service performance and to get deeper insights of the request processing of SCEPman. We recommend to always configure Application Insights to monitor, maintain and optimize the App Service.
 
-{% content-ref url="../../scepman-configuration/optional/application-insights.md" %}
-[application-insights.md](../../scepman-configuration/optional/application-insights.md)
+{% content-ref url="../../azure-configuration/application-insights.md" %}
+[application-insights.md](../../azure-configuration/application-insights.md)
 {% endcontent-ref %}
 
 ### Step 7: Configure Health Check
@@ -132,8 +132,8 @@ This is **recommended** step.
 
 We can configure a Health Check for the App Service to get direct notifications in case that the SCEPman stops working.
 
-{% content-ref url="../../advanced-configuration/health-check.md" %}
-[health-check.md](../../advanced-configuration/health-check.md)
+{% content-ref url="../../azure-configuration/health-check/" %}
+[health-check](../../azure-configuration/health-check/)
 {% endcontent-ref %}
 
 ### Step 8: Ensure that SCEPman has sufficient Resources
@@ -144,8 +144,8 @@ This is a **mandatory** step.
 
 Once you move SCEPman into a production environment, you should ensure that SCEPman is equipped with sufficient computing power. Therefore, please review our Azure Sizing guide and upgrade your App Service Plan tier if need be. You may postpone this until after your PoC or trial phase.
 
-{% content-ref url="../azure-sizing.md" %}
-[azure-sizing.md](../azure-sizing.md)
+{% content-ref url="../../azure-configuration/azure-sizing/" %}
+[azure-sizing](../../azure-configuration/azure-sizing/)
 {% endcontent-ref %}
 
 ### Step 9: Configure Autoscaling
@@ -160,8 +160,8 @@ The second task is the certificate validation: After we deployed certificates to
 
 To have an optimized performance and take care of the costs we recommend to setup the Autoscaling functionality of the App Service. With this feature your application can scale-out and scale-in based on metrics.
 
-{% content-ref url="../../scepman-configuration/optional/autoscaling.md" %}
-[autoscaling.md](../../scepman-configuration/optional/autoscaling.md)
+{% content-ref url="../../azure-configuration/azure-sizing/autoscaling.md" %}
+[autoscaling.md](../../azure-configuration/azure-sizing/autoscaling.md)
 {% endcontent-ref %}
 
 ### Step 10: Configure Geo-Redundancy
@@ -170,8 +170,8 @@ To have an optimized performance and take care of the costs we recommend to setu
 This is an **optional** step.
 {% endhint %}
 
-{% content-ref url="../../advanced-configuration/geo-redundancy.md" %}
-[geo-redundancy.md](../../advanced-configuration/geo-redundancy.md)
+{% content-ref url="../../azure-configuration/geo-redundancy.md" %}
+[geo-redundancy.md](../../azure-configuration/geo-redundancy.md)
 {% endcontent-ref %}
 
 ### Step 11: Configure your MDM Deployment Profiles
@@ -184,12 +184,12 @@ With the completion of the above steps, we have a working SCEPman implementation
 
 Please use one (or more) of the following articles, to deploy certificates with your preferred MDM solution:
 
-{% content-ref url="../../certificate-deployment/microsoft-intune/" %}
-[microsoft-intune](../../certificate-deployment/microsoft-intune/)
+{% content-ref url="../../certificate-management/microsoft-intune/" %}
+[microsoft-intune](../../certificate-management/microsoft-intune/)
 {% endcontent-ref %}
 
-{% content-ref url="../../certificate-deployment/jamf/" %}
-[jamf](../../certificate-deployment/jamf/)
+{% content-ref url="../../certificate-management/jamf/" %}
+[jamf](../../certificate-management/jamf/)
 {% endcontent-ref %}
 
 ### Step 12: Issue TLS Server Certificates or sign CSRs using Cert Master
@@ -200,6 +200,6 @@ This is an **optional** step.
 
 Please follow below link, to learn how to issue TLS server certificates based on a list of FQDNs or sign any CSR using the Cert Master component.
 
-{% content-ref url="../../certificate-deployment/certificate-master/" %}
-[certificate-master](../../certificate-deployment/certificate-master/)
+{% content-ref url="../../certificate-management/certificate-master/" %}
+[certificate-master](../../certificate-management/certificate-master/)
 {% endcontent-ref %}

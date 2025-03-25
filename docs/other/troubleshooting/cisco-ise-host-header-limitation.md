@@ -90,7 +90,7 @@ In Geo-Redundant scenario, you can still use the SCEPman custom domain URL (whic
 {% hint style="info" %}
 OCSP responder URL would be: `http://<Application-Gateway-URL>/ocsp`
 
-**Note:** The OCSP responder URL should be HTTP not HTTPS, see [here](../faqs/security-faq.md#id-21.-can-https-only-be-enabled)
+**Note:** The OCSP responder URL should be HTTP not HTTPS, see [here](../security-faq.md#id-21.-can-https-only-be-enabled)
 {% endhint %}
 
 ## Intune/JAMF configuration

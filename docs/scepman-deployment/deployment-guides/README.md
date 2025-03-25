@@ -30,14 +30,6 @@ In case you have Azure resource naming conventions, high availability or auto-sc
 
 ## Videos
 
-### New deployment
-
 {% embed url="https://www.youtube.com/watch?v=Q1DTVlxLSoU" %}
 SCEPman 2.0 Deployment
-{% endembed %}
-
-### Upgrade SCEPman 1.x to 2.x
-
-{% embed url="https://www.youtube.com/watch?v=uGDzEqIuTn4" %}
-SCEPman 1.x => 2.x Upgrade
 {% endembed %}

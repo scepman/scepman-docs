@@ -4,4 +4,4 @@ Intune service discovery API endpoint will require specific permissions starting
 
 **SCEPman instances running versions prior to version 2.0 may have issues with this change.**
 
-Please ensure that you are using the [latest version of SCEPman](../../scepman-configuration/optional/update-strategy.md).
+Please ensure that you are using the [latest version of SCEPman](../../update-strategy.md).

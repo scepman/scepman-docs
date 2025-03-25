@@ -12,9 +12,9 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 **SCEPman 2.9.1294**
 
-* [Certificate self-service enrollment via EST/REST API](certificate-deployment/api-certificates/self-service-enrollment.md)
-* [ClientID/ClientSecret support in Jamf](advanced-configuration/application-settings/jamf-validation.md#appconfig-jamfvalidation-clientid)
-* [Authorized Responders for OCSP Requests](advanced-configuration/application-settings/ocsp.md#appconfig-ocsp-authorizedrespondervalidityhours)
+* [Certificate self-service enrollment via EST/REST API](certificate-management/api-certificates/self-service-enrollment/)
+* [ClientID/ClientSecret support in Jamf](scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-clientid)
+* [Authorized Responders for OCSP Requests](scepman-configuration/application-settings/ocsp.md#appconfig-ocsp-authorizedrespondervalidityhours)
 * Smaller improvements, e.g.
   * Configure default EKUs for the REST API, allowing you to enforce specific EKUs
   * Logging improvements to make the log more concise
@@ -55,7 +55,7 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
   * Additional information about certificate revocations
   * Less log clutter
   * A transaction ID in the logs allows to correlate log entries that belong to the same SCEP or OCSP request
-* Configure default Extended Key Usages (EKUs) and Key Usages for each SCEP endpoint, e.g. if [you want to enroll smart-card authentication certificates through Jamf](advanced-configuration/application-settings/jamf-validation.md#appconfig-jamfvalidation-defaultekus)
+* Configure default Extended Key Usages (EKUs) and Key Usages for each SCEP endpoint, e.g. if [you want to enroll smart-card authentication certificates through Jamf](scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-defaultekus)
 * Update to .NET 8
 * Library updates
   * Including the update of Azure.Identity to 1.11, fixing [CVE-2024-29992](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-29992). Currently, the exploit is not publicly disclosed, so the scope of the issue is unclear, but the published information indicates that SCEPman is likely not affected.
@@ -109,7 +109,7 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
 
 #### SCEPman 2.6.945
 
-* Logging to [Azure Event Hub](advanced-configuration/application-settings/logging.md#appconfig-loggingconfig-azureeventhubconnectionstring)
+* Logging to [Azure Event Hub](scepman-configuration/application-settings/dependencies-azure-services/logging.md#appconfig-loggingconfig-azureeventhubconnectionstring)
 * Library Updates, including the update to Azure.Identity 1.10.3, fixing [CVE-2023-36414](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36414). Currently, the exploit is not publicly disclosed, so the scope of the issue is unclear, but the published information indicates that SCEPman is likely not affected.
 * Robustness for various special cases
 
@@ -127,9 +127,9 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
 
 #### SCEPman 2.5.892
 
-* Define an [enrollment grace period](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-compliancegraceperiodminutes), during which devices are allowed to be incompliant.
-* SCEPman can [add extension 1.3.6.1.4.1.311.25.2 with the users' Security Identifiers (SIDs)](scepman-configuration/optional/application-settings/certificates.md#appconfig-addsidextension) to certificates, mitigating [Certifried attacks](other/troubleshooting/certifried.md)
-* [Performance improved by around factor 4](scepman-deployment/azure-sizing.md)
+* Define an [enrollment grace period](scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-compliancegraceperiodminutes), during which devices are allowed to be incompliant.
+* SCEPman can [add extension 1.3.6.1.4.1.311.25.2 with the users' Security Identifiers (SIDs)](scepman-configuration/application-settings/certificates.md#appconfig-addsidextension) to certificates, mitigating [Certifried attacks](other/troubleshooting/certifried.md)
+* [Performance improved by around factor 4](azure-configuration/azure-sizing/)
 * Library Updates
 * Bugfixes and small improvements, including:
   * streamlined GCC High installation experience
@@ -144,7 +144,7 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
 
 * Download certificates + private keys in PEM format
 * Revocation audit trail
-* [RBAC roles](advanced-configuration/rbac.md)
+* [RBAC roles](scepman-configuration/rbac.md)
 * Library Updates
 * Minor bugfixes and improvements, including
   * UI search button bugfix
@@ -155,8 +155,8 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
 
 #### SCEPman 2.4.772
 
-* [Improved CDP endpoint containing manually revoked certificates](scepman-configuration/optional/application-settings/crl.md#appconfig-crl-source)
-* [Log to Azure Monitor](advanced-configuration/application-settings/logging.md)
+* [Improved CDP endpoint containing manually revoked certificates](scepman-configuration/application-settings/crl.md#appconfig-crl-source)
+* [Log to Azure Monitor](scepman-configuration/application-settings/dependencies-azure-services/logging.md)
 * Library and Framework updates, including .NET 7
 * Bugfixes and improvements
 
@@ -176,19 +176,19 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
 
 #### SCEPman 2.3.723
 
-* [CSR submission REST API](certificate-deployment/api-certificates/)
-* Store certificates issued via [Jamf](advanced-configuration/application-settings/jamf-validation.md#appconfig-jamfvalidation-enablecertificatestorage), [Static](advanced-configuration/application-settings/static-validation.md#appconfig-staticvalidation-enablecertificatestorage), [Static-AAD](advanced-configuration/application-settings/staticaad-validation.md#appconfig-staticaadvalidation-enablecertificatestorage), and [DC](advanced-configuration/application-settings/dc-validation.md#appconfig-dcvalidation-enablecertificatestorage) endpoints in Storage Account (and allow manual revocation in Certificate Master)
+* [CSR submission REST API](certificate-management/api-certificates/)
+* Store certificates issued via [Jamf](scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-enablecertificatestorage), [Static](scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-enablecertificatestorage), [Static-AAD](scepman-configuration/application-settings/scep-endpoints/staticaad-validation.md#appconfig-staticaadvalidation-enablecertificatestorage), and [DC](scepman-configuration/application-settings/scep-endpoints/dc-validation.md#appconfig-dcvalidation-enablecertificatestorage) endpoints in Storage Account (and allow manual revocation in Certificate Master)
 * Partial support of ECC CAs
 * Better error messages on some faults
 * Improvements to compliance checks
   * An additional extension better suppresses usage of ephemeral certificates on Windows
   * An additional SCEP endpoint for Apple devices prevents issuance of ephemeral certificates
-* [Fake CDP endpoint](scepman-configuration/optional/application-settings/crl.md) for cases where a CRL is technically required (the CRL contains no entries yet, though)
+* [Fake CDP endpoint](scepman-configuration/application-settings/crl.md) for cases where a CRL is technically required (the CRL contains no entries yet, though)
 * Minor bugfixes/improvements
 
 #### Certificate Master 2.3.327
 
-* [New UI with customizable filters to find view different kinds of certificates](certificate-deployment/manage-certificates.md#search-for-certificates-in-the-certificate-database)
+* [New UI with customizable filters to find view different kinds of certificates](certificate-management/manage-certificates.md#search-for-certificates-in-the-certificate-database)
 * Better compatibility with Microsoft's API changes to list certificate issued via Intune
 * Minor improvements
 
@@ -198,9 +198,9 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
 
 #### SCEPman 2.2.631
 
-* [Revoke Intune certificates on some MEM events](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory)
-* [Intune-enrolled user certificates become invalid when user risk exceeds a configured threshold](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-userriskcheck) (requires an additional permission for which you must [re-run the SCEPman configuration script](scepman-configuration/post-installation-config.md#running-the-scepman-installation-cmdlet))
-* [Additional static SCEP endpoint with AAD-bound certificates](advanced-configuration/application-settings/staticaad-validation.md)
+* [Revoke Intune certificates on some MEM events](scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-devicedirectory)
+* [Intune-enrolled user certificates become invalid when user risk exceeds a configured threshold](scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-userriskcheck) (requires an additional permission for which you must [re-run the SCEPman configuration script](scepman-configuration/post-installation-config.md#running-the-scepman-installation-cmdlet))
+* [Additional static SCEP endpoint with AAD-bound certificates](scepman-configuration/application-settings/scep-endpoints/staticaad-validation.md)
 * Library updates
 
 #### SCEPman Certificate Master 2.2.282
@@ -212,18 +212,18 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
 
 ### 2.1.522 - May 2022
 
-* [Request Client Certificates manually through Certificate Master](certificate-deployment/certificate-master/client-certificate-pkcs-12.md)
+* [Request Client Certificates manually through Certificate Master](certificate-management/certificate-master/client-certificate-pkcs-12.md)
 * Library and Framework updates
   * Improved Performance with .NET 6
   * Other library updates
 * Robustness
 * Bearer Authentication for Jamf Classic API
-* [Invalidate certificates for Intune devices with pending wipes or otherwise unhealthy management states](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-revokecertificatesonwipe)
+* [Invalidate certificates for Intune devices with pending wipes or otherwise unhealthy management states](scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-revokecertificatesonwipe)
 * Minor Improvements
 
 ### 2.0.473 - March 2022
 
-* [Certificate Management](certificate-deployment/certificate-master/)
+* [Certificate Management](certificate-management/certificate-master/)
   * Manually issue TLS Server certificates
   * Revoke manually issued certificates
   * Search for manual certificates
@@ -232,28 +232,28 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
   * Azure Key Vault
   * Other library updates
 * [Easier deployment, no manual app registraton required anymore](scepman-configuration/post-installation-config.md)
-* [Select whether to use AAD or Intune directory for device validity checks](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-devicedirectory)
+* [Select whether to use AAD or Intune directory for device validity checks](scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-devicedirectory)
 * New UI
   * So beautiful and with a new logo
   * Detailed information on activated SCEP endpoints
-* [Compatibility with GCC High, GCC DoD, and 21Vianet environments](scepman-configuration/optional/application-settings/national-cloud-platforms.md)
+* [Compatibility with GCC High, GCC DoD, and 21Vianet environments](scepman-configuration/application-settings/dependencies-azure-services/national-cloud-platforms.md)
 * Various minor improvements
 
 ### 1.9.207 - July 2021
 
-* [JAMF User Certificates](certificate-deployment/jamf/users.md)
-* Update to the [Compliance Check Preview](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-compliancecheck)
+* [JAMF User Certificates](certificate-management/jamf/users.md)
+* Update to the [Compliance Check Preview](scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-compliancecheck)
   * Also working for Windows devices during enrollment
 * Improved [RADIUS-as-a-Service](https://www.radius-as-a-service.com) compatibility
 * Minor advancements
   * Improved error messages
-  * Improved Compatibility with ISE with [a new default setting](scepman-configuration/optional/application-settings/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-addextendedkeyusage)
+  * Improved Compatibility with ISE with [a new default setting](scepman-configuration/application-settings/dependencies-azure-services/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-addextendedkeyusage)
 
 ### 1.8.155 - June 2021
 
 * Improved robustness in exceptional situations
   * Correct answers to invalid OCSP requests, which may occur rarely for certificates issued by SCEPman 1.5 or earlier
-  * [Certificate issuance scheduling in overload situations](scepman-configuration/optional/application-settings/certificates.md#appconfig-concurrentsceprequestlimit)
+  * [Certificate issuance scheduling in overload situations](scepman-configuration/application-settings/certificates.md#appconfig-concurrentsceprequestlimit)
   * Option to configure a "Clock Skew" for clients with clocks running slow (> 10 minutes), which [happens in few tenants for Intune-managed Windows devices](other/troubleshooting/general.md#windows-10-devices-cannot-enroll-with-autopilot)
 * Logging
   * Less log clutter on Info level
@@ -270,11 +270,11 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
 
 ### 1.7.101 - May 2021
 
-* Support for [Computer and Device Certificates via JAMF](certificate-deployment/jamf/general.md)
-* Separate Certificate Lifetimes for each endpoint, e.g. for [Domain Controller Certificates](advanced-configuration/application-settings/dc-validation.md#appconfig-dcvalidation-validityperioddays)
-* [Secure application configuration in Key Vault](advanced-configuration/application-settings/#secure-configuration-in-azure-key-vault)
-* Moved the release path to [https://github.com/scepman/install](https://github.com/scepman/install). Please update your setting WEBSITE\_RUN\_FROM\_PACKAGE as described in Section [Application Artifacts](advanced-configuration/application-artifacts.md).
-* Preview of [Compliance Checks](scepman-configuration/optional/application-settings/intune-validation.md#appconfig-intunevalidation-compliancecheck)
+* Support for [Computer and Device Certificates via JAMF](certificate-management/jamf/general.md)
+* Separate Certificate Lifetimes for each endpoint, e.g. for [Domain Controller Certificates](scepman-configuration/application-settings/scep-endpoints/dc-validation.md#appconfig-dcvalidation-validityperioddays)
+* [Secure application configuration in Key Vault](scepman-configuration/application-settings/#secure-configuration-in-azure-key-vault)
+* Moved the release path to [https://github.com/scepman/install](https://github.com/scepman/install). Please update your setting WEBSITE\_RUN\_FROM\_PACKAGE as described in Section [Application Artifacts](scepman-configuration/application-artifacts.md).
+* Preview of [Compliance Checks](scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-compliancecheck)
 * Minor advancements
   * Workaround a bug on some Android versions to gain correct validity periods
   * SCEPman CA certificates receive an Extended Key Usage to improve compatibility with some versions of Cisco ISE
@@ -289,8 +289,8 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
 
 ### 1.6.455 - November 2020
 
-* Support for certificates for [Domain Controllers](certificate-deployment/domain-controller-certificates.md), especially for use in Windows Hello for Business (Enterprise Edition only)
-* Generic support for [Other MDM systems via endpoint static](certificate-deployment/static-certificates/)
+* Support for certificates for [Domain Controllers](certificate-management/domain-controller-certificates.md), especially for use in Windows Hello for Business (Enterprise Edition only)
+* Generic support for [Other MDM systems via endpoint static](certificate-management/static-certificates/)
 * Improved error logging
 * Bug fixing
 

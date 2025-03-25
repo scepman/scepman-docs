@@ -4,4 +4,4 @@ Please see the list of [Common Problems](general.md) if something is not working
 
 ## Access SCEPman Logs
 
-Additionally, check the SCEPman logs in your Log Analytics Workspace as described in the Article [Log Configuration](../../advanced-configuration/log-configuration.md).
+Additionally, check the SCEPman logs in your Log Analytics Workspace as described in the Article [Log Configuration](../../azure-configuration/log-configuration.md).
