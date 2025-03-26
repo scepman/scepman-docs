@@ -1,7 +1,7 @@
 # Azure App Registration
 
 {% hint style="info" %}
-Only relevant for [Split-Tenancy](../../azure-configuration/split-tenancy.md) setups.
+Only relevant for [Split-Tenancy](../../scepman-configuration/optional/split-tenancy.md) setups.
 {% endhint %}
 
 SCEPman needs to interact with your Azure Active Directory and Intune endpoints to provide the certificate and OCSP validation of users and devices. To provide the necessary permissions to SCEPman you need to create an App Registration within your tenant.

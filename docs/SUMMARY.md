@@ -69,7 +69,7 @@
 * [Log Management](azure-configuration/log-configuration.md)
 * [Moving Resources](azure-configuration/move-scepman-resources.md)
 * [Private Endpoints](azure-configuration/private-endpoints.md)
-* [Split-Tenancy](azure-configuration/split-tenancy.md)
+* [Split-Tenancy](scepman-configuration/optional/split-tenancy.md)
 
 ***
 
