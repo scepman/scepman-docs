@@ -1,7 +1,7 @@
 # Microsoft Intune
 
-{% content-ref url="windows-10.md" %}
-[windows-10.md](windows-10.md)
+{% content-ref url="windows-10/" %}
+[windows-10](windows-10/)
 {% endcontent-ref %}
 
 {% content-ref url="macos.md" %}
@@ -15,4 +15,3 @@
 {% content-ref url="ios.md" %}
 [ios.md](ios.md)
 {% endcontent-ref %}
-

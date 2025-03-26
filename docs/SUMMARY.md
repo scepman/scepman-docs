@@ -24,7 +24,8 @@
 
 * [Revocation](certificate-management/manage-certificates.md)
 * [Microsoft Intune](certificate-management/microsoft-intune/README.md)
-  * [Windows](certificate-management/microsoft-intune/windows-10.md)
+  * [Windows](certificate-management/microsoft-intune/windows-10/README.md)
+    * [CBA for RDP](certificate-management/microsoft-intune/windows-10/cba-for-rdp.md)
   * [macOS](certificate-management/microsoft-intune/macos.md)
   * [Android](certificate-management/microsoft-intune/android.md)
   * [iOS/iPadOS](certificate-management/microsoft-intune/ios.md)
