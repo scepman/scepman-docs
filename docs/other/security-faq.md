@@ -417,7 +417,7 @@ Our source repositories have Branch Protection rules and we assign only the leas
 
 ### 4. Is SCEPman part of a bug-bounty program?
 
-No
+No.
 
 ### 5. What QA measures are in place?
 
@@ -429,3 +429,9 @@ No
   * Stress tests
   * Experience-based testing
   * 3rd-party code analysis, e.g. Sonar, Dependabot, and others
+
+### 6. Do you regularly perform penetration tests?&#x20;
+
+No.
+
+As part of our Secure Development Practices, we employ tools (e.g. static code analysis) that scan the code base for CVEs and other common exploits (including dependencies such as 3rd party libraries) that could impact the security of the endpoints SCEPman exposes. Before any release, any relevant findings are assessed and remediated, to ensure SCEPman remains free from any known vulnerabilities. We neither perform penetration tests ourselves, nor do we use 3rd party "Penetration Test-as-a-Service" tools. For the former, we see an inherent conflict of interest. For the latter, since typical penetration test services often simply check the exposed endpoints against CVEs and other known exploits, we do not see any added value to the checks we already perform using static code analysis. If you wish to perform your own penetration tests, please [reach out to us](https://support.scepman.com/support/tickets/new?ticket_form=drop_a_question_%28scepman%29) and tell us about your requirements.
