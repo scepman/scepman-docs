@@ -1,11 +1,13 @@
 # Enrollment REST API
 
-{% hint style="info" %}
-These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](./).
+{% hint style="warning" %}
+SCEPman Enterprise Edition only
 
 Applicable to version 2.3.689 and above
+{% endhint %}
 
-SCEPman Enterprise Edition only
+{% hint style="info" %}
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [SCEPman Settings](./).
 {% endhint %}
 
 ## AppConfig:DbCSRValidation:Enabled

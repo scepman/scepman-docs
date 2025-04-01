@@ -1,9 +1,5 @@
 # SOTI MobiControl
 
-{% hint style="info" %}
-This feature requires version 1.6 or above.
-{% endhint %}
-
 SCEPman can be integrated with SOTI MobiControl as a Certificate Authority. By connecting both systems through SCEPman's Static SCEP interface, MobiControl-enrolled devices can obtain device certificates from SCEPman.
 
 For more general information about other MDM solutions and SCEPman integration please check [here](./).
@@ -33,7 +29,7 @@ First, you need to deploy SCEPman RootCA to all endpoints as a trusted root ca, 
 
 ### Add Certificate Authority
 
-1. In Soti Mobicontrol, navigate to System Settings > Global Settings > Services > Certificate Authority.
+1. In Soti MobiControl, navigate to System Settings > Global Settings > Services > Certificate Authority.
 
 <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Authority Page</p></figcaption></figure>
 

@@ -1,13 +1,13 @@
 # Intune Validation
 
 {% hint style="info" %}
-These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](../).
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [SCEPman Settings](../).
 {% endhint %}
 
 ## AppConfig:IntuneValidation:ComplianceCheck
 
 {% hint style="warning" %}
-**Experimental Setting** - Applicable to version 1.7 and above
+**Experimental Setting**&#x20;
 
 SCEPman Enterprise Edition only
 
@@ -26,23 +26,21 @@ Setting this to **Never** will disable the compliance check.
 
 ## AppConfig:IntuneValidation:ComplianceGracePeriodMinutes
 
-{% hint style="info" %}
-Applicable to version 2.5 and above SCEPman Enterprise Edition only
+{% hint style="warning" %}
+SCEPman Enterprise Edition only
+
+Applicable to version 2.5 and above&#x20;
 {% endhint %}
 
 **Value:** _Integer_ (default: 0)
 
-**Description:** Immediately after enrollment, devices are often not yet compliant in Intune. This setting defines a grace period in minutes during which the device is considered compliant, even if it is not yet. If the device is not compliant after the grace period, the certificate is revoked. This prevents the problem of a Windows device that is just enrolling and needs to successfully complete the SCEP profile in order to finish Windows Autopilot enrollment, but will become compliant in Intune only some time later.
+**Description:** Immediately after enrollment, devices are often not yet compliant in Intune. This setting defines a grace period in minutes during which the device is considered compliant, even if it is not yet. If the device is not compliant after the grace period, the certificate is revoked. This prevents the problem of a Windows device that is just enrolling and needs to successfully complete the SCEP profile in order to finish Windows Autopilot enrollment but will become compliant in Intune only some time later.
 
 It is an alternative to using Ephemeral Bootstrap Certificates. If you configure any value above 0, SCEPman will never issue Ephemeral Bootstrap Certificates.
 
 This setting is only effective if [ComplianceCheck](intune-validation.md#appconfig-intunevalidation-compliancecheck) is set to _Always_.
 
 ## AppConfig:IntuneValidation:DeviceDirectory
-
-{% hint style="info" %}
-Applicable to version 2.0 and above
-{% endhint %}
 
 **Value:** String
 
@@ -126,10 +124,6 @@ Setting this to **Never** will disable the user risk check.
 
 ## AppConfig:IntuneValidation:WaitForSuccessNotificationResponse
 
-{% hint style="info" %}
-Applicable to version 1.6 and above
-{% endhint %}
-
 **Value:** _true_ (default) or _false_
 
 **Description:** After a certificate was successfully issued, SCEPman sends a notification about the certificate to Intune. Microsoft recommends to wait for the response in its specification. However, some instances show long delays resulting in timeouts occasionally. Therefore **True** is the default.
@@ -137,10 +131,6 @@ Applicable to version 1.6 and above
 Setting this to **False** makes SCEPman return the issued certificate before Intune answers to the notification. This is against the letters of the specification, but increases performance and avoids timeouts in instances where this issue arises.
 
 ## AppConfig:IntuneValidation:ValidityPeriodDays
-
-{% hint style="info" %}
-Applicable to version 1.7 and above
-{% endhint %}
 
 **Value:** Positive _Integer_
 

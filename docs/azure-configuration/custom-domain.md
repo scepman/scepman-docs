@@ -2,7 +2,7 @@
 
 ## Custom Domain Configuration
 
-If you want to create your own custom domain for your **App Service** URL, there are two options depending on your domain provider:
+If you want to create your own custom domain for your **SCEPman App Service** URL, there are two options depending on your domain provider:
 
 **The first option** is to go with Azure Domain (existing one or creating a new one)
 

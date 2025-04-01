@@ -1,9 +1,5 @@
 # Other MDM Solutions
 
-{% hint style="info" %}
-This feature requires version **1.6** or above.
-{% endhint %}
-
 You can use SCEPman to issue certificates via MDM systems other than Intune. You must configure a static challenge password (see [RFC 8894, Section 7.3](https://www.rfc-editor.org/rfc/rfc8894.html#name-challengepassword-shared-se) for the formal specification) in both SCEPman and the MDM system. Virtually all MDM systems support this mode of SCEP authentication.
 
 Note however, that this does not provide the same level of security as the authentication mode employed with Intune. The challenge password authenticates requests from the MDM system, so SCEPman knows they come from a trusted source. But if attackers steal the challenge password, they can authenticate any certificate request and make SCEPman issue them whatever certificate they want.
@@ -12,19 +8,42 @@ It is therefore crucial to keep the challenge password secure. This can be achie
 
 ## SCEPman Configuration
 
-To enable the feature, you must add two application settings in your SCEPman service. **Please generate a new key/password and store it somewhere safe.** (you will need it in the following steps and later, on the MDM system)
+There are two SCEP endpoints to choose from when configuring SCEPman for MDM systems other than Intune and Jamf Pro:
 
-1. Navigate to **App Services**
-2. Then choose your SCEPman app
-3. Select **New application setting**
-4. Type **AppConfig:StaticValidation:Enabled** as Name
-5. Type **true** as Value
-6. Confirm with **OK**
-7. Select **New application setting** again
-8. Type **AppConfig:StaticValidation:RequestPassword** as Name
-9. Type your **key/password**, that you have generated earlier, as Value
-10. Confirm with **OK**
-11. Save the application settings
+* Static-AAD
+* Static
+
+The Static-AAD endpoint is recommended for MDM systems with Entra ID integration such as Kandji and Google Workspace. _User_ certificates distributed from the Static-AAD endpoint will benefit from [Automatic Revocation](../manage-certificates.md#automatic-revocation) when the respective user has been disabled in Entra ID.&#x20;
+
+The Static endpoint is recommended for all other MDM systems.
+
+{% tabs %}
+{% tab title="Static-AAD" %}
+Add the following settings to your **SCEPman App Service** > Environment Variables > Add.
+
+Once the settings have been added, save the settings and restart your **SCEPman App Service**.
+
+|                                                                                                                    Setting                                                                                                                   | Description                                                                                                                                                                                                                                                                                             |                     Value                    |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------: |
+|                                    [AppConfig:StaticAADValidation:Enabled](../../scepman-configuration/application-settings/scep-endpoints/staticaad-validation.md#appconfig-staticaadvalidation-enabled)                                    | Enable Static-AAD validation                                                                                                                                                                                                                                                                            | _**true**_ to enable, _**false**_ to disable |
+|                            [AppConfig:StaticAADValidation:RequestPassword](../../scepman-configuration/application-settings/scep-endpoints/staticaad-validation.md#appconfig-staticaadvalidation-requestpassword)                            | <p>Certificate signing requests sent to SCEPman for signing are authenticated with this secure static password<br><br><strong>Recommendation</strong>: Store this secret in <a href="../../scepman-configuration/application-settings/#secure-configuration-in-azure-key-vault">Azure KeyVault</a>.</p> |      _generate a 32 character password_      |
+|        <p><a href="../../scepman-configuration/application-settings/scep-endpoints/staticaad-validation.md#appconfig-staticaadvalidation-validityperioddays">AppConfig:StaticAADValidation:ValidityPeriodDays</a></p><p>(optional)</p>       | Days certificates issued via the Static-AAD endpoint are valid                                                                                                                                                                                                                                          |                      365                     |
+| <p><a href="../../scepman-configuration/application-settings/scep-endpoints/staticaad-validation.md#appconfig-staticaadvalidation-enablecertificatestorage">AppConfig:StaticAADValidation:EnableCertificateStorage</a></p><p> (optional)</p> | Store requested certificates in the Storage Account, in order to show them in SCEPman Certificate Master                                                                                                                                                                                                | _**true**_ to enable, _**false** to disable_ |
+{% endtab %}
+
+{% tab title="Static" %}
+Add the following settings to your **SCEPman App Service** > Environment Variables > Add.
+
+Once the settings have been added, save the settings and restart your **SCEPman App Service**.
+
+|                                                                                                   Setting                                                                                                  | Description                                                                                                                                                                                                                                                                                             |                     Value                    |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------: |
+|                        [AppConfig:StaticValidation:Enabled](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-enabled)                       | Enable 3rd-party validation                                                                                                                                                                                                                                                                             | _**true**_ to enable, _**false**_ to disable |
+|                [AppConfig:StaticValidation:RequestPassword](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-requestpassword)               | <p>Certificate signing requests sent to SCEPman for signing are authenticated with this secure static password<br><br><strong>Recommendation</strong>: Store this secret in <a href="../../scepman-configuration/application-settings/#secure-configuration-in-azure-key-vault">Azure KeyVault</a>.</p> |      _generate a 32 character password_      |
+|       [AppConfig:StaticValidation:ValidityPeriodDays](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-validityperioddays) (optional)       | Days certificates issued via the Static endpoint are valid                                                                                                                                                                                                                                              |                      365                     |
+| [AppConfig:StaticValidation:EnableCertificateStorage](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-enablecertificatestorage) (optional) | Store requested certificates in the Storage Account, in order to show them in SCEPman Certificate Master                                                                                                                                                                                                | _**true**_ to enable, _**false** to disable_ |
+{% endtab %}
+{% endtabs %}
 
 ## MDM Configuration
 

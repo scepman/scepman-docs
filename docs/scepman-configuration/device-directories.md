@@ -16,13 +16,13 @@ For recognizing the device behind an issued certificate, SCEPman requires the co
 
 When setting up SCEPman and certificate profiles in Intune, it is important to **decide which inventory should be used**.
 
-### AAD vs. Intune
+### Entra ID (AAD) vs. Intune
 
 Both directories have their pros and cons. In general, we **recommend Intune** as inventory since SCEPman 2.0:
 
-* Microsoft Entra ID (Azure AD) **device ID can change during enrollment** (seen on iOS/iPadOS/macOS):\
-  The AAD device ID is set to the Intune device ID until the device is finally AAD registered. Intune already issues the certificate before the device gets its final ID. As a result, SCEPman cannot find the device in the AAD after this ID change.
-* **Intune is often maintained better than the AAD**:\
+* **The Entra Device ID can change during enrollment (seen on iOS/iPadOS/macOS)**:\
+  The Entra Device ID is set to the Intune device ID until the device is finally AAD registered. Intune already issues the certificate before the device gets its final ID. As a result, SCEPman cannot find the device in the AAD after this ID change.
+* **Intune is often maintained better than Entra ID (AAD)**:\
   In theory, the AAD and Intune device objects are independent of each other. Deleting a device in Intune, does not delete the corresponding AAD object. In addition, Autopilot devices can only be deleted in Intune and not in Microsoft Entra ID (Azure AD). So, the certificates would still be valid.
 
 ### SCEPman Configuration

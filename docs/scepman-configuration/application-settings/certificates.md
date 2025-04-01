@@ -1,14 +1,10 @@
 # Certificates
 
 {% hint style="info" %}
-These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](./).
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [SCEPman Settings](./).
 {% endhint %}
 
 ## AppConfig:AddMicrosoftAADExtensions
-
-{% hint style="info" %}
-Applicable to version 2.0 and above
-{% endhint %}
 
 **Value:** _true_ (default) or _false_
 
@@ -31,10 +27,6 @@ First, when enrolling user certificates via Intune and the user's AAD object con
 Second, when enrolling user certificates through other SCEP endpoints and the CSR already contains the extension. Examples are the Static SCEP endpoint and manual certificate requests through Certificate Master.
 
 ## AppConfig:ValidityPeriodDays
-
-{% hint style="info" %}
-Applicable to version 1.5 and above
-{% endhint %}
 
 **Value:** _Integer_
 
@@ -62,10 +54,6 @@ Below image depicts how SCEPman limits the certificate validity period; first on
 
 ## AppConfig:ConcurrentSCEPRequestLimit
 
-{% hint style="info" %}
-Applicable to version 1.8 and above
-{% endhint %}
-
 **Value:** Positive _Integer_
 
 **Default:** 50
@@ -78,10 +66,6 @@ The optimal setting depends on the performance of the App Service Plan. As a rul
 
 ## AppConfig:ValidityClockSkewMinutes
 
-{% hint style="info" %}
-Applicable to version 1.8 and above
-{% endhint %}
-
 **Value:** Positive _Integer_
 
 **Default:** 1440
@@ -91,10 +75,6 @@ Applicable to version 1.8 and above
 Starting with version 1.8, you can configure the number of minutes that certificates are pre-dated. If you have issues with clocks on clients running late, you may increase this value.
 
 ## AppConfig:UseRequestedKeyUsages
-
-{% hint style="info" %}
-Applicable to version 1.5 and above
-{% endhint %}
 
 **Value:** _true_ or _false_
 

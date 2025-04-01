@@ -20,8 +20,6 @@ In the App Service resource of SCEPman or Certificate Master, you can check whic
 
 This is because some common .NET versions are automatically available on all Windows App Services, independently of which .NET version you select in the settings. We only lift SCEPman to a new .NET version when this version is included in this set of automatically installed .NET versions. We do this because our update mechanism via [WEBSITE\_RUN\_FROM\_PACKAGE ](../../scepman-configuration/application-settings/basics.md#website_run_from_package)does not give us any control over the .NET version setting. Hence, it actually does not matter what is configured as .NET version.
 
-As a side note, Linux App Services do not include any automatically installed .NET stacks. If you wanted to run SCEPman on a Linux App Service, you would have to configure the correct .NET version. However, the next SCEPman update could break your installation if it used a newer .NET version. This is why we do not support SCEPman on Linux App Services.
-
 ### My SCEPman App Service did not work on 2024-11-27 and it ceased to work completely since 2024-12-16 after is has been working with no issues for many years
 
 We are shutting down the deprecated SCEPman artifacts repository [https://github.com/glueckkanja/gk-scepman](https://github.com/glueckkanja/gk-scepman) after over three years of moving artifacts to the new location [https://github.com/scepman/install](https://github.com/scepman/install). On Wednesday, 2024-11-27, we temporarily disabled the old location to make users aware of the permanent shutdown on Monday, 2024-12-16.

@@ -1,14 +1,10 @@
 # Static Validation
 
 {% hint style="info" %}
-These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](../).
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [SCEPman Settings](../).
 {% endhint %}
 
 ## AppConfig:StaticValidation:Enabled
-
-{% hint style="info" %}
-Applicable to version 1.6 and above
-{% endhint %}
 
 **Value:** _true_ or _false_
 

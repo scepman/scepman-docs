@@ -1,7 +1,11 @@
 # Static-AAD Validation
 
+{% hint style="warning" %}
+SCEPman Enterprise customers only
+{% endhint %}
+
 {% hint style="info" %}
-These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](../).
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [SCEPman Settings](../).
 {% endhint %}
 
 ## AppConfig:StaticAADValidation:Enabled

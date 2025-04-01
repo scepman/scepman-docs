@@ -1,11 +1,11 @@
 # Certificate Master
 
-{% hint style="info" %}
-These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](./).
-
-Applicable to version 2.0 and above
-
+{% hint style="warning" %}
 SCEPman Enterprise Edition only
+{% endhint %}
+
+{% hint style="info" %}
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [SCEPman Settings](./).
 {% endhint %}
 
 ## AppConfig:CertMaster:URL

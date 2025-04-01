@@ -1,4 +1,4 @@
-# CBA for RDP
+# Certificate Based Authentication for RDP
 
 You can use SCEPman to issue Smart Card Login certificates to your users. By enrolling them to Windows Hello for Business (_Microsoft Passport Key Storage Provider_) they can use these certificates to authenticate to on premises resources using their Hello PIN or biometric options.
 
@@ -122,7 +122,7 @@ The URI with the SID is necessary to have a [Strong Certificate Mapping](../../.
 
 <details>
 
-<summary>SCEP Server URLs: Open the SCEPman portal and copy the URL of <a href="cba-for-rdp.md#device-certificates">Intune MDM</a></summary>
+<summary>SCEP Server URLs: Open the SCEPman portal and copy the URL of <a href="certificate-based-authentication-for-rdp.md#device-certificates">Intune MDM</a></summary>
 
 
 

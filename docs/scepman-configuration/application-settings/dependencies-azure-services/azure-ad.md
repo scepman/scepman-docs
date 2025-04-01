@@ -1,7 +1,7 @@
 # Microsoft Entra ID (Azure AD)
 
 {% hint style="info" %}
-These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](../).
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [SCEPman Settings](../).
 {% endhint %}
 
 ## AppConfig:AuthConfig:ApplicationId

@@ -1,7 +1,7 @@
 # CRL
 
 {% hint style="info" %}
-These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](./).
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [SCEPman Settings](./).
 {% endhint %}
 
 For a general comparison of techniques to control certificate validity, have a look into [our blog article](https://www.glueckkanja.com/blog/products/2023/05/certificate-revocation-en/).

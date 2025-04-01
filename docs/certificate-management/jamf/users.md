@@ -1,9 +1,5 @@
 # Users
 
-{% hint style="info" %}
-This feature requires version **1.9** or above.
-{% endhint %}
-
 Please follow this guide to distribute certificates to users. User certificates are possible on computers (macOS) as well as devices (e.g.: iOS, iPadOS). Before deploying the first certificates via Jamf, follow the [general steps for Jamf](general.md) first.
 
 {% hint style="success" %}

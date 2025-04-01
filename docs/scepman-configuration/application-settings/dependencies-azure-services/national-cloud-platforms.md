@@ -1,9 +1,7 @@
 # National Cloud Platforms
 
 {% hint style="info" %}
-These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](../).
-
-Applicable to version 2.0 and above
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [SCEPman Settings](../).
 {% endhint %}
 
 If you want to run SCEPman in a government / national cloud environment like GCC High, GCC DoD, or 21ViaNet, you have to alter some settings. If you run SCEPman in the standard Azure environment, just leave these settings empty to use the defaults. The following settings provide you the means to configure cloud-specific URLs and values if you are not using the standard Azure environment.

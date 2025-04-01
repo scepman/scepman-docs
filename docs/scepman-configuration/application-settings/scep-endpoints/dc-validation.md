@@ -1,16 +1,14 @@
 # DC Validation
 
+{% hint style="warning" %}
+SCEPman Enterprise Edition only
+{% endhint %}
+
 {% hint style="info" %}
-These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [Application Settings](../).
+These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [SCEPman Settings](../).
 {% endhint %}
 
 ## AppConfig:DCValidation:Enabled
-
-{% hint style="info" %}
-Applicable to version 1.6 and above
-
-SCEPman Enterprise Edition only
-{% endhint %}
 
 **Value:** _true_ or _false_
 
@@ -20,12 +18,6 @@ SCEPman Enterprise Edition only
 
 ## AppConfig:DCValidation:RequestPassword
 
-{% hint style="info" %}
-Applicable to version 1.6 and above
-
-SCEPman Enterprise Edition only
-{% endhint %}
-
 **Value:** _String_
 
 **Description:** A challenge password that the Domain Controllers must include in every SCEP request to acquire a certificate. Only used if AppConfig:DCValidation:Enabled is set to _true_.
@@ -33,12 +25,6 @@ SCEPman Enterprise Edition only
 We recommend to define this setting as Secret in Azure Key Vault. The Secret must have the name _AppConfig--DCValidation--RequestPassword_.
 
 ## AppConfig:DCValidation:ValidityPeriodDays
-
-{% hint style="info" %}
-Applicable to version 1.7 and above
-
-SCEPman Enterprise Edition only
-{% endhint %}
 
 **Value:** Positive _Integer_
 
@@ -48,8 +34,6 @@ SCEPman Enterprise Edition only
 
 {% hint style="info" %}
 Applicable to version 2.3 and above
-
-SCEPman Enterprise Edition only
 {% endhint %}
 
 **Value:** _true_ or _false_ (default)

@@ -1,9 +1,5 @@
 # Mosyle
 
-{% hint style="info" %}
-This feature requires version 1.6 or above.
-{% endhint %}
-
 SCEPman can be connected to [Mosyle](https://mosyle.com/) as an External CA using SCEPman's static interface and a challenge password enrolled devices will be able to obtain certificates.
 
 For more general information about other MDM solutions and SCEPman integration please check [here](./).
