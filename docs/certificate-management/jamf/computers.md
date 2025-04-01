@@ -1,9 +1,9 @@
 # Computers
 
-Please follow this guide to distribute certificates to computers (macOS). Before deploying the first certificates via Jamf, follow the [general steps for Jamf](general.md) first.
+Please follow this guide to distribute certificates to computers (macOS). Before deploying the first certificates via Jamf Pro, follow the [general steps for Jamf Pro](general.md) first.
 
 {% hint style="success" %}
-We strongly recommend configuring all use-case relevant certificate payloads (trusted certificate / SCEP certificate) in a **single** Configuration Profile in Jamf.
+We strongly recommend configuring all use-case relevant certificate payloads (trusted certificate / SCEP certificate) in a **single** Configuration Profile in Jamf Pro.
 {% endhint %}
 
 ## SCEPman Root Certificate
@@ -38,7 +38,7 @@ Please adjust other options on your needs.
 
 ## Output on the Client
 
-Besides reporting on Jamf, you can easily verify the distribution of SCEPman Root Certificate and Device Certificate via "Keychain Access" on the desired client (under "System"):
+Besides reporting on Jamf Pro, you can easily verify the distribution of SCEPman Root Certificate and Device Certificate via "Keychain Access" on the desired client (under "System"):
 
 ![SCEPman Root Certificate](<../../.gitbook/assets/image (31).png>)
 

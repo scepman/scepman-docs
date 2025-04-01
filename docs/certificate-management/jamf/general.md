@@ -1,14 +1,10 @@
 # General Configuration
 
-{% hint style="info" %}
-This feature requires version **1.7** or above.
-{% endhint %}
-
-SCEPman can be connected to Jamf as External CA. Via SCEPman's static interface and a challenge password enrolled devices will be able to obtain certificates. In addition, Jamf acts as SCEP Proxy for configuration profiles. So, Jamf proxies the communication between SCEPman and your devices.
+SCEPman can be connected to Jamf Pro as an External CA via a SCEPman's dedicated Jamf endpoint allowing enrolled users and devices to obtain certificates. Jamf Pro acts as a SCEP Proxy, proxing communication between SCEPman and Jamf Pro devices.
 
 ## Enable Jamf Integration
 
-Jamf integration of SCEPman can be easily enabled via the following environment variables on SCEPman app service **(the one without -cm in the name)**:
+Jamf integration of SCEPman can be easily enabled via the following environment variables on **SCEPman app service**:
 
 | Setting                                                                                                                                                                                              | Description                                                                                                                                                                                                                                                       | Example                     |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
@@ -27,7 +23,7 @@ SCEPman needs to be connected to the Jamf API to check the status of onboarded c
 * Read Computers
 * Read User
 
-&#x20;Please define the following environment variables:
+&#x20;Please define the following environment variables in your **SCEPman App Service**:
 
 | Setting                                                                                                                                                             | Description                                                                                                                                                                                                                               | Example                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -41,11 +37,11 @@ Jamf Pro's Classic API supports Bearer Authentication since version 10.35.0. The
 
 ## External CA Connection
 
-Open Jamf settings and choose "PKI Certificates" under "Global Management":
+Open Jamf Pro settings and choose "PKI Certificates" under "Global Management":
 
 ![](<../../.gitbook/assets/image (23).png>)
 
-Switch to tab "Management Certificate Template", "External CA" and activate edit mode. Please enable Jamf as "SCEP Proxy for configuration profiles":
+Switch to tab "Management Certificate Template", "External CA" and activate edit mode. Please enable Jamf Pro as "SCEP Proxy for configuration profiles":
 
 ![](<../../.gitbook/assets/image (26).png>)
 
