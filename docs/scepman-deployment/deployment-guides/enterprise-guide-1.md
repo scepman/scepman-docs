@@ -33,16 +33,11 @@ Keep in mind that you need to plan a useful Azure resource design.
 
 All these resources are recommended for a production environment.
 
-| Type                    | Description                                                                                                                                                                                                                                                                                                    |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| App Service(s)          | <p>A virtual Azure environment to run the SCEPman Core and Cert Master applications and provides a UI to configure different<br>application specific settings like CNAME, SSL certificate and App Settings.</p>                                                                                                |
-| App Service Plan        | <p>A virtual set of compute resources and configurations for the "App Service(s)".</p><p>Here you can configure the pricing tier and resource scaling.</p>                                                                                                                                                     |
-| Key Vault               | <p>Tool to securely store secrets and certificates. The SCEPman application</p><p>will generate and save the root certificate in your Key Vault.</p>                                                                                                                                                           |
-| Application Insights    | <p>Application Performance Management (APM) tool to get insights of the</p><p>SCEPman applications and requests. Needed to measure performance</p><p>and good for service optimization.</p>                                                                                                                    |
-| Storage account         | <p>Storage platform used by SCEPman's Certificate Master component to store certain attributes of the manually issued TLS server certificates for revocation purposes.<br><br><em>Optional:</em></p><p>The "App Service" will load the artifacts from a blob storage URI if manual updates are configured.</p> |
-| Log Analytics workspace | <p>A centralized and cloud-based log storage. The "App Service" will save all</p><p>platform logs and metrics into this workspace.</p>                                                                                                                                                                         |
+<table><thead><tr><th width="374">Type</th><th>Description</th></tr></thead><tbody><tr><td>App Service(s)</td><td>A virtual Azure environment to run the SCEPman Core and Cert Master applications and provides a UI to configure different<br>application specific settings like CNAME, SSL certificate and App Settings.</td></tr><tr><td>App Service Plan</td><td><p>A virtual set of compute resources and configurations for the "App Service(s)".</p><p>Here you can configure the pricing tier and resource scaling.</p></td></tr><tr><td>Key Vault</td><td><p>Tool to securely store secrets and certificates. The SCEPman application</p><p>will generate and save the root certificate in your Key Vault.</p></td></tr><tr><td>Application Insights</td><td><p>Application Performance Management (APM) tool to get insights of the</p><p>SCEPman applications and requests. Needed to measure performance</p><p>and good for service optimization.</p></td></tr><tr><td>Storage account</td><td><p>Storage platform used by SCEPman's Certificate Master component to store certain attributes of the manually issued TLS server certificates for revocation purposes.<br><br><em>Optional:</em></p><p>The "App Service" will load the artifacts from a blob storage URI if manual updates are configured.</p></td></tr><tr><td>Log Analytics workspace</td><td><p>A centralized and cloud-based log storage. The App Service will save all</p><p>platform logs and metrics into this workspace</p></td></tr></tbody></table>
 
 Additionally, if you are using Private Endpoints, you have [seven more Azure Resources.](../../azure-configuration/private-endpoints.md#azure-resources-used-for-private-endpoints)
+
+{% include "../../.gitbook/includes/private-endpoint-resources.md" %}
 
 ## Configuration Steps
 
@@ -70,7 +65,7 @@ or alternatively our **Terraform** script:
 This is a **mandatory** step.
 {% endhint %}
 
-To properly link all components of SCEPman 2.X, several permissions need to be assigned. Please follow these steps to establish the relevant connections:
+To properly link all components of SCEPman, several permissions need to be assigned. Please follow these steps to establish the relevant connections:
 
 {% content-ref url="../../scepman-configuration/post-installation-config.md" %}
 [post-installation-config.md](../../scepman-configuration/post-installation-config.md)
@@ -82,7 +77,7 @@ To properly link all components of SCEPman 2.X, several permissions need to be a
 This is a **mandatory** step.
 {% endhint %}
 
-After the deployment and persmission assignment is complete, you need to create the root certificate for SCEPman:
+After the deployment and permission assignment is complete, you need to create the root certificate for SCEPman:
 
 {% content-ref url="../../scepman-configuration/first-run-root-cert.md" %}
 [first-run-root-cert.md](../../scepman-configuration/first-run-root-cert.md)
@@ -106,7 +101,7 @@ To have your SCEPman available under your specific domain you need to create a *
 This is an **optional** step.
 {% endhint %}
 
-By default, SCEPman's update strategy is configured to the [Evergreen approach](../../update-strategy.md#evergreen-approach) / auto-updates. In case you require full control over your SCEPman updates, please configure a deployment slot as described in the following guide under section **Deployment Slot Configuration**.
+By default, SCEPman adopts an [evergreen approach](../../update-strategy.md#evergreen-approach) towards updates. In case you require full control over your SCEPman updates, please configure a deployment slot as described in the following guide under section **Deployment Slot Configuration**.
 
 {% content-ref url="../../update-strategy.md" %}
 [update-strategy.md](../../update-strategy.md)
@@ -130,13 +125,13 @@ The Application Insights can be used to get an overview of the App Service perfo
 This is **recommended** step.
 {% endhint %}
 
-We can configure a Health Check for the App Service to get direct notifications in case that the SCEPman stops working.
+Health Checks can be configured to notify administrators in the event the SCEPman App Service is unresponsive.
 
 {% content-ref url="../../azure-configuration/health-check/" %}
 [health-check](../../azure-configuration/health-check/)
 {% endcontent-ref %}
 
-### Step 8: Ensure that SCEPman has sufficient Resources
+### Step 8: Ensure that SCEPman has sufficient resources
 
 {% hint style="warning" %}
 This is a **mandatory** step.
@@ -176,8 +171,8 @@ This is an **optional** step.
 
 ### Step 11: Configure your MDM Deployment Profiles
 
-{% hint style="warning" %}
-This is a **mandatory** step.
+{% hint style="success" %}
+This is a **recommended** step.
 {% endhint %}
 
 With the completion of the above steps, we have a working SCEPman implementation and can now deploy certificates to the devices.
@@ -192,6 +187,10 @@ Please use one (or more) of the following articles, to deploy certificates with 
 [jamf](../../certificate-management/jamf/)
 {% endcontent-ref %}
 
+{% content-ref url="../../certificate-management/static-certificates/" %}
+[static-certificates](../../certificate-management/static-certificates/)
+{% endcontent-ref %}
+
 ### Step 12: Issue TLS Server Certificates or sign CSRs using Cert Master
 
 {% hint style="info" %}
@@ -202,4 +201,16 @@ Please follow below link, to learn how to issue TLS server certificates based on
 
 {% content-ref url="../../certificate-management/certificate-master/" %}
 [certificate-master](../../certificate-management/certificate-master/)
+{% endcontent-ref %}
+
+### Step 13: Issue Certificates using the Enrollment REST API
+
+{% hint style="info" %}
+This is an **optional** step.
+{% endhint %}
+
+SCEPman features a REST API to enroll certificates. This is an alternative to the SCEP endpoints that require the SCEP-style of authentication, while the REST API uses Microsoft Identities for authentication. The protocol is also much simpler than SCEP.
+
+{% content-ref url="../../certificate-management/api-certificates/" %}
+[api-certificates](../../certificate-management/api-certificates/)
 {% endcontent-ref %}
