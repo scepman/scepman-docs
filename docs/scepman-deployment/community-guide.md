@@ -25,16 +25,11 @@ Keep in mind that you need to plan a useful Azure resource design.
 
 All these resources are recommended for a production environment.
 
-| Type                    | Description                                                                                                                                                                                                                                                                                                    |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| App Service(s)          | <p>A virtual Azure environment to run the SCEPman Core and Cert Master applications and provides a UI to configure different<br>application specific settings like CNAME, SSL certificate and App Settings.</p>                                                                                                |
-| App Service Plan        | <p>A virtual set of compute resources and configurations for the "App Service(s)".</p><p>Here you can configure the pricing tier and resource scaling.</p>                                                                                                                                                     |
-| Key Vault               | <p>Tool to securely store secrets and certificates. The SCEPman application</p><p>will generate and save the root certificate in your Key Vault.</p>                                                                                                                                                           |
-| Application Insights    | <p>Application Performance Management (APM) tool to get insights of the</p><p>SCEPman applications and requests. Needed to measure performance</p><p>and good for service optimization.</p>                                                                                                                    |
-| Storage account         | <p>Storage platform used by SCEPman's Certificate Master component to store certain attributes of the manually issued TLS server certificates for revocation purposes.<br><br><em>Optional:</em></p><p>The "App Service" will load the artifacts from a blob storage URI if manual updates are configured.</p> |
-| Log Analytics workspace | <p>A centralized and cloud-based log storage. The "App Service" will save all</p><p>platform logs and metrics into this workspace.</p>                                                                                                                                                                         |
+{% include "../.gitbook/includes/scepman-azure-resources.md" %}
 
 Additionally, if you are using Private Endpoints, you have [seven more Azure Resources.](../azure-configuration/private-endpoints.md#azure-resources-used-for-private-endpoints)
+
+{% include "../.gitbook/includes/private-endpoint-resources.md" %}
 
 ## Configuration Steps
 
@@ -56,7 +51,7 @@ To start with the deployment, please follow our deployment instructions:
 This is a **mandatory** step.
 {% endhint %}
 
-To properly link all components of SCEPman 2.X, several permissions need to be assigned. Please follow these steps to establish the relevant connections:
+To properly link all components of SCEPman 2, several permissions need to be assigned. Please follow these steps to establish the relevant connections:
 
 {% content-ref url="../scepman-configuration/post-installation-config.md" %}
 [post-installation-config.md](../scepman-configuration/post-installation-config.md)
@@ -92,7 +87,7 @@ To have your SCEPman available under your specific domain you need to create a *
 This is an **optional** step.
 {% endhint %}
 
-By default, SCEPman's update strategy is configured to the [Evergreen approach](../update-strategy.md#evergreen-approach) / auto-updates. In case you require full control over your SCEPman updates, please configure a deployment slot as described in the following guide under section **Deployment Slot Configuration**.
+By default, SCEPman adopts an [evergreen approach](../update-strategy.md#evergreen-approach) towards updates. In case you require full control over your SCEPman updates, please configure a deployment slot as described in the following guide under section **Deployment Slot Configuration**.
 
 {% content-ref url="../update-strategy.md" %}
 [update-strategy.md](../update-strategy.md)
@@ -136,8 +131,8 @@ Once you move SCEPman into a production environment, you should ensure that SCEP
 
 ### Step 9: Configure your MDM Deployment Profiles
 
-{% hint style="warning" %}
-This is a **mandatory** step.
+{% hint style="success" %}
+This is a **recommended** step.
 {% endhint %}
 
 With the completion of the above steps, we have a working SCEPman implementation and can now deploy certificates to the devices.
@@ -150,6 +145,10 @@ Please use one (or more) of the following articles, to deploy certificates with 
 
 {% content-ref url="../certificate-management/jamf/" %}
 [jamf](../certificate-management/jamf/)
+{% endcontent-ref %}
+
+{% content-ref url="../certificate-management/static-certificates/" %}
+[static-certificates](../certificate-management/static-certificates/)
 {% endcontent-ref %}
 
 ### Step 10: Manually issue Certificates or sign CSRs using Cert Master
