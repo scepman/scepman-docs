@@ -107,8 +107,8 @@ Customers can calculate the needed number of subscription "users" for SCEPman En
 These special use cases are:
 
 * **Users without IT identity**\
-  Devices that are used by more than one user, where the users do not have an IT account (like Azure AD or JAMF).
-  * Example: A supermarket has a staff of 1,000 people. The staff does not work with PCs and does not have an Azure AD account. They share 400 barcode scanner devices. SCEPman issues device certificates to the barcode scanners only.\
+  Devices that are used by more than one user, where the users do not have an IT account (like Entra ID or Jamf Pro).
+  * Example: A supermarket has a staff of 1,000 people. The staff does not work with PCs and does not have an Entra ID account. They share 400 barcode scanner devices. SCEPman issues device certificates to the barcode scanners only.\
     Needed subscription: 400 "users"
 * **Device Sharing**\
   Environments where the ratio between devices and users is < 0,5.
