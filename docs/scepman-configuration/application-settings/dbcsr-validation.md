@@ -12,25 +12,33 @@ These settings should only be applied to the SCEPman App Service, not the Certif
 
 ## AppConfig:DbCSRValidation:Enabled
 
+_Linux: AppConfig\_\_DbCSRValidation\_\_Enabled_
+
 **Value:** _true_ or _false_ (default)
 
 **Description:** This is a REST API endpoint that custom scripts and processes can use. See [our article on how to use the REST API](../../certificate-management/api-certificates/) for details.
 
 ## AppConfig:DbCSRValidation:ValidityPeriodDays
 
+_Linux: AppConfig\_\_DbCSRValidation\_\_ValidityPeriodDays_
+
 **Value:** Positive Integer
 
-**Description:** This setting further reduces the global ValidityPeriodDays for the REST API endpoint. For example, you may define a value like 365 days here and set the global AppConfig:ValidityPeriodDays to 730. Then, certificates issued through the API will have one year validity, while certificates issued through other endpoints may be valid up to two years.
+**Description:** This setting further reduces the global ValidityPeriodDays for the REST API endpoint. For example, you may define a value like 365 days here and set the global [AppConfig:ValidityPeriodDays](dbcsr-validation.md#appconfig-dbcsrvalidation-validityperioddays) to 730. Then, certificates issued through the API will have one year validity, while certificates issued through other endpoints may be valid up to two years.
 
 Additionally, you can include an extension in your PKCS#10 requests to enroll certificates with a specific individual validity that is lower than the one configured here.
 
 ## AppConfig:DbCSRValidation:AllowRenewals
 
+_Linux: AppConfig\_\_DbCSRValidation\_\_AllowRenewals_
+
 **Value:** _true_ or _false_ (default)
 
-**Description:** This allows using the EST "simplereenroll" endpoint, enabling [certificate renewal using mTLS](https://docs.scepman.com/certificate-deployment/api-certificates/api-enrollment#id-2.-app-service-settings). It works only for certificate types added to AppConfig:DbCSRValidation:ReenrollmentAllowedCertificateTypes.
+**Description:** This allows using the EST "simplereenroll" endpoint, enabling [certificate renewal using mTLS](https://docs.scepman.com/certificate-deployment/api-certificates/api-enrollment#id-2.-app-service-settings). It works only for certificate types added to [AppConfig:DbCSRValidation:ReenrollmentAllowedCertificateTypes.](dbcsr-validation.md#appconfig-dbcsrvalidation-reenrollmentallowedcertificatetypes)
 
 ## AppConfig:DbCSRValidation:ReenrollmentAllowedCertificateTypes
+
+_Linux: AppConfig\_\_DbCSRValidation\_\_ReenrollmentAllowedCertificateTypes_
 
 **Value:** Comma-separated list of certificate types from this list:
 

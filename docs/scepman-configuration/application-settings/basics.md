@@ -6,12 +6,16 @@ These settings should only be applied to the SCEPman App Service, not the Certif
 
 ## AppConfig:AnonymousHomePageAccess
 
+_Linux: AppConfig\_\_AnonymousHomePageAccess_
+
 **Value:** _true_ or _false_
 
 **Description:**\
 When not configured or set to **true**, anyone on the internet knowing the app service's URL can access the SCEPman Homepage and see status information like the SCEPman version and whether SCEPman is up and running (except if you prevent this with a firewall). We consider this non-sensitive information, but if you want to hide it, set this to **false**. Then, the homepage is deactivated for browser access and this information is not visible anymore.
 
 ## AppConfig:BaseUrl
+
+_Linux: AppConfig\_\_BaseUrl_
 
 **Value:** _App Service Name_ or [https://customcname.domain.com](https://customcname.domain.com)
 
@@ -20,12 +24,16 @@ This defines the public OCSP endpoint URL for the certificates. By default, the 
 
 ## AppConfig:LicenseKey
 
+_Linux: AppConfig\_\_LicenseKey_
+
 **Value:** _empty_ **or** _license key_
 
 **Description:**\
 If you are using a trial deployment or the community edition this field leaves empty. After you purchased the Enterprise Edition you will receive a license key from us, then you can insert this key into this setting.
 
 ## AppConfig:RemoteDebug
+
+_Linux: AppConfig\_\_RemoteDebug_
 
 **Value:** _Date_ or _false_
 
@@ -42,6 +50,8 @@ Do not forget to restart SCEPman App Service after enabling and saving the setti
 
 ## AppConfig:CertificateStorage:TableStorageEndpoint
 
+_Linux: AppConfig\_\_CertificateStorage\_\_TableStorageEndpoint_
+
 This defines which Table Storage Endpoint to use for checking manual certificate revocations. If you remove this setting, SCEPman will not use the database for revocation checks.
 
 {% hint style="danger" %}
@@ -49,6 +59,8 @@ Changes can harm your service!
 {% endhint %}
 
 ## AppConfig:EnableCertificateStorage
+
+_Linux: AppConfig\_\_EnableCertificateStorage_
 
 {% hint style="info" %}
 Applicable to version 2.8 and above
@@ -59,6 +71,8 @@ Applicable to version 2.8 and above
 **Description:** When requesting certificates, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_ and when this setting is not explicitly overridden with _false_ for the specific endpoint. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically depending on the specific SCEP endpoint used for enrollment. If set to _false_ or not set, SCEPman will only store issued certificates for those endpoints where certificate storage has been explicitly enabled. If a certificate is not stored, they are visible only in the logs or if the SCEP client stores them somewhere.
 
 ## AppConfig:SCEPResponseEncryptionAlgorithm
+
+_Linux: AppConfig\_\_SCEPResponseEncryptionAlgorithm_
 
 The algorithm used to encrypt SCEP responses. Reasonable values include "2.16.840.1.101.3.4.1.42" for AES-256-CBC (the default) and "2.16.840.1.101.3.4.1.2" for AES-128-CBC.
 

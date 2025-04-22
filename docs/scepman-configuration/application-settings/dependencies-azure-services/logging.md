@@ -8,6 +8,8 @@ Applicable to version 2.4 and above
 
 ## AppConfig:LoggingConfig:WorkspaceId
 
+_Linux: AppConfig\_\_LoggingConfig\_\_WorkspaceId_
+
 **Value:** Guid
 
 **Description:**
@@ -16,15 +18,19 @@ The WorkspaceID of your Log Analytics Workspace (shown in the Overview of the wo
 
 ## AppConfig:LoggingConfig:SharedKey
 
+_Linux: AppConfig\_\_LoggingConfig\_\_SharedKey_
+
 **Value:** String
 
 **Description:**
 
-Use one of the two keys for the Log Analytics Workspace. They are displayed if you access the Log Analytics Workspace on portal.azure.com and navigate to Settings/Agents, where you can unfold the "Log Analytics agent instructions" section. Use either the Primary or the Secondary key.
+Use one of the two keys for the Log Analytics Workspace. They are displayed if you access your SCEPman Log Analytics Workspace and navigate to Settings/Agents, where you can unfold the "Log Analytics agent instructions" section. Use either the Primary or the Secondary key.
 
 This is a required setting if you want to use Azure Monitor, together with WorkspaceId.
 
 ## AppConfig:LoggingConfig:AzureOfferingDomain
+
+_Linux: AppConfig\_\_LoggingConfig\_\_AzureOfferingDomain_
 
 **Value:** String
 
@@ -38,6 +44,8 @@ Changes can harm your service!
 
 ## AppConfig:LoggingConfig:LogLevel
 
+_Linux: AppConfig\_\_LoggingConfig\_\_LogLevel_
+
 **Value:** _Trace_, _Debug_, _Info_, _Warn_, _Error_, or _Fatal_
 
 **Description:**
@@ -48,6 +56,8 @@ Note that if you configure this setting to 'Trace' or 'Debug', log output might 
 
 ## AppConfig:LoggingConfig:AzureEventHubConnectionString
 
+_Linux: AppConfig\_\_LoggingConfig\_\_AzureEventHubConnectionString_
+
 {% hint style="info" %}
 Logging to Azure Event Hub is possible in version 2.5 and above
 {% endhint %}
@@ -56,9 +66,11 @@ Logging to Azure Event Hub is possible in version 2.5 and above
 
 **Description:**
 
-The connection string to your Azure Event Hub. If you want to use Azure Event Hub, you must either configure this setting or AppConfig:LoggingConfig:AzureEventHubServiceUri. If you use AzureEventHubConnectionString, it must include the authentication information.
+The connection string to your Azure Event Hub. If you want to use Azure Event Hub, you must either configure this setting or [AppConfig:LoggingConfig:AzureEventHubServiceUri](logging.md#appconfig-loggingconfig-azureeventhubserviceuri). If you use AzureEventHubConnectionString, it must include the authentication information.
 
 ## AppConfig:LoggingConfig:AzureEventHubName
+
+_Linux: AppConfig\_\_LoggingConfig\_\_AzureEventHubName_
 
 {% hint style="info" %}
 Logging to Azure Event Hub is possible in version 2.5 and above
@@ -72,6 +84,8 @@ The name of your Azure Event Hub. This is a required setting if you want to use 
 
 ## AppConfig:LoggingConfig:AzureEventHubPartitionKey
 
+_Linux: AppConfig\_\_LoggingConfig\_\_AzureEventHubPartitionKey_
+
 {% hint style="info" %}
 Logging to Azure Event Hub is possible in version 2.5 and above
 {% endhint %}
@@ -84,10 +98,12 @@ The partition key of your Azure Event Hub. Setting this is optional. If you don'
 
 ## AppConfig:LoggingConfig:AzureEventHubServiceUri
 
+_Linux: AppConfig\_\_LoggingConfig\_\_AzureEventHubServiceUri_
+
 {% hint style="info" %}
 Logging to Azure Event Hub with Managed Identity is possible in version 2.8 and above
 {% endhint %}
 
 **Value:** String
 
-Description: The Service URI of the Azure Event Hub. If you want to use Azure Event Hub, you must either configure this setting or AppConfig:LoggingConfig:AzureEventHubConnectionString. If you use AzureEventHubServiceUri, SCEPman/Certificate Master will authenticate with its Managed Identity to the Azure Event Hub Service.
+Description: The Service URI of the Azure Event Hub. If you want to use Azure Event Hub, you must either configure this setting or [AppConfig:LoggingConfig:AzureEventHubConnectionString](logging.md#appconfig-loggingconfig-azureeventhubconnectionstring). If you use AzureEventHubServiceUri, SCEPman/Certificate Master will authenticate with its Managed Identity to the Azure Event Hub Service.

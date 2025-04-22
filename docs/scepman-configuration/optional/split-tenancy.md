@@ -22,7 +22,7 @@ In the following, we refer to the hosting tenant as **home tenant,** while to th
 
 2. Navigate to the SCEPman **App service** and then to "Settings" --> "Environment variables". Locate the following parameters and **delete** them:
 
-|                                                                 |
+| Environment Variables                                           |
 | --------------------------------------------------------------- |
 | `AppConfig:AuthConfig:ManagedIdentityEnabledForWebsiteHostname` |
 | `AppConfig:AuthConfig:ManagedIdentityEnabledOnUnixTime`         |
@@ -40,7 +40,7 @@ The **client secret** generated as part of this **App registration** has an expi
 
 **Create** the following new environment variables if you haven't done that already during creation of the app registration:
 
-<table><thead><tr><th width="395">Name</th><th>Value</th></tr></thead><tbody><tr><td><code>AppConfig:AuthConfig:ApplicationId</code></td><td>GUID of the <strong>App registration</strong> that was created before <strong>(target tenant)</strong> .</td></tr><tr><td><code>AppConfig:AuthConfig:TenantId</code></td><td>Tenant ID of the <strong>target tenant</strong>.</td></tr><tr><td><code>AppConfig:AuthConfig:ApplicationKey</code></td><td><strong>Value</strong> of the <strong>Client secret</strong> that was created as part of the <strong>App registration</strong> in the <strong>target tenant</strong>.</td></tr></tbody></table>
+<table><thead><tr><th width="395">Name</th><th>Value</th></tr></thead><tbody><tr><td><code>AppConfig:AuthConfig:ApplicationId</code></td><td>GUID of the <strong>App registration</strong> that was created before <strong>(target tenant).</strong></td></tr><tr><td><code>AppConfig:AuthConfig:TenantId</code></td><td>Tenant ID of the <strong>target tenant</strong>.</td></tr><tr><td><code>AppConfig:AuthConfig:ApplicationKey</code></td><td><strong>Value</strong> of the <strong>Client secret</strong> that was created as part of the <strong>App registration</strong> in the <strong>target tenant</strong>.</td></tr></tbody></table>
 
 5. Apply the changes.
 6. Restart the SCEPman **App service**.

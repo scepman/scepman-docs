@@ -1,10 +1,8 @@
 # Basics
 
-{% hint style="info" %}
-This area is under construction!
-{% endhint %}
-
 ## AppConfig:SCEPman:URL
+
+_Linux: AppConfig\_\_SCEPman\_\_URL_
 
 **Value:** String (URL)
 
@@ -12,6 +10,8 @@ This area is under construction!
 This is the URL of the SCEPman instance that belongs to this Certificate Master. If you have a geo-redundant setup, this should be the URL of the SCEPman App Service nearest to Certificate Master. Certificate Master will submit certificate requests to this SCEPman instance for signing.
 
 ## AppConfig:IntuneCertificateSearchStrategy
+
+_Linux: AppConfig\_\_IntuneCertificateSearchStrategy_
 
 **Value:** _Management_, _Reporting_, or _CombineManagementAndReporting_
 
@@ -24,6 +24,8 @@ Changes can harm your service!
 
 ## AppConfig:AzureStorage:TableStorageEndpoint
 
+_Linux: AppConfig\_\_AzureStorage\_\_TableStorageEndpoint_
+
 This defines which Table Storage Endpoint to use to store certificate information.
 
 {% hint style="danger" %}
@@ -31,6 +33,8 @@ Changes can harm your service!
 {% endhint %}
 
 ## AppConfig:RemoteDebug
+
+_Linux: AppConfig\_\_RemoteDebug_
 
 **Value:** _Date_ or _false_
 

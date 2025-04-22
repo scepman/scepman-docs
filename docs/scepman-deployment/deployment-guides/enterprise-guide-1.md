@@ -47,6 +47,8 @@ Additionally, if you are using Private Endpoints, you have [seven more Azure Res
 This is a **mandatory** step.
 {% endhint %}
 
+Make your choice on whether you'd like to deploy with a Windows or Linux App Service Plan. Both deployment methods will allow you to choose your Operating System.
+
 To start with the deployment, you need to follow our setup instructions leveraging an **ARM Template**
 
 {% content-ref url="../../scepman-configuration/deployment-options/enterprise-deployment.md" %}

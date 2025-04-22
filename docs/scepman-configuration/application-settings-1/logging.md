@@ -6,13 +6,17 @@ Applicable to version 2.4 and above
 
 ## AppConfig:LoggingConfig:WorkspaceId
 
+_Linux: AppConfig\_\_LoggingConfig\_\_WorkspaceId_
+
 **Value:** Guid
 
 **Description:**
 
-The WorkspaceID of your Log Analytics Workspace (shown in the Overview of the workspace). This is a required setting if you want to use Azure Monitor, together with SharedKey.
+The WorkspaceID of your Log Analytics Workspace (shown in the Overview of the workspace). This is a required setting if you want to use Azure Monitor, together with [SharedKey](logging.md#appconfig-loggingconfig-sharedkey).
 
 ## AppConfig:LoggingConfig:SharedKey
+
+_Linux: AppConfig\_\_LoggingConfig\_\_SharedKey_
 
 **Value:** String
 
@@ -28,6 +32,8 @@ SCEPman Certificate Master does not support storing configuration values in Key 
 
 ## AppConfig:LoggingConfig:AzureOfferingDomain
 
+_Linux: AppConfig\_\_LoggingConfig\_\_AzureOfferingDomain_
+
 **Value:** String
 
 **Description:**
@@ -40,6 +46,8 @@ Changes can harm your service!
 
 ## AppConfig:LoggingConfig:LogLevel
 
+_Linux: AppConfig\_\_LoggingConfig\_\_LogLevel_
+
 **Value:** Trace, Debug, Info, Warn, Error, Fatal
 
 **Description:**
@@ -49,6 +57,8 @@ The minimum log level to be logged. The default is 'Info'. Only log entries with
 Note that if you configure this setting to 'Trace' or 'Debug', log output might contain personal data like UPNs or IP addresses of users. If you want to avoid personal data in the log output, you should configure this setting to 'Info' or higher.
 
 ## AppConfig:LoggingConfig:AzureEventHubConnectionString
+
+_Linux: AppConfig\_\_LoggingConfig\_\_AzureEventHubConnectionString_
 
 {% hint style="info" %}
 Logging to Azure Event Hub is possible in version 2.7 and above
@@ -62,6 +72,8 @@ The connection string to your Azure Event Hub. This is a required setting if you
 
 ## AppConfig:LoggingConfig:AzureEventHubName
 
+_Linux: AppConfig\_\_LoggingConfig\_\_AzureEventHubName_
+
 {% hint style="info" %}
 Logging to Azure Event Hub is possible in version 2.7 and above
 {% endhint %}
@@ -73,6 +85,8 @@ Logging to Azure Event Hub is possible in version 2.7 and above
 The name of your Azure Event Hub. This is a required setting if you want to use Azure Event Hub.
 
 ## AppConfig:LoggingConfig:AzureEventHubPartitionKey
+
+_Linux: AppConfig\_\_LoggingConfig\_\_AzureEventHubPartitionKey_
 
 {% hint style="info" %}
 Logging to Azure Event Hub is possible in version 2.7 and above

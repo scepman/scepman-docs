@@ -7,12 +7,12 @@ To upgrade a Community Edition to an Enterprise Edition you have to add the lice
 1. Navigate to **App Services**.
 2. Then choose your SCEPman app.
 3. Next under **Settings** click **Environment variables**.
-4. Select **AppConfig:LicenseKey**.
+4. Select [**AppConfig:LicenseKey**](../../scepman-configuration/application-settings/basics.md#appconfig-licensekey).
 5. Under **Value**, enter your license key.
 
 <figure><img src="../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
 
-6. Then, Save the settings, and under Overview, restart your App Service.
+6. Then, **Save** the settings, and under Overview, **restart** your App Service.
 7. After the restart, your SCEPman instance homepage will show Enterprise Edition.
 8. Ensure that your SCEPman instance homepage shows on the left side that the Storage Account is connected (green bubble). If there are connection issues, the bubble will be red, and your OCSP responder will not work.
 
@@ -39,11 +39,11 @@ If you are using a [Private Endpoint ](../../azure-configuration/private-endpoin
 
 The SCEPman homepage does not include any sensitive information, and attackers cannot leverage the available data for malicious purposes.&#x20;
 
-However, If you prefer to hide the homepage from public access, you can do it using the setting [AppConfig setting: AnonymousHomePageAccess](../../scepman-configuration/application-settings/basics.md#appconfig-anonymoushomepageaccess)
+However, If you prefer to hide the homepage from public access, you can do it using the setting [AppConfig:AnonymousHomePageAccess](../../scepman-configuration/application-settings/basics.md#appconfig-anonymoushomepageaccess)
 
 Please ensure to restart the SCEPman _App Service_ after adding the setting.
 
-## How to change SCEPman RootCA Subject?
+## How to change SCEPman Root CA Subject?
 
 {% hint style="warning" %}
 By changing the CA Subject, you must issue a new Root CA and deploy it to all users, AND deploy all client/device certificates again. The old certificates are then no longer valid.
@@ -60,14 +60,14 @@ The name does not appear in the certificate itself and is only a reference to th
 {% endhint %}
 
 * After changing both values, save and restart the App Service
-* Navigate to your SCEPman homepage and issue a new RootCA as described [here](../../scepman-configuration/first-run-root-cert.md)
-* Download the new RootCA and upload it to your Profile, then re-deploy the client certificates again to get the new subject
+* Navigate to your SCEPman homepage and issue a new Root CA as described [here](../../scepman-configuration/first-run-root-cert.md)
+* Download the new Root CA and upload it to your Profile, then re-deploy the client certificates again to get the new subject
 
 ## How to view SCEP certificates in Intune?
 
 In order to view SCEPman issued certificates in Intune, navigate to certificates in Intune Monitor module:
 
-**Intune -> Devices -> Monitor -> Certificates**
+**Intune > Devices > Monitor > Certificates**
 
 ![](<../../.gitbook/assets/2022-07-26 11_38_54-Window.png>)
 

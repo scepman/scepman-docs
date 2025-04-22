@@ -4,10 +4,6 @@
 SCEPman Enterprise Edition only
 {% endhint %}
 
-{% hint style="info" %}
-This feature requires version **2.0** or above
-{% endhint %}
-
 You can generate X.509 server certificates including a private key via the SCEPman Certificate Master Web UI. This option allows you to easily generate a TLS certificate for multiple domain names. These certificates can then be used for web servers to enable communication via HTTPS or directory servers to enable LDAPS. Furthermore, they can be used on Active Directory Domain Controllers, but for Domain Controllers, you also have the option to issue special [Domain Controller Certificates](../domain-controller-certificates.md), which in turn can be used for LDAPS.
 
 ### Issuing a new Server Certificate

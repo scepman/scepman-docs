@@ -10,17 +10,23 @@ These settings should only be applied to the SCEPman App Service, not the Certif
 
 ## AppConfig:CertMaster:URL
 
+_Linux: AppConfig\_\_CertMaster\_\_URL_
+
 **Value:** The URL of your SCEPman Certificate Master App Service
 
 **Description:** Your Certificate Master service is linked to on the SCEPman Homepage using the URL configured here. The SCEPman PowerShell module also uses this value during updates or re-configurations to link together SCEPman and its corresponding Certificate Master instance.
 
 ## AppConfig:DirectCSRValidation:Enabled
 
+_Linux: AppConfig\_\_DirectCSRValidation\_\_Enabled_
+
 **Value:** _true_ or _false_
 
 **Description:** This endpoint is required for the Certificate Master component. You must set this to _true_ to use Certificate Master. Only Certificate Master is allowed to submit requests via this endpoint.
 
 ## AppConfig:DirectCSRValidation:ValidityPeriodDays
+
+_Linux: AppConfig\_\_DirectCSRValidation\_\_ValidityPeriodDays_
 
 **Value:** Positive _Integer_
 

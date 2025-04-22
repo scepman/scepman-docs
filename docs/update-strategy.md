@@ -33,7 +33,7 @@ The following steps give you our recommended setup for a pre-release management
 Please keep in mind that each Deployment Slot is running on the same App Service Plan of your production App and uses the same resources.
 {% endhint %}
 
-### pre-release slot
+### Pre-release slot
 
 The idea behind the pre-release slot is to have your production App Service running with artifacts stored on your own Storage account and create a new Deployment Slot pointing to our GitHub artifacts. You can find the steps for setting up your custom artifact location in the following article:
 
@@ -47,7 +47,7 @@ Now your production App Service is running with a custom artifacts location and 
 Deployment Slot requirements \*\*\*\* (via PS. SCEPman Module):
 
 * SCEPman **2.2** or above
-* PS. SCEPman-Module **1.5.1.0** or above
+* PowerShell SCEPman-Module **1.5.1.0** or above
 {% endhint %}
 
 The following CMDlet command will create a Deployment Slot and configure all required permissions for you.

@@ -6,11 +6,15 @@ These settings should only be applied to the SCEPman App Service, not the Certif
 
 ## AppConfig:AddMicrosoftAADExtensions
 
+_Linux: AppConfig\_\_AddMicrosoftAADExtensions_
+
 **Value:** _true_ (default) or _false_
 
 **Description:** Shall certificates have the extensions 1.2.840.113556.5.14 (AAD Tenant ID) and 1.2.840.113556.1.5.284.2 (AAD Device ID)?
 
 ## AppConfig:AddSidExtension
+
+_Linux: AppConfig\_\_AddSidExtension_
 
 {% hint style="info" %}
 Applicable to version 2.5 and above
@@ -28,6 +32,8 @@ Second, when enrolling user certificates through other SCEP endpoints and the CS
 
 ## AppConfig:ValidityPeriodDays
 
+_Linux: AppConfig\_\_ValidityPeriodDays_
+
 **Value:** _Integer_
 
 **Description:**\
@@ -36,23 +42,25 @@ The maximum number of days that an issued certificate is valid. By default, this
 You can configure shorter validity periods in each SCEP profile in Intune as described in the [Microsoft documentation](https://docs.microsoft.com/en-us/mem/intune/protect/certificates-scep-configure#modify-the-validity-period-of-the-certificate-template).
 
 {% hint style="warning" %}
-iOS/iPadOS and macOS devices ignore the configuration of the validity period via Intune. Therefore you need to configure this setting in SCEPman if you want to have another validity periods than 200 days for your iOS/iPadOS and macOS devices. Please read [ios.md](../../certificate-management/microsoft-intune/ios.md "mention") for further details where we recommend an higher value.
+iOS/iPadOS and macOS devices ignore the configuration of the validity period via Intune. Therefore, you need to configure this setting in SCEPman if you want to have another validity periods than 200 days for your iOS/iPadOS and macOS devices. Please read [ios.md](../../certificate-management/microsoft-intune/ios.md "mention") for further details where we recommend a higher value.
 {% endhint %}
 
 You can also configure **shorter** validity periods for each SCEP endpoint. By default, the following values are set for each endpoint:
 
-| Endpoint           | Parameter                                     | Validity in days     |
-| ------------------ | --------------------------------------------- | -------------------- |
-| Intune             | AppConfig:IntuneValidation:ValidityPeriodDays | 365                  |
-| Jamf               | \<Not set>                                    | 730 (global setting) |
-| Static             | \<Not set>                                    | 730 (global setting) |
-| Certificate Master | \<Not set>                                    | 730 (global setting) |
+| Endpoint           | Parameter                                                                                                                          | Validity in days     |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
+| Intune             | [AppConfig:IntuneValidation:ValidityPeriodDays](scep-endpoints/intune-validation.md#appconfig-intunevalidation-validityperioddays) | 365                  |
+| Jamf               | \<Not set>                                                                                                                         | 730 (global setting) |
+| Static             | \<Not set>                                                                                                                         | 730 (global setting) |
+| Certificate Master | \<Not set>                                                                                                                         | 730 (global setting) |
 
 Below image depicts how SCEPman limits the certificate validity period; first on a per-endpoint level and globally afterwards.
 
 <figure><img src="../../.gitbook/assets/SCEPman Certificate Validity.jpg" alt=""><figcaption></figcaption></figure>
 
 ## AppConfig:ConcurrentSCEPRequestLimit
+
+_Linux: AppConfig\_\_ConcurrentSCEPRequestLimit_
 
 **Value:** Positive _Integer_
 
@@ -66,6 +74,8 @@ The optimal setting depends on the performance of the App Service Plan. As a rul
 
 ## AppConfig:ValidityClockSkewMinutes
 
+_Linux: AppConfig\_\_ValidityClockSkewMinutes_
+
 **Value:** Positive _Integer_
 
 **Default:** 1440
@@ -75,6 +85,8 @@ The optimal setting depends on the performance of the App Service Plan. As a rul
 Starting with version 1.8, you can configure the number of minutes that certificates are pre-dated. If you have issues with clocks on clients running late, you may increase this value.
 
 ## AppConfig:UseRequestedKeyUsages
+
+_Linux: AppConfig\_\_UseRequestedKeyUsages_
 
 **Value:** _true_ or _false_
 

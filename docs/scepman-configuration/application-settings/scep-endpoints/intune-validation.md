@@ -6,6 +6,8 @@ These settings should only be applied to the SCEPman App Service, not the Certif
 
 ## AppConfig:IntuneValidation:ComplianceCheck
 
+_Linux: AppConfig\_\_IntuneValidation\_\_ComplianceCheck_
+
 {% hint style="warning" %}
 **Experimental Setting**&#x20;
 
@@ -26,6 +28,8 @@ Setting this to **Never** will disable the compliance check.
 
 ## AppConfig:IntuneValidation:ComplianceGracePeriodMinutes
 
+_Linux: AppConfig\_\_IntuneValidation\_\_ComplianceGracePeriodMinutes_
+
 {% hint style="warning" %}
 SCEPman Enterprise Edition only
 
@@ -41,6 +45,8 @@ It is an alternative to using Ephemeral Bootstrap Certificates. If you configure
 This setting is only effective if [ComplianceCheck](intune-validation.md#appconfig-intunevalidation-compliancecheck) is set to _Always_.
 
 ## AppConfig:IntuneValidation:DeviceDirectory
+
+_Linux: AppConfig\_\_IntuneValidation\_\_DeviceDirectory_
 
 **Value:** String
 
@@ -61,7 +67,7 @@ If you want to change this setting in an existing deployment that was installed 
 
 **Description:** Determines where to look up devices on OCSP requests for device certificates. The corresponding directory is queried for a device matching the device ID written to the certificate's subject CN field. The certificate is valid only if the device exists. For **`AAD`**, it must also be enabled (Intune doesn't support disabling devices). If the ComplianceCheck is activated, the device must also be compliant. If nothing is configured and for SCEPman 1.9 and before, `AAD` is used.
 
-Hence, you must configure the Intune configuration profile for devices accordingly. \{{AAD\_Device\_ID\}} is the Entra/AAD device ID, while \{{DeviceID\}} is the Intune device ID.
+Hence, you must configure the Intune configuration profile for devices accordingly. `{{AAD_Device_ID}}` is the Entra/AAD device ID, while `{{DeviceID}}` is the Intune device ID.
 
 For **`AADAndIntune`**, both directories are queried in parallel. In this case, it is sufficient that the device exists in one of the two directories. This setting enables migrating from one setting to the other when there are still valid certificates for both types of directories. It also supports cases where you configure platforms differently. It can also be used as a workaround for iOS or Android devices that receive an Intune ID instead of an Entra ID object ID, because they are not fully Entra-joined at the time of certificate enrollment.
 
@@ -74,6 +80,8 @@ SCEPman 2.0: Certificate Validation
 {% endembed %}
 
 ## AppConfig:IntuneValidation:RevokeCertificatesOnWipe
+
+_Linux: AppConfig\_\_IntuneValidation\_\_RevokeCertificatesOnWipe_
 
 {% hint style="info" %}
 Applicable to version 2.1 and above.
@@ -96,6 +104,8 @@ Especially, this means that when an administrator triggers a Wipe or Retire for 
 
 ## AppConfig:IntuneValidation:UntoleratedUserRisks
 
+_Linux: AppConfig\_\_IntuneValidation\_\_UntoleratedUserRisks_
+
 {% hint style="warning" %}
 **Experimental Setting** - Applicable to version 2.2 and above. Requires permission _IdentityRiskyUser.Read.All_ assigned by SCEPman PS module version 1.7 and above.
 
@@ -109,6 +119,8 @@ SCEPman Enterprise Edition only
 Example: You define `Medium,High` for this setting. A user has Risk Level _Low_. The user's certificate is valid and the certificate can be used to connect to the corporate VPN. Then, a risk event increases the User Risk Level to _Medium_. The user tries to connect to the VPN, but does not succeed, because the VPN Gateway checks the validity of the certificate in real-time and SCEPman responds that it is revoked.
 
 ## AppConfig:IntuneValidation:UserRiskCheck
+
+_Linux: AppConfig\_\_IntuneValidation\_\_UserRiskCheck_
 
 {% hint style="warning" %}
 **Experimental Setting** - Applicable to version 2.2 and above. Requires permission _IdentityRiskyUser.Read.All_ assigned by SCEPman PS module version 1.7 and above.
@@ -124,6 +136,8 @@ Setting this to **Never** will disable the user risk check.
 
 ## AppConfig:IntuneValidation:WaitForSuccessNotificationResponse
 
+_Linux: AppConfig\_\_IntuneValidation\_\_WaitForSuccessNotificationResponse_
+
 **Value:** _true_ (default) or _false_
 
 **Description:** After a certificate was successfully issued, SCEPman sends a notification about the certificate to Intune. Microsoft recommends to wait for the response in its specification. However, some instances show long delays resulting in timeouts occasionally. Therefore **True** is the default.
@@ -132,11 +146,15 @@ Setting this to **False** makes SCEPman return the issued certificate before Int
 
 ## AppConfig:IntuneValidation:ValidityPeriodDays
 
+_Linux: AppConfig\_\_IntuneValidation\_\_ValidityPeriodDays_
+
 **Value:** Positive _Integer_
 
 **Description:** This setting further reduces the global ValidityPeriodDays for the Intune endpoint.
 
 ## AppConfig:IntuneValidation:EnableCertificateStorage
+
+_Linux: AppConfig\_\_IntuneValidation\_\_EnableCertificateStorage_
 
 {% hint style="info" %}
 Applicable to version 2.7 and above

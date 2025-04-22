@@ -10,6 +10,8 @@ See also the [Logging configuration](../../application-settings-1/logging.md#app
 
 ## AppConfig:AzureCloudConfig:AzureADEndpoint
 
+_Linux: AppConfig\_\_AzureCloudConfig\_\_AzureADEndpoint_
+
 **Value:** URL as string
 
 **Description:**\
@@ -18,6 +20,8 @@ This is the AAD logon URL. It defaults to `https://login.microsoftonline.com`.
 For GCC High, use `https://login.microsoftonline.us`. For 21Vianet, use `https://login.partner.microsoftonline.cn`.
 
 ## AppConfig:AzureCloudConfig:AzureADGraphEndpoint
+
+_Linux: AppConfig\_\_AzureCloudConfig\_\_AzureADGraphEndpoint_
 
 **Value:** URL as string
 
@@ -28,12 +32,16 @@ You may not need to configure this if you let SCEPman use only Microsoft Graph.
 
 ## AppConfig:AzureCloudConfig:AzureADGraphVersion
 
+_Linux: AppConfig\_\_AzureCloudConfig\_\_AzureADGraphVersion_
+
 **Value:** string
 
 **Description:**\
 The version of AAD Graph to use. It defaults to `1.6`.
 
 ## AppConfig:AzureCloudConfig:MSGraphEndpoint
+
+_Linux: AppConfig\_\_AzureCloudConfig\_\_MSGraphEndpoint_
 
 **Value:** URL as string
 
@@ -44,6 +52,8 @@ For GCC High, use `https://graph.microsoft.us`. For GCC DoD, use `https://dod-gr
 
 ## AppConfig:AzureCloudConfig:KeyVaultEndpoint
 
+_Linux: AppConfig\_\_AzureCloudConfig\_\_KeyVaultEndpoint_
+
 **Value:** URL as string
 
 **Description:**\
@@ -53,6 +63,8 @@ For GCC High, use `https://vault.usgovcloudapi.net`. For 21Vianet, use `https://
 
 ## AppConfig:AzureCloudConfig:ManagementEndpoint
 
+_Linux: AppConfig\_\_AzureCloudConfig\_\_ManagementEndpoint_
+
 **Value:** URL as string
 
 **Description:**\
@@ -61,6 +73,8 @@ The URL of the Intune API. It defaults to `https://api.manage.microsoft.com`.
 For GCC High, use `https://api.manage.microsoft.us`.
 
 ## AppConfig:AzureCloudConfig:IntuneAppId
+
+_Linux: AppConfig\_\_AzureCloudConfig\_\_IntuneAppId_
 
 **Value:** Guid as string
 

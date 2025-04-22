@@ -8,6 +8,8 @@ For a general comparison of techniques to control certificate validity, have a l
 
 ## AppConfig:CRL:RequestToken
 
+_Linux: AppConfig\_\_CRL\_\_RequestToken_
+
 {% hint style="info" %}
 Applicable to version 2.3 and above
 {% endhint %}
@@ -20,6 +22,8 @@ The CRL currently does not contain all revoked certificates. Thus, attackers pos
 
 ## AppConfig:CRL:Source
 
+_Linux: AppConfig\_\_CRL\_\_Source_
+
 {% hint style="info" %}
 Applicable to version 2.4 and above
 {% endhint %}
@@ -31,6 +35,8 @@ Applicable to version 2.4 and above
 Certificates that are automatically revoked via OCSP will not be included in the CRL. For example, if you disable a device, the device's certificate will be automatically revoked via OCSP. However, the certificate will not be included in the CRL.
 
 ## AppConfig:CRL:ValidityDays
+
+_Linux: AppConfig\_\_CRL\_\_ValidityDays_
 
 **Value:** _Floating Point Number_
 

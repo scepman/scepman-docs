@@ -12,11 +12,15 @@ For each Setting, you can choose whether you want to define the setting in the A
 
 We recommend defining settings in the App Service Configuration except for passwords.
 
-## Secure Configuration in Azure Key Vault
+## Linux Configuration
 
-{% hint style="info" %}
-This feature requires version **1.7** or above.
-{% endhint %}
+All existing settings are available for both Windows and Linux App Services.
+
+When configuring Environment Variables for Linux, colons must be replaced with two underscores.&#x20;
+
+For example, a Windows App Service accepts _AppConfig:LicenseKey_, while a Linux App Service accepts _AppConfig\_\_LicenseKey._
+
+## Secure Configuration in Azure Key Vault
 
 Especially for sensitive information, you can also configure settings as Secrets in Azure Key Vault. You must first grant edit rights to Secrets in the Azure Key Vault associated with your SCEPman instance to an administrator account. Then, you can use this administrator account to define new Secrets.
 
