@@ -1,5 +1,7 @@
 ---
-description: Intune implementing strong mapping for SCEP and PKCS certificates
+description: >-
+  Implementing strong mapping for SCEP and PKCS certificates in Intune using
+  SCEPman.
 ---
 
 # Intune Strong Mapping

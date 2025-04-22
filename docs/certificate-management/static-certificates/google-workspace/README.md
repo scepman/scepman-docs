@@ -1,7 +1,7 @@
 ---
 description: >-
-  This document serves as a step-by-step guide on how to set up and configure
-  certificate enrollment for ChromeOS using Chrome Enterprise and SCEPman.
+  Learn how to set up and configure certificate enrollment via SCEP for ChromeOS
+  (Chromebook) using Chrome Enterprise and SCEPman.
 ---
 
 # Google Workspace

@@ -1,3 +1,7 @@
+---
+description: Deploy certificates to Linux devices via SCEP in Intune using SCEPman.
+---
+
 # Linux
 
 {% hint style="warning" %}

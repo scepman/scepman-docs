@@ -1,3 +1,9 @@
+---
+description: >-
+  Deploy certificates to iOS and iPadOS devices via SCEP in Intune using
+  SCEPman.
+---
+
 # iOS/iPadOS
 
 The following article describes how to deploy a device or/and user certificates for iOS and iPadOS devices. The deployment of the SCEPman Root Certificate is mandatory. Afterward you can choose between deploying only device, user or even both certificate types.

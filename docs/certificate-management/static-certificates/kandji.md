@@ -1,3 +1,10 @@
+---
+description: >-
+  Issue certificates in Kandji by connecting SCEPman as an External CA. Devices
+  will be able to obtain certificates using SCEPman's static interface and a
+  challenge password enrolled.
+---
+
 # Kandji
 
 SCEPman can be connected to [Kandji](https://www.kandji.io/) as an External CA via SCEPman's static interface and a challenge password enrolled devices will be able to obtain certificates.

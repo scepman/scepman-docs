@@ -1,3 +1,9 @@
+---
+description: >-
+  Automatic certificate revocation in Microsoft Intune or Jamf Pro via OCSP
+  using SCEPman.
+---
+
 # Revocation
 
 SCEPman offers several ways to manage and revoke a certificate. The available options depend on

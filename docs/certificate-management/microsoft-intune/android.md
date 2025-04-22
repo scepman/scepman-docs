@@ -1,3 +1,7 @@
+---
+description: Deploy certificates to Android devices via SCEP using Intune and SCEPman.
+---
+
 # Android
 
 The following article describes how to deploy a device or a user certificate for Android. Android certificate deployment is similar to Windows 10, macOS, and iOS certificate deployments.

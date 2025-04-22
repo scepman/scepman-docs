@@ -1,3 +1,7 @@
+---
+description: Deploy certificates to MacOS devices via SCEP in Intune using SCEPman.
+---
+
 # macOS
 
 The following article describes how to deploy a device or/and user certificates for macOS devices. The deployment of the SCEPman Root Certificate is mandatory. Afterward, you can choose between deploying only device, user or even both certificate types.

@@ -1,8 +1,8 @@
 ---
 description: >-
-  This page compares SCEPman and the Microsoft Certificate Connector for Intune
-  / Active Directory Certificate Services (ADCS) in terms of deployment and
-  operational efforts.
+  Comparing Microsoft Certificate Connector for Intune / Active Directory
+  Certificate Services (ADCS) and SCEPman in terms of deployment and operational
+  efforts.
 ---
 
 # Certificate Connector

@@ -1,3 +1,10 @@
+---
+description: >-
+  Use this REST API using Microsoft Identities for authentication to enroll
+  certificates as an alternative to the SCEP endpoints that require the
+  SCEP-style of authentication.
+---
+
 # API Enrollment
 
 {% hint style="info" %}
