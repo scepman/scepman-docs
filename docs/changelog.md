@@ -8,6 +8,32 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ## Versions
 
+### 2.10 - Currently in Beta Channel
+
+#### SCEPman 2.10.1392
+
+* Smaller Improvements, e.g.
+  * Increased robustness when dependent services fail
+  * Updates to the SCEPman splash page
+  * Adjusted log levels of some log messages to avoid clutter and highlight important messages
+  * Allow adding a CDP to issued certificates
+* Library Updates, including
+  * an update to Microsoft.Identity.Web 3.8.2, fixing [CVE-2025-32016](https://www.cve.org/CVERecord?id=CVE-2025-32016)
+
+#### Certificate Master 2.10.987
+
+* Overhaul of Certificate Request UI
+* Submission of CSR for web servers (requires SCEPman 2.10)
+  * Allowed for users with the Request.Server role in addition to those with Request.All and Admin.Full
+  * Users can modify the SAN DNS entries in the enrollment form
+* Improved performance when creating certificates via the forms method
+* Smaller Improvements, e.g.
+  * Fixed an issue where the "Forbidden" page was not displayed to unauthorized users
+  * SAN entries of type IP
+  * The User certificates form features adding email addresses as SAN entries
+* Library Updates, including
+  * an update to Microsoft.Identity.Web 3.8.2, fixing [CVE-2025-32016](https://www.cve.org/CVERecord?id=CVE-2025-32016)
+
 ### 2.9 - December 2024
 
 **SCEPman 2.9.1294**
