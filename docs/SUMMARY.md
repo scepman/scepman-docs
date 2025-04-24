@@ -116,6 +116,7 @@
   * [General](other/faqs/general.md)
   * [Certificate Connector](other/faqs/certificate-connector.md)
   * [Network Access Controllers](other/faqs/nac-configuration.md)
+  * [Renewing SCEPman Root CA](other/faqs/renewing-scepman-root-ca.md)
 * [Troubleshooting](other/troubleshooting/README.md)
   * [Common Problems](other/troubleshooting/general.md)
   * [Certifried Security Vulnerability](other/troubleshooting/certifried.md)
