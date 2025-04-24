@@ -1,6 +1,7 @@
 # Renewing SCEPman Root CA
 
-The SCEPman Root CA has an expiry of 10 years. Once expired, SCEPman will need to be re-deployed and there is currently no method to extend the expiry past 10 years or to renew the existing Root CA. \
+The SCEPman Root CA is valid for 10 years. Once it has expired, SCEPman will need to be re-deployed, as there is currently no method to extend the validity period past 10 years or to renew the existing Root CA.
+
 A redeployment has the advantage that the new Root CA will live up to the security standards (key size, algorithms etc.) that are relevant to that time in the future.
 
 {% stepper %}
