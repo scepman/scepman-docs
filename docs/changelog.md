@@ -17,6 +17,7 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
   * Updates to the SCEPman splash page
   * Adjusted log levels of some log messages to avoid clutter and highlight important messages
   * Allow adding a CDP to issued certificates
+  * Specify a specific version of a Key Vault certificate as CA certificate
 * Library Updates, including
   * an update to Microsoft.Identity.Web 3.8.2, fixing [CVE-2025-32016](https://www.cve.org/CVERecord?id=CVE-2025-32016)
 
