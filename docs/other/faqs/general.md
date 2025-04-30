@@ -13,8 +13,9 @@ To upgrade a Community Edition to an Enterprise Edition you have to add the lice
 <figure><img src="../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
 
 6. Then, **Save** the settings, and under Overview, **restart** your App Service.
-7. After the restart, your SCEPman instance homepage will show Enterprise Edition.
-8. Ensure that your SCEPman instance homepage shows on the left side that the Storage Account is connected (green bubble). If there are connection issues, the bubble will be red, and your OCSP responder will not work.
+7. Ensure your SCEPman homepage now shows the Enterprise Edition bubble and that all services are Connected. If there are connection issues, the bubble will be red, and your OCSP responder will not work.\
+   ![](<../../.gitbook/assets/image (65).png>)
+8. Adjust [Certificate Master RBAC](../../scepman-configuration/rbac.md) permissions to gain access to your Certificate Master.
 
 ## How to programmatically query the Storage Account Table?
 
