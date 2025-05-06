@@ -8,7 +8,7 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ## Versions
 
-### 2.10 - Mai 2025
+### 2.10 - May 2025
 
 #### SCEPman 2.10.1404
 
