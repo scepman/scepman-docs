@@ -35,6 +35,14 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 * Library Updates, including
   * an update to Microsoft.Identity.Web 3.8.2, fixing [CVE-2025-32016](https://www.cve.org/CVERecord?id=CVE-2025-32016)
 
+#### SCEPman PowerShell Module 2.10
+
+* Small Improvements
+
+#### SCEPmanClient PowerShell Module 2.10 (New!)
+
+* Initial release of this new PowerShell Module for requesting and renewing certificates on Windows, MacOs, and Linux
+
 ### 2.9 - December 2024
 
 **SCEPman 2.9.1294**
