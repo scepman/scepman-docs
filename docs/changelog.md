@@ -8,9 +8,9 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ## Versions
 
-### 2.10 - Currently in Beta Channel
+### 2.10 - Mai 2025
 
-#### SCEPman 2.10.1392
+#### SCEPman 2.10.1404
 
 * Smaller Improvements, e.g.
   * Increased robustness when dependent services fail
@@ -21,7 +21,7 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 * Library Updates, including
   * an update to Microsoft.Identity.Web 3.8.2, fixing [CVE-2025-32016](https://www.cve.org/CVERecord?id=CVE-2025-32016)
 
-#### Certificate Master 2.10.987
+#### Certificate Master 2.10.997
 
 * Overhaul of Certificate Request UI
 * Submission of CSR for web servers (requires SCEPman 2.10)
