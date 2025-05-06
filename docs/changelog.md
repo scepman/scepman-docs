@@ -41,7 +41,7 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 #### SCEPmanClient PowerShell Module 2.10 (New!)
 
-* Initial release of this new PowerShell Module for requesting and renewing certificates on Windows, MacOs, and Linux
+* Initial release of this new PowerShell Module for requesting and renewing certificates on Windows, MacOS, and Linux
 
 ### 2.9 - December 2024
 
