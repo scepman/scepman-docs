@@ -165,3 +165,37 @@ SCEPman Enterprise Edition only
 **Value:** _true_ or _false_ (default)
 
 **Description:** When requesting certificates via the Intune endpoint, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them manually. Additionally, certificates are revoked automatically when the associated Entra or Intune object goes into an invalid state as specified by the other settings (like being disabled or deleted). If set to _false_, SCEPman will not store issued certificates and the certificates are visible only in the logs or in the classic Intune view on Certificate Master or the Intune portal. If this is not set, the behavior depends on the global setting [AppConfig:EnableCertificateStorage](../basics.md#appconfig-enablecertificatestorage).
+
+## AppConfig:IntuneValidation:AllowRenewals <a href="#appconfig-dbcsrvalidation-allowrenewals" id="appconfig-dbcsrvalidation-allowrenewals"></a>
+
+**Value:** _true_ or _false_ (default)
+
+**Description:** This allows using the _RenewalReq_ operation on this SCEP endpoint. It works only for certificate types added to _AppConfig:_&#x49;ntuneValidatio&#x6E;_:ReenrollmentAllowedCertificateTypes_.
+
+This operation can be used with the [SCEPmanClient ](https://github.com/scepman/scepmanclient)PowerShell module.
+
+{% hint style="warning" %}
+Please be aware that Intune will not make use of the _RenewalReq_ operation and this setting is not required for usual operation.
+{% endhint %}
+
+## AppConfig:IntuneValidation:ReenrollmentAllowedCertificateTypes <a href="#appconfig-dbcsrvalidation-reenrollmentallowedcertificatetypes" id="appconfig-dbcsrvalidation-reenrollmentallowedcertificatetypes"></a>
+
+**Value:** Comma-separated list of certificate types from this list:
+
+* DomainController
+* Static
+* IntuneUser
+* IntuneDevice
+* JamfUser
+* JamfUserWithDevice
+* JamfUserWithComputer
+* JamfDevice
+* JamfComputer
+
+**Description:** You can use the SCEP endpoint for renewals of certificates of the types specified in this setting. If you do not specify any value, it defaults to no types.
+
+For example, if you wanted to renew certificates issued manually through Certificate Master, you would specify `Static`. If you also want to renew Domain Controller certificates, you would specify `DomainController,Static`.
+
+{% hint style="warning" %}
+Please be aware that Intune will not make use of the _RenewalReq_ operation and this setting is not required for usual operation.
+{% endhint %}

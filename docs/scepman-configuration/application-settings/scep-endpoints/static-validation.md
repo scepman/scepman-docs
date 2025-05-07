@@ -78,3 +78,29 @@ SCEPman Enterprise Edition only
 **Value:** _true_ or _false_ (default)
 
 **Description:** When requesting certificates via the static endpoint, SCEPman stores those requested certificates in the Storage Account in Azure if this is set to _true_. This will make the issued certificates appear in SCEPman Certificate Master, where you can view and revoke them. If set to _false_, SCEPman will not store issued certificates and the certificates are visible only in the logs or if the SCEP client stores them somewhere. If this is not set, the behavior depends on the global setting [AppConfig:EnableCertificateStorage](../basics.md#appconfig-enablecertificatestorage).
+
+## AppConfig:StaticValidation:AllowRenewals <a href="#appconfig-dbcsrvalidation-allowrenewals" id="appconfig-dbcsrvalidation-allowrenewals"></a>
+
+**Value:** _true_ or _false_ (default)
+
+**Description:** This allows using the _RenewalReq_ operation on this SCEP endpoint. It works only for certificate types added to _AppConfig:StaticValidation:ReenrollmentAllowedCertificateTypes_.
+
+This operation can be used with the [SCEPmanClient ](https://github.com/scepman/scepmanclient)PowerShell module.
+
+## AppConfig:StaticValidation:ReenrollmentAllowedCertificateTypes <a href="#appconfig-dbcsrvalidation-reenrollmentallowedcertificatetypes" id="appconfig-dbcsrvalidation-reenrollmentallowedcertificatetypes"></a>
+
+**Value:** Comma-separated list of certificate types from this list:
+
+* DomainController
+* Static
+* IntuneUser
+* IntuneDevice
+* JamfUser
+* JamfUserWithDevice
+* JamfUserWithComputer
+* JamfDevice
+* JamfComputer
+
+**Description:** You can use the SCEP endpoint for renewals of certificates of the types specified in this setting. If you do not specify any value, it defaults to no types.
+
+For example, if you wanted to renew certificates issued manually through Certificate Master, you would specify `Static`. If you also want to renew Domain Controller certificates, you would specify `DomainController,Static`.
