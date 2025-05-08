@@ -18,6 +18,10 @@ As illustrated above, the geo-redundant deployment leverages an Azure Traffic Ma
 
 Microsoft discusses in [this article](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/app-service-web-app/multi-region) three different Geo-Redundancy strategies that can be used to manage this type of architecture. However, In our case, we will use the **Active/Active** approach. This means both regions are active, and requests are load-balanced between them. If one region becomes unavailable or has some latency for any reason, Traffic Manager will route the traffic to the second App Service.
 
+{% hint style="info" %}
+Make sure to take a look at [Microsofts list of available regions](https://learn.microsoft.com/en-us/azure/reliability/regions-list#azure-regions-list-1) and their corresponding paired region. Using unpaired regions can lead to issues during the setup of this redundancy.
+{% endhint %}
+
 ## Workflow
 
 * First, the SCEPman App Service will be cloned into another geolocation.
