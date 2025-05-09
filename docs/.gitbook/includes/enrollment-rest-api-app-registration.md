@@ -25,6 +25,10 @@ Register-SCEPmanApiClient -ServicePrincipalId 830532c6-9f7b-4bc8-8f3e-43443344ab
 The _**Object ID**_ of the complementing _**Enterprise Application**_ of the App Registration we created in the previous step. Note that this does not refer to the Enterprise Application usually named SCEPman-api, which identifies SCEPman itself.
 
 To manually assign this permission you can navigate to _API Permissions_ and add a permission from the _permissions your organization uses_. Assign the _**CSR.Request.Db**_ permission from _**SCEPman-api**_ as an _application permission_.
+
+{% hint style="info" %}
+A service principal will also require the Graph permission **Application.Read.All** to allow automatic retrieval of SCEPmans API scope for authentication.
+{% endhint %}
 {% endstep %}
 
 {% step %}

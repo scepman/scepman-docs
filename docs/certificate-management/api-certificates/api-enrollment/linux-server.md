@@ -14,25 +14,57 @@ To accomplish this we can authenticate a service principal and allow that to lev
 
 ## Prerequisites
 
-### 1. Service Principal Creation
+Please refer to the API Enrollment article on how to create a service principal that can be used for authentication:
 
-{% include "../../../.gitbook/includes/enrollment-rest-api-app-registration.md" %}
+{% content-ref url="./" %}
+[.](./)
+{% endcontent-ref %}
 
-### 2. App Service Settings
+## Powershell Module SCEPmanClient
 
-{% include "../../../.gitbook/includes/enrollment-rest-api-app-service-settings.md" %}
+### Initial Requests
 
-This scenario will enroll certificates of the type _**Static**_.
+You can use the SCEPmanClient PowerShell module to request certificates on your Linux server:
 
-### 3. Client Prerequisites
+```powershell
+$Parameters = @{
+    'Url'              = 'scepman.contoso.com'
+    'ClientId'         = '569fbf51-aa63-4b5c-8b26-ebbcfcde2715'
+    'TenantId'         = '8aa3123d-e76c-42e2-ba3c-190cabbec531'
+    'ClientSecret'     = 'csa8Q~aVaWCLZTzswIBGvhxUiEvhptuqEyJugb70'
+    'Subject'          = 'CN=LinuxServer'
+    'IP'               = '10.22.11.8'
+    'ExtendedKeyUsage' = 'ServerAuth'
+    'SaveToFolder'     = '/etc/ssl/scepman'
+    'IncludeRootCA'    = $true
+}
+
+New-SCEPmanCertificate @Parameters
+```
+
+### Certificate Renewal
+
+You can also use the PowerShell module to renew already existing certificates. This will also spare the requirement to use a service principal for authentication:
+
+```powershell
+$Parameters = @{
+    'CertificateFromFile' = '/home/user/.certs/server.pem'
+    'KeyFromFile'         = '/home/user/.certs/server.key'
+    'SaveToFolder'        = '/home/user/.certs'
+}
+
+New-SCEPmanCertificate @Parameters
+```
+
+## Enrollment and Renewal Script
+
+If the PowerShell module is not an option for you, the [enrollrenewcertificate.sh](https://github.com/scepman/csr-request/blob/main/enroll-certificate/enrollrenewcertificate.sh) script can be used to initially receive a certificate as well as to verify it and attempt a renewal in case it is about to expire.
+
+### Client Prerequisites
 
 {% include "../../../.gitbook/includes/enrollment-rest-api-client-prerequisites.md" %}
 
 
-
-## Enrollment and Renewal Script
-
-The [enrollrenewcertificate.sh](https://github.com/scepman/csr-request/blob/main/enroll-certificate/enrollrenewcertificate.sh) script can be used to initially receive a certificate as well as to verify it and attempt a renewal in case it is about to expire.
 
 Example:
 

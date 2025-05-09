@@ -37,7 +37,15 @@ SCEPman will store all issued certificates automatically in its Storage Account,
 
 
 
-## Examples
+A convenient method to send those request is our SCEPmanClient PowerShell module:
+
+{% content-ref url="../scepmanclient.md" %}
+[scepmanclient.md](../scepmanclient.md)
+{% endcontent-ref %}
+
+
+
+## Other Examples
 
 See our [Open Source Sample Library on GitHub](https://github.com/scepman/csr-request) to find out how to use SCEPman's REST API.
 

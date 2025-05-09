@@ -57,6 +57,7 @@
   * [API Enrollment](certificate-management/api-certificates/api-enrollment/README.md)
     * [Linux Server](certificate-management/api-certificates/api-enrollment/linux-server.md)
     * [Windows Server](certificate-management/api-certificates/api-enrollment/windows-server.md)
+  * [SCEPmanClient](certificate-management/api-certificates/scepmanclient.md)
 
 ## Azure Configuration
 

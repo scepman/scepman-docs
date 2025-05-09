@@ -4,30 +4,54 @@
 Applicable to SCEPman version 2.9 and above
 {% endhint %}
 
-The cmdlet `Update-CertificateViaEST` (contained in the SCEPman powershell module) locates certificates issued by SCEPman in either the user or machine certificate stores and renews them using mTLS. Note that this cmdlet (unlike other parts of the powershell module) can only be used on Windows devices.&#x20;
+You can use the SCEPmanClient PowerShell module to request certificates for your Windows server. Please refer to the main article of the module for the prerequisites:
 
-### Parameters
+{% content-ref url="../scepmanclient.md" %}
+[scepmanclient.md](../scepmanclient.md)
+{% endcontent-ref %}
 
-This cmdlet has two parameter sets, `Direct`, which allows you to pass in a certificate directly and renew it, and `Search` which searches the My store for SCEPman issued certificates and renews them. The parameters included in these sets are detailed below:
+## Use Case Description
 
-#### Direct
+While the module is capable of initially requesting certificates, it might not be desirable to store the service principal credentials on a machine that could be used to request arbitrary certificates.
 
-<table><thead><tr><th width="270">Parameter</th><th width="107">Optional?</th><th>Description</th></tr></thead><tbody><tr><td><code>-AppServiceUrl</code></td><td>Yes</td><td>The URL of your SCEPman app service.</td></tr><tr><td><code>-Certificate</code></td><td>No</td><td>Certificate object that is to be renewed</td></tr></tbody></table>
+So if your scenario includes the deployment of a certificate using Certificate Master you can automatically renew it using _SCEPmanClient_ by providing an already existing certificate for authentication:
 
-Example command:
+<pre class="language-powershell"><code class="lang-powershell"><strong>$Subject = $env:COMPUTERNAME
+</strong><strong>$ValidityThreshold = 30
+</strong><strong>
+</strong><strong>$CertificateToRenew = Get-ChildItem Cert:\LocalMachine\My `
+</strong>                        | Where-Object NotAfter -lt (Get-Date).AddDays($ValidityThreshold) `
+                        | Where-Object Subject -match $Subject
+
+New-SCEPmanCertificate -Certificate $CertificateToRenew -SaveToStore 'LocalMachine'
+
+# With the new certificate in place we can remove the old one
+# Remove-Item $CertificateToRenew.PSPath
+</code></pre>
+
+This will find certificates expiring in the next month and use it for
+
+## Initial Request
+
+If you want to request certificates on your server initially you can do so by supplying a service principal for authentication that has the role **CSR DB Requesters** assigned. Please refer to the following guide on how to implement such a service principal:
+
+{% content-ref url="./" %}
+[.](./)
+{% endcontent-ref %}
 
 ```powershell
- $cert = Get-Item -Path "Cert:\CurrentUser\My\1234567890ABCDEF1234567890ABCDEF12345678"
- Update-CertificateViaEST -AppServiceUrl "https://scepman.contoso.de/" -Certificate $cert
+$Parameters = @{
+    'Url'              = 'scepman.contoso.com'
+    'ClientId'         = '569fbf51-aa63-4b5c-8b26-ebbcfcde2715'
+    'TenantId'         = '8aa3123d-e76c-42e2-ba3c-190cabbec531'
+    'ClientSecret'     = 'csa8Q~aVaWCLZTzswIBGvhxUiEvhptuqEyJugb70'
+    'Subject'          = 'CN=WebServer'
+    'DNSName'          = 'Webserver.domain.local'
+    'ExtendedKeyUsage' = 'ServerAuth'
+    'SaveToStore'      = 'LocalMachine'
+}
+
+New-SCEPmanCertificate @Parameters
 ```
 
-#### Search
-
-<table><thead><tr><th width="270">Parameter</th><th width="107">Optional?</th><th>Description</th></tr></thead><tbody><tr><td><code>-AppServiceUrl</code></td><td>Yes</td><td>The URL of your SCEPman app service.</td></tr><tr><td>-<code>User</code> or <code>-Machine</code></td><td>No</td><td>Specifies whether you would like to renew certificates from the user or machine store. One of these must be specified. (note that to edit the machine store you must run the command as admin).</td></tr><tr><td><code>-FilterString</code></td><td>Yes</td><td>Will only renew certificates whose Subject field contains the filter string.</td></tr><tr><td><code>-ValidityThresholdDays</code></td><td>Yes</td><td>Will only renew certificates that are within this number of days of expiry (default value is 30).</td></tr><tr><td><code>-AllowInvalid</code></td><td>Yes</td><td>If specified, the cmdlet will also renew invalid (expired) certificates.</td></tr></tbody></table>
-
-Example command:
-
-```powershell
-Update-CertificateViaEST -AppServiceUrl "https://scepman.contoso.de/" -User -ValidityThresholdDays 100 -FilterString "certificate"
-```
-
+If we now want to renew a certificate we can disregard the service principal and use an already issued certificate for authentication. This will use the existing certificates details to construct a new CSR and issue it to SCEPman for a new certificate.

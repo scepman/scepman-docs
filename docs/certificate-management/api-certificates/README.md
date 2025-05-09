@@ -4,7 +4,7 @@
 SCEPman Enterprise Edition only
 {% endhint %}
 
-SCEPman features a REST API to enroll certificates. This is an alternative to the SCEP endpoints that require the SCEP-style of authentication, while the REST API uses Microsoft Identities for authentication. The protocol is also much simpler than SCEP.
+SCEPman features a REST API to enroll certificates using the _Enrollment over Secure Transport_ (EST) protocol. This is an alternative to the SCEP endpoints that require the SCEP-style of authentication, while the REST API uses Microsoft Identities for authentication. The protocol is also much simpler than SCEP.
 
 The REST API features two different authentication models.
 

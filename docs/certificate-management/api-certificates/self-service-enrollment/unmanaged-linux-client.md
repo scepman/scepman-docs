@@ -16,23 +16,45 @@ This method can be used to enroll certificates for users and devices that are un
 
 {% include "../../../.gitbook/includes/enrollment-rest-api-self-service-enrollment.md" %}
 
-
-
 ### 2. App Service Settings
 
 {% include "../../../.gitbook/includes/enrollment-rest-api-app-service-settings.md" %}
 
 This scenario will enroll certificates of the type _**IntuneUser.**_
 
-### **3. Client Prerequisites**
+## Powershell Module SCEPmanClient
 
-{% include "../../../.gitbook/includes/enrollment-rest-api-client-prerequisites.md" %}
+### Initial Requests
 
+You can use the SCEPmanClient PowerShell module to request certificates on your Linux device:
 
+```powershell
+New-SCEPmanCertificate -Url 'scepman.contoso.com' -SubjectFromUserContext -SaveToFolder '~/certs/'
+```
+
+The user will then need to interactively login in a browser session and a certificate for their logged in account will be created.
+
+### Certificate Renewal
+
+You can also use the PowerShell module to renew already existing certificates. This will also spare the requirement to use a service principal for authentication:
+
+```powershell
+$Parameters = @{
+    'CertificateFromFile' = '~/certs/john.doe@contoso.com.pem'
+    'KeyFromFile'         = '~/certs/john.doe@contoso.com.key'
+    'SaveToFolder'        = '~/certs/'
+}
+
+New-SCEPmanCertificate @Parameters
+```
 
 ## Enrollment and Renewal Script
 
-The [enrollrenewcertificate.sh](https://github.com/scepman/csr-request/blob/main/enroll-certificate/enrollrenewcertificate.sh) script can be used to initially receive a certificate as well as to verify it and attempt a renewal in case it is about to expire.
+If the PowerShell module is not an option for you, the [enrollrenewcertificate.sh](https://github.com/scepman/csr-request/blob/main/enroll-certificate/enrollrenewcertificate.sh) script can be used to initially receive a certificate as well as to verify it and attempt a renewal in case it is about to expire.
+
+### **Client Prerequisites**
+
+{% include "../../../.gitbook/includes/enrollment-rest-api-client-prerequisites.md" %}
 
 Example:
 
@@ -61,8 +83,6 @@ Can be any of:
 {% hint style="warning" %}
 If you are enrolling or renewing a device certificate the DeviceId will be tried to read from _\~/.config/intune/registration.toml_ by default and the authenticated user will need to match the owner of the object in the configured [DeviceDirectory](https://docs.scepman.com/advanced-configuration/application-settings/intune-validation#appconfig-intunevalidation-devicedirectory)
 {% endhint %}
-
-
 
 #### 2. App Service URL
 
@@ -103,8 +123,6 @@ _Example: "myKey"_
 The amount of days the certificate will need to expire in for the script to begin the renewal process.
 
 _Example: 30_
-
-
 
 ### Considerations
 
