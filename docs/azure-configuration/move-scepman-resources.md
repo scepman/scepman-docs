@@ -19,7 +19,9 @@ Moving SCEPman resources from **tenant to tenant** is not supported. For more in
   * 2x Private DNS zone
 
 {% hint style="info" %}
-Alerts and Action groups are also not movable, in case you have any, they need to be reconfigured in the new subscription.
+**Alerts and Action groups** are also not movable. In case you have any, they need to be reconfigured in the new subscription.
+
+If you are using an **App Service managed certificate** you [cannot move it](https://learn.microsoft.com/th-th/azure/azure-resource-manager/management/move-limitations/app-service-move-limitations#move-with-free-managed-certificates). Instead, delete and recreate it after moving the web app.
 {% endhint %}
 
 * Movable SCEPman resources are:
