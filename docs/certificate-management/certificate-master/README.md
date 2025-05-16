@@ -22,7 +22,7 @@ To make use of Certificate Master you will need to assign the intended role firs
 
 ## Certificate Master homepage:
 
-<figure><img src="../../.gitbook/assets/2023-12-08 16_52_05-SCEPman Certificate Master Homepage.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
 
 ## Quick Overview
 
