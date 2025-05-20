@@ -34,7 +34,7 @@ _Service Principals_ will also require the Graph permission _**Application.Read.
 
 The permission can be added manually like so:
 
-<figure><img src="../assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../assets/image (71) (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}

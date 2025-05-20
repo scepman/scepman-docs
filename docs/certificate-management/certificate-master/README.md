@@ -22,7 +22,7 @@ To make use of Certificate Master you will need to assign the intended role firs
 
 ## Certificate Master homepage:
 
-<figure><img src="../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (72) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Quick Overview
 

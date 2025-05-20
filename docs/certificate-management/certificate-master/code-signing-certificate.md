@@ -22,4 +22,4 @@ This form will generate a code signing certificate based on the provided informa
 Be aware that once you navigate away from this page, the password will no longer be accessible.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (84).png" alt=""><figcaption><p>Certificate Master - New Code Signing Certificate</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (84) (1).png" alt=""><figcaption><p>Certificate Master - New Code Signing Certificate</p></figcaption></figure>

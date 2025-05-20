@@ -17,7 +17,7 @@ Submit a Certificate Signing Request (CSR) obtained from your appliance or serve
 1. Paste a plaintext Certificate Signing Request OR paste a CSR file.
 2. Submit and download the Server Certificate.
 
-<figure><img src="../../.gitbook/assets/image (81).png" alt=""><figcaption><p>Submit a CSR for a Server Certificate</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (81) (1).png" alt=""><figcaption><p>Submit a CSR for a Server Certificate</p></figcaption></figure>
 
 ### Issuing a Server Certificate using the Form
 
@@ -31,7 +31,7 @@ Please enter the DNS names over which clients can access your server. They must 
 
 Optionally, for mutual authentication scenarios (e.g. mTLS), you can select to include the **Client Authentication** EKU in the certificate.
 
-<figure><img src="../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (83) (1).png" alt=""><figcaption></figcaption></figure>
 
 Some systems can import a certificate with the private key, but do not accept PKCS#12. You can convert the PKCS#12 file to other formats using standard tools like OpenSSL. For example, if your target system requires a PEM file with the certificate and private key, you may use this command:
 

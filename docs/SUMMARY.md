@@ -115,6 +115,7 @@
 * [Support](other/support.md)
 * [Licensing](other/licensing/README.md)
   * [Azure Marketplace](other/licensing/azure-marketplace.md)
+  * [cleverbridge](other/licensing/cleverbridge.md)
 * [FAQs](other/faqs/README.md)
   * [General](other/faqs/general.md)
   * [Certificate Connector](other/faqs/certificate-connector.md)
