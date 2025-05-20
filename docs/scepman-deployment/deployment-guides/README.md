@@ -34,3 +34,11 @@ In case you have Azure resource naming conventions, high availability or auto-sc
 {% embed url="https://www.youtube.com/watch?v=Q1DTVlxLSoU" %}
 SCEPman 2.0 Deployment
 {% endembed %}
+
+## Scenarios
+
+For configuration examples of specific scenarios that involve SCEPman-issued certificates, please refer to the following section:
+
+{% content-ref url="scenarios/" %}
+[scenarios](scenarios/)
+{% endcontent-ref %}

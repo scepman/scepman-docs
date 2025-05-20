@@ -1,4 +1,4 @@
-# Certificate Based Authentication for RDP
+# Certificate-based Authentication for RDP
 
 You can use SCEPman to issue Smart Card Login certificates to your users. By enrolling them to Windows Hello for Business (_Microsoft Passport Key Storage Provider_) they can use these certificates to authenticate to on premises resources using their Hello PIN or biometric options.
 
@@ -18,8 +18,8 @@ This will allow users for example to connect to other clients over the Remote De
 
 Follow our guide on Domain Controller certificates to publish the SCEPman Root CA certificate to the **NTAuth** store and issue certificates to your domain controllers:
 
-{% content-ref url="../../domain-controller-certificates.md" %}
-[domain-controller-certificates.md](../../domain-controller-certificates.md)
+{% content-ref url="../../../certificate-management/domain-controller-certificates.md" %}
+[domain-controller-certificates.md](../../../certificate-management/domain-controller-certificates.md)
 {% endcontent-ref %}
 
 

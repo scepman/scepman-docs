@@ -12,11 +12,11 @@ The basis for deploying SCEP certificates is to trust the root certificate of SC
 
 * [ ] Download the CA Certificate from SCEPman portal:
 
-![](<../../../.gitbook/assets/image-2 (10).png>)
+![](<../../.gitbook/assets/image-2 (10).png>)
 
 * [ ] Create a profile for **Windows 10 and later** with type **Trusted certificate** in Microsoft Intune:
 
-![](../../../.gitbook/assets/SCEPmanWindowsRootCA.png)
+![](../../.gitbook/assets/SCEPmanWindowsRootCA.png)
 
 * [ ] Upload your previously downloaded **.cer file**.
 * [ ] Now you can deploy this profile to your devices. Please choose All Users and/or All Devices or a dedicated group for assignment.
@@ -29,11 +29,11 @@ Note that you have to use the same group for assigning the Trusted certificate a
 
 * [ ] Open the SCEPman portal and copy the URL under Intune MDM
 
-![](<../../../.gitbook/assets/image-3 (1).png>)
+![](<../../.gitbook/assets/image-3 (1).png>)
 
 * [ ] Create a profile for **Windows 10 and later** with type **SCEP certificate** in Microsoft Intune
 
-![](../../../.gitbook/assets/SCEPmanWindowsDeviceCr.png)
+![](../../.gitbook/assets/SCEPmanWindowsDeviceCr.png)
 
 * [ ] Configure the profile as described:
 
@@ -55,13 +55,13 @@ In this case we are setting up a device certificate
 
 * `{{DeviceId}}`: This ID is generated and used by Intune.\
   \
-  (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../../scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
+  (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
 
 - `{{AAD_Device_ID}}`: This ID is generated and used by Microsoft Entra ID (Azure AD).
 
 In case neither `CN={{DeviceId}}` nor `CN={{AAD_Device_ID}}` is used for the CN field (e.g. `CN={{DeviceName}})`, SCEPman will identify the device based on the Intune Device ID (`(URI)Value:` `IntuneDeviceId://{{DeviceId}}`) provided in the subject alternative name (SAN).
 
-**Important:** The choice of the CN field affects the [automatic revocation behavior](../../manage-certificates.md#automatic-revocation) of certificates issued to your Intune-managed devices.
+**Important:** The choice of the CN field affects the [automatic revocation behavior](../manage-certificates.md#automatic-revocation) of certificates issued to your Intune-managed devices.
 
 You can add other RDNs if needed (e.g.: `CN={{DeviceId}}, O=Contoso, CN={{WiFiMacAddress}}`). Supported variables are listed in the [Microsoft docs](https://docs.microsoft.com/en-us/mem/intune/protect/certificates-profile-scep#create-a-scep-certificate-profile).
 
@@ -89,7 +89,7 @@ Other SAN values like DNS can be added if needed.
 
 The amount of time remaining before the certificate expires. Default is set at one year.
 
-SCEPman caps the certificate validity to the configured maximum in setting [_**AppConfig:ValidityPeriodDays**_](../../../scepman-configuration/application-settings/certificates.md#appconfig-validityperioddays), but otherwise uses the validity configured in the request.
+SCEPman caps the certificate validity to the configured maximum in setting [_**AppConfig:ValidityPeriodDays**_](../../scepman-configuration/application-settings/certificates.md#appconfig-validityperioddays), but otherwise uses the validity configured in the request.
 
 </details>
 
@@ -121,7 +121,7 @@ If you use TPM with this firmware, either update your firmware to a newer versio
 
 Please activate both cryptographic actions.
 
-SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the setting here unless the setting [_**AppConfig:UseRequestedKeyUsages**_](../../../scepman-configuration/application-settings/certificates.md#appconfig-userequestedkeyusages) is set to _true_.
+SCEPman automatically sets the Key usage to **Digital signature** and **Key encipherment** and overrides the setting here unless the setting [_**AppConfig:UseRequestedKeyUsages**_](../../scepman-configuration/application-settings/certificates.md#appconfig-userequestedkeyusages) is set to _true_.
 
 </details>
 
@@ -145,8 +145,8 @@ SCEPman supports SHA-2 algorithm.
 
 <summary>Root Certificate: <code>Profile from previous step (Root certificate Profile)</code></summary>
 
-Please select the Intune profile from [#Root Certificate](./#root-certificate).\
-If you are using an [Intermediate CA](../../../scepman-deployment/intermediate-certificate.md), you must select the Trusted certificate profile for the Intermediate CA, not the Root CA!
+Please select the Intune profile from [#Root Certificate](windows-10.md#root-certificate).\
+If you are using an [Intermediate CA](../../scepman-deployment/intermediate-certificate.md), you must select the Trusted certificate profile for the Intermediate CA, not the Root CA!
 
 </details>
 
@@ -168,7 +168,7 @@ This value defines when the device is allowed to renew its certificate (based on
 
 <details>
 
-<summary>SCEP Server URLs: Open the SCEPman portal and copy the URL of <a href="./#device-certificates">Intune MDM</a></summary>
+<summary>SCEP Server URLs: Open the SCEPman portal and copy the URL of <a href="windows-10.md#device-certificates">Intune MDM</a></summary>
 
 **Example**
 
@@ -180,13 +180,13 @@ https://scepman.contoso.com/certsrv/mscep/mscep.dll
 
 ### Example
 
-<figure><img src="../../../.gitbook/assets/2024-03-14 15_18_35.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2024-03-14 15_18_35.png" alt=""><figcaption></figcaption></figure>
 
 * [ ] Now you can deploy this profile to your devices. Please choose the same group/s for the assignment as for the Trusted certificate profile.
 
 ## User Certificates
 
-Please follow the instructions of [#Device certificates](./#device-certificates) and take care of the following differences:
+Please follow the instructions of [#Device certificates](windows-10.md#device-certificates) and take care of the following differences:
 
 <details>
 
@@ -220,7 +220,7 @@ Based on customer feedback, it appears that some VPN clients (e.g., Azure VPN Cl
 
 ### Example
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 ## User Digital Signature Certificate
 
@@ -232,10 +232,10 @@ You may use SCEPman for transnational **digital signatures** i.e. for S/MIME sig
 
 * [ ] You must set these configuration variables otherwise the requested key usage and extended validity period in the SCEP profile are not honored by SCEPman:
 
-- [_`AppConfig:UseRequestedKeyUsages`_](../../../scepman-configuration/application-settings/certificates.md#appconfig-userequestedkeyusages) set to _`true`_
-- [_`AppConfig:ValidityPeriodDays`_](../../../scepman-configuration/application-settings/certificates.md#appconfig-validityperioddays) _set to `365` (a maximum value of 1825 - 5 years is possible)_
+- [_`AppConfig:UseRequestedKeyUsages`_](../../scepman-configuration/application-settings/certificates.md#appconfig-userequestedkeyusages) set to _`true`_
+- [_`AppConfig:ValidityPeriodDays`_](../../scepman-configuration/application-settings/certificates.md#appconfig-validityperioddays) _set to `365` (a maximum value of 1825 - 5 years is possible)_
 
-To deploy user certificates used for **Digital Signatures** please follow the instructions of [#User certificates](./#user-certificates) and take care of the following differences and notes:
+To deploy user certificates used for **Digital Signatures** please follow the instructions of [#User certificates](windows-10.md#user-certificates) and take care of the following differences and notes:
 
 <details>
 
@@ -274,15 +274,15 @@ We recommend setting Renewal Threshold (%) to a value that ensures certificates 
 
 ### **Example**
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 After a successful profile sync, you should see the user certificate for Intended Purposes **Secure Email**
 
-![](<../../../.gitbook/assets/image (16) (1).png>)
+![](<../../.gitbook/assets/image (16) (1).png>)
 
 The certificate will be available for Digital Signature usage in e.g. Outlook. Below is an example of the usage
 
-![](<../../../.gitbook/assets/digital Sign2.png>)
+![](<../../.gitbook/assets/digital Sign2.png>)
 
 ### Activate S/MIME Signatures in Microsoft Outlook
 
