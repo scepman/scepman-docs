@@ -216,10 +216,11 @@ Quotes are valid for 14 days.
 
 To request a quote for SCEPman,&#x20;
 
-1. either visit the [SCEPman Website](https://www.scepman.com/) and then navigate to **Pricing**, scroll to **Payment options**, locate **cleverbridge** and click **Get a quote**.
-   * Select the correct user segment, user quantity and fill our your company information.
-   * Click **Next**, review your data and click **Request price quote**.
-2. or [request a quote link](mailto:sales@scepman.com) from us and perform the same steps.
+* Get in [contact with us](mailto:sales@scepman.com) and request a quote link.
+* Once we have sent the quote link to you,
+  * Click it.
+  * Select the correct user segment, user quantity and fill our your company information.
+  * Click **Next**, review your data and click **Request price quote**.
 
 ### Why is the VAT not removed from my quote?
 
