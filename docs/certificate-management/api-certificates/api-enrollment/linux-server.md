@@ -108,7 +108,7 @@ This is the _**Application ID URI**_ of the _**SCEPman-api**_ app registration i
 
 _Example: "api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436"_
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Certificate Filename
 

@@ -30,7 +30,7 @@ cleverbridge provides a range of payment options (credit card, PayPal, Wire Tran
 
 ### Invoice-based Payments
 
-If you require invoice-based payments, please [contact us](https://support.scepman.com/support/tickets/new?ticket_form=drop_a_question_%28scepman%29) so we can provide you with a quotation or order link that provides invoice-based payments. The payment term is **30 days** **net**.
+If you require invoice-based payments, please [contact us](mailto:sales@scepman.com) so we can provide you with a quotation or order link that provides invoice-based payments. The payment term is **30 days** **net**.
 
 ### Currencies
 
@@ -82,7 +82,7 @@ Cleverbridge allows you to manage any aspect of your subscription via their self
 
 To access the self management portal, please refer to the initial delivery / order confirmation email that was sent to you by cleverbridge at the time your order was placed. Within that email, locate the button saying **Manage Your Subscription For "\<SKU>"** and click it.
 
-<figure><img src="../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 This will either navigate you to the self-management portal directly or you might have to re-generate the link (they might expire after a while) first.
 
@@ -116,7 +116,7 @@ To perform a mid-term upgrade,
 * Navigate to the subscription's [self-management portal](cleverbridge.md#self-management-portal).
 * Click **Manage products**.
 
-<figure><img src="../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 *   Select the correct [user segment](cleverbridge.md#user-segments), and provide the new **total** number of users. The website will display the&#x20;
 
@@ -125,11 +125,11 @@ To perform a mid-term upgrade,
 
     both **including VAT**.
 
-<figure><img src="../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 * Click **Next**, review your **Payment method** and confirm the purchase by clicking **Buy now**.
 
-<figure><img src="../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 * The additional users will be added to your **existing SCEPman license key** automatically.
 
@@ -148,15 +148,15 @@ To perform an early renewal upgrade,
 * Navigate to the subscription's [self-management portal](cleverbridge.md#self-management-portal).
 * Click **Renew subscription**.
 
-<figure><img src="../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 * Select the correct [user segment](cleverbridge.md#user-segments), and provide the new **total** number of users. The website will display the renewal price considering the additional users.
 
-<figure><img src="../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 * Click **Next**, review your **Payment method** and confirm the purchase by clicking **Buy now**.
 
-<figure><img src="../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 * The additional users will be added to your **existing SCEPman license key** automatically.
 
@@ -174,7 +174,7 @@ By disabling Automatic Renewal you **are opting out of the perpetual forex rate*
 
 If you decide to disable **Automatic Renewal**, your subscription will not renew automatically. Instead, cleverbridge will (irreversibly) cancel the subscription towards the end of the current subscription cycle. This means, the service will be terminated automatically on that date as well. While the subscription has not expired yet, you can opt to enable **Automatic Renewal** at any time by navigating to your subscription's [self-management portal](cleverbridge.md#self-management-portal).
 
-<figure><img src="../../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 ### Cancellation
 
@@ -192,9 +192,10 @@ Partners can leverage the same tools to manage subscriptions on behalf of their 
 
 
     <figure><img src="../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
-*   On that page, locate the button saying **Manage Your Subscription For "\<SKU>"** and click it.
+*   On that page, locate the button saying **Manage Your Subscription For "\<SKU>"** and click it.\
 
-    <figure><img src="../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+
+    <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 * This will either navigate you to the self-management portal directly or you might have to re-generate the link (they might expire after a while) first.
 
 {% hint style="info" %}

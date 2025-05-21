@@ -18,7 +18,7 @@ You can check that the Self Service role exists in the SCEPman-api App Registrat
 
 You can create role assignments for users and groups in the SCEPman-api Enterprise Application.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Certificate Enrollment Requests
 
