@@ -57,7 +57,7 @@ The annual plan is discounted by 10% in comparison to the monthly plan (calculat
 
 The following user segments are available for both, monthly and annual plans.
 
-<table data-header-hidden><thead><tr><th width="286.83723958333337"></th><th></th><th></th></tr></thead><tbody><tr><td><strong>User Segment</strong></td><td><strong>Minimum Total Users</strong></td><td><strong>Maximum Total Users</strong></td></tr><tr><td>SCEPman Enterprise (M/Y) 50</td><td>50</td><td>249</td></tr><tr><td>SCEPman Enterprise (M/Y) 250</td><td>250</td><td>999</td></tr><tr><td>SCEPman Enterprise (M/Y) 1000</td><td>1,000</td><td>4,999</td></tr><tr><td>SCEPman Enterprise (M/Y) 5000</td><td>5,000</td><td>9,999</td></tr><tr><td>SCEPman Enterprise (M/Y) 10000</td><td>10,000</td><td>unlimited</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="286.83723958333337"></th><th></th><th></th></tr></thead><tbody><tr><td><strong>User Segment</strong></td><td><strong>Minimum Total Users</strong></td><td><strong>Maximum Total Users</strong></td></tr><tr><td>SCEPman Enterprise 50 (M/Y)</td><td>50</td><td>249</td></tr><tr><td>SCEPman Enterprise 250 (M/Y)</td><td>250</td><td>999</td></tr><tr><td>SCEPman Enterprise 1000 (M/Y)</td><td>1,000</td><td>4,999</td></tr><tr><td>SCEPman Enterprise 5000 (M/Y)</td><td>5,000</td><td>9,999</td></tr><tr><td>SCEPman Enterprise 10000 (M/Y)</td><td>10,000</td><td>unlimited</td></tr></tbody></table>
 
 ### RADIUSaaS & SCEPman Bundle
 
