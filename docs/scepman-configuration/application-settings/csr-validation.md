@@ -24,6 +24,14 @@ _Linux: AppConfig\_\_DirectCSRValidation\_\_Enabled_
 
 **Description:** This endpoint is required for the Certificate Master component. You must set this to _true_ to use Certificate Master. Only Certificate Master is allowed to submit requests via this endpoint.
 
+## AppConfig:DirectCSRValidation:DefaultEkus
+
+_Linux: AppConfig\_\_DirectCSRValidation\_\_DefaultEkus_
+
+**Value:** ClientAuthentication (or other EKUs)
+
+**Description:** This setting defines the default EKUs to be used for CSR signing when the CSR does not specify any. If the CSR includes its own EKU(s), this setting will be ignored. Multiple EKUs can be specified, separated by commas.
+
 ## AppConfig:DirectCSRValidation:ValidityPeriodDays
 
 _Linux: AppConfig\_\_DirectCSRValidation\_\_ValidityPeriodDays_
