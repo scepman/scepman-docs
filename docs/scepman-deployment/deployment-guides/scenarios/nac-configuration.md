@@ -16,6 +16,10 @@ Please refer to the [RADIUS-as-a-Service documentation](https://docs.radiusaas.c
 
 ## Cisco ISE
 
+{% hint style="info" %}
+This is no longer required for Cisco ISE Release 3.3 Patch 5 or later.
+{% endhint %}
+
 Cisco ISE commonly does not support HTTP 1.1 but only HTTP 1.0 for OCSP requests. This requires an additional Application Proxy in front of SCEPman. Refer to our [Troubleshooting Article for ISE](../../../other/troubleshooting/cisco-ise-host-header-limitation.md) for details.
 
 At least some versions of Cisco ISE 3.x require an Extended Key Usage extension containing the OCSP Responder Extended Key Usage in order to accept OCSP responses, even if they come from a CA, where it is not required per RFC. SCEPman versions until 1.7 did not add an Extended Key Usage by default to its CA certificate. Version 1.8 allows you to add this extension via a [configuration setting](../../../scepman-configuration/application-settings/dependencies-azure-services/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-addextendedkeyusage). In SCEPman 1.9, the default of the configuration setting already adds the Extended Key Usage. If you already have a CA certificate without an Extended Key Usage extension and have issues with Cisco ISE 3.x, you may need to create a new SCEPman Root CA certificate with the Extended Key Usage extension.
@@ -23,7 +27,7 @@ At least some versions of Cisco ISE 3.x require an Extended Key Usage extension 
 ## Aruba ClearPass
 
 {% hint style="info" %}
-This is only required if your ClearPass is running a version **< ClearPass 6.9.6**
+This is **no longer required** for ClearPass 6.9.6 or later.
 {% endhint %}
 
 Analogously to Cisco ISE, Aruba ClearPass uses HTTP 1.0 for OCSP requests and therefore requires [extra configuration steps adding an Application Proxy](../../../other/troubleshooting/cisco-ise-host-header-limitation.md) to work with SCEPman.
