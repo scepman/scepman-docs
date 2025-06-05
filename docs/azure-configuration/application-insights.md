@@ -17,7 +17,7 @@ To activate the Application Insights for your App Service, please follow these i
 
 <figure><img src="../.gitbook/assets/2023-10-23 13_39_08-app-scepman-mex6exctu2nzq.png" alt=""><figcaption></figcaption></figure>
 
-5. You need to select **.NET** and select the **Collection level Recommended.**&#x20;
+5. You need to select **.NET** and select the **Collection level Recommended.** (For Linux based deployment, please choose **.NET Core**)
 
 <figure><img src="../.gitbook/assets/2023-10-23 13_42_16-app-scepman-mex6exctu2nzq.png" alt=""><figcaption></figcaption></figure>
 
