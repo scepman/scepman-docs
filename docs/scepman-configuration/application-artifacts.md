@@ -6,6 +6,8 @@ We offer three channels for our SCEPman web applications, you can find the actua
 
 There are two independent artifact hosts, GitHub and Azure (install.scepman.com). If one of the two should fail, you can switch to the other. Thus, there are two download URLs for each channel. Detecting the used channel when using install.scepman.com requires SCEPman 2.3, but apart from that also works with SCEPman 2.2.
 
+{% tabs fullWidth="false" %}
+{% tab title="Windows App Service" %}
 ### SCEPman Production Channel
 
 * full released version
@@ -57,11 +59,69 @@ https://install.scepman.com/dist/Artifacts-Intern.zip
 ```
 https://raw.githubusercontent.com/scepman/install/deferred/dist/Artifacts.zip
 ```
+{% endtab %}
+
+{% tab title="Linux App Service" %}
+### SCEPman Production Channel (Linux)
+
+* full released version
+* function and load-tested
+* bugs not expected
+
+```
+https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Linux.zip
+```
+
+```
+https://install.scepman.com/dist/Artifacts-Linux.zip
+```
+
+### SCEPman Beta Channel (Linux)
+
+* next production release
+* function tested, but no load-test
+* bugs possible
+
+```
+https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Linux-Beta.zip
+```
+
+```
+https://install.scepman.com/dist/Artifacts-Linux-Beta.zip
+```
+
+### SCEPman Internal Channel (Linux)
+
+* ongoing development
+* limited function tested and no load-test
+* bugs expected
+
+```
+https://raw.githubusercontent.com/scepman/install/master/dist/Artifacts-Linux-Internal.zip
+```
+
+```
+https://install.scepman.com/dist/Artifacts-Linux-Internal.zip
+```
+
+### SCEPman Deferred Channel (Linux)
+
+* second-to-latest version
+* function and load-tested
+* does not include the latest bugfixes and features
+
+```
+https://raw.githubusercontent.com/scepman/install/deferred/dist/Artifacts-Linux.zip
+```
+{% endtab %}
+{% endtabs %}
 
 ## Available SCEPman Certificate Master Channels
 
 We offer three channels for our SCEPman web applications, you can find the actual artifacts also on [Github](https://github.com/scepman/install/tree/master/dist-certmaster). In order to receive updates from one of the update channels, copy the respective URL from below into the [WEBSITE\_RUN\_FROM\_PACKAGE](application-settings-1/basics.md#website_run_from_package) setting of your Certificate Master App Service.
 
+{% tabs fullWidth="false" %}
+{% tab title="Windows App Service" %}
 ### Certificate Master Production Channel
 
 ```
@@ -97,6 +157,46 @@ https://install.scepman.com/dist-certmaster/CertMaster-Artifacts-Intern.zip
 ```
 https://raw.githubusercontent.com/scepman/install/deferred/dist-certmaster/CertMaster-Artifacts.zip
 ```
+{% endtab %}
+
+{% tab title="Linux App Service" %}
+### Certificate Master Production Channel (Linux)
+
+```
+https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts-Linux.zip
+```
+
+```
+https://install.scepman.com/dist-certmaster/CertMaster-Artifacts-Linux.zip
+```
+
+### Certificate Master Beta Channel (Linux)
+
+```
+https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts-Linux-Beta.zip
+```
+
+```
+https://install.scepman.com/dist-certmaster/CertMaster-Artifacts-Linux-Beta.zip
+```
+
+### Certificate Master Internal Channel (Linux)
+
+```
+https://raw.githubusercontent.com/scepman/install/master/dist-certmaster/CertMaster-Artifacts-Linux-Internal.zip
+```
+
+```
+https://install.scepman.com/dist-certmaster/CertMaster-Artifacts-Linux-Internal.zip
+```
+
+### Certificate Master Deferred Channel (Linux)
+
+```
+https://raw.githubusercontent.com/scepman/install/deferred/dist-certmaster/CertMaster-Artifacts-Linux.zip
+```
+{% endtab %}
+{% endtabs %}
 
 ## Custom Artifact Location
 
@@ -148,7 +248,7 @@ To get continuous updates for SCEPman you can point a configuration variable to 
 {% step %}
 ### Locate and Edit the parameter WEBSITE\_RUN\_FROM\_PACKAGE
 
-Replace the URL with your chosen [SCEPman Update Channel](application-artifacts.md#available-scepman-channels) or [Custom Artificate Location](application-artifacts.md#custom-artifact-location)
+Replace the URL with your chosen [SCEPman Update Channel](application-artifacts.md#available-scepman-channels) or [Custom Artifact Location](application-artifacts.md#custom-artifact-location)
 
 <figure><img src="../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
 
