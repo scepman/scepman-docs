@@ -87,7 +87,7 @@ Other SAN values like DNS can be added if needed.
 
 <details>
 
-<summary>Key usage: <code>Digital signature</code> and <code>key enciphermen</code>t</summary>
+<summary>Key usage: <code>Digital signature</code> and <code>key encipherment</code></summary>
 
 Please activate both cryptographic actions.
 
