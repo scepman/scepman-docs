@@ -333,13 +333,17 @@ When changing this setting - at your own risk - please consider that it is not o
 
 #### 4. Can `HTTPS Only` be enabled?
 
-_No (not for SCEPman app service)_, as this will break the OCSP-responder functionality of SCEPman in combination with many OCSP clients and vendor appliances. OCSP is a protocol that is more commonly provided over HTTP than HTTPS. One of the reasons is, if you used TLS for certificate revocation checking (downloading CRLs or OCSP), there could be a chicken-and-egg-problem, where the client or appliance cannot establish the TLS connection to the OCSP endpoint, because the server certificate needs to be verified over OCSP first. It also doesn't add a lot of security, because OCSP responses are cryptographically signed anyway and therefore cannot be spoofed. Hence, SCEPman needs an exemption from policies enforcing TLS.
+_No (not for SCEPman App Service)_, as this will break the OCSP-responder functionality of SCEPman in combination with many OCSP clients and vendor appliances. OCSP is a protocol that is more commonly provided over HTTP than HTTPS. One of the reasons is, if you used TLS for certificate revocation checking (downloading CRLs or OCSP), there could be a chicken-and-egg-problem, where the client or appliance cannot establish the TLS connection to the OCSP endpoint, because the server certificate needs to be verified over OCSP first. It also doesn't add a lot of security, because OCSP responses are cryptographically signed anyway and therefore cannot be spoofed. Hence, SCEPman needs an exemption from policies enforcing TLS.
 
-**Note:** **`HTTPS Only`** cannot be enabled for the SCEPman app service, but it should be enabled for the Certificate Master app service.
+**Note:** **`HTTPS Only`** cannot be enabled for the SCEPman App Service, but it should be enabled for the Certificate Master App Service.
 
 #### 5. Can the Minimum Inbound TLS Version be set to 1.3?
 
-_No_, as TLS 1.3 doesn't support re-negotiation. This means that once a connection is established, the server cannot ask the client to present a client certificate. We want the client to authenticate with a certificate in some circumstances (EST simple reenroll), so if you set TLS to 1.3, you won't be able to renew your certificates using EST.
+_No_ for the SCEPman App Service, as TLS 1.3 doesn't support re-negotiation. This means that once a connection is established, the server cannot ask the client to present a client certificate. We want the client to authenticate with a certificate in some circumstances (EST simple reenroll), so if you set TLS to 1.3, you won't be able to renew your certificates using EST.
+
+Additionally, not all SCEP clients support TLS 1.3. One important example is the SCEP client integrated in Windows 8, 10, and 11, which as of 2025-07 does not support TLS 1.3 (there will be a client-side [error during SCEP enrollment](troubleshooting/general.md#some-windows-machines-do-not-enroll-or-renew-certificates)).
+
+**Note:** As only browsers access the Certificate Master App Service, it is recommend for Certificate Master to set the Minimum Inbound TLS Version to 1.3.
 
 ## GDPR and Data-residency <a href="#user-content-gdpr-and-data-residency" id="user-content-gdpr-and-data-residency"></a>
 

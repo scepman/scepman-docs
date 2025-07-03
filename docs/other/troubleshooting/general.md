@@ -87,6 +87,25 @@ Check whether there is any `[ERROR]` entry in the SCEPman logs. Possibly also se
 
 Oliver Kieselbach and Christoph Hannebauer wrote [a blog article about analysis of certificate request or renewal problems](https://oliverkieselbach.com/2022/09/21/deep-dive-of-scep-certificate-request-renewal-on-intune-managed-windows-clients/) that helps you to track down enrollment problems on the client side.
 
+The Windows SCEP client supports only TLS up to version 1.2. Setting the minimum inbound TLS version to 1.3 in the SCEPman App Service causes particular error entries in the `DeviceManagement-Enterprise-Diagnostics-Provider` event log. Here is an example from a Windows 11 machine:
+
+{% code overflow="wrap" fullWidth="false" %}
+```
+TimeCreated  : 7/2/2025 12:51:06 PM
+ProviderName : Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider
+Id           : 32
+Message      : SCEP: Certificate enroll failed. Result: (Unknown Win32 Error code: 0x80072f8f).
+
+TimeCreated  : 7/2/2025 12:51:06 PM
+ProviderName : Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider
+Id           : 307
+Message      : SCEP: Failed LogError Message : (SCEPInstallCertificateWithScepHelper:Failed to Initialize
+               SCEP enrollment with NDES Server
+               'https://scepman.contoso.com/certsrv/mscep/mscep.dll/pkiclient.exe', CA cert thumbprint
+               '24C45EF4284A5093A9C3886A6466C1D6D84EE058' and server certs ''. LogError 0x80)
+```
+{% endcode %}
+
 ### Windows 10 devices cannot enroll with AutoPilot
 
 Currently, some Windows 10 devices do not have the correct time during the OOBE experience. This is not easy to see, since the screen shows no clock. This causes a problem with newly issued certificates, as they are _not yet_ valid. Windows then discards these "invalid" certificates and shows an error. Certificates are issued 10 minutes in the past by default to address smaller clock issues, but we have recently seen Windows 10 devices that are up to 9 hours behind time.
