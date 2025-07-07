@@ -17,7 +17,10 @@ Please refer to the [RADIUS-as-a-Service documentation](https://docs.radiusaas.c
 ## Cisco ISE
 
 {% hint style="info" %}
-This is no longer required for Cisco ISE Release 3.3 Patch 5 or later.
+This is no longer required for Cisco&#x20;
+
+* ISE Release 3.3 Patch 5 or later,
+* ISE Release 3.4 Patch 2 or later
 {% endhint %}
 
 Cisco ISE commonly does not support HTTP 1.1 but only HTTP 1.0 for OCSP requests. This requires an additional Application Proxy in front of SCEPman. Refer to our [Troubleshooting Article for ISE](../../../other/troubleshooting/cisco-ise-host-header-limitation.md) for details.
