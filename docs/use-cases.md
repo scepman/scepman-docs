@@ -29,6 +29,14 @@ You can enrol user authentication certificates with SCEPman for TLS client authe
   * AVD
   * Windows server administration / PAWs
 
+## TLS Inspection
+
+SCEPman can [issue sub CA certificates](certificate-management/certificate-master/sub-ca-certificate.md) for TLS inspection on firewall appliances and services such as
+
+* [Azure Firewall](https://learn.microsoft.com/en-us/azure/firewall/premium-certificates)
+* Global Secure Access ([Microsoft Entra Internet Access](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-transport-layer-security))
+* Other firewall appliances
+
 ## MDM Solutions
 
 To automate the deployment of relevant configuration profiles and to keep certificates up to date (auto-renewal), we recommend to use SCEPman along with an MDM solution. While SCEPman natively integrates with Microsoft Endpoint Manager/Intune and Jamf Pro, our customers have successfully deployed SCEPman along with other MDM solutions.
