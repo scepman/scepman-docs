@@ -143,7 +143,7 @@ New-SCEPmanCertificate -Certificate $Certificate -SaveToStore LocalMachine
 
 #### CertificateFromFile
 
-On Linux system a certificate renewal can be performed by passing the paths of the existing certificate and its private key.
+On Linux systems a certificate renewal can be performed by passing the paths of an existing certificate and its private key.
 
 ```powershell
 New-SCEPmanCertificate -CertificateFromFile '~/certs/myCert.pem' -KeyFromFile '~/certs/myKey.key' -SaveToFolder '~/certs'
