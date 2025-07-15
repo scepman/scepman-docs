@@ -220,7 +220,7 @@ Based on customer feedback, it appears that some VPN clients (e.g., Azure VPN Cl
 
 ### Example
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## User Digital Signature Certificate
 
@@ -274,7 +274,7 @@ We recommend setting Renewal Threshold (%) to a value that ensures certificates 
 
 ### **Example**
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 After a successful profile sync, you should see the user certificate for Intended Purposes **Secure Email**
 

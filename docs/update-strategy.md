@@ -68,7 +68,7 @@ Now ensure that your deployment slot points to SCEPman Production channel on Git
 
 Navigate to the **Deployment Slot** -> **Environment variables** and look for the setting **WEBSITE\_RUN\_FROM\_PACKAGE** and past the [production channel artifacts](scepman-configuration/application-artifacts.md#production) to the value.
 
-<figure><img src=".gitbook/assets/image (1) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 If you go back to your primary **App Service** and navigate to **Deployment Slots y**ou can see your two slots and can manage the **Traffic %** to root the defined among of request to the new **pre-release** slot.\
 Important that this traffic rooting is completely transparent for the application and handled by the App Service. We recommend setting the **Traffic %** to **20**. After that, you can compare the two slots in **Application Insights**. In case we are releasing an updated version to our GitHub, you only must restart the **pre-release** slot and after that, you can compare the two different versions in **Application Insights**. After one week or your choice of time, you can upload the new GitHub artifacts to your custom artifacts location and have updated the SCEPman solution.

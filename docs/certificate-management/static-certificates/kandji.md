@@ -1,19 +1,19 @@
 ---
 description: >-
-  Issue certificates in Kandji by connecting SCEPman as an External CA. Devices
+  Issue certificates in Addigy by connecting SCEPman as an External CA. Devices
   will be able to obtain certificates using SCEPman's static interface and a
   challenge password enrolled.
 ---
 
-# Kandji
+# Addigy
 
-SCEPman can be connected to [Kandji](https://www.kandji.io/) as an External CA via SCEPman's static interface and a challenge password enrolled devices will be able to obtain certificates.
+SCEPman can be integrated with [Addigy](https://addigy.com/) as an External Certificate Authority (CA) using SCEPman's static interface. With a configured challenge password, enrolled devices will be able to request and obtain certificates.
 
-For more general information about other MDM solutions and SCEPman integration please check [here](./).
+For more general information about other MDM solutions and SCEPman integration, please check [here](./).
 
-## Enable Kandji Integration
+## Enable Addigy Integration
 
-Integrating of SCEPman can be easily enabled via the following environment variables on SCEPman App Service:
+Integration of SCEPman can be easily enabled via the following environment variables on SCEPman App Service:
 
 {% hint style="info" %}
 You can differentiate between the SCEPman App Service and the Certificate Master by looking for the App Service **without** the "-cm" in its name
@@ -23,58 +23,49 @@ You can differentiate between the SCEPman App Service and the Certificate Master
 | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------: |
 |                        [AppConfig:StaticValidation:Enabled](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-enabled)                       | Enable 3rd-party validation                                                                                                                                                                                                                                                                             | _**true**_ to enable, _**false**_ to disable |
 |                [AppConfig:StaticValidation:RequestPassword](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-requestpassword)               | <p>Certificate signing requests sent to SCEPman for signing are authenticated with this secure static password<br><br><strong>Recommendation</strong>: Store this secret in <a href="../../scepman-configuration/application-settings/#secure-configuration-in-azure-key-vault">Azure KeyVault</a>.</p> |      _generate a 32 character password_      |
-|       [AppConfig:StaticValidation:ValidityPeriodDays](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-validityperioddays) (optional)       | Days certificates issued via Kandji are valid                                                                                                                                                                                                                                                           |                      365                     |
+|       [AppConfig:StaticValidation:ValidityPeriodDays](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-validityperioddays) (optional)       | Days certificates issued via Addigy are valid                                                                                                                                                                                                                                                           |                      365                     |
 | [AppConfig:StaticValidation:EnableCertificateStorage](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-enablecertificatestorage) (optional) | Store requested certificates in the Storage Account, in order to show them in SCEPman Certificate Master                                                                                                                                                                                                | _**true**_ to enable, _**false** to disable_ |
 
 {% hint style="warning" %}
 After adding or editing SCEPman configuration parameters, you need to restart the App Service.
 {% endhint %}
 
-## Kandji Configuration
+## Addigy Configuration
 
 ### SCEPman Root Certificate
 
-As a first step, you must deploy SCEPman's root certificate. Download this CA certificate via the SCEPman website:
+As a first step, SCEPman root certificate must be deployed. To do so, download the RootCA certificate via the SCEPman website:
 
 ![SCEPman Website](<../../.gitbook/assets/image-2 (10).png>)
 
-In Kandji, navigate to **Library** on the left navigation bar and add a **Certificate Library Item** to your Blueprint.
+Now convert the .cer root certificate to PEM format in order to upload it to Addigy. You can use the following OpenSSL command for that:
 
-<figure><img src="../../.gitbook/assets/2023-03-09 12_51_21-Window.png" alt=""><figcaption><p>Configure a Certificate Payload</p></figcaption></figure>
+```
+openssl x509 -inform der -in scepman-root.cer -out SCEPman-Root-Certificate.pem
+```
 
-To upload the certificate, first select **PKCS #1-formatted certificate** under **Certificate type**, secondly provide an optional name, upload your SCEPman CA certificate and eventually save it.
+In Addigy, navigate to **Profiles** and create a new MDM profile, choose **Certificates - (PKCS12)** as Profile Type to upload SCEPman RootCA and upload the PEM format file.
 
-<figure><img src="../../.gitbook/assets/2023-03-09 14_21_12-KandjiSCEPmanRootCA.png" alt=""><figcaption><p>Adding the SCEPman Root CA Certificate</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ### SCEP Profile
 
-The second step is to add a **SCEP Profile** to your **Blueprint**. Therefore, add a new **SCEP Library Item** and configure it as below:
+The second step is to create a new **SCEP Profile** for device certificate deployment as below:
 
-* **URL**: The static SCEP endpoint of SCEPman you configured [above](kandji.md#enable-kandji-integration)
-* **Name:** An optional SAN attribute
-* **Challenge**: Is required to authenticate CSR requests sent to SCEPman's static SCEP interface. It must match the [value](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-requestpassword) you have configured [above](kandji.md#enable-kandji-integration).
-* **Fingerprint:** Optional CA fingerprint. It is highly recommended to configure this value as it provides an additional level of security. You can find it on your SCEPman website as **CA Thumbprint**.
-* **Subject:** Optional subject name. **CN=$PROFILE\_UUID** will be automatically added from Kandji as default common name. Kandji allows you to add multiple CNs.
+* **Payload Name:** Choose a name for the profile, this will appear as a certificate profile on the client.
+* **URL**: The static SCEP endpoint of SCEPman that you configured in a previous step, you can get it from SCEPman homepage, see below:
 
-{% hint style="warning" %}
-We have seen cases where macOS and iOS had problems in auto-selecting client certificates for network authentication purposes where more than two CNs were added.
-{% endhint %}
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-* **Key Size:** 2048
-* **Key Usage:** Both, signing and encryption
+* **Challenge**: Is required to authenticate CSR requests sent to SCEPman's static SCEP interface. It must match the [value](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-requestpassword) of the setting _AppConfig:StaticValidation:RequestPassword_ that you previously configured.
+* Enable the **"Proxy SCEP Requests"** option
+* Choose "Signing & Encryption" for **Key Usage**
+* Fill out the rest as shown in the screenshots below
 
-For more information please check [Kandji's documentation](https://support.kandji.io/support/solutions/articles/72000559782-scep-profile).
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/2023-03-09 14_43_19-Kandji.png" alt=""><figcaption><p>Adding a SCEP Profile</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/2023-03-09 14_50_23-Kandji.png" alt=""><figcaption><p>SCEP Profile Configuration</p></figcaption></figure>
+After successfully creating both the Root CA and Device Certificate profiles, apply them to your policy to deploy the configuration to assigned devices.
 
-<figure><img src="../../.gitbook/assets/2023-03-09 14_51_22-Kandji.png" alt=""><figcaption><p>SCEP Profile Configuration</p></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/2023-03-09 14_52_52-Kandji.png" alt=""><figcaption><p>SCEP Profile Configuration</p></figcaption></figure>
-
-### Deployment Status
-
-After saving the certificate or SCEP profile, switch to **Status** to check the deployment status on **Blueprints** assigned devices.
-
-<figure><img src="../../.gitbook/assets/2023-03-09 15_12_40-Kandji.png" alt=""><figcaption><p>Deployment Status</p></figcaption></figure>
+For more information, please check [Addigy's documentation.](https://support.addigy.com/hc/en-us/articles/4403542430739-Deploying-Certificates)
