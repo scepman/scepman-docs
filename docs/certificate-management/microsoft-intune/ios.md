@@ -6,7 +6,11 @@ description: >-
 
 # iOS/iPadOS
 
-The following article describes how to deploy a device or/and user certificates for iOS and iPadOS devices. The deployment of the SCEPman Root Certificate is mandatory. Afterward you can choose between deploying only device, user or even both certificate types.
+The following article describes how to deploy a device and/or user certificates for iOS and iPadOS devices. The deployment of the SCEPman Root Certificate is mandatory. Afterward, you can choose between deploying only the device, user, or even both certificate types.
+
+{% hint style="warning" %}
+Please note that macOS enrolls a separate client authentication certificate(s) for each device configuration profile in which a SCEP profile is referenced, in addition to the actual SCEP certificate profile. See the note [here](https://learn.microsoft.com/en-us/intune/intune-service/protect/certificates-profile-scep#assign-the-certificate-profile)
+{% endhint %}
 
 ## Root Certificate
 
@@ -24,7 +28,7 @@ The basis for deploying SCEP certificates is to trust the root certificate of SC
 * [ ] Now you can deploy this profile to your devices. Please choose All Users and/or All Devices or a dedicated group for assignment.
 
 {% hint style="info" %}
-Note, that you have to use the **same group for assigning** the **Trusted certificate** and **SCEP profile**. Otherwise, the Intune deployment might fail.
+Note that you have to use the **same group for assigning** the **Trusted certificate** and **SCEP profile**. Otherwise, the Intune deployment might fail.
 {% endhint %}
 
 ## Device certificates
