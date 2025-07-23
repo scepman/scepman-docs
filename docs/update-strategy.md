@@ -13,7 +13,7 @@ How to do that is mentioned in this article:
 With this approach you always get the newest features and security updates.
 
 {% hint style="info" %}
-Keep in mind that **an update only occurs, when the App Service is stopped and started again**. This is the event when the ZIP-Deployment is triggered. The App Service does not stop and start automatically in case new application artifacts are available, so **you have to perform it manually**.
+Keep in mind that **an update only occurs, when the App Service is stopped and started again**. This is the event when the ZIP-Deployment is triggered. While the App Service does not stop and start automatically, it is restarted externally in certain events. One of those events is the [maintenance and patching of the underlying infrastructure](https://learn.microsoft.com/en-us/azure/app-service/routine-maintenance-downtime). Those happen **regularly and keep your service up-to-date**.
 {% endhint %}
 
 In a production enterprise environment, if you want to have more control over the update process you can use the Microsoft feature **Deployment Slots**.
