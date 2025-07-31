@@ -128,6 +128,7 @@
   * [Cisco ISE Host Header Limitation](other/troubleshooting/cisco-ise-host-header-limitation.md)
   * [Intune service discovery API permissions](other/troubleshooting/intune-service-discovery-api-permissions.md)
   * [Re-enrollment trigger](other/troubleshooting/re-enrollment-trigger.md)
+  * [SID-Spoofing Vulnerability](other/troubleshooting/sid-spoofing-vulnerability.md)
 
 ***
 

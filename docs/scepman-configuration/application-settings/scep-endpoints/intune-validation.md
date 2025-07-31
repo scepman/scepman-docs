@@ -178,6 +178,14 @@ This operation can be used with the [SCEPmanClient ](https://github.com/scepman/
 Please be aware that Intune will not make use of the _RenewalReq_ operation and this setting is not required for usual operation.
 {% endhint %}
 
+## AppConfig:IntuneValidation:AllowRequestedSidExtension
+
+**Value:** _true_ (default) or _false_
+
+**Description:** If there is a SAN URI in the certificate request containing a SID, it will be copied to the issued certificate if this setting is true. If it is false, it will be filtered out. The SID is important for a strong mapping of certificates in on-premises AD authentication scenarios. However, Intune seemingly [does not check the authenticity of the requested SID](../../../other/troubleshooting/sid-spoofing-vulnerability.md), so allowing requested SIDs can pose a security vulnerability.
+
+SID extensions added via [AppConfig:AddSidExtension](../certificates.md#appconfig-addsidextension) are not affected by this setting.
+
 ## AppConfig:IntuneValidation:ReenrollmentAllowedCertificateTypes <a href="#appconfig-dbcsrvalidation-reenrollmentallowedcertificatetypes" id="appconfig-dbcsrvalidation-reenrollmentallowedcertificatetypes"></a>
 
 **Value:** Comma-separated list of certificate types from this list:
