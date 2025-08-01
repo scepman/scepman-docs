@@ -180,11 +180,15 @@ Please be aware that Intune will not make use of the _RenewalReq_ operation and 
 
 ## AppConfig:IntuneValidation:AllowRequestedSidExtension
 
-**Value:** _true_ (default) or _false_
+{% hint style="info" %}
+Applicable to version 2.11.1460 and above. Previous versions behave differently than described if this setting is modified and we recommend to not configure this setting for these older versions.
+{% endhint %}
 
-**Description:** If there is a SAN URI in the certificate request containing a SID, it will be copied to the issued certificate if this setting is true. If it is false, it will be filtered out. The SID is important for a strong mapping of certificates in on-premises AD authentication scenarios. However, Intune seemingly [does not check the authenticity of the requested SID](../../../other/troubleshooting/sid-spoofing-vulnerability.md), so allowing requested SIDs can pose a security vulnerability.
+**Value:** _true_ or _false_ (default)
 
-SID extensions added via [AppConfig:AddSidExtension](../certificates.md#appconfig-addsidextension) are not affected by this setting.
+**Description:** If there is a SID extension (OID 1.3.6.1.4.1.311.25.2) in the certificate request, it will be copied to the issued certificate if this setting is true.  If it is false, it will be filtered out. The SID is important for a strong mapping of certificates in on-premises AD authentication scenarios. However, Intune seemingly [does not check the authenticity of the requested SID](../../../other/troubleshooting/sid-spoofing-vulnerability.md) in the extension, so allowing requested SID extensions can pose a security vulnerability.
+
+SID extensions added via [AppConfig:AddSidExtension](../certificates.md#appconfig-addsidextension) are not affected by this setting. Additionally, SIDs added as a SAN URI containing a SID are also unaffected if the SCEPman version is 2.11.1460 or newer — older versions of SCEPman copy the SAN URI SID only if this _true_, but they have _true_ as default value.
 
 ## AppConfig:IntuneValidation:ReenrollmentAllowedCertificateTypes <a href="#appconfig-dbcsrvalidation-reenrollmentallowedcertificatetypes" id="appconfig-dbcsrvalidation-reenrollmentallowedcertificatetypes"></a>
 
