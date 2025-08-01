@@ -8,6 +8,34 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ## Versions
 
+### 2.11 - Currently in Internal and Beta Channels
+
+#### SCEPman 2.11.1465
+
+* Active detection and mitigation of the [Intune SID Spoofing Vulnerability](other/troubleshooting/sid-spoofing-vulnerability.md)
+  * For certificates requested through Intune, Intune SID extensions in the CSR will now be ignored by default
+  * The [AppConfig:AddSidExtension](scepman-configuration/application-settings/certificates.md#appconfig-addsidextension) will now also add SIDs to device certificates
+* Short caching (50 seconds) of status results on the SCEPman status page to reduce transaction cost of Azure Key Vault in scenarios with many accesses of the home page (e.g. health probing)
+* Caching of results from Microsoft Graph about devices and users to reduce the dependency on these services and increase OCSP response performance. By default, only negative responses are cached.
+* Improved heuristic automatic repairs of defect OCSP requests, increasing robustness of the OCSP service
+* Smaller improvements, e.g.
+  * More specific log messages on some error conditions
+  * Further adjustments to logging to avoid clutter and highlight important messages
+  * Library updates
+
+#### Certificate Master 2.11.1229
+
+* Submission of CSRs for TLS Inspection, Code Signing, Device, and User certificates (may require SCEPman 2.11)
+  * Fine-grained roles to determine not only which type of certificates a user may request, but also which method — Forms-based or CSR
+* Improved UI
+  * Renamed some headings for clarity
+* More sanity checks for input data
+  * Check that FQDNs requested for a server certificate actually have FQDN syntax
+  * Warn about problems with issued certificates if the SCEPman CA certificate seemingly does not support the type
+* Smaller improvements and fixed bugs, e.g.
+  * Display the revocation button in the certificates table only when the user has permission (it has never worked without permission, but was still shown)
+  * Library updates
+
 ### 2.10 - May 2025
 
 #### SCEPman 2.10.1404
