@@ -34,7 +34,7 @@ You can enrol user authentication certificates with SCEPman for TLS client authe
 SCEPman can [issue sub CA certificates](certificate-management/certificate-master/sub-ca-certificate.md) for TLS inspection on firewall appliances and services such as
 
 * [Azure Firewall](https://learn.microsoft.com/en-us/azure/firewall/premium-certificates)
-* Global Secure Access ([Microsoft Entra Internet Access](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-transport-layer-security))
+* Global Secure Access (GSA) ([Microsoft Entra Internet Access](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-transport-layer-security))
 * Other firewall appliances
 
 ## MDM Solutions
