@@ -26,7 +26,7 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 #### Certificate Master 2.11.1235
 
 * Submission of CSRs for TLS Inspection, Code Signing, Device, and User certificates (may require SCEPman 2.11)
-  * Fine-grained roles to determine not only which type of certificates a user may request, but also which method — Forms-based or CSR
+  * [Fine-grained roles](scepman-configuration/rbac/csr-and-form-roles.md) to determine not only which type of certificates a user may request, but also which method — Forms-based or CSR
 * Improved UI
   * Renamed some headings for clarity
 * More sanity checks for input data
@@ -39,7 +39,7 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 #### SCEPman PowerShell Module 2.11
 
 * Improved session handling
-* Allow creation of fine-grained roles for Certificate Master
+* Allow [creation of fine-grained roles](scepman-configuration/rbac/csr-and-form-roles.md#adding-the-roles) for Certificate Master
 
 #### SCEPmanClient PowerShell Module 2.11
 
