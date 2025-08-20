@@ -36,6 +36,18 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
   * Display the revocation button in the certificates table only when the user has permission (it has never worked without permission, but was still shown)
   * Library updates
 
+#### SCEPman PowerShell Module 2.11
+
+* Improved session handling
+* Allow creation of fine-grained roles for Certificate Master
+
+#### SCEPmanClient PowerShell Module 2.11
+
+* Improved PowerShell 5 compatibility
+* Allow user protected key creation
+* Enable saving requested certificates directly in a Key Vault
+* Small improvements
+
 ### 2.10 - May 2025
 
 #### SCEPman 2.10.1404
