@@ -8,14 +8,14 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ## Versions
 
-### 2.11 - Currently in Internal and Beta Channels
+### 2.11 - August 2025
 
-#### SCEPman 2.11.1465
+#### SCEPman 2.11.1476
 
 * Active detection and mitigation of the [Intune SID Spoofing Vulnerability](other/troubleshooting/sid-spoofing-vulnerability.md)
   * For certificates requested through Intune, Intune SID extensions in the CSR will now be ignored by default
   * The [AppConfig:AddSidExtension](scepman-configuration/application-settings/certificates.md#appconfig-addsidextension) will now also add SIDs to device certificates
-* Short caching (50 seconds) of status results on the SCEPman status page to reduce transaction cost of Azure Key Vault in scenarios with many accesses of the home page (e.g. health probing)
+* Short caching (50 seconds) of status results on the SCEPman status page to reduce load on backends, e.g. transaction cost of Azure Key Vault in scenarios with many accesses of the home page (e.g. health probing)
 * Caching of results from Microsoft Graph about devices and users to reduce the dependency on these services and increase OCSP response performance. By default, only negative responses are cached.
 * Improved heuristic automatic repairs of defect OCSP requests, increasing robustness of the OCSP service
 * Smaller improvements, e.g.
@@ -23,7 +23,7 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
   * Further adjustments to logging to avoid clutter and highlight important messages
   * Library updates
 
-#### Certificate Master 2.11.1229
+#### Certificate Master 2.11.1235
 
 * Submission of CSRs for TLS Inspection, Code Signing, Device, and User certificates (may require SCEPman 2.11)
   * Fine-grained roles to determine not only which type of certificates a user may request, but also which method — Forms-based or CSR
