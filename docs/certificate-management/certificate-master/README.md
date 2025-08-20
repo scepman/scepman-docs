@@ -14,8 +14,8 @@ Below sites provide detailed information on how to issue certificates through th
 
 To make use of Certificate Master you will need to assign the intended role first to your user account. Please refer to the following article regarding Certificate Masters role based access control:
 
-{% content-ref url="../../scepman-configuration/rbac.md" %}
-[rbac.md](../../scepman-configuration/rbac.md)
+{% content-ref url="../../scepman-configuration/rbac/" %}
+[rbac](../../scepman-configuration/rbac/)
 {% endcontent-ref %}
 
 

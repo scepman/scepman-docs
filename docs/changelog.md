@@ -219,7 +219,7 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
 
 * Download certificates + private keys in PEM format
 * Revocation audit trail
-* [RBAC roles](scepman-configuration/rbac.md)
+* [RBAC roles](scepman-configuration/rbac/)
 * Library Updates
 * Minor bugfixes and improvements, including
   * UI search button bugfix

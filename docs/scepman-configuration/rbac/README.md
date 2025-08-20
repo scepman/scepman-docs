@@ -10,7 +10,7 @@ Applicable to SCEPman Certificate Master version 2.5 and above
 
 When users access SCEPman Certificate Master, their role determines the actions they can perform and the certificates they can see. The roles are determined through the Enterprise Application _SCEPman-CertMaster_ in Microsoft Entra ID (Azure AD). If you have installed SCEPman before version 2.5, you need to execute the Complete-SCEPmanInstallation CMDlet from the SCEPman PS Module again to see the roles in the Microsoft Entra Portal. The following roles are available:
 
-<figure><img src="../.gitbook/assets/2023-10-23 14_50_14-Select a role.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2023-10-23 14_50_14-Select a role.png" alt=""><figcaption></figcaption></figure>
 
 ## Available Roles
 
@@ -28,6 +28,10 @@ When users access SCEPman Certificate Master, their role determines the actions 
 * **Request.SubCa**: Members can request certificates for Subordinate CAs. However, the Extended Key Usage limits these CAs to issue Server Authentication certificates only. This allows them to be used for TLS interception as used in Firewalls, but not for other purposes. This is a security feature. If you require a Subordinate CA for other purposes, you must create a CSR and submit that to the Certificate Master, which requires the _Request.All_ role.
 * **Request.User**: Members can request only user certificates. They have the Client Authentication EKU and a UPN chosen by the requester. Starting with SCEPman 2.6, the Smart Card Logon EKU is also possible. Keep in mind that somebody with this role can request certificates for other users. If you have Certificate Based Authentication enabled in AD or AAD and added the SCEPman CA as a trusted for this purpose in AD or AAD, this can be used to impersonate other users.
 
+{% hint style="info" %}
+This is the default set of roles that will be added during the post-install configuration. There are some more intricate roles that can be added if required: [csr-and-form-roles.md](csr-and-form-roles.md "mention")
+{% endhint %}
+
 ## Role Assignment
 
 {% stepper %}
@@ -37,7 +41,7 @@ When users access SCEPman Certificate Master, their role determines the actions 
 Azure > Enterprise Applications > Clear Filters > SCEPman-CertMaster\
 
 
-<figure><img src="../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -45,10 +49,10 @@ Azure > Enterprise Applications > Clear Filters > SCEPman-CertMaster\
 
 Navigate to Manage > Users and Groups and select your desired administrators and their role. \
 Press assign once administrators and roles have been selected.\
-![](<../.gitbook/assets/image (59).png>)\
+![](<../../.gitbook/assets/image (59).png>)\
 
 
-<figure><img src="../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}

@@ -167,7 +167,7 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
 
 1. Certificate Master web portal
    * Microsoft Entra ID (Azure AD) integrated authentication.
-   * Microsoft Entra ID (Azure AD) [Role Assignments](../scepman-configuration/rbac.md).
+   * Microsoft Entra ID (Azure AD) [Role Assignments](../scepman-configuration/rbac/).
 2. Certificate Master probe-endpoint
    * No protection.
 

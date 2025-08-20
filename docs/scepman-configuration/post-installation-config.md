@@ -100,7 +100,7 @@ SCEPman Enterprise Edition only
 3. Remove the filter for "Application type == **Enterprise Applications**", search for _SCEPman-CertMaster_, and select the displayed application.&#x20;
 4. Navigate to _Users and groups_ and click _Add user/group_ on the top menu.&#x20;
 5. Select the group you have previously created.&#x20;
-6. Select the desired role(s) (more information on the available roles can be found under [Certificate Master RBAC](rbac.md)).&#x20;
+6. Select the desired role(s) (more information on the available roles can be found under [Certificate Master RBAC](rbac/)).&#x20;
 7. After you hit _Assign_, direct members of the group can visit the Certificate Master website and perform tasks according to the permission of the assigned role(s).  After assignment, the setting should look like this:
 
 ![](<../.gitbook/assets/2022-04-07 16_55_05-SCEPman-CertMaster - Permissions .png>)

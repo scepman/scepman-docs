@@ -107,7 +107,8 @@
   * [Logging](scepman-configuration/application-settings-1/logging.md)
   * [National Cloud Platforms](scepman-configuration/application-settings-1/national-cloud-platforms.md)
 * [Application Artifacts](scepman-configuration/application-artifacts.md)
-* [Certificate Master RBAC](scepman-configuration/rbac.md)
+* [Certificate Master RBAC](scepman-configuration/rbac/README.md)
+  * [CSR and Form Roles](scepman-configuration/rbac/csr-and-form-roles.md)
 * [Device Directories](scepman-configuration/device-directories.md)
 * [Intune Strong Mapping](scepman-configuration/intune-implementing-strong-mapping-for-scep-and-pkcs-certificates.md)
 
