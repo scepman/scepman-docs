@@ -31,7 +31,7 @@
   * [Windows](certificate-management/microsoft-intune/windows-10.md)
   * [macOS](certificate-management/microsoft-intune/macos.md)
   * [Android](certificate-management/microsoft-intune/android.md)
-  * [iOS/iPadOSmac](certificate-management/microsoft-intune/ios.md)
+  * [iOS/iPadOS](certificate-management/microsoft-intune/ios.md)
   * [Linux](certificate-management/microsoft-intune/linux.md)
 * [Jamf Pro](certificate-management/jamf/README.md)
   * [General Configuration](certificate-management/jamf/general.md)
