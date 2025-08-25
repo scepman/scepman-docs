@@ -8,6 +8,13 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ## Versions
 
+### 2.12 - Upcoming
+
+#### SCEPman
+
+* Caching of valid OCSP results for five seconds by default instead of no caching.
+* Breaking change: The CA certificate URL in the AIA extension of issued certificates points changed to /ca, which is only available in SCEPman 2.9 and newer. In the exotic case where you run SCEPman 2.12 in parallel with SCEPman 2.8 or older in geo-redundancy, this may cause problems.
+
 ### 2.11 - August 2025
 
 #### SCEPman 2.11.1476
