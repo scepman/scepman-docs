@@ -17,6 +17,10 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ### 2.11 - August 2025
 
+#### SCEPman 2.11.1486
+
+* Increased caching (\~4 minutes) of the health status on Intune's SCEP validation backend.
+
 #### SCEPman 2.11.1476
 
 * Active detection and mitigation of the [Intune SID Spoofing Vulnerability](other/troubleshooting/sid-spoofing-vulnerability.md)
