@@ -34,6 +34,18 @@ Applicable to version 2.4 and above
 
 Certificates that are automatically revoked via OCSP will not be included in the CRL. For example, if you disable a device, the device's certificate will be automatically revoked via OCSP. However, the certificate will not be included in the CRL.
 
+## AppConfig:CRL:AddCdp
+
+_Linux: AppConfig\_\_CRL\_\_AddCdp_
+
+{% hint style="info" %}
+Applicable to version 2.10 and above
+{% endhint %}
+
+**Value:** _false_ (default) or _true_
+
+**Description:** If you set this value to _true_, SCEPman adds a CRL Distribution Point (CDP) extension to issued certificates, which contains the URL from where to download the current CRL from SCEPman.
+
 ## AppConfig:CRL:ValidityDays
 
 _Linux: AppConfig\_\_CRL\_\_ValidityDays_
