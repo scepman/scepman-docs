@@ -8,7 +8,7 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ## Versions
 
-### 2.12 - Upcoming
+### 3.0 - Upcoming
 
 #### SCEPman
 
@@ -33,6 +33,10 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
   * More specific log messages on some error conditions
   * Further adjustments to logging to avoid clutter and highlight important messages
   * Library updates
+
+#### Certificate Master 2.11.1284
+
+* Sanity checks for uncommon certificate values
 
 #### Certificate Master 2.11.1235
 
