@@ -55,7 +55,7 @@ We recommend defining this setting as Secret in Azure Key Vault. The Secret must
 
 ## AppConfig:StaticValidation:ValidityPeriodDays
 
-_Linux: AppConfig:StaticValidation:ValidityPeriodDays_
+_Linux: AppConfig\_\_StaticValidation\_\_ValidityPeriodDays_
 
 {% hint style="info" %}
 Applicable to version 1.7 and above
@@ -81,6 +81,8 @@ SCEPman Enterprise Edition only
 
 ## AppConfig:StaticValidation:AllowRenewals <a href="#appconfig-dbcsrvalidation-allowrenewals" id="appconfig-dbcsrvalidation-allowrenewals"></a>
 
+_Linux: AppConfig\_\_StaticValidation\_\_AllowRenewals_
+
 **Value:** _true_ or _false_ (default)
 
 **Description:** This allows using the _RenewalReq_ operation on this SCEP endpoint. It works only for certificate types added to _AppConfig:StaticValidation:ReenrollmentAllowedCertificateTypes_.
@@ -88,6 +90,8 @@ SCEPman Enterprise Edition only
 This operation can be used with the [SCEPmanClient ](https://github.com/scepman/scepmanclient)PowerShell module.
 
 ## AppConfig:StaticValidation:ReenrollmentAllowedCertificateTypes <a href="#appconfig-dbcsrvalidation-reenrollmentallowedcertificatetypes" id="appconfig-dbcsrvalidation-reenrollmentallowedcertificatetypes"></a>
+
+_Linux: AppConfig\_\_StaticValidation\_\_ReenrollmentAllowedCertificateTypes_
 
 **Value:** Comma-separated list of certificate types from this list:
 
