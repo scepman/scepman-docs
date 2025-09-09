@@ -34,9 +34,13 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
   * Further adjustments to logging to avoid clutter and highlight important messages
   * Library updates
 
+#### Certificate Master 2.11.1329
+
+* Fix for UI bug in actions of certificate table introduced with previous hotfix 2.11.1284.
+
 #### Certificate Master 2.11.1284
 
-* Sanity checks for uncommon certificate values
+* Value sanitation for uncommon certificate values.
 
 #### Certificate Master 2.11.1235
 
