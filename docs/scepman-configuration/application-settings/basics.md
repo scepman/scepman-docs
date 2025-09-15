@@ -74,7 +74,11 @@ Applicable to version 2.8 and above
 
 _Linux: AppConfig\_\_SCEPResponseEncryptionAlgorithm_
 
-The algorithm used to encrypt SCEP responses. Reasonable values include "2.16.840.1.101.3.4.1.42" for AES-256-CBC (the default) and "2.16.840.1.101.3.4.1.2" for AES-128-CBC.
+The algorithm used to encrypt SCEP responses. Reasonable values include:
+
+* 2.16.840.1.101.3.4.1.42 for AES-256-CBC (default)
+* 2.16.840.1.101.3.4.1.2 for AES-128-CBC
+* 1.2.840.113549.3.7 for Triple DES
 
 {% hint style="danger" %}
 Changes can harm your service!
