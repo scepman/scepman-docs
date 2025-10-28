@@ -123,6 +123,7 @@
   * [General](other/faqs/general.md)
   * [Certificate Connector](other/faqs/certificate-connector.md)
   * [Renewing SCEPman Root CA](other/faqs/renewing-scepman-root-ca.md)
+  * [PKI & Certificates](other/faqs/pki-and-certificates.md)
 * [Troubleshooting](other/troubleshooting/README.md)
   * [Common Problems](other/troubleshooting/general.md)
   * [Certifried Security Vulnerability](other/troubleshooting/certifried.md)
