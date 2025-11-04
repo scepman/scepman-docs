@@ -41,7 +41,9 @@ Additionally, if you are using Private Endpoints, you have [seven more Azure Res
 
 ## Configuration Steps
 
-### Step 1: Deploy SCEPman Base Services
+{% stepper %}
+{% step %}
+### Deploy SCEPman Base Services
 
 {% hint style="warning" %}
 This is a **mandatory** step.
@@ -61,7 +63,11 @@ or alternatively our **Terraform** script:
 [terraform-deployment.md](../../scepman-configuration/deployment-options/terraform-deployment.md)
 {% endcontent-ref %}
 
-### Step 2: Perform Post-Deployment Steps (Permission Assignments)
+
+{% endstep %}
+
+{% step %}
+### Perform Post-Deployment Steps (Permission Assignments)
 
 {% hint style="warning" %}
 This is a **mandatory** step.
@@ -73,7 +79,27 @@ To properly link all components of SCEPman, several permissions need to be assig
 [post-installation-config.md](../../scepman-configuration/post-installation-config.md)
 {% endcontent-ref %}
 
-### Step 3: Create Root Certificate
+
+{% endstep %}
+
+{% step %}
+### Add Certificate Master Permissions
+
+{% hint style="success" %}
+This is a **mandatory** step for **Enterprise** **Edition** customers. **Community Edition** users may skip this step.
+{% endhint %}
+
+The Certificate Master is an **Enterprise Edition** feature that allows administrators to manually generate and revoke certificates. Please follow these steps to provide access to the Certificate Master.
+
+{% content-ref url="../../scepman-configuration/rbac/" %}
+[rbac](../../scepman-configuration/rbac/)
+{% endcontent-ref %}
+
+
+{% endstep %}
+
+{% step %}
+### Create Root Certificate
 
 {% hint style="warning" %}
 This is a **mandatory** step.
@@ -85,7 +111,11 @@ After the deployment and permission assignment is complete, you need to create t
 [first-run-root-cert.md](../../scepman-configuration/first-run-root-cert.md)
 {% endcontent-ref %}
 
-### Step 4: Configure a Custom Domain and SSL Certificate
+
+{% endstep %}
+
+{% step %}
+### Configure a Custom Domain and SSL Certificate
 
 {% hint style="success" %}
 This is a **recommended** step. However, **skip** this step if you are implementing geo-redundancy / high-availability.
@@ -97,7 +127,11 @@ To have your SCEPman available under your specific domain you need to create a *
 [custom-domain.md](../../azure-configuration/custom-domain.md)
 {% endcontent-ref %}
 
-### Step 5: Manual Updates
+
+{% endstep %}
+
+{% step %}
+### Manual Updates
 
 {% hint style="info" %}
 This is an **optional** step.
@@ -109,7 +143,11 @@ By default, SCEPman adopts an [evergreen approach](../../update-strategy.md#ever
 [update-strategy.md](../../update-strategy.md)
 {% endcontent-ref %}
 
-### Step 6: Deploy Application Insights
+
+{% endstep %}
+
+{% step %}
+### Deploy Application Insights
 
 {% hint style="success" %}
 This is **recommended** step.
@@ -121,7 +159,11 @@ The Application Insights can be used to get an overview of the App Service perfo
 [application-insights.md](../../azure-configuration/application-insights.md)
 {% endcontent-ref %}
 
-### Step 7: Configure Health Check
+
+{% endstep %}
+
+{% step %}
+### Configure Health Check
 
 {% hint style="success" %}
 This is **recommended** step.
@@ -133,7 +175,11 @@ Health Checks can be configured to notify administrators in the event the SCEPma
 [health-check](../../azure-configuration/health-check/)
 {% endcontent-ref %}
 
-### Step 8: Ensure that SCEPman has sufficient resources
+
+{% endstep %}
+
+{% step %}
+### Ensure that SCEPman has sufficient resources
 
 {% hint style="warning" %}
 This is a **mandatory** step.
@@ -145,14 +191,19 @@ Once you move SCEPman into a production environment, you should ensure that SCEP
 [azure-sizing](../../azure-configuration/azure-sizing/)
 {% endcontent-ref %}
 
-### Step 9: Configure Autoscaling
+
+{% endstep %}
+
+{% step %}
+### Configure Autoscaling
 
 {% hint style="info" %}
 This is an **optional** step.
 {% endhint %}
 
 The SCEPman solution has two different tasks and performance requirements.\
-One task is the certificate issuance process: After the configuration of the SCEPman solution we need to deploy certificates to all devices (user and/or device certificates), but this is a one-time-task and after the initial deployment this only happens when a new device is enrolled, or the certificates needs to be renewed. In those situations, the SCEPman will face a peek of SCEP requests.\
+One task is the certificate issuance process: After the configuration of the SCEPman solution we need to deploy certificates to all devices (user and/or device certificates), but this is a one-time-task and after the initial deployment this only happens when a new device is enrolled, or the certificates needs to be renewed. In those situations, the SCEPman will face a peek of SCEP requests.
+
 The second task is the certificate validation: After we deployed certificates to devices, those certificates need to be validated each time we use them. For every certificated-based authentication the clients, gateways, or RADIUS system (depends on what you use) will send an OCSP request to the SCEPman App Service. This will cause a permanent request load on the App Service.
 
 To have an optimized performance and take care of the costs we recommend to setup the Autoscaling functionality of the App Service. With this feature your application can scale-out and scale-in based on metrics.
@@ -161,17 +212,29 @@ To have an optimized performance and take care of the costs we recommend to setu
 [autoscaling.md](../../azure-configuration/azure-sizing/autoscaling.md)
 {% endcontent-ref %}
 
-### Step 10: Configure Geo-Redundancy
+
+{% endstep %}
+
+{% step %}
+### Configure Geo-Redundancy
 
 {% hint style="info" %}
 This is an **optional** step.
 {% endhint %}
 
+Configuring a geo-redundant instance for SCEPman can enhance service availability and resilience by distributing workloads across multiple Azure regions.&#x20;
+
+However, it's important to note that this setup may lead to increased Azure costs due to the additional resources and data replication involved. Microsoft provides an SLA of 99.95% for Azure App Services, which is adequate in most scenarios.
+
 {% content-ref url="../../azure-configuration/geo-redundancy.md" %}
 [geo-redundancy.md](../../azure-configuration/geo-redundancy.md)
 {% endcontent-ref %}
 
-### Step 11: Configure your MDM Deployment Profiles
+
+{% endstep %}
+
+{% step %}
+### Configure your MDM Deployment Profiles
 
 {% hint style="success" %}
 This is a **recommended** step.
@@ -193,19 +256,27 @@ Please use one (or more) of the following articles, to deploy certificates with 
 [static-certificates](../../certificate-management/static-certificates/)
 {% endcontent-ref %}
 
-### Step 12: Issue TLS Server Certificates or sign CSRs using Cert Master
+
+{% endstep %}
+
+{% step %}
+### Manually Issue Certificates or sign CSRs using the Certificate Master <a href="#manually-issue-certificates-or-sign-csrs-using-the-certificate-master" id="manually-issue-certificates-or-sign-csrs-using-the-certificate-master"></a>
 
 {% hint style="info" %}
 This is an **optional** step.
 {% endhint %}
 
-Please follow below link, to learn how to issue TLS server certificates based on a list of FQDNs or sign any CSR using the Cert Master component.
+Please follow below link, to learn how to issue TLS server certificates based on a list of FQDNs or sign any CSR using the Certificate Master component.
 
 {% content-ref url="../../certificate-management/certificate-master/" %}
 [certificate-master](../../certificate-management/certificate-master/)
 {% endcontent-ref %}
 
-### Step 13: Issue Certificates using the Enrollment REST API
+
+{% endstep %}
+
+{% step %}
+### Issue Certificates using the Enrollment REST API
 
 {% hint style="info" %}
 This is an **optional** step.
@@ -216,3 +287,10 @@ SCEPman features a REST API to enroll certificates. This is an alternative to th
 {% content-ref url="../../certificate-management/api-certificates/" %}
 [api-certificates](../../certificate-management/api-certificates/)
 {% endcontent-ref %}
+
+
+{% endstep %}
+{% endstepper %}
+
+
+

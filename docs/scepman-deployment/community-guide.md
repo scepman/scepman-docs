@@ -33,7 +33,9 @@ Additionally, if you are using Private Endpoints, you have [seven more Azure Res
 
 ## Configuration Steps
 
-### Step 1: Deploy SCEPman Base Services
+{% stepper %}
+{% step %}
+### Deploy SCEPman Base Services
 
 {% hint style="warning" %}
 This is a **mandatory** step.
@@ -45,7 +47,11 @@ To start with the deployment, please follow our deployment instructions:
 [marketplace-deployment.md](../scepman-configuration/deployment-options/marketplace-deployment.md)
 {% endcontent-ref %}
 
-### Step 2: Perform Post-Deployment Steps (Permission Assignments)
+
+{% endstep %}
+
+{% step %}
+### Perform Post-Deployment Steps (Permission Assignments)
 
 {% hint style="warning" %}
 This is a **mandatory** step.
@@ -57,7 +63,27 @@ To properly link all components of SCEPman 2, several permissions need to be ass
 [post-installation-config.md](../scepman-configuration/post-installation-config.md)
 {% endcontent-ref %}
 
-### Step 3: Create Root certificate
+
+{% endstep %}
+
+{% step %}
+### Add Certificate Master Permissions
+
+{% hint style="success" %}
+This is a **mandatory** step for **Enterprise** **Edition** customers. **Community Edition** users may skip this step.
+{% endhint %}
+
+The Certificate Master is an **Enterprise Edition** feature that allows administrators to manually generate and revoke certificates. Please follow these steps to provide access to the Certificate Master.
+
+{% content-ref url="../scepman-configuration/rbac/" %}
+[rbac](../scepman-configuration/rbac/)
+{% endcontent-ref %}
+
+
+{% endstep %}
+
+{% step %}
+### Create Root certificate
 
 {% hint style="warning" %}
 This is a **mandatory** step.
@@ -69,7 +95,11 @@ After the deployment and permission assignment is complete, you need to create t
 [first-run-root-cert.md](../scepman-configuration/first-run-root-cert.md)
 {% endcontent-ref %}
 
-### Step 4: Configure a Custom Domain and SSL Certificate
+
+{% endstep %}
+
+{% step %}
+### Configure a Custom Domain and SSL Certificate
 
 {% hint style="info" %}
 This is an **optional** step.
@@ -81,7 +111,11 @@ To have your SCEPman available under your specific domain you need to create a *
 [custom-domain.md](../azure-configuration/custom-domain.md)
 {% endcontent-ref %}
 
-### Step 5: Manual Updates
+
+{% endstep %}
+
+{% step %}
+### Manual Updates
 
 {% hint style="info" %}
 This is an **optional** step.
@@ -93,7 +127,11 @@ By default, SCEPman adopts an [evergreen approach](../update-strategy.md#evergre
 [update-strategy.md](../update-strategy.md)
 {% endcontent-ref %}
 
-### Step 6: Deploy Application Insights
+
+{% endstep %}
+
+{% step %}
+### Deploy Application Insights
 
 {% hint style="success" %}
 This is **recommended** step.
@@ -105,7 +143,11 @@ The Application Insights can be used to get an overview of the App Service perfo
 [application-insights.md](../azure-configuration/application-insights.md)
 {% endcontent-ref %}
 
-### Step 7: Configure Health Check
+
+{% endstep %}
+
+{% step %}
+### Configure Health Check
 
 {% hint style="success" %}
 This is **recommended** step.
@@ -117,7 +159,11 @@ We can configure a Health Check for the App Service to get direct notifications 
 [health-check](../azure-configuration/health-check/)
 {% endcontent-ref %}
 
-### Step 8: Ensure that SCEPman has sufficient Resources
+
+{% endstep %}
+
+{% step %}
+### Ensure that SCEPman has sufficient Resources
 
 {% hint style="warning" %}
 This is a **mandatory** step.
@@ -129,7 +175,11 @@ Once you move SCEPman into a production environment, you should ensure that SCEP
 [azure-sizing](../azure-configuration/azure-sizing/)
 {% endcontent-ref %}
 
-### Step 9: Configure your MDM Deployment Profiles
+
+{% endstep %}
+
+{% step %}
+### Configure your MDM Deployment Profiles
 
 {% hint style="success" %}
 This is a **recommended** step.
@@ -151,14 +201,23 @@ Please use one (or more) of the following articles, to deploy certificates with 
 [static-certificates](../certificate-management/static-certificates/)
 {% endcontent-ref %}
 
-### Step 10: Manually issue Certificates or sign CSRs using Cert Master
+
+{% endstep %}
+
+{% step %}
+### Manually Issue Certificates or sign CSRs using the Certificate Master
 
 {% hint style="info" %}
 This is an **optional** step.
 {% endhint %}
 
-Please follow below link, to learn how to issue TLS server or other certificates or how to sign any CSR using the Cert Master component.
+Please follow below link, to learn how to issue TLS server or other certificates or how to sign any CSR using the Certificate Master component.
 
 {% content-ref url="../certificate-management/certificate-master/" %}
 [certificate-master](../certificate-management/certificate-master/)
 {% endcontent-ref %}
+
+
+{% endstep %}
+{% endstepper %}
+
