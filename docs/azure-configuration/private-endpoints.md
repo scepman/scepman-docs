@@ -6,7 +6,7 @@ This VNET is located in the same resource group as the other SCEPman components.
 
 After installation, there are no exceptions configured, so no other entity can access the Key Vault certificates and keys or the Table Storage of the Storage Account. If required, for example when [generating a Subordinate CA](../scepman-deployment/intermediate-certificate.md) or when[ querying the Storage Account](../other/faqs/general.md#how-can-i-programmatically-query-the-storage-account-table), you need to add exceptions under the Networking blade of the respective Azure Resource.
 
-Access to the management interface of the Key Vault and Storage Account is unaffected, i.e. you don't need to add your admin machines to the exception list to perform functions such as changing the SKU of your Storage Account or inspecting the access logs of your Key Vault. Of course, you can use Conditional Access to restrict access to the Azure Portal.
+Access to the management interface of the Key Vault and Storage Account is unaffected, i.e. you don't need to add your admin machines to the exception list to perform functions such as changing the SKU of your Storage Account or inspecting the access logs of your Key Vault.&#x20;
 
 The SCEPman and SCEPman Certificate Master App Services do not have Private Endpoints, even if you install SCEPman 2.8 or newer. They can still be accessed from the Internet without networking restrictions. We recommend not restricting access to SCEPman on a networking level, as SCEPman is usually part of the infrastructure used to establish network connections and should therefore be available even if you are not yet connected.
 
@@ -20,45 +20,89 @@ If needed, Conditional Access can be employed to limit access to SCEPman Certifi
 
 If you have installed SCEPman 2.7 or older, your Key Vault and Storage Account won't automatically have Private Endpoints, even if you update to SCEPman 2.8 or newer. You have to add them manually after a conscious decision. Please follow this guide to do so:
 
-* **Create Virtual Network**:
-  * In the SCEPman resource group, create a virtual network using default settings or as required by your organisation.
-  * Create a new subnet in the new **Virtual Network** with default settings and set **"Subnet Delegation"** as **Microsoft.Web\&serverfarms**
+{% stepper %}
+{% step %}
+### Create Virtual Network
 
-<figure><img src="../.gitbook/assets/2024-05-17 13_27_04.png" alt=""><figcaption></figcaption></figure>
+* In the SCEPman resource group, create a new Virtual Network using default settings or as required by your organisation. This should include a **default subnet**.
+* Create an additional subnet in the new **Virtual Network** with default settings and set **"Subnet Delegation"** as **Microsoft.Web/serverFarms**
 
-* **Create KeyVault Private Endpoint**:
-  * Navigate to your SCEPman's Resource Group > **KeyVault** > Settings > Networking > Private endpoint connections, and create a private endpoint
-  * Select resource type: **Microsoft.KeyVault/vaults**
-  * Select your **KeyVault** by Resource and **vault** for Target sub-resource
-  * Choose the virtual network and the default subnet (not the subnet created in the first step)
-  * Enable **Integrate with private DNS zone** to automatically create and connect the Private DNS zone
-* **Create Storage Account Private Endpoint**
-  * Navigate to **StorageAccount** > Security + Networking > Networking > Private endpoint connections and create a Private endpoint
-  * By resource, set target sub-resource to **table**
-  * Choose your virtual network and default subnet
-  * Enable **Integrate with private DNS zone** to automatically create and connect the Private DNS zone
-* **Integrate SCEPman App Service**:
-  * Navigate to **SCEPman App service** > Networking > Add virtual network integration to the **Outbound traffic configuration** by clicking on "Not configured"
-  * Select the virtual network and the created subnet from the first step.
-  * Uncheck the option "Outbound internet traffic" and apply
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
 
-<figure><img src="../.gitbook/assets/2024-05-17 13_43_35.png" alt=""><figcaption></figcaption></figure>
+{% step %}
+### Create KeyVault Private Endpoint
 
-<figure><img src="../.gitbook/assets/2024-05-17 13_52_13.png" alt=""><figcaption></figcaption></figure>
 
-* **Integrate Certificate Master App Service**:
-  * By adding the virtual network integration to the second app service, you can select the previous connection from the list, you don't have to create a new connection.
-  * If enabled, uncheck the option "Outbound internet traffic" and apply
 
-<figure><img src="../.gitbook/assets/2024-05-17 13_56_09.png" alt=""><figcaption></figcaption></figure>
+1. Navigate to your SCEPman's Resource Group > **KeyVault** > Settings > Networking > Private endpoint connections, and create a private endpoint
+2. Select resource type: **Microsoft.KeyVault/vaults**
+3. Select your **KeyVault** by Resource and **vault** for Target sub-resource
+4. Choose the virtual network and the default subnet (not the subnet created in the first step)
+5. Enable **Integrate with private DNS zone** to automatically create and connect the Private DNS zone
+{% endstep %}
 
-Now verify that the private endpoints for both the Key Vault and Storage Account are approved.&#x20;
+{% step %}
+### Create Storage Account Private Endpoint
 
-<figure><img src="../.gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
 
-Once confirmed, you can disable public access for both, Key vault and Storage account.
 
-<figure><img src="../.gitbook/assets/image (1) (3) (1).png" alt=""><figcaption></figcaption></figure>
+1. Navigate to your SCEPman's Resource Group > **Storage Account** > Security + Networking > Networking > Private endpoints and create a Private Endpoint
+2. By resource, set target sub-resource to **table**
+3. Choose your virtual network and default subnet
+4. Enable **Integrate with private DNS zone** to automatically create and connect the Private DNS zone
+{% endstep %}
 
-For testing, you can create a new client certificate in Certificate Master, see [Client Certificate](../certificate-management/certificate-master/client-certificate-pkcs-12.md)
+{% step %}
+### Integrate SCEPman App Service
+
+
+
+1. Navigate to **SCEPman App service** > Networking > Add virtual network integration to the **Outbound traffic configuration** by clicking on "Not configured"
+2. Select the virtual network and the created subnet from the first step.
+3. Uncheck the option "Outbound internet traffic" and apply
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### Integrate Certificate Master App Service
+
+
+
+* By adding the virtual network integration to the second app service, you can select the previous connection from the list, you don't have to create a new connection.
+* If enabled, uncheck the option "Outbound internet traffic" and apply
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### Verify Private Endpoint Approval
+
+Check both KeyVault and Storage Account Private Endpoints are in an Approved state
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### Testing and Results
+
+Once confirmed, you can disable public access for both Key Vault and Storage account.
+
+<figure><img src="../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
+
+If connected properly, the SCEPman homepage should display all its connections as "Connected"\
+![](<../.gitbook/assets/image (101).png>)
+
+Test that your implementation of private endpoints is successful by deploying certificates using your MDM or [Certificate Master.](../certificate-management/certificate-master/)
+{% endstep %}
+{% endstepper %}
+
+
+
+
+
+
 

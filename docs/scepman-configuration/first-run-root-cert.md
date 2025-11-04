@@ -10,7 +10,7 @@ If you want to use an intermediate certificate (Enterprise Edition only) you can
 
 **For a standard SCEPman setup, we recommend generating a new root certificate with the following steps:**
 
-## Create SCEPman root certificate
+## Create SCEPman Root certificate
 
 1. Navigate to **App Services**.
 2. Choose the SCEPman application and click on **Browse** to see the SCEPman website.

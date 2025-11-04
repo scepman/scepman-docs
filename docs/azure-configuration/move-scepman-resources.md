@@ -39,7 +39,7 @@ If you are using an **App Service managed certificate** you [cannot move it](htt
 
 <figure><img src="../.gitbook/assets/image (2) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (2) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 

@@ -51,7 +51,7 @@ First, you need to deploy SCEPman RootCA to all endpoints as a trusted root ca, 
 
 3. Click the Add button to add a **Certificate Template**.
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Template Detail</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Template Detail</p></figcaption></figure>
 
 * Enter a **name** for this MobiControl Template.
 * Enter a **Subject Name**.

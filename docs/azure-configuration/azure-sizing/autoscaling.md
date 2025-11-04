@@ -2,7 +2,7 @@
 
 To activate autoscaling navigate to the **Scale out (App Service plan)** in the navigation pane of your SCEPman App Service.
 
-![](<../../.gitbook/assets/image (4) (1) (1).png>)
+![](<../../.gitbook/assets/image (4) (1) (1) (1).png>)
 
 {% hint style="info" %}
 Please ensure that your App Service plan uses at least the **S1** pricing tier. Otherwise, the App Service plan will not provide multiple instances.
