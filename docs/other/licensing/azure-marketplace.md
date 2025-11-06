@@ -76,14 +76,18 @@ The information provided throughout this article is analogously applicable for R
 
 ### User Downgrades
 
-* Downgrading the amount of users is currently not possible without cancelling the subscription.
-* If you want to perform a downgrade, please [cancel](azure-marketplace.md#cancellation) your current subscription and re-subscribe with the desired amount of users once the cancellation becomes effective.
+* You can **pre-register a reduction** of your licensed users for the **next renewal**, by navigating to your **SCEPman subscription** in the [Azure SaaS portal](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.SaaS%2Fresources) and by clicking "Open SaaS Account on publisher's site" (see screenshot below). This will re-direct you to our platform where the amount of users can be downgraded.
+
+<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+
+* The downgrade will become effective upon the next regular renewal of your subscription.
+* In case you change your mind and would like to change the user quantity or cancel the downgrade altogether, navigate back to your **SCEPman subscription** and click **Cancel downgrade**.
+
+<figure><img src="../../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
 
 ### Change Plan
 
-{% hint style="warning" %}
-This is currently **not supported**. Please [contact us](https://www.scepman.com/help/) in case you have questions around this topic.
-{% endhint %}
+If available on Azure Portal, the **Change Plan** action allows you to change your current outdated plan to the most recent version of the plan with the same subscription cycle (annually or monthly).
 
 ### **Recurring Billing**
 
