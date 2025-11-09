@@ -4,18 +4,18 @@
 This feature requires version **2.0** or above.
 {% endhint %}
 
-SCEPman needs to interact with your Entra Directory and Intune endpoints to provide the certificate and OCSP validation of users and devices. After deploying SCEPman from Marketplace or via GitHub deployment, SCEPman does not yet have the required permissions to access these services. The PowerShell Module described in this article adds the necessary permissions to the SCEPman App Service's Managed Identity and completes the installation.
+SCEPman needs to interact with your Entra Directory and Intune endpoints to provide the certificate and OCSP validation of users and devices. After deployment, SCEPman does not yet have the required permissions to access these services. The PowerShell Module described in this article adds the necessary permissions to the SCEPman App Service's Managed Identity and completes the installation.
 
 Additionally, the PowerShell Module adds the required background wiring for the SCEPman Certificate Master component introduced with SCEPman 2.0. In case you upgraded from SCEPman 1.x to SCEPman 2.x, the PowerShell Module even adds two new Azure Resources for the SCEPman Certificate Master component.
 
 ## Acquire and run the SCEPman Installation PowerShell Module
 
-Whether you have just installed a fresh SCEPman 2.x installation or if you have just upgraded from SCEPman 1.x to SCEPman 2.x, and in some cases after deployment architecture changes, the installation steps are the same. You download and run the SCEPman PowerShell Module, which detects what needs to be done and completes the installation. You can can run the SCEPman Module as often as you want, it will only add what is yet missing.
+Whether you have just installed a fresh SCEPman 2.x installation or if you have just upgraded from SCEPman 1.x to SCEPman 2.x, and in some cases after deployment architecture changes, the installation steps are the same. You download and run the SCEPman PowerShell Module, which detects what needs to be done and completes the installation. You can run the SCEPman Module as often as you want, it will only add what is yet missing.
 
 ### Prerequisites
 
-* A Global Admin Account for the tenant to which you want to install SCEPman (or another AAD role like _Privileged Role Administrator_ and write permissions to the Azure Subscription). There is an option to use an account with only the _Application Administrator_ role and execute the commands requiring Global Administrator permissions later manually.
-* A workstation with [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (also known as _az_) installed. Azure CLI is pre-installed in the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), the preferred way to run the module.
+* A **Global Admin** Account for the tenant to which you want to install SCEPman (or another AAD role like _Privileged Role Administrator_ and write permissions to the Azure Subscription). There is an option to use an account with only the _Application Administrator_ role and execute the commands requiring Global Administrator permissions later manually.
+* [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (also known as _az_) installed. Azure CLI is pre-installed in the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), the preferred way to run the module.
 
 ### Running the SCEPman Installation CMDlet
 
@@ -86,24 +86,6 @@ For this purpose, the Complete-SCEPmanInstallation CMDlet features the two param
 And then you call it another time for your Subordinate CA like this:
 
 `Complete-SCEPmanInstallation -SCEPmanAppServiceName app-scepmansub -SearchAllSubscriptions -AzureAdAppNameForSCEPman SCEPman-api-sub -AzureAdAppNameForCertMaster -SCEPman-CertMaster-sub 6>&1`
-
-## Configure SCEPman Certificate Master
-
-{% hint style="warning" %}
-SCEPman Enterprise Edition only
-{% endhint %}
-
-### Granting the Rights to Request Certificates via the Certificate Master Website
-
-1. Create an AAD Group, possibly a Privileged Access Group, for the people that shall be able to create web server certificates via SCEPman Certificate Master.
-2. In the Azure Portal, visit [Enterprise applications](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/).&#x20;
-3. Remove the filter for "Application type == **Enterprise Applications**", search for _SCEPman-CertMaster_, and select the displayed application.&#x20;
-4. Navigate to _Users and groups_ and click _Add user/group_ on the top menu.&#x20;
-5. Select the group you have previously created.&#x20;
-6. Select the desired role(s) (more information on the available roles can be found under [Certificate Master RBAC](rbac/)).&#x20;
-7. After you hit _Assign_, direct members of the group can visit the Certificate Master website and perform tasks according to the permission of the assigned role(s).  After assignment, the setting should look like this:
-
-![](<../.gitbook/assets/2022-04-07 16_55_05-SCEPman-CertMaster - Permissions .png>)
 
 ## Background Details of the SCEPman PowerShell Module
 
