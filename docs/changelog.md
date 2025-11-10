@@ -286,7 +286,7 @@ Starting with this version, the SCEPman PowerShell Module with have the same maj
 
 #### Certificate Master 2.3.327
 
-* [New UI with customizable filters to find view different kinds of certificates](certificate-management/manage-certificates.md#search-for-certificates-in-the-certificate-database)
+* [New UI with customizable filters to find view different kinds of certificates](certificate-management/manage-certificates/#search-for-certificates-in-the-certificate-database)
 * Better compatibility with Microsoft's API changes to list certificate issued via Intune
 * Minor improvements
 

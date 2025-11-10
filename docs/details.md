@@ -38,14 +38,14 @@ SCEPman is an Azure Web App with the following features:
 
 * A SCEP interface that is compatible with the Intune [SCEP API](https://learn.microsoft.com/en-us/mem/intune/protect/certificate-authority-add-scep-overview) in particular.
 * SCEPman provides certificates signed by a CA root key stored in **Azure Key Vault**.
-* SCEPman contains an **OCSP responder** (see below) to provide [certificate validity / auto-revocation](certificate-management/manage-certificates.md#automatic-revocation) in real-time
+* SCEPman contains an **OCSP responder** (see below) to provide [certificate validity / auto-revocation](certificate-management/manage-certificates/#automatic-revocation) in real-time
 * A full replacement of Legacy PKI in many scenarios.
 
 SCEPman creates the CA root certificate during the initial installation. However, if for whatever reason an alternative CA key material shall be used it is possible to replace this CA key and certificate with your own in Azure Key Vault. For example, if you want to use a Sub CA certificate signed by an existing internal Root CA.
 
 #### Certificate Master
 
-Certificate Master allows [Enterprise Edition](editions.md#edition-comparison) customers to (manually) issue certificates in scenarios where an automatic enrollment via SCEP / MDM is not possible. Common examples are the issuance of [TLS server certificates](certificate-management/certificate-master/tls-server-certificate-pkcs-12.md) or user certificates for [smart cards / YubiKeys](certificate-management/certificate-master/user-certificate.md). Furthermore, with Certificate Master, administrators can [manage](certificate-management/manage-certificates.md) any certificate issued by SCEPman, whether they were automatically enrolled through SCEP via Intune, Jamf and other MDMs, EST, the [Enrollment REST API](certificate-management/api-certificates/) or manually via Certificate Master UI itself.
+Certificate Master allows [Enterprise Edition](editions.md#edition-comparison) customers to (manually) issue certificates in scenarios where an automatic enrollment via SCEP / MDM is not possible. Common examples are the issuance of [TLS server certificates](certificate-management/certificate-master/tls-server-certificate-pkcs-12.md) or user certificates for [smart cards / YubiKeys](certificate-management/certificate-master/user-certificate.md). Furthermore, with Certificate Master, administrators can [manage](certificate-management/manage-certificates/) any certificate issued by SCEPman, whether they were automatically enrolled through SCEP via Intune, Jamf and other MDMs, EST, the [Enrollment REST API](certificate-management/api-certificates/) or manually via Certificate Master UI itself.
 
 {% content-ref url="certificate-management/certificate-master/" %}
 [certificate-master](certificate-management/certificate-master/)

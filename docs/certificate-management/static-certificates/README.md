@@ -13,7 +13,7 @@ There are two SCEP endpoints to choose from when configuring SCEPman for MDM sys
 * Static-AAD
 * Static
 
-The Static-AAD endpoint is recommended for MDM systems with Entra ID integration such as Kandji and Google Workspace. _User_ certificates distributed from the Static-AAD endpoint will benefit from [Automatic Revocation](../manage-certificates.md#automatic-revocation) when the respective user has been disabled in Entra ID.&#x20;
+The Static-AAD endpoint is recommended for MDM systems with Entra ID integration such as Kandji and Google Workspace. _User_ certificates distributed from the Static-AAD endpoint will benefit from [Automatic Revocation](../manage-certificates/#automatic-revocation) when the respective user has been disabled in Entra ID.&#x20;
 
 The Static endpoint is recommended for all other MDM systems.
 

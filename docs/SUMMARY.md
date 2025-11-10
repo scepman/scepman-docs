@@ -26,7 +26,8 @@
 
 ## Certificate Management
 
-* [Revocation](certificate-management/manage-certificates.md)
+* [Revocation](certificate-management/manage-certificates/README.md)
+  * [Enabling CRL](certificate-management/manage-certificates/enabling-crl.md)
 * [Microsoft Intune](certificate-management/microsoft-intune/README.md)
   * [Windows](certificate-management/microsoft-intune/windows-10.md)
   * [macOS](certificate-management/microsoft-intune/macos.md)

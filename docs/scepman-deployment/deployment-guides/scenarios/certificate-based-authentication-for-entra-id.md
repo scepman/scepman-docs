@@ -4,6 +4,10 @@ Certificate-based authentication offers a strong security alternative for access
 
 ## Enable SCEPman CRL
 
+{% content-ref url="../../../certificate-management/manage-certificates/enabling-crl.md" %}
+[enabling-crl.md](../../../certificate-management/manage-certificates/enabling-crl.md)
+{% endcontent-ref %}
+
 Entra ID will require a CRL to validate the certificates. Make sure to set the following environment variables in your app service for the CRL to be available:
 
 [AppConfig:CRL:RequestToken](https://docs.scepman.com/scepman-configuration/application-settings/crl#appconfig-crl-requesttoken)
