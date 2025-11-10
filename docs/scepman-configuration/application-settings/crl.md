@@ -1,5 +1,11 @@
 # CRL
 
+## How-to guide
+
+{% content-ref url="../../certificate-management/manage-certificates/enabling-crl.md" %}
+[enabling-crl.md](../../certificate-management/manage-certificates/enabling-crl.md)
+{% endcontent-ref %}
+
 {% hint style="info" %}
 These settings should only be applied to the SCEPman App Service, not the Certificate Master. Please refer to [SCEPman Settings](./).
 {% endhint %}
