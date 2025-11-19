@@ -8,12 +8,36 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ## Versions
 
-### 3.0 - Upcoming
+### 3.0 - Currently in Beta Channel
 
-#### SCEPman
+#### SCEPman 3.0.1602
 
+* Enrollment to on-prem AD-joined Windows devices! You can enroll user, device, and Domain Controller certificates to Windows clients using native methods, i.e. no software required on the clients. The primary use case is Autoenrollment, where you enroll certificates on the on-prem clients without user interaction.
 * Caching of valid OCSP results for five seconds by default instead of no caching.
 * Breaking change: The CA certificate URL in the AIA extension of issued certificates points changed to /ca, which is only available in SCEPman 2.9 and newer. In the exotic case where you run SCEPman 2.12 in parallel with SCEPman 2.8 or older in geo-redundancy, this may cause problems.
+* Improved robustness responding to malformed OCSP requests
+* Support for the Log Ingestion API for logging to Azure Monitor
+* Small improvements and fixes
+  * Restored compatibility with Google Workspace (a workaround for a bug in Google's PKCS#7 handling)
+  * Improved caching for connectivities on the SCEPman splash page
+  * Optimized the SCEPman splash page for smaller screen sizes
+  * Fix for rejecting renewal Intune certificates via EST in specific circumstances
+  * Library updates, which also fixes some CVE warnings (which are false positives, as SCEPman is not actually affected)
+
+#### Certificate Master 3.0.1402
+
+* Improved UI
+  * Better sizing of certificates table
+  * More effective use of space on small screens
+  * More information about the logged-in user
+  * Shorthand links to download the CA certificate (chain)
+* Support for the Log Ingestion API for logging to Azure Monitor
+* Allow requesting a specific lifetime of certificates, e.g. make a certificate valid for 365 days. Maximums and defaults can be configured per type of certificate.
+* Small improvements and fixes
+  * Library updates
+  * Export filtered certificate lists as CSV
+  * Bugfix: Dead link when requesting certificates with a restricted role
+  * Bugfix: Email addresses field was missing for manually created S/MIME certificates
 
 ### 2.11 - August 2025
 
