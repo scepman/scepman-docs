@@ -39,6 +39,14 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
   * Bugfix: Dead link when requesting certificates with a restricted role
   * Bugfix: Email addresses field was missing for manually created S/MIME certificates
 
+#### SCEPmanClient PowerShell Module 3.0
+
+* Allow shorter certificate validity during enrollment (for PowerShell Core only)
+* Allow user-protected key creation during enrollment
+* Small improvements and fixes
+  * Add -Identity parameter for non-interactive service principal authentication
+  * Improve authentication flow
+
 ### 2.11 - August 2025
 
 #### SCEPman 2.11.1486
