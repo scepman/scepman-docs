@@ -81,6 +81,7 @@
 ***
 
 * [Update Strategy](update-strategy.md)
+* [Backup Considerations](backup-considerations.md)
 
 ## SCEPman Configuration
 
