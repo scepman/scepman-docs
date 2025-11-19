@@ -2,11 +2,14 @@
 
 You can monitor the health of SCEPman using
 
-* the [Health check feature of the Azure App Services](./#health-check-in-azure-app-services)  (recommend) \
-  or
+* the [Health check feature of the Azure App Services](./#health-check-in-azure-app-services)  (recommended) or
 * a [3rd party monitoring tool](using-3rd-party-monitoring.md).
 
 ## Health Check in Azure App Services
+
+{% hint style="info" %}
+New SCEPman installations add the Health Check automatically during installation, starting with SCEPman 2.11. If you have installed SCEPman before this, you can add the health check manually using the guidance below.&#x20;
+{% endhint %}
 
 You may configure the health check feature and corresponding alerting for the App Service to get a direct notification in case your SCEPman instance is no longer responsive.
 
