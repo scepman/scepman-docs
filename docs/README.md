@@ -4,11 +4,6 @@ description: SCEPman - Certificates Simplified
 
 # Welcome
 
-{% hint style="info" %}
-[**Meet us at Microsoft Ignite**\
-November 18th-20th, San Francisco, Booth #5118](https://ignite.microsoft.com/en-US/sponsors/3e18d5fc-b903-4afe-a69d-c73ae4e6ba79?source=sponsor-directory)
-{% endhint %}
-
 ## Overview
 
 SCEPman is a slim and resource-friendly solution to issue and validate certificates using Simple Certificate Enrollment Protocol (SCEP). **It is an Azure Web App providing the SCEP protocol and works directly with the Microsoft Graph and Intune API.** SCEPman uses an Azure Key Vault based Root CA and certificate creation. By default, no other component is involved, neither a database nor any other stateful storage except the Azure Key Vault itself. That said, SCEPman **will not need any backup procedures** or other operation level tasks. Only an Azure subscription is necessary to deploy it.
