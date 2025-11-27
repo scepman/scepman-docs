@@ -35,7 +35,7 @@ If you generate a new CA certificate you must update your Intune policies and de
 
 CA Suitability on SCEPman Dashboard:
 
-![](<../.gitbook/assets/2022-05-27 11\_09\_46-Window.png>)
+![](<../.gitbook/assets/2022-05-27 11_09_46-Window.png>)
 
 ## Configuration Changes to the SCEPman Service
 
@@ -75,7 +75,7 @@ This ensures that the DC certificates are trusted within the domain. They are al
 
 ## Installation on the Client
 
-Then you must download our Open Source SCEP client software [SCEPClient](https://github.com/scepman/scepclient/releases/tag/20211029-0857-framework). Releases with the suffix _-framework_ use .NET Framework 4.6.2, which is pre-installed on Windows Server 2016 and compatible with newer versions. Other releases require the .NET Core Runtime to be installed on the target systems.
+Then you must download our Open Source SCEP client software [SCEPClient](https://github.com/scepman/scepclient/releases). Releases with the suffix _-framework_ use .NET Framework 4.6.2, which is pre-installed on Windows Server 2016 and compatible with newer versions. Other releases require the .NET Core Runtime to be installed on the target systems.
 
 Execute the following command in an elevated command prompt on a domain controller to receive a Domain Controller certificate from SCEPman:
 
