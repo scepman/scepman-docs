@@ -12,7 +12,7 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 #### SCEPman 3.0.1602
 
-* Enrollment to on-prem AD-joined Windows devices! You can enroll user, device, and Domain Controller certificates to Windows clients using native methods, i.e. no software required on the clients. The primary use case is Autoenrollment, where you enroll certificates on the on-prem clients without user interaction.
+* [Enrollment to on-prem AD-joined Windows devices!](certificate-management/active-directory/) You can enroll user, device, and Domain Controller certificates to Windows clients using native methods, i.e. no software required on the clients. The primary use case is Autoenrollment, where you enroll certificates on the on-prem clients without user interaction.
 * Caching of valid OCSP results for five seconds by default instead of no caching.
 * Breaking change: The CA certificate URL in the AIA extension of issued certificates points changed to /ca, which is only available in SCEPman 2.9 and newer. In the exotic case where you run SCEPman 2.12 in parallel with SCEPman 2.8 or older in geo-redundancy, this may cause problems.
 * Improved robustness responding to malformed OCSP requests
