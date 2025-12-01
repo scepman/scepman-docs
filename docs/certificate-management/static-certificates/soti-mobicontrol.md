@@ -25,7 +25,7 @@ You can differentiate between the SCEPman App Service and the Certificate Master
 
 First, you need to deploy SCEPman RootCA to all endpoints as a trusted root ca, you can download the certificate from SCEPman homepage:
 
-<figure><img src="../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Add Certificate Authority
 

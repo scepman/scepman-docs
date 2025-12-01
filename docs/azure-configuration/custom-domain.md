@@ -2,31 +2,29 @@
 
 ## Custom Domain Configuration
 
-If you want to create your own custom domain for your **SCEPman App Service** URL, there are two options depending on your domain provider:
+If you want to create your own custom domain for your **SCEPman App Service** URL, you have to decide whether you want to add it because it is a requirement to activate the Active Directory Endpoint or only for other reasons.
 
-**The first option** is to go with Azure Domain (existing one or creating a new one)
+#### Considerations for an Active Directory Endpoint
 
-* Domain provider: in this case App Service Domain
-* TLS/SSL certificate: select App Service Managed Certificate if you want to create and bind the certificate to your custom domain automatically, this certificate is managed by Azure and will be automatically renewed at no cost
-* TLS/SSL type: SNI SSL Binding is free of cost and supported by most modern browsers
-* App Service Domain: Choose an existing Azure Domain or create a new one
-* Domain type: in the example below we choose a Subdomain
+If you want your custom domain for the [Active Directory](../certificate-management/active-directory/) endpoint, you need to create an **A record**, because [Kerberos requires this](../certificate-management/active-directory/general-configuration.md#ws_e_endpoint_access_denied). In this case, you must choose "All other domain services", even if you have an App Service Domain. The UI might force you to select **CNAME** as record type depending on your other selections. We have successfully tested that you can still configure the DNS entry as an **A record** and found no problems with this configuration. Otherwise change your settings, such that an **A record** is allowed like using an apex domain or using a certificate other than the App Service Managed Certificate. In this case, you need to find out the inbound IP address of your App Service, which is displayed in the Networking entry of the App Service.
 
-By clicking on add, the custom domain and the SSL Managed Certificate will be created and bound automatically
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-![](<../.gitbook/assets/2022-12-23 15_12_15-Window.png>)
+#### **Adding the Custom Domain**
 
-**The second option** is to go with your non-Azure domain and add the validation records to your domain provider
+This description assumes you do not use Azure Domain Services. If you do, you select App Service Domain to profit from the integration of App Services and Azure Domain Services. Otherwise, select All other domain services and add the validation records to your domain provider.
 
 * Domain provider: All other domain services
 
 ![](<../.gitbook/assets/2022-12-23 17_01_35-Window.png>)
 
-{% hint style="danger" %}
-If you want to use SCEPman for Active Directory enrollment, use an A record instead of a CNAME, otherwise the Kerberos authentication won't work. You can check your inbound IP address in the Networking settings of your App Service.
+### Configure the BaseUrl of SCEPman
+
+{% hint style="info" %}
+Updating the BaseUrl configuration is possible, but not required if you add the Custom Domain to enable the Active Directory Endpoint.
 {% endhint %}
 
-After configuring the custom domain, make sure to update SCEPman App Service Setting [**AppConfig:BaseUrl**](../scepman-configuration/application-settings/basics.md#appconfig-baseurl) to the new URL, save and restart the App Service
+After configuring the custom domain, make sure to update SCEPman App Service Setting [**AppConfig:BaseUrl**](../scepman-configuration/application-settings/basics.md#appconfig-baseurl) to the new URL, save and restart the App Service.
 
 ![](<../.gitbook/assets/scepman-cname4-1 (1).png>)
 

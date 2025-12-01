@@ -27,7 +27,7 @@ If you have installed SCEPman 2.7 or older, your Key Vault and Storage Account w
 * In the SCEPman resource group, create a new Virtual Network using default settings or as required by your organisation. This should include a **default subnet**.
 * Create an additional subnet in the new **Virtual Network** with default settings and set **"Subnet Delegation"** as **Microsoft.Web/serverFarms**
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -62,9 +62,9 @@ If you have installed SCEPman 2.7 or older, your Key Vault and Storage Account w
 2. Select the virtual network and the created subnet from the first step.
 3. Uncheck the option "Outbound internet traffic" and apply
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
