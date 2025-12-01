@@ -38,8 +38,7 @@ This is the default set of roles that will be added during the post-install conf
 {% step %}
 ### Navigate to SCEPman-CertMaster
 
-Azure > Enterprise Applications > Clear Filters > SCEPman-CertMaster\
-
+Azure > Enterprise Applications > Clear Filters > SCEPman-CertMaster<br>
 
 <figure><img src="../../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
@@ -49,8 +48,7 @@ Azure > Enterprise Applications > Clear Filters > SCEPman-CertMaster\
 
 Navigate to Manage > Users and Groups and select your desired administrators and their role. \
 Press assign once administrators and roles have been selected.\
-![](<../../.gitbook/assets/image (59).png>)\
-
+![](<../../.gitbook/assets/image (59).png>)<br>
 
 <figure><img src="../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}

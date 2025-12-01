@@ -63,6 +63,9 @@
     * [Linux Server](certificate-management/api-certificates/api-enrollment/linux-server.md)
     * [Windows Server](certificate-management/api-certificates/api-enrollment/windows-server.md)
   * [SCEPmanClient](certificate-management/api-certificates/scepmanclient.md)
+* [Active Directory](certificate-management/active-directory/README.md)
+  * [General Configuration](certificate-management/active-directory/general-configuration.md)
+  * [Group Policy](certificate-management/active-directory/group-policy.md)
 
 ## Azure Configuration
 
@@ -96,6 +99,11 @@
     * [Microsoft Entra ID (Azure AD)](scepman-configuration/application-settings/dependencies-azure-services/azure-ad.md)
     * [National Cloud Platforms](scepman-configuration/application-settings/dependencies-azure-services/national-cloud-platforms.md)
   * [Enrollment REST API](scepman-configuration/application-settings/dbcsr-validation.md)
+  * [Active Directory](scepman-configuration/application-settings/active-directory/README.md)
+    * [General](scepman-configuration/application-settings/active-directory/general.md)
+    * [User Template](scepman-configuration/application-settings/active-directory/user-template.md)
+    * [Computer Template](scepman-configuration/application-settings/active-directory/computer-template.md)
+    * [DC Template](scepman-configuration/application-settings/active-directory/dc-template.md)
   * [OCSP](scepman-configuration/application-settings/ocsp.md)
   * [SCEP Endpoints](scepman-configuration/application-settings/scep-endpoints/README.md)
     * [DC Validation](scepman-configuration/application-settings/scep-endpoints/dc-validation.md)

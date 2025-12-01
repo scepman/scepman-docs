@@ -20,8 +20,7 @@ In order to purchase solutions from independent software vendors (ISV) such as S
 * Upon every renewal date, you will be billed immediately.
 * You will always be billed for the entire subscription cycle in advance.
 * The related items should appear on your Microsoft Azure invoice (Pay-As-You-Go or Enterprise Agreement) the month after we have reported your fees to Microsoft.
-*   In the PDF invoice you will receive from Microsoft, all SCEPman fees are lumped into an item called "SaaS". The related Publisher is "glueckkanja".\
-
+*   In the PDF invoice you will receive from Microsoft, all SCEPman fees are lumped into an item called "SaaS". The related Publisher is "glueckkanja".<br>
 
     <figure><img src="../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
 

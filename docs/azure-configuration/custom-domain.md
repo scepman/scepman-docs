@@ -22,6 +22,10 @@ By clicking on add, the custom domain and the SSL Managed Certificate will be cr
 
 ![](<../.gitbook/assets/2022-12-23 17_01_35-Window.png>)
 
+{% hint style="danger" %}
+If you want to use SCEPman for Active Directory enrollment, use an A record instead of a CNAME, otherwise the Kerberos authentication won't work. You can check your inbound IP address in the Networking settings of your App Service.
+{% endhint %}
+
 After configuring the custom domain, make sure to update SCEPman App Service Setting [**AppConfig:BaseUrl**](../scepman-configuration/application-settings/basics.md#appconfig-baseurl) to the new URL, save and restart the App Service
 
 ![](<../.gitbook/assets/scepman-cname4-1 (1).png>)

@@ -19,8 +19,7 @@ Since cleverbridge operates a local entity in the US, cleverbridge Inc., certain
 SCEPman is offered as a **monthly or** **annual subscription plan** with different [User Segments](cleverbridge.md#user-segments). The correct **user segment** is either&#x20;
 
 * pre-selected in case we provide a quotation or order link to you, or
-*   must be manually selected during checkout:\
-
+*   must be manually selected during checkout:<br>
 
     <figure><img src="../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
 
@@ -63,8 +62,7 @@ The following user segments are available for both, monthly and annual plans.
 
 We offer SCEPman along with our cloud-NAC solution [RADIUSaaS](https://www.radius-as-a-service.com/) in a subscription bundle that is discounted by 25% in comparison to the individual solutions. The bundle plans are available with monthly or annual renewal as well as the same [User Segments](cleverbridge.md#user-segments).
 
-The information provided throughout this article is also applicable for RADIUSaaS & SCEPman Bundle subscriptions.\
-
+The information provided throughout this article is also applicable for RADIUSaaS & SCEPman Bundle subscriptions.<br>
 
 <figure><img src="../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
 
@@ -188,12 +186,10 @@ Partners can leverage the same tools to manage subscriptions on behalf of their 
 
 * Sign-on to the [Partner Portal](https://www.cleverbridge.com/306/?scope=pplogin) using your partner account credentials.
 * Click **History**, select **All transactions** and locate the relevant customer.
-*   Click the icon highlighted in below screenshot, which will re-direct you to the initial confirmation / order confirmation page:\
-
+*   Click the icon highlighted in below screenshot, which will re-direct you to the initial confirmation / order confirmation page:<br>
 
     <figure><img src="../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
-*   On that page, locate the button saying **Manage Your Subscription For "\<SKU>"** and click it.\
-
+*   On that page, locate the button saying **Manage Your Subscription For "\<SKU>"** and click it.<br>
 
     <figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 * This will either navigate you to the self-management portal directly or you might have to re-generate the link (they might expire after a while) first.

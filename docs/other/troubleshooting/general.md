@@ -239,4 +239,4 @@ To fix this, you need to grant the Managed Identity of the SCEPman App Service a
 
 Check your SCEPman Environment Variables to see what is configured for [AppConfig:UseRequestedKeyUsages](../../scepman-configuration/application-settings/certificates.md#appconfig-userequestedkeyusages). If it is not set, it defaults to "false".&#x20;
 
-New installations will automatically set this to "true", however older SCEPman installations have this set as false. SCEPman updates don't change any behavior except for fixes or changes that have under no circumstances a disadvantage. When this is set to false, the requests EKUs and Key Usages are ignored.\
+New installations will automatically set this to "true", however older SCEPman installations have this set as false. SCEPman updates don't change any behavior except for fixes or changes that have under no circumstances a disadvantage. When this is set to false, the requests EKUs and Key Usages are ignored.<br>
