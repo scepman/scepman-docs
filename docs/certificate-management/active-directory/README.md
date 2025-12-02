@@ -1,4 +1,4 @@
-# Active Directory
+# 🆕 Active Directory
 
 {% hint style="warning" %}
 SCEPman Enterprise Edition only
