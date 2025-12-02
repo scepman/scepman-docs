@@ -25,3 +25,15 @@ _Linux: AppConfig\_\_ActiveDirectory\_\_RenewalThresholdPercentage_
 **Value:** Floating point number of the percentage. Default is 0.2 (20%)
 
 **Description:** If the remaining validity of a certificate falls below this percentage of the total certificate validity, a renewal should be triggered on the client side.
+
+## AppConfig:ActiveDirectory:BaseUrl
+
+_Linux: AppConfig\_\_ActiveDirectory\_\_BaseUrl_
+
+**Value:** https://scepman.contoso.com
+
+**Description:** This defines the base URL of the Active Directory endpoint that will be displayed on the SCEPman homepage and will be returned in the policies requested by your clients. Defaults to AppConfig:BaseUrl
+
+{% hint style="info" %}
+This setting should only be set if you require your Active Directory endpoint to be accessed at a different URL than SCEPman in general.
+{% endhint %}

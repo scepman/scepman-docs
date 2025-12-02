@@ -2,7 +2,7 @@
 
 This certificate enrollment founds on the [XCEP](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-xcep) and [WSTEP](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-wstep/) protocols that all recent Windows versions natively support. In Active Directory environments, the necessary settings can be applied via group policies (GPO), to make AD-joined computers enroll certificates from SCEPman.
 
-In this scenario, two group policies are required for a fully automated certificate deployment.
+In this scenario, three group policy settings are required for a fully automated certificate deployment.
 
 {% stepper %}
 {% step %}
@@ -57,5 +57,24 @@ With the registered CEP server, your users/computers can request certificates fr
 Make sure to check `Update certificates that use certificate templates` to enable the automatic enrollment.
 
 <figure><img src="../../.gitbook/assets/image (118).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### Install Trusted Root CA
+
+With the enrollment policy server and auto-enrollment settings in place, you just need to make sure that your target devices or users are trusting your SCEPman CA certificate. For this to happen you will need to import the CA certificate in the corresponding GPO setting.
+
+<pre data-title="Setting location in Group Policy Management Editor (gpmc.msc)"><code>Computer Configuration / User Configuration
+└-Policies
+  └-Windows Settings
+    └-Security Settings
+      └-Public Key Policies
+        └-Trusted Root Certificatin Authorities
+<strong>          └- Import (Context Menu)
+</strong></code></pre>
+
+<figure><img src="../../.gitbook/assets/image (119).png" alt=""><figcaption></figcaption></figure>
+
+Download your SCEPman's CA certificate from its homepage and make sure to import it in this dialogue.
 {% endstep %}
 {% endstepper %}

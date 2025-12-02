@@ -17,7 +17,7 @@ layout:
 
 # General Configuration
 
-To allow SCEPman to handle incoming SOAP requests successfully, we need to take two steps:
+To allow SCEPman to handle incoming SOAP requests successfully, we need to take a few steps:
 
 {% stepper %}
 {% step %}
@@ -58,6 +58,24 @@ The integration can easily be enabled by adding the following environment variab
 _Example with all certificate templates enabled:_
 
 <table data-full-width="true"><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody><tr><td>AppConfig:ActiveDirectory:Keytab</td><td>Base64 encoded keytab for the service principal created in Step 1</td></tr><tr><td>AppConfig:ActiveDirectory:Computer:Enabled</td><td>true</td></tr><tr><td>AppConfig:ActiveDirectory:User:Enabled</td><td>true</td></tr><tr><td>AppConfig:ActiveDirectory:DC:Enabled</td><td>true</td></tr></tbody></table>
+{% endstep %}
+
+{% step %}
+### Ensure Custom Domain and BaseUrl
+
+For successful authentication with SCEPman, ensure that a custom domain using an `A record` is pointed to the app service. Otherwise, the client will fail to request a valid Kerberos ticket from the domain controller.
+
+{% hint style="info" %}
+See the below known issue about [WS\_E\_ENDPOINT\_ACCESS\_DENIED](general-configuration.md#ws_e_endpoint_access_denied) for more information on this.
+{% endhint %}
+
+Ensure that SCEPman is configured to be accessible using a custom domain:
+
+{% content-ref url="../../azure-configuration/custom-domain.md" %}
+[custom-domain.md](../../azure-configuration/custom-domain.md)
+{% endcontent-ref %}
+
+The same requirement also applies after the initial policy request (listing the certificate templates) to enroll certificates. To allow a successful authentication here, make sure to also setup the [AppConfig:BaseUrl](../../scepman-configuration/application-settings/basics.md#appconfig-baseurl) variable to your custom domain or use the dedicated [AppConfig:ActiveDirectory:BaseUrl](../../scepman-configuration/application-settings/active-directory/general.md#appconfig-activedirectory-baseurl) setting if require the AD Endpoint to be accessible on a different Url than your other SCEPman endpoints are.
 {% endstep %}
 {% endstepper %}
 

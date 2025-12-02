@@ -21,7 +21,7 @@ This description assumes you do not use Azure Domain Services. If you do, you se
 ### Configure the BaseUrl of SCEPman
 
 {% hint style="info" %}
-Updating the BaseUrl configuration is possible, but not required if you add the Custom Domain to enable the Active Directory Endpoint.
+When you add the Custom Domain to enable the Active Directory Endpoint, as an alternative to updating the BaseUrl configuration as described below, you can also change the setting [AppConfig:ActiveDirectory:BaseUrl](../scepman-configuration/application-settings/active-directory/#general-settings). This won't affect things like your AIA, but only the Active Directory endpoints.
 {% endhint %}
 
 After configuring the custom domain, make sure to update SCEPman App Service Setting [**AppConfig:BaseUrl**](../scepman-configuration/application-settings/basics.md#appconfig-baseurl) to the new URL, save and restart the App Service.
