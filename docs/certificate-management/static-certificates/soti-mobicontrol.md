@@ -31,11 +31,11 @@ First, you need to deploy SCEPman RootCA to all endpoints as a trusted root ca, 
 
 1. In Soti MobiControl, navigate to System Settings > Global Settings > Services > Certificate Authority.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Authority Page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Authority Page</p></figcaption></figure>
 
 2. Click the Add button to create a new Certificate Authority.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Authority Details</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Soti MobiControl Certificate Authority Details</p></figcaption></figure>
 
 * Enter a **name** for this Certificate Authority.&#x20;
 * Select `Generic SCEP` for **Certificate Type**.&#x20;
