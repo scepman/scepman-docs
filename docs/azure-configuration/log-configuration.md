@@ -1,19 +1,30 @@
 # Log Management
 
-{% hint style="info" %}
-Applicable to SCEPman Certificate Master version 2.4 and above
-{% endhint %}
-
-Newer SCEPman installations (version 2.4 and later) automatically create a Log Analytics Workspace during deployment and log into Azure Monitor. If you have installed SCEPman 2.3 or earlier and then upgraded to 2.4 or later, you can follow the steps below to enable this logging feature.
-
 ### Enable Logging to Azure Monitor
+
+Since version 3.0, SCEPman, as well as the Certificate Master, will utilize Microsofts Log Ingestion API to write logs to Azure Monitor. This uses a concept of a Log Analytics Workspace to hold the data and allow analyzation as well as a Data Collection Rule that interfaces between the App Service and the log storage. This allows for a more modern approach including RBAC based permissions for SCEPman to access the LAW.
+
+The creation of the Log Analytics Workspace as well as the configuration of the Data Collection Rule is automatically done by running `Complete-SCEPmanInstallation` of the SCEPman PowerShell module.
 
 {% hint style="info" %}
 The **default retention** period for data stored in a Log Analytics Table is **30 days**. In case a different retention period is required, adjust the configuration of the Table "SCEPman\_CL" accordingly.
 {% endhint %}
 
-1. Create a Log Analytics workspace (Microsoft Guide [Create a Log Analytics workspace](https://docs.microsoft.com/en-us/azure/azure-monitor/learn/quick-create-workspace#create-a-workspace)). You can also use an existing one.
-2. Add the settings AppConfig:LoggingConfig:WorkspaceId and AppConfig:LoggingConfig:SharedKey described in the [section on Logging settings](../scepman-configuration/application-settings/dependencies-azure-services/logging.md). Do this for each of your SCEPman instances (these are more than one for geo-redundancy or if you have multiple deployment slots) and your Certificate Master App Service.
+#### Reenabling Data Collector API
+
+If, for any reason, you want to reinstate the previous API to be used you can do so by removing the Log Ingestion related app service variables and again add the ones to be used by the Data Collector API.
+
+Variables to be **removed**:
+
+* [AppConfig:LoggingConfig:DataCollectionEndpointUri](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/edit/~/changes/787/scepman-configuration/application-settings/dependencies-azure-services/logging#appconfig-loggingconfig-datacollectionendpointuri)
+* [AppConfig:LoggingConfig:RuleId](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/edit/~/changes/787/scepman-configuration/application-settings/dependencies-azure-services/logging#appconfig-loggingconfig-ruleid)
+
+Variables to be added:
+
+* [AppConfig:LoggingConfig:WorkspaceId](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/edit/~/changes/787/scepman-configuration/application-settings/dependencies-azure-services/logging#appconfig-loggingconfig-workspaceid)
+* [AppConfig:LoggingConfig:SharedKey](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/edit/~/changes/787/scepman-configuration/application-settings/dependencies-azure-services/logging#appconfig-loggingconfig-sharedkey)
+
+SCEPman will automatically pick up the settings after a restart and will utilize the Data Collector API again.
 
 ## KQL Query Examples
 
@@ -33,7 +44,7 @@ This query is guaranteed to work with SCEPman 2.8 and future versions. Changes t
 ```kusto
 SCEPman_CL
 | where Level == "Info" and Message startswith_cs "Issued a certificate with serial number"
-| project Message, RequestBase = trim_end('/', replace_string(replace_regex(RequestUrl_s, "(/pkiclient\\.exe)?(\\?operation=PKIOperation(&message=.+)?)?", ""),"certsrv/mscep/mscep.dll","intune"))
+| project Message, RequestBase = trim_end('/', replace_string(replace_regex(RequestUrl, "(/pkiclient\\.exe)?(\\?operation=PKIOperation(&message=.+)?)?", ""),"certsrv/mscep/mscep.dll","intune"))
 | summarize IssuanceCount = count() by Endpoint = extract("/([a-zA-Z]+)$", 1, RequestBase)
 ```
 
@@ -64,7 +75,7 @@ let map_certtype = datatable(serial_start:string, readable:string)
   "45", "Jamf Device"
 ];
 SCEPman_CL
-| where LogCategory_s == "Scepman.Server.Controllers.OcspController" and Level == "Info"
+| where LogCategory == "Scepman.Server.Controllers.OcspController" and Level == "Info"
 | where Message startswith_cs "OCSP Response"
 | project serial = extract("Serial Number ([A-F0-9]+)", 1, Message)
 | distinct serial

@@ -6,6 +6,34 @@ These settings should only be applied to the SCEPman App Service, not the Certif
 Applicable to version 2.4 and above
 {% endhint %}
 
+## AppConfig:LoggingConfig:DataCollectionEndpointUri
+
+_Linux: AppConfig\_\_LoggingConfig\_\__&#x44;ataCollectionEndpointUri
+
+{% hint style="info" %}
+Logging via DCE is possible in version 3.0 and above
+{% endhint %}
+
+**Value:** Uri
+
+**Description:**
+
+The data collection endpoint Uri is the target SCEPman sends its logs to. This utilizes the default DCE of the Data Collection Rule that is created automatically in a standard deployment.
+
+## AppConfig:LoggingConfig:RuleId
+
+_Linux: AppConfig\_\_LoggingConfig\_\__&#x52;uleId
+
+{% hint style="info" %}
+Logging via DCE is possible in version 3.0 and above
+{% endhint %}
+
+**Value:** String
+
+**Description:**
+
+This is the unique identifier of the Data Collection Rule to be used by SCEPman.
+
 ## AppConfig:LoggingConfig:WorkspaceId
 
 _Linux: AppConfig\_\_LoggingConfig\_\_WorkspaceId_

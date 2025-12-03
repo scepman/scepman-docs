@@ -16,7 +16,7 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 * Caching of valid OCSP results for five seconds by default instead of no caching.
 * Breaking change: The CA certificate URL in the AIA extension of issued certificates points changed to /ca, which is only available in SCEPman 2.9 and newer. In the exotic case where you run SCEPman 2.12 in parallel with SCEPman 2.8 or older in geo-redundancy, this may cause problems.
 * Improved robustness responding to malformed OCSP requests
-* Support for the Log Ingestion API for logging to Azure Monitor
+* Support for the [Log Ingestion API for logging](azure-configuration/log-configuration.md) to Azure Monitor
 * Small improvements and fixes
   * Restored compatibility with Google Workspace (a workaround for a bug in Google's PKCS#7 handling)
   * Improved caching for connectivities on the SCEPman splash page
@@ -31,7 +31,7 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
   * More effective use of space on small screens
   * More information about the logged-in user
   * Shorthand links to download the CA certificate (chain)
-* Support for the Log Ingestion API for logging to Azure Monitor
+* Support for the [Log Ingestion API for logging](azure-configuration/log-configuration.md) to Azure Monitor
 * Allow requesting a specific lifetime of certificates, e.g. make a certificate valid for 365 days. Maximums and defaults can be configured per type of certificate.
 * Small improvements and fixes
   * Library updates
