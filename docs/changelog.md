@@ -8,9 +8,9 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ## Versions
 
-### 3.0 - Currently in Beta Channel
+### 3.0 - December 2025
 
-#### SCEPman 3.0.1602
+#### SCEPman 3.0.1631
 
 * [Enrollment to on-prem AD-joined Windows devices!](certificate-management/active-directory/) You can enroll user, device, and Domain Controller certificates to Windows clients using native methods, i.e. no software required on the clients. The primary use case is Autoenrollment, where you enroll certificates on the on-prem clients without user interaction.
 * Caching of valid OCSP results for five seconds by default instead of no caching.
@@ -24,7 +24,7 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
   * Fix for rejecting renewal Intune certificates via EST in specific circumstances
   * Library updates, which also fixes some CVE warnings (which are false positives, as SCEPman is not actually affected)
 
-#### Certificate Master 3.0.1402
+#### Certificate Master 3.0.1419
 
 * Improved UI
   * Better sizing of certificates table
