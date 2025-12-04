@@ -4,12 +4,12 @@
 
 SCEPman depends mainly on the CPU resources. Memory and disk are much less important.
 
-One SCEPman instance (version 2.5 and newer) in one Azure P0V3 App Service Plan (195 ACUs) can serve around 2000 requests per minute under usual conditions. Requests are
+One SCEPman instance (version 3.0 and newer) in one Azure P0V3 App Service Plan (195 ACUs) can serve around 4000 requests per minute under usual conditions. Requests are
 
 * SCEP issuing requests and
 * OCSP requests.
 
-This means that SCEPman can serve about 10 requests per minute per ACU.
+This means that SCEPman can serve about 20 requests per minute per ACU.
 
 Since a certificate is enrolled once, but its validity is checked many times, there will be much more OCSP requests than SCEP requests in total. Hence, you should size your SCEPman instance based on your OCSP requests.
 
@@ -33,12 +33,12 @@ We recommend the following sizing in Azure Compute Units (ACU) for the Azure App
 
 | Amount of users/clients |             Singular design             |               Geo-Redundant design              |
 | :---------------------: | :-------------------------------------: | :---------------------------------------------: |
-|      < 2000 clients     |    <p>~100 ACUs<br>(e.g. 1 x S1)</p>    |     <p>2 x ~100 ACUs</p><p>(e.g. 2 x S1)</p>    |
-|      < 5000 clients     |  <p>~200 ACUs</p><p>(e.g. 1 x P0V3)</p> |    <p>2 x ~200 ACUs</p><p>(e.g. 2 x P0V3)</p>   |
-|     < 10.000 clients    |  <p>~400 ACUs</p><p>(e.g. 2 x P0V3)</p> |     <p>2 x ~400 ACUs<br>(e.g. 4 x P0V3)</p>     |
-|     < 25.000 clients    |  <p>~800 ACUs</p><p>(e.g. 4 x P0V3)</p> |     <p>2 x ~800 ACUs<br>(e.g. 8 x P0V3)</p>     |
-|     < 50.000 clients    | <p>~1600 ACUs</p><p>(e.g. 4 x P1V3)</p> |   <p>2 x ~1600 ACUs</p><p>(e.g. 8 x P1V3)</p>   |
-|    < 100.000 clients    | <p>~3200 ACUs</p><p>(e.g. 4 x P2V3)</p> | <p>2 x ~3200 ACUs</p><p>(e.g. 2 x 4 x P2V3)</p> |
+|      < 5000 clients     |    <p>~100 ACUs<br>(e.g. 1 x S1)</p>    |     <p>2 x ~100 ACUs</p><p>(e.g. 2 x S1)</p>    |
+|     < 10.000 clients    |  <p>~200 ACUs</p><p>(e.g. 1 x P0V3)</p> |    <p>2 x ~200 ACUs</p><p>(e.g. 2 x P0V3)</p>   |
+|     < 25.000 clients    |  <p>~400 ACUs</p><p>(e.g. 2 x P0V3)</p> |     <p>2 x ~400 ACUs<br>(e.g. 4 x P0V3)</p>     |
+|     < 50.000 clients    |  <p>~800 ACUs</p><p>(e.g. 4 x P0V3)</p> |     <p>2 x ~800 ACUs<br>(e.g. 8 x P0V3)</p>     |
+|    < 100.000 clients    | <p>~1600 ACUs</p><p>(e.g. 4 x P1V3)</p> |   <p>2 x ~1600 ACUs</p><p>(e.g. 8 x P1V3)</p>   |
+|    > 100.000 clients    | <p>~3200 ACUs</p><p>(e.g. 4 x P2V3)</p> | <p>2 x ~3200 ACUs</p><p>(e.g. 2 x 4 x P2V3)</p> |
 
 Based on these recommendations, you can monitor your traffic and see whether you can scale down as described in the Section [Fine Tuning](./#fine-tuning) below.
 
