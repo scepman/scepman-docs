@@ -10,6 +10,10 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ### 3.0 - December 2025
 
+#### SCEPman 3.0.1635
+
+Fix issue with strict checks for optional SCEP HTTP parameters  &#x20;
+
 #### SCEPman 3.0.1631
 
 * [Enrollment to on-prem AD-joined Windows devices!](certificate-management/active-directory/) You can enroll user, device, and Domain Controller certificates to Windows clients using native methods, i.e. no software required on the clients. The primary use case is Autoenrollment, where you enroll certificates on the on-prem clients without user interaction.
