@@ -44,7 +44,7 @@ This query is guaranteed to work with SCEPman 2.8 and future versions. Changes t
 ```kusto
 SCEPman_CL
 | where Level == "Info" and Message startswith_cs "Issued a certificate with serial number"
-| project Message, RequestBase = trim_end('/', replace_string(replace_regex(RequestUrl, "(/pkiclient\\.exe)?(\\?operation=PKIOperation(&message=.+)?)?", ""),"certsrv/mscep/mscep.dll","intune"))
+| project Message, RequestBase = trim_end('/', replace_string(replace_string(replace_regex(RequestUrl, "(/pkiclient\\.exe)?(\\?operation=PKIOperation(&message=.+)?)?", ""),"certsrv/mscep/mscep.dll","intune"),"step/enrollment","activedirectory"))
 | summarize IssuanceCount = count() by Endpoint = extract("/([a-zA-Z]+)$", 1, RequestBase)
 ```
 
