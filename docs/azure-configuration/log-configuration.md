@@ -38,10 +38,19 @@ SCEPman_CL
 ### Number of Issued Certificates by Endpoint in the Selected Time Frame
 
 {% hint style="success" %}
-This query is guaranteed to work with SCEPman 2.8 and future versions. Changes to SCEPman that make this query unusable will be considered Breaking Changes.
+This query is guaranteed to work with SCEPman 3.0 and newer when using the Log Ingestion API for logging. Changes to SCEPman that make this query unusable will be considered Breaking Changes.
 {% endhint %}
 
 ```kusto
+SCEPman_CL
+| where Level == "Info" and Message startswith_cs "Issued a certificate with serial number"
+| project Message, RequestBase = trim_end('/', replace_string(replace_string(replace_regex(RequestUrl_s, "(/pkiclient\\.exe)?(\\?operation=PKIOperation(&message=.+)?)?", ""),"certsrv/mscep/mscep.dll","intune"),"step/enrollment","activedirectory"))
+| summarize IssuanceCount = count() by Endpoint = extract("/([a-zA-Z]+)$", 1, RequestBase)
+```
+
+If you are using the old Log Ingestion API, use this slightly adapted query:
+
+```kql
 SCEPman_CL
 | where Level == "Info" and Message startswith_cs "Issued a certificate with serial number"
 | project Message, RequestBase = trim_end('/', replace_string(replace_string(replace_regex(RequestUrl, "(/pkiclient\\.exe)?(\\?operation=PKIOperation(&message=.+)?)?", ""),"certsrv/mscep/mscep.dll","intune"),"step/enrollment","activedirectory"))
@@ -76,6 +85,40 @@ let map_certtype = datatable(serial_start:string, readable:string)
 ];
 SCEPman_CL
 | where LogCategory == "Scepman.Server.Controllers.OcspController" and Level == "Info"
+| where Message startswith_cs "OCSP Response"
+| project serial = extract("Serial Number ([A-F0-9]+)", 1, Message)
+| distinct serial
+| extend serial_start = substring(serial,0,2)
+| join kind=leftouter map_certtype on serial_start
+| summarize count() by (readable)
+```
+
+If you are still using the Data Collector API, use this query instead:
+
+```kql
+let map_certtype = datatable(serial_start:string, readable:string)
+[
+  "40", "Intune Device",
+  "41", "Intune Device",
+  "42", "Intune Incompliant Device",
+  "50", "Static",
+  "51", "Static",
+  "60", "Intune User",
+  "61", "Intune User",
+  "64", "Jamf User",
+  "65", "Jamf User",
+  "6C", "Jamf User on Device",
+  "6D", "Jamf User on Device",
+  "70", "Domain Controller",
+  "7C", "Jamf User on Computer",
+  "7D", "Jamf User on Computer",
+  "54", "Jamf Computer",
+  "55", "Jamf Computer",
+  "44", "Jamf Device",
+  "45", "Jamf Device"
+];
+SCEPman_CL
+| where LogCategory_s == "Scepman.Server.Controllers.OcspController" and Level == "Info"
 | where Message startswith_cs "OCSP Response"
 | project serial = extract("Serial Number ([A-F0-9]+)", 1, Message)
 | distinct serial

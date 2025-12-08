@@ -20,7 +20,7 @@ Log in with an AAD administrator account and visit this site, choose and click o
 
 Fill out the values in the form
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 * **Subscription:** Select your subscription, where you have permissions to create app services, storage account, app service plan, and key vault
 * **Resource group:** Select an existing resource group or create a new one. The SCEPman resources will be deployed to this resource group

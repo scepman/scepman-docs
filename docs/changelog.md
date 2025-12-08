@@ -45,6 +45,10 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
   * Bugfix: Dead link when requesting certificates with a restricted role
   * Bugfix: Email addresses field was missing for manually created S/MIME certificates
 
+#### SCEPman PowerShell Module 3.0
+
+* Breaking change: New and existing SCEPman installations will switch logging from the deprecated Data Collector API to Log Ingestion API. In the process, some columns will lose their "\_s" suffix, requiring a change to KQL queries.
+
 #### SCEPmanClient PowerShell Module 3.0
 
 * Allow shorter certificate validity during enrollment (for PowerShell Core only)
