@@ -10,9 +10,11 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ### 3.0 - December 2025
 
-#### SCEPman 3.0.1635
+#### SCEPman 3.0.1639
 
-Fix issue with strict checks for optional SCEP HTTP parameters  &#x20;
+* Hotfixes
+  * Fix issue with strict checks for optional SCEP HTTP parameters.
+  * Default configuration with correct backwards compatibility in the DC, Jamf, Static, and StaticAAD endpoints
 
 #### SCEPman 3.0.1631
 
