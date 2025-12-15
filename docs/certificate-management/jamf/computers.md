@@ -30,11 +30,9 @@ Please add another "macOS Configuration Profile" and choose "SCEP" as payload. A
 | Allow export from keychain | Controls whether the private key is exportable  | No                                             |
 | Allow all apps access      | Controls access to the SCEP certificate         | Yes                                            |
 
-Please adjust other options on your needs.
+Please adjust other options to your needs.
 
-![](<../../.gitbook/assets/image (21) (1).png>)
-
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## Output on the Client
 
