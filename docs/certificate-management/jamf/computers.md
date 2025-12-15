@@ -32,7 +32,7 @@ Please add another "macOS Configuration Profile" and choose "SCEP" as payload. A
 
 Please adjust other options to your needs.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
 
 ## Output on the Client
 
