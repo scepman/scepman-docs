@@ -12,11 +12,11 @@ The deployment of SCEPman 2.x is different from a SCEPman 1.x deployment. If you
 
 Log in with an AAD administrator account and visit this site, choose and click one of the following deployment links:
 
-* [Production channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fprod%2Fazuredeploy.json)
-* [Beta channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fbeta%2Fazuredeploy.json)
-* [Internal channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Finternal%2Fazuredeploy.json)
-* [Production channel in GCC High national cloud](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fgcchigh%2Fazuredeploy.json)
-* [Production channel in 21Vianet national cloud](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Finstall%2Fvianet%2Fazuredeploy.json) (Experimental!)
+* [Production channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Fdeploy%2Fprod%2Fazuredeploy.json)
+* [Beta channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Fdeploy%2Fbeta%2Fazuredeploy.json)
+* [Internal channel](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Fdeploy%2Finternal%2Fazuredeploy.json)
+* [Production channel in GCC High national cloud](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Fdeploy%2Fgcchigh%2Fazuredeploy.json)
+* [Production channel in 21Vianet national cloud](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fscepman%2Fdeploy%2Fvianet%2Fazuredeploy.json) (Experimental!)
 
 Fill out the values in the form
 
