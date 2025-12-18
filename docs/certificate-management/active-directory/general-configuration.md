@@ -40,7 +40,7 @@ New-SCEPmanADPrincipal -Name "SCEPmanAD" -AppServiceUrl "scepman.contoso.com" -O
 
 Running this command will perform the following:
 
-1. Create a computer object in the `OU=ServiceAccounts,DC=contoso,DC=com` Organizational Unit.
+1. Create a computer object in the `OU=Example,DC=contoso,DC=com` Organizational Unit.
 2. Download SCEPman's CA certificate to encrypt the keytab in step 5.
 3. Add a service principal name (SPN) to the computer object.
 4. Create a keytab for the computer account containing the encryption key based on the computer's password.
