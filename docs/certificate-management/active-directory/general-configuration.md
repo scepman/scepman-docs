@@ -34,7 +34,7 @@ If your computer with access to a Domain Controller doesn't have network access,
 {% code overflow="wrap" lineNumbers="true" expandable="true" %}
 ```powershell
 Install-Module SCEPman -Force
-New-SCEPmanADPrincipal -Name "SCEPmanAD" -AppServiceUrl "scepman.contoso.com" -OU "OU=ServiceAccounts,DC=contoso,DC=local"
+New-SCEPmanADPrincipal -Name "SCEPmanAD" -AppServiceUrl "scepman.contoso.com" -OU "OU=Example,DC=contoso,DC=local"
 ```
 {% endcode %}
 
