@@ -1,4 +1,4 @@
-# Intune-managed Linux Client
+# Intune Managed Linux Client
 
 {% hint style="info" %}
 Applicable to SCEPman version 2.9 and above
@@ -12,7 +12,9 @@ This method can be used to enroll certificates for users and devices that are ma
 
 Intune will in this case push a script to leverage the SCEPman REST API that in turn will either enroll a new certificate or renew an already existing one.
 
+Our developer Christoph presented this feature and some background details at the Workplace Ninja Usergroup Germany:
 
+{% embed url="https://www.youtube.com/watch?v=dQcVl1vS3lg" %}
 
 ## Prerequisites
 
