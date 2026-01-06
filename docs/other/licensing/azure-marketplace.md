@@ -103,7 +103,7 @@ If you decide to disable **Recurring billing**, your subscription will not renew
 
 ## **Trials**
 
-In case you would like to test SCEPman, please [get in contact with us](https://www.scepman.com/start-now/#try) or send us an email to [sales@scepman.com](mailto:sales@scepman.com).
+In case you would like to test SCEPman, please [get in contact with us](https://support.scepman.com/support/tickets/new?ticket_form=trial_request_%28scepman%29) or send us an email to [sales@scepman.com](mailto:sales@scepman.com).
 
 ## FAQs
 
