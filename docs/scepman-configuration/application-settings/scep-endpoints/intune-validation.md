@@ -38,7 +38,9 @@ Applicable to version 2.5 and above&#x20;
 
 **Value:** _Integer_ (default: 0)
 
-**Description:** Immediately after enrollment, devices are often not yet compliant in Intune. This setting defines a grace period in minutes during which the device is considered compliant, even if it is not yet. If the device is not compliant after the grace period, the certificate is revoked. This prevents the problem of a Windows device that is just enrolling and needs to successfully complete the SCEP profile in order to finish Windows Autopilot enrollment but will become compliant in Intune only some time later.
+**Description:** Immediately after enrollment, devices are often not yet compliant in Intune. This setting defines a grace period in minutes during which the device is considered compliant, even if it is not yet. If the device is not compliant after the grace period, the certificate is revoked. This prevents the problem of a Windows device that is just enrolling and needs to successfully complete the SCEP profile in order to finish Windows Autopilot enrollment, but will become compliant in Intune only some time later.
+
+The setting will check the Intune property EnrolledDateTime and start counting from that point.
 
 It is an alternative to using Ephemeral Bootstrap Certificates. If you configure any value above 0, SCEPman will never issue Ephemeral Bootstrap Certificates.
 
