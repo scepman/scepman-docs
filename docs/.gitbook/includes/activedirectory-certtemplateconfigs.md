@@ -6,8 +6,6 @@ title: ActiveDirectory:CertTemplateConfigs
 
 _Linux: AppConfig\_\_ActiveDirectory\_\__<code class="expression">page.vars.cert_template</code>_\_\_TemplateName_
 
-**Example**: AppConfig:ActiveDirectory:User:Ksps
-
 **Value:** Certificate template name
 
 **Description:** This setting you to choose a custom template name for this certificate template. It is displayed when you manually enroll a certificate of that template. For maximum compatibility, choose a name witho only alphanumeric characters and no blanks.
@@ -16,8 +14,6 @@ _Linux: AppConfig\_\_ActiveDirectory\_\__<code class="expression">page.vars.cert
 
 _Linux: AppConfig\_\_ActiveDirectory\_\__<code class="expression">page.vars.cert_template</code>_\_\_GroupFilter_
 
-**Example**: AppConfig:ActiveDirectory:User:Ksps
-
 **Value:** Comma-separated list of AD groups specified by their SID
 
 **Description:** This setting allows to limit which Active Directory group members are allowed to enroll certificates for this certificate template. If configured, it overrides the general setting [AppConfig:ActiveDirectory:GroupFilter](#appconfig-activedirectory-groupfilter).
@@ -25,8 +21,6 @@ _Linux: AppConfig\_\_ActiveDirectory\_\__<code class="expression">page.vars.cert
 # AppConfig:ActiveDirectory:<code class="expression">page.vars.cert_template</code>:Ksps
 
 _Linux: AppConfig\_\_ActiveDirectory\_\__<code class="expression">page.vars.cert_template</code>_\_\_Ksps_
-
-**Example**: AppConfig:ActiveDirectory:Computer:Ksps
 
 **Value:** Semicolon-separated list of CSPs/KSPs allowed for key generation
 
