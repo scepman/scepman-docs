@@ -363,7 +363,7 @@ Additionally, not all SCEP clients support TLS 1.3. One important example is the
 
 ### 1. What ensures that SCEPman is secure software?
 
-Our software development founds on the [Microsoft Security Development Lifecycle](https://www.microsoft.com/en-us/securityengineering/sdl/). Employing SDL practices helps us to create secure code and deployments. [We have the ISO 27001 information security certification for our product development](https://www.glueckkanja.com/documents/general/gkgab-ISO27001Certificate-en.pdf).
+Our software development founds on the [Microsoft Security Development Lifecycle](https://www.microsoft.com/en-us/securityengineering/sdl/). Employing SDL practices helps us to create secure code and deployments. [We have the ISO 27001 information security certification for our product development.](https://www.glueckkanja.com/documents/general/gk-ISO27001Certificate-en.pdf)
 
 ### 2. How do you implement common Secure Design Practices?
 
