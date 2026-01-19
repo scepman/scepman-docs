@@ -41,26 +41,32 @@ SCEPman_CL
 This query is guaranteed to work with SCEPman 3.0 and newer when using the Log Ingestion API for logging. Changes to SCEPman that make this query unusable will be considered Breaking Changes.
 {% endhint %}
 
-```kusto
-SCEPman_CL
-| where Level == "Info" and Message startswith_cs "Issued a certificate with serial number"
-| project Message, RequestBase = trim_end('/', replace_string(replace_string(replace_regex(RequestUrl_s, "(/pkiclient\\.exe)?(\\?operation=PKIOperation(&message=.+)?)?", ""),"certsrv/mscep/mscep.dll","intune"),"step/enrollment","activedirectory"))
-| summarize IssuanceCount = count() by Endpoint = extract("/([a-zA-Z]+)$", 1, RequestBase)
-```
-
-If you are using the old Log Ingestion API, use this slightly adapted query:
-
+{% tabs %}
+{% tab title="Log Ingestion API ( Default )" %}
 ```kql
 SCEPman_CL
 | where Level == "Info" and Message startswith_cs "Issued a certificate with serial number"
 | project Message, RequestBase = trim_end('/', replace_string(replace_string(replace_regex(RequestUrl, "(/pkiclient\\.exe)?(\\?operation=PKIOperation(&message=.+)?)?", ""),"certsrv/mscep/mscep.dll","intune"),"step/enrollment","activedirectory"))
 | summarize IssuanceCount = count() by Endpoint = extract("/([a-zA-Z]+)$", 1, RequestBase)
 ```
+{% endtab %}
+
+{% tab title="Data Collector API ( Old )" %}
+```kusto
+SCEPman_CL
+| where Level == "Info" and Message startswith_cs "Issued a certificate with serial number"
+| project Message, RequestBase = trim_end('/', replace_string(replace_string(replace_regex(RequestUrl_s, "(/pkiclient\\.exe)?(\\?operation=PKIOperation(&message=.+)?)?", ""),"certsrv/mscep/mscep.dll","intune"),"step/enrollment","activedirectory"))
+| summarize IssuanceCount = count() by Endpoint = extract("/([a-zA-Z]+)$", 1, RequestBase)
+```
+{% endtab %}
+{% endtabs %}
 
 Starting with SCEPman 2.8, there is always exactly one Info level log entry whose log message starts with "Issued a certificate with serial number " per issued certificate, followed by its serial number. However, due to the unsolvable [Two Armies Problem](https://en.wikipedia.org/wiki/Two_Generals'_Problem), it can happen that the created certificate never reaches the requester or some other type of error prevents the actual enrollment. Likewise, in case of severe errors, it can happen that a log entry exists without corresponding database entry or vice versa.
 
 ### Distinct Certificates with OCSP Check
 
+{% tabs %}
+{% tab title="Log Ingestion API ( Default )" %}
 ```kusto
 let map_certtype = datatable(serial_start:string, readable:string)
 [
@@ -92,9 +98,9 @@ SCEPman_CL
 | join kind=leftouter map_certtype on serial_start
 | summarize count() by (readable)
 ```
+{% endtab %}
 
-If you are still using the Data Collector API, use this query instead:
-
+{% tab title="Data Collector API ( Old )" %}
 ```kql
 let map_certtype = datatable(serial_start:string, readable:string)
 [
@@ -126,3 +132,5 @@ SCEPman_CL
 | join kind=leftouter map_certtype on serial_start
 | summarize count() by (readable)
 ```
+{% endtab %}
+{% endtabs %}
