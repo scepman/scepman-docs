@@ -290,6 +290,24 @@ SCEPman features a REST API to enroll certificates. This is an alternative to th
 
 
 {% endstep %}
+
+{% step %}
+### Create Locks on SCEPman Azure resources
+
+{% hint style="info" %}
+This is an **optional** step.
+{% endhint %}
+
+By default, SCEPman does not apply any locks to Azure resources. If you use resource locks and wish to configure them, the following list outlines which lock types can be applied to each SCEPman resource.
+
+* **Key Vault:** Soft Delete and Purge Protection already provide protection against accidental deletion. SCEPman does not modify the resource after CA key creation, so a **ReadOnlyLock** is technically possible.
+* **Storage Account:** Only a **DeleteLock** is possible, as SCEPman needs to write certificate information into the table. If a Storage Account is accidentally deleted, you lose information about already issued certificates.
+* **App Services:** A **ReadOnlyLock** is theoretically possible, but it must be removed each time you modify the SCEPman configuration. A deleted App Service can easily be reinstalled, but it will only have the default configuration, so all manual changes must be reconfigured manually. A combination of **DeleteLock** and **ReadOnlyLock** helps mitigate this risk.
+* **Log Analytics Workspace:** A **DeleteLock** is technically possible, but you would only lose logs collected during the retention period, which does not impact the availability of the SCEPman service.
+* **Other Azure Resources:** These do not store data and can be recreated without loss of information. A **DeleteLock** and **ReadOnlyLock** can be useful for some of them. Some cannot be deleted at all because they have dependencies on one of the core services mentioned above.
+
+
+{% endstep %}
 {% endstepper %}
 
 
