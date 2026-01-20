@@ -4,7 +4,7 @@ title: Important Links
 order: 2
 ---
 
-# Important Links
+# Links
 
 ## Blog Article about SCEPman
 
@@ -24,4 +24,4 @@ order: 2
 
 ## SCEPman on GitHub
 
-{% @github-files/github-code-block url="https://github.com/glueckkanja/gk-scepman" %}
+{% embed url="https://github.com/scepman" %}
