@@ -2,9 +2,9 @@
 
 ## Evergreen Approach
 
-We recommend an Evergreen approach for our SCEPman solution. That means that you should use the latest version from our production channel. Through the possibilities of the ZIP-Deployment you can point directly to our GitHub and load the latest version that is released by our development team.
+We recommend an Evergreen approach for SCEPman updates. This is the default approach if SCEPman has been deployed using the production channel. SCEPman uses ZIP-Deployment by pointing directly to the [SCEPman GitHub](https://github.com/scepman) and load the latest version that is released by the development team.
 
-How to do that is mentioned in this article:
+The production channel, along with the other available channels, are mentioned in the following guide:
 
 {% content-ref url="scepman-configuration/application-artifacts.md" %}
 [application-artifacts.md](scepman-configuration/application-artifacts.md)
