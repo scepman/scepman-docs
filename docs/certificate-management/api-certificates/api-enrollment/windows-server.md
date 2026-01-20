@@ -29,7 +29,7 @@ New-SCEPmanCertificate -Certificate $CertificateToRenew -SaveToStore 'LocalMachi
 # Remove-Item $CertificateToRenew.PSPath
 </code></pre>
 
-This will find certificates expiring in the next month and use it for
+This example will find certificates expiring in the next month and use it to authenticate the renewal request.
 
 ## Initial Request
 
