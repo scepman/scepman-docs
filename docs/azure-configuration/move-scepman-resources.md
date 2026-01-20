@@ -64,7 +64,7 @@ Make sure to have the [required permissions](../scepman-configuration/post-insta
 * Create a new Resource group in the target subscription.
 * Now move the resources. An easy way to move resources is to select them in the Resource group and choose "Move to another subscription" option
 
-<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Then you need to choose the new Subscription and Resource group, resources will be validated and moved.
 

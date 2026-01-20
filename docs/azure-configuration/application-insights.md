@@ -1,29 +1,47 @@
 # Application Insights
 
 {% hint style="info" %}
-We recommend enabling Application Insights to get a very helpful graphical representation of data about your SCEPman instance such as Failed requests, availability, and Server response time for a specific timeslot! This is very helpful in troubleshooting.
+We recommend enabling Application Insights to receive a graphical representation of data about your SCEPman instance such as Failed requests, Availability, and Server response time over a given duration.
 {% endhint %}
 
 To activate the Application Insights for your App Service, please follow these instructions:
 
-1. Open your **App Service**
-2. On the left side, you can click on **Application Insights** under **Monitoring**
+{% stepper %}
+{% step %}
+### Navigate to your SCEPman App Service
 
-![](<../.gitbook/assets/image (5) (1) (1) (1).png>)
+Azure > App Services > app-scepman-xxxxxx
+{% endstep %}
 
-3. On the Application Insights pane, you can click the button Turn on Application Insights
-4. You can create a new Application Insights resource or select an existing one in the new context. \
-   The dialog automatically wants to create a new Application Insights resource and take the name of the App Service. We recommend creating a new Application Insights resource for SCEPman.
+{% step %}
+### Select and Turn on Application Insights
 
-<figure><img src="../.gitbook/assets/2023-10-23 13_39_08-app-scepman-mex6exctu2nzq.png" alt=""><figcaption></figcaption></figure>
+On the lefthand menu, expand Monitoring > Application Insights
 
-5. You need to select **.NET** and select the **Collection level Recommended.** (For Linux based deployment, please choose **.NET Core**)
+\
+![](<../.gitbook/assets/image (3).png>)
+{% endstep %}
 
-<figure><img src="../.gitbook/assets/2023-10-23 13_42_16-app-scepman-mex6exctu2nzq.png" alt=""><figcaption></figcaption></figure>
+{% step %}
+### Create a new Application Insights resource
 
-6. **Profiler** and **Snapshot debugger** should be turned on by default already.
-7. Leave **Show local variables \[...]** at value _Off_, otherwise, Application Insights may cause startup delays and error messages.
-8. Finally, you can click on **Apply**
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+For Windows based deployments, select **.NET** and select the **Collection level Recommended.** (For Linux based deployment, please choose **.NET Core**)
+
+**Profiler** and **Snapshot debugger** should be turned on by default already.
+
+Leave **Show local variables \[...]** as _Off_, otherwise, Application Insights may cause startup delays and error messages.
+
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### Apply settings
+
+You're now set to use Application Insights for SCEPman!
+{% endstep %}
+{% endstepper %}
 
 
 

@@ -80,7 +80,7 @@ Cleverbridge allows you to manage any aspect of your subscription via their self
 
 To access the self management portal, please refer to the initial delivery / order confirmation email that was sent to you by cleverbridge at the time your order was placed. Within that email, locate the button saying **Manage Your Subscription For "\<SKU>"** and click it.
 
-<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This will either navigate you to the self-management portal directly or you might have to re-generate the link (they might expire after a while) first.
 
@@ -114,7 +114,7 @@ To perform a mid-term upgrade,
 * Navigate to the subscription's [self-management portal](cleverbridge.md#self-management-portal).
 * Click **Manage products**.
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 *   Select the correct [user segment](cleverbridge.md#user-segments), and provide the new **total** number of users. The website will display the&#x20;
 
@@ -123,7 +123,7 @@ To perform a mid-term upgrade,
 
     both **including VAT**.
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Click **Next**, review your **Payment method** and confirm the purchase by clicking **Buy now**.
 
@@ -146,11 +146,11 @@ To perform an early renewal upgrade,
 * Navigate to the subscription's [self-management portal](cleverbridge.md#self-management-portal).
 * Click **Renew subscription**.
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Select the correct [user segment](cleverbridge.md#user-segments), and provide the new **total** number of users. The website will display the renewal price considering the additional users.
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Click **Next**, review your **Payment method** and confirm the purchase by clicking **Buy now**.
 
@@ -191,7 +191,7 @@ Partners can leverage the same tools to manage subscriptions on behalf of their 
     <figure><img src="../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
 *   On that page, locate the button saying **Manage Your Subscription For "\<SKU>"** and click it.<br>
 
-    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 * This will either navigate you to the self-management portal directly or you might have to re-generate the link (they might expire after a while) first.
 
 {% hint style="info" %}

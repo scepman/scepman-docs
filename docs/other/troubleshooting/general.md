@@ -148,7 +148,7 @@ To check the validity of a certificate on a macOS machine using OCSP, please fol
 2. Export the client authentication certificate you want to verify from **Keychain Access** (**System Keychains > System > My Certificates**) as \*.cer file into the same folder.
 3.  Extract the OCSP responder URL from the client authentication certificate's **Authority Information Access** (AIA) property:
 
-    <figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 4. Open a **Terminal** session and `cd` to the folder that contains the exported certifcates.
 5. Execute the following command:
 

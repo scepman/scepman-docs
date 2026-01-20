@@ -8,7 +8,7 @@ If you want to create your own custom domain for your **SCEPman App Service** UR
 
 If you want your custom domain for the [Active Directory](../certificate-management/active-directory/) endpoint, you need to create an **A record**, because [Kerberos requires this](../certificate-management/active-directory/general-configuration.md#ws_e_endpoint_access_denied). In this case, you must choose "All other domain services", even if you have an App Service Domain. The UI might force you to select **CNAME** as record type depending on your other selections. We have successfully tested that you can still configure the DNS entry as an **A record** and found no problems with this configuration. Otherwise change your settings, such that an **A record** is allowed like using an apex domain or using a certificate other than the App Service Managed Certificate. In this case, you need to find out the inbound IP address of your App Service, which is displayed in the Networking entry of the App Service.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### **Adding the Custom Domain**
 

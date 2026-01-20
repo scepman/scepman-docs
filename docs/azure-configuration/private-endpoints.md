@@ -83,7 +83,7 @@ If you have installed SCEPman 2.7 or older, your Key Vault and Storage Account w
 
 Check both KeyVault and Storage Account Private Endpoints are in an Approved state
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
