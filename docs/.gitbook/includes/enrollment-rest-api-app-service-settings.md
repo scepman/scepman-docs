@@ -6,13 +6,11 @@ title: Enrollment REST API - App Service Settings
 
 _Required for certificate renewal_
 
-Configure your SCEPman App Service to accept mTLS client certificates. In the Configuration blade of the Settings section, verify that the Client certificate mode in Incoming client certificates is set to _**Optional**_.
+Configure your SCEPman App Service to accept mTLS client certificates. In the Configuration blade of the Settings section, verify that the Client certificate mode in Incoming client certificates is set to _**Optional Interactive User**_.
 
-<figure><img src="../assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../assets/image (121).png" alt=""><figcaption></figcaption></figure>
 
 Do not set the Client certificate mode to Require or Allow, as that would break normal operation of SCEPman on the SCEP endpoints!
-
-
 
 ### Environment Variables
 
