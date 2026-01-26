@@ -200,7 +200,7 @@ In case you are having difficulties accessing the self-management portal as desc
 
 ## **Trials**
 
-In case you would like to test SCEPman, please [get in contact with us](https://www.scepman.com/start-now/#try) or send us an email to [sales@scepman.com](mailto:sales@scepman.com).
+In case you would like to test SCEPman, please [get in contact with us](https://support.scepman.com/) or send us an email to [sales@scepman.com](mailto:sales@scepman.com).
 
 ## FAQs
 
