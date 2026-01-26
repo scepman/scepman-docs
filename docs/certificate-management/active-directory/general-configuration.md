@@ -21,11 +21,42 @@ To allow SCEPman to handle incoming SOAP requests successfully, we need to take 
 
 {% stepper %}
 {% step %}
+### Ensure Custom Domain and BaseUrl
+
+For successful authentication with SCEPman, ensure that a custom domain using an `A record` is pointed to the app service. Otherwise, the client will fail to request a valid Kerberos ticket from the domain controller.
+
+{% hint style="info" %}
+See the below known issue about [WS\_E\_ENDPOINT\_ACCESS\_DENIED](general-configuration.md#ws_e_endpoint_access_denied) for more information on this.
+{% endhint %}
+
+Ensure that SCEPman is configured to be accessible using a custom domain:
+
+{% content-ref url="../../azure-configuration/custom-domain.md" %}
+[custom-domain.md](../../azure-configuration/custom-domain.md)
+{% endcontent-ref %}
+
+The same requirement also applies after the initial policy request (listing the certificate templates) to enroll certificates. To allow a successful authentication here, make sure to also setup the [AppConfig:BaseUrl](../../scepman-configuration/application-settings/basics.md#appconfig-baseurl) variable to your custom domain or use the dedicated [AppConfig:ActiveDirectory:BaseUrl](../../scepman-configuration/application-settings/active-directory/general.md#appconfig-activedirectory-baseurl) setting if require the AD Endpoint to be accessible on a different Url than your other SCEPman endpoints are.
+{% endstep %}
+
+{% step %}
 ## Create Service Principal
 
 Use the `New-SCEPmanADPrincipal` Cmdlet of the SCEPman Powershell module to create the service principal in your on-prem Active Directory domain. It will also export a keytab from this account and encrypt it to SCEPman's CA certificate.
 
-Execute this Cmdlet with an account that has Domain Administrator permissions and network access to a Domain Controller. The variant below also outgoing HTTPS network access your SCEPman instance.
+You can execute this command on a domain controller or domain-joined server that has installed the [`RSAT-AD-Tools`](#user-content-fn-1)[^1] feature. You will also need the following permissions in the OU that you want to create the principal in:
+
+On OU itself:
+
+* Create computer objects
+
+On descendent computer objects:
+
+* Reset password
+* write `msDS-SupportedEncryptionTypes`
+* write `servicePrincipalName`
+* write `userPrincipalName`
+
+The variant below also outgoing HTTPS network access your SCEPman instance.
 
 {% hint style="info" %}
 If your computer with access to a Domain Controller doesn't have network access, there are variants of the CMDlet that work without it, but require some additional preparation, especially downloading the SCEPman CA certificate and copying to the machine that runs the CMDlet.
@@ -58,24 +89,6 @@ The integration can easily be enabled by adding the following environment variab
 _Example with all certificate templates enabled:_
 
 <table data-full-width="true"><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody><tr><td>AppConfig:ActiveDirectory:Keytab</td><td>Base64 encoded keytab for the service principal created in Step 1</td></tr><tr><td>AppConfig:ActiveDirectory:Computer:Enabled</td><td>true</td></tr><tr><td>AppConfig:ActiveDirectory:User:Enabled</td><td>true</td></tr><tr><td>AppConfig:ActiveDirectory:DC:Enabled</td><td>true</td></tr></tbody></table>
-{% endstep %}
-
-{% step %}
-### Ensure Custom Domain and BaseUrl
-
-For successful authentication with SCEPman, ensure that a custom domain using an `A record` is pointed to the app service. Otherwise, the client will fail to request a valid Kerberos ticket from the domain controller.
-
-{% hint style="info" %}
-See the below known issue about [WS\_E\_ENDPOINT\_ACCESS\_DENIED](general-configuration.md#ws_e_endpoint_access_denied) for more information on this.
-{% endhint %}
-
-Ensure that SCEPman is configured to be accessible using a custom domain:
-
-{% content-ref url="../../azure-configuration/custom-domain.md" %}
-[custom-domain.md](../../azure-configuration/custom-domain.md)
-{% endcontent-ref %}
-
-The same requirement also applies after the initial policy request (listing the certificate templates) to enroll certificates. To allow a successful authentication here, make sure to also setup the [AppConfig:BaseUrl](../../scepman-configuration/application-settings/basics.md#appconfig-baseurl) variable to your custom domain or use the dedicated [AppConfig:ActiveDirectory:BaseUrl](../../scepman-configuration/application-settings/active-directory/general.md#appconfig-activedirectory-baseurl) setting if require the AD Endpoint to be accessible on a different Url than your other SCEPman endpoints are.
 {% endstep %}
 {% endstepper %}
 
@@ -124,3 +137,9 @@ Dec: -2147024891
 When registering a CEP server in machine context, the acting user (the account that started `gpmc.msc`) needs to be a member of the local Administrators group on the computer while editing the GPO.
 
 Make sure to start `gpmc.msc` with elevated permissions in this case.
+
+[^1]: {% code fullWidth="true" %}
+    ```powershell
+    Install-WindowsFeature -Name RSAT-AD-Tools
+    ```
+    {% endcode %}
