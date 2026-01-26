@@ -88,7 +88,7 @@ _Linux: AppConfig\_\_UseRequestedKeyUsages_
 
 **Value:** _true_ or _false_
 
-**Description:** Shall certificates have the Key Usage and Extended Key Usage (EKU) extensions filled as requested or shall SCEPman define them?
+**Description:** Should the certificates have the Key Usage and Extended Key Usage (EKU) extensions set as requested, or should SCEPman define them?
 
 **True:** The Key Usage and Extended Key Usage extensions in the certificates are defined by the MDM solution.\
 **False:** Key Usage is always _Key Encipherment_ + _Digital Signature_. Extended Key Usage is always _Client Authentication_.
