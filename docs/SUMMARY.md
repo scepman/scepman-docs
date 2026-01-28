@@ -111,6 +111,7 @@
     * [Jamf Validation](scepman-configuration/application-settings/scep-endpoints/jamf-validation.md)
     * [Static Validation](scepman-configuration/application-settings/scep-endpoints/static-validation.md)
     * [Static-AAD Validation](scepman-configuration/application-settings/scep-endpoints/staticaad-validation.md)
+    * [RADIUSaaS](scepman-configuration/application-settings/scep-endpoints/radiusaas.md)
 * [Certificate Master Settings](scepman-configuration/application-settings-1/README.md)
   * [Basics](scepman-configuration/application-settings-1/basics.md)
   * [Microsoft Entra ID (Azure AD)](scepman-configuration/application-settings-1/azure-ad.md)
