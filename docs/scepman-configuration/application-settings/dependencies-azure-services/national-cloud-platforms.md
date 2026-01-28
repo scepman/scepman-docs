@@ -6,7 +6,7 @@ These settings should only be applied to the SCEPman App Service, not the Certif
 
 If you want to run SCEPman in a government / national cloud environment like GCC High, GCC DoD, or 21ViaNet, you have to alter some settings. If you run SCEPman in the standard Azure environment, just leave these settings empty to use the defaults. The following settings provide you the means to configure cloud-specific URLs and values if you are not using the standard Azure environment.
 
-See also the [Logging configuration](../../application-settings-1/logging.md#appconfig-loggingconfig-azureofferingdomain) if you want to log to a Log Analytics Workspace in a different cloud environment.
+See also the [Logging configuration](../logging.md#appconfig-loggingconfig-azureofferingdomain) if you want to log to a Log Analytics Workspace in a different cloud environment.
 
 ## AppConfig:AzureCloudConfig:AzureADEndpoint
 

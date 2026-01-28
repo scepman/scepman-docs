@@ -24,8 +24,8 @@ For example, a Windows App Service accepts _AppConfig:LicenseKey_, while a Linux
 [azure-ad.md](azure-ad.md)
 {% endcontent-ref %}
 
-{% content-ref url="logging.md" %}
-[logging.md](logging.md)
+{% content-ref url="../application-settings/logging.md" %}
+[logging.md](../application-settings/logging.md)
 {% endcontent-ref %}
 
 {% content-ref url="national-cloud-platforms.md" %}
