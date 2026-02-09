@@ -19,6 +19,7 @@ Please refer to the [RADIUS-as-a-Service documentation](https://docs.radiusaas.c
 {% hint style="info" %}
 This is no longer required for Cisco&#x20;
 
+* ISE Release 3.2 Patch 8 or later,
 * ISE Release 3.3 Patch 5 or later,
 * ISE Release 3.4 Patch 2 or later
 {% endhint %}
@@ -28,6 +29,16 @@ Cisco ISE commonly does not support HTTP 1.1 but only HTTP 1.0 for OCSP requests
 At least some versions of Cisco ISE 3.x require an Extended Key Usage extension containing the OCSP Responder Extended Key Usage in order to accept OCSP responses, even if they come from a CA, where it is not required per RFC. SCEPman versions until 1.7 did not add an Extended Key Usage by default to its CA certificate. Version 1.8 allows you to add this extension via a [configuration setting](../../../scepman-configuration/application-settings/dependencies-azure-services/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-addextendedkeyusage). In SCEPman 1.9, the default of the configuration setting already adds the Extended Key Usage. If you already have a CA certificate without an Extended Key Usage extension and have issues with Cisco ISE 3.x, you may need to create a new SCEPman Root CA certificate with the Extended Key Usage extension.
 
 ## Aruba ClearPass
+
+### Microsoft Intune ClearPass Extension
+
+In case you are using Aruba's [Microsoft Intune ClearPass Extension](https://arubanetworking.hpe.com/techdocs/NAC/clearpass/integrations/unified-endpoint-management/intune/) within the ClearPass Policy Manager, you are required to add the Intune Device ID to the [SCEP certificate template](../../../certificate-management/microsoft-intune/windows-10.md#device-certificates) in a certain format. To ensure compatibility with SCEPman, below SAN attributes are required in the following **order**:
+
+* `(URI)`Value: `DeviceId://{{DeviceId}}`
+* `(URI)`Value: `AAD_Device_ID://{{AAD_Device_ID}}`
+* `(URI)`Value: `IntuneDeviceId://{{DeviceId}}`
+
+### OCSP HTTP 1.0 Issue
 
 {% hint style="info" %}
 This is **no longer required** for ClearPass 6.9.6 or later.
