@@ -32,11 +32,15 @@ At least some versions of Cisco ISE 3.x require an Extended Key Usage extension 
 
 ### Microsoft Intune ClearPass Extension
 
-In case you are using Aruba's [Microsoft Intune ClearPass Extension](https://arubanetworking.hpe.com/techdocs/NAC/clearpass/integrations/unified-endpoint-management/intune/) within the ClearPass Policy Manager, you are required to add the Intune Device ID to the [SCEP certificate template](../../../certificate-management/microsoft-intune/windows-10.md#device-certificates) in a certain format. To ensure compatibility with SCEPman, below SAN attributes are required in the following **order**:
+In case you are using Aruba's [Microsoft Intune ClearPass Extension](https://arubanetworking.hpe.com/techdocs/NAC/clearpass/integrations/unified-endpoint-management/intune/) within the ClearPass Policy Manager, you are required to add the device IDs to the [SCEP certificate template](../../../certificate-management/microsoft-intune/windows-10.md#device-certificates) in a certain format. To ensure compatibility with SCEPman, below SAN attributes are required in the following **order**:
 
-* `(URI)`Value: `DeviceId://{{DeviceId}}`
-* `(URI)`Value: `AAD_Device_ID://{{AAD_Device_ID}}`
-* `(URI)`Value: `IntuneDeviceId://{{DeviceId}}`
+* `(URI)` Value: `DeviceId:{{DeviceId}}`
+* `(URI)` Value: `AAD_Device_ID:{{AAD_Device_ID}}`
+* `(URI)` Value: `IntuneDeviceId://{{DeviceId}}`&#x20;
+
+{% hint style="info" %}
+The first two entries are used by ClearPass, while the third entry is used by SCEPman.
+{% endhint %}
 
 ### OCSP HTTP 1.0 Issue
 
