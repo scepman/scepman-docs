@@ -65,13 +65,27 @@ Please fill out the following fields and save the configuration:
 
 When using an external CA, Jamf requires that you add the CA certificate so Jamf can compare whether the certificates are correctly signed. However, Jamf only allows adding a CA certificate if you also add a signing certificate with a corresponding private key. Jamf uses this signing certificate to sign certificate requests that are sent to SCEPman. However, SCEPman does not evaluate the signature on requests and accepts even unsigned requests (e.g. from Intune), because the request validity stems solely from using the right request challenge password configured in Jamf.
 
-Hence, you may use any certificate you like as the signing certificate, for example you can generate a self-signed certificate with the following PowerShell command:
+Hence, you may use any certificate you like as the signing certificate, for example you can generate a self-signed certificate with one of the following commands:
 
+{% tabs %}
+{% tab title="OpenSSL" %}
+```shellscript
+openssl req -x509 -newkey rsa:4096 -keyout tempKey.key -out tempCert.pem -sha256 -days 3650 -nodes -subj "/CN=JAMF Signer Certificate for SCEPman"
+openssl pkcs12 -export -out SigningCert.pfx -inkey .\tempKey.key -in .\tempCert.pem -passout pass:password
+# Remove temporary files
+rm tempKey.key
+rm tempCert.pem
 ```
+{% endtab %}
+
+{% tab title="PowerShell" %}
+```powershell
 $cert = New-SelfSignedCertificate -Subject "CN=JAMF Signer Certificate for SCEPman" -CertStoreLocation "Cert:\CurrentUser\My" -NotAfter (Get-Date).AddYears(10)
 $pfxBytes = $cert.Export([System.Security.Cryptography.X509Certificates.X509ContentType]::Pfx, "password")
 [System.IO.File]::WriteAllBytes("c:\temp\jamf.pfx", $pfxBytes)
 ```
+{% endtab %}
+{% endtabs %}
 
 Then click on "Change Signing and CA Certificates" in the External CA configuration of Jamf
 
