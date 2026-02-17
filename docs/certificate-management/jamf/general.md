@@ -69,7 +69,7 @@ When using an external CA, Jamf requires that you add the CA certificate so Jamf
 {% tab title="OpenSSL" %}
 ```shellscript
 openssl req -x509 -newkey rsa:4096 -keyout tempKey.key -out tempCert.pem -sha256 -days 3650 -nodes -subj "/CN=JAMF Signer Certificate for SCEPman"
-openssl pkcs12 -export -out SigningCert.pfx -inkey .\tempKey.key -in .\tempCert.pem -passout pass:password
+openssl pkcs12 -export -out SigningCert.pfx -inkey ./tempKey.key -in ./tempCert.pem -passout pass:password
 # Remove temporary files
 rm tempKey.key
 rm tempCert.pem
