@@ -65,8 +65,6 @@ Please fill out the following fields and save the configuration:
 
 When using an external CA, Jamf requires that you add the CA certificate so Jamf can compare whether the certificates are correctly signed. However, Jamf only allows adding a CA certificate if you also add a signing certificate with a corresponding private key. Jamf uses this signing certificate to sign certificate requests that are sent to SCEPman. However, SCEPman does not evaluate the signature on requests and accepts even unsigned requests (e.g. from Intune), because the request validity stems solely from using the right request challenge password configured in Jamf.
 
-Hence, you may use any certificate you like as the signing certificate, for example you can generate a self-signed certificate with one of the following commands:
-
 {% tabs %}
 {% tab title="OpenSSL" %}
 ```shellscript
