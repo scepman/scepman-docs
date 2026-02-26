@@ -39,18 +39,18 @@ CA Suitability on SCEPman Dashboard:
 
 ## Configuration Changes to the SCEPman Service
 
-To enable the feature, you must add two application settings in your SCEPman service. In the current implementation we use a pre-shared key (password) for DC requests.\
+To enable the feature, you must add two application settings in your SCEPman service. In the current implementation, we use a pre-shared key (password) for DC requests.\
 **Please generate a new key/password and store it somewhere safe.** (you will need it in the following steps and later, on the domain Controllers)
 
 1. Navigate to **App Services**
 2. Then choose your SCEPman app
 3. Next under **Settings** click **Environment variables**
 4. Select Add
-5. Type **AppConfig:DCValidation:Enabled** as Name
+5. Type **AppConfig:DCValidation:Enabled** as Name (use \_\_ instead of : for Linux-based SCEPman)
 6. Type **true** as Value
 7. Confirm with **OK**
 8. Select **Add** again
-9. Type **AppConfig:DCValidation:RequestPassword** as Name
+9. Type **AppConfig:DCValidation:RequestPassword** as Name (use \_\_ instead of : for Linux-based SCEPman)
 10. Type your **key/password**, that you have generated earlier, as Value
 11. Confirm with **OK**
 12. Save the application settings
