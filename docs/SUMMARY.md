@@ -80,9 +80,6 @@
 * [Moving Resources](azure-configuration/move-scepman-resources.md)
 * [Private Endpoints](azure-configuration/private-endpoints.md)
 * [Split-Tenancy](scepman-configuration/optional/split-tenancy.md)
-
-***
-
 * [Update Strategy](update-strategy.md)
 * [Backup Considerations](backup-considerations.md)
 
