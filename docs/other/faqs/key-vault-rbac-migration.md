@@ -18,7 +18,7 @@ Account for downtime before proceeding. SCEPman will be unable to issue or verif
 
 Navigate to Azure > Key Vaults > _Your SCEPman Key Vault_&#x20;
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -28,7 +28,7 @@ Navigate to **Access policies** and document your SCEPman's access policies unde
 
 _User_ access policies do not need to be migrated as they won't affect SCEPman functionality. Users that require continued access should have their access policies reviewed and migrated to Azure roles based on the following table: [https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-migration?tabs=cli#access-policy-templates-to-azure-roles-mapping](https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-migration?tabs=cli#access-policy-templates-to-azure-roles-mapping)
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -36,7 +36,7 @@ _User_ access policies do not need to be migrated as they won't affect SCEPman f
 
 Change the Permission Model from **Vault access policy** to **Azure role-based access control**
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Pressing **Apply** will disconnect your SCEPman instance from the Key Vault until Azure Roles are assigned. Previous access policies will also be removed.
 {% endstep %}
@@ -50,11 +50,11 @@ Navigate to Access control (IAM) and assign the following roles to the **managed
 * Key Vault Crypto Officer
 * Key Vault Secrets User
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 Roles must be assigned one at a time, however multiple identities can be assigned to one role.
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 The Certificate Master's managed identity (with -cm in its name) **does not** require access to the Key Vault.
 {% endstep %}
@@ -64,7 +64,7 @@ The Certificate Master's managed identity (with -cm in its name) **does not** re
 
 Restart your SCEPman App Service, then navigate to your SCEPman homepage and ensure your Key Vault is connected.
 
-<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 {% endstepper %}
 

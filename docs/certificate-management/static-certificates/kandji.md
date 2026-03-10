@@ -55,16 +55,16 @@ The second step is to create a new **SCEP Profile** for device certificate deplo
 * **Payload Name:** Choose a name for the profile, this will appear as a certificate profile on the client.
 * **URL**: The static SCEP endpoint of SCEPman that you configured in a previous step, you can get it from SCEPman homepage, see below:
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * **Challenge**: Is required to authenticate CSR requests sent to SCEPman's static SCEP interface. It must match the [value](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-requestpassword) of the setting _AppConfig:StaticValidation:RequestPassword_ that you previously configured.
 * Enable the **"Proxy SCEP Requests"** option
 * Choose "Signing & Encryption" for **Key Usage**
 * Fill out the rest as shown in the screenshots below
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 After successfully creating both the Root CA and Device Certificate profiles, apply them to your policy to deploy the configuration to assigned devices.
 

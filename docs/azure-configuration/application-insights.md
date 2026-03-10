@@ -19,13 +19,13 @@ Azure > App Services > app-scepman-xxxxxx
 On the lefthand menu, expand Monitoring > Application Insights
 
 \
-![](<../.gitbook/assets/image (3) (1).png>)
+![](<../.gitbook/assets/image (3) (1) (1).png>)
 {% endstep %}
 
 {% step %}
 ### Create a new Application Insights resource
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 For Windows based deployments, select **.NET** and select the **Collection level Recommended.** (For Linux based deployment, please choose **.NET Core**)
 
