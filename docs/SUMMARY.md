@@ -72,16 +72,17 @@
 * [Application Insights](azure-configuration/application-insights.md)
 * [App Service Sizing](azure-configuration/azure-sizing/README.md)
   * [Autoscaling](azure-configuration/azure-sizing/autoscaling.md)
+* [Backup Considerations](backup-considerations.md)
 * [Custom Domain](azure-configuration/custom-domain.md)
 * [Geo-Redundancy](azure-configuration/geo-redundancy.md)
 * [Health Check](azure-configuration/health-check/README.md)
   * [Using 3rd Party Monitoring](azure-configuration/health-check/using-3rd-party-monitoring.md)
+* [Key Vault RBAC Migration](azure-configuration/key-vault-rbac-migration.md)
 * [Log Management](azure-configuration/log-configuration.md)
 * [Moving Resources](azure-configuration/move-scepman-resources.md)
 * [Private Endpoints](azure-configuration/private-endpoints.md)
 * [Split-Tenancy](scepman-configuration/optional/split-tenancy.md)
 * [Update Strategy](update-strategy.md)
-* [Backup Considerations](backup-considerations.md)
 
 ## SCEPman Configuration
 

@@ -19,13 +19,13 @@ Azure > App Services > app-scepman-xxxxxx
 On the lefthand menu, expand Monitoring > Application Insights
 
 \
-![](<../.gitbook/assets/image (3).png>)
+![](<../.gitbook/assets/image (3) (1).png>)
 {% endstep %}
 
 {% step %}
 ### Create a new Application Insights resource
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 For Windows based deployments, select **.NET** and select the **Collection level Recommended.** (For Linux based deployment, please choose **.NET Core**)
 
@@ -33,7 +33,7 @@ For Windows based deployments, select **.NET** and select the **Collection level
 
 Leave **Show local variables \[...]** as _Off_, otherwise, Application Insights may cause startup delays and error messages.
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}

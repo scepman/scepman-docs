@@ -1,29 +1,12 @@
----
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # General Configuration
 
 To allow SCEPman to handle incoming SOAP requests successfully, we need to take a few steps:
 
 {% stepper %}
 {% step %}
-### Ensure Custom Domain and BaseUrl
+### Custom Domain and BaseUrl
 
-For successful authentication with SCEPman, ensure that a custom domain using an `A record` is pointed to the app service. Otherwise, the client will fail to request a valid Kerberos ticket from the domain controller.
+For successful authentication with SCEPman, ensure that a custom domain using an `A record` is pointed to the App Service. Otherwise, the client will fail to request a valid Kerberos ticket from the domain controller.
 
 {% hint style="info" %}
 See the below known issue about [WS\_E\_ENDPOINT\_ACCESS\_DENIED](general-configuration.md#ws_e_endpoint_access_denied) for more information on this.
@@ -35,13 +18,13 @@ Ensure that SCEPman is configured to be accessible using a custom domain:
 [custom-domain.md](../../azure-configuration/custom-domain.md)
 {% endcontent-ref %}
 
-The same requirement also applies after the initial policy request (listing the certificate templates) to enroll certificates. To allow a successful authentication here, make sure to also setup the [AppConfig:BaseUrl](../../scepman-configuration/application-settings/basics.md#appconfig-baseurl) variable to your custom domain or use the dedicated [AppConfig:ActiveDirectory:BaseUrl](../../scepman-configuration/application-settings/active-directory/general.md#appconfig-activedirectory-baseurl) setting if require the AD Endpoint to be accessible on a different Url than your other SCEPman endpoints are.
+The same requirement also applies after the initial policy request (listing the certificate templates) to enroll certificates. To allow successful authentications, make sure the [AppConfig:BaseUrl](../../scepman-configuration/application-settings/basics.md#appconfig-baseurl) variable matches your custom domain or use the dedicated [AppConfig:ActiveDirectory:BaseUrl](../../scepman-configuration/application-settings/active-directory/general.md#appconfig-activedirectory-baseurl) setting if you prefer accessing the AD Endpoint on a different Url from your other SCEPman endpoints.
 {% endstep %}
 
 {% step %}
-## Create Service Principal
+### Create Service Principal
 
-Use the `New-SCEPmanADPrincipal` Cmdlet of the SCEPman Powershell module to create the service principal in your on-prem Active Directory domain. It will also export a keytab from this account and encrypt it to SCEPman's CA certificate.
+Use the `New-SCEPmanADPrincipal` Cmdlet of the SCEPman PowerShell module to create the service principal in your on-prem Active Directory domain. It will also export a keytab from this account and encrypt it to SCEPman's CA certificate.
 
 You can execute this command on a domain controller or domain-joined server that has installed the [`RSAT-AD-Tools`](#user-content-fn-1)[^1] feature. You will also need the following permissions in the OU that you want to create the principal in:
 
@@ -52,14 +35,14 @@ On OU itself:
 On descendent computer objects:
 
 * Reset password
-* write `msDS-SupportedEncryptionTypes`
-* write `servicePrincipalName`
-* write `userPrincipalName`
+* Write `msDS-SupportedEncryptionTypes`
+* Write `servicePrincipalName`
+* Write `userPrincipalName`
 
-The variant below also outgoing HTTPS network access your SCEPman instance.
+The variant below also requires outgoing HTTPS network access to your SCEPman instance.
 
 {% hint style="info" %}
-If your computer with access to a Domain Controller doesn't have network access, there are variants of the CMDlet that work without it, but require some additional preparation, especially downloading the SCEPman CA certificate and copying to the machine that runs the CMDlet.
+If your computer with access to a Domain Controller doesn't have network access, there are variants of the CMDlet that work without it, but require some additional preparation, such as downloading the SCEPman CA certificate and copying the CA to the machine that runs the CMDlet.
 {% endhint %}
 
 {% code overflow="wrap" lineNumbers="true" expandable="true" %}
@@ -78,11 +61,11 @@ Running this command will perform the following:
 5. Encrypt the keytab with the CA certificate of SCEPman, so only SCEPman can decrypt it again using the CA private key.
 6. Output the encrypted keytab, so it can be transferred to SCEPmans configuration.
 
-The Base64 encoded output must then be transferred to the environment variable **AppConfig:ActiveDirectory:Keytab** of your SCEPman app service.
+The Base64 encoded output must then be added to the environment variable **AppConfig:ActiveDirectory:Keytab** of your SCEPman App Service.
 {% endstep %}
 
 {% step %}
-## Add Keytab to SCEPman
+### Add Keytab to SCEPman
 
 The integration can easily be enabled by adding the following environment variables in the **SCEPman App Service.** Depending on your use case, enable one or more of the available certificate templates:
 
@@ -94,7 +77,7 @@ _Example with all certificate templates enabled:_
 
 ## Known Issues
 
-#### WS\_E\_ENDPOINT\_ACCESS\_DENIED
+### WS\_E\_ENDPOINT\_ACCESS\_DENIED
 
 ```
 Error: WS_E_ENDPOINT_ACCESS_DENIED 
@@ -102,7 +85,7 @@ Hex: 0x803d0005
 Dec: -2143485947
 ```
 
-This error is known to occur during the validation of the CEP server when you are using the default URIs of the Azure app service. This error is caused by the Kerberos protocol asking for a service principal name of the A record of the service that is to be accessed. In the case of the default app service domains, for example `contoso.azurewebsites.net` is just a CNAME and points to an A record similar to:
+This error is known to occur during the validation of the CEP server when you are using the _default_ URIs of the Azure App Service. This error is caused by the Kerberos protocol asking for a service principal name of the A record of the service that is to be accessed. In the case of the default app service domains, for example `contoso.azurewebsites.net` is just a CNAME and points to an A record similar to:
 
 ```
 waws-prod-ab1-234-c56d.westeurope.cloudapp.azure.com
@@ -116,7 +99,7 @@ Make sure to add a custom domain to your app service and use an A record within 
 [custom-domain.md](../../azure-configuration/custom-domain.md)
 {% endcontent-ref %}
 
-#### ERROR\_INVALID\_PARAMETER
+### ERROR\_INVALID\_PARAMETER
 
 ```
 Error: ERROR_INVALID_PARAMETER
@@ -126,7 +109,7 @@ Dec: -2147024809
 
 This error occurs during the CEP server registration if you enter an URI that begins with `http://`. Make sure to only register a CEP server using `https://`
 
-#### ERROR\_ACCESS\_DENIED
+### ERROR\_ACCESS\_DENIED
 
 ```
 Error: ERROR_ACCESS_DENIED
