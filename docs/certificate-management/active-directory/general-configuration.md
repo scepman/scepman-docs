@@ -9,6 +9,8 @@ To allow SCEPman to handle incoming SOAP requests successfully, we need to take 
 For successful authentication with SCEPman, ensure that a custom domain using an `A record` is pointed to the App Service. Otherwise, the client will fail to request a valid Kerberos ticket from the domain controller.
 
 {% hint style="info" %}
+The custom domain does not have to resemble the FQDN of your AD domain. So having a domain `ad.contoso.local` does not mean you need an identical or similar custom domain for SCEPman.
+
 See the below known issue about [WS\_E\_ENDPOINT\_ACCESS\_DENIED](general-configuration.md#ws_e_endpoint_access_denied) for more information on this.
 {% endhint %}
 
