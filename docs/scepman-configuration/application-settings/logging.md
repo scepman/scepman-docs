@@ -12,7 +12,11 @@ _Linux: AppConfig\_\_LoggingConfig\_\_WorkspaceId_
 
 **Description:**
 
-The WorkspaceID of your Log Analytics Workspace (shown in the Overview of the workspace). This is a required setting if you want to use Azure Monitor, together with [SharedKey](logging.md#appconfig-loggingconfig-sharedkey).
+The WorkspaceID of your Log Analytics Workspace (shown in the Overview of the workspace). This is a required setting if you want to use Azure Monitor together with [SharedKey](logging.md#appconfig-loggingconfig-sharedkey).
+
+{% hint style="warning" %}
+This logging method is deprecated and Microsoft has announced to retire this logging API. Switch to AppConfig:LoggingConfig:DataCollectionEndpointUri and AppConfig:LoggingConfig:RuleId instead, as described in the [Log Management](../../azure-configuration/log-configuration.md) article.
+{% endhint %}
 
 ## AppConfig:LoggingConfig:SharedKey
 
@@ -26,9 +30,37 @@ Use one of the two keys for the Log Analytics Workspace. They are displayed if y
 
 This is a required setting if you want to use Azure Monitor, together with WorkspaceId.
 
+{% hint style="warning" %}
+This logging method is deprecated and Microsoft has announced to retire this logging API. Switch to AppConfig:LoggingConfig:DataCollectionEndpointUri and AppConfig:LoggingConfig:RuleId instead, as described in the [Log Management](../../azure-configuration/log-configuration.md) article.
+{% endhint %}
+
 {% hint style="info" %}
 SCEPman Certificate Master does not support storing configuration values in Key Vault in the same way that the SCEPman core component does. There is a generic way to store App Service settings in Key Vault, though, which [Mika Berglund](https://mikaberglund.com/store-your-app-service-configuration-settings-in-azure-key-vault/) describes in his blog. In short, you must add Secrets-Get permission to the Certificate Master Managed Identity and, for the SharedKey, you would use `@Microsoft.KeyVault(SecretUri=https://YOURKEYVAULTNAMEHERE.vault.azure.net/secrets/appconfig--loggingconfig--sharedkey/)` as value for AppConfig:LoggingConfig:SharedKey.
 {% endhint %}
+
+## AppConfig:LoggingConfig:DataCollectionEndpointUri
+
+_Linux: AppConfig\_\_LoggingConfig\_\_DataCollectionEndpointUri_
+
+**Value:** String
+
+**Description:**
+
+Used in conjunction with AppConfig:LoggingConfig:RuleId to log to a Log Analytics Workspace, authenticating with the Managed Identity of the App Service.
+
+This is the URI of the Data Collection Endpoint (DCE) of Azure Monitor.
+
+## AppConfig:LoggingConfig:RuleId
+
+_Linux: AppConfig\_\_LoggingConfig\_\_RuleId_
+
+**Value**: String
+
+**Description:**
+
+Used in conjunction with AppConfig:LoggingConfig:DataCollectionEndpointUri to log to a Log Analytics Workspace, authenticating with the Managed Identity of the App Service.
+
+This setting is the immutable Id of the Data Collection Rule (DCR) resource.
 
 ## AppConfig:LoggingConfig:AzureOfferingDomain
 
