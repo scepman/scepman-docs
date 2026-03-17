@@ -12,9 +12,16 @@ If you want your custom domain for the [Active Directory](../certificate-managem
 
 #### **Adding the Custom Domain**
 
-This description assumes you do not use Azure Domain Services. If you do, you select App Service Domain to profit from the integration of App Services and Azure Domain Services. Otherwise, select All other domain services and add the validation records to your domain provider.
+If you are using Azure Domain Services, select "App Service Domain" to benefit from its native integration with App Services.
 
-* Domain provider: All other domain services
+If you are not using Azure Domain Services, choose "All other domain services" and add the required validation records with your domain provider:
+
+{% hint style="info" %}
+For "Domain validation" please note:
+
+* Check for possible **CAA records** on the root domain (specifies which Certificate Authorities (CAs) are authorized to issue certificates) - see [certificate requirements](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates?pivots=azure-portal#free-certificate-requirements)
+* [Important Changes to App Service Managed Certificates](https://techcommunity.microsoft.com/blog/appsonazureblog/follow-up-to-%E2%80%98important-changes-to-app-service-managed-certificates%E2%80%99-november-20/4466120)
+{% endhint %}
 
 ![](<../.gitbook/assets/2022-12-23 17_01_35-Window.png>)
 
@@ -42,6 +49,3 @@ Add a custom domain to an App Service:\
 
 Add and manage TLS/SSL certificates in App Service:\
 [https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate)
-
-Create a free certificate:\
-[https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)
