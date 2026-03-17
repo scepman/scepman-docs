@@ -40,7 +40,7 @@
   * [Devices](certificate-management/jamf/devices.md)
   * [Users](certificate-management/jamf/users.md)
 * [Other MDM Solutions](certificate-management/static-certificates/README.md)
-  * [Addigy](certificate-management/static-certificates/kandji.md)
+  * [Addigy](certificate-management/static-certificates/addigy.md)
   * [Google Workspace](certificate-management/static-certificates/google-workspace/README.md)
     * [ChromeOS](certificate-management/static-certificates/google-workspace/chromeos.md)
   * [Kandji](certificate-management/static-certificates/kandji-1.md)
