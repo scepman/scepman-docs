@@ -62,6 +62,10 @@ Used in conjunction with AppConfig:LoggingConfig:DataCollectionEndpointUri to lo
 
 This setting is the immutable Id of the Data Collection Rule (DCR) resource.
 
+The Managed Identities of the App Services logging to the DCR need to be assigned the _Monitoring Metrics Publisher_ role on the DCR.
+
+Usually, you won't configure this setting manually, as the SCEPman PS Module or Terraform Module do it for you and also assign the required role automatically when they create the DCR and DCE.
+
 ## AppConfig:LoggingConfig:AzureOfferingDomain
 
 _Linux: AppConfig\_\_LoggingConfig\_\_AzureOfferingDomain_
