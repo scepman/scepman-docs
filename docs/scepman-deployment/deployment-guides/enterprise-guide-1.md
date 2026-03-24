@@ -21,7 +21,7 @@ Keep in mind that you need to plan a useful Azure resource design.
 * [ ] Microsoft Entra ID (Azure AD) "Global administrator" (Consent to access Graph API).
 * [ ] Make sure to define your Azure policies [according to SCEPman requirements](../../other/security-faq.md#azure-cis) (e.g. do not enforce TLS).
 * [ ] Public Domain CNAME (_scepman.yourdomain.com_), only if geo-redundancy is used.
-* [ ] SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)), only if geo-redundancy is used.
+* [ ] SSL Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)), only if geo-redundancy is used.
 * [ ] SCEPman Enterprise Edition License Key.
 
 #### Optional
@@ -29,13 +29,13 @@ Keep in mind that you need to plan a useful Azure resource design.
 * [ ] Public Domain CNAME (_scepman.yourdomain.com_), only if a custom domain is used.
 * [ ] SSL (Wildcard-) Certificate (or use [App Service Managed Certificate](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#create-a-free-certificate-preview)), only if a custom domain is used.
 
-### Overview Azure Resource
+### Azure Resource Overview
 
-All these resources are recommended for a production environment.
+The following resources are recommended for a production environment.
 
 {% include "../../.gitbook/includes/scepman-azure-resources.md" %}
 
-Additionally, if you are using Private Endpoints, you have [seven more Azure Resources.](../../azure-configuration/private-endpoints.md#azure-resources-used-for-private-endpoints)
+Additionally, if you are using Private Endpoints, you have [seven additional Azure resources.](../../azure-configuration/private-endpoints.md#azure-resources-used-for-private-endpoints)
 
 {% include "../../.gitbook/includes/private-endpoint-resources.md" %}
 
@@ -118,7 +118,7 @@ After the deployment and permission assignment is complete, you need to create t
 ### Configure a Custom Domain and SSL Certificate
 
 {% hint style="success" %}
-This is a **recommended** step. However, **skip** this step if you are implementing geo-redundancy / high-availability.
+This is a **recommended** step. However, **skip** this step if you are implementing geo-redundancy.
 {% endhint %}
 
 To have your SCEPman available under your specific domain you need to create a **Custom Domain** in the **App Service.**

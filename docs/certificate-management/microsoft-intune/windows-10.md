@@ -56,8 +56,7 @@ In this case we are setting up a device certificate
 * `{{DeviceId}}`: This ID is generated and used by Intune.\
   \
   (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
-
-- `{{AAD_Device_ID}}`: This ID is generated and used by Microsoft Entra ID (Azure AD).
+* `{{AAD_Device_ID}}`: This ID is generated and used by Microsoft Entra ID (Azure AD).
 
 In case neither `CN={{DeviceId}}` nor `CN={{AAD_Device_ID}}` is used for the CN field (e.g. `CN={{DeviceName}})`, SCEPman will identify the device based on the Intune Device ID (`(URI)Value:` `IntuneDeviceId://{{DeviceId}}`) provided in the subject alternative name (SAN).
 
@@ -284,20 +283,25 @@ The certificate will be available for Digital Signature usage in e.g. Outlook. B
 
 ![](<../../.gitbook/assets/digital Sign2.png>)
 
-### Activate S/MIME Signatures in Microsoft Outlook
+### Activate S/MIME Signatures in Outlook
 
-{% hint style="warning" %}
-S/MIME feature is not available for the latest Outlook client. More info [here](https://techcommunity.microsoft.com/t5/outlook-blog/the-new-outlook-for-windows-for-organization-admins/ba-p/3929169).
-{% endhint %}
+Once you have deployed S/MIME signature certificates to your client machines, you must configure Outlook to use these certificates before sending signed emails.&#x20;
 
-Once you have deployed S/MIME signature certificates to your client machines, you must configure Outlook to use these certificates before sending signed emails. You can do this manually or use our [PowerShell Script to configure Outlook](https://github.com/glueckkanja-pki/PKI-Configuration-Tools/blob/master/README.md).
+#### New Outlook
 
-### Activate S/MIME Signatures in Outlook on the Web
+S/MIME for new Outlook can be set up [manually](https://support.microsoft.com/en-us/office/set-up-outlook-to-use-s-mime-encryption-2e57e4bd-4cc2-4531-9a39-426e7c873e26#id0ebbf=new_outlook).
 
-You can sign emails with S/MIME in Outlook on the Web using certificates from your local Windows machine. You need to enable this with the following command:
+#### Classic Outlook
+
+S/MIME for Classic Outlook can be set up [manually](https://support.microsoft.com/en-us/office/set-up-outlook-to-use-s-mime-encryption-2e57e4bd-4cc2-4531-9a39-426e7c873e26#id0ebbf=newer_versions) or quickly setup with our [PowerShell Script](https://github.com/glueckkanja-pki/PKI-Configuration-Tools/blob/master/README.md).
+
+#### Outlook on the Web
+
+S/MIME for Outlook on the Web can be setup [manually](https://support.microsoft.com/en-us/office/set-up-outlook-to-use-s-mime-encryption-2e57e4bd-4cc2-4531-9a39-426e7c873e26#id0ebbf=web) or enabled using PowerShell this with the following command:
 
 ```
 Set-SmimeConfig -OWAAllowUserChoiceOfSigningCertificate $true
 ```
 
-See https://learn.microsoft.com/en-us/powershell/module/exchange/set-smimeconfig for more details.
+Additional PowerShell commands can be seen [here](https://learn.microsoft.com/en-us/powershell/module/exchange/set-smimeconfig).
+
