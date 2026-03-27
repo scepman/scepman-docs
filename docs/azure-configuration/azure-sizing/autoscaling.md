@@ -15,13 +15,13 @@ description: >-
 Azure Portal > App Service Plans > _Your SCEPman App Service Plan_ > Settings > Scale out
 
 <figure><img src="../../.gitbook/assets/image (122).png" alt=""><figcaption></figcaption></figure>
-{% endstep %}
 
-{% step %}
 {% hint style="warning" %}
 Please ensure that your App Service plan uses at least the **S1 or P0V3** pricing tier. Lower tiered plans may not provide multiple instances.
 {% endhint %}
+{% endstep %}
 
+{% step %}
 ### Select Rules Based Autoscaling
 
 Select **Rules Based**, then **Configure** to proceed.
