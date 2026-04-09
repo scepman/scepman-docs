@@ -4,7 +4,7 @@ description: >-
   SCEPman.
 ---
 
-# iOS/iPadOSmac
+# iOS/iPadOS
 
 The following article describes how to deploy a device and/or user certificates for iOS and iPadOS devices. The deployment of the SCEPman Root Certificate is mandatory. Afterward, you can choose between deploying only the device, user, or even both certificate types.
 
@@ -59,9 +59,8 @@ SCEPman uses the CN field of the subject to identify the device and as a seed fo
 
 * \{{DeviceId\}}: This ID is generated and used by Intune **(Recommended)**\
   \
-  (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
-
-- \{{AAD\_Device\_ID\}}: This ID is generated and used by Microsoft Entra ID (Azure AD).\
+  (requires [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
+* \{{AAD\_Device\_ID\}}: This ID is generated and used by Microsoft Entra ID (Azure AD).\
   \
   (Note: When using Automated Device Enrollment via Apple Business Manager, this ID might change during device setup. If so, SCEPman might not be able to identify the device afterwards. The certificate would become invalid in that case.)
 

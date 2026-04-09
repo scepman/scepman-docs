@@ -59,9 +59,8 @@ In this section we are setting up a device certificate.
 
 * `{{DeviceId}}`: This ID is generated and used by Intune.\
   \
-  (requires SCEPman 2.0 or higher and [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
-
-- `{{AAD_Device_ID}}`: This ID is generated and used by Microsoft Entra ID (Azure AD).
+  (requires [#appconfig-intunevalidation-devicedirectory](../../scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to be set to **Intune** or **AADAndIntune**)
+* `{{AAD_Device_ID}}`: This ID is generated and used by Microsoft Entra ID (Azure AD).
 
 In case neither `CN={{DeviceId}}` nor `CN={{AAD_Device_ID}}` is used for the CN field (e.g. `CN={{DeviceName}})`, SCEPman will identify the device based on the Intune Device ID (`(URI)Value:` `IntuneDeviceId://{{DeviceId}}`) provided in the subject alternative name (SAN).
 

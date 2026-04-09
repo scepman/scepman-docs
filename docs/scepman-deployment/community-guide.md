@@ -57,7 +57,7 @@ To start with the deployment, please follow our deployment instructions:
 This is a **mandatory** step.
 {% endhint %}
 
-To properly link all components of SCEPman 2, several permissions need to be assigned. Please follow these steps to establish the relevant connections:
+To properly link all components of SCEPman, several permissions need to be assigned. Please follow these steps to establish the relevant connections:
 
 {% content-ref url="../scepman-configuration/post-installation-config.md" %}
 [post-installation-config.md](../scepman-configuration/post-installation-config.md)

@@ -59,7 +59,7 @@ In this section, we are setting up a device certificate.
 
 SCEPman uses the CN field of the subject to identify the device and as a seed for the certificate serial number generation. Microsoft Entra ID (Azure AD) and Intune offer two different IDs:
 
-* \{{DeviceId\}}: This ID is generated and used by Intune **(Recommended).** (Requires SCEPman 2.0 or higher and [#AppConfig:IntuneValidation:DeviceDirectory](../../scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-devicedirectory) to be set to **Intune** or **AADAndIntune**
+* \{{DeviceId\}}: This ID is generated and used by Intune **(Recommended).** (Requires [#AppConfig:IntuneValidation:DeviceDirectory](../../scepman-configuration/application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-devicedirectory) to be set to **Intune** or **AADAndIntune**
 * \{{AAD\_Device\_ID\}}: This ID is generated and used by Microsoft Entra ID (Azure AD).
 
 You can add other RDNs if needed (e.g.: `CN={{DeviceId}}, O=Contoso, CN={{WiFiMacAddress}}`). Supported variables are listed in the [Microsoft docs](https://learn.microsoft.com/en-us/mem/intune/protect/certificates-profile-scep#create-a-scep-certificate-profile).
