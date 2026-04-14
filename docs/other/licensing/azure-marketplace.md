@@ -55,11 +55,14 @@ The following user segments are available for both, monthly and annual plans.
 
 For prices in Euro (EUR), please check out our [website](https://www.scepman.com/pricing/). For prices in _your_ currency, please directly refer to the **Marketplace** in the [Azure Portal](https://portal.azure.com/).
 
-### RADIUSaaS & SCEPman Bundle
+### Solution Bundles
 
-We offer SCEPman as well as our cloud-NAC solution [RADIUSaaS](https://www.radius-as-a-service.com/) in a subscription bundle that is discounted by 25% in comparison to the individual solutions. The bundle plans are available with monthly or annual renewal as well as the same [User Segments](azure-marketplace.md#user-segments).
+We offer SCEPman alongside our cloud-NAC solution [RADIUSaaS](https://www.radius-as-a-service.com/) in two Solution Bundles:
 
-The information provided throughout this article is analogously applicable for RADIUSaaS & SCEPman Bundle subscriptions.
+* RADIUSaaS & SCEPman Enterprise Bundle
+* RADIUSaaS & SCEPman SaaS Bundle
+
+For more information, please refer to the [RADIUSaaS documentation](https://docs.radiusaas.com/licensing/azure-marketplace#solution-bundles).
 
 ## Subscription Management
 
@@ -117,7 +120,7 @@ For **new customers**, you will have to [deploy the infrastructure](../../scepma
 
 To get started with your SCEPman subscription, follow below steps:
 
-* Locate [SCEPman Enterprise Edition](https://portal.azure.com/#view/Microsoft_Azure_Marketplace/GalleryItemDetailsBladeNopdl/id/glueckkanja-gabag.scepman-transactable-prod) on the **Marketplace** in your **Azure Portal**. In case we have extended a **Private Offer** to you or your MSP/distribution has extended a **Multiparty Offer (MPO)** to you, navigate to **Marketplace** in your **Azure Portal** and then to **Private Offer Management** to locate the Private Offer.
+* Locate [SCEPman Enterprise Edition](https://portal.azure.com/#view/Microsoft_Azure_Marketplace/GalleryItemDetailsBladeNopdl/id/glueckkanja-gabag.scepman-transactable-prod) in the **Azure Marketplace**. In case we have extended a **Private Offer** to you or your MSP/distribution has extended a **Multiparty Offer (MPO)** to you, navigate to **Marketplace** in your **Azure Portal** and then to **Private Offer Management** to locate the Private Offer.
   * More details on Private Offers and MPOs can be found in Microsoft's documentation.
     * [Private Offer](https://learn.microsoft.com/en-us/marketplace/private-offers-purchase)
     * [Multiparty Offer](https://www.youtube.com/watch?v=TANUlgLuVqI)

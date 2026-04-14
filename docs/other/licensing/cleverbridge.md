@@ -21,7 +21,7 @@ SCEPman is offered as a **monthly or** **annual subscription plan** with differe
 * pre-selected in case we provide a quotation or order link to you, or
 *   must be manually selected during checkout:<br>
 
-    <figure><img src="../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (131).png" alt=""><figcaption></figcaption></figure>
 
 ## Payment Options
 
@@ -58,13 +58,25 @@ The following user segments are available for both, monthly and annual plans.
 
 <table data-header-hidden><thead><tr><th width="286.83723958333337"></th><th></th><th></th></tr></thead><tbody><tr><td><strong>User Segment</strong></td><td><strong>Minimum Total Users</strong></td><td><strong>Maximum Total Users</strong></td></tr><tr><td>SCEPman Enterprise 50 (M/Y)</td><td>50</td><td>249</td></tr><tr><td>SCEPman Enterprise 250 (M/Y)</td><td>250</td><td>999</td></tr><tr><td>SCEPman Enterprise 1000 (M/Y)</td><td>1,000</td><td>4,999</td></tr><tr><td>SCEPman Enterprise 5000 (M/Y)</td><td>5,000</td><td>9,999</td></tr><tr><td>SCEPman Enterprise 10000 (M/Y)</td><td>10,000</td><td>unlimited</td></tr></tbody></table>
 
-### RADIUSaaS & SCEPman Bundle
+### Solution Bundles
 
-We offer SCEPman along with our cloud-NAC solution [RADIUSaaS](https://www.radius-as-a-service.com/) in a subscription bundle that is discounted by 25% in comparison to the individual solutions. The bundle plans are available with monthly or annual renewal as well as the same [User Segments](cleverbridge.md#user-segments).
+{% hint style="info" %}
+The information provided throughout this article is analogously applicable for solution bundle subscriptions.
+{% endhint %}
 
-The information provided throughout this article is also applicable for RADIUSaaS & SCEPman Bundle subscriptions.<br>
+{% hint style="success" %}
+Please refer to our [SCEPman Edition Comparison](https://docs.radiusaas.com/details#scepman-edition-comparison) for details on the differences between SCEPman Enterprise and SCEPman SaaS.
+{% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+#### RADIUSaaS & SCEPman Enterprise Bundle
+
+We offer RADIUSaaS as well as our cloud-CA solution **for** **in-customer tenant deployment** [SCEPman Enterprise](https://www.scepman.com/) in a subscription bundle that is discounted by 25% in comparison to the individual solutions. The bundle plans are available with monthly or annual renewal as well as the same [User Segments](cleverbridge.md#user-segments).&#x20;
+
+#### RADIUSaaS & SCEPman SaaS Bundle
+
+If you'd prefer to use our cloud-based PKI SCEPman **without having to deploy infrastructure in your Azure tenant**, you can opt for the RADIUSaaS & SCEPman SaaS Bundle, that allows you to leverage SCEPman SaaS, built righ into your RADIUSaaS instance. The bundle plans are available with monthly or annual renewal as well as the same [User Segments](cleverbridge.md#user-segments). <br>
+
+<figure><img src="../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
 
 ## Subscription Management
 
@@ -204,7 +216,7 @@ In case you would like to test SCEPman, please [get in contact with us](https://
 
 ## FAQs
 
-### How to request a quote for SCEPman?
+### How to request a quote for SCEPman or a Solution Bundle?
 
 {% hint style="info" %}
 Quotes are valid for 14 days.
