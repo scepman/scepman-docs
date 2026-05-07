@@ -84,7 +84,7 @@ _Linux: AppConfig\_\_ValidityClockSkewMinutes_
 
 _Linux: AppConfig\_\_UseRequestedKeyUsages_
 
-**Value:** _true_ or _false_
+**Value:** _true_ (default) or _false_
 
 **Description:** Should the certificates have the Key Usage and Extended Key Usage (EKU) extensions set as requested, or should SCEPman define them?
 
