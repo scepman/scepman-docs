@@ -8,6 +8,34 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ## Versions
 
+### 3.1 - Currently in Beta Channel
+
+#### SCEPman 3.1.26140
+
+* New Certificate Management REST API for searching and revoking certificates
+* Upgrade to .NET 10
+* Authorized Responders are the new default for OCSP endpoint, reducing&#x20;
+  * response latency,
+  * dependencies, and&#x20;
+  * load on Key Vault
+* Small improvements and fixes
+  * Library updates
+  * Self-Service enrollment allows using Entra ID
+  * New Template _RDP Server_ for the Active Directory enrollment endpoint
+  * UI: Dark Mode
+  * UI: Minor layout improvements
+  * Increased robustness
+
+#### Certificate Master 3.1.26140
+
+* Upgrade to .NET 10
+* UX improvements
+  * Better certificate search
+  * Earlier feedback on necessary request form fields
+  * Minor design tweaks
+* Small improvements and fixes
+  * Library updates
+
 ### 3.0 - December 2025
 
 #### SCEPman 3.0.1639
