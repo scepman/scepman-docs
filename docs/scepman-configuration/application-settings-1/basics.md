@@ -32,6 +32,20 @@ This defines which Table Storage Endpoint to use to store certificate informatio
 Changes can harm your service!
 {% endhint %}
 
+## AppConfig:AzureStorage:ThresholdForLocalFiltering
+
+_Linux: AppConfig\_\_AzureStorage\_\_ThresholdForLocalFiltering_
+
+{% hint style="info" %}
+Applicable to version 3.1 and above
+{% endhint %}
+
+**Value:** Integer (20000 as default)
+
+**Description:**
+
+This threshold defines the maximum number of certificates in the storage account for the Certificate Master to cache them during search operations. This allows for a more flexible search experience.
+
 ## AppConfig:RemoteDebug
 
 _Linux: AppConfig\_\_RemoteDebug_
