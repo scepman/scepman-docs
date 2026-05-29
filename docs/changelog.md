@@ -36,6 +36,23 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 * Small improvements and fixes
   * Library updates
 
+#### **SCEPman PowerShell Module 3.1.0-beta**
+
+* Improve migration to Log Ingestion API for Geo-Redundancy
+* Automatically add granular roles to Certificate Master app
+* Add new role for SCEPman 3.1 Management REST API
+* Improvements and fixes
+  * Ensure artifact URL is selected for the correct platform
+  * Update .NET stack for known update channels
+
+#### **SCEPmanClient PowerShell Module 3.1.0-beta**
+
+* Add `Find-SCEPmanCertificate` and `Revoke-SCEPmanCertificate` to use SCEPman 3.1 Management REST API
+* Small improvements and fixes
+  * Improve Windows PowerShell compatibility for certificate renewals
+  * Allow multiple SAN entries in requests
+  * Fix target directory expansion for relative paths in Linux
+
 ### 3.0 - December 2025
 
 #### SCEPman 3.0.1639
