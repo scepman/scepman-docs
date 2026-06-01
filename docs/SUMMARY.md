@@ -66,6 +66,8 @@
 * [🆕 Active Directory](certificate-management/active-directory/README.md)
   * [General Configuration](certificate-management/active-directory/general-configuration.md)
   * [Group Policy](certificate-management/active-directory/group-policy.md)
+  * [Scenarios](certificate-management/active-directory/scenarios/README.md)
+    * [RDP Server Certificate](certificate-management/active-directory/scenarios/rdp-server-certificate.md)
 
 ## Azure Configuration
 
@@ -101,6 +103,7 @@
     * [User Template](scepman-configuration/application-settings/active-directory/user-template.md)
     * [Computer Template](scepman-configuration/application-settings/active-directory/computer-template.md)
     * [DC Template](scepman-configuration/application-settings/active-directory/dc-template.md)
+    * [RDP Template](scepman-configuration/application-settings/active-directory/rdp-template.md)
   * [OCSP](scepman-configuration/application-settings/ocsp.md)
   * [SCEP Endpoints](scepman-configuration/application-settings/scep-endpoints/README.md)
     * [DC Validation](scepman-configuration/application-settings/scep-endpoints/dc-validation.md)

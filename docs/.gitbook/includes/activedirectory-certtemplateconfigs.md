@@ -8,7 +8,7 @@ _Linux: AppConfig\_\_ActiveDirectory\_\__<code class="expression">page.vars.cert
 
 **Value:** Certificate template name
 
-**Description:** This setting you to choose a custom template name for this certificate template. It is displayed when you manually enroll a certificate of that template. For maximum compatibility, choose a name witho only alphanumeric characters and no blanks.
+**Description:** This setting allows you to choose a custom template name for this certificate template. It is displayed when you manually enroll a certificate of that template. For maximum compatibility, choose a name witho only alphanumeric characters and no blanks.
 
 # AppConfig:ActiveDirectory:<code class="expression">page.vars.cert_template</code>:GroupFilter
 
@@ -16,7 +16,7 @@ _Linux: AppConfig\_\_ActiveDirectory\_\__<code class="expression">page.vars.cert
 
 **Value:** Comma-separated list of AD groups specified by their SID
 
-**Description:** This setting allows to limit which Active Directory group members are allowed to enroll certificates for this certificate template. If configured, it overrides the general setting [AppConfig:ActiveDirectory:GroupFilter](#appconfig-activedirectory-groupfilter).
+**Description:** This setting limits which Active Directory group members are allowed to enroll certificates for this certificate template. If configured, it overrides the general setting [AppConfig:ActiveDirectory:GroupFilter](#appconfig-activedirectory-groupfilter).
 
 # AppConfig:ActiveDirectory:<code class="expression">page.vars.cert_template</code>:Ksps
 
