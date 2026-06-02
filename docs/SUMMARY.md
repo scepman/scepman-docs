@@ -63,6 +63,8 @@
     * [Linux Server](certificate-management/api-certificates/api-enrollment/linux-server.md)
     * [Windows Server](certificate-management/api-certificates/api-enrollment/windows-server.md)
   * [SCEPmanClient](certificate-management/api-certificates/scepmanclient.md)
+* [🆕 Management REST API](certificate-management/management-rest-api/README.md)
+  * [Management API in SCEPmanClient](certificate-management/management-rest-api/management-api-in-scepmanclient.md)
 * [🆕 Active Directory](certificate-management/active-directory/README.md)
   * [General Configuration](certificate-management/active-directory/general-configuration.md)
   * [Group Policy](certificate-management/active-directory/group-policy.md)
