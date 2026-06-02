@@ -8,25 +8,25 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ## Versions
 
-### 3.1 - Currently in Beta Channel
+### 3.1 - June 2026
 
-#### SCEPman 3.1.26140
+#### SCEPman 3.1.26152
 
-* New Certificate Management REST API for searching and revoking certificates
+* New [Certificate Management REST API](certificate-management/management-rest-api/) for searching and revoking certificates
 * Upgrade to .NET 10
-* Authorized Responders are the new default for OCSP endpoint, reducing&#x20;
+* Authorized Responders are[ the new default](scepman-configuration/application-settings/ocsp.md#appconfig-ocsp-useauthorizedresponder) for OCSP endpoint, reducing&#x20;
   * response latency,
   * dependencies, and&#x20;
-  * load on Key Vault
+  * load on Key Vault.
+* New Template [_RDP Server_](certificate-management/active-directory/scenarios/rdp-server-certificate.md) for the Active Directory enrollment endpoint
 * Small improvements and fixes
   * Library updates
   * Self-Service enrollment allows using Entra ID
-  * New Template _RDP Server_ for the Active Directory enrollment endpoint
   * UI: Dark Mode
   * UI: Minor layout improvements
   * Increased robustness
 
-#### Certificate Master 3.1.26140
+#### Certificate Master 3.1.26152
 
 * Upgrade to .NET 10
 * UX improvements
@@ -36,7 +36,7 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 * Small improvements and fixes
   * Library updates
 
-#### **SCEPman PowerShell Module 3.1.0-beta**
+#### **SCEPman PowerShell Module 3.1.0.0**
 
 * Improve migration to Log Ingestion API for Geo-Redundancy
 * Automatically add granular roles to Certificate Master app
@@ -45,9 +45,9 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
   * Ensure artifact URL is selected for the correct platform
   * Update .NET stack for known update channels
 
-#### **SCEPmanClient PowerShell Module 3.1.0-beta**
+#### **SCEPmanClient PowerShell Module 3.1.0.0**
 
-* Add `Find-SCEPmanCertificate` and `Revoke-SCEPmanCertificate` to use SCEPman 3.1 Management REST API
+* Add `Find-SCEPmanCertificate` and `Revoke-SCEPmanCertificate` to [use SCEPman 3.1 Management REST API](certificate-management/management-rest-api/management-api-in-scepmanclient.md)
 * Small improvements and fixes
   * Improve Windows PowerShell compatibility for certificate renewals
   * Allow multiple SAN entries in requests
