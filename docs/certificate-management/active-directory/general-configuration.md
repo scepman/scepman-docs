@@ -23,6 +23,77 @@ layout:
 
 To allow SCEPman to handle incoming SOAP requests successfully, we need to take a few steps:
 
+#### 1. Custom Domain and BaseUrl <a href="#custom-domain-and-baseurl" id="custom-domain-and-baseurl"></a>
+
+For successful authentication with SCEPman, ensure that a custom domain using an `A record` is pointed to the App Service. Otherwise, the client will fail to request a valid Kerberos ticket from the domain controller.
+
+{% hint style="info" %}
+The custom domain does not have to resemble the FQDN of your AD domain. So having a domain `ad.contoso.local` does not mean you need an identical or similar custom domain for SCEPman.
+
+See the known issue below regarding [WS\_E\_ENDPOINT\_ACCESS\_DENIED](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/diff/~/changes/806/certificate-management/active-directory/general-configuration#ws_e_endpoint_access_denied) for more information.
+{% endhint %}
+
+Ensure that SCEPman is configured to be accessible using a custom domain:
+
+{% content-ref url="../../azure-configuration/custom-domain.md" %}
+[custom-domain.md](../../azure-configuration/custom-domain.md)
+{% endcontent-ref %}
+
+The same requirement also applies after the initial policy request (listing the certificate templates) to enroll certificates. To allow successful authentications, make sure the [AppConfig:BaseUrl](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/diff/~/changes/806/scepman-configuration/application-settings/basics#appconfig-baseurl) variable matches your custom domain or use the dedicated [AppConfig:ActiveDirectory:BaseUrl](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/diff/~/changes/806/scepman-configuration/application-settings/active-directory/general#appconfig-activedirectory-baseurl) setting if you prefer accessing the AD Endpoint on a different URL from your other SCEPman endpoints.
+
+#### 2. Create Service Principal <a href="#create-service-principal" id="create-service-principal"></a>
+
+Use the `New-SCEPmanADPrincipal` Cmdlet of the SCEPman PowerShell module to create the service principal in your on-prem Active Directory domain. It will also export a keytab from this account and encrypt it to SCEPman's CA certificate.
+
+You can execute this command on a domain controller or domain-joined server that has installed the `RSAT-AD-Tools` feature. You will also need the following permissions in the OU that you want to create the principal in:
+
+On OU itself:
+
+* Create computer objects
+
+On descendant computer objects:
+
+* Reset password
+* Write `msDS-SupportedEncryptionTypes`
+* Write `servicePrincipalName`
+* Write `userPrincipalName`
+
+The variant below also requires outgoing HTTPS network access to your SCEPman instance.
+
+{% hint style="info" %}
+If your computer with access to a Domain Controller doesn't have network access, there are variants of the CMDlet that work without it, but require some additional preparation, such as downloading the SCEPman CA certificate and copying the CA to the machine that runs the CMDlet.
+{% endhint %}
+
+```powershell
+Install-Module SCEPman -Force
+New-SCEPmanADPrincipal -Name "SCEPmanAD" -AppServiceUrl "scepman.contoso.com" -OU
+"OU=Example,DC=contoso,DC=local"
+```
+
+Running this command will perform the following:
+
+1. Create a computer object in the `OU=Example,DC=contoso,DC=com` Organizational Unit.
+2. Download SCEPman's CA certificate to encrypt the keytab in step 5.
+3. Add a service principal name (SPN) to the computer object.
+4. Create a keytab for the computer account containing the encryption key based on the computer's password.
+5. Encrypt the keytab with the CA certificate of SCEPman, so only SCEPman can decrypt it again using the CA private key.
+6. Output the encrypted keytab, so it can be transferred to SCEPmans configuration.
+
+The Base64 encoded output must then be added to the environment variable **AppConfig:ActiveDirectory:Keytab** of your SCEPman App Service.3
+
+#### 3. Add Keytab to SCEPman <a href="#add-keytab-to-scepman" id="add-keytab-to-scepman"></a>
+
+The integration can easily be enabled by adding the following environment variables in the **SCEPman App Service.** Depending on your use case, enable one or more of the available certificate templates:
+
+_Example with all certificate templates enabled:_
+
+| Setting                                    | Value                                                             |
+| ------------------------------------------ | ----------------------------------------------------------------- |
+| AppConfig:ActiveDirectory:Keytab           | Base64 encoded keytab for the service principal created in Step 1 |
+| AppConfig:ActiveDirectory:Computer:Enabled | true                                                              |
+| AppConfig:ActiveDirectory:User:Enabled     | true                                                              |
+| AppConfig:ActiveDirectory:DC:Enabled       | true                                                              |
+
 ## Known Issues
 
 ### WS\_E\_ENDPOINT\_ACCESS\_DENIED
