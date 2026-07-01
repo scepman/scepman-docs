@@ -33,6 +33,10 @@ The basis for deploying SCEP certificates (device or user) is to trust the root 
 Note, that you have to use the **same group for assigning** the **Trusted certificate** and **SCEP profile**. Otherwise, the Intune deployment might fail.
 {% endhint %}
 
+{% hint style="warning" %}
+Some Android Enterprise deployments require the full Certificate Authority chain (Root CA + Intermediate CA) in the Intune Trusted Certificate profile. This is particularly relevant after Intermediate CA certificate renewals, where deploying only the Root CA may result in SCEP User or WLAN certificate deployment failures.
+{% endhint %}
+
 ## Device Certificates
 
 * [ ] Open the SCEPman portal and copy the URL under **Intune MDM**
