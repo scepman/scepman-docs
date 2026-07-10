@@ -1,8 +1,10 @@
 # Table of contents
 
-* [Welcome](README.md)
-* [Details](details.md)
-* [Editions](editions.md)
+* [SCEPman Website](https://scepman.com)
+* [SCEPman Documentation](README.md)
+* [Overview](overview.md)
+* [Editions](editions/README.md)
+  * [RADIUSaaS Integration](editions/radiusaas-integration.md)
 * [Use Cases](use-cases.md)
 
 ## SCEPMAN Deployment
@@ -151,4 +153,3 @@
 * [Uninstallation](uninstall.md)
 * [Change Log](changelog.md)
 * [Links](important-links.md)
-* [SCEPman Website](https://scepman.com)

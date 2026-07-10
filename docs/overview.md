@@ -1,4 +1,4 @@
-# Details
+# Overview
 
 ## What is SCEP?
 
@@ -45,7 +45,7 @@ SCEPman creates the CA root certificate during the initial installation. However
 
 #### Certificate Master
 
-Certificate Master allows [Enterprise Edition](editions.md#edition-comparison) customers to (manually) issue certificates in scenarios where an automatic enrollment via SCEP / MDM is not possible. Common examples are the issuance of [TLS server certificates](certificate-management/certificate-master/tls-server-certificate-pkcs-12.md) or user certificates for [smart cards / YubiKeys](certificate-management/certificate-master/user-certificate.md). Furthermore, with Certificate Master, administrators can [manage](certificate-management/manage-certificates/) any certificate issued by SCEPman, whether they were automatically enrolled through SCEP via Intune, Jamf and other MDMs, EST, the [Enrollment REST API](certificate-management/api-certificates/) or manually via Certificate Master UI itself.
+Certificate Master allows [Enterprise Edition](editions/#edition-comparison) customers to (manually) issue certificates in scenarios where an automatic enrollment via SCEP / MDM is not possible. Common examples are the issuance of [TLS server certificates](certificate-management/certificate-master/tls-server-certificate-pkcs-12.md) or user certificates for [smart cards / YubiKeys](certificate-management/certificate-master/user-certificate.md). Furthermore, with Certificate Master, administrators can [manage](certificate-management/manage-certificates/) any certificate issued by SCEPman, whether they were automatically enrolled through SCEP via Intune, Jamf and other MDMs, EST, the [Enrollment REST API](certificate-management/api-certificates/) or manually via Certificate Master UI itself.
 
 {% content-ref url="certificate-management/certificate-master/" %}
 [certificate-master](certificate-management/certificate-master/)
@@ -56,3 +56,7 @@ Certificate Master allows [Enterprise Edition](editions.md#edition-comparison) c
 The [Online Certificate Status Protocol (OCSP)](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol) is an Internet protocol which is in use to determine the state of a certificate.
 
 Usually, an OCSP client sends a status request to an OCSP responder. An OCSP responder verifies the validity of a certificate based on revocation state or other mechanisms. In comparison to a certificate revocation list (CRL), that SCEPman supports as well, an OCSP response is always up-to-date and the response is available within seconds. A CRL has the disadvantage that it is based on a database that must refresh manually and may weigh a lot of data. Read a detailed comparison of these revocations mechanisms[ in an article in our company blog.](https://www.glueckkanja.com/blog/products/2023/05/certificate-revocation-en/)
+
+## Getting Started
+
+Please follow the steps on the following page to deploy SCEPman and automate certificate issuance for users, devices, and network authentication scenarios.

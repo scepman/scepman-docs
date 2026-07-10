@@ -1,14 +1,14 @@
 ---
-description: SCEPman - Certificates Simplified
+description: Cloud PKI & Certificate Management for Microsoft Intune and other MDMs
 ---
 
-# Welcome
+# SCEPman Documentation
 
 ## Overview
 
-SCEPman is a slim and resource-friendly solution to issue and validate certificates using Simple Certificate Enrollment Protocol (SCEP). **It is an Azure Web App providing the SCEP protocol and works directly with the Microsoft Graph and Intune API.** SCEPman uses an Azure Key Vault based Root CA and certificate creation. By default, no other component is involved, neither a database nor any other stateful storage except the Azure Key Vault itself. That said, SCEPman **will not need any backup procedures** or other operation level tasks. Only an Azure subscription is necessary to deploy it.
+SCEPman is a slim and resource-friendly solution to issue and validate certificates using Simple Certificate Enrollment Protocol (SCEP). **It is an Azure Web App providing the SCEP protocol and works directly with the Microsoft Graph and Intune API.** SCEPman uses an Azure Key Vault based Root CA and certificate creation. By default, no other component is involved, neither a database nor any other stateful storage, except the Azure Key Vault itself. That said, SCEPman **will not need any backup procedures** or other operation level tasks. Only an Azure subscription is necessary to deploy it.
 
-SCEPman is a service that gets **deployed into your Azure tenant**, giving you full control on how and where SCEPman processes and stores data. No data leaves your tenant and there is no need to grant external vendor permissions in your tenant.
+SCEPman gives you control over how and where data is processed and stored. Depending on the deployment model, SCEPman can run either within **your Azure tenant** or as a **managed SaaS offering**. No external vendor permissions in your tenant are required.
 
 ![SCEP flow with Microsoft Intune](.gitbook/assets/scepman-flowchart.webp)
 
@@ -16,7 +16,7 @@ The following documentation will show you a straightforward way to deploy certif
 
 ## SCEPman vs. Legacy PKI
 
-If you are interested in learning more about the effort involved in installing and operating a legacy/on-premises PKI such as the Certificate Connector for Intune / Active Directory Certificate Services (ADCS) in comparison to SCEPman, please refer to below article.
+If you are interested in learning more about the effort involved in installing and operating a legacy/on-premises PKI such as the Certificate Connector for Intune / Active Directory Certificate Services (ADCS) in comparison to SCEPman, please refer to the article below.
 
 {% content-ref url="other/faqs/certificate-connector.md" %}
 [certificate-connector.md](other/faqs/certificate-connector.md)
@@ -28,17 +28,17 @@ If you are interested in learning more about the effort involved in installing a
 SCEPman 2.0 - What's new?
 {% endembed %}
 
-{% content-ref url="details.md" %}
-[details.md](details.md)
+{% content-ref url="overview.md" %}
+[overview.md](overview.md)
 {% endcontent-ref %}
 
-{% content-ref url="editions.md" %}
-[editions.md](editions.md)
+{% content-ref url="editions/" %}
+[editions](editions/)
 {% endcontent-ref %}
 
 ## SCEPman Guides
 
-We offer two guides to deploy the SCEPman environment. Please follow below link for guidance on which guide is best suited for your scenario and deployment requirements:
+We offer two guides to deploy the SCEPman environment. Please follow the link below for guidance on which guide is best suited for your scenario and deployment requirements:
 
 {% content-ref url="scepman-deployment/deployment-guides/" %}
 [deployment-guides](scepman-deployment/deployment-guides/)
