@@ -40,8 +40,6 @@ Ensure that SCEPman is configured to be accessible using a custom domain:
 {% content-ref url="../../azure-configuration/custom-domain.md" %}
 [custom-domain.md](../../azure-configuration/custom-domain.md)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -109,13 +107,13 @@ The integration can easily be enabled by adding the following environment variab
 
 _Example with all certificate templates enabled:_
 
-| Setting                                                                                                                                                                | Value                                                             |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| [AppConfig:ActiveDirectory:Keytab](appconfig:ActiveDirectory:Keytab)                                                                                                   | Base64 encoded keytab for the service principal created in Step 1 |
-| [AppConfig:ActiveDirectory:Computer:Enabled](../../scepman-configuration/application-settings/active-directory/computer-template.md#appconfig-activedirectory-enabled) | true                                                              |
-| [AppConfig:ActiveDirectory:User:Enabled](../../scepman-configuration/application-settings/active-directory/user-template.md#appconfig-activedirectory-enabled)         | true                                                              |
-| [AppConfig:ActiveDirectory:DC:Enabled](../../scepman-configuration/application-settings/active-directory/dc-template.md#appconfig-activedirectory-enabled)             | true                                                              |
-| [AppConfig:ActiveDirectory:RdpServer:Enabled](../../scepman-configuration/application-settings/active-directory/rdp-template.md#appconfig-activedirectory-enabled)     | true                                                              |
+| Setting                                                                                                                                                                | Value                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| [AppConfig:ActiveDirectory:Keytab](appconfig:ActiveDirectory:Keytab)                                                                                                   | Base64 encoded keytab for the service principal created in [Step 3](general-configuration.md#create-service-principal) |
+| [AppConfig:ActiveDirectory:Computer:Enabled](../../scepman-configuration/application-settings/active-directory/computer-template.md#appconfig-activedirectory-enabled) | true                                                                                                                   |
+| [AppConfig:ActiveDirectory:User:Enabled](../../scepman-configuration/application-settings/active-directory/user-template.md#appconfig-activedirectory-enabled)         | true                                                                                                                   |
+| [AppConfig:ActiveDirectory:DC:Enabled](../../scepman-configuration/application-settings/active-directory/dc-template.md#appconfig-activedirectory-enabled)             | true                                                                                                                   |
+| [AppConfig:ActiveDirectory:RdpServer:Enabled](../../scepman-configuration/application-settings/active-directory/rdp-template.md#appconfig-activedirectory-enabled)     | true                                                                                                                   |
 {% endstep %}
 {% endstepper %}
 
@@ -129,15 +127,15 @@ Hex: 0x803d0005
 Dec: -2143485947
 ```
 
-This error is known to occur during the validation of the CEP server when you are using the _default_ URIs of the Azure App Service. This error is caused by the Kerberos protocol asking for a service principal name of the A record of the service that is to be accessed. In the case of the default app service domains, for example `contoso.azurewebsites.net` is just a CNAME and points to an A record similar to:
+This error is known to occur during the validation of the CEP server when you are using the _default_ URIs of the Azure App Service. This error is caused by the Kerberos protocol asking for a service principal name of the `A record` of the service that is to be accessed. In the case of the default app service domains, for example `contoso.azurewebsites.net` is a `CNAME` and points to an `A record` similar to:
 
 ```
 waws-prod-ab1-234-c56d.westeurope.cloudapp.azure.com
 ```
 
-As this A record of an infrastructure host is not guaranteed to be consistent in the future, adding a service principal name for this host is **not recommended**.
+As this `A record` of an infrastructure host is not guaranteed to be consistent in the future, adding a service principal name for this host is **not recommended**.
 
-Make sure to add a custom domain to your app service and use an `A record` within your DNS provider to point it to the app service instead of a CNAME.
+Make sure to add a custom domain to your app service and use an `A record` within your DNS provider to point it to the app service instead of a `CNAME`.
 
 {% content-ref url="../../azure-configuration/custom-domain.md" %}
 [custom-domain.md](../../azure-configuration/custom-domain.md)
@@ -151,7 +149,7 @@ Hex: 0x80070057
 Dec: -2147024809
 ```
 
-This error occurs during the CEP server registration if you enter an URI that begins with `http://`. Make sure to only register a CEP server using `https://`
+This error occurs during the CEP server registration if you enter an URI that begins with `http://`. Make sure to only register a CEP server using `https://` .
 
 ### ERROR\_ACCESS\_DENIED
 
