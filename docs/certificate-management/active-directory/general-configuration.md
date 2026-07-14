@@ -25,7 +25,7 @@ To allow SCEPman to handle incoming SOAP requests successfully, we need to take 
 
 {% stepper %}
 {% step %}
-### Custom Domain and BaseUrl
+### Custom Domain
 
 For successful authentication with SCEPman, ensure that a custom domain using an `A record` is pointed to the App Service. Otherwise, the client will fail to request a valid Kerberos ticket from the domain controller.
 
@@ -41,7 +41,23 @@ Ensure that SCEPman is configured to be accessible using a custom domain:
 [custom-domain.md](../../azure-configuration/custom-domain.md)
 {% endcontent-ref %}
 
-The same requirement also applies after the initial policy request (listing the certificate templates) to enroll certificates. To allow successful authentications, make sure the [AppConfig:BaseUrl](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/diff/~/changes/806/scepman-configuration/application-settings/basics#appconfig-baseurl) variable matches your custom domain or use the dedicated [AppConfig:ActiveDirectory:BaseUrl](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/diff/~/changes/806/scepman-configuration/application-settings/active-directory/general#appconfig-activedirectory-baseurl) setting if you prefer accessing the AD Endpoint on a different URL from your other SCEPman endpoints.
+
+{% endstep %}
+
+{% step %}
+### BaseUrl
+
+To allow successful authentications, make sure the [AppConfig:BaseUrl](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/diff/~/changes/806/scepman-configuration/application-settings/basics#appconfig-baseurl) variable matches your custom domain.
+
+| Setting           | Value                        |
+| ----------------- | ---------------------------- |
+| AppConfig:BaseUrl | Example: scepman.contoso.com |
+
+**Alternatively**, if you prefer accessing the AD Endpoint using a different URL from your other SCEPman endpoints, use the dedicated [AppConfig:ActiveDirectory:BaseUrl](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/diff/~/changes/806/scepman-configuration/application-settings/active-directory/general#appconfig-activedirectory-baseurl) setting.
+
+| Setting                           | Value                           |
+| --------------------------------- | ------------------------------- |
+| AppConfig:ActiveDirectory:BaseUrl | Example: adendpoint.contoso.com |
 {% endstep %}
 
 {% step %}
@@ -76,14 +92,14 @@ New-SCEPmanADPrincipal -Name "SCEPmanAD" -AppServiceUrl "scepman.contoso.com" -O
 
 Running this command will perform the following:
 
-1. Create a computer object in the `OU=Example,DC=contoso,DC=com` Organizational Unit.
+1. Create a computer object in the `OU=Example,DC=contoso,DC=local` Organizational Unit.
 2. Download SCEPman's CA certificate to encrypt the keytab in step 5.
 3. Add a service principal name (SPN) to the computer object.
 4. Create a keytab for the computer account containing the encryption key based on the computer's password.
 5. Encrypt the keytab with the CA certificate of SCEPman, so only SCEPman can decrypt it again using the CA private key.
-6. Output the encrypted keytab, so it can be transferred to SCEPmans configuration.
+6. Output the encrypted keytab, so it can be transferred to SCEPman's configuration.
 
-The Base64 encoded output must then be added to the environment variable **AppConfig:ActiveDirectory:Keytab** of your SCEPman App Service.3
+The Base64 encoded output must then be added to the environment variable **AppConfig:ActiveDirectory:Keytab** on your SCEPman App Service.
 {% endstep %}
 
 {% step %}
@@ -93,13 +109,13 @@ The integration can easily be enabled by adding the following environment variab
 
 _Example with all certificate templates enabled:_
 
-| Setting                                     | Value                                                             |
-| ------------------------------------------- | ----------------------------------------------------------------- |
-| AppConfig:ActiveDirectory:Keytab            | Base64 encoded keytab for the service principal created in Step 1 |
-| AppConfig:ActiveDirectory:Computer:Enabled  | true                                                              |
-| AppConfig:ActiveDirectory:User:Enabled      | true                                                              |
-| AppConfig:ActiveDirectory:DC:Enabled        | true                                                              |
-| AppConfig:ActiveDirectory:RdpServer:Enabled | true                                                              |
+| Setting                                                                                                                                                                | Value                                                             |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| [AppConfig:ActiveDirectory:Keytab](appconfig:ActiveDirectory:Keytab)                                                                                                   | Base64 encoded keytab for the service principal created in Step 1 |
+| [AppConfig:ActiveDirectory:Computer:Enabled](../../scepman-configuration/application-settings/active-directory/computer-template.md#appconfig-activedirectory-enabled) | true                                                              |
+| [AppConfig:ActiveDirectory:User:Enabled](../../scepman-configuration/application-settings/active-directory/user-template.md#appconfig-activedirectory-enabled)         | true                                                              |
+| [AppConfig:ActiveDirectory:DC:Enabled](../../scepman-configuration/application-settings/active-directory/dc-template.md#appconfig-activedirectory-enabled)             | true                                                              |
+| [AppConfig:ActiveDirectory:RdpServer:Enabled](../../scepman-configuration/application-settings/active-directory/rdp-template.md#appconfig-activedirectory-enabled)     | true                                                              |
 {% endstep %}
 {% endstepper %}
 
@@ -121,7 +137,7 @@ waws-prod-ab1-234-c56d.westeurope.cloudapp.azure.com
 
 As this A record of an infrastructure host is not guaranteed to be consistent in the future, adding a service principal name for this host is **not recommended**.
 
-Make sure to add a custom domain to your app service and use an A record within your DNS provider to point it to the app service instead of a CNAME.
+Make sure to add a custom domain to your app service and use an `A record` within your DNS provider to point it to the app service instead of a CNAME.
 
 {% content-ref url="../../azure-configuration/custom-domain.md" %}
 [custom-domain.md](../../azure-configuration/custom-domain.md)
