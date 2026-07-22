@@ -1,6 +1,5 @@
 # Table of contents
 
-* [SCEPman Website](https://scepman.com)
 * [SCEPman Documentation](README.md)
 * [Overview](overview.md)
 * [Editions](editions/README.md)
@@ -153,3 +152,4 @@
 * [Uninstallation](uninstall.md)
 * [Change Log](changelog.md)
 * [Links](important-links.md)
+* [SCEPman Website](https://scepman.com)
