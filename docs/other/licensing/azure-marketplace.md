@@ -75,6 +75,16 @@ If the plan contains chargeable add-ons, you can select them under **Extras**. F
 
 <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
+Based on the amount of users provided, we will charge the relevant base fee for your user segment as well as additional users, in case you require more than the included amount in your base fee. **The platform automatically selects the best price / tier**.
+
+The platform will show you the licensing fees you have to expect under **Cost Projection**.
+
+If you are happy with it, please click **Review & Submit** for a final review and a fee summary.
+
+Complete the checkout by confirming your choice and clicking **Submit**.
+
+This triggers us to deploy your RADIUSaaS instance (and issue a SCEPman Enterprise Edition license key if the RADIUSaaS and SCEPman Bundle is purchased). We will inform you via email with all relevant information on the next steps once the instance (and license key) is available for you. This won't take any longer than one business day.
+
 {% hint style="info" %}
 You will only be charged by Microsoft, once you have completed the enrolment on our landing page and received our welcome email.
 {% endhint %}
