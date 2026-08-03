@@ -8,6 +8,79 @@ In order to purchase solutions from independent software vendors (ISV) such as S
 2. The account you want to purchase our solution with must have the **Owner** or **Contributor** role assigned on the Azure subscription you are going to pay with.
 3. The billing account linked to your Azure subscription is properly set up. Depending on your billing account type (Microsoft Customer Agreement or Enterprise Agreement), you might need to enable marketplace purchases in the Azure portal first.
 
+## How to purchase SCEPman?
+
+{% hint style="info" %}
+Deploying a SCEPman subscription via Azure Marketplace **will not result** **in a re-deployment of SCEPman if you already have an active trial or production deployment**. Instead, we will assign the license obtained as part of this subscription to your existing deployments.
+
+For **new customers**, you will have to [deploy the infrastructure](../../scepman-deployment/deployment-guides/) for SCEPman separately.
+{% endhint %}
+
+To get started with your SCEPman subscription, follow below steps:
+
+{% stepper %}
+{% step %}
+### Locate [SCEPman Enterprise Edition](https://portal.azure.com/#view/Microsoft_Azure_Marketplace/GalleryItemDetailsBladeNopdl/id/glueckkanja-gabag.scepman-transactable-prod) in the Azure Marketplace
+
+In case we have extended a **Private Offer** to you or your MSP/distribution has extended a **Multiparty Offer (MPO)** to you, navigate to **Marketplace** in your **Azure Portal** and then to **Private Offer Management** to locate the Private Offer.
+
+* More details on Private Offers and MPOs can be found in Microsoft's documentation.
+  * [Private Offer](https://learn.microsoft.com/en-us/marketplace/private-offers-purchase)
+  * [Multiparty Offer](https://www.youtube.com/watch?v=TANUlgLuVqI)
+{% endstep %}
+
+{% step %}
+### Select a plan
+
+Based on your preferred renewal interval, select (M) for monthly or (Y) for yearly renewal and click **Subscribe**.
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### Subscribe to SCEPman&#x20;
+
+* Create or select the **Resource group** you would like to deploy the subscription to.
+* Assign a **Name** to later identify your SCEPman Enterprise Edition subscription.
+* We recommend to keep **Recurring billing** on so that you do not have to worry about a manual renewal of your subscription.
+* Click **Review + subscribe** and then **Subscribe** to deploy the **SaaS** resource to your **Resource group**.
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+The random order of **Base Fees** und **Additional Users** under the **Price** information is attributed to limitations of the Azure Marketplace. Later during the enrolment process, we will provide you with transparent information on the expected licensing costs.
+{% endhint %}
+{% endstep %}
+
+{% step %}
+### Complete Check-Out
+
+Once the deployment is complete, please navigate to our platform to complete the checkout. Therefore click **Configure account now**.
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### Add additional information
+
+After authenticating on our platform using your Microsoft credentials, you will be prompted for additional information, such as the desired total **User** amount and a **Technical contact**.
+
+{% hint style="info" %}
+The **Technical contact** must have a mailbox connected to it, so we are able to notify you in case there are relevant issues with SCEPman.
+{% endhint %}
+
+{% hint style="success" %}
+If the plan contains chargeable add-ons, you can select them under **Extras**. For example, all SCEPman plans allow you to purchase the optional [SCEPman Setup Support](../support.md#scepman-setup-support) package.
+{% endhint %}
+
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+You will only be charged by Microsoft, once you have completed the enrolment on our landing page and received our welcome email.
+{% endhint %}
+{% endstep %}
+{% endstepper %}
+
 ## Pricing Model
 
 * SCEPman is offered as a **monthly or** **annual subscription plan** with different [User Segments](azure-marketplace.md#user-segments). The correct **user segment** is automatically selected by our platform based on the amount of desired users.
@@ -109,79 +182,6 @@ If you decide to disable **Recurring billing**, your subscription will not renew
 In case you would like to test SCEPman, please [request a trial via our website](https://support.scepman.com/support/tickets/new?ticket_form=trial_request_%28scepman%29) or send us an email to [sales@scepman.com](mailto:sales@scepman.com).
 
 ## FAQs
-
-### How to purchase SCEPman?
-
-{% hint style="info" %}
-Deploying a SCEPman subscription via Azure Marketplace **will not result** **in a re-deployment of SCEPman if you already have an active trial or production deployment**. Instead, we will assign the license obtained as part of this subscription to your existing deployments.
-
-For **new customers**, you will have to [deploy the infrastructure](../../scepman-deployment/deployment-guides/) for SCEPman separately.
-{% endhint %}
-
-To get started with your SCEPman subscription, follow below steps:
-
-{% stepper %}
-{% step %}
-### Locate [SCEPman Enterprise Edition](https://portal.azure.com/#view/Microsoft_Azure_Marketplace/GalleryItemDetailsBladeNopdl/id/glueckkanja-gabag.scepman-transactable-prod) in the Azure Marketplace
-
-In case we have extended a **Private Offer** to you or your MSP/distribution has extended a **Multiparty Offer (MPO)** to you, navigate to **Marketplace** in your **Azure Portal** and then to **Private Offer Management** to locate the Private Offer.
-
-* More details on Private Offers and MPOs can be found in Microsoft's documentation.
-  * [Private Offer](https://learn.microsoft.com/en-us/marketplace/private-offers-purchase)
-  * [Multiparty Offer](https://www.youtube.com/watch?v=TANUlgLuVqI)
-{% endstep %}
-
-{% step %}
-### Select a plan
-
-Based on your preferred renewal interval, select (M) for monthly or (Y) for yearly renewal and click **Subscribe**.
-
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
-{% endstep %}
-
-{% step %}
-### Subscribe to SCEPman&#x20;
-
-* Create or select the **Resource group** you would like to deploy the subscription to.
-* Assign a **Name** to later identify your SCEPman Enterprise Edition subscription.
-* We recommend to keep **Recurring billing** on so that you do not have to worry about a manual renewal of your subscription.
-* Click **Review + subscribe** and then **Subscribe** to deploy the **SaaS** resource to your **Resource group**.
-
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-The random order of **Base Fees** und **Additional Users** under the **Price** information is attributed to limitations of the Azure Marketplace. Later during the enrolment process, we will provide you with transparent information on the expected licensing costs.
-{% endhint %}
-{% endstep %}
-
-{% step %}
-### Complete Check-Out
-
-Once the deployment is complete, please navigate to our platform to complete the checkout. Therefore click **Configure account now**.
-
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
-{% endstep %}
-
-{% step %}
-### Add additional information
-
-After authenticating on our platform using your Microsoft credentials, you will be prompted for additional information, such as the desired total **User** amount and a **Technical contact**.
-
-{% hint style="info" %}
-The **Technical contact** must have a mailbox connected to it, so we are able to notify you in case there are relevant issues with SCEPman.
-{% endhint %}
-
-{% hint style="success" %}
-If the plan contains chargeable add-ons, you can select them under **Extras**. For example, all SCEPman plans allow you to purchase the optional [SCEPman Setup Support](../support.md#scepman-setup-support) package.
-{% endhint %}
-
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-You will only be charged by Microsoft, once you have completed the enrolment on our landing page and received our welcome email.
-{% endhint %}
-{% endstep %}
-{% endstepper %}
 
 ### Why is my Azure Marketplace purchase not working?
 
