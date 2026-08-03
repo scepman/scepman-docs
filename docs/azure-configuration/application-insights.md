@@ -25,7 +25,7 @@ On the lefthand menu, expand Monitoring > Application Insights
 {% step %}
 ### Create a new Application Insights resource
 
-<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 For Windows based deployments, select **.NET** and select the **Collection level Recommended.** (For Linux based deployment, please choose **.NET Core**)
 

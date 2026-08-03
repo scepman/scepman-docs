@@ -18,7 +18,7 @@ Account for downtime before proceeding. SCEPman will be unable to issue or verif
 
 Navigate to Azure > Key Vaults > _Your SCEPman Key Vault_&#x20;
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}

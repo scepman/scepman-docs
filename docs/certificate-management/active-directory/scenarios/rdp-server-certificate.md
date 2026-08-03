@@ -67,13 +67,13 @@ In a Group Policy we configure the certificate template name and instruct machin
 
 Enter the name of the certificate template to be used for RDP server authentication. By default, this is `SCEPmanRdpServer`.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 #### Require use of specific security layer for remote (RDP) connections
 
 Select SSL here to enforce the use of the used certificate.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 {% endstepper %}
 

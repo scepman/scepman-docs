@@ -139,7 +139,7 @@ To perform a mid-term upgrade,
 
 * Click **Next**, review your **Payment method** and confirm the purchase by clicking **Buy now**.
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * The additional users will be added to your **existing SCEPman license key** automatically.
 
