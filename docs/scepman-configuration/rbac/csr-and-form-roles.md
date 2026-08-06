@@ -6,7 +6,7 @@ Applicable to SCEPman Certificate Master version 2.11 and above
 
 In addition to the roles described in [.](./ "mention"), there are some more that are not added to the Entra application by default as they might only be required in special circumstances.
 
-These roles can be seen as a more granular concept of what the `Request.*]` roles already provide while specifically granting the permissions to request certificates using a CSR or the form.
+These roles can be seen as a more granular concept of what the `Request.*` roles already provide while specifically granting the permissions to request certificates using a CSR or the form.
 
 ### CSR Roles
 
@@ -34,17 +34,15 @@ The form roles will allow users to create certificates using the built-in form i
 * **Request.SubCa.Form**
 * **Request.User.Form**
 
-
-
 ## Adding the Roles
 
-All these roles can be added by running the `Complete-SCEPmanInstallation` CMDlet in combination with the `-AddAdditionalCertMasterAppRoles` parameter. This requires version 2.11 or newer of the SCEPman PowerShell module.
+All these roles can be added by running the `Complete-SCEPmanInstallation` CMDlet. This requires version 2.11 or newer of the SCEPman PowerShell module.
 
 #### Example:
 
 {% code overflow="wrap" lineNumbers="true" %}
 ```powershell
 Install-Module SCEPman -Scope CurrentUser -Force
-Complete-SCEPmanInstallation app-scepman-contoso -AddAdditionalCertMasterAppRoles
+Complete-SCEPmanInstallation app-scepman-contoso
 ```
 {% endcode %}
