@@ -131,7 +131,7 @@
 * [Security & Privacy](other/security-faq.md)
 * [Support](other/support.md)
 * [Licensing](other/licensing/README.md)
-  * [Azure Marketplace](other/licensing/azure-marketplace.md)
+  * [Microsoft Marketplace](other/licensing/microsoft-marketplace.md)
   * [cleverbridge](other/licensing/cleverbridge.md)
 * [FAQs](other/faqs/README.md)
   * [General](other/faqs/general.md)
