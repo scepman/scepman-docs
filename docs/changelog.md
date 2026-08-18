@@ -10,6 +10,10 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ### 3.1 - June 2026
 
+#### SCEPman 3.1.26225
+
+* .NET Library patches (when running as Linux SC, which does not automatically update the runtime), especially upgrading System.Security.Cryptography.Xml to 10.0.11, [fixing some CVEs](https://github.com/dotnet/core/blob/main/release-notes/10.0/10.0.11/10.0.11.md#notable-changes)
+
 #### SCEPman 3.1.26152
 
 * New [Certificate Management REST API](certificate-management/management-rest-api/) for searching and revoking certificates
