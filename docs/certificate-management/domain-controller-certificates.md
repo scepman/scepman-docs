@@ -2,6 +2,8 @@
 
 {% hint style="info" %}
 This feature requires version **1.6** or above.
+
+Consider using our [Active Directory](active-directory/) endpoint instead.
 {% endhint %}
 
 {% hint style="warning" %}

@@ -34,7 +34,7 @@ In case we have extended a **Private Offer** to you or your MSP/distribution has
 
 Based on your preferred renewal interval, select (M) for monthly or (Y) for yearly renewal and click **Subscribe**.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -45,7 +45,7 @@ Based on your preferred renewal interval, select (M) for monthly or (Y) for year
 * We recommend to keep **Recurring billing** on so that you do not have to worry about a manual renewal of your subscription.
 * Click **Review + subscribe** and then **Subscribe** to deploy the **SaaS** resource to your **Resource group**.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 The random order of **Base Fees** und **Additional Users** under the **Price** information is attributed to limitations of the Azure Marketplace. Later during the enrolment process, we will provide you with transparent information on the expected licensing costs.
@@ -57,7 +57,7 @@ The random order of **Base Fees** und **Additional Users** under the **Price** i
 
 Once the deployment is complete, please navigate to our platform to complete the checkout. Therefore click **Configure account now**.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}

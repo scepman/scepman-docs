@@ -16,19 +16,23 @@ Geo-redundancy / high-availability is currently only available for (main) SCEPma
 
 As illustrated above, the geo-redundant deployment leverages an Azure Traffic Manager profile, that routes (DNS-based) requests to the SCEPman CA to a pair of SCEPman instances that are deployed in different geolocations. The individual SCEPman instances communicate with the same KeyVault, Storage Account and AAD and thus share the same Root CA. Besides load-balancing traffic based on a set of routing algorithms that you can choose from, Traffic Manager also constantly probes both instances of SCEPman. In case an instance becomes unavailable, all traffic will automatically be routed to the available instance.
 
-Microsoft discusses in [this article](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/app-service-web-app/multi-region) three different Geo-Redundancy strategies that can be used to manage this type of architecture. However, In our case, we will use the **Active/Active** approach. This means both regions are active, and requests are load-balanced between them. If one region becomes unavailable or has some latency for any reason, Traffic Manager will route the traffic to the second App Service.
+Microsoft discusses in [this article](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/app-service-web-app/multi-region) three different Geo-Redundancy strategies that can be used to manage this type of architecture. However, in our case, we will use the **Active/Active** approach. This means both regions are active, and requests are load-balanced between them. If one region becomes unavailable or has some latency for any reason, Traffic Manager will route the traffic to the second App Service.
 
 {% hint style="info" %}
-Make sure to take a look at [Microsofts list of available regions](https://learn.microsoft.com/en-us/azure/reliability/regions-list#azure-regions-list-1) and their corresponding paired region. Using unpaired regions can lead to issues during the setup of this redundancy.
+Make sure to take a look at [Microsoft's list of available regions](https://learn.microsoft.com/en-us/azure/reliability/regions-list#azure-regions-list-1) and their corresponding paired region. Using unpaired regions can lead to issues during the setup of this redundancy.
 {% endhint %}
 
 ## Workflow
 
-* First, the SCEPman App Service will be cloned into another geolocation.
-* Then, the Traffic Manager is configured and its Endpoints are added and connected to both SCEPman App Services.
-* Then, the custom domains for both App Services are configured.
-* Finally, the DNS CNAME record is configured, pointing your custom domain to the Traffic Manager.
+1. Clone the SCEPman App Service will be into another geolocation.
+2. Configure the Traffic Manager and connect its Endpoints to both SCEPman App Services.
+3. Configure the same Custom Domain for both App Services.
+4. Configure the DNS CNAME record, pointing your custom domain to the Traffic Manager.
 
+## Steps
+
+{% stepper %}
+{% step %}
 ### Clone App
 
 To clone an App Service, first you need to create a new **App Service Plan** in a second geolocation, this is where the cloned App will be deployed. You can create it in the same SCEPman Resource group or in a new one. See screenshot below:
@@ -58,12 +62,12 @@ New-SCEPmanClone -SourceAppServiceName <Your SCEPman App Service Name> -TargetAp
 * **TargetSubscriptionId:** (Optional) The ID of the Subscription where SCEPman shall be installed. Can be omitted if it is the same as SourceSubscriptionId.
 * **SearchAllSubscriptions:** (Optional) Set this flag to search all subscriptions for the SCEPman App Service. Otherwise, pre-select the right subscription in az or pass in the correct SubscriptionId.
 
-### **Example**
+#### **Example**
 
-Clone an existing SCEPman App Service "as-scepman-nrg5reuov63vk"
+Clone an existing SCEPman App Service "app-scepman-contoso"
 
 ```
-New-SCEPmanClone -SourceAppServiceName as-scepman-nrg5reuov63vk -TargetAppServiceName as-scepman-clone -TargetAppServicePlan asp-scepman-geo2 -SearchAllSubscriptions 6>&1
+New-SCEPmanClone -SourceAppServiceName app-scepman-contoso -TargetAppServiceName app-scepman-clone -TargetAppServicePlan asp-scepman-geo2 -SearchAllSubscriptions 6>&1
 ```
 
 ![](<../.gitbook/assets/2022-06-15 14_29_28-SCEPmanCloneApp.png>)
@@ -86,41 +90,48 @@ The original App Service should have the first artifact host by default, which p
 Cloning an App Service has some restrictions such as **autoscale** settings, **backup schedule** settings, **App Insights**, etc.. Configurations that cannot be cloned, must be manually configured again on the cloned App Service. Additionally, changes to the settings of one AppService will not be synchronized automatically to the second App Service if performed after the cloning operation. For more info visit [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions)
 {% endhint %}
 
+
+{% endstep %}
+
+{% step %}
 ### Setup Traffic Manager
 
 Follow the steps below to create and configure the Traffic Manager and balance the traffic between both SCEPman instances:
 
 1. Search in the Marketplace for **Traffic Manager profile** and click **Create**.
-2. Fill in the fields and choose your SCEPman resource group
+2. Fill in the fields and choose your SCEPman resource group\
+   ![](../.gitbook/assets/image.png)
+3. Then click **Create**.
+4. After your Traffic Manager is deployed, open it and click on **Configuration**
+5.  Change the settings as follows and **save**<br>
 
-![](<../.gitbook/assets/scepman-trafficmanager1 (15).png>)
+    <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-1. Then click **Create**.
-2. After your Traffic Manager is deployed, open it and click on **Configuration**
-3. Change the settings as follows and save
 
-![Traffic Manager Configuration](../.gitbook/assets/ReplaceTrafficManagerSS.png)
+{% endstep %}
 
-#### Adding Endpoints
-
-#### First Endpoint
+{% step %}
+### Adding Endpoints
 
 1. Then under **Settings** choose **Endpoints**
 2. Choose "Azure Endpoint" as **Type**, provide a name for the first Endpoint, and "App Service" as **Target resource type**
-3. Choose your primary SCEPman App Service as **Target resource**
+3.  Choose your primary SCEPman App Service as the **Target resource**<br>
 
-![Traffic Manager, Endpoint Configuration](<../.gitbook/assets/scepman-trafficmanager3 (1).png>)
+    <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+4. Repeat the same steps for the second endpoint and choose the second (cloned) SCEPman App Service as the **Target resource**
+{% endstep %}
 
-#### Second Endpoint
-
-Repeat the same steps for the second endpoint and choose the second (cloned) SCEPman App Service as a **Target resource**
-
+{% step %}
 ### Custom Domain Configuration
 
 After a successful deployment and configuration of the Traffic Manager Endpoints, you need to set up the **same** custom domain for **both** SCEPman instances as described [here](custom-domain.md).
 
 Make sure to change the value of the setting **AppConfig:BaseUrl** for **both** SCEPman App Services after the custom domains have been created.
 
+
+{% endstep %}
+
+{% step %}
 ### DNS Configuration
 
 In the Traffic Manager **Overview,** you will find the DNS name, that needs to be added to your DNS
@@ -140,8 +151,21 @@ Upon completing the configuration, ensure to update the SCEP Server URL in your 
 Example: [https://scepman.contoso.com/certsrv/mscep/mscep.dll](https://scepman.contoso.com/certsrv/mscep/mscep.dll)
 {% endhint %}
 
+
+{% endstep %}
+
+{% step %}
 ### Storage Account Geo-Redundancy
 
-The Storage Account used for SCEPman should also be configured for redundancy. The default SCEPman setup uses Locally Redundant Storage (LRS), which uses only a single region. For example, configure Geo-redundant storage (GRS).
+The default SCEPman setup uses Locally Redundant Storage (LRS), which uses only a single region.&#x20;
+
+Change the redundancy from Locally Redundant Storage (LRS) to Geo-redundant storage (GRS).
 
 ![Storage account redundancy dialog on Azure Portal](../.gitbook/assets/storage-account-redundancy.png)
+
+
+{% endstep %}
+{% endstepper %}
+
+
+
