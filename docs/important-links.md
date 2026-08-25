@@ -14,13 +14,13 @@ order: 2
 
 {% embed url="https://oliverkieselbach.com/2022/09/21/deep-dive-of-scep-certificate-request-renewal-on-intune-managed-windows-clients/" %}
 
-## SCEPman on Azure Marketplace (Deployment)
+## SCEPman on Microsoft Marketplace (Deployment)
 
-{% embed url="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman?tab=Overview" %}
+{% embed url="https://marketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman?tab=Overview" %}
 
-## SCEPman on Azure Marketplace (Subscription)
+## SCEPman on Microsoft Marketplace (Subscription)
 
-{% embed url="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman-transactable-prod" %}
+{% embed url="https://marketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman-transactable-prod" %}
 
 ## SCEPman on GitHub
 

@@ -1,10 +1,10 @@
 ---
-description: Azure Marketplace Deployment
+description: Microsoft Marketplace Deployment
 ---
 
 # Marketplace deployment
 
-* To deploy SCEPman from Azure Marketplace, please visit this [**link**](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman?tab=Overview).
+* To deploy SCEPman from Microsoft Marketplace, please visit this [**link**](https://marketplace.microsoft.com/en-us/marketplace/apps/glueckkanja-gabag.scepman?tab=Overview).
 * Click **Get it now** and afterwards **Continue**. You will be re-directed to the marketplace item on Azure Portal.
 
 <figure><img src="../../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
