@@ -8,7 +8,7 @@ _Linux: AppConfig\_\_ActiveDirectory\_\__<code class="expression">page.vars.cert
 
 **Value:** Certificate template name
 
-**Description:** This setting allows you to choose a custom template name for this certificate template. It is displayed when you manually enroll a certificate of that template. For maximum compatibility, choose a name witho only alphanumeric characters and no blanks.
+**Description:** This setting allows you to choose a custom template name for this certificate template. It is displayed when you manually enroll a certificate of that template. For maximum compatibility, choose a name with only alphanumeric characters and no blanks.
 
 # AppConfig:ActiveDirectory:<code class="expression">page.vars.cert_template</code>:GroupFilter
 
