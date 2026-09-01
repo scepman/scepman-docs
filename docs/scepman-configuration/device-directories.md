@@ -16,14 +16,14 @@ For recognizing the device behind an issued certificate, SCEPman requires the co
 
 When setting up SCEPman and certificate profiles in Intune, it is important to **decide which inventory should be used**.
 
-### Entra ID (AAD) vs. Intune
+### Entra ID vs. Intune
 
 Both directories have their pros and cons. In general, we **recommend Intune** as inventory since SCEPman 2.0:
 
 * **The Entra Device ID can change during enrollment (seen on iOS/iPadOS/macOS)**:\
-  The Entra Device ID is set to the Intune device ID until the device is finally AAD registered. Intune already issues the certificate before the device gets its final ID. As a result, SCEPman cannot find the device in the AAD after this ID change.
-* **Intune is often maintained better than Entra ID (AAD)**:\
-  In theory, the AAD and Intune device objects are independent of each other. Deleting a device in Intune, does not delete the corresponding AAD object. In addition, Autopilot devices can only be deleted in Intune and not in Microsoft Entra ID. So, the certificates would still be valid.
+  The Entra Device ID is set to the Intune device ID until the device is finally Entra ID registered. Intune already issues the certificate before the device gets its final ID. As a result, SCEPman cannot find the device in the Entra ID after this ID change.
+* **Intune is often maintained better than Entra ID**:\
+  In theory, the Entra ID and Intune device objects are independent of each other. Deleting a device in Intune, does not delete the corresponding Entra ID object. In addition, Autopilot devices can only be deleted in Intune and not in Microsoft Entra ID. So, the certificates would still be valid.
 
 ### SCEPman Configuration
 
@@ -35,4 +35,4 @@ Please also adjust the subject name on your needs as stated under [microsoft-int
 
 Please note, that `CN={{DeviceId}}` is currently not supported for Android Enterprise Fully Managed, Dedicated and Corporate-Owned Work Profile as stated in [Microsoft docs](https://docs.microsoft.com/en-us/mem/intune/protect/certificates-profile-scep#create-a-scep-certificate-profile). If those device types are in use, think about checking both directories or only Microsoft Entra ID.
 
-For **migrating** from Microsoft Entra ID to Intune ID or vice versa, **certificates** need to be **re-issued on all clients**. During that change, please configure SCEPman via [#appconfig-intunevalidation-devicedirectory](application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to check both directories (so, that both IDs are valid). After migration, you can switch to Intune or AAD as only directory.
+For **migrating** from Microsoft Entra ID to Intune ID or vice versa, **certificates** need to be **re-issued on all clients**. During that change, please configure SCEPman via [#appconfig-intunevalidation-devicedirectory](application-settings/scep-endpoints/intune-validation.md#appconfig-intunevalidation-devicedirectory "mention") to check both directories (so, that both IDs are valid). After migration, you can switch to Intune or Entra ID as only directory.
