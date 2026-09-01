@@ -7,7 +7,7 @@ description: >-
 
 # Iru (formerly Kandji)
 
-SCEPman can be connected to [Iru](https://www.iru.com/) as an External CA via SCEPman's static interface, and a challenge password enrolled devices will be able to obtain certificates.
+SCEPman can be connected to [Iru](https://www.iru.com/) as an External CA using SCEPman's static interface and a challenge password, enabling enrolled devices to obtain certificates.
 
 For more general information about other MDM solutions and SCEPman integration, please check [here](./).
 
@@ -57,7 +57,7 @@ The second step is to add a **SCEP Profile** to your **Blueprint**. Therefore, a
 * **Subject:** Optional subject name. **CN=$PROFILE\_UUID** will be automatically added from Iru as default common name. Iru allows you to add multiple CNs.
 
 {% hint style="warning" %}
-We have seen cases where macOS and iOS had problems in auto-selecting client certificates for network authentication purposes where more than two CNs were added.
+Occasionally macOS and iOS had problems auto-selecting client certificates for network authentication purposes when more than two CNs are added.
 {% endhint %}
 
 * **Key Size:** 2048

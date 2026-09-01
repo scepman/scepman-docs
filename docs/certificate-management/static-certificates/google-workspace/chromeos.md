@@ -14,7 +14,7 @@ As a first step, you must deploy SCEPman's root certificate. Therefore, follow t
 
 <figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
 
-2. Now upload your SCEPmen root CA to your Google Workplace. In your Google **Admin console** (admin.google.com) navigate to **Menu** > **Devices** > **Networks** > **Certificates** > **ADD CERTIFICATE**
+2. Now upload your SCEPman root CA to your Google Workspace. In your Google **Admin console** (admin.google.com) navigate to **Menu** > **Devices** > **Networks** > **Certificates** > **ADD CERTIFICATE**
 
 {% hint style="warning" %}
 Be aware that the Google Admin console only accepts certificates in PEM format. You will need to convert SCEPman root CA (which is downloaded in DER by default) using _openssl_ or by importing it in Windows and exporting it again in Base-64 format.
@@ -24,12 +24,12 @@ Be aware that the Google Admin console only accepts certificates in PEM format. 
 
 ## Add a SCEP Profile
 
-The SCEP profile defines the certificate that lets users access your WiFi. Assign the profile to specific users by adding it to an organisational unit. Set up multiple SCEP profiles to manage access by device type. The following configuration example&#x20;
+The SCEP profile defines the certificate that lets users access your WiFi. Assign the profile to specific users by adding it to an organizational unit. Set up multiple SCEP profiles to manage access by device type. The following configuration example
 
 1. In your Google **Admin console** (admin.google.com) navigate to **Menu** > **Devices** > **Network**
 2. Click **Create SCEP Profile**.
 3. Click **Add Secure SCEP Profile**.
-4. Enter the configuration details for the profile.&#x20;
+4. Enter the configuration details for the profile.
 
 | Attribute            | Value (Device)      | Value (User)      |
 | -------------------- | ------------------- | ----------------- |
@@ -43,7 +43,7 @@ The SCEP profile defines the certificate that lets users access your WiFi. Assig
 
 <figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
 
-<table><thead><tr><th width="246">Attribute</th><th width="282">Value (Device)</th><th>Value (User)</th></tr></thead><tbody><tr><td><strong>Subject name format</strong></td><td><strong>Fully distinguished name</strong></td><td><strong>Fully distinguished name</strong></td></tr><tr><td></td><td><strong>Common name</strong>: ${DEVICE_SERIAL_NUMBER}</td><td><strong>Common name:</strong> ${USER_EMAIL}</td></tr><tr><td></td><td><strong>Company name</strong>: Your company name.</td><td><strong>Company name</strong>: Your company name.</td></tr><tr><td></td><td><strong>Organisation unit:</strong> Your organizational unit. This is optional.</td><td><strong>Organisation unit:</strong> Your organizational unit. This is optional.</td></tr><tr><td></td><td><strong>Locality</strong>: Your organisation unit's location. This is optional.</td><td><strong>Locality</strong>: Your organisation unit's location. This is optional.</td></tr><tr><td></td><td><strong>State</strong>: Your organisation unit's state. This is optional.</td><td><strong>State</strong>: Your organisation unit's state. This is optional.</td></tr><tr><td></td><td><strong>Country / region</strong>: Your organisation unit's country. This is optional.</td><td><strong>Country / region</strong>: Your organisation unit's country. This is optional.</td></tr><tr><td><strong>Subject alternative name</strong></td><td>Default: <strong>None</strong><br><br>This can be set to <strong>Custom</strong> when the SAN shall be used, e.g. as outer identity when authenticating to a WiFi using EAP-TLS.</td><td><p><strong>Custom</strong></p><p></p><p></p><p></p><p></p><p><strong>User Principal:</strong> ${USER_EMAIL_NAME}</p></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th width="246">Attribute</th><th width="282">Value (Device)</th><th>Value (User)</th></tr></thead><tbody><tr><td><strong>Subject name format</strong></td><td><strong>Fully distinguished name</strong></td><td><strong>Fully distinguished name</strong></td></tr><tr><td></td><td><strong>Common name</strong>: ${DEVICE_SERIAL_NUMBER}</td><td><strong>Common name:</strong> ${USER_EMAIL}</td></tr><tr><td></td><td><strong>Company name</strong>: Your company name.</td><td><strong>Company name</strong>: Your company name.</td></tr><tr><td></td><td><strong>Organization unit:</strong> Your organizational unit. This is optional.</td><td><strong>Organization unit:</strong> Your organizational unit. This is optional.</td></tr><tr><td></td><td><strong>Locality</strong>: Your organization unit's location. This is optional.</td><td><strong>Locality</strong>: Your organization unit's location. This is optional.</td></tr><tr><td></td><td><strong>State</strong>: Your organization unit's state. This is optional.</td><td><strong>State</strong>: Your organization unit's state. This is optional.</td></tr><tr><td></td><td><strong>Country / region</strong>: Your organization unit's country. This is optional.</td><td><strong>Country / region</strong>: Your organization unit's country. This is optional.</td></tr><tr><td><strong>Subject alternative name</strong></td><td>Default: <strong>None</strong><br><br>This can be set to <strong>Custom</strong> when the SAN shall be used, e.g. as outer identity when authenticating to a WiFi using EAP-TLS.</td><td><p><strong>Custom</strong></p><p><strong>User Principal:</strong> ${USER_EMAIL_NAME}</p></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
 
 <figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
 
@@ -60,7 +60,7 @@ The SCEP profile defines the certificate that lets users access your WiFi. Assig
 
 <figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
-5. The SCEP profile is automatically distributed to users in the organisational unit.
+5. The SCEP profile is automatically distributed to users in the organizational unit.
 6. To check for this certificate, in your Chromebook navigate to **chrome://certificate.manager** > **Your certificates.**
 
 <figure><img src="../../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>

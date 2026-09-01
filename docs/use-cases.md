@@ -13,11 +13,11 @@ Certificates issued by SCEPman are widely used for the purpose of certificate-ba
 * Fortinet FortiGate
 * Palo Alto GlobalProtect
 
-In addition to typical user-centric client devices such as laptops, PCs or Macs, **kiosk devices** such as point of sales or self-checkout systems, scanner/barcode guns or customer terminals are often equipped with certificates from SCEPman for secure network authentication.
+In addition to typical user-centric client devices such as laptops, PCs or Macs, **kiosk devices** such as POS or self-checkout systems, scanner/barcode guns or customer terminals are often equipped with certificates from SCEPman for secure network authentication.
 
 ## Certificate-based Authentication
 
-You can enrol user authentication certificates with SCEPman for TLS client authentication. This allows authentication to web sites or services such as
+You can enroll user authentication certificates with SCEPman for TLS client authentication. This allows authentication to web sites or services such as
 
 * Internal web applications
 * [Windows](certificate-management/api-certificates/api-enrollment/windows-server.md) or [Linux](certificate-management/api-certificates/api-enrollment/linux-server.md) servers
@@ -41,7 +41,7 @@ SCEPman can [issue sub CA certificates](certificate-management/certificate-maste
 
 To automate the deployment of relevant configuration profiles and to keep certificates up to date (auto-renewal), we recommend to use SCEPman along with an MDM solution. While SCEPman natively integrates with Microsoft Endpoint Manager/Intune and Jamf Pro, our customers have successfully deployed SCEPman along with other MDM solutions.
 
-Below table provides an overview of the most commonly used MDM solutions and indicates how/if certificate revocation is possible.
+The table below provides an overview of the most commonly used MDM solutions and indicates how/if certificate revocation is possible.
 
 | MDM Solution                                                                      | Supported Platforms                                                                                                                                                          | Issuance & Auto-renewal                      | Automatic Revocation         | Manual Revocation                                                                  | Links                                                                                                                                                                                                                                                                                                                                                                    |
 | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | ---------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -68,4 +68,4 @@ Since SCEPman is a cloud-native and general purpose PKI, many of our clients who
 
 ## IoT Devices
 
-SCEPman can be utilized to supply certificates to IoT devices. Therefore, SCEPman supports an ECC CA allowing performance- and energy-optimized cryptographic algorithms on devices with limited computational resources or on devices relying on battery power. SCEPman's flexibility supports issuing certificates with long validity periods allowing a long-term offline operation without the need to renew certificates regularly. Furthermore, certificates can be enrolled on an assembly line in a convenient way by leveraging SCEPman's REST API with Microsoft Entra ID (Azure AD)-based authentication.
+SCEPman can be utilized to supply certificates to IoT devices. Furthermore, SCEPman supports an ECC CA allowing performance and energy-optimized cryptographic algorithms on devices with limited computational resources or on devices relying on battery power. SCEPman's flexibility supports issuing certificates with long validity periods allowing a long-term offline operation without the need to renew certificates regularly. Furthermore, certificates can be enrolled on an assembly line in a convenient way by leveraging SCEPman's REST API with Microsoft Entra ID (Azure AD)-based authentication.

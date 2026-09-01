@@ -33,10 +33,10 @@ Certificate Master maintains an audit trail on administrator activity (UPNs).
    * Configuration data always contains the SCEPman CA public/private key pair and certificate, which is securely stored in Azure Key Vault.
    * Additionally, configuration data may contain secrets such as static SCEP challenges or passwords. The purpose of those parameters is explained in the SCEPman documentation.
    * All configuration parameters can be stored in Azure Key Vault for enhanced security.
-2. Issued  Certificates
+2. Issued Certificates
    * All issued certificates are stored in an Azure Storage Account - _excluding private keys_.
    * For the data that might be part of a certificate, please refer to [question 1](security-faq.md#id-1.-which-data-is-processed-by-scepman).
-   * This behaviour can be [disabled](../scepman-configuration/application-settings/basics.md#appconfig-enablecertificatestorage).
+   * This behavior can be [disabled](../scepman-configuration/application-settings/basics.md#appconfig-enablecertificatestorage).
    * When issuing certificates via Certificate Master, the requester (Microsoft Entra ID (Azure AD) UPN) is stored.
    * When revoking certificates via Certificate Master, the certificate revocation status and the identity of the user who revoked it (Microsoft Entra ID (Azure AD) UPN) is stored.
 3.  Logging
@@ -100,7 +100,7 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
 1. Microsoft Graph `User.Read` (via App Registration):\
    \
    With this permission, Certificate Master determines who manually requests or revokes a certificate.
-2. Micrsoft Graph `DeviceManagementManagedDevices.Read.All` and `DeviceManagementConfiguration.Read.All` (as Managed Identity):\
+2. Microsoft Graph `DeviceManagementManagedDevices.Read.All` and `DeviceManagementConfiguration.Read.All` (as Managed Identity):\
    \
    With these permissions, Certificate Master requests the list of issued certificates via Intune. Administrators can review and manually revoke these certificates.
 
@@ -233,7 +233,7 @@ SCEPman leverages Managed Identities to implement a secure permission model in y
 * The database uses the Table service of an Azure Storage Account. Thus, protection relies on the mechanisms built into Azure.
 * Especially, Azure employs role-based access to manage permissions to the data.
 * Azure Storage uses database encryption and supports customer-managed keys.
-* The Azure Storage Account uses a private endpoint and can only be accessed from SCEPman  (default for SCEPman installations of version 2.8 and above).
+* The Azure Storage Account uses a private endpoint and can only be accessed from SCEPman (default for SCEPman installations of version 2.8 and above).
 
 #### Logs
 
@@ -321,13 +321,13 @@ _Yes_, that is actually already the default for new SCEPman installations.
 
 ### App Services
 
-#### 2. TLS: Can `Client certificate mode` be set to `Require`?&#x20;
+#### 2. TLS: Can `Client certificate mode` be set to `Require`?
 
-_No_, as this would break SCEPman's functionality. This is because SCEPman enrolls client certificates, so the clients do not yet have client certificates to authenticate with (chicken-egg-problem). That is not a security issue, though, as the SCEP protocol uses its own authentication mechanisms through the SCEP challenge. Hence, SCEPman needs an exemption from policies enforcing mutual TLS. The `Client certificate mode` must be set to `Ignore` or `Optional`. &#x20;
+_No_, as this would break SCEPman's functionality. This is because SCEPman enrolls client certificates, so the clients do not yet have client certificates to authenticate with (chicken-egg-problem). That is not a security issue, though, as the SCEP protocol uses its own authentication mechanisms through the SCEP challenge. Hence, SCEPman needs an exemption from policies enforcing mutual TLS. The `Client certificate mode` must be set to `Ignore` or `Optional`.
 
 #### 3. Can the `HTTP version` be set to `2.0`?
 
-While SCEPman should work with any of the available HTTP versions, as of today, we only support the default `HTTP 1.1` - mainly due to lack of testing.&#x20;
+While SCEPman should work with any of the available HTTP versions, as of today, we only support the default `HTTP 1.1` - mainly due to lack of testing.
 
 When changing this setting - at your own risk - please consider that it is not only SCEPman that needs to support the newer HTTP version. The different types of clients also need to support that version of HTTP, i.e. the OS-integrated SCEP clients of Window, macOS, iOS, iPadOS the ones in IoT devices, the OCSP clients on the same platforms, but also NACs of different vendors.
 
@@ -357,7 +357,7 @@ Additionally, not all SCEP clients support TLS 1.3. One important example is the
 | Company                                          | Services                                                                  | Contact                                                                                   | Purpose                                                                                            |
 | ------------------------------------------------ | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | Microsoft Corporation                            | Cloud Services (Azure)                                                    | <p>Building 3, Carmanhall Road Sandyford,<br>Industrial Estate 18, Dublin,<br>Ireland</p> | See [here](../scepman-deployment/deployment-guides/enterprise-guide-1.md#overview-azure-resource). |
-| GitHub Inc (subsidiary of Microsoft Corporation) | git code repository, integration, testing and release automation, storage | <p>88 Colin P Kelly Jr St, </p><p>San Francisco,</p><p>CA 94107, </p><p>United States</p> | Code repository, CI/CD pipeline, binary storage                                                    |
+| GitHub Inc (subsidiary of Microsoft Corporation) | git code repository, integration, testing and release automation, storage | <p>88 Colin P Kelly Jr St,</p><p>San Francisco,</p><p>CA 94107,</p><p>United States</p>   | Code repository, CI/CD pipeline, binary storage                                                    |
 
 ## Secure Development Practices
 
@@ -371,7 +371,7 @@ This is how we implement [Secure Design Practices recommended by the SDL](https:
 
 #### Design and Threat Model as a Team
 
-Our Thread Modelling practice founds on the [recommendations of the Tufts Security and Privacy Lab](https://tsp.cs.tufts.edu/tmnt/threatmodeling.html). We discuss design decisions and potential STRIDE threats in a heterogeneous team of developers, our [CSOC ](https://www.glueckkanja.com/en/security/cloud-security-operations-center/)and PKI consultants, and support crew.
+Our Threat Modeling practice is based on the [recommendations of the Tufts Security and Privacy Lab](https://tsp.cs.tufts.edu/tmnt/threatmodeling.html). We discuss design decisions and potential STRIDE threats in a heterogeneous team of developers, our [CSOC ](https://www.glueckkanja.com/en/security/cloud-security-operations-center/)and PKI consultants, and support crew.
 
 #### Prefer Platform Security to Custom Code
 
@@ -397,7 +397,7 @@ SCEPman uses Managed Identities that have only [the permissions needed for opera
 
 #### Minimize Blast Radius
 
-We strive to minimize the possible damage in case of a successful attack. For example, our default installation enables the Key Vault[ Soft Delete feature with Purge Protection](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview) with a [non-exportable HSM-backed private key](https://learn.microsoft.com/en-us/azure/key-vault/keys/about-keys#hsm-protected-keys) for the Certification Authority. Soft Delete with Purge Protection makes sure that no rogue admin or compromised admin account can delete the private key of the CA -- it can be restored in minutes to continue with normal operations and not even a Global Admin can purge it before a 90 days period. The non-exportable HSM-backed CA key makes sure that even an attacker with the highest possible privileges cannot steal the CA key.
+We strive to minimize the possible damage in case of a successful attack. For example, our default installation enables the Key Vault[ Soft Delete feature with Purge Protection](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview) with a [non-exportable HSM-backed private key](https://learn.microsoft.com/en-us/azure/key-vault/keys/about-keys#hsm-protected-keys) for the Certification Authority. Soft Delete with Purge Protection makes sure that no rogue admin or compromised admin account can delete the private key of the CA. The private key can be restored in minutes to continue with normal operations and not even a Global Admin can purge it before a 90-day period. The non-exportable HSM-backed CA key makes sure that even an attacker with the highest possible privileges cannot steal the CA key.
 
 #### Minimize Attack Surface
 
@@ -407,7 +407,7 @@ Using [Private Endpoints](../azure-configuration/private-endpoints.md), we make 
 
 #### Consider Abuse Cases
 
-When SCEPman receives an authorized certificate signing requests (CSRs), it is still subject to several configurable restrictions. For example, the lifetime can never exceed the [configured maximum validity period](../scepman-configuration/application-settings/certificates.md#appconfig-validityperioddays), even if this was requested.
+When SCEPman receives an authorized certificate signing request (CSR), it is still subject to several configurable restrictions. For example, the lifetime can never exceed the [configured maximum validity period](../scepman-configuration/application-settings/certificates.md#appconfig-validityperioddays), even if this was requested.
 
 #### Monitor and Alert on Security Events
 
@@ -434,7 +434,7 @@ No.
   * Experience-based testing
   * 3rd-party code analysis, e.g. Sonar, Dependabot, and others
 
-### 6. Do you regularly perform penetration tests?&#x20;
+### 6. Do you regularly perform penetration tests?
 
 No.
 
