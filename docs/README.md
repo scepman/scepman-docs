@@ -6,13 +6,15 @@ description: Cloud PKI & Certificate Management for Microsoft Intune and other M
 
 ## Overview
 
-SCEPman is a slim and resource-friendly solution to issue and validate certificates using Simple Certificate Enrollment Protocol (SCEP). **It is an Azure Web App providing the SCEP protocol and works directly with the Microsoft Graph and Intune API.** SCEPman uses an Azure Key Vault based Root CA and certificate creation. By default, no other component is involved, neither a database nor any other stateful storage, except the Azure Key Vault itself. That said, SCEPman **will not need any backup procedures** or other operation level tasks. Only an Azure subscription is necessary to deploy it.
+SCEPman is a slim and resource-friendly solution to issue and validate certificates using Simple Certificate Enrollment Protocol (SCEP). **It is an Azure Web App providing the SCEP protocol and works directly with the Microsoft Graph and Intune API.** SCEPman uses an Azure Key Vault based Root CA and certificate creation.&#x20;
 
-SCEPman gives you control over how and where data is processed and stored. Depending on the deployment model, SCEPman can run either within **your Azure tenant** or as a **managed SaaS offering**. No external vendor permissions in your tenant are required.
+By default, no other component is involved, neither a database nor any other stateful storage, except the Azure Key Vault itself. As a result, SCEPman is stateless for core functionality and **will not need any backup procedures**.&#x20;
+
+SCEPman gives you control over how and where data is processed and stored. Depending on the deployment model, SCEPman can run either within **your Azure tenant** or as a **managed SaaS offering**. SCEPman does not require any external vendor permissions.
 
 ![SCEP flow with Microsoft Intune](.gitbook/assets/scepman-flowchart.webp)
 
-The following documentation will show you a straightforward way to deploy certificates to modern cloud managed clients. Without any on-premises PKI your users and devices will be able to get certificates.
+The following documentation will show you a straightforward way to deploy certificates to modern cloud managed clients.&#x20;
 
 ## SCEPman vs. Legacy PKI
 

@@ -28,13 +28,7 @@ A user subscription is bound to a single user for at least one calendar month an
 
 ### User & Device Certificates
 
-The subscription of a "user" is required for each user, who or whose device is
-
-* **enabled to request**,
-* **using** or
-* **storing**
-
-certificates that are issued by SCEPman for the **user** or the user's **device**(s).
+The subscription of a "user" is required for each user, who or whose device is enabled to **request, use or store** certificates that are issued by SCEPman for the **user** or the user's **device**(s).
 
 ### DC Certificates
 
@@ -111,10 +105,10 @@ These special use cases are:
   * Example: A supermarket has a staff of 1,000 people. The staff does not work with PCs and does not have an Entra ID account. They share 400 barcode scanner devices. SCEPman issues device certificates to the barcode scanners only.\
     Needed subscription: 400 "users"
 * **Device Sharing**\
-  Environments where the ratio between devices and users is < 0,5.
+  Environments where the ratio between devices and users is < 0.5.
   * Example: A school has 2,000 students and 600 devices. SCEPman issues device certificates to the 600 devices only.\
     Needed subscription: 600 "users"
 
 {% hint style="warning" %}
-For all device-based licensing cases, device certificates are allowed only.
+For all device-based licensing cases, only device certificates are allowed.
 {% endhint %}

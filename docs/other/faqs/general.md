@@ -50,10 +50,10 @@ However, if you prefer to hide the homepage from public access, you can do it us
 By changing the CA Subject, you must issue a new Root CA and deploy it to all users, AND deploy all client/device certificates again. The old certificates are then no longer valid.
 {% endhint %}
 
-1. Navigate to your SCEPman App Service > Environment Variables
+1. Navigate to your SCEPman App Service > Environment Variables.
 2. Change the CN value of the setting [`AppConfig:KeyVaultConfig:RootCertificateConfig:Subject`](../../scepman-configuration/application-settings/dependencies-azure-services/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-subject) to the desired subject name.
-3. Change the value of [`AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName`](../../scepman-configuration/application-settings/dependencies-azure-services/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-certificatename) to the new subject name.\
-   **Note:** This is only visible in Azure KeyVault and not on the certificate itself is only a reference to the CA certificate within Azure Key Vault. As it is part of the URL, there are name restrictions, like limitations to alphanumeric characters, numbers, and dashes. **Spaces are not allowed.**
+3. Change the value of [`AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName`](../../scepman-configuration/application-settings/dependencies-azure-services/azure-keyvault.md#appconfig-keyvaultconfig-rootcertificateconfig-certificatename) to the new Subject name.\
+   **Note:** This is only visible in Azure KeyVault and is only a reference to the CA certificate within Azure Key Vault. As it is part of the URL, there are name restrictions, like limitations to alphanumeric characters, numbers, and dashes. **Spaces are not allowed.**
 4. After changing both values, save and restart the App Service.
 5. Navigate to your SCEPman homepage and issue a new Root CA as described [here](../../scepman-configuration/first-run-root-cert.md).
 6. Download the new Root CA and upload it to your MDM, then re-deploy the client certificates again to get the new subject.

@@ -25,7 +25,7 @@ SCEP, EST, OCSP and CRL rely on HTTP(S), i.e. the following data is visible to S
 * Client IP Address + Port
 * User agent (operating system & browser information)
 
-Certificate Master maintains an audit trail on administrator activity (UPNs).
+Certificate Master maintains an audit trail of administrator activity (UPNs).
 
 ### 2. Which data is persistently stored by/on behalf of SCEPman and how?
 
@@ -391,9 +391,9 @@ Our logging based on Azure Monitor allows surveillance of SCEPman's operations. 
 
 #### Enforce Least Privilege
 
-Our RBAC model for Certificate Master allows to assign only those permissions to users that they really need.
+Certificate Master's RBAC model lets you assign users only the permissions they need.
 
-SCEPman uses Managed Identities that have only [the permissions needed for operation](security-faq.md#id-4.-which-tenant-permissions-does-the-admin-have-to-consent-to).
+SCEPman uses Managed Identities that only have [the permissions needed for operation](security-faq.md#id-4.-which-tenant-permissions-does-the-admin-have-to-consent-to).
 
 #### Minimize Blast Radius
 
@@ -411,13 +411,13 @@ When SCEPman receives an authorized certificate signing request (CSR), it is sti
 
 #### Monitor and Alert on Security Events
 
-If SCEPman detects Security Events, they will be logged as Warning or Error to the logs. The integration with Azure Monitor and Azure Event Hub makes it easy to [configure alerts](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview) or analyze these Security Events with a SIEM.
+When SCEPman detects security events, it logs them at the Warning or Error level. Azure Monitor and Azure Event Hub integrations let you [configure alerts](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview) or analyze events with a SIEM.
 
 ### 3. How do you secure your own development environment?
 
 As part of a company that also provides CSOC services and security consulting, we have high security standards for our devices, processes, and user awareness. We are part of Microsoft MISA, ISO 27001-certified, and Microsoft Partner of the Year with our Security offerings.
 
-Our source repositories have Branch Protection rules and we assign only the least necessary principles to the repositories and deployment pipelines to individual developer accounts. We automate tests and deployments where possible to reduce the attack surface using compromised accounts.
+Our source repositories have Branch Protection rules and we assign only the least necessary principles to the repositories and deployment pipelines to individual developer accounts. We automate tests and deployments where possible to reduce the attack surface from compromised accounts.
 
 ### 4. Is SCEPman part of a bug-bounty program?
 
@@ -438,4 +438,6 @@ No.
 
 No.
 
-As part of our Secure Development Practices, we employ tools (e.g. static code analysis) that scan the code base for CVEs and other common exploits (including dependencies such as 3rd party libraries) that could impact the security of the endpoints SCEPman exposes. Before any release, any relevant findings are assessed and remediated, to ensure SCEPman remains free from any known vulnerabilities. We neither perform penetration tests ourselves, nor do we use 3rd party "Penetration Test-as-a-Service" tools. For the former, we see an inherent conflict of interest. For the latter, since typical penetration test services often simply check the exposed endpoints against CVEs and other known exploits, we do not see any added value to the checks we already perform using static code analysis. If you wish to perform your own penetration tests, please [reach out to us](https://support.scepman.com/support/tickets/new?ticket_form=drop_a_question_%28scepman%29) and tell us about your requirements.
+As part of our Secure Development Practices, we employ tools (e.g. static code analysis) that scan the code base for CVEs and other common exploits (including dependencies such as 3rd party libraries) that could impact the security of the endpoints SCEPman exposes. Before any release, any relevant findings are assessed and remediated, to ensure SCEPman remains free from any known vulnerabilities.&#x20;
+
+We neither perform penetration tests ourselves, nor do we use 3rd party "Penetration Test-as-a-Service" tools. For the former, we see an inherent conflict of interest. For the latter, since typical penetration test services often simply check the exposed endpoints against CVEs and other known exploits, we do not see any benefits over the checks we already perform using static code analysis. If you wish to perform your own penetration tests, please [reach out to us](https://support.scepman.com/support/tickets/new?ticket_form=drop_a_question_%28scepman%29) and tell us about your requirements.
