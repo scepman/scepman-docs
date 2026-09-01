@@ -1,17 +1,17 @@
 ---
 description: >-
-  Issue certificates in Kandji by connecting SCEPman as an External CA. Devices
+  Issue certificates in Iru by connecting SCEPman as an External CA. Devices
   will be able to obtain certificates using SCEPman's static interface and a
   challenge password enrolled.
 ---
 
-# Kandji
+# Iru (formerly Kandji)
 
-SCEPman can be connected to [Kandji](https://www.kandji.io/) as an External CA via SCEPman's static interface, and a challenge password enrolled devices will be able to obtain certificates.
+SCEPman can be connected to [Iru](https://www.iru.com/) as an External CA via SCEPman's static interface, and a challenge password enrolled devices will be able to obtain certificates.
 
 For more general information about other MDM solutions and SCEPman integration, please check [here](./).
 
-## Enable Kandji Integration
+## Enable Iru Integration
 
 Integration of SCEPman can be easily enabled via the following environment variables on SCEPman App Service:
 
@@ -23,22 +23,22 @@ You can differentiate between the SCEPman App Service and the Certificate Master
 | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------: |
 |                        [AppConfig:StaticValidation:Enabled](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-enabled)                       | Enable 3rd-party validation                                                                                                                                                                                                                                                                             | _**true**_ to enable, _**false**_ to disable |
 |                [AppConfig:StaticValidation:RequestPassword](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-requestpassword)               | <p>Certificate signing requests sent to SCEPman for signing are authenticated with this secure static password<br><br><strong>Recommendation</strong>: Store this secret in <a href="../../scepman-configuration/application-settings/#secure-configuration-in-azure-key-vault">Azure KeyVault</a>.</p> |      _generate a 32 character password_      |
-|       [AppConfig:StaticValidation:ValidityPeriodDays](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-validityperioddays) (optional)       | Days certificates issued via Kandji are valid                                                                                                                                                                                                                                                           |                      365                     |
+|       [AppConfig:StaticValidation:ValidityPeriodDays](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-validityperioddays) (optional)       | Days certificates issued via Iru are valid                                                                                                                                                                                                                                                              |                      365                     |
 | [AppConfig:StaticValidation:EnableCertificateStorage](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-enablecertificatestorage) (optional) | Store requested certificates in the Storage Account, in order to show them in SCEPman Certificate Master                                                                                                                                                                                                | _**true**_ to enable, _**false** to disable_ |
 
 {% hint style="warning" %}
 After adding or editing SCEPman configuration parameters, you need to restart the App Service.
 {% endhint %}
 
-## Kandji Configuration
+## Iru Configuration
 
 ### SCEPman Root Certificate
 
 As a first step, you must deploy SCEPman's root certificate. Download this CA certificate via the SCEPman website:
 
-![SCEPman Website](<../../.gitbook/assets/image-2 (10).png>)
+![SCEPman Website](../../.gitbook/assets/image-2.png)
 
-In Kandji, navigate to **Library** on the left navigation bar and add a **Certificate Library Item** to your Blueprint.
+In Iru, navigate to **Library** on the left navigation bar and add a **Certificate Library Item** to your Blueprint.
 
 <figure><img src="../../.gitbook/assets/2023-03-09 12_51_21-Window.png" alt=""><figcaption><p>Configure a Certificate Payload</p></figcaption></figure>
 
@@ -54,7 +54,7 @@ The second step is to add a **SCEP Profile** to your **Blueprint**. Therefore, a
 * **Name:** An optional SAN attribute
 * **Challenge**: Is required to authenticate CSR requests sent to SCEPman's static SCEP interface. It must match the [value](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-requestpassword) you have configured [above](kandji-1.md#enable-kandji-integration).
 * **Fingerprint:** Optional CA fingerprint. It is highly recommended to configure this value as it provides an additional level of security. You can find it on your SCEPman website as **CA Thumbprint**.
-* **Subject:** Optional subject name. **CN=$PROFILE\_UUID** will be automatically added from Kandji as default common name. Kandji allows you to add multiple CNs.
+* **Subject:** Optional subject name. **CN=$PROFILE\_UUID** will be automatically added from Iru as default common name. Iru allows you to add multiple CNs.
 
 {% hint style="warning" %}
 We have seen cases where macOS and iOS had problems in auto-selecting client certificates for network authentication purposes where more than two CNs were added.
@@ -63,7 +63,7 @@ We have seen cases where macOS and iOS had problems in auto-selecting client cer
 * **Key Size:** 2048
 * **Key Usage:** Both, signing and encryption
 
-For more information, please check [Kandji's documentation](https://support.kandji.io/support/solutions/articles/72000559782-scep-profile).
+For more information, please check [Iru's documentation](https://support.kandji.io/support/solutions/articles/72000559782-scep-profile).
 
 <figure><img src="../../.gitbook/assets/2023-03-09 14_43_19-Kandji.png" alt=""><figcaption><p>Adding a SCEP Profile</p></figcaption></figure>
 

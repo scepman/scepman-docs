@@ -44,7 +44,7 @@
   * [Addigy](certificate-management/static-certificates/addigy.md)
   * [Google Workspace](certificate-management/static-certificates/google-workspace/README.md)
     * [ChromeOS](certificate-management/static-certificates/google-workspace/chromeos.md)
-  * [Kandji](certificate-management/static-certificates/kandji-1.md)
+  * [Iru (formerly Kandji)](certificate-management/static-certificates/kandji-1.md)
   * [Mosyle](certificate-management/static-certificates/mosyle.md)
   * [SOTI MobiControl](certificate-management/static-certificates/soti-mobicontrol.md)
 * [Certificate Master](certificate-management/certificate-master/README.md)
