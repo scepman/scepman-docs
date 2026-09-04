@@ -49,7 +49,7 @@ The **client secret** generated as part of this **App registration** has an expi
 
 7. Navigate to the Certificate Master **App service** and then to "Settings" > "Environment variables".
 8. Now you have two options:
-   1. If you want users from your **home tenant** to log in to Certificate Master and issue certificates, which includes guest users in your home tenant, e.g. from your target tenant.&#x20;
+   1. If you want users from your **home tenant** to log in to Certificate Master and issue certificates, which includes guest users in your home tenant, e.g. from your target tenant.
 
 <figure><img src="../../.gitbook/assets/scepman-split-graphic2.png" alt=""><figcaption><p>Option 1: Users from Home Tenant log in to Certificate Master</p></figcaption></figure>
 
@@ -57,7 +57,7 @@ If that is the case, **rename** the following settings (**do not change their va
 
 <table><thead><tr><th width="385">Original name</th><th>New name</th></tr></thead><tbody><tr><td><code>AppConfig:AuthConfig:TenantId</code></td><td><code>AppConfig:AuthConfig:HomeTenantId</code></td></tr><tr><td><code>AppConfig:AuthConfig:ApplicationId</code></td><td><code>AppConfig:AuthConfig:HomeApplicationId</code></td></tr></tbody></table>
 
-b. You want users from your **target tenant** to log in to Certificate Master and issue certificates, which includes guest users in your target tenant, e.g. from your home tenant.&#x20;
+b. You want users from your **target tenant** to log in to Certificate Master and issue certificates, which includes guest users in your target tenant, e.g. from your home tenant.
 
 <figure><img src="../../.gitbook/assets/scepman-split-graphic3.png" alt=""><figcaption><p>Option 2: Users from the Target Tenant log in to Certificate Master</p></figcaption></figure>
 
@@ -72,7 +72,7 @@ Register-SCEPmanCertMaster -CertMasterBaseURL <url>
 
 Replace `<url>` with your Certificate Master URL
 
-* The **CMDlet** will output an **Application Id** and a **Tenant Id** (that of the **target tenant**). Enter these two values as&#x20;
+* The **CMDlet** will output an **Application Id** and a **Tenant Id** (that of the **target tenant**). Enter these two values as
   * `AppConfig:AuthConfig:HomeApplicationId` and
   * `AppConfig:AuthConfig:HomeTenantId` in your Certificate Master settings.
 * Now **create** the following new application settings, possibly overriding the existing ones, with the same values as in SCEPman:
@@ -81,7 +81,7 @@ Replace `<url>` with your Certificate Master URL
 
 9. Save the changes
 10. Restart the SCEPman Certificate Master **App service**.
-11. Grant the rights to request certificates via the **Certificate Master** web app, see [here](../post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website)
+11. Grant the rights to request certificates via the **Certificate Master** web app, see [here](../post-installation-config.md#granting-the-rights-to-request-certificates-via-the-certificate-master-website).
 
 As an overview, here are the accounts used by **Certificate Master** and what they are used for:
 
@@ -91,9 +91,7 @@ As an overview, here are the accounts used by **Certificate Master** and what th
 | App Registration with App ID from `ApplicationId`     | Certificate Master accesses Microsoft Graph in this context to see which certificates have been enrolled via Intune                                                                | If `ApplicationKey` is not present, the Managed Identity is used instead. |
 | App Registration with App ID from `HomeApplicationId` | Users authenticate **to** this application. It should be in the tenant where users accessing Certificate Master reside (but guest users from other tenants can also be authorized) | If `HomeApplicationId` is not present, `ApplicationId` is used instead.   |
 
-Now the Split-Tenancy configuration is finished, you can go ahead and configure your SCEP profiles based on your MDM, see [here](https://docs.scepman.com/advanced-configuration/split-tenancy)
-
-
+Now the Split-Tenancy configuration is finished, you can go ahead and configure your SCEP profiles based on your MDM.
 
 ## Considerations when having multiple target tenants
 
@@ -105,9 +103,9 @@ A possible concept could include a management resource group that holds a single
 * You should create App Registrations for each instance to isolate the permissions
 * The App Service Plan should be created in an independent management resource group as it is serving multiple instances
 
-In this diagram a management  tenant and its two SCEPman instances provide certificates to the tenants of Contoso and Tailwind:
+In this diagram a management tenant and its two SCEPman instances provide certificates to the tenants of Contoso and Tailwind:
 
-```mermaid fullWidth="true"
+```mermaid
 graph LR
   subgraph t0[Management Tenant]
   subgraph rg0[rg-scepman-mgmt]
@@ -186,7 +184,5 @@ Complete-SCEPmanInstallation -SCEPmanAppServiceName "app-scepman-contoso" -Azure
 {% endcode %}
 
 This command will result in a fully configured SCEPman instance that is isolated from the prior instances. You can now go on to configure the split tenancy for this instance.
-
-
 
 The above section regarding the Certificate Master can now be applied optionally if you want this service to be accessible from the customer tenant.

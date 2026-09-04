@@ -4,17 +4,13 @@ You can use SCEPman to issue Smart Card Login certificates to your users. By enr
 
 This will allow users for example to connect to other clients over the Remote Desktop Protocol (RDP) using their Windows Hello for Business credentials.
 
-
-
 ## Setup Active Directory
 
 ### Requirements
 
 * SCEPman's CA certificate must be published in the **NTAuth** store to authenticate users to Active Directory
 * Domain Controllers need to have a domain controller certificate to authenticate smartcard users
-* Domain Controllers and target machines need to trust SCEPmans Root CA
-
-
+* Domain Controllers and target machines need to trust SCEPman's Root CA
 
 Follow our guide on Domain Controller certificates to publish the SCEPman Root CA certificate to the **NTAuth** store and issue certificates to your domain controllers:
 
@@ -22,25 +18,21 @@ Follow our guide on Domain Controller certificates to publish the SCEPman Root C
 [domain-controller-certificates.md](../../../certificate-management/domain-controller-certificates.md)
 {% endcontent-ref %}
 
-
-
-You can create a **Group Policy Object** to handle the distribution of the root certificate to the involved machines:[ To distribute certificates to client computers by using Group Policy](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/distribute-certificates-to-client-computers-by-using-group-policy#to-distribute-certificates-to-client-computers-by-using-group-policy)
+You can create a **Group Policy Object** to handle the distribution of the root certificate to the involved machines: [To distribute certificates to client computers by using Group Policy](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/distribute-certificates-to-client-computers-by-using-group-policy#to-distribute-certificates-to-client-computers-by-using-group-policy)
 
 The certificate needs to be deployed to all Domain Controllers handling the authentications and all target machines that users want to connect to using this method.
 
 {% hint style="danger" %}
-Please be aware that once SCEPmans root certificate is published in the NTAuth store, users who can influence the content of certificates issued by SCEPman (e.g. Intune administrators) are able to impersonate any Active Directory principal.
+Please be aware that once SCEPman's root certificate is published in the NTAuth store, users who can influence the content of certificates issued by SCEPman (e.g. Intune administrators) are able to impersonate any Active Directory principal.
 {% endhint %}
-
-
 
 ## Deploy the Smart Card Certificates using Intune
 
 ### Trusted Certificate Profile
 
-Your clients will need to [trust the root certificate of SCEPman](https://docs.scepman.com/certificate-deployment/microsoft-intune/windows-10#root-certificate).
+Your clients will need to [trust the root certificate of SCEPman](../../../certificate-management/microsoft-intune/windows-10.md#root-certificate).
 
-If you already use SCEPman to deploy certificates to your clients you will already have this profile in place.
+If you already use SCEPman to deploy certificates to your client's you will already have this profile in place.
 
 ### Smart Card Certificate
 
@@ -128,10 +120,8 @@ The URI with the SID is necessary to have a [Strong Certificate Mapping](../../.
 
 </details>
 
-
-
 ### Use Windows Hello for Business to connect to remote hosts
 
-With the certificate deployed to the authenticating client, just connect to the remote host and select the configured Windows Hello for Business credential provider.&#x20;
+With the certificate deployed to the authenticating client, connect to the remote host and select the configured Windows Hello for Business credential provider.
 
 <figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>

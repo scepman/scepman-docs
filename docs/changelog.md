@@ -18,9 +18,9 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 * New [Certificate Management REST API](certificate-management/management-rest-api/) for searching and revoking certificates
 * Upgrade to .NET 10
-* Authorized Responders are[ the new default](scepman-configuration/application-settings/ocsp.md#appconfig-ocsp-useauthorizedresponder) for OCSP endpoint, reducing&#x20;
+* Authorized Responders are[ the new default](scepman-configuration/application-settings/ocsp.md#appconfig-ocsp-useauthorizedresponder) for OCSP endpoint, reducing
   * response latency,
-  * dependencies, and&#x20;
+  * dependencies, and
   * load on Key Vault.
 * New Template [_RDP Server_](certificate-management/active-directory/scenarios/rdp-server-certificate.md) for the Active Directory enrollment endpoint
 * Small improvements and fixes
@@ -225,7 +225,7 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 Starting with this version, the SCEPman PowerShell Module with have the same major and minor version number as the corresponding SCEPman release.
 
-* New CMDlet `Update-CertificateViaEST` for[ renewing certificates over EST](https://docs.scepman.com/certificate-deployment/api-certificates/use-cases/windows-server) on Windows
+* New CMDlet `Update-CertificateViaEST` for [renewing certificates over EST](certificate-management/api-certificates/api-enrollment/windows-server.md) on Windows
 
 ### 2.8 - May 2024
 
