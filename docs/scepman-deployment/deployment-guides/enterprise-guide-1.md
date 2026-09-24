@@ -1,10 +1,15 @@
+---
+description: >-
+  This will guide you through all steps to deploy SCEPman for an
+  enterprise-grade environment with advanced requirements, e.g. naming
+  conventions, redundancy or auto-scaling.
+---
+
 # Extended Guide
 
 {% hint style="warning" %}
 SCEPman Enterprise Edition only
 {% endhint %}
-
-This will guide you through all steps to deploy SCEPman for an enterprise-grade environment with advanced requirements, e.g. naming conventions, redundancy or auto-scaling.
 
 ## Azure Deployment
 
@@ -62,8 +67,6 @@ or alternatively our **Terraform** script:
 {% content-ref url="../../scepman-configuration/deployment-options/terraform-deployment.md" %}
 [terraform-deployment.md](../../scepman-configuration/deployment-options/terraform-deployment.md)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -78,8 +81,6 @@ To properly link all components of SCEPman, several permissions need to be assig
 {% content-ref url="../../scepman-configuration/post-installation-config.md" %}
 [post-installation-config.md](../../scepman-configuration/post-installation-config.md)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -94,8 +95,6 @@ The Certificate Master is an **Enterprise Edition** feature that allows administ
 {% content-ref url="../../scepman-configuration/rbac/" %}
 [rbac](../../scepman-configuration/rbac/)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -110,8 +109,6 @@ After the deployment and permission assignment is complete, you need to create t
 {% content-ref url="../../scepman-configuration/first-run-root-cert.md" %}
 [first-run-root-cert.md](../../scepman-configuration/first-run-root-cert.md)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -126,8 +123,6 @@ To have your SCEPman available under your specific domain you need to create a *
 {% content-ref url="../../azure-configuration/custom-domain.md" %}
 [custom-domain.md](../../azure-configuration/custom-domain.md)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -142,8 +137,6 @@ By default, SCEPman adopts an [evergreen approach](../../update-strategy.md#ever
 {% content-ref url="../../update-strategy.md" %}
 [update-strategy.md](../../update-strategy.md)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -158,12 +151,10 @@ The Application Insights can be used to get an overview of the App Service perfo
 {% content-ref url="../../azure-configuration/application-insights.md" %}
 [application-insights.md](../../azure-configuration/application-insights.md)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
-### Configure Health Check
+### Configure Health Check Alerts
 
 {% hint style="success" %}
 This is **recommended** step.
@@ -171,11 +162,11 @@ This is **recommended** step.
 
 Health Checks can be configured to notify administrators in the event the SCEPman App Service is unresponsive.
 
+While the Health Check is added automatically during installation, alerts need to be configured manually.
+
 {% content-ref url="../../azure-configuration/health-check/" %}
 [health-check](../../azure-configuration/health-check/)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -190,8 +181,6 @@ Once you move SCEPman into a production environment, you should ensure that SCEP
 {% content-ref url="../../azure-configuration/azure-sizing/" %}
 [azure-sizing](../../azure-configuration/azure-sizing/)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -211,8 +200,6 @@ To have an optimized performance and take care of the costs we recommend to setu
 {% content-ref url="../../azure-configuration/azure-sizing/autoscaling.md" %}
 [autoscaling.md](../../azure-configuration/azure-sizing/autoscaling.md)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -222,15 +209,13 @@ To have an optimized performance and take care of the costs we recommend to setu
 This is an **optional** step.
 {% endhint %}
 
-Configuring a geo-redundant instance for SCEPman can enhance service availability and resilience by distributing workloads across multiple Azure regions.&#x20;
+Configuring a geo-redundant instance for SCEPman can enhance service availability and resilience by distributing workloads across multiple Azure regions.
 
 However, it's important to note that this setup may lead to increased Azure costs due to the additional resources and data replication involved. Microsoft provides an SLA of 99.95% for Azure App Services, which is adequate in most scenarios.
 
 {% content-ref url="../../azure-configuration/geo-redundancy.md" %}
 [geo-redundancy.md](../../azure-configuration/geo-redundancy.md)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -255,8 +240,6 @@ Please use one (or more) of the following articles, to deploy certificates with 
 {% content-ref url="../../certificate-management/static-certificates/" %}
 [static-certificates](../../certificate-management/static-certificates/)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -271,8 +254,6 @@ Please follow below link, to learn how to issue TLS server certificates based on
 {% content-ref url="../../certificate-management/certificate-master/" %}
 [certificate-master](../../certificate-management/certificate-master/)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -287,8 +268,6 @@ SCEPman features a REST API to enroll certificates. This is an alternative to th
 {% content-ref url="../../certificate-management/api-certificates/" %}
 [api-certificates](../../certificate-management/api-certificates/)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -305,10 +284,5 @@ By default, SCEPman does not apply any locks to Azure resources. If you use reso
 * **App Services:** A **ReadOnlyLock** is theoretically possible, but it must be removed each time you modify the SCEPman configuration. A deleted App Service can easily be reinstalled, but it will only have the default configuration, so all manual changes must be reconfigured manually. A combination of **DeleteLock** and **ReadOnlyLock** helps mitigate this risk.
 * **Log Analytics Workspace:** A **DeleteLock** is technically possible, but you would only lose logs collected during the retention period, which does not impact the availability of the SCEPman service.
 * **Other Azure Resources:** These do not store data and can be recreated without loss of information. A **DeleteLock** and **ReadOnlyLock** can be useful for some of them. Some cannot be deleted at all because they have dependencies on one of the core services mentioned above.
-
-
 {% endstep %}
 {% endstepper %}
-
-
-
