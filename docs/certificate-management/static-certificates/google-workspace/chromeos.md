@@ -6,6 +6,14 @@ description: >-
 
 # ChromeOS
 
+{% hint style="danger" %}
+**Google is retiring legacy SCEP for ChromeOS.** Google has announced that the legacy SCEP API used for ChromeOS certificate enrollment will be retired by the end of 2026, in favor of the new **ChromeOS Certificate Provisioning API.**
+
+Certificates already issued via SCEP will remain valid until they expire, but cannot be renewed once the legacy API is retired. SCEPman support for the Certificate Provisioning API will be covered in a separate guide once available.
+
+For details, see [Google's ChromeOS certificate enrollment documentation](https://support.google.com/chrome/a/answer/11338941?hl=en).
+{% endhint %}
+
 ## Root Certificate
 
 As a first step, you must deploy SCEPman's root certificate. Therefore, follow these steps:

@@ -9,7 +9,15 @@ hidden: true
 
 <img src="../../../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
 
-## Workflow of issuing SCEP Certificates&#x20;
+{% hint style="danger" %}
+**Google is retiring legacy SCEP for ChromeOS.** Google has announced that the legacy SCEP API used for ChromeOS certificate enrollment will be retired by the end of 2026, in favor of the new **ChromeOS Certificate Provisioning API.**
+
+Certificates already issued via SCEP will remain valid until they expire, but cannot be renewed once the legacy API is retired. SCEPman support for the Certificate Provisioning API will be covered in a separate guide once available.
+
+For details, see [Google's ChromeOS certificate enrollment documentation](https://support.google.com/chrome/a/answer/11338941?hl=en).
+{% endhint %}
+
+## Workflow of issuing SCEP Certificates
 
 1. Chromebook generates a hardware-backed private key.
 2. Google generates a CSR with the SCEP profile.
@@ -22,7 +30,7 @@ hidden: true
 
 ### Google Workspace
 
-This guide assumes that you already provisioned Chromebook computer(s) running ChromeOS version 89 or later managed with **Chrome Enterprise**.&#x20;
+This guide assumes that you already provisioned Chromebook computer(s) running ChromeOS version 89 or later managed with **Chrome Enterprise**.
 
 <figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Minimum subscriptions required</p></figcaption></figure>
 
@@ -76,6 +84,5 @@ You can differentiate between the SCEPman App Service and the Certificate Master
 {% hint style="info" %}
 For more information and references please visit [Google Workspace Admin Help](https://support.google.com/a/answer/9366164?hl=en\&fl=1\&sjid=2941552975651362083-NC) or download the original PDF guide [Configuring Certificate Enrollment for ChromeOS via SCEP](https://support.google.com/chrome/a/answer/11338941?hl=en).
 
-_Google, Google Workspace, ChromeOS and related marks and logos are trademarks of Google LLC._&#x20;
+_Google, Google Workspace, ChromeOS and related marks and logos are trademarks of Google LLC._
 {% endhint %}
-
