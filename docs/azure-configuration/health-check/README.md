@@ -7,13 +7,13 @@ You can monitor the health of SCEPman using
 
 ## Health Check in Azure App Services
 
-{% hint style="info" %}
-New SCEPman installations add the Health Check automatically during installation, starting with SCEPman 2.11. If you have installed SCEPman before this, you can add the health check manually using the guidance below. **Alerting is not added automatically and still needs to be configured.**
-{% endhint %}
-
 You may configure the health check feature and corresponding alerting for the App Service to get a direct notification in case your SCEPman instance is no longer responsive.
 
 ### Configure Health Check
+
+{% hint style="info" %}
+New SCEPman installations add the Health Check automatically during installation, starting with SCEPman 2.11. If you have installed SCEPman before this, you can add the health check manually using the guidance below. If you have installed SCEPman when it was at version 2.11 or later already, skip to the next Section [Configure Alerting](./#configure-alerting). **Even with SCEPman 2.11 installations, Alerting is not added automatically and still needs to be configured!**
+{% endhint %}
 
 1. Navigate to your **App Service** and on the left side scroll down to **Health check**
 2. Now you can **Enable** the Health check, as probing **path** enter the following: **/probe**
