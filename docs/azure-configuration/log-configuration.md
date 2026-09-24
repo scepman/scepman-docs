@@ -2,9 +2,14 @@
 
 ### Enable Logging to Azure Monitor
 
-Since version 3.0, SCEPman, as well as the Certificate Master, will utilize Microsofts Log Ingestion API to write logs to Azure Monitor. This uses a concept of a Log Analytics Workspace to hold the data and allow analyzation as well as a Data Collection Rule that interfaces between the App Service and the log storage. This allows for a more modern approach including RBAC based permissions for SCEPman to access the LAW.
+Since version 3.0, SCEPman and the Certificate Master use Microsoft's Log Ingestion API to send logs to Azure Monitor. Logs are stored in a Log Analytics Workspace, and a Data Collection Rule connects the App Services to the workspace. This modern approach uses RBAC based permissions for SCEPman to access the LAW.
 
 The creation of the Log Analytics Workspace as well as the configuration of the Data Collection Rule is automatically done by running `Complete-SCEPmanInstallation` of the SCEPman PowerShell module.
+
+```
+Install-Module SCEPman -Scope CurrentUser -Force
+Complete-SCEPmanInstallation 6>&1
+```
 
 {% hint style="info" %}
 The **default retention** period for data stored in a Log Analytics Table is **30 days**. In case a different retention period is required, adjust the configuration of the Table "SCEPman\_CL" accordingly.
@@ -16,13 +21,13 @@ If, for any reason, you want to reinstate the previous API to be used you can do
 
 Variables to be **removed**:
 
-* [AppConfig:LoggingConfig:DataCollectionEndpointUri](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/edit/~/changes/787/scepman-configuration/application-settings/dependencies-azure-services/logging#appconfig-loggingconfig-datacollectionendpointuri)
-* [AppConfig:LoggingConfig:RuleId](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/edit/~/changes/787/scepman-configuration/application-settings/dependencies-azure-services/logging#appconfig-loggingconfig-ruleid)
+* [AppConfig:LoggingConfig:DataCollectionEndpointUri](../scepman-configuration/application-settings/dependencies-azure-services/logging.md#appconfig-loggingconfig-datacollectionendpointuri)
+* [AppConfig:LoggingConfig:RuleId](../scepman-configuration/application-settings/dependencies-azure-services/logging.md#appconfig-loggingconfig-ruleid)
 
 Variables to be added:
 
-* [AppConfig:LoggingConfig:WorkspaceId](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/edit/~/changes/787/scepman-configuration/application-settings/dependencies-azure-services/logging#appconfig-loggingconfig-workspaceid)
-* [AppConfig:LoggingConfig:SharedKey](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/edit/~/changes/787/scepman-configuration/application-settings/dependencies-azure-services/logging#appconfig-loggingconfig-sharedkey)
+* [AppConfig:LoggingConfig:WorkspaceId](../scepman-configuration/application-settings/dependencies-azure-services/logging.md#appconfig-loggingconfig-workspaceid)
+* [AppConfig:LoggingConfig:SharedKey](../scepman-configuration/application-settings/dependencies-azure-services/logging.md#appconfig-loggingconfig-sharedkey)
 
 SCEPman will automatically pick up the settings after a restart and will utilize the Data Collector API again.
 
@@ -61,7 +66,7 @@ SCEPman_CL
 {% endtab %}
 {% endtabs %}
 
-Starting with SCEPman 2.8, there is always exactly one Info level log entry whose log message starts with "Issued a certificate with serial number " per issued certificate, followed by its serial number. However, due to the unsolvable [Two Armies Problem](https://en.wikipedia.org/wiki/Two_Generals'_Problem), it can happen that the created certificate never reaches the requester or some other type of error prevents the actual enrollment. Likewise, in case of severe errors, it can happen that a log entry exists without corresponding database entry or vice versa.
+Starting from SCEPman 2.8, there is always exactly one Info level log entry whose log message starts with "Issued a certificate with serial number " per issued certificate, followed by its serial number. However, due to the unsolvable [Two Armies Problem](https://en.wikipedia.org/wiki/Two_Generals'_Problem), it can happen that the created certificate never reaches the requester or some other type of error prevents the actual enrollment. Likewise, in case of severe errors, it can happen that a log entry exists without corresponding database entry or vice versa.
 
 ### Distinct Certificates with OCSP Check
 
