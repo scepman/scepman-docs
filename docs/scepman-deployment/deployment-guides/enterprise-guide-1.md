@@ -140,24 +140,10 @@ By default, SCEPman adopts an [evergreen approach](../../update-strategy.md#ever
 {% endstep %}
 
 {% step %}
-### Deploy Application Insights
-
-{% hint style="success" %}
-This is **recommended** step.
-{% endhint %}
-
-The Application Insights can be used to get an overview of the App Service performance and to get deeper insights of the request processing of SCEPman. We recommend to always configure Application Insights to monitor, maintain and optimize the App Service.
-
-{% content-ref url="../../azure-configuration/application-insights.md" %}
-[application-insights.md](../../azure-configuration/application-insights.md)
-{% endcontent-ref %}
-{% endstep %}
-
-{% step %}
 ### Configure Health Check Alerts
 
 {% hint style="success" %}
-This is **recommended** step.
+This is a **recommended** step.
 {% endhint %}
 
 Health Checks can be configured to notify administrators in the event the SCEPman App Service is unresponsive.

@@ -46,8 +46,6 @@ To start with the deployment, please follow our deployment instructions:
 {% content-ref url="../scepman-configuration/deployment-options/marketplace-deployment.md" %}
 [marketplace-deployment.md](../scepman-configuration/deployment-options/marketplace-deployment.md)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -62,8 +60,6 @@ To properly link all components of SCEPman, several permissions need to be assig
 {% content-ref url="../scepman-configuration/post-installation-config.md" %}
 [post-installation-config.md](../scepman-configuration/post-installation-config.md)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -78,8 +74,6 @@ The Certificate Master is an **Enterprise Edition** feature that allows administ
 {% content-ref url="../scepman-configuration/rbac/" %}
 [rbac](../scepman-configuration/rbac/)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -94,8 +88,6 @@ After the deployment and permission assignment is complete, you need to create t
 {% content-ref url="../scepman-configuration/first-run-root-cert.md" %}
 [first-run-root-cert.md](../scepman-configuration/first-run-root-cert.md)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -110,8 +102,6 @@ To have your SCEPman available under your specific domain you need to create a *
 {% content-ref url="../azure-configuration/custom-domain.md" %}
 [custom-domain.md](../azure-configuration/custom-domain.md)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -126,24 +116,6 @@ By default, SCEPman adopts an [evergreen approach](../update-strategy.md#evergre
 {% content-ref url="../update-strategy.md" %}
 [update-strategy.md](../update-strategy.md)
 {% endcontent-ref %}
-
-
-{% endstep %}
-
-{% step %}
-### Deploy Application Insights
-
-{% hint style="success" %}
-This is **recommended** step.
-{% endhint %}
-
-The Application Insights can be used to get an overview of the App Service performance and to get deeper insights of the request processing of SCEPman. We recommend to always configure Application Insights to monitor, maintain and optimize the App Service.
-
-{% content-ref url="../azure-configuration/application-insights.md" %}
-[application-insights.md](../azure-configuration/application-insights.md)
-{% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -158,8 +130,6 @@ We can configure a Health Check for the App Service to get direct notifications 
 {% content-ref url="../azure-configuration/health-check/" %}
 [health-check](../azure-configuration/health-check/)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -174,8 +144,6 @@ Once you move SCEPman into a production environment, you should ensure that SCEP
 {% content-ref url="../azure-configuration/azure-sizing/" %}
 [azure-sizing](../azure-configuration/azure-sizing/)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -200,8 +168,6 @@ Please use one (or more) of the following articles, to deploy certificates with 
 {% content-ref url="../certificate-management/static-certificates/" %}
 [static-certificates](../certificate-management/static-certificates/)
 {% endcontent-ref %}
-
-
 {% endstep %}
 
 {% step %}
@@ -216,8 +182,5 @@ Please follow below link, to learn how to issue TLS server or other certificates
 {% content-ref url="../certificate-management/certificate-master/" %}
 [certificate-master](../certificate-management/certificate-master/)
 {% endcontent-ref %}
-
-
 {% endstep %}
 {% endstepper %}
-
