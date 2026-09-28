@@ -36,7 +36,7 @@ After adding or editing SCEPman configuration parameters, you need to restart th
 
 As a first step, SCEPman root certificate must be deployed. To do so, download the RootCA certificate via the SCEPman website:
 
-![SCEPman Website](<../../.gitbook/assets/image-2 (10).png>)
+![SCEPman Website](../../.gitbook/assets/image-2.png)
 
 Now convert the .cer root certificate to PEM format in order to upload it to Addigy. You can use the following OpenSSL command for that:
 

@@ -89,8 +89,6 @@ The original App Service should have the first artifact host by default, which p
 {% hint style="warning" %}
 Cloning an App Service has some restrictions such as **autoscale** settings, **backup schedule** settings, **App Insights**, etc.. Configurations that cannot be cloned, must be manually configured again on the cloned App Service. Additionally, changes to the settings of one AppService will not be synchronized automatically to the second App Service if performed after the cloning operation. For more info visit [https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-app-cloning#current-restrictions)
 {% endhint %}
-
-
 {% endstep %}
 
 {% step %}
@@ -106,8 +104,6 @@ Follow the steps below to create and configure the Traffic Manager and balance t
 5.  Change the settings as follows and **save**<br>
 
     <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
-
-
 {% endstep %}
 
 {% step %}
@@ -127,8 +123,6 @@ Follow the steps below to create and configure the Traffic Manager and balance t
 After a successful deployment and configuration of the Traffic Manager Endpoints, you need to set up the **same** custom domain for **both** SCEPman instances as described [here](custom-domain.md).
 
 Make sure to change the value of the setting **AppConfig:BaseUrl** for **both** SCEPman App Services after the custom domains have been created.
-
-
 {% endstep %}
 
 {% step %}
@@ -136,7 +130,7 @@ Make sure to change the value of the setting **AppConfig:BaseUrl** for **both** 
 
 In the Traffic Manager **Overview,** you will find the DNS name, that needs to be added to your DNS
 
-![Traffic Manager Overview](<../.gitbook/assets/scepman-trafficmanager4 (13).png>)
+![Traffic Manager Overview](../.gitbook/assets/scepman-trafficmanager4.png)
 
 * Navigate to your DNS management service (e.g. **Azure DNS Zones**)
 * Remove any possibly existing wrong CNAME entries pointing to one of the Azure App Service instances and add a CNAME that maps the created SCEPman custom domain to the Traffic Manager DNS name. In the example below the CNAME should point to **gk-blueprint-scepman.trafficmanager.net**.
@@ -150,22 +144,15 @@ Upon completing the configuration, ensure to update the SCEP Server URL in your 
 
 Example: [https://scepman.contoso.com/certsrv/mscep/mscep.dll](https://scepman.contoso.com/certsrv/mscep/mscep.dll)
 {% endhint %}
-
-
 {% endstep %}
 
 {% step %}
 ### Storage Account Geo-Redundancy
 
-The default SCEPman setup uses Locally Redundant Storage (LRS), which uses only a single region.&#x20;
+The default SCEPman setup uses Locally Redundant Storage (LRS), which uses only a single region.
 
 Change the redundancy from Locally Redundant Storage (LRS) to Geo-redundant storage (GRS).
 
 ![Storage account redundancy dialog on Azure Portal](../.gitbook/assets/storage-account-redundancy.png)
-
-
 {% endstep %}
 {% endstepper %}
-
-
-

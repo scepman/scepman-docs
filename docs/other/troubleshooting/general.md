@@ -12,7 +12,7 @@ The URL _https://github.com/glueckkanja/gk-scepman/raw/master/dist/Artifacts.zip
 
 Check if the Azure resource is up and running.
 
-![](<../../.gitbook/assets/event32-2 (14).png>)
+![](../../.gitbook/assets/event32-2.png)
 
 ### My App Service uses the wrong .NET version
 
@@ -50,7 +50,7 @@ This could happen when a wrong trusted root certificate was selected in the SCEP
 8. It contains a short error report
    * SCEP: Certificate enrollment failed. Result (The hash value is not correct.).
 
-![](<../../.gitbook/assets/event32-1 (15).png>)
+![](../../.gitbook/assets/event32-1.png)
 
 If you are using an Intermediate CA, note that you have to [select the Intermediate CA certificate](../../scepman-deployment/intermediate-certificate.md#intermediate-cas-and-intune-scep-profiles) and not the Root CA certificate in the SCEP configuration profile! Note that this is specific to the Windows platform and for example Android requires selecting the Root CA certificate in the SCEP configuration profile.
 
@@ -62,7 +62,7 @@ This is just a problem before version 1.2
 
 If the device certificate has a localhost URL for the OCSP entry in the certificate like this:
 
-![](<../../.gitbook/assets/event32-7 (15).png>)
+![](../../.gitbook/assets/event32-7.png)
 
 The App Service is missing an important application setting with the name **AppConfig:BaseUrl** set to the azurewebsite URL. To fix this, add the variable and save the App Service config:
 
@@ -73,7 +73,7 @@ https://scepman-XXXXX.azurewebsites.net
 
 Delete this certificate from the device and do the MDM sync. If you did it you will see a proper URL for the OCSP entry:
 
-![](<../../.gitbook/assets/event32-8 (7).png>)
+![](../../.gitbook/assets/event32-8.png)
 
 ### My SCEP configuration profile shows pending and is not applied
 
@@ -130,7 +130,7 @@ certutil -verifyStore MY
 
 Look at the certificate with the device ID issued by the SCEPman-Device-Root-CA-V1 and verify if the certificate is valid (see last line).
 
-![](<../../.gitbook/assets/scepman-revocation1 (6).png>)
+![](../../.gitbook/assets/scepman-revocation1.png)
 
 To verify that the OCSP responder is working, you can look at the OCSP url cache with the following command:
 
@@ -138,7 +138,7 @@ To verify that the OCSP responder is working, you can look at the OCSP url cache
 certutil -urlcache OCSP
 ```
 
-![](<../../.gitbook/assets/scepman-revocation2 (7).png>)
+![](../../.gitbook/assets/scepman-revocation2.png)
 
 #### macOS Machine
 
@@ -168,7 +168,7 @@ As an alternate you can export the device certificate and use `certutil` on a Wi
 certutil -url <path-to-exported-device-certificate>
 ```
 
-![](<../../.gitbook/assets/scepman-revocation4 (7).png>)
+![](../../.gitbook/assets/scepman-revocation4.png)
 
 ### Revoke a user
 
@@ -201,7 +201,7 @@ certutil -verifyStore MY
 
 As you can see in the last line, the **Certificate is REVOKED**
 
-![](<../../.gitbook/assets/scepman-revocation3 (15).png>)
+![](../../.gitbook/assets/scepman-revocation3.png)
 
 When you enable the device in Microsoft Entra ID (Azure AD) again and you type in the command from above again, the certificate should be marked as valid.
 
@@ -215,7 +215,7 @@ _Symptoms_: Cisco ISE shows an OCSP unreachable error. Aruba ClearPass also has 
 
 _Cause_: Both Cisco ISE as well as Aruba ClearPass do not support HTTP 1.1 when looking up OCSP and do not send a host header in their OCSP request. Therefore, they cannot connect to a general SCEPman instance running on Azure App Services. The error message may look like this:
 
-![](<../../.gitbook/assets/cisco-ocsp-error (18).jpg>)
+![](../../.gitbook/assets/cisco-ocsp-error.jpg)
 
 _Solution_: Please see [here](cisco-ise-host-header-limitation.md).
 
@@ -233,10 +233,8 @@ If your SCEPman homepage shows a red tag "Not Connected" for Storage Account con
 
 To fix this, you need to grant the Managed Identity of the SCEPman App Service and that of SCEPman Certificate Master the role "Storage Table Data Contributor" on the Storage Account. The role assignments can be done manually in the Azure Portal under "Access Control (IAM)" in the Storage Account. Alternatively, just [execute the SCEPman Installation CMDlet from the SCEPman PowerShell module once again](../../scepman-configuration/post-installation-config.md#running-the-scepman-installation-cmdlet).
 
-
-
 ## SCEPman won't issue certificates with EKUs other than Client Authentication
 
-Check your SCEPman Environment Variables to see what is configured for [AppConfig:UseRequestedKeyUsages](../../scepman-configuration/application-settings/certificates.md#appconfig-userequestedkeyusages). If it is not set, it defaults to "false".&#x20;
+Check your SCEPman Environment Variables to see what is configured for [AppConfig:UseRequestedKeyUsages](../../scepman-configuration/application-settings/certificates.md#appconfig-userequestedkeyusages). If it is not set, it defaults to "false".
 
 New installations will automatically set this to "true", however older SCEPman installations have this set as false. SCEPman updates don't change any behavior except for fixes or changes that have under no circumstances a disadvantage. When this is set to false, the requests EKUs and Key Usages are ignored.<br>

@@ -16,7 +16,7 @@ Since cleverbridge operates a local entity in the US, cleverbridge Inc., certain
 
 ## Pricing Model
 
-SCEPman is offered as a **monthly or** **annual subscription plan** with different [User Segments](cleverbridge.md#user-segments). The correct **user segment** is either&#x20;
+SCEPman is offered as a **monthly or** **annual subscription plan** with different [User Segments](cleverbridge.md#user-segments). The correct **user segment** is either
 
 * pre-selected in case we provide a quotation or order link to you, or
 *   must be manually selected during checkout:<br>
@@ -36,7 +36,7 @@ If you require invoice-based payments, please [contact us](mailto:sales@scepman.
 cleverbridge allows you to transact in a variety of currencies. The currency is automatically selected based on the location of your browser's IP address. If you would like to transact in a different currency, you can do so by selecting your preferred currency in the top right corner of the quotation or checkout site.
 
 {% hint style="info" %}
-The reference currency for SCEPman is Euro (EUR). The forex rate cleverbridge applies when converting to other currencies is not in our control. Please note, that once an order for a subscription is placed **and** as long as **automatic renewal** is **enabled**, the forex rate is guaranteed for future renewals, i.e. cleverbridge absorbs the forex risk.&#x20;
+The reference currency for SCEPman is Euro (EUR). The forex rate cleverbridge applies when converting to other currencies is not in our control. Please note, that once an order for a subscription is placed **and** as long as **automatic renewal** is **enabled**, the forex rate is guaranteed for future renewals, i.e. cleverbridge absorbs the forex risk.
 {% endhint %}
 
 ## Plan Overview
@@ -70,11 +70,11 @@ Please refer to our [SCEPman Edition Comparison](https://docs.radiusaas.com/deta
 
 #### RADIUSaaS & SCEPman Enterprise Bundle
 
-We offer RADIUSaaS as well as our cloud-CA solution **for** **in-customer tenant deployment** [SCEPman Enterprise](https://www.scepman.com/) in a subscription bundle that is discounted by 25% in comparison to the individual solutions. The bundle plans are available with monthly or annual renewal as well as the same [User Segments](cleverbridge.md#user-segments).&#x20;
+We offer RADIUSaaS as well as our cloud-CA solution **for** **in-customer tenant deployment** [SCEPman Enterprise](https://www.scepman.com/) in a subscription bundle that is discounted by 25% in comparison to the individual solutions. The bundle plans are available with monthly or annual renewal as well as the same [User Segments](cleverbridge.md#user-segments).
 
 #### RADIUSaaS & SCEPman SaaS Bundle
 
-If you'd prefer to use our cloud-based PKI SCEPman **without having to deploy infrastructure in your Azure tenant**, you can opt for the RADIUSaaS & SCEPman SaaS Bundle, that allows you to leverage SCEPman SaaS, built righ into your RADIUSaaS instance. The bundle plans are available with monthly or annual renewal as well as the same [User Segments](cleverbridge.md#user-segments). <br>
+If you'd prefer to use our cloud-based PKI SCEPman **without having to deploy infrastructure in your Azure tenant**, you can opt for the RADIUSaaS & SCEPman SaaS Bundle, that allows you to leverage SCEPman SaaS, built righ into your RADIUSaaS instance. The bundle plans are available with monthly or annual renewal as well as the same [User Segments](cleverbridge.md#user-segments).<br>
 
 <figure><img src="../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
 
@@ -114,7 +114,7 @@ The Mid-term Upgrade option is **available until 15 days before** your subscript
 
 If you would like to upgrade your user count, you can do so any time during the current subscription cycle by navigating to the subscription's [self-management portal](cleverbridge.md#self-management-portal) leveraging the mid-term upgrade option.
 
-With the mid-term upgrade, additional users will be&#x20;
+With the mid-term upgrade, additional users will be
 
 * billed **Pro Rata Temporis**, and
 * **co-termed** with the existing users,
@@ -128,7 +128,7 @@ To perform a mid-term upgrade,
 
 <figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-*   Select the correct [user segment](cleverbridge.md#user-segments), and provide the new **total** number of users. The website will display the&#x20;
+*   Select the correct [user segment](cleverbridge.md#user-segments), and provide the new **total** number of users. The website will display the
 
     * upgrade price (**Upgrade price today**), and
     * the next regular renewal price assuming the new total user count (**Renewal price on ...**)
@@ -146,7 +146,7 @@ To perform a mid-term upgrade,
 #### Early Renewal Upgrade
 
 {% hint style="info" %}
-The Early Renewal Upgrade flow is **available from 15 days before** your subscription is set to renew.&#x20;
+The Early Renewal Upgrade flow is **available from 15 days before** your subscription is set to renew.
 {% endhint %}
 
 If you would like to upgrade your user count as part of the next regular renewal, you can do so by navigating to the subscription's [self-management portal](cleverbridge.md#self-management-portal) leveraging the early renewal upgrade flow.
@@ -162,7 +162,7 @@ To perform an early renewal upgrade,
 
 * Select the correct [user segment](cleverbridge.md#user-segments), and provide the new **total** number of users. The website will display the renewal price considering the additional users.
 
-<figure><img src="../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Click **Next**, review your **Payment method** and confirm the purchase by clicking **Buy now**.
 
@@ -203,7 +203,7 @@ Partners can leverage the same tools to manage subscriptions on behalf of their 
     <figure><img src="../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
 *   On that page, locate the button saying **Manage Your Subscription For "\<SKU>"** and click it.<br>
 
-    <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 * This will either navigate you to the self-management portal directly or you might have to re-generate the link (they might expire after a while) first.
 
 {% hint style="info" %}
@@ -222,7 +222,7 @@ In case you would like to test SCEPman, please [request a trial via our website]
 Quotes are valid for 14 days.
 {% endhint %}
 
-To request a quote for SCEPman,&#x20;
+To request a quote for SCEPman,
 
 * Get in [contact with us](mailto:sales@scepman.com) and request a quote link.
 * Once we have sent the quote link to you,

@@ -44,8 +44,6 @@ After adding the permissions, your Azure AD account is permitted to create a CSR
 {% endtab %}
 {% endtabs %}
 
-
-
 ## Open Key Vault Networking to the Admin System
 
 If you are using a [Private Endpoint](../azure-configuration/private-endpoints.md) for Key Vault, you need to add an exception that allows the client to access the Key Vault on a network level. If you are not using a Private Endpoint, you can skip this part.
@@ -70,7 +68,7 @@ The next step is to update the Azure App Service configuration to match the subj
 5. Restart the Azure **App Service** to apply the changes then navigate to your SCEPman URL.
 
 {% hint style="warning" %}
-Please be aware that the CertificateName variable will directly correspond to the certificate object that will be created in the Azure Key Vault. You can therefore only use certificate names that contain alphanumeric characters and dashes&#x20;
+Please be aware that the CertificateName variable will directly correspond to the certificate object that will be created in the Azure Key Vault. You can therefore only use certificate names that contain alphanumeric characters and dashes
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/image (1) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
@@ -146,7 +144,7 @@ Critical=2.5.29.15
 1. In Azure Key Vault, click on your certificate and press **Certificate Operation**
 2. Now you can see the options **Download CSR** and **Merge Signed Request**
 
-![](<../.gitbook/assets/screenshot-2020-10-19-at-16.01.18 (13).png>)
+![](../.gitbook/assets/screenshot-2020-10-19-at-16.01.18.png)
 
 1. Click on **Merge Signed Request** and upload your Intermediate CA Certificate. After you have uploaded the signed request, you can see the valid certificate in your Azure Key Vault in the area **Completed**
 

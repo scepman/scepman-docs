@@ -38,14 +38,14 @@ Based on your preferred renewal interval, select (M) for monthly or (Y) for year
 {% endstep %}
 
 {% step %}
-### Subscribe to SCEPman&#x20;
+### Subscribe to SCEPman
 
 * Create or select the **Resource group** you would like to deploy the subscription to.
 * Assign a **Name** to later identify your SCEPman Enterprise Edition subscription.
 * We recommend to keep **Recurring billing** on so that you do not have to worry about a manual renewal of your subscription.
 * Click **Review + subscribe** and then **Subscribe** to deploy the **SaaS** resource to your **Resource group**.
 
-<figure><img src="../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 The random order of **Base Fees** und **Additional Users** under the **Price** information is attributed to limitations of the Microsoft Marketplace. Later during the enrolment process, we will provide you with transparent information on the expected licensing costs.

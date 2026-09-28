@@ -17,6 +17,8 @@ layout:
     visible: true
   actions:
     visible: true
+  anchors:
+    visible: true
 ---
 
 # General Configuration
@@ -32,7 +34,7 @@ For successful authentication with SCEPman, ensure that a custom domain using an
 {% hint style="info" %}
 The custom domain does not have to resemble the FQDN of your AD domain. So having a domain `ad.contoso.local` does not mean you need an identical or similar custom domain for SCEPman.
 
-See the known issue below regarding [WS\_E\_ENDPOINT\_ACCESS\_DENIED](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/diff/~/changes/806/certificate-management/active-directory/general-configuration#ws_e_endpoint_access_denied) for more information.
+See the known issue below regarding [WS\_E\_ENDPOINT\_ACCESS\_DENIED](general-configuration.md#ws_e_endpoint_access_denied) for more information.
 {% endhint %}
 
 Ensure that SCEPman is configured to be accessible using a custom domain:
@@ -45,13 +47,13 @@ Ensure that SCEPman is configured to be accessible using a custom domain:
 {% step %}
 ### BaseUrl
 
-To allow successful authentications, make sure the [AppConfig:BaseUrl](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/diff/~/changes/806/scepman-configuration/application-settings/basics#appconfig-baseurl) variable matches your custom domain.
+To allow successful authentications, make sure the [AppConfig:BaseUrl](../../scepman-configuration/application-settings/basics.md#appconfig-baseurl) variable matches your custom domain.
 
 | Setting           | Value                        |
 | ----------------- | ---------------------------- |
 | AppConfig:BaseUrl | Example: scepman.contoso.com |
 
-**Alternatively**, if you prefer accessing the AD Endpoint using a different URL from your other SCEPman endpoints, use the dedicated [AppConfig:ActiveDirectory:BaseUrl](https://app.gitbook.com/o/-LhPlvZ6dc8XcqY7tdZw/s/-LoGejQeUQcw7lqnQ3WX/~/diff/~/changes/806/scepman-configuration/application-settings/active-directory/general#appconfig-activedirectory-baseurl) setting.
+**Alternatively**, if you prefer accessing the AD Endpoint using a different URL from your other SCEPman endpoints, use the dedicated [AppConfig:ActiveDirectory:BaseUrl](../../scepman-configuration/application-settings/active-directory/general.md#appconfig-activedirectory-baseurl) setting.
 
 | Setting                           | Value                           |
 | --------------------------------- | ------------------------------- |

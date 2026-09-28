@@ -64,8 +64,6 @@ If the PowerShell module is not an option for you, the [enrollrenewcertificate.s
 
 {% include "../../../.gitbook/includes/enrollment-rest-api-client-prerequisites.md" %}
 
-
-
 Example:
 
 {% code overflow="wrap" %}
@@ -86,15 +84,11 @@ For this use case we can use the following options:
 
 **-c** for submitting a present certificate signing request
 
-
-
 For Client Authentication use cases see:
 
 {% content-ref url="../self-service-enrollment/unmanaged-linux-client.md" %}
 [unmanaged-linux-client.md](../self-service-enrollment/unmanaged-linux-client.md)
 {% endcontent-ref %}
-
-
 
 #### 2. App Service URL
 
@@ -108,7 +102,7 @@ This is the _**Application ID URI**_ of the _**SCEPman-api**_ app registration i
 
 _Example: "api://a7a1d6c8-51b9-48ec-9ca0-a363dc2c8436"_
 
-<figure><img src="../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 #### 4. Certificate Filename
 
@@ -154,9 +148,7 @@ This will be added as subject alternative name
 
 _Example: DNS:webserver.contoso.com_
 
-
-
-### _Usage example for CSR signing (-c command)_&#x20;
+### _Usage example for CSR signing (-c command)_
 
 {% code overflow="wrap" %}
 ```bash
@@ -170,8 +162,6 @@ openssl req -new -key myKey.rsa -sha256 -out myCSR -subj "/CN=John Smith" -addex
 
 ```
 {% endcode %}
-
-
 
 #### Considerations
 
@@ -188,5 +178,4 @@ When the above bash script is run and detects that a certificate has already bee
 ```
 {% endcode %}
 
-Since commands run by Cron will not necessarily be run from the directory that the script/certificates are in, it is important to provide the absolute paths to the script/certificates.&#x20;
-
+Since commands run by Cron will not necessarily be run from the directory that the script/certificates are in, it is important to provide the absolute paths to the script/certificates.

@@ -27,8 +27,6 @@ Please ensure that your App Service plan uses at least the **S1 or P0V3** pricin
 Select **Rules Based**, then **Configure** to proceed.
 
 <figure><img src="../../.gitbook/assets/image (123).png" alt=""><figcaption></figcaption></figure>
-
-
 {% endstep %}
 
 {% step %}
@@ -36,7 +34,7 @@ Select **Rules Based**, then **Configure** to proceed.
 
 To scale the instance count based on the current load of the service there must be two scaling rule conditions added. One rule to increase the instance count on heavy load and one rule to decrease the instance count after the load is reduced again.
 
-<figure><img src="../../.gitbook/assets/image (127).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (126).png" alt=""><figcaption></figcaption></figure>
 
 1. Select **Custom autoscale**
 2. Type in an appropriate name in **Autoscale setting name**
@@ -67,9 +65,7 @@ But please keep in mind that this can depend on your workload and needs to be mo
 7. Check the **Instance count (1)** that will be added to the current instances
 8. Click **Add** when done
 
-<figure><img src="../../.gitbook/assets/image (129).png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
 
 #### Decrease Instance Count Rule
 
@@ -84,8 +80,6 @@ But please keep in mind that this can depend on your workload and needs to be mo
 9. Click **Add** when done
 
 <figure><img src="../../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
-
-
 {% endstep %}
 
 {% step %}

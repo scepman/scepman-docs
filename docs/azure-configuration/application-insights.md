@@ -10,7 +10,7 @@ To activate the Application Insights for your App Service, please follow these i
 {% step %}
 ### Navigate to your SCEPman App Service
 
-Azure > App Services > app-scepman-xxxxxx
+Azure > App Services > your SCEPman App Service (default name `app-scepman-<suffix>`)
 {% endstep %}
 
 {% step %}
@@ -18,8 +18,7 @@ Azure > App Services > app-scepman-xxxxxx
 
 On the lefthand menu, expand Monitoring > Application Insights
 
-\
-![](<../.gitbook/assets/image (3) (1) (1).png>)
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -27,13 +26,20 @@ On the lefthand menu, expand Monitoring > Application Insights
 
 <figure><img src="../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-For Windows based deployments, select **.NET** and select the **Collection level Recommended.** (For Linux based deployment, please choose **.NET Core**)
+#### Configure instrumentation
 
-**Profiler** and **Snapshot debugger** should be turned on by default already.
+Under **Instrument your application**, select the **.NET Core (Linux)** or **.NET (Windows)** tab and set:
 
-Leave **Show local variables \[...]** as _Off_, otherwise, Application Insights may cause startup delays and error messages.
+* **Collection level:** Recommended
+* **Profiler:** On (default)
+* **Snapshot debugger:** On (default)
+* **Show local variables for exceptions:** Off
 
-<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+{% hint style="warning" %}
+Keep **Show local variables** off. It delays SCEPman startup and can cause error messages.
+{% endhint %}
+
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -42,6 +48,3 @@ Leave **Show local variables \[...]** as _Off_, otherwise, Application Insights 
 You're now set to use Application Insights for SCEPman!
 {% endstep %}
 {% endstepper %}
-
-
-

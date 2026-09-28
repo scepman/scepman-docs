@@ -14,15 +14,15 @@ This allows you to enroll certificates to smaller numbers of client devices that
 
 ### Issuing a Client Certificate
 
-1. To generate a new Device Certificate, navigate to **Device** in the SCEPman Certificate Master menu.&#x20;
-2. Enter a Subject CN for the certificate.&#x20;
+1. To generate a new Device Certificate, navigate to **Device** in the SCEPman Certificate Master menu.
+2. Enter a Subject CN for the certificate.
 3. Hit **Submit** and the browser will automatically download the certificate with the private key in PKCS#12/PFX format after the certificate is issued a few seconds later. The PKCS#12 file is encrypted with the password shown on the screen. You can import the PKCS#12 directly to the system where it is needed using the password.
 
 {% hint style="warning" %}
 Be aware that once you navigate away from this page, the password will no longer be accessible.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (87) (1).png" alt=""><figcaption><p>Certificate Master - New Client Certificate</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (85) (1).png" alt=""><figcaption><p>Certificate Master - New Client Certificate</p></figcaption></figure>
 
 Some systems can import a certificate with the private key, but do not accept PKCS#12. You can convert the PKCS#12 file to other formats using standard tools like OpenSSL. For example, if your target system requires a PEM file with the certificate and private key, you may use this command:
 

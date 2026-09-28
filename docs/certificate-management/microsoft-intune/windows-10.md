@@ -12,7 +12,7 @@ The basis for deploying SCEP certificates is to trust the root certificate of SC
 
 * [ ] Download the CA Certificate from SCEPman portal:
 
-![](<../../.gitbook/assets/image-2 (10).png>)
+![](../../.gitbook/assets/image-2.png)
 
 * [ ] Create a profile for **Windows 10 and later** with type **Trusted certificate** in Microsoft Intune:
 
@@ -29,7 +29,7 @@ Note that you have to use the same group for assigning the Trusted certificate a
 
 * [ ] Open the SCEPman portal and copy the URL under Intune MDM
 
-![](<../../.gitbook/assets/image-3 (1).png>)
+![](../../.gitbook/assets/image-3.png)
 
 * [ ] Create a profile for **Windows 10 and later** with type **SCEP certificate** in Microsoft Intune
 
@@ -289,7 +289,7 @@ The certificate will be available for Digital Signature usage in e.g. Outlook. B
 
 ### Activate S/MIME Signatures in Outlook
 
-Once you have deployed S/MIME signature certificates to your client machines, you must configure Outlook to use these certificates before sending signed emails.&#x20;
+Once you have deployed S/MIME signature certificates to your client machines, you must configure Outlook to use these certificates before sending signed emails.
 
 #### New Outlook
 
@@ -308,4 +308,3 @@ Set-SmimeConfig -OWAAllowUserChoiceOfSigningCertificate $true
 ```
 
 Additional PowerShell commands can be seen [here](https://learn.microsoft.com/en-us/powershell/module/exchange/set-smimeconfig).
-

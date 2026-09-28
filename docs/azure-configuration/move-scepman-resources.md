@@ -45,7 +45,7 @@ If you are using an **App Service managed certificate** you [cannot move it](htt
 
 * Then, disconnect the outbound network integration on both app services
 
-<figure><img src="../.gitbook/assets/image-1 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image-1.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (5) (1) (2).png" alt=""><figcaption></figcaption></figure>
 

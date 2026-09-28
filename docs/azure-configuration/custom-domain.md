@@ -33,7 +33,7 @@ When you add the Custom Domain to enable the Active Directory Endpoint, as an al
 
 After configuring the custom domain, make sure to update SCEPman App Service Setting [**AppConfig:BaseUrl**](../scepman-configuration/application-settings/basics.md#appconfig-baseurl) to the new URL, save and restart the App Service.
 
-![](<../.gitbook/assets/scepman-cname4-1 (1).png>)
+![](../.gitbook/assets/scepman-cname4-1.png)
 
 {% hint style="info" %}
 It is not recommended to set a custom domain to Certificate Master. If you still want to set it up, make sure to also do:

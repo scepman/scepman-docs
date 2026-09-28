@@ -6,7 +6,7 @@ This VNET is located in the same resource group as the other SCEPman components.
 
 After installation, there are no exceptions configured, so no other entity can access the Key Vault certificates and keys or the Table Storage of the Storage Account. If required, for example when [generating a Subordinate CA](../scepman-deployment/intermediate-certificate.md) or when[ querying the Storage Account](../other/faqs/general.md#how-can-i-programmatically-query-the-storage-account-table), you need to add exceptions under the Networking blade of the respective Azure Resource.
 
-Access to the management interface of the Key Vault and Storage Account is unaffected, i.e. you don't need to add your admin machines to the exception list to perform functions such as changing the SKU of your Storage Account or inspecting the access logs of your Key Vault.&#x20;
+Access to the management interface of the Key Vault and Storage Account is unaffected, i.e. you don't need to add your admin machines to the exception list to perform functions such as changing the SKU of your Storage Account or inspecting the access logs of your Key Vault.
 
 The SCEPman and SCEPman Certificate Master App Services do not have Private Endpoints, even if you install SCEPman 2.8 or newer. They can still be accessed from the Internet without networking restrictions. We recommend not restricting access to SCEPman on a networking level, as SCEPman is usually part of the infrastructure used to establish network connections and should therefore be available even if you are not yet connected.
 
@@ -33,8 +33,6 @@ If you have installed SCEPman 2.7 or older, your Key Vault and Storage Account w
 {% step %}
 ### Create KeyVault Private Endpoint
 
-
-
 1. Navigate to your SCEPman's Resource Group > **KeyVault** > Settings > Networking > Private endpoint connections, and create a private endpoint
 2. Select resource type: **Microsoft.KeyVault/vaults**
 3. Select your **KeyVault** by Resource and **vault** for Target sub-resource
@@ -45,8 +43,6 @@ If you have installed SCEPman 2.7 or older, your Key Vault and Storage Account w
 {% step %}
 ### Create Storage Account Private Endpoint
 
-
-
 1. Navigate to your SCEPman's Resource Group > **Storage Account** > Security + Networking > Networking > Private endpoints and create a Private Endpoint
 2. By resource, set target sub-resource to **table**
 3. Choose your virtual network and default subnet
@@ -55,8 +51,6 @@ If you have installed SCEPman 2.7 or older, your Key Vault and Storage Account w
 
 {% step %}
 ### Integrate SCEPman App Service
-
-
 
 1. Navigate to **SCEPman App service** > Networking > Add virtual network integration to the **Outbound traffic configuration** by clicking on "Not configured"
 2. Select the virtual network and the created subnet from the first step.
@@ -69,8 +63,6 @@ If you have installed SCEPman 2.7 or older, your Key Vault and Storage Account w
 
 {% step %}
 ### Integrate Certificate Master App Service
-
-
 
 * By adding the virtual network integration to the second app service, you can select the previous connection from the list, you don't have to create a new connection.
 * If enabled, uncheck the option "Outbound internet traffic" and apply
@@ -91,7 +83,7 @@ Check both KeyVault and Storage Account Private Endpoints are in an Approved sta
 
 Once confirmed, you can disable public access for both Key Vault and Storage account.
 
-<figure><img src="../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
 
 If connected properly, the SCEPman homepage should display all its connections as "Connected"\
 ![](<../.gitbook/assets/image (101).png>)
@@ -99,10 +91,3 @@ If connected properly, the SCEPman homepage should display all its connections a
 Test that your implementation of private endpoints is successful by deploying certificates using your MDM or [Certificate Master.](../certificate-management/certificate-master/)
 {% endstep %}
 {% endstepper %}
-
-
-
-
-
-
-
