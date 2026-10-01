@@ -8,6 +8,12 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ## Versions
 
+### 3.1 - September 2026
+
+#### SCEPman 3.1.26273
+
+* Prevent slow OCSP responses that could occur due to resource contention with other processes
+
 ### 3.1 - June 2026
 
 #### SCEPman 3.1.26225
