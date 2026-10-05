@@ -1,6 +1,6 @@
 # Table of contents
 
-* [SCEPman Documentation](README.md)
+* [SCEPman Documentation](README.md "Welcome")
 * [Overview](overview.md)
 * [Editions](editions/README.md)
   * [RADIUSaaS Integration](editions/radiusaas-integration.md)
