@@ -345,6 +345,17 @@ Additionally, not all SCEP clients support TLS 1.3. One important example is the
 
 **Note:** As only browsers access the Certificate Master App Service, it is recommend for Certificate Master to set the Minimum Inbound TLS Version to 1.3.
 
+## Compliance <a href="#user-content-gdpr-and-data-residency" id="user-content-gdpr-and-data-residency"></a>
+
+### 1. Is glueckkanja ISO 27001 certified?
+
+Yes. The Information Security Management System (ISMS) of glueckkanja AG is certified according to **ISO/IEC 27001:2022**. The scope of the certification covers:
+
+* Product Development
+* Managed Services
+
+You can view the current certificate [here](https://www.glueckkanja.com/documents/general/gk-ISO27001Certificate-en.pdf).
+
 ## GDPR and Data-residency <a href="#user-content-gdpr-and-data-residency" id="user-content-gdpr-and-data-residency"></a>
 
 ### 1. Is data leaving Europe?
@@ -363,7 +374,7 @@ Additionally, not all SCEP clients support TLS 1.3. One important example is the
 
 ### 1. What ensures that SCEPman is secure software?
 
-Our software development founds on the [Microsoft Security Development Lifecycle](https://www.microsoft.com/en-us/securityengineering/sdl/). Employing SDL practices helps us to create secure code and deployments. [We have the ISO 27001 information security certification for our product development.](https://www.glueckkanja.com/documents/general/gk-ISO27001Certificate-en.pdf)
+Our software development founds on the [Microsoft Security Development Lifecycle](https://www.microsoft.com/en-us/securityengineering/sdl/). Employing SDL practices helps us to create secure code and deployments. We have the [ISO 27001 information security certification for our product development](security-faq.md#id-1.-is-glueckkanja-iso-27001-certified).
 
 ### 2. How do you implement common Secure Design Practices?
 
