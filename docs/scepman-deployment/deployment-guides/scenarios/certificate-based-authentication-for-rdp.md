@@ -14,11 +14,15 @@ This will allow users for example to connect to other clients over the Remote De
 
 Follow our guide on Domain Controller certificates to publish the SCEPman Root CA certificate to the **NTAuth** store and issue certificates to your domain controllers:
 
-{% content-ref url="../../../certificate-management/domain-controller-certificates.md" %}
-[domain-controller-certificates.md](../../../certificate-management/domain-controller-certificates.md)
+{% content-ref url="../../../certificate-management/active-directory/" %}
+[active-directory](../../../certificate-management/active-directory/)
 {% endcontent-ref %}
 
 You can create a **Group Policy Object** to handle the distribution of the root certificate to the involved machines: [To distribute certificates to client computers by using Group Policy](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/distribute-certificates-to-client-computers-by-using-group-policy#to-distribute-certificates-to-client-computers-by-using-group-policy)
+
+{% content-ref url="../../../certificate-management/active-directory/group-policy.md" %}
+[group-policy.md](../../../certificate-management/active-directory/group-policy.md)
+{% endcontent-ref %}
 
 The certificate needs to be deployed to all Domain Controllers handling the authentications and all target machines that users want to connect to using this method.
 
@@ -32,7 +36,7 @@ Please be aware that once SCEPman's root certificate is published in the NTAuth 
 
 Your clients will need to [trust the root certificate of SCEPman](../../../certificate-management/microsoft-intune/windows-10.md#root-certificate).
 
-If you already use SCEPman to deploy certificates to your client's you will already have this profile in place.
+If you already use SCEPman to deploy certificates to your clients, you will already have this profile in place.
 
 ### Smart Card Certificate
 
