@@ -345,7 +345,7 @@ Additionally, not all SCEP clients support TLS 1.3. One important example is the
 
 **Note:** As only browsers access the Certificate Master App Service, it is recommend for Certificate Master to set the Minimum Inbound TLS Version to 1.3.
 
-## Compliance <a href="#user-content-gdpr-and-data-residency" id="user-content-gdpr-and-data-residency"></a>
+## Compliance <a href="#compliance" id="compliance"></a>
 
 ### 1. Is glueckkanja ISO 27001 certified?
 
