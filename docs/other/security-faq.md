@@ -356,6 +356,23 @@ Yes. The Information Security Management System (ISMS) of glueckkanja AG is cert
 
 You can view the current certificate [here](https://www.glueckkanja.com/documents/general/gk-ISO27001Certificate-en.pdf).
 
+### 2. Does glueckkanja have its security tested by external experts?
+
+Yes. In 2026, glueckkanja AG commissioned an independent, specialized offensive security company to conduct a Red Team assessment covering our entire company.
+
+We deliberately chose this holistic approach over a classic penetration test. Instead of checking individual systems or endpoints against known vulnerabilities, the Red Team simulated a realistic, advanced cyberattack by an internal attacker on our IT infrastructure, chaining techniques together the way real adversaries do.
+
+The assessment focused on:
+
+* identifying high-impact vulnerabilities,
+* mapping complete attack paths through our environment,
+* evaluating potential vectors for gaining unauthorized access to customer environments,
+* evaluating potential vectors for executing supply chain attacks.
+
+All findings were documented together with mitigation recommendations and are addressed as part of our ISO 27001 certified Information Security Management System.
+
+We will repeat this Red Team assessment annually.
+
 ## GDPR and Data-residency <a href="#user-content-gdpr-and-data-residency" id="user-content-gdpr-and-data-residency"></a>
 
 ### 1. Is data leaving Europe?
@@ -447,8 +464,12 @@ No.
 
 ### 6. Do you regularly perform penetration tests?
 
-No.
+Not in the form of a classic penetration test of SCEPman. Instead, glueckkanja AG undergoes an annual Red Team assessment by an independent external specialist, which goes beyond a classic penetration test (see [Does glueckkanja have its security tested by external experts?](security-faq.md#id-2.-does-glueckkanja-have-its-security-tested-by-external-experts)).
 
-As part of our Secure Development Practices, we employ tools (e.g. static code analysis) that scan the code base for CVEs and other common exploits (including dependencies such as 3rd party libraries) that could impact the security of the endpoints SCEPman exposes. Before any release, any relevant findings are assessed and remediated, to ensure SCEPman remains free from any known vulnerabilities.&#x20;
+As part of our Secure Development Practices, we employ tools (e.g. static code analysis) that scan the code base for CVEs and other common exploits (including dependencies such as 3rd party libraries) that could impact the security of the endpoints SCEPman exposes. Before any release, any relevant findings are assessed and remediated, to ensure SCEPman remains free from any known vulnerabilities.
 
-We neither perform penetration tests ourselves, nor do we use 3rd party "Penetration Test-as-a-Service" tools. For the former, we see an inherent conflict of interest. For the latter, since typical penetration test services often simply check the exposed endpoints against CVEs and other known exploits, we do not see any benefits over the checks we already perform using static code analysis. If you wish to perform your own penetration tests, please [reach out to us](https://support.scepman.com/support/tickets/new?ticket_form=drop_a_question_%28scepman%29) and tell us about your requirements.
+We neither perform penetration tests ourselves, nor do we use 3rd party "Penetration Test-as-a-Service" tools. For the former, we see an inherent conflict of interest. For the latter, since typical penetration test services often simply check the exposed endpoints against CVEs and other known exploits, we do not see any benefits over the checks we already perform using static code analysis.
+
+Instead, we rely on a holistic approach: In 2026, an independent Red Team simulated a realistic, advanced attack on glueckkanja AG, explicitly including attack paths into customer environments and supply chain attacks. Rather than testing isolated endpoints, this assessment evaluates complete attack paths across our organization, which we consider far more meaningful for the security of our customers. We repeat this assessment annually.
+
+If you wish to perform your own penetration tests, please [reach out to us](https://support.scepman.com/support/tickets/new?ticket_form=drop_a_question_%28scepman%29) and tell us about your requirements.
