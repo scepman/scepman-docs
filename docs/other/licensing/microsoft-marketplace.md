@@ -180,12 +180,13 @@ If you decide to disable **Recurring billing**, your subscription will not renew
 
 ### Cancellation
 
-* If you would like to (irreversibly) cancel your subscription, navigate to your **SCEPman subscription** in the [Azure SaaS portal](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.SaaS%2Fresources) and click **Cancel subscription**.
+* If you would like to (irreversibly) cancel your subscription, navigate to your **SCEPman subscription** in the [Azure SaaS portal](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.SaaS%2Fresources).
 
-<figure><img src="../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Docu-Cancellation-MMP-2.jpg" alt=""><figcaption></figcaption></figure>
 
-* If you cancel within the grace period, the service will be stopped immediately.
-* If you cancel after the grace period, the service will remain active until the end of the current subscription cycle.
+* If you wish to cancel within the 72-hour grace period, click on 'Cancel subscription'. Your subscription will be cancelled immediately.
+* If you cancel after the grace period has expired, click on 'Edit recurring billing' and deactivate auto-renewal. The service will remain active until the end of the current subscription cycle.
+* In case you require an immediate cancellation (e.g. due to an otherwise blocked Azure subscription change), please send an email to sales@scepman.com, stating the reason for the immediate cancellation.
 
 ## **Trials**
 
