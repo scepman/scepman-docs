@@ -1,31 +1,39 @@
+---
+description: Deploy SCEPman root and device certificates to iOS and iPadOS devices.
+---
+
 # Devices
 
-Please follow this guide to distribute certificates to devices (e.g.: iOS, iPadOS). Before deploying the first certificates via Jamf Pro, follow the [general steps for Jamf Pro](general.md) first.
+Deploy a device certificate to iOS and iPadOS devices through a Jamf Pro configuration profile. First complete the [general.md](general.md "mention").
 
 {% hint style="success" %}
-We strongly recommend configuring all use-case relevant certificate payloads (trusted certificate / SCEP certificate) in a **single** Configuration Profile in Jamf Pro.
+Add the trusted certificate and SCEP payloads to one configuration profile. This keeps deployment and renewal together.
 {% endhint %}
 
-## SCEPman Root Certificate
+## Create the configuration profile
 
-As first step you need to deploy SCEPman root certificate. Download this CA certificate via SCEPman dashboard:
+In Jamf Pro, create a **Mobile Device Configuration Profile**. Configure the following payloads before scoping the profile.
+
+### Add the trusted root certificate
+
+Download the SCEPman CA certificate from the SCEPman dashboard.
 
 ![](../../.gitbook/assets/image-2.png)
 
-Add a new "Mobile Device Configuration Profile" and choose "Certificate" as payload. Enter a meaningful name and upload the certificate (for "Select Certificate Option" select "Upload):
+Add the **Certificate** payload. Give it a meaningful name, select **Upload**, and upload the CA certificate.
 
 ![](<../../.gitbook/assets/image (25).png>)
 
-## Device Certificate
+### Add the device certificate
 
-Please add another "Mobile Device Configuration Profile" and choose "SCEP" as payload. Activate "Use the External Certificate Authority settings to enable Jamf Pro as SCEP proxy for this configuration profile" and enter the following information:
+Add the **SCEP** payload. Enable **Use the External Certificate Authority settings to enable Jamf Pro as SCEP proxy for this configuration profile**.
 
-| Field                | Description                                     | Value/Example                                |
+| Field                | Purpose                                         | Example                                      |
 | -------------------- | ----------------------------------------------- | -------------------------------------------- |
-| Name                 | Name/purpose                                    | e.g. "Device Authentication"                 |
-| Redistribute Profile | Re-deploys profile for renewal                  | e.g. "14 days"                               |
+| Name                 | Certificate purpose                             | `Device Authentication`                      |
+| Redistribute Profile | Profile renewal interval                        | `14 days`                                    |
 | Subject              | Subject for certificate, additions are possible | CN=$JSSID,OU=devices,CN=$PROFILE\_IDENTIFIER |
 
-Please adjust other options to your needs.
+Adjust the remaining payload options for your certificate use case. Scope the profile to the target devices.
 
 <figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>

@@ -1,10 +1,14 @@
+---
+description: Connect Jamf Pro to SCEPman as an external certificate authority.
+---
+
 # General Configuration
 
-SCEPman can be connected to Jamf Pro as an External CA via a SCEPman's dedicated Jamf endpoint allowing enrolled users and devices to obtain certificates. Jamf Pro acts as a SCEP Proxy, proxing communication between SCEPman and Jamf Pro devices.
+Connect Jamf Pro to SCEPman as an external CA. Jamf Pro proxies SCEP requests from enrolled users and devices to SCEPman's dedicated `/jamf` endpoint.
 
-## Enable Jamf Integration
+## 1. Enable the Jamf endpoint
 
-Jamf integration of SCEPman can be easily enabled via the following environment variables on **SCEPman app service**:
+Set these application settings on the **SCEPman App Service**. Do not set them on Certificate Master.
 
 | Setting                                                                                                                                                                                              | Description                                                                                                                                                                                                                                                       | Example                     |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
@@ -13,9 +17,9 @@ Jamf integration of SCEPman can be easily enabled via the following environment 
 | [AppConfig:JamfValidation:ValidityPeriodDays](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-validityperioddays) (optional)             | How many days shall certificates issued via Jamf be valid at most?                                                                                                                                                                                                | 365                         |
 | [AppConfig:JamfValidation:EnableCertificateStorage](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-enablecertificatestorage) (optional) | Enable this setting to save Jamf certificates in Certificate Master                                                                                                                                                                                               | true or false (default)     |
 
-## API Connection
+## 2. Configure the Jamf API connection
 
-SCEPman needs to be connected to the Jamf API to check the status of onboarded clients. This is used for the revocation of certificates.
+SCEPman uses the Jamf API to check enrolled-client status. This enables revocation when Jamf objects are deleted.
 
 [Refer to the Jamf documentation](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/API_Roles_and_Clients.html) on how to create an API role and API client. The API client must have a role with these permissions:
 
@@ -23,7 +27,7 @@ SCEPman needs to be connected to the Jamf API to check the status of onboarded c
 * Read Computers
 * Read User
 
-&#x20;Please define the following environment variables in your **SCEPman App Service**:
+Set these application settings on the **SCEPman App Service**:
 
 | Setting                                                                                                                                                           | Description                                                                                                                                                                                                                               | Example                                                                                                                                    |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -31,39 +35,39 @@ SCEPman needs to be connected to the Jamf API to check the status of onboarded c
 | [AppConfig:JamfValidation:ClientID](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-clientid)         | The identifier of the Jamf API client                                                                                                                                                                                                     | See [Jamf ClientId](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/API_Roles_and_Clients.html#ariaid-title3)      |
 | [AppConfig:JamfValidation:ClientSecret](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-clientsecret) | <p>The Client Secret value for the API Client configuration.</p><p>Consider adding this as a secret in your SCEPman <a href="../../scepman-configuration/application-settings/#secure-configuration-in-azure-key-vault">KeyVault</a>.</p> | See [Jamf Client Secret](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/API_Roles_and_Clients.html#ariaid-title4) |
 
-{% hint style="warning" %}
-Jamf Pro's Classic API supports Bearer Authentication since version 10.35.0. There is a setting to disable the previous authentication method, Basic Authentication, since version 10.36.0. A future Jamf version scheduled for August-December 2022 will remove support for Basic Authentication. SCEPman 2.0 and lower support only Basic Authentication for the Classic API, while SCEPman 2.1 and higher uses Bearer Authentication. In order to use Bearer Authentication, you must upgrade to SCEPman 2.1 or higher.
+{% hint style="info" %}
+Use an API client with `ClientID` and `ClientSecret`. Legacy API username and password settings remain available for compatible deployments.
 {% endhint %}
 
-## External CA Connection
+## 3. Connect the External CA
 
-Open Jamf Pro settings and choose "PKI Certificates" under "Global Management":
+In Jamf Pro, open **Settings → Global Management → PKI Certificates**.
 
 ![](<../../.gitbook/assets/image (23).png>)
 
-Switch to tab "Management Certificate Template", "External CA" and activate edit mode. Please enable Jamf Pro as "SCEP Proxy for configuration profiles":
+Open **Management Certificate Template → External CA** and enable **SCEP Proxy for configuration profiles**.
 
 ![](<../../.gitbook/assets/image (26).png>)
 
-Please fill out the following fields and save the configuration:
+Complete the following fields, then save the configuration:
 
-| Field                    | Description                                                                                      | Example/Value                                                                                                                                                             |
-| ------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **URL**                  | <p>URL to SCEPman</p><p>Do <strong>NOT</strong> Forget the <strong>/jamf</strong> at the end</p> | [https://scepman.contoso.com/jamf](https://scepman.contoso.com/jamf)                                                                                                      |
-| **Name**                 | name of instance                                                                                 | SCEPman Contoso                                                                                                                                                           |
-| **Subject**              | entities following X.500 standard                                                                | O=Contoso                                                                                                                                                                 |
-| **Challenge Type**       | challenge type for verification of certificate issuing                                           | Static                                                                                                                                                                    |
-| **(Verify) Challenge**   | pre-shared secret (challenge)                                                                    | defined in SCEPman via [AppConfig](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-requestpassword) parameter |
-| Key Size                 | key size in bits                                                                                 | 2048                                                                                                                                                                      |
-| Use as digital signature |                                                                                                  | Yes (if needed)                                                                                                                                                           |
-| Use for key encipherment |                                                                                                  | Yes (if needed)                                                                                                                                                           |
-| Fingerprint              | Thumbprint of SCEPman CA-Cert (SHA-1)                                                            | visible via SCEPman dashboard ("CA Thumbprint")                                                                                                                           |
+| Field                    | Description                                            | Example/Value                                                                                                                                                             |
+| ------------------------ | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **URL**                  | SCEPman URL. Include the `/jamf` path.                 | [https://scepman.contoso.com/jamf](https://scepman.contoso.com/jamf)                                                                                                      |
+| **Name**                 | name of instance                                       | SCEPman Contoso                                                                                                                                                           |
+| **Subject**              | entities following X.500 standard                      | O=Contoso                                                                                                                                                                 |
+| **Challenge Type**       | challenge type for verification of certificate issuing | Static                                                                                                                                                                    |
+| **(Verify) Challenge**   | pre-shared secret (challenge)                          | defined in SCEPman via [AppConfig](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-requestpassword) parameter |
+| Key Size                 | key size in bits                                       | 2048                                                                                                                                                                      |
+| Use as digital signature |                                                        | Yes (if needed)                                                                                                                                                           |
+| Use for key encipherment |                                                        | Yes (if needed)                                                                                                                                                           |
+| Fingerprint              | Thumbprint of SCEPman CA-Cert (SHA-1)                  | visible via SCEPman dashboard ("CA Thumbprint")                                                                                                                           |
 
 ![](<../../.gitbook/assets/2021-10-21 20-37-05-Edit PKI Certificates PKI Certificates- and 1 more page - Work - Microsoft Edge.png>)
 
-### Signing Certificate
+## 4. Upload signing and CA certificates
 
-When using an external CA, Jamf requires that you add the CA certificate so Jamf can compare whether the certificates are correctly signed. However, Jamf only allows adding a CA certificate if you also add a signing certificate with a corresponding private key. Jamf uses this signing certificate to sign certificate requests that are sent to SCEPman. However, SCEPman does not evaluate the signature on requests and accepts even unsigned requests (e.g. from Intune), because the request validity stems solely from using the right request challenge password configured in Jamf.
+Jamf requires a signing certificate and the SCEPman CA certificate. Jamf signs requests with the signing certificate. SCEPman validates the configured challenge password.
 
 {% tabs %}
 {% tab title="OpenSSL" %}
@@ -85,8 +89,8 @@ $pfxBytes = $cert.Export([System.Security.Cryptography.X509Certificates.X509Cont
 {% endtab %}
 {% endtabs %}
 
-Then click on "Change Signing and CA Certificates" in the External CA configuration of Jamf
+Select **Change Signing and CA Certificates** in the Jamf external CA configuration.
 
 ![](../../.gitbook/assets/jamfsigningcertificate.png)
 
-In the wizard, upload the PFX file with the signing certificate to Jamf when it asks for it (Note: Pkcs#12 and PFX are synonyms). In the next steps, enter the password for the PFX file and confirm the selection of the signing certificate. In the tab "Upload CA Certificate", you must upload the SCEPman CA certificate. You can obtain the SCEPman CA certificate by clicking on the link "Get CA Certificate" on the top right of the homepage of your SCEPman instance. Finally, confirm your changes.
+In the wizard, upload the signing-certificate PFX file. Enter its password and confirm the signing certificate. Under **Upload CA Certificate**, upload the SCEPman CA certificate. Download it with **Get CA Certificate** on the SCEPman homepage. Confirm the changes.

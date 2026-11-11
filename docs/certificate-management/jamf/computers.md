@@ -1,42 +1,48 @@
+---
+description: Deploy SCEPman root and device certificates to macOS computers.
+---
+
 # Computers
 
-Please follow this guide to distribute certificates to computers (macOS). Before deploying the first certificates via Jamf Pro, follow the [general steps for Jamf Pro](general.md) first.
+Deploy a device certificate to macOS computers through a Jamf Pro configuration profile. First complete the [general.md](general.md "mention").
 
 {% hint style="success" %}
-We strongly recommend configuring all use-case relevant certificate payloads (trusted certificate / SCEP certificate) in a **single** Configuration Profile in Jamf Pro.
+Add the trusted certificate and SCEP payloads to one configuration profile. This keeps deployment and renewal together.
 {% endhint %}
 
-## SCEPman Root Certificate
+## Create the configuration profile
 
-As first step you need to deploy SCEPman root certificate. Download this CA certificate via SCEPman dashboard:
+In Jamf Pro, create a **macOS Configuration Profile**. Configure the following payloads before scoping the profile.
+
+### Add the trusted root certificate
+
+Download the SCEPman CA certificate from the SCEPman dashboard.
 
 ![](../../.gitbook/assets/image-2.png)
 
-Add a new "macOS Configuration Profile" and choose "Certificate" as payload. Enter a meaningful name, upload the certificate (for"Select Certificate Option" select "Upload)" and activate "Allow all apps access":
+Add the **Certificate** payload. Give it a meaningful name, select **Upload**, and upload the CA certificate. Enable **Allow all apps access**.
 
 ![](<../../.gitbook/assets/image (29).png>)
 
-Distribute that profile to all clients that should get SCEP certificates later.
+### Add the device certificate
 
-## Machine Certificate
+Add the **SCEP** payload. Enable **Use the External Certificate Authority settings to enable Jamf Pro as SCEP proxy for this configuration profile**.
 
-Please add another "macOS Configuration Profile" and choose "SCEP" as payload. Activate "Use the External Certificate Authority settings to enable Jamf Pro as SCEP proxy for this configuration profile" and enter the following information:
-
-| Field                      | Description                                     | Value/Example                                  |
+| Field                      | Purpose                                         | Example                                        |
 | -------------------------- | ----------------------------------------------- | ---------------------------------------------- |
-| Name                       | Name/purpose                                    | e.g. "Device Authentication"                   |
-| Redistribute Profile       | Re-deploys profile for renewal                  | e.g. "14 days"                                 |
+| Name                       | Certificate purpose                             | `Device Authentication`                        |
+| Redistribute Profile       | Profile renewal interval                        | `14 days`                                      |
 | Subject                    | Subject for certificate, additions are possible | CN=$JSSID,OU=computers,CN=$PROFILE\_IDENTIFIER |
-| Allow export from keychain | Controls whether the private key is exportable  | No                                             |
-| Allow all apps access      | Controls access to the SCEP certificate         | Yes                                            |
+| Allow export from keychain | Private-key export                              | No                                             |
+| Allow all apps access      | Certificate access                              | Yes                                            |
 
-Please adjust other options to your needs.
+Adjust the remaining payload options for your certificate use case. Scope the profile to the computers that require the certificate.
 
 <figure><img src="../../.gitbook/assets/image (120).png" alt=""><figcaption></figcaption></figure>
 
-## Output on the Client
+### Verify deployment
 
-Besides reporting on Jamf Pro, you can easily verify the distribution of SCEPman Root Certificate and Device Certificate via "Keychain Access" on the desired client (under "System"):
+Use **Keychain Access** on the target Mac. Check the **System** keychain for both certificates. Jamf Pro also reports the profile status.
 
 ![SCEPman Root Certificate](<../../.gitbook/assets/image (31).png>)
 
