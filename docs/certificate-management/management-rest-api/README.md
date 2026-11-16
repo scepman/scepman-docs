@@ -14,7 +14,7 @@ These endpoints are available under `/api/manage` and require an authenticated u
 If you update from an earlier SCEPman version, you might not yet have the Manage.All role. Run `Complete-SCEPmanInstallation` again in a cloud shell to automatically add it to your SCEPman-api application.
 {% endhint %}
 
-### Authentication
+## Authentication
 
 The API uses Entra authentication. The easiest way to authenticate is often the Microsoft Authentication Library (MSAL).
 
@@ -41,13 +41,13 @@ curl -X GET "https://scepman.contoso.com/api/manage/search?searchText=ABC123&pag
   -H "Accept: application/json"
 ```
 
-### Search API
+## Search API
 
 **`GET /api/manage/search`**
 
 Searches issued certificates and returns a paginated result set.
 
-#### Search parameters
+### Search parameters
 
 **`searchText`**
 
@@ -100,9 +100,7 @@ Valid values are shown in the table below, you must specify the source using the
 | RadiusAPI         | 8                                       |
 | Active Directory  | 10                                      |
 
-The response is a paginated list of certificate records plus a continuation token for fetching the next page.
-
-**Example**
+### **Example**
 
 ```bash
 curl -X GET "https://scepman.contoso.com/api/manage/search?searchText=507AEAC03CCEF83F106914418D9222E466A629C1&pageSize=10&certValidity=Any&certType=Any" \
@@ -110,7 +108,7 @@ curl -X GET "https://scepman.contoso.com/api/manage/search?searchText=507AEAC03C
   -H "Accept: application/json"
 ```
 
-**Example response**
+#### **Example response**
 
 ```json
 {
@@ -130,11 +128,70 @@ curl -X GET "https://scepman.contoso.com/api/manage/search?searchText=507AEAC03C
     "certificateType":  "Static"
     }
   ],
-  "continuationToken": "..."
+  "continuationToken": "...",
+  "fullTextSearch": false
 }
 ```
 
-### **Revocation API**
+### **Response fields**
+
+**`items`**
+
+The certificates of the current page.
+
+**`continuationToken`**
+
+An opaque token for fetching the next page. It is `null` when the last page has been reached.
+
+{% hint style="info" %}
+Treat the continuation token as opaque and pass it back unchanged. Do not modify it, do not persist it across long periods, and do not reuse it with different search parameters — a token is only valid for the exact query that produced it.
+{% endhint %}
+
+**`fullTextSearch`**
+
+Indicates which kind of text matching produced this result.
+
+* `true` — `searchText` was matched **anywhere** within the searched fields (full-text search).
+* `false` — `searchText` was only matched against the **beginning** of the searched fields (prefix search).
+
+The field is also present when no `searchText` was given; it is `false` in that case.
+
+{% hint style="info" %}
+`fullTextSearch` is available from SCEPman 3.2. SCEPman 3.1 omits it and always performs a prefix search.
+{% endhint %}
+
+### Search Behaviour
+
+#### **Full-text search vs. prefix search**
+
+SCEPman chooses the search strategy automatically and the strategy selection may change with future version of SCEPman and especially based on the number of certificates in your environment.
+
+* For `"fullTextSearch": true`, SCEPman uses a case-insensitive **substring** match over serial number, subject, SANs, UPN, requester, revoker and certificate type.
+* For  `"fullTextSearch": false`, the search matches only at the **beginning** of a field. Matched fields are serial number, UPN, requester, revoker and subject. The subject search includes both the raw subject and the Common Name RDN, e.g. searching for `device01` would match a certificate with subject `CN=device01`.
+
+{% hint style="warning" %}
+Because API clients cannot control the specific strategy employed, you should not rely on a specific strategy being used and be able to handle both amounts of certificates.&#x20;
+{% endhint %}
+
+### Error response
+
+#### **Invalid continuation token**
+
+```http
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+```
+
+```json
+{
+  "errorMessage": "The continuation token is invalid. Please repeat the search without a continuation token.",
+  "errorCode": 4014
+}
+```
+
+The error with errorCode 4014 happens when a continuation token cannot be interpreted. Repeat the search from the first page without a continuation token.
+
+## **Revocation API**
 
 **`PATCH /api/manage/revoke/{serialNumber}`**
 
@@ -151,7 +208,7 @@ If specified, we recommend to use the UPN for the revoker field. If not specifie
 This value is used for auditing and in searches.
 {% endhint %}
 
-**Example**
+### **Example**
 
 ```bash
 curl -X PATCH "https://scepman.contoso.com/api/manage/revoke/ABC123" \
@@ -163,13 +220,13 @@ curl -X PATCH "https://scepman.contoso.com/api/manage/revoke/ABC123" \
   }'
 ```
 
-**Successful response**
+#### **Successful response**
 
 ```http
 HTTP/1.1 200 OK
 ```
 
-**Certificate not found**
+#### **Certificate not found**
 
 ```http
 HTTP/1.1 404 Not Found
@@ -183,7 +240,7 @@ Content-Type: application/json
 }
 ```
 
-**Already revoked**
+#### **Already revoked**
 
 ```http
 HTTP/1.1 409 Conflict
@@ -197,7 +254,7 @@ Content-Type: application/json
 }
 ```
 
-#### Supported revocation reasons
+### Supported revocation reasons
 
 The API supports the revocation reasons specified in [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280#section-5.3.1):
 
