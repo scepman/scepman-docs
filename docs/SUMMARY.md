@@ -71,6 +71,9 @@
   * [Group Policy](certificate-management/active-directory/group-policy.md)
   * [Scenarios](certificate-management/active-directory/scenarios/README.md)
     * [RDP Server Certificate](certificate-management/active-directory/scenarios/rdp-server-certificate.md)
+* [🆕 ACME](certificate-management/acme/README.md)
+  * [Configure ACME](certificate-management/acme/configure-acme.md)
+  * [ACME Clients](certificate-management/acme/acme-clients.md)
 
 ## Azure Configuration
 
@@ -116,6 +119,7 @@
     * [Static-AAD Validation](scepman-configuration/application-settings/scep-endpoints/staticaad-validation.md)
     * [RADIUSaaS](scepman-configuration/application-settings/scep-endpoints/radiusaas.md)
   * [Logging](scepman-configuration/application-settings/logging.md)
+  * [ACME](scepman-configuration/application-settings/acme.md)
 * [Certificate Master Settings](scepman-configuration/application-settings-1/README.md)
   * [Basics](scepman-configuration/application-settings-1/basics.md)
   * [Microsoft Entra ID (Azure AD)](scepman-configuration/application-settings-1/azure-ad.md)

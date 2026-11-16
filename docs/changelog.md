@@ -8,6 +8,14 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
 
 ## Versions
 
+### 3.2 - Currently in Internal and Beta Channel
+
+#### SCEPman 3.2.26320
+
+* [ACME for Server Certificates](certificate-management/acme/)
+* Library Updates
+* ...
+
 ### 3.1 - June 2026
 
 #### SCEPman 3.1.26303 (October 2026)
@@ -69,6 +77,12 @@ If you'd like to **stay up to date on the latest changes and news in the SCEPman
   * Improve Windows PowerShell compatibility for certificate renewals
   * Allow multiple SAN entries in requests
   * Fix target directory expansion for relative paths in Linux
+
+### 3.0 - December 2025
+
+#### SCEPman 3.1.26055
+
+* [ACME Endpoint ](certificate-management/acme/)for enrolling TLS server certificates.&#x20;
 
 ### 3.0 - December 2025
 
