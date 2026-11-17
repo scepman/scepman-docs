@@ -143,6 +143,7 @@
   * [Renewing SCEPman Root CA](other/faqs/renewing-scepman-root-ca.md)
   * [PKI & Certificates](other/faqs/pki-and-certificates.md)
   * [Key Vault RBAC Migration](other/faqs/key-vault-rbac-migration.md)
+  * [Azure Key Vault API retirement notices (2026/2027)](other/faqs/azure-key-vault-api-retirement-notices-2026-2027.md)
 * [Troubleshooting](other/troubleshooting/README.md)
   * [Common Problems](other/troubleshooting/general.md)
   * [Certifried Security Vulnerability](other/troubleshooting/certifried.md)
