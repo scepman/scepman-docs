@@ -23,25 +23,25 @@ Choose the endpoint that matches your MDM integration.
 
 Add the settings for your chosen endpoint in **SCEPman App Service** → **Environment Variables**. Save the settings, then **restart** the App Service.
 
-{% tabs %}
-{% tab title="Static-AAD" %}
-|                                                                                                                   Setting                                                                                                                   | Description                                                                                                                                                                                                                              |                     Value                    |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------: |
-|                                    [AppConfig:StaticAADValidation:Enabled](../../scepman-configuration/application-settings/scep-endpoints/staticaad-validation.md#appconfig-staticaadvalidation-enabled)                                   | Enable Static-AAD validation                                                                                                                                                                                                             | _**true**_ to enable, _**false**_ to disable |
-|                            [AppConfig:StaticAADValidation:RequestPassword](../../scepman-configuration/application-settings/scep-endpoints/staticaad-validation.md#appconfig-staticaadvalidation-requestpassword)                           | <p>Authenticates certificate signing requests.<br><br><strong>Recommendation:</strong> Store this secret in <a href="../../scepman-configuration/application-settings/#secure-configuration-in-azure-key-vault">Azure Key Vault</a>.</p> |      _generate a 32-character password_      |
-|       <p><a href="../../scepman-configuration/application-settings/scep-endpoints/staticaad-validation.md#appconfig-staticaadvalidation-validityperioddays">AppConfig:StaticAADValidation:ValidityPeriodDays</a></p><p>(optional)</p>       | Certificate validity in days                                                                                                                                                                                                             |                      365                     |
-| <p><a href="../../scepman-configuration/application-settings/scep-endpoints/staticaad-validation.md#appconfig-staticaadvalidation-enablecertificatestorage">AppConfig:StaticAADValidation:EnableCertificateStorage</a></p><p>(optional)</p> | Store issued certificates for Certificate Master                                                                                                                                                                                         | _**true**_ to enable, _**false** to disable_ |
-{% endtab %}
+<details>
 
-{% tab title="Static" %}
-|                                                                                                   Setting                                                                                                  | Description                                                                                                                                                                                                                              |                     Value                    |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------: |
-|                        [AppConfig:StaticValidation:Enabled](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-enabled)                       | Enable Static validation                                                                                                                                                                                                                 | _**true**_ to enable, _**false**_ to disable |
-|                [AppConfig:StaticValidation:RequestPassword](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-requestpassword)               | <p>Authenticates certificate signing requests.<br><br><strong>Recommendation:</strong> Store this secret in <a href="../../scepman-configuration/application-settings/#secure-configuration-in-azure-key-vault">Azure Key Vault</a>.</p> |      _generate a 32-character password_      |
-|       [AppConfig:StaticValidation:ValidityPeriodDays](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-validityperioddays) (optional)       | Certificate validity in days                                                                                                                                                                                                             |                      365                     |
-| [AppConfig:StaticValidation:EnableCertificateStorage](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-enablecertificatestorage) (optional) | Store issued certificates for Certificate Master                                                                                                                                                                                         | _**true**_ to enable, _**false** to disable_ |
-{% endtab %}
-{% endtabs %}
+<summary>Static-AAD validation</summary>
+
+Use these settings when your MDM integrates with Microsoft Entra ID.
+
+{% include "../../.gitbook/includes/static-aad-environment-variables.md" %}
+
+</details>
+
+<details>
+
+<summary>Static validation</summary>
+
+Use these settings when your MDM does not use Entra ID integration.
+
+{% include "../../.gitbook/includes/static-environment-variables.md" %}
+
+</details>
 
 ### Set up your MDM
 

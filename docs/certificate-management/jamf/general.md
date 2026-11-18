@@ -6,9 +6,28 @@ description: Connect Jamf Pro to SCEPman as an external certificate authority.
 
 Connect Jamf Pro to SCEPman as an external CA. Jamf Pro proxies SCEP requests from enrolled users and devices to SCEPman's dedicated `/jamf` endpoint.
 
-## 1. Enable the Jamf endpoint
+{% stepper %}
+{% step %}
+### Enable the Jamf endpoint
 
 Set these application settings on the **SCEPman App Service**. Do not set them on Certificate Master.
+
+Use the setting names for your App Service operating system.
+
+{% tabs %}
+{% tab title="Linux" %}
+Linux App Services use double underscores (`__`) instead of colons.
+
+| Setting                                                                                                                                                                                                    | Description                                                                                                                                                                                                                                                       | Example                     |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| [AppConfig\_\_JamfValidation\_\_Enabled](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-enabled)                                              | Do you want to use SCEPman with Jamf?                                                                                                                                                                                                                             | true                        |
+| [AppConfig\_\_JamfValidation\_\_RequestPassword](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-requestpassword)                              | <p>Jamf authenticates its certificate requests at SCEPman with this secure password.</p><p>Consider adding this as a secret in your SCEPman <a href="../../scepman-configuration/application-settings/#secure-configuration-in-azure-key-vault">KeyVault</a>.</p> | max _32 character password_ |
+| [AppConfig\_\_JamfValidation\_\_ValidityPeriodDays](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-validityperioddays) (optional)             | How many days shall certificates issued via Jamf be valid at most?                                                                                                                                                                                                | 365                         |
+| [AppConfig\_\_JamfValidation\_\_EnableCertificateStorage](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-enablecertificatestorage) (optional) | Enable this setting to save Jamf certificates in Certificate Master                                                                                                                                                                                               | true or false (default)     |
+{% endtab %}
+
+{% tab title="Windows" %}
+Windows App Services use colons (`:`) in setting names.
 
 | Setting                                                                                                                                                                                              | Description                                                                                                                                                                                                                                                       | Example                     |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
@@ -16,8 +35,12 @@ Set these application settings on the **SCEPman App Service**. Do not set them o
 | [AppConfig:JamfValidation:RequestPassword](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-requestpassword)                              | <p>Jamf authenticates its certificate requests at SCEPman with this secure password.</p><p>Consider adding this as a secret in your SCEPman <a href="../../scepman-configuration/application-settings/#secure-configuration-in-azure-key-vault">KeyVault</a>.</p> | max _32 character password_ |
 | [AppConfig:JamfValidation:ValidityPeriodDays](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-validityperioddays) (optional)             | How many days shall certificates issued via Jamf be valid at most?                                                                                                                                                                                                | 365                         |
 | [AppConfig:JamfValidation:EnableCertificateStorage](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-enablecertificatestorage) (optional) | Enable this setting to save Jamf certificates in Certificate Master                                                                                                                                                                                               | true or false (default)     |
+{% endtab %}
+{% endtabs %}
+{% endstep %}
 
-## 2. Configure the Jamf API connection
+{% step %}
+### Configure the Jamf API connection
 
 SCEPman uses the Jamf API to check enrolled-client status. This enables revocation when Jamf objects are deleted.
 
@@ -29,17 +52,35 @@ SCEPman uses the Jamf API to check enrolled-client status. This enables revocati
 
 Set these application settings on the **SCEPman App Service**:
 
+{% tabs %}
+{% tab title="Linux" %}
+Linux App Services use double underscores (`__`) instead of colons.
+
+| Setting                                                                                                                                                                 | Description                                                                                                                                                                                                                               | Example                                                                                                                                    |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [AppConfig\_\_JamfValidation\_\_URL](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-url)                   | The URL of your Jamf instance                                                                                                                                                                                                             | `https://contoso.jamfcloud.com`                                                                                                            |
+| [AppConfig\_\_JamfValidation\_\_ClientID](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-clientid)         | The identifier of the Jamf API client                                                                                                                                                                                                     | See [Jamf ClientId](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/API_Roles_and_Clients.html#ariaid-title3)      |
+| [AppConfig\_\_JamfValidation\_\_ClientSecret](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-clientsecret) | <p>The Client Secret value for the API Client configuration.</p><p>Consider adding this as a secret in your SCEPman <a href="../../scepman-configuration/application-settings/#secure-configuration-in-azure-key-vault">KeyVault</a>.</p> | See [Jamf Client Secret](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/API_Roles_and_Clients.html#ariaid-title4) |
+{% endtab %}
+
+{% tab title="Windows" %}
+Windows App Services use colons (`:`) in setting names.
+
 | Setting                                                                                                                                                           | Description                                                                                                                                                                                                                               | Example                                                                                                                                    |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | [AppConfig:JamfValidation:URL](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-url)                   | The URL of your Jamf instance                                                                                                                                                                                                             | `https://contoso.jamfcloud.com`                                                                                                            |
 | [AppConfig:JamfValidation:ClientID](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-clientid)         | The identifier of the Jamf API client                                                                                                                                                                                                     | See [Jamf ClientId](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/API_Roles_and_Clients.html#ariaid-title3)      |
 | [AppConfig:JamfValidation:ClientSecret](../../scepman-configuration/application-settings/scep-endpoints/jamf-validation.md#appconfig-jamfvalidation-clientsecret) | <p>The Client Secret value for the API Client configuration.</p><p>Consider adding this as a secret in your SCEPman <a href="../../scepman-configuration/application-settings/#secure-configuration-in-azure-key-vault">KeyVault</a>.</p> | See [Jamf Client Secret](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/API_Roles_and_Clients.html#ariaid-title4) |
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 Use an API client with `ClientID` and `ClientSecret`. Legacy API username and password settings remain available for compatible deployments.
 {% endhint %}
+{% endstep %}
 
-## 3. Connect the External CA
+{% step %}
+### Connect the External CA
 
 In Jamf Pro, open **Settings → Global Management → PKI Certificates**.
 
@@ -64,8 +105,10 @@ Complete the following fields, then save the configuration:
 | Fingerprint              | Thumbprint of SCEPman CA-Cert (SHA-1)                  | visible via SCEPman dashboard ("CA Thumbprint")                                                                                                                           |
 
 ![](<../../.gitbook/assets/2021-10-21 20-37-05-Edit PKI Certificates PKI Certificates- and 1 more page - Work - Microsoft Edge.png>)
+{% endstep %}
 
-## 4. Upload signing and CA certificates
+{% step %}
+### Upload signing and CA certificates
 
 Jamf requires a signing certificate and the SCEPman CA certificate. Jamf signs requests with the signing certificate. SCEPman validates the configured challenge password.
 
@@ -94,3 +137,5 @@ Select **Change Signing and CA Certificates** in the Jamf external CA configurat
 ![](../../.gitbook/assets/jamfsigningcertificate.png)
 
 In the wizard, upload the signing-certificate PFX file. Enter its password and confirm the signing certificate. Under **Upload CA Certificate**, upload the SCEPman CA certificate. Download it with **Get CA Certificate** on the SCEPman homepage. Confirm the changes.
+{% endstep %}
+{% endstepper %}

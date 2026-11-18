@@ -10,10 +10,14 @@ Deploy a device certificate to iOS and iPadOS devices through a Jamf Pro configu
 Add the trusted certificate and SCEP payloads to one configuration profile. This keeps deployment and renewal together.
 {% endhint %}
 
-## Create the configuration profile
+{% stepper %}
+{% step %}
+### Create the configuration profile
 
 In Jamf Pro, create a **Mobile Device Configuration Profile**. Configure the following payloads before scoping the profile.
+{% endstep %}
 
+{% step %}
 ### Add the trusted root certificate
 
 Download the SCEPman CA certificate from the SCEPman dashboard.
@@ -23,7 +27,9 @@ Download the SCEPman CA certificate from the SCEPman dashboard.
 Add the **Certificate** payload. Give it a meaningful name, select **Upload**, and upload the CA certificate.
 
 ![](<../../.gitbook/assets/image (25).png>)
+{% endstep %}
 
+{% step %}
 ### Add the device certificate
 
 Add the **SCEP** payload. Enable **Use the External Certificate Authority settings to enable Jamf Pro as SCEP proxy for this configuration profile**.
@@ -37,3 +43,5 @@ Add the **SCEP** payload. Enable **Use the External Certificate Authority settin
 Adjust the remaining payload options for your certificate use case. Scope the profile to the target devices.
 
 <figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+{% endstepper %}

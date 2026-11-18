@@ -9,7 +9,9 @@ description: >-
 
 For more general information about other MDM solutions and SCEPman integration please check [here](./).
 
-## Enable Mosyle Integration
+{% stepper %}
+{% step %}
+### Enable Mosyle integration
 
 Integrating Mosyle with SCEPman can be easily enabled via the following SCEPman app configurations:
 
@@ -17,20 +19,39 @@ Integrating Mosyle with SCEPman can be easily enabled via the following SCEPman 
 You can differentiate between the SCEPman App Service and the Certificate Master by looking for the App Service **without** the "-cm" in its name
 {% endhint %}
 
+Use the setting names for your App Service operating system.
+
+{% tabs %}
+{% tab title="Linux" %}
+Linux App Services use double underscores (`__`) instead of colons.
+
+|                                                                                                         Setting                                                                                                        | Description                                                                                                                                                                                                                                                                                             |                     Value                    |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------: |
+|                           [AppConfig\_\_StaticValidation\_\_Enabled](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-enabled)                          | Enable the 3rd-party validation                                                                                                                                                                                                                                                                         |   **true** to enable, **false** to disable   |
+|                   [AppConfig\_\_StaticValidation\_\_RequestPassword](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-requestpassword)                  | <p>Certificate signing requests sent to SCEPman for signing are authenticated with this secure static password<br><br><strong>Recommendation</strong>: Store this secret in <a href="../../scepman-configuration/application-settings/#secure-configuration-in-azure-key-vault">Azure KeyVault</a>.</p> |      _generate a 32 character password_      |
+|          [AppConfig\_\_StaticValidation\_\_ValidityPeriodDays](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-validityperioddays) (optional)          | How many days shall certificates issued via Mosyle be valid                                                                                                                                                                                                                                             |                      365                     |
+| [AppConfig\_\_StaticValidation\_\_EnableCertificateStorage](../../scepman-configuration/application-settings/scep-endpoints/staticaad-validation.md#appconfig-staticaadvalidation-enablecertificatestorage) (optional) | Store requested certificates in the Storage Account, in order to show them in SCEPman Certificate Master                                                                                                                                                                                                | _**true**_ to enable, _**false** to disable_ |
+{% endtab %}
+
+{% tab title="Windows" %}
+Windows App Services use colons (`:`) in setting names.
+
 |                                                                                                      Setting                                                                                                     | Description                                                                                                                                                                                                                                                                                             |                     Value                    |
 | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------: |
 |                           [AppConfig:StaticValidation:Enabled](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-enabled)                          | Enable the 3rd-party validation                                                                                                                                                                                                                                                                         |   **true** to enable, **false** to disable   |
 |                   [AppConfig:StaticValidation:RequestPassword](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-requestpassword)                  | <p>Certificate signing requests sent to SCEPman for signing are authenticated with this secure static password<br><br><strong>Recommendation</strong>: Store this secret in <a href="../../scepman-configuration/application-settings/#secure-configuration-in-azure-key-vault">Azure KeyVault</a>.</p> |      _generate a 32 character password_      |
 |          [AppConfig:StaticValidation:ValidityPeriodDays](../../scepman-configuration/application-settings/scep-endpoints/static-validation.md#appconfig-staticvalidation-validityperioddays) (optional)          | How many days shall certificates issued via Mosyle be valid                                                                                                                                                                                                                                             |                      365                     |
 | [AppConfig:StaticValidation:EnableCertificateStorage](../../scepman-configuration/application-settings/scep-endpoints/staticaad-validation.md#appconfig-staticaadvalidation-enablecertificatestorage) (optional) | Store requested certificates in the Storage Account, in order to show them in SCEPman Certificate Master                                                                                                                                                                                                | _**true**_ to enable, _**false** to disable_ |
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 After adding or editing SCEPman configuration parameters, you need to restart the app service.
 {% endhint %}
+{% endstep %}
 
-## Mosyle Configuration
-
-### SCEPman Root Certificate
+{% step %}
+### Deploy the SCEPman root certificate
 
 As a first step you must deploy SCEPman's root certificate. Download this CA certificate via SCEPman website:
 
@@ -51,8 +72,10 @@ Now you need to assign this profile to your devices/users, then Save
 After saving, you can check the compliance status by clicking on view details on the profile
 
 ![Profile Distribution Status](<../../.gitbook/assets/2022-07-25 10_10_27-Window.png>)
+{% endstep %}
 
-### Device Certificate
+{% step %}
+### Deploy the device certificate
 
 Add a new profile, add profile name e.g. SCEPman Device Certificate, **+ADD PROFILE,** now choose **SCEP Profile** and fill out the values as shown below
 
@@ -83,3 +106,5 @@ Now you need to assign this profile to your devices/users, then **Save**.
 After saving, you can check the compliance status by clicking on view details on the profile
 
 ![Profile Distribution Status](<../../.gitbook/assets/2022-07-25 11_55_57-Window.png>)
+{% endstep %}
+{% endstepper %}

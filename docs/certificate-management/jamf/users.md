@@ -14,10 +14,14 @@ Add the trusted certificate and SCEP payloads to one configuration profile.
 Populate **User and Location** data on target devices. Each user needs an email address, which identifies the user.
 {% endhint %}
 
-## Create the configuration profile
+{% stepper %}
+{% step %}
+### Create the configuration profile
 
 Create the appropriate macOS or mobile-device configuration profile. Add the trusted certificate and SCEP payloads before scoping the profile.
+{% endstep %}
 
+{% step %}
 ### Add the trusted root certificate
 
 Deploy the SCEPman root certificate if it is not already trusted. Download the CA certificate from the SCEPman dashboard.
@@ -27,9 +31,15 @@ Deploy the SCEPman root certificate if it is not already trusted. Download the C
 Add a **Certificate** payload, select **Upload**, and upload the CA certificate.
 
 ![](<../../.gitbook/assets/image (25).png>)
+{% endstep %}
 
-## User certificates on computers
+{% step %}
+### Deploy user certificates
 
+Deploy user certificates to computers, devices, or both. Configure each profile separately.
+
+{% tabs %}
+{% tab title="Computers" %}
 {% hint style="info" %}
 Jamf Pro can only deploy user certificates to **MDM-enabled users**. There are some provisioning/pre-stage scenarios in which such user accounts are not created. For further information, please refer to the [Jamf Pro documentation](https://docs.jamf.com/10.33.0/jamf-pro/administrator-guide/MDM-Enabled_Local_User_Accounts.html).
 {% endhint %}
@@ -45,9 +55,9 @@ Under **Computers → Configuration Profiles**, create a macOS configuration pro
 | Subject Alternative Name Value | User email address included in the certificate  | $EMAIL                                                  |
 
 Scope the profile to the target users.
+{% endtab %}
 
-## User certificates on devices
-
+{% tab title="Devices" %}
 Under **Devices → Configuration Profiles**, create a mobile device configuration profile. Keep **Level** set to **Device Level**, because User Level does not support SCEP. Add a **SCEP** payload and enable the external CA setting.
 
 | Field                          | Purpose                                         | Value/Example                                         |
@@ -59,3 +69,7 @@ Under **Devices → Configuration Profiles**, create a mobile device configurati
 | Subject Alternative Name Value | User email address included in the certificate  | $EMAIL                                                |
 
 Scope the profile to the target devices.
+{% endtab %}
+{% endtabs %}
+{% endstep %}
+{% endstepper %}

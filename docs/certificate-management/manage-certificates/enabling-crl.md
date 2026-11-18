@@ -30,11 +30,23 @@ Azure > App Services > SCEPman App Service (not Certificate Master) > Settings >
 {% endstep %}
 
 {% step %}
-### Add Environment Variables&#x20;
+### Add Environment Variables
 
-Please note Linux App Service Plans use a double underscore (\_\_) instead of a colon (:). For example: AppConfig\_\_CRL\_\_RequestToken
+Use the setting names for your App Service operating system.
 
-<table><thead><tr><th width="247">Setting</th><th width="291">Description</th><th>Value</th></tr></thead><tbody><tr><td><a href="../../scepman-configuration/application-settings/crl.md#appconfig-crl-requesttoken">AppConfig:CRL:RequestToken</a></td><td><p>Defines the URL of the CRL. The CRL is available in both DER and PEM</p><p><br><strong>DER</strong>: https://<em>yourscepman</em>.azurewebsites.net/crl/<strong>{RequestToken}</strong></p><p></p><p><strong>PEM:</strong> https://yourscepman.azurewebsites.net/crl/pem/<strong>{RequestToken}</strong><br><br>Example: https://<em>yourscepman</em>.azurewebsites.net/crl/12345678</p></td><td>24 character <em>string</em></td></tr><tr><td><a href="../../scepman-configuration/application-settings/crl.md#appconfig-crl-source">AppConfig:CRL:Source</a></td><td>Connects the CRL to your Azure Storage account</td><td>Storage</td></tr><tr><td><a href="../../scepman-configuration/application-settings/crl.md#appconfig-crl-addcdp">AppConfig:CRL:AddCdp</a></td><td>Adds a CRL Distribution Point to issued certificates</td><td>true</td></tr><tr><td><a href="../../scepman-configuration/application-settings/crl.md#appconfig-crl-validitydays">AppConfig:CRL:ValidityDays</a></td><td>The numbers of days that an issued CRL is valid</td><td><em>Floating Point</em><br>Example <em>0.1</em> days = 2.4 hours</td></tr></tbody></table>
+{% tabs %}
+{% tab title="Linux" %}
+Linux App Services use double underscores (`__`) instead of colons.
+
+<table><thead><tr><th width="247">Setting</th><th width="291">Description</th><th>Value</th></tr></thead><tbody><tr><td><a href="../../scepman-configuration/application-settings/crl.md#appconfig-crl-requesttoken">AppConfig__CRL__RequestToken</a></td><td><p>Defines the URL of the CRL. The CRL is available in both DER and PEM</p><p><br><strong>DER</strong>: https://<em>yourscepman</em>.azurewebsites.net/crl/<strong>{RequestToken}</strong></p><p><strong>PEM:</strong> https://yourscepman.azurewebsites.net/crl/pem/<strong>{RequestToken}</strong><br><br>Example: https://<em>yourscepman</em>.azurewebsites.net/crl/12345678</p></td><td>24 character <em>string</em></td></tr><tr><td><a href="../../scepman-configuration/application-settings/crl.md#appconfig-crl-source">AppConfig__CRL__Source</a></td><td>Connects the CRL to your Azure Storage account</td><td>Storage</td></tr><tr><td><a href="../../scepman-configuration/application-settings/crl.md#appconfig-crl-addcdp">AppConfig__CRL__AddCdp</a></td><td>Adds a CRL Distribution Point to issued certificates</td><td>true</td></tr><tr><td><a href="../../scepman-configuration/application-settings/crl.md#appconfig-crl-validitydays">AppConfig__CRL__ValidityDays</a></td><td>The numbers of days that an issued CRL is valid</td><td><em>Floating Point</em><br>Example <em>0.1</em> days = 2.4 hours</td></tr></tbody></table>
+{% endtab %}
+
+{% tab title="Windows" %}
+Windows App Services use colons (`:`) in setting names.
+
+<table><thead><tr><th width="247">Setting</th><th width="291">Description</th><th>Value</th></tr></thead><tbody><tr><td><a href="../../scepman-configuration/application-settings/crl.md#appconfig-crl-requesttoken">AppConfig:CRL:RequestToken</a></td><td><p>Defines the URL of the CRL. The CRL is available in both DER and PEM</p><p><br><strong>DER</strong>: https://<em>yourscepman</em>.azurewebsites.net/crl/<strong>{RequestToken}</strong></p><p><strong>PEM:</strong> https://yourscepman.azurewebsites.net/crl/pem/<strong>{RequestToken}</strong><br><br>Example: https://<em>yourscepman</em>.azurewebsites.net/crl/12345678</p></td><td>24 character <em>string</em></td></tr><tr><td><a href="../../scepman-configuration/application-settings/crl.md#appconfig-crl-source">AppConfig:CRL:Source</a></td><td>Connects the CRL to your Azure Storage account</td><td>Storage</td></tr><tr><td><a href="../../scepman-configuration/application-settings/crl.md#appconfig-crl-addcdp">AppConfig:CRL:AddCdp</a></td><td>Adds a CRL Distribution Point to issued certificates</td><td>true</td></tr><tr><td><a href="../../scepman-configuration/application-settings/crl.md#appconfig-crl-validitydays">AppConfig:CRL:ValidityDays</a></td><td>The numbers of days that an issued CRL is valid</td><td><em>Floating Point</em><br>Example <em>0.1</em> days = 2.4 hours</td></tr></tbody></table>
+{% endtab %}
+{% endtabs %}
 
 <figure><img src="../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
 {% endstep %}
@@ -42,7 +54,7 @@ Please note Linux App Service Plans use a double underscore (\_\_) instead of a 
 {% step %}
 ### Apply Environment Variables
 
-Press Apply after Environment Variables have been added.&#x20;
+Press Apply after Environment Variables have been added.
 
 <figure><img src="../../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
 
@@ -74,7 +86,7 @@ If setup correctly, your CRL will be downloaded:
 
 Once enabled, ensure your applications or systems are configured to check the CRL during certificate validation to prevent the use of revoked certificates. Some systems allow CRL as a fallback option in the case OCSP is unavailable
 
-Other systems **only** allow CRL for revocation such as CBA for Entra, please see our guide here:&#x20;
+Other systems **only** allow CRL for revocation such as CBA for Entra, please see our guide here:
 
 {% content-ref url="../../scepman-deployment/deployment-guides/scenarios/certificate-based-authentication-for-entra-id.md" %}
 [certificate-based-authentication-for-entra-id.md](../../scepman-deployment/deployment-guides/scenarios/certificate-based-authentication-for-entra-id.md)

@@ -22,6 +22,25 @@ Applicable to version 3.2 and above
 
 Add the following settings to your **SCEPman App Service** > Environment variables > Add.
 
+{% tabs %}
+{% tab title="Linux" %}
+Linux App Services use double underscores (`__`) instead of colons.
+
+| Setting                                 | Description                                                    | Value                                               |
+| --------------------------------------- | -------------------------------------------------------------- | --------------------------------------------------- |
+| AppConfig\_\_Acme\_\_Enabled            | Enables the ACME endpoint                                      | _**true**_                                          |
+| AppConfig\_\_Acme\_\_AllowedDomains     | Domains SCEPman issues certificates for                        | e.g. _**\*.corp.contoso.com,intranet.contoso.com**_ |
+| AppConfig\_\_Acme\_\_DnsServers         | DNS servers SCEPman uses for challenge validation (optional)   | e.g. _**10.0.0.10,10.0.0.11:5353**_                 |
+| AppConfig\_\_Acme\_\_ValidityPeriodDays | Validity of certificates issued via ACME in days (recommended) | e.g. _**90**_                                       |
+
+{% hint style="danger" %}
+`AppConfig__Acme__AllowedDomains` is mandatory. If it is not configured, SCEPman rejects all ACME orders.
+{% endhint %}
+{% endtab %}
+
+{% tab title="Windows" %}
+Windows App Services use colons (`:`) in setting names.
+
 | Setting                           | Description                                                    | Value                                               |
 | --------------------------------- | -------------------------------------------------------------- | --------------------------------------------------- |
 | AppConfig:Acme:Enabled            | Enables the ACME endpoint                                      | _**true**_                                          |
@@ -29,11 +48,13 @@ Add the following settings to your **SCEPman App Service** > Environment variabl
 | AppConfig:Acme:DnsServers         | DNS servers SCEPman uses for challenge validation (optional)   | e.g. _**10.0.0.10,10.0.0.11:5353**_                 |
 | AppConfig:Acme:ValidityPeriodDays | Validity of certificates issued via ACME in days (recommended) | e.g. _**90**_                                       |
 
-Save the settings and restart your **SCEPman App Service**.
-
 {% hint style="danger" %}
 `AppConfig:Acme:AllowedDomains` is mandatory. If it is not configured, SCEPman rejects all ACME orders.
 {% endhint %}
+{% endtab %}
+{% endtabs %}
+
+Save the settings and restart your **SCEPman App Service**.
 
 #### Allowed Domains
 
@@ -66,7 +87,7 @@ ACME clients need the URL of the ACME directory. It always has the form:
 https://<your SCEPman URL>/acme/directory
 ```
 
-for example `https://scepman.contoso.com/acme/directory`. If enabled, the SCEPman homepage shows the ACME endpoint as **ACME (DNS)** together with this URL.
+For example, `https://scepman.contoso.com/acme/directory`. If enabled, the SCEPman homepage shows the ACME endpoint as **ACME (DNS)** together with this URL.
 
 {% hint style="warning" %}
 SCEPman creates all URLs in its ACME responses from AppConfig:BaseUrl. ACME clients sign the URL of each request and SCEPman rejects requests whose signed URL does not match ([RFC 8555, Section 6.4](https://datatracker.ietf.org/doc/html/rfc8555#section-6.4)). Therefore, configure your ACME clients with a directory URL on the host specified in `AppConfig:BaseUrl`. If you use a custom domain for SCEPman, ensure `AppConfig:BaseUrl` contains the custom domain.

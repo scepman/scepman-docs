@@ -47,6 +47,26 @@ Ensure that SCEPman is configured to be accessible using a custom domain:
 {% step %}
 ### BaseUrl
 
+{% tabs %}
+{% tab title="Linux" %}
+Linux App Services use double underscores (`__`) instead of colons.
+
+To allow successful authentications, make sure the [AppConfig\_\_BaseUrl](../../scepman-configuration/application-settings/basics.md#appconfig-baseurl) variable matches your custom domain.
+
+| Setting                                                                                              | Value                        |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------- |
+| [AppConfig\_\_BaseUrl](../../scepman-configuration/application-settings/basics.md#appconfig-baseurl) | Example: scepman.contoso.com |
+
+**Alternatively**, if you prefer accessing the AD Endpoint using a different URL from your other SCEPman endpoints, use the dedicated [AppConfig\_\_ActiveDirectory\_\_BaseUrl](../../scepman-configuration/application-settings/active-directory/general.md#appconfig-activedirectory-baseurl) setting.
+
+| Setting                                                                                                                                                   | Value                           |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| [AppConfig\_\_ActiveDirectory\_\_BaseUrl](../../scepman-configuration/application-settings/active-directory/general.md#appconfig-activedirectory-baseurl) | Example: adendpoint.contoso.com |
+{% endtab %}
+
+{% tab title="Windows" %}
+Windows App Services use colons (`:`) in setting names.
+
 To allow successful authentications, make sure the [AppConfig:BaseUrl](../../scepman-configuration/application-settings/basics.md#appconfig-baseurl) variable matches your custom domain.
 
 | Setting           | Value                        |
@@ -58,6 +78,8 @@ To allow successful authentications, make sure the [AppConfig:BaseUrl](../../sce
 | Setting                           | Value                           |
 | --------------------------------- | ------------------------------- |
 | AppConfig:ActiveDirectory:BaseUrl | Example: adendpoint.contoso.com |
+{% endtab %}
+{% endtabs %}
 {% endstep %}
 
 {% step %}
@@ -109,6 +131,22 @@ The integration can easily be enabled by adding the following environment variab
 
 _Example with all certificate templates enabled:_
 
+{% tabs %}
+{% tab title="Linux" %}
+Linux App Services use double underscores (`__`) instead of colons.
+
+| Setting                                                                                                                                                                         | Value                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| [AppConfig\_\_ActiveDirectory\_\_Keytab](appconfig:ActiveDirectory:Keytab)                                                                                                      | Base64 encoded keytab for the service principal created in [Step 3](general-configuration.md#create-service-principal) |
+| [AppConfig\_\_ActiveDirectory\_\_Computer\_\_Enabled](../../scepman-configuration/application-settings/active-directory/computer-template.md#appconfig-activedirectory-enabled) | true                                                                                                                   |
+| [AppConfig\_\_ActiveDirectory\_\_User\_\_Enabled](../../scepman-configuration/application-settings/active-directory/user-template.md#appconfig-activedirectory-enabled)         | true                                                                                                                   |
+| [AppConfig\_\_ActiveDirectory\_\_DC\_\_Enabled](../../scepman-configuration/application-settings/active-directory/dc-template.md#appconfig-activedirectory-enabled)             | true                                                                                                                   |
+| [AppConfig\_\_ActiveDirectory\_\_RdpServer\_\_Enabled](../../scepman-configuration/application-settings/active-directory/rdp-template.md#appconfig-activedirectory-enabled)     | true                                                                                                                   |
+{% endtab %}
+
+{% tab title="Windows" %}
+Windows App Services use colons (`:`) in setting names.
+
 | Setting                                                                                                                                                                | Value                                                                                                                  |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | [AppConfig:ActiveDirectory:Keytab](appconfig:ActiveDirectory:Keytab)                                                                                                   | Base64 encoded keytab for the service principal created in [Step 3](general-configuration.md#create-service-principal) |
@@ -116,6 +154,8 @@ _Example with all certificate templates enabled:_
 | [AppConfig:ActiveDirectory:User:Enabled](../../scepman-configuration/application-settings/active-directory/user-template.md#appconfig-activedirectory-enabled)         | true                                                                                                                   |
 | [AppConfig:ActiveDirectory:DC:Enabled](../../scepman-configuration/application-settings/active-directory/dc-template.md#appconfig-activedirectory-enabled)             | true                                                                                                                   |
 | [AppConfig:ActiveDirectory:RdpServer:Enabled](../../scepman-configuration/application-settings/active-directory/rdp-template.md#appconfig-activedirectory-enabled)     | true                                                                                                                   |
+{% endtab %}
+{% endtabs %}
 {% endstep %}
 {% endstepper %}
 
