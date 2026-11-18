@@ -1,100 +1,98 @@
+---
+description: Configure SCEPman as a subordinate certification authority.
+---
+
 # Intermediate CA
 
 {% hint style="warning" %}
 SCEPman Enterprise Edition only
 {% endhint %}
 
-If you want to use another Root CA as a primary authority, you can create an intermediate CA certificate to operate SCEPman as a Subordinate Certification Authority. You can create the correct certificate direct in Azure Key Vault and download the CSR for signing with your Root CA. The signed request can be uploaded and merged into Azure Key Vault. This article guides you through the necessary steps in detail.
+Use an Intermediate CA when another Root CA remains your primary authority. SCEPman creates the key and certificate request in Azure Key Vault. Your Root CA signs the request.
 
-## Key Vault Permissions
+### Before you begin
 
-You need to grant access to the Azure Key Vault to your user account to create the CSR and merge the Intermediate CA certificate. The way of assigning the permissions depends on the access configuration of your Key Vault:
+Complete these prerequisites before creating the certificate:
+
+* Your administrator account can create certificate requests and merge signed certificates in the SCEPman Key Vault.
+* A system running Azure CLI and PowerShell can reach the Key Vault.
+* You know the required intermediate CA subject and certificate name.
+
+<details>
+
+<summary>Grant Key Vault certificate permissions</summary>
 
 {% tabs %}
 {% tab title="Azure RBAC" %}
-1. Navigate to your Azure Key Vault in the Azure Portal
-2. Click on **Access control (IAM)** in the left navigation pane.
-3. Click on **Role assignments** and add a new role assignment
+1. In the Key Vault, open **Access control (IAM)** → **Role assignments**.
+2. Add the **Key Vault Certificate Officer** role.
+3. Assign the role to the administrator account that creates the CSR.
 
-<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption><p>Add a new role assignment to your Key Vault</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (34).png" alt="Add a role assignment in the Key Vault"><figcaption><p>Add a role assignment in the Key Vault.</p></figcaption></figure>
 
-4. Select the **Key Vault Certificate Officer** role and click **Next**
-
-<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
-
-5. Now search and add your AAD admin account in the **Members** section and continue to assign the role
-
-After adding the role assignment, your Azure AD account is permitted to create a CSR and upload the certificate.
+<figure><img src="../.gitbook/assets/image (35).png" alt="Select the Key Vault Certificate Officer role"><figcaption><p>Select the Key Vault Certificate Officer role.</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="Vault Access Policies" %}
-1. Navigate to your Azure Key Vault in the Azure Portal
-2. Click on **Access policies** in the left navigation pane.
-3. Click on **Create** and choose the **Certificate Management** template, then next
+1. In the Key Vault, open **Access policies** and select **Create**.
+2. Select the **Certificate Management** template.
+3. Assign the policy to the administrator account that creates the CSR.
 
 <figure><img src="../.gitbook/assets/2023-06-14 16_20_43-IntermediateCert.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/2023-06-14 16_23_37-IntermediateCert.png" alt=""><figcaption></figcaption></figure>
 
-4. Now search and add your AAD admin account in the **Principal** section, then next, next, and create
-
 <figure><img src="../.gitbook/assets/2023-06-14 17_06_33-.png" alt=""><figcaption></figcaption></figure>
-
-After adding the permissions, your Azure AD account is permitted to create a CSR and upload the certificate.
 {% endtab %}
 {% endtabs %}
 
-## Open Key Vault Networking to the Admin System
+</details>
 
-If you are using a [Private Endpoint](../azure-configuration/private-endpoints.md) for Key Vault, you need to add an exception that allows the client to access the Key Vault on a network level. If you are not using a Private Endpoint, you can skip this part.
+<details>
 
-* Go to Azure Key Vault in the Azure Portal.
-* Navigate to the Networking blade under Settings.
-* Switch to "Allow public access from specific virtual networks and IP addresses" if you have currently selected "Disable public access".
-* Add the IP address of the client on which you want to [run the SCEPman PowerShell module later on](intermediate-certificate.md#creating-intermediate-ca-certificate-with-the-scepman-powershell-module). If you are using the Azure Cloud Shell and [it is connected to a VNET](https://learn.microsoft.com/en-us/azure/cloud-shell/vnet/overview), you can add this VNET. Otherwise, the easiest way is to temporarily allow the Cloud Shell's Public IP address, since strong authentication protects your Key Vault. You might use a command like `(Invoke-WebRequest -UseBasicParsing -uri "http://ifconfig.me/ip").Content` to find the session's public IP address.
+<summary>Allow network access to Key Vault</summary>
 
-## Update Azure App Service Settings
+If your Key Vault uses [private-endpoints.md](../azure-configuration/private-endpoints.md "mention"), allow the workstation or Cloud Shell environment used below. Without this access, the module cannot create the CSR or merge the certificate.
 
-The next step is to update the Azure App Service configuration to match the subject name of the intermediate CA you will create in the next step.
+In the Key Vault, open **Settings** → **Networking**. Allow the relevant virtual network or client IP address. A VNet-connected [Azure Cloud Shell](https://learn.microsoft.com/en-us/azure/cloud-shell/vnet/overview) is also supported. Remove temporary network exceptions after the certificate is merged.
 
-1. Navigate to your Azure App Service
-2. Click on **Environment variables** in the left navigation pane
-3. In **Application settings,** you must edit the following settings:
-   1. `AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName`\
-      Change this to a preferred common name (CN) for your intermediate CA.
-   2. `AppConfig:KeyVaultConfig:RootCertificateConfig:Subject`\
-      Only change the CN value of the subject name to match the common name used above.
-4. Click on **Apply and Confirm.**
-5. Restart the Azure **App Service** to apply the changes then navigate to your SCEPman URL.
+</details>
 
-{% hint style="warning" %}
-Please be aware that the CertificateName variable will directly correspond to the certificate object that will be created in the Azure Key Vault. You can therefore only use certificate names that contain alphanumeric characters and dashes
-{% endhint %}
+### Create the Intermediate CA
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+{% stepper %}
+{% step %}
+#### Configure the SCEPman certificate settings
 
-## Creating Intermediate CA Certificate with the SCEPman PowerShell Module
+In the SCEPman App Service, open **Environment variables**. Under **Application settings**, update:
 
-{% hint style="warning" %}
-To ensure this module functions correctly, you will need a workstation with [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (also known as `az`) installed. The Azure CLI is pre-installed in the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), which is the recommended environment for running this module.
-{% endhint %}
+* `AppConfig:KeyVaultConfig:RootCertificateConfig:CertificateName`: the Key Vault certificate name. Use letters, numbers, and dashes only.
+* `AppConfig:KeyVaultConfig:RootCertificateConfig:Subject`: change only the `CN` to the same common name.
 
-You can use the SCEPman PowerShell module version 1.9 and later to create a CSR for an Intermediate CA certificate. You can install the latest version of the module from PowerShell Gallery with the following command:
+Select **Apply** and confirm the changes. **Restart** the App Service. Then open the SCEPman URL.
+
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (2) (1).png" alt="SCEPman App Service certificate settings"><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+#### Create the certificate request
+
+Use SCEPman PowerShell module version 1.9 or later. [Azure Cloud Shell](https://learn.microsoft.com/en-us/azure/cloud-shell/overview) is recommended because it includes Azure CLI. Otherwise, install [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli).
 
 ```powershell
 Install-Module -Name SCEPman -Scope CurrentUser -Force
 ```
 
-Then, you can tell the module the name of your organization to appear in the certificate:
+Set your organization:
 
 ```powershell
 Reset-IntermediateCaPolicy -Organization "My Organization"
 ```
 
-Configure the subject of your intermediate CA to match the one you have used above in `AppConfig:KeyVaultConfig:RootCertificateConfig:Subject` (optionally, you can modify some additional settings to control the CSR content):
+Set the subject to the value configured in the App Service. You can also adjust additional policy settings before saving it.
 
 {% code lineNumbers="true" %}
-```
+```powershell
 $policy = Get-IntermediateCaPolicy
 $policy.policy.x509_props.subject = "CN=YOUR_CN_FROM_ABOVE,OU=YOUR_TENANT_ID,O=YOUR_ORGANIZATION"
 # change some additional settings of $policy
@@ -102,36 +100,37 @@ Set-IntermediateCaPolicy -Policy $policy
 ```
 {% endcode %}
 
-Finally, you can create the CSR with the following command (or a similar one according to your environment):
+Create the CSR:
 
 ```powershell
 New-IntermediateCA -SCEPmanAppServiceName "app-scepman-example" -SearchAllSubscriptions 6>&1
 ```
 
-The command will output the CSR that you submit to your Root CA for signing.
+The command outputs the CSR for your Root CA.
+{% endstep %}
 
-## Issue the Intermediate CA Certificate
+{% step %}
+#### Issue the Intermediate CA certificate
 
-Now, submit your CSR to your Root CA and retrieve your issued Intermediate CA Certificate. Save the certificate on disk (.cer), so in the next step, you can upload and merge it with the private key in Azure Key Vault.
+Retrieve the issued certificate from your Root CA. Save it as a Base64-encoded `.cer` file.
 
-### Special Steps for an ADCS Enterprise Root CA
+<details>
 
-If you are using Active Directory Certificate Services as an AD-integrated Root CA and hence must choose a Certificate Template, it must include the following Key Usages: "CRLSign", "DigitalSignature", "KeyEncipherment", and "KeyCertSign". KeyEncipherment is missing in the default template "Subordinate Certificate Authority", and furthermore cannot be selected on new templates. Please see below for a solution if you run into this problem. **This does not apply to Stand-alone Root CAs**, aka Offline Root CAs, as they take the Key Usages correctly from the CSR.
+<summary>SCEPman Root CA: submit the CSR through Certificate Master</summary>
 
-#### Outline
+Open [certificate-signing-request-csr.md](../certificate-management/certificate-master/certificate-signing-request-csr.md "mention"). Paste the PEM-encoded CSR, or upload the CSR file, to issue the Intermediate CA certificate. Change **Download File format** to **PEM** before downloading the certificate.
 
-You can Duplicate the SubCA Template or use it as required. Then you just issue a certificate with the template based on the CSR. This certificate will have _the wrong Key Usage_ (0x86). Afterwards, you re-sign the certificate with an adapted Key Usage extension using `certutil -sign`.
+</details>
 
-#### Step by step
+<details>
 
-1. Request and issue a SubCA certificate.
-2. Export the new SubCA certificate to a file (e.g. c:\temp\SubCA.cer) on the Root CA. Choose **Base-64 encoded X.509** format.
-3. Create a file "extfile.txt" with the contents shown below to the Root CA (e.g. c:\temp\extfile.txt).
-4. Start command line and execute: `certutil -sign "c:\temp\SubCA.cer" "c:\temp\SubCAwithKeyEncipher.cer" @c:\temp\extfile.txt`
-5. The certificate SubCAwithKeyEncipher.cer now contains the requested key usage (0xA6). The thumbprint (signature) has changed, but the serial number hasn't.
-6. The list of issued certificates in ADCS contains the old certificate. Since the serial number hasn't changed, you can manage the new certificate using the old handle, e.g. revoking the old certificate will revoke the new certificate. If you dislike this, you can delete the old certificate entry using `certutil -deleterow` and then import the new certificate using `certutil -importcert`.
+<summary>ADCS Enterprise Root CA: add Key Encipherment</summary>
 
-#### extfile.txt
+This applies only to AD-integrated ADCS Enterprise Root CAs. The certificate must include `CRLSign`, `DigitalSignature`, `KeyEncipherment`, and `KeyCertSign`. The default **Subordinate Certificate Authority** template omits `KeyEncipherment`. Stand-alone and offline Root CAs use the CSR key usages.
+
+1. Request and issue a SubCA certificate. You can duplicate the SubCA template.
+2. On the Root CA, export the certificate as Base-64 encoded X.509, for example `C:\temp\SubCA.cer`.
+3. Create `C:\temp\extfile.txt`:
 
 ```
 [Extensions]
@@ -139,25 +138,40 @@ You can Duplicate the SubCA Template or use it as required. Then you just issue 
 Critical=2.5.29.15
 ```
 
-## Upload the Intermediate CA Certificate
+4. Run:
 
-1. In Azure Key Vault, click on your certificate and press **Certificate Operation**
-2. Now you can see the options **Download CSR** and **Merge Signed Request**
+```powershell
+certutil -sign "C:\temp\SubCA.cer" "C:\temp\SubCAwithKeyEncipher.cer" @C:\temp\extfile.txt
+```
 
-![](../.gitbook/assets/screenshot-2020-10-19-at-16.01.18.png)
+The output certificate has key usage `0xA6`. Its signature changes, but its serial number does not. Revoking the original ADCS certificate also revokes the re-signed certificate. Optionally, delete the old entry with `certutil -deleterow` and import the new certificate with `certutil -importcert`.
 
-1. Click on **Merge Signed Request** and upload your Intermediate CA Certificate. After you have uploaded the signed request, you can see the valid certificate in your Azure Key Vault in the area **Completed**
+</details>
+{% endstep %}
+
+{% step %}
+#### Merge the signed certificate
+
+In Azure Key Vault, open the certificate and select **Certificate Operation** → **Merge Signed Request**. Upload the issued certificate. The certificate appears under **Completed** when the merge succeeds.
+
+![Certificate operation options in Azure Key Vault](../.gitbook/assets/screenshot-2020-10-19-at-16.01.18.png)
 
 {% hint style="warning" %}
-The Intermediate CA Certificate must be in PEM format (Base64-encoded). If you use the binary DER format, you will see an error message that says "Property x5c has invalid value X5C must have at least one valid item" in the details.
+The certificate must use PEM or Base64 encoding. Binary DER encoding causes an `x5c has invalid value` error.
 {% endhint %}
+{% endstep %}
 
-## Verify CA Suitability
+{% step %}
+#### Verify the CA
 
-On the SCEPman Status page, you can see the new configuration and download the new intermediate CA certificate to deploy this via Endpoint Manager.
+Open the SCEPman status page. Confirm that **CA Suitability** reports no missing requirements. Download the Intermediate CA certificate for deployment through your MDM.
 
-Please check whether the CA certificate fulfills all requirements by visiting your SCEPman Homepage. Check what the homepage says next to "CA Suitability". If, for example, it says _CA Certificate is missing Key Usage "Key Encipherment"_, you should go back to step [Issue the Intermediate CA Certificate](intermediate-certificate.md#issue-the-intermediate-ca-certificate) and correct the certificate issuance.
+If SCEPman reports that `Key Encipherment` is missing, correct the issued certificate and merge it again.
+{% endstep %}
+{% endstepper %}
 
-## Intermediate CAs and Intune SCEP Profiles
+### Intune SCEP profiles
 
-On the Android platform, the SCEP Configuration Profiles in Intune must reference the Root CA, not the Intermediate CA. Otherwise, the configuration profile fails. For Windows, it is the other way around: The SCEP Configuration Profiles in Intune must reference the Intermediate CA, not the Root CA. For iOS and macOS, we have no conclusive information whether one or the other way is better.
+* **Android:** reference the Root CA.
+* **Windows:** reference the Intermediate CA.
+* **iOS and macOS:** no conclusive recommendation is available.
