@@ -76,16 +76,19 @@ certbot revoke \
 {% tab title="lego" %}
 [lego](https://go-acme.github.io/lego/) is an ACME client written in Go with integrations for many DNS providers. The examples use the lego v4 command line syntax.
 
+{% hint style="info" %}
+lego uses Go's TLS implementation, which does not support TLS renegotiation. If lego fails with `tls: no renegotiation`, add `/acme` to the client certificate exclusion paths of your SCEPman App Service configuration.
+{% endhint %}
+
 #### Manual mode
 
 ```bash
-lego \
+lego run \
   --server https://scepman.contoso.com/acme/directory \
   --email admin@contoso.com \
   --domains web01.corp.contoso.com \
   --dns manual \
-  --dns.resolvers 10.0.0.10:53 \
-  run
+  --dns.resolvers 10.0.0.10:53
 ```
 
 lego displays the `TXT` record and waits until you have created it and pressed _Enter_. Before it asks SCEPman to validate the challenge, lego checks itself whether the record is resolvable. For internal zones, use `--dns.resolvers` to specify a DNS server that can resolve your internal zone. lego stores the certificate and private key in the `.lego/certificates` folder of the current directory.
@@ -101,32 +104,27 @@ export AZURE_AUTH_METHOD="msi"
 export AZURE_SUBSCRIPTION_ID="<subscription id of the DNS zone>"
 export AZURE_RESOURCE_GROUP="<resource group of the DNS zone>"
 
-lego \
+lego run \
   --server https://scepman.contoso.com/acme/directory \
   --email admin@contoso.com \
   --domains web01.corp.contoso.com \
-  --dns azuredns \
-  run
+  --dns azuredns
 ```
 
 Alternatively, you can use a service principal with the environment variables `AZURE_CLIENT_ID`, `AZURE_CLIENT_SECRET`, and `AZURE_TENANT_ID`. See the [lego Azure DNS documentation](https://go-acme.github.io/lego/dns/azuredns/) for all options and other DNS providers.
 
 #### Renewal
 
-Run the same command with `renew` instead of `run` regularly, e.g. daily via cron. lego renews the certificate if it expires within the number of days given by `--days`:
+Run the same command with `--renew-days` regularly, e.g. daily via cron. lego renews the certificate if it expires within the number of days given.
 
 ```bash
-lego \
+lego run \
   --server https://scepman.contoso.com/acme/directory \
   --email admin@contoso.com \
   --domains web01.corp.contoso.com \
   --dns azuredns \
-  renew --days 30
+  --renew-days 60
 ```
-
-{% hint style="info" %}
-lego uses Go's TLS implementation, which does not support TLS renegotiation. If lego fails with `tls: no renegotiation`, add `/acme` to the client certificate exclusion paths of your SCEPman App Service as described in Troubleshooting.
-{% endhint %}
 {% endtab %}
 {% endtabs %}
 
